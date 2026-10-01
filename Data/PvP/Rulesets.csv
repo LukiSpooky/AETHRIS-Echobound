@@ -6,5 +6,5 @@ RS_FREE_DUEL,Arena-Halle frei – Duell,Duell 1+5,Norm,70,6/6/1,"Arten, 60 s",Ha
 RS_FREE_DUO,Arena-Halle frei – Duo,Duo 2+4,Norm,70,6/6/2,"Arten, 75 s",Halteitems,Klar,30 s + 90 s Bank,18,wie frei Duell
 RS_FREE_TRIO,Arena-Halle frei – Trio,Trio 3+3,Norm,70,6/6/3,"Arten, 90 s",Halteitems,Klar,30 s + 90 s Bank,20,wie frei Duell
 RS_FRIEND,Freundeskampf,Duell/Duo/Trio,Norm oder Eigen,70,frei,frei,frei,frei (inkl. Weltwetter),frei (Standard 60 s),0,frei; ungewertet
-RS_GHOST,Geister-Teams (offline),Duell/Duo/Trio,Norm,70,6/6/x,Arten,Halteitems,Klar,ohne,0,Gegner = gespeicherte Teams + Kampf-KI (AI_NPC_VETERAN, mit der aufgezeichneten Aufstellung)
+RS_GHOST,Geister-Teams (offline),Duell/Duo/Trio,Norm,70,6/6/x,Arten,Halteitems,Klar,ohne,0,"Gegner = gespeicherte Teams + Kampf-KI (AI_NPC_VETERAN, mit der aufgezeichneten Aufstellung)"
 RS_SEASON_SPECIAL,Saisonregel (Beispiel „Kleine Stimmen“),Trio 3+3,Norm,50,6/6/3,"Arten, 90 s",Halteitems ohne Duplikate,Klar,30 s + 90 s Bank,20,"nur Stufe-1-Arten oder Einzelarten mit Kernsumme ≤ 430; ungewertet für den Hauptrang, eigene Rangliste"

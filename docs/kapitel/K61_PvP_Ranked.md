@@ -162,7 +162,7 @@ Auch Nicht-Endformen sind zulässig. Manche Stufe-2-Arten bringen Utility-Fähig
 | Arena-Halle frei – Duo | Duo 2+4 | Norm | 70 | 6/6/2 | Arten, 75 s | Halteitems | Klar | 30 s + 90 s Bank | 18 | wie frei Duell |
 | Arena-Halle frei – Trio | Trio 3+3 | Norm | 70 | 6/6/3 | Arten, 90 s | Halteitems | Klar | 30 s + 90 s Bank | 20 | wie frei Duell |
 | Freundeskampf | Duell/Duo/Trio | Norm oder Eigen | 70 | frei | frei | frei | frei (inkl. Weltwetter) | frei (Standard 60 s) | 0 | frei; ungewertet |
-| Geister-Teams (offline) | Duell/Duo/Trio | Norm | 70 | 6/6/x | Arten | Halteitems | Klar | ohne | 0 | Gegner = gespeicherte Teams + Kampf-KI (AI_NPC_VETERAN |
+| Geister-Teams (offline) | Duell/Duo/Trio | Norm | 70 | 6/6/x | Arten | Halteitems | Klar | ohne | 0 | Gegner = gespeicherte Teams + Kampf-KI (AI_NPC_VETERAN, mit der aufgezeichneten Aufstellung) |
 | Saisonregel (Beispiel „Kleine Stimmen“) | Trio 3+3 | Norm | 50 | 6/6/3 | Arten, 90 s | Halteitems ohne Duplikate | Klar | 30 s + 90 s Bank | 20 | nur Stufe-1-Arten oder Einzelarten mit Kernsumme ≤ 430; ungewertet für den Hauptrang, eigene Rangliste |
 
 **Team, Vorschau, Aufstellung:** Für Ranked registriert man ein Team aus 6 Echos (ein Chor). Vor dem Kampf sehen beide Seiten die **Arten** des Gegenübers (nicht Fähigkeiten, Items, Werte) und haben 90 s (Trio) bzw. 60 s (Duell) für Aufstellung und Formation (Vorder-/Hinterreihe, K33). Alle 6 kommen mit; aktiv sind 3 (Trio) bzw. 1 (Duell), die übrigen bilden die Reserve. Wechsel aus der Reserve kostet Zeitleisten-Zeit (CANON Kampf).
