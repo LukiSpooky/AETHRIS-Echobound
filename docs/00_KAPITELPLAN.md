@@ -1,6 +1,6 @@
 # 00 · Kapitelplan – AETHRIS: Echobound
 
-**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K45 abgeschlossen
+**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K46 abgeschlossen
 
 Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel baut auf den vorherigen auf und darf nur Entscheidungen verwenden, die in [`CANON.md`](CANON.md) eingetragen sind (oder es trägt neue ein).
 
@@ -93,7 +93,7 @@ Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel bau
 |---|---|---|---|---|
 | K44 | Story Akt I | Narrative Writer | K07, K11 | ✅ |
 | K45 | Story Akt II | Narrative Writer | K44 | ✅ |
-| K46 | Story Akt III & Finale | Narrative Writer | K45 | ⬜ |
+| K46 | Story Akt III & Finale | Narrative Writer | K45 | ✅ |
 | K47 | Fraktionen & Rufsystem | Narrative Writer, Quest Designer | K46 | ⬜ |
 | K48 | Quest Bible & Questsystem-Technik | Quest Designer, Gameplay Programmer | K47 | ⬜ |
 | K49 | Nebenquests 1 (#SQ001–#SQ070) | Quest Designer | K48 | ⬜ |

@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K45
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K46
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -384,6 +384,15 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-165 | Entscheidungen verhindern Venns Splitterfortschritt nie | K45 |
 | ADR-166 | Unterschlupf nach dem Verrat nach FS_STANCE | K45 |
 | ADR-167 | Kael nimmt den 8. Splitter in einer Szene, kein Kampf | K45 |
+| ADR-168 | Keine Ruhephase zwischen Krone und Velnox (DR-29-Ausnahme) | K46 |
+| ADR-169 | W8 aus zwei Quellen (Kael-Notizblock / Kundschafter) | K46 |
+| ADR-170 | Kronensplitter nur durch singende Krone zerbrechbar | K46 |
+| ADR-171 | Kaels Eingriff immer; Flags nur für Epilog | K46 |
+| ADR-172 | Sereths Angebot immer verfügbar | K46 |
+| ADR-173 | Entscheidung ohne Zeitlimit, 3-s-Halten, zufällige Reihenfolge | K46 |
+| ADR-174 | Sanfte Stille: Silber statt Grün, gleiche Spawns | K46 |
+| ADR-175 | Epilog = Endsequenz + 3 Vignetten + 4 Schlussbilder | K46 |
+| ADR-176 | Finale-Speicherpunkt als gesonderter Slot | K46 |
 
 ## §11 Change Requests
 
@@ -392,6 +401,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | CR-001 | K14 | §17 „Zeit vorspulen … Wetter wird neu gewürfelt“ | Präzisiert: Zeit vorspulen springt im **deterministischen Wetterfahrplan** (§61) in einen späteren Block – neues Wetter, aber reproduzierbar; Laden eines Saves ändert das Wetter nicht | Determinismus, Koop-Synchronität, kein Save-Scumming (ADR-066) | Game Director, Tech Director |
 | CR-002 | K36 | §29/K06 §5 `IBondingService::PreviewBondChancePermille` | Ersetzt durch `PreviewBond` → `FBondPreview` (Resonanz, Schwelle, Fenster, Versuche) | Resonanzbindung ist deterministisch (kein Prozentwurf, DR-03/DR-07) | Game Director, Tech Director |
 | CR-003 | K43 | K02 §5 „Wärterrang-Aufstieg 45–90 min (Story-Phase)“ | Präzisiert: 45–90 min in Prolog/Akt I, ≤ 150 min in Akt II/III | 40 Ränge über ~90 h; Meilenstein-Charakter der Ränge, gefühlter Fortschritt über Echo-Level/Bindung/Kodex | Game Director |
+| CR-004 | K46 | §46 Story-Platzierung (K09): „W2 in der ersten freien Akt-I-Region“, „Sereth-Erstauftritt in erster Akt-II-Region“ | W2 in der zweiten Region (ADR-161); Sereth erscheint kurz in MQ_A1_06, ausführlich in Eiðvik (MQ_A2_04) | Erste Region bleibt ein ungestörter Einstieg; Sereth muss vor dem Verrat (W6) als Person bekannt sein | Narrative Director, Game Director |
 
 ## §12 Offene Punkte (PROVISIONAL-Tracker)
 
@@ -788,7 +798,7 @@ Bundesstraßen: 13 Verbindungen (Wegfaktor 1,35); Weltquerung ≈ 7,3 km ≈ 29 
 | R04 Sahrun-Weite | Sonnenhof-Plateau, Glasebene, Singende Dünen, Harrâd-Oase, Wanderdorf | nachtaktiv; Sandsturm-Navigation per Resonanzsinn; Sensitivity-Review | Hitze Tag / Kälte Nacht | 22 |
 | R05 Ignareth | Ignar-Krater, Schlackenwehr, Obsidianklamm, Vorthax-Schlackenstrom, Schmiedeterrassen | Ausbruch alle 3 Spieltage (Lava-Layer A/B); 6 Schmiedeglocken/Tag | Hitze, Asche | 19 |
 
-Story-Platzierung: W2 (Stillsteine) in der ersten betretenen freien Akt-I-Region; Tavesh-Erstkontakt in Morvenmoor bzw. erster Akt-I-Region; Sereth-Erstauftritt in erster Akt-II-Region; Venn-Grabung am Sonnenhof (Akt II).
+Story-Platzierung (CR-004): W2 (Stillsteine) in der **zweiten** betretenen freien Akt-I-Region (ADR-161); Tavesh-Erstkontakt in Morvenmoor; Sereth-Kurzauftritt in MQ_A1_06, erster ausführlicher Auftritt in Eiðvik (MQ_A2_04); Venn-Grabung am Sonnenhof (Akt II, MQ_A2_02).
 Tech-Art: PCG `PCG_R##_<Layer>` (Canopy, Understory, Ground, Rocks, Water, Props, Hazards), Editorzeit-gebacken; Foliage-Budget PS5 ≤ 1,6 Mio. Nanite-Instanzen / 250 k Gras, Switch 2 ≤ 400 k / 60 k; Stille über `MPC_Silence`.
 
 ## §47 Siedlungsnamen R01–R05 (LOCKED, K09)
@@ -1763,3 +1773,23 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §175 Flags Akt II (LOCKED, K45 §10 · `StoryFlags.csv`)
 
 - FLAG_KONTOR_CRATES (0 geliefert/1 geöffnet+geliefert/2 zurückgegeben), FLAG_YSOLDE_BOND (−2…2, nur Ton), FLAG_SHELTER (FS bei FS_STANCE ≥ 0, sonst WW), FLAG_W6_DONE (System).
+
+## §176 Akt III (LOCKED, K46 §4–§5 · `MainQuests.csv` MQ_A3_01–06)
+
+- Linear: Prismtiefen (W8 in MQ_A3_02 über Kaels Notizblock bei KAEL_TRUST ≥ 1, sonst Sereths Kundschafter; BOSS_A3_01) → Prismara-Akkord (9), zehnter Splitter löst sich nur für den Nachklang-Träger, Splitter nur durch die singende Krone zerbrechbar → Lager am Kristallsee → Nimbara (Wand der Zehn mit Ilens Gesicht) → Sternenarena (10. Akkord, alle Stimmen wach, Resonanzsturm bis zum Finale) → Point of no Return. ~12 h, Rang ~29.
+
+## §177 Finale (LOCKED, K46 §6)
+
+- MQ_A3_07: Venn setzt die Krone auf (BOSS_A3_02); Kael greift bei < 15 % immer ein; Krone und Riegel brechen; Velnox frei. Keine Ruhephase bis Velnox (DR-29-Ausnahme ADR-168, 3-min-Sequenz mit voller Heilung). MQ_A3_08: Velnox Phasen 1–3, Phase 4 ohne HP-Ende: Ilen spricht durch den Spieler (W9); Sereths Angebot immer verfügbar; Entscheidung ohne Zeitlimit, 3-s-Halten, zufällige Reihenfolge.
+
+## §178 Enden & Weltzustand (LOCKED, K46 §7, §9)
+
+- Neues Lied: zehn freie Linien, Velnox = Pause im Lied, Stillezonen grün geheilt, Resonanzsinn → Resonator-Sinn (gleiche Werte). Sanfte Stille: Stimmen schlafen ohne Riegel, Stillezonen silber befriedet, Resonanzsinn bleibt, Stimmen als „schlafende Stimmen“ bindbar. Endgame identisch (DR-19). Finale-Speicherpunkt als gesonderter Slot; Nachhall folgt dem Hauptspielstand. Venn lebt in Schweigfels; Akademie kommissarisch unter Aevrin Thal. `FLAG_ENDING`.
+
+## §179 Epilog-System (LOCKED, K46 §8 · `tools/authoring/story_k46.py`)
+
+- Endsequenz + 3 Vignetten (Freie Stimmen: FS_STANCE ≥ 0 · Kael: KAEL_TRUST ≥ 1 · Sereth: SERETH_RESPECT ≥ 1) + Schlussbild nach Anzahl positiver Vignetten (3 Voller Chor, 2 Zwei Stimmen, 1 Eine Stimme, 0 Der eigene Chor) = 4 Epilog-Varianten je Ende; 12 Vignetten-Sequenzen; Ysoldes Brief (Ton nach YSOLDE_BOND).
+
+## §180 Hauptstory gesamt (LOCKED, K44–K46)
+
+- 32 Hauptquests (Prolog 3, Akt I 9, Akt II 11, Akt III 9), Σ DurationMin ~51 h typisch / ~41 h Story-Fokus (K01 §7.4), 10 Akkorde, 10 Story-Bosse, W1–W9 je an genau einer Quest (P01, A1_06, A1_08, A2_01, A2_05, A2_07, A2_10, A3_02, A3_08). Vier Leitmotive: Weltlied, Stille, Ilen, Krone.

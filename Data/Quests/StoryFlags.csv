@@ -10,3 +10,5 @@ FLAG_KONTOR_CRATES,Umgang mit den Kontor-Kisten,0..2,MQ_A2_03,"0 geliefert, 1 ge
 FLAG_YSOLDE_BOND,Nähe zu Ysolde,-2..2,MQ_A2_05|MQ_A2_08|MQ_A3_*,"Dialoge in Akt III, Ysoldes Szene vor dem Finale (nur Ton, nie Inhalt)"
 FLAG_SHELTER,Unterschlupf nach dem Verrat,FS|WW,MQ_A2_08,"FS bei FLAG_FS_STANCE ≥ 0, sonst WW (Wildwacht); Ortsbezug Akt III"
 FLAG_W6_DONE,Verrat erlebt (System),0..1,MQ_A2_07,"Varianten der dritten freien Region (K45 §9); nicht vom Spieler wählbar"
+FLAG_ENDING,Gewähltes Ende,NewSong|SoftSilence,MQ_A3_08,"Weltzustand Nachhall (Data Layer), Resonanzsinn bzw. schlafende Stimmen; Endgame identisch (DR-19)"
+FLAG_EPILOG_TABLEAU,Epilog-Schlussbild (System),0..3,MQ_A3_09,"Anzahl positiver Vignetten: 3 Voller Chor, 2 Zwei Stimmen, 1 Eine Stimme, 0 Der eigene Chor"
