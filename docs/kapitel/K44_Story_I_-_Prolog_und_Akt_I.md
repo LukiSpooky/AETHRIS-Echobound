@@ -330,10 +330,10 @@ Alle Zwischensequenzen sind überspringbar, In-Engine (Sequencer), mit Echtzeit-
 | Name | Act | Order | Region | Title | Prerequisite | Truth | Intensity | DurationMin | Boss | Akkord | Rewards |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | MQ_P01 | Prolog | 1 | R01 | Ein Ton im Dunkel | Spielstart | W1 | 7 | 52 |  |  | Starter-Echo, Resonanzsinn |
-| MQ_P02 | Prolog | 2 | R01 | Der verstummte Wächter | MQ_P01 | W1 | 6 | 40 | BOSS_P01 |  | Resonator, 300 Wärter-EP |
+| MQ_P02 | Prolog | 2 | R01 | Der verstummte Wächter | MQ_P01 | – | 6 | 40 | BOSS_P01 |  | Resonator, 300 Wärter-EP |
 | MQ_P03 | Prolog | 3 | R01 | Was der Wald erzählt | MQ_P02 | – | 3 | 88 |  |  | Gleiter, erster Resonanzstein, 500 Wärter-EP |
 | MQ_A1_01 | Akt I | 1 | R01 | Die Arena der Wurzeln | MQ_P03 | – | 5 | 120 |  | ARN_01 | Akkord der Wurzeln, Wildwacht-Lizenz, Bodensattel |
-| MQ_A1_02 | Akt I | 2 | R01 | Stille über Lindwald | MQ_A1_01 | W1 | 7 | 75 | BOSS_A1_01 |  | 1.500 Wärter-EP, Klangfragment-Hinweis |
+| MQ_A1_02 | Akt I | 2 | R01 | Stille über Lindwald | MQ_A1_01 | – | 7 | 75 | BOSS_A1_01 |  | 1.500 Wärter-EP, Klangfragment-Hinweis |
 | MQ_A1_03 | Akt I | 3a | R02 | Fels und Ahnen | MQ_A1_02 | – | 6 | 180 |  | ARN_02 | Akkord des Fels, Klettersattel |
 | MQ_A1_04 | Akt I | 3b | R03 | Nebel über dem Moor | MQ_A1_02 | – | 6 | 180 |  | ARN_03 | Akkord des Nebels, Schwimmsattel (falls noch nicht) |
 | MQ_A1_05 | Akt I | 3c | R06 | Gezeiten und Handel | MQ_A1_02 | – | 6 | 180 |  | ARN_06 | Akkord der Gezeiten, Schwimmsattel (falls noch nicht) |

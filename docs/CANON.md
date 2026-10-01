@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K47
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K48
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -398,6 +398,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-179 | Keine automatische Rufkopplung zwischen Fraktionen | K47 |
 | ADR-180 | Ordensruf ab dem Verrat, Handel ab Akt III | K47 |
 | ADR-181 | Tageskappen je Rufquelle über die Spieluhr | K47 |
+| ADR-182 | Tagebuch trennt Quests von Aufgaben | K48 |
+| ADR-183 | Deterministische Bedingungssprache mit Index | K48 |
+| ADR-184 | Quests schenken Begegnungen, keine gebundenen Echos | K48 |
+| ADR-185 | Genau ein aktueller Schritt je Quest | K48 |
+| ADR-186 | Nebenquest-Gerüst generiert und vor dem Schreiben festgelegt | K48 |
 
 ## §11 Change Requests
 
@@ -1814,3 +1819,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §184 Fraktionen über die Story (LOCKED, K47 §9)
 
 - Zustände je Akt und im Nachhall (Akademie kommissarisch Aevrin Thal; Kontor-Satzung „Klangtreue“; Wildwacht pflegt Stillezonen; Freie Stimmen verbündet/Untergrund; Orden Hospiz/Splittergruppen). Dialoge werten Rang (≥ 4 / ≤ 3) × Haltung (Flag) getrennt aus; Dilemmata geben Ruf, nehmen keinen, und bieten eine dritte Lösung.
+
+## §185 Questarten & Quest-Bibel (LOCKED, K48 §1–§3)
+
+- Hauptquest `MQ_*` (32) · Nebenquest `SQ_###` (210) · Fraktionskette `FQ_F##_##` (18 Container) · Auftrag `CT_R##_##` · Kodex-Aufgabe · Weltereignis `WE_*` · Echo-Bitte `EB_*`. Tagebuch trennt Quests von Aufgaben (ADR-182). Regeln QR-01–QR-12 (u. a. jede Quest erzählt, Verstehen-Schritt, kein reines Sammeln, dritte Lösung, sichtbare Folgen, keine Zeitnot, ≥ 25 % mit Tageszeit/Wetter/Mond, Belohnungsmischung, L-01). Nebenquests 15–45 min, Intensität ≤ 6 (Kettenabschluss bis 7).
+
+## §186 Questdaten, Zieltypen, Bedingungen, EP (LOCKED, K48 §5–§8 · `ObjectiveTypes.csv`, `MainQuestSteps.csv`, `Data/World/StoryPOIs.csv`)
+
+- 21 Zieltypen `OBJ_*` (neue Zieltypen = neue Primitiva, DR-25). 98 Hauptquest-Schritte. Story-POIs im Nummernkreis 9001+. Deterministische Bedingungssprache (`&`, `|`, `!`, Vergleiche; Akkorde, Rank.F##, Flag.X, Quest.Id, Act/Time/Weather/Moon/Region/Ending/Truth) (ADR-183). Hauptquest-Meilenstein-EP = 150 + 50 × Intensität + Aktzuschlag 0/100/200/200, Boss × 1,5, Arena 0; Nebenquest-EP = (300 + 40 × Dauer) × 1,0/1,3/1,6/1,8; Kettenabschluss × 1,5 (≤ 2.000). Keine geschenkten gebundenen Echos (ADR-184).
+
+## §187 Nebenquest-Gerüst (LOCKED, K48 §4 · `Data/Quests/SideQuests.csv`, `tools/authoring/sq_plan.py`)
+
+- Nummerierung nach Akt-Reihenfolge: R01 SQ_001–024 · R02 025–046 · R03 047–067 · R06 068–090 · R04 091–112 · R05 113–131 · R07 132–151 · R08 152–172 · R09 173–190 · R10 191–210. 120 Fraktionsquests (F01 27, F02 27, F03 28, F04 26, F05 12), 90 in 6 Kategorien (Echo-Geschichte, Menschen, Forschung, Rätsel & Ruinen, Wärterprüfung, Weltereignis). Ketten: je 4 à 4 Quests (Orden 2 à 6). ~20 % öffnen später (Akt II/III/Nachhall); Orden ab Akt III. Kapitel: K49 SQ_001–070, K50 071–140, K51 141–210.
+
+## §188 Questsystem-Technik (LOCKED, K48 §10–§11 · `QuestDefinition.h`, `Services/QuestService.h`, `tools/gen_quests.py`)
+
+- Zustände Hidden → Available → Active (↔ Deferred) → Completed; genau ein aktueller Schritt (ADR-185); ObjectiveRouter + Bedingungs-Index (kein Polling, ≤ 0,2 ms/Ereignis). Save-Fragmente `Player.Quests` (mit StepId-Migration), `Player.StoryFlags`, `World.QuestConsequences`. Koop host-autoritativ, Belohnungen je Welt. Hinweisstufen Lauschend/Geführt (Standard)/Markiert; Untersuchungsziele nie exakt markiert. Validator QV-01–QV-10 in CI.

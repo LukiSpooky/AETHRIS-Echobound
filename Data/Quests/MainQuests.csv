@@ -1,10 +1,10 @@
 # Hauptquests (K44–K46; ~32 laut K07 §14). Truth = enthüllte Wahrheitsebene (CANON §38). Intensity 1–10 (DR-29 Atemzug-Regel). Prerequisite: Quest-ID oder Bedingung.
 Name,Act,Order,Region,Title,Prerequisite,Truth,Intensity,DurationMin,Boss,Akkord,Rewards,Summary
 MQ_P01,Prolog,1,R01,Ein Ton im Dunkel,Spielstart,W1,7,52,,,"Starter-Echo, Resonanzsinn","Erwachen in Lindwiesen, Ysolde und Kael, Stillezone bricht im Lindwald aus, Spurwahl und Erstresonanz"
-MQ_P02,Prolog,2,R01,Der verstummte Wächter,MQ_P01,W1,6,40,BOSS_P01,,"Resonator, 300 Wärter-EP","Kampf gegen den verstummten Lorncant, Ysolde versiegelt die Zone, Rivalenkampf gegen Kael"
+MQ_P02,Prolog,2,R01,Der verstummte Wächter,MQ_P01,–,6,40,BOSS_P01,,"Resonator, 300 Wärter-EP","Kampf gegen den verstummten Lorncant, Ysolde versiegelt die Zone, Rivalenkampf gegen Kael"
 MQ_P03,Prolog,3,R01,Was der Wald erzählt,MQ_P02,–,3,88,,,"Gleiter, erster Resonanzstein, 500 Wärter-EP","Freie Zone Lindwald, Beobachtungen, Ruine mit Klangrätsel, Gleitpanorama, Reise nach Eichenhall"
 MQ_A1_01,Akt I,1,R01,Die Arena der Wurzeln,MQ_P03,–,5,120,,ARN_01,"Akkord der Wurzeln, Wildwacht-Lizenz, Bodensattel","Eichenhall: Wildwacht-Lizenz bei Hralda Brakk, Vorprüfung, Maelis Wendt"
-MQ_A1_02,Akt I,2,R01,Stille über Lindwald,MQ_A1_01,W1,7,75,BOSS_A1_01,,"1.500 Wärter-EP, Klangfragment-Hinweis","Die Zone kehrt zurück; Stillkern um Vernaune; Stillezonen in drei Regionen gemeldet – der Weg teilt sich"
+MQ_A1_02,Akt I,2,R01,Stille über Lindwald,MQ_A1_01,–,7,75,BOSS_A1_01,,"1.500 Wärter-EP, Klangfragment-Hinweis","Die Zone kehrt zurück; Stillkern um Vernaune; Stillezonen in drei Regionen gemeldet – der Weg teilt sich"
 MQ_A1_03,Akt I,3a,R02,Fels und Ahnen,MQ_A1_02,–,6,180,,ARN_02,"Akkord des Fels, Klettersattel","Kharsholm, Torvik Hrall, Ahnenfelsen, Stillezone am Grat, Kletterreiten"
 MQ_A1_04,Akt I,3b,R03,Nebel über dem Moor,MQ_A1_02,–,6,180,,ARN_03,"Akkord des Nebels, Schwimmsattel (falls noch nicht)","Morvenfurt, Freie Stimmen in der Unterstadt, Evhe Corrach (nachts), Moorgemeinde"
 MQ_A1_05,Akt I,3c,R06,Gezeiten und Handel,MQ_A1_02,–,6,180,,ARN_06,"Akkord der Gezeiten, Schwimmsattel (falls noch nicht)","Saltrand-Hafen, Marieke Holm und das Kontor, Beke Tamsen, verstummte Fischgründe"

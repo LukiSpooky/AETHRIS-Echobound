@@ -191,7 +191,7 @@ Rufpunkte  0      300        900          2.000              4.000              
 
 **Aufträge:** Ruf = `BaseSol / 5` der Auftragsvorlage (K13 §4): CT_OBSERVE 16, CT_PHOTO 18, CT_BOND 28, CT_GATHER 14, CT_DELIVER 22, CT_ESCORT 32, CT_CALM 40, CT_RESCUE 24, CT_SILENCE 48, CT_SURVEY 26. Die Fraktion steht in der Spalte `Faction` der Vorlage. Abklingzeiten der Vorlagen (1–3 Spieltage) begrenzen die Rate natürlich.
 
-**Nebenquests (K49–K51):** Von den 210 Nebenquests gehören **~120** einer Fraktion (je ~24–28; Orden 12, ab Akt III). Jede Fraktion hat **vier Questketten** (Rang 2/3/4/5 als Einstieg), die mit 400 Ruf abschließen; einzelne Quests geben 150.
+**Nebenquests (K49–K51):** Von den 210 Nebenquests gehören **~120** einer Fraktion (je ~24–28; Orden 12, ab Akt III). Jede Fraktion hat **vier Questketten** (Rang 2/3/4/5 als Einstieg; Orden: zwei – FQ_F05_01 ab Akt III, FQ_F05_02 im Nachhall, K48 §4), die mit 400 Ruf abschließen; einzelne Quests geben 150.
 
 ### 4.2 Hauptquests mit Rufbezug
 

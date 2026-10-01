@@ -1,0 +1,14 @@
+# Story-POIs der Hauptquests (K48 §7). Nummernkreis 9001+ je Region (CANON §23: POI_R##_####); LD legt Koordinaten fest (K57).
+Name,Alias,RegionId,DisplayName
+POI_R01_9001,RUIN,R01,Ruine am Lindwald (Gleiter-Fund)
+POI_R03_9001,TOWER,R03,Versunkener Turm unter Morvenfurt
+POI_R04_9001,GLASSPLAIN,R04,Glasebene-Turm
+POI_R04_9002,SUNCOURT_DIG,R04,Akademie-Grabung am Sonnenhof-Plateau
+POI_R05_9001,CAMP,R05,Kontor-Lager am Kraterrand
+POI_R07_9001,EIDVIK,R07,Ruinen von Eiðvik
+POI_R07_9002,GLACIER,R07,Gletscher über der Gletscherwacht
+POI_R08_9001,THRONE,R08,Thronsaal-Gewölbe des Archon Maedryn
+POI_R08_9002,VAULT,R08,Akademie-Gewölbe unter der Halle der Grundfrequenzen
+POI_R09_9001,CHAMBER,R09,Resonanzkammer von Prismara
+POI_R09_9002,DISSONANCE,R09,Tiefste Missklang-Adern
+POI_R10_9001,CROWNYARD,R10,Kronenwerft

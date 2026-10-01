@@ -49,7 +49,7 @@ def repl(m):
         return gl.show(" ".join(parts[1:]))
     if parts[0] == "csvf":   # gefiltert: csvf PATH COLS FILTERCOL=WERT
         col, val = " ".join(parts[3:]).split("=", 1)
-        rows = [r for r in csv.DictReader(l for l in open(ROOT / parts[1], encoding="utf-8") if not l.startswith("#")) if r[col] == val]
+        rows = [r for r in csv.DictReader(l for l in open(ROOT / parts[1], encoding="utf-8") if not l.startswith("#")) if r[col] in val.split("|")]
         cols = parts[2].split(",")
         return "\n".join(["| " + " | ".join(cols) + " |", "|" + "---|" * len(cols)] + ["| " + " | ".join(r[c] for c in cols) + " |" for r in rows])
     if parts[0] == "count":

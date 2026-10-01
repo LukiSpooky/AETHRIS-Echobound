@@ -362,14 +362,10 @@ Die drei freien Regionen und der Zeitpunkt der Wende erzeugen sechs Reihenfolgen
 | Vertrauen Kael | -2..2 | MQ_P02|MQ_A1_07|MQ_A2_*|MQ_A3_* | Kaels Umkehr (immer), Epilog Kael gerettet/an Venns Seite verloren (nie tot) |
 | Respekt Sereth | -2..2 | MQ_A1_06|MQ_A2_*|MQ_A3_* | Sereths Angebot im Finale (immer möglich), Epilog Sereth versöhnt/gebrochen |
 | Schuld beim Kontor | 0..1 | MQ_A1_05 | Marieke Holms Gefallen in Akt II |
-| Starterlinie | Bloom|Stone|Storm | MQ_P01 | Kaels Starter (Vorteil), Dialogvarianten |
-| Region der W2-Enthüllung | R02|R03|R06 | MQ_A1_06 | Ortsbezug späterer Dialoge |
 | Umgang mit den Kontor-Kisten | 0..2 | MQ_A2_03 | 0 geliefert, 1 geöffnet und geliefert, 2 zurückgegeben; Mariekes Haltung in Akt III, Kontor-Ruf (K47) |
 | Nähe zu Ysolde | -2..2 | MQ_A2_05|MQ_A2_08|MQ_A3_* | Dialoge in Akt III, Ysoldes Szene vor dem Finale (nur Ton, nie Inhalt) |
 | Unterschlupf nach dem Verrat | FS|WW | MQ_A2_08 | FS bei FLAG_FS_STANCE ≥ 0, sonst WW (Wildwacht); Ortsbezug Akt III |
 | Verrat erlebt (System) | 0..1 | MQ_A2_07 | Varianten der dritten freien Region (K45 §9); nicht vom Spieler wählbar |
-| Gewähltes Ende | NewSong|SoftSilence | MQ_A3_08 | Weltzustand Nachhall (Data Layer), Resonanzsinn bzw. schlafende Stimmen; Endgame identisch (DR-19) |
-| Epilog-Schlussbild (System) | 0..3 | MQ_A3_09 | Anzahl positiver Vignetten: 3 Voller Chor, 2 Zwei Stimmen, 1 Eine Stimme, 0 Der eigene Chor |
 
 | Entscheidung | Quest | Wirkung in Akt II | Wirkung später |
 |---|---|---|---|
