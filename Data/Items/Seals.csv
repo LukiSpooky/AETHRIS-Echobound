@@ -1,0 +1,10 @@
+# Siegel (K36 §6): Verbrauchsgut, am Resonator angeschlagen (nicht geworfen). ThresholdBonus senkt die Bindungsschwelle (DR-01: kleiner als Wissensbonus). Nicht käuflich: Stimmsiegel, Sternensiegel.
+Name,DisplayName,Tier,ThresholdBonus,WindowPermille,Sources,PriceSol,Description
+ITM_SEAL_BASIC,Klangsiegel,1,0,1000,Händler|Crafting,150,Einfaches Siegel aus Resonanzharz
+ITM_SEAL_TUNED,Gestimmtes Siegel,2,40,1050,Händler (ab Akkord 2)|Crafting,450,Mit Stimmgabel nachgestimmt
+ITM_SEAL_MASTER,Meistersiegel,3,80,1100,Händler (ab Akkord 5)|Crafting,1200,Dorunisches Muster; ruhige Hand nötig
+ITM_SEAL_TYPE,Klangfarben-Siegel,2,60,1000,Crafting (Obertonkristall),–,+60 nur für Echos der eingebrannten Klangfarbe (15 Varianten)
+ITM_SEAL_NIGHT,Mondsiegel,2,60,1000,Crafting (Mondmoos),–,+60 nur nachts (Tagesphase Nacht)
+ITM_SEAL_HEAVY,Erdsiegel,2,60,1000,Crafting (Erz),–,+60 nur für Größe L und größer
+ITM_SEAL_VOICE,Stimmsiegel,4,0,1000,Story (je Ursprungsstimme 1),–,Pflicht für Ursprungsstimmen; nicht kaufbar/handelbar
+ITM_SEAL_STAR,Sternensiegel,4,0,1000,Endgame (Mythische),–,Pflicht für Mythische; je Mythisches 1

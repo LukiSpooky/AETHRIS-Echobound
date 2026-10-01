@@ -264,7 +264,7 @@ class AETHRISCORE_API IBondingService
 	GENERATED_BODY()
 public:
 	/** Vorschau der Bindungschance in Promille für UI und KI (K36). */
-	virtual int32 PreviewBondChancePermille(const FGuid& WildEchoId, FPrimaryAssetId SealItem) const = 0;
+	virtual FBondPreview PreviewBond(const FGuid& WildEchoId, FPrimaryAssetId SealItem) const = 0; // CR-002 (K36): ersetzt PreviewBondChancePermille
 
 	/** Startet die Anschlag-Phase; Ergebnis kommt als Event.Echo.Bonded oder Event.Bond.Failed. */
 	virtual bool BeginStrikePhase(const FGuid& WildEchoId, FPrimaryAssetId SealItem, bool bFromCombat) = 0;

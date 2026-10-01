@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "tools/ref"))
 import aethris_combat as ac
 import gen_combat_data as gcd
 import aethris_ai as aai
+import aethris_bond as abd
 
 
 def table_csv(path, cols=None):
@@ -30,7 +31,7 @@ def repl(m):
     if parts[0] == "csv":
         return table_csv(parts[1], parts[2] if len(parts) > 2 else None)
     if parts[0] == "file":
-        return {"combat_report_speed": ac.report_speed, "combat_report_levels": ac.report_levels, "combat_sample_log": ac.sample_log, "combat_matrix": ac.report_matrix, "combat_examples": ac.example_table, "combat_power": ac.power_table, "combo_matrix": gcd.combo_matrix, "chord_examples": gcd.chord_examples, "ai_matrix": lambda: aai.matrix(150), "ai_explain": aai.explain, "ai_kits": aai.kit_table, "boss_table": ac.boss_table}[parts[1]]()
+        return {"combat_report_speed": ac.report_speed, "combat_report_levels": ac.report_levels, "combat_sample_log": ac.sample_log, "combat_matrix": ac.report_matrix, "combat_examples": ac.example_table, "combat_power": ac.power_table, "combo_matrix": gcd.combo_matrix, "chord_examples": gcd.chord_examples, "ai_matrix": lambda: aai.matrix(150), "ai_explain": aai.explain, "ai_kits": aai.kit_table, "boss_table": ac.boss_table, "bond_scenarios": abd.scenarios}[parts[1]]()
     if parts[0] == "py":   # py MODUL FUNKTION [ARGS]
         import importlib
         return str(getattr(importlib.import_module(parts[1]), parts[2])(*parts[3:]))

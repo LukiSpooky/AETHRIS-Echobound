@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K35
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K36
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -347,12 +347,17 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-128 | Weiches Anschwellen statt hartem Timer | K35 |
 | ADR-129 | Raid-Belohnungen gleich für alle, kein Sperrtimer | K35 |
 | ADR-130 | Instanzierte Bindung Mythischer im Raid | K35 |
+| ADR-131 | Resonanzbindung deterministisch (Resonanz gegen Schwelle + Timing) | K36 |
+| ADR-132 | Teilerfolg Annäherung statt Fehlschlag | K36 |
+| ADR-133 | Kodex-Bonus größer als Siegelbonus | K36 |
+| ADR-134 | Timing gegen Audio-Uhr mit Kalibrierung | K36 |
 
 ## §11 Change Requests
 
 | CR | Datum | Betrifft | Änderung | Begründung | Genehmigt |
 |---|---|---|---|---|---|
 | CR-001 | K14 | §17 „Zeit vorspulen … Wetter wird neu gewürfelt“ | Präzisiert: Zeit vorspulen springt im **deterministischen Wetterfahrplan** (§61) in einen späteren Block – neues Wetter, aber reproduzierbar; Laden eines Saves ändert das Wetter nicht | Determinismus, Koop-Synchronität, kein Save-Scumming (ADR-066) | Game Director, Tech Director |
+| CR-002 | K36 | §29/K06 §5 `IBondingService::PreviewBondChancePermille` | Ersetzt durch `PreviewBond` → `FBondPreview` (Resonanz, Schwelle, Fenster, Versuche) | Resonanzbindung ist deterministisch (kein Prozentwurf, DR-03/DR-07) | Game Director, Tech Director |
 
 ## §12 Offene Punkte (PROVISIONAL-Tracker)
 
@@ -369,7 +374,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q9 | ~~Tagesphasen-Stundengrenzen~~ ✅ K14 §3 | K15 |
 | Q10 | ~~Hauptquartiere der Fraktionen~~ ✅ K07: Hauptsitze festgelegt | K47 |
 | Q11 | Bewegungs-/Ausdauer-/Gleiter-Tuning (Startwerte K02 §4.1) | K40 |
-| Q12 | Bindungs-Timingfenster (Startwerte K02 §4.2) | K36 |
+| Q12 | ~~Bindungs-Timingfenster (Startwerte K02 §4.2)~~ ✅ K36 §5: Gut 160–400 ms nach Resonanz × Temperament × Siegel, Perfekt 25 % (min. 60 ms) | K36 |
 | Q13 | Arena-Stufentabelle (Startwerte K02 §9.2) | K63 |
 | Q14 | Wärterrang-EP-Kurve (Startwerte K02 §13.2) | K43/K63 |
 
@@ -1540,3 +1545,25 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §131 Boss-Verzeichnis (LOCKED, K35 §5–§9 · `Data/Combat/Bosses.csv`)
 
 - 28 Bosse: 10 Story (Prolog bis Velnox-Finale), 8 Raids RAID_01–08 (RAID_06 Zenthrax), 10 Tiefenresonanzen DR_01–10 (DR_08 Zenthrax solo). Raid-HP-Faktoren 10–13, Skalierung 700 ‰. Mythische Bindung im Fenster ≤ 15 % HP, instanziert je Teilnehmer; Velnox im Finale nicht bindbar (Nachhall „Stille Stunde“). Stille-Echos werden durch Sieg geheilt.
+
+## §132 Resonanzbindung – Ablauf (LOCKED, K36 §2)
+
+- Lauschen (Resonanzsinn) → Annähern (Entdeckungsradius × Temperament × Wetter) → Einstimmen (Köder, Summen, Falle) **oder** Kampf → Anschlag. Dauer ohne Kampf 20–60 s.
+
+## §133 Resonanzwert & Schwellen (LOCKED, K36 §3–§4 · `tools/ref/aethris_bond.py`)
+
+- R = clamp(Kodex 0/60/120/180/240 + Annäherung 0–150 + Köder (−50/+100/+200 Lieblingsköder) + Falle 100–200 + min(250, 0,3 × HP-Verlust‰) + Status 50 + Tageszeit 50 − 10 je Level über Chor+10, 0, 1000); Annäherung (Teilerfolg) +100.
+- Schwellen: Häufig 150 · Ungewöhnlich 250 · Selten 400 · Sehr selten 550 · Alpha 600 · Ursprungsstimme 750 (+Stimmsiegel) · Mythisch 750 (+Sternensiegel). **Kein Erfolgswurf.**
+
+## §134 Anschlag & Fenster (LOCKED, K36 §5–§6 – löst Q12)
+
+- Gut-Fenster = (160 + 240 × R/1000) ms × Temperament‰ × Siegel‰ (× 1,75 Option); Perfekt = max(60, 25 %); Versuche Ruhig 4, Neugierig/Stoisch 3, Feurig/Wachsam 2.
+- Einklang: Perfekt und R ≥ Schwelle − 100 (Bindungsstart +100); Bindung: Gut und R ≥ Schwelle (+50); Annäherung: Timing ok, R zu niedrig (+100 R); Verfehlt: Temperament-Reaktion. Timing gegen Quartz-Audiouhr.
+
+## §135 Siegel, Fallen, Lockmittel (LOCKED, K36 §7 · `Data/Items/Seals.csv`, `Traps.csv`, `Lures.csv`)
+
+- 8 Siegel (Schwellenbonus 0/40/80, bedingt 60; Stimm-/Sternensiegel nicht käuflich), Verbrauch nur beim Anschlag; 8 Fallen (max. 1 je Bindung, Weltobjekt 10 Spielminuten); Lockmittel-Wirkung laut K36 §7.3.
+
+## §136 Bindungs-Sonderfälle (LOCKED, K36 §9–§10)
+
+- Bindung im Kampf: Aktion Zeitkosten 100, nur letztes Wildecho (oder Ruhenetz), verklungene Echos nicht bindbar, EP ×1,2. Prolog unscheiterbar; Alpha nur mit Kampf; Stille-Echos nicht bindbar; Stimmen: 3 Pulse; Mythische im Fenster ≤ 15 %; Koop-Beiträge zählen; Eiserner Wärter: nur erster Versuch; Freilassen-Option (Wildwacht-Ruf).
