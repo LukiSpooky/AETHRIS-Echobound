@@ -1,0 +1,358 @@
+# K35 · Kampfsystem V – Bosse, Raids und Tiefenresonanz-Kämpfe
+
+| Feld | Wert |
+|---|---|
+| Dokument | Kapitel 35 von 68 · Combat Guide, Teil VIII |
+| Version | 1.0 |
+| Owner | Lead Encounter Designer |
+| Mitwirkende | Lead Combat Designer, Lead AI Programmer, Online-Programmierer (Raid-Netcode), Narrative (Story-Bosse), Cinematics, Audio (Boss-Themen), Balancing Analyst |
+| Baut auf | CANON §6.1 (Raid-Format), §17 (Raid 1–4, Solo-Variante offline), §34 (Mythische, Zenthrax RAID_06/DR_08), §38 (Story-Rückgrat), §109–§127 (Kampfsystem, KI), DR-06, DR-14, DR-19, DR-20, DR-23 |
+| Status | ✅ Freigegeben |
+| Im Repository | `Data/Combat/Bosses.csv` (28 Bosse), `Data/Combat/BossMechanics.csv` (18 Mechaniken), `tools/ref/aethris_combat.py::boss_table` |
+| Neue Kanon-Einträge | CANON §128 (Boss-Anatomie), §129 (Raid-Format), §130 (Boss-Mechaniken), §131 (Boss-Verzeichnis) |
+
+---
+
+## Inhalt
+
+1. [Was ist ein Boss in AETHRIS?](#1-was-ist-ein-boss-in-aethris)
+2. [Boss-Anatomie](#2-boss-anatomie)
+3. [Das Raid-Format](#3-das-raid-format)
+4. [Mechanik-Katalog](#4-mechanik-katalog)
+5. [Boss-Verzeichnis](#5-boss-verzeichnis)
+6. [Story-Bosse](#6-story-bosse)
+7. [Raids](#7-raids)
+8. [Tiefenresonanz-Bosse](#8-tiefenresonanz-bosse)
+9. [Mythische Bosse und Bindung](#9-mythische-bosse-und-bindung)
+10. [Skalierung und Balancing](#10-skalierung-und-balancing)
+11. [Inszenierung](#11-inszenierung)
+12. [Code](#12-code)
+13. [Tests](#13-tests)
+14. [Decision Records](#14-decision-records)
+15. [Kanon-Änderungen](#15-kanon-änderungen)
+16. [Kapitel-Checkliste](#16-kapitel-checkliste)
+
+---
+
+## 1. Was ist ein Boss in AETHRIS?
+
+Ein **Boss** ist ein Kampf, der eine **eigene Regel** lehrt oder prüft. Er ist nie nur „ein Echo mit mehr HP“. Jeder Boss kombiniert 2–4 **Mechaniken** aus einem gemeinsamen Katalog (§4), die alle **angekündigt** sind (DR-06) und ein **Gegenspiel** besitzen. Bosse sind die Stellen, an denen das Spiel fragt: *Hast du die Zeitleiste verstanden? Kannst du Harmonie aufsparen? Weißt du, wann du die Reihe räumst?*
+
+| Prinzip | Umsetzung |
+|---|---|
+| Lesbar | Jede Mechanik hat Symbol, Ton, Ankündigungsdauer (≥ 1 Runde) |
+| Fair | Keine Ein-Treffer-Auslöschungen ohne Ankündigung; kein harter Timer (DR-23) – nur weiches „Anschwellen“ |
+| Lehrreich | Story-Bosse prüfen genau die Schichten, die bis dahin eingeführt wurden (K33 §1) |
+| Erzählend | Mechaniken tragen die Story-Wahrheiten (Stillezähler = Ausbreitung der Stille, W1–W3) |
+| Allein schaffbar | Jeder Raid hat eine Solo-Variante (DR-19, CANON §17) |
+
+---
+
+## 2. Boss-Anatomie
+
+```
+┌──────────────────────────── BOSS ─────────────────────────────┐
+│ Basisart (BaseSpecies)  → Typen, Werte-Profil, Animations-Rig  │
+│ Level, HP-Faktor, Spieler-Skalierung                           │
+│ Spuren (Tracks): 1–3 Marker je Runde auf der Zeitleiste        │
+│   Spur A: Hauptaktion (KI-Profil AI_BOSS + Skript)             │
+│   Spur B: Mechanik-Takt (Ankündigungen, Zähler)                │
+│   Spur C: Teile/Begleiter (Schwachstelle, Adds)                │
+│ Phasen: HP-Schwellen (z. B. 70/40/15 %) → Phasenwechsel         │
+│ Mechaniken: 2–4 aus dem Katalog, je Phase aktivierbar           │
+│ Weiches Anschwellen ab Runde N (×1,1 je Runde, max. ×1,5)        │
+└────────────────────────────────────────────────────────────────┘
+```
+
+| Element | Regel |
+|---|---|
+| **Basisart** | Bosse sind Echos (oder von Echos getragen, z. B. Venns Kronvaal); Typen und Typtabelle gelten normal |
+| **Spuren** | Ein Boss besitzt bis zu 3 Marker auf der Zeitleiste; jede Spur hat eigene GES-Basis (Haupt = Art, Mechanik = fest 100, Teile = Art × 0,8) |
+| **HP** | Art-HP (Anlage 15) × HP-Faktor × (1 + Spieler-Skalierung × (Spieler − 1)) |
+| **Phasen** | Bei Erreichen einer Schwelle: Ankündigung „Phasenwechsel“, der laufende Schaden wird an der Schwelle gekappt (kein Überspringen), Mechaniken der neuen Phase aktivieren sich, ≤ 4 s Inszenierung |
+| **Status** | Bosse haben je Status nach zweimaliger Anwendung 3 Runden Immunität (Anti-Lock); Starre wirkt auf Bosse als +50 Ticks statt Zugverlust |
+| **Fremdverzögerung** | Deckel 100 Ticks je Spur (K31 §6.1) |
+| **Bindung** | nur Mythische, im Bindungsfenster (§9) |
+
+---
+
+## 3. Das Raid-Format
+
+| Regel | Wert |
+|---|---|
+| Spieler | 1–4 (Raid ab Wärterrang 22) |
+| Echos je Spieler | 2 Aktive aus dem eigenen Chor (Spieler mit < 4 Mitspielern: 3 Aktive bei 2 Spielern, Trio bei Solo) + Rest Reserve |
+| Formation | Gemeinsame Vorderreihe (max. 4) und Hinterreihe (max. 4); mind. 1 Echo je Spieler vorn |
+| Harmonie | gemeinsam für alle Spieler; Crescendos aller Spieler aus derselben Leiste (Ankündigungen max. 1 je Runde) |
+| Zugtimer | 30 s je Zug, gleichzeitige Planung bei gleichem Tick (K31 §9) |
+| Wiederbelebung | jedes Echo 1× je Raid durch Revive; Rückklang des ganzen Raids erst, wenn alle Echos aller Spieler verklungen sind |
+| Verbindungsabbruch | Ersatz-KI 60 s, dann übernimmt der Host |
+| Solo-Variante | Trio des Spielers gegen Boss mit HP × 0,6 und Mechaniken in „Solo-Takt“ (Ankündigungen +1 Runde) – vollständig offline (DR-19) |
+| Belohnungen | gleich für alle Teilnehmer, nach Beitrag **nicht** gewichtet; Koop-Boni nie Machtvorteile (DR-20); Details K62 |
+| Kein Sperrsystem | Raids sind beliebig wiederholbar; Erstabschluss-Belohnung je Spieltag (K62) – kein wöchentlicher Sperrtimer für Kernfortschritt (DR-23) |
+
+```
+                      ┌──────────── BOSS (3 Spuren) ─────────────┐
+                      │   [Kern]      [Schwachstelle]   [Begleiter]│
+                      └────────────────────────────────────────────┘
+   Vorderreihe:  P1-Echo A │ P2-Echo A │ P3-Echo A │ P4-Echo A
+   Hinterreihe:  P1-Echo B │ P2-Echo B │ P3-Echo B │ P4-Echo B
+   Harmonie (gemeinsam) ▰▰▰▰▰▰▱▱▱▱   · Zeitleiste: 8 Spieler-Echos + 3 Boss-Spuren
+```
+
+---
+
+## 4. Mechanik-Katalog
+
+| DisplayName | Announce | Effect | CounterPlay | Formats |
+|---|---|---|---|---|
+| Großwelle | Ankündigung 2 Runden vorher | Flächenschaden 45 % Max-HP auf eine Reihe | Reihe räumen, Schilde ≥ 25 %, Verzögern (Deckel gilt) | Alle |
+| Begleitchor | Banner bei Phasenwechsel | Beschwört 2 Begleit-Echos (eigene Zeitleistenspur) | Begleiter zuerst oder Flächen; Begleiter geben Harmonie | Alle |
+| Klangpanzer | Symbol der benötigten Klangfarbe | Boss nimmt nur von einem Typ vollen Schaden (andere 250 ‰) | Typ wechseln; rotiert je Phase | Raid|Tiefenresonanz |
+| Stillepuls | Ankündigung 1 Runde | Entzieht 30 Harmonie aller Gegner; Verstummt 1 Zug für Echos ohne Schild | Schild, Klangfeld, Crescendo vor dem Puls | Alle |
+| Umwälzung | Zähler am Boss | Vertauscht alle Reihen der Spielerseite | Bind/Wurzelgriff schützt einzelne Echos; Formation für beide Zustände planen | Raid |
+| Schwachstelle | Leuchtender Teil | Ein Körperteil nimmt ×1,6 Schaden für 2 Runden | Fokus-Feuer; Geist ignoriert Formation des Teils | Raid|Tiefenresonanz |
+| Taktraub | Pulsierender Ring | Boss stiehlt 50 Ticks vom schnellsten Spieler-Echo und rückt vor | Verzögern vor dem Raub; Taktgefühl/Immunität | Raid |
+| Anschwellen | Rundenzähler sichtbar | Ab Runde N: Boss-Fähigkeiten ×1,1 je Runde (max. ×1,5) | Schaden priorisieren; kein harter Zeitdruck (DR-23) | Alle |
+| Feldwechsel | Vorschau des nächsten Terrains | Terrain wechselt alle 3 Runden in fester Folge | Gegen-Terrain legen (Neutralisation) | Alle |
+| Spiegelung | Spiegelsymbol | Reflektiert die erste Fähigkeit jeder Kategorie pro Runde | Status-Fähigkeit zuerst; Reveal beendet | Tiefenresonanz |
+| Klangband | Leuchtendes Band | Verbindet zwei Spieler-Echos: Schaden wird geteilt | Band durch Reihenwechsel lösen (Zeitkosten 40) | Raid |
+| Lastenklang | Stapelsymbol | Stapelnder Debuff auf der Seite (−5 % GES je Stapel, max. 6) | Reinigen (Gruppe) setzt zurück | Raid|Tiefenresonanz |
+| Nachklang-Heilung | Ankündigung (Charge) | Boss heilt 15 % Max-HP, wenn die Aufladung nicht unterbrochen wird | Starre, Verstummt, Verzögerung bis nach Phasenende | Alle |
+| Stillezähler | Großer Zähler über dem Feld | Bei 0: Stillefeld 3 Runden und Harmonie aller Spieler 0 | Zähler sinkt nur bei Boss-Zügen; Crescendo setzt +2 | Story|Raid |
+| Bindungsfenster | Klangmal leuchtet | Unter 15 % HP kann der Boss (Mythisch) gebunden werden (K36) | Schaden dosieren, Beruhigen | Mythisch |
+| Stimmspaltung | Zwei Marker | Boss teilt sich in zwei Hälften (je 50 % HP); beide müssen binnen 2 Runden fallen | Schaden gleichmäßig verteilen | Raid |
+| Schwerebrunnen | Wirbel am Boden | Zieht alle Echos jede Runde in die Vorderreihe | Schwebend/Bind schützen; Hinterreihen-Plan aufgeben | Raid|Tiefenresonanz |
+| Resonanzflut | Weltlied-Akkord | Harmonie aller ×2 für 2 Runden (beide Seiten) | Eigenes Crescendo in das Fenster legen | Mythisch|Raid |
+
+**Kombinationsregeln:** höchstens 4 Mechaniken je Boss, höchstens 2 gleichzeitig aktiv je Phase; „Großwelle“ und „Stillezähler“ nie in derselben Runde fällig; jede Mechanik muss ein Gegenspiel aus einer **anderen** Klangfarbe als der des Bosses erlauben (Vielfalt der Chöre).
+
+---
+
+## 5. Boss-Verzeichnis
+
+Alle 28 Bosse mit berechneten HP-Werten (Anlage 15 der Basisart, Faktor, Spieler-Skalierung 700 ‰ je weiterem Spieler; Solo-Raid = ×0,6):
+
+| Boss | Basis (Lv.) | Basis-HP (Anlage 15) | ×Faktor | HP Solo/1 | HP 2 Spieler | HP 4 Spieler | Phasen | Mechaniken |
+|---|---|---|---|---|---|---|---|---|
+| Verstummter Wächter | Lorncant (6) | 57 | ×3 | 171 | – | – | 50 % | Countdown, PhaseHeal |
+| Stillkern von Lindwald | Vernaune (14) | 101 | ×4 | 404 | – | – | 60/25 % | Countdown, Adds, SilencePulse |
+| Ordenskommandant am Kharsgrat | Kraggoth (24) | 138 | ×4 | 552 | – | – | 50 % | SilencePulse, TerrainCycle, Adds |
+| Stillkern im Morvenmoor | Umbracoil (28) | 120 | ×5 | 600 | – | – | 60/25 % | Countdown, PhaseHeal, Adds |
+| Glaskoloss der Weite | Dunmarsch (42) | 212 | ×5 | 1060 | – | – | 70/40 % | AnnounceWave, Mirror, SoftEnrage |
+| Venns Schatten (Hvitfell) | Tysvorn (50) | 198 | ×5 | 990 | – | – | 60/30 % | SilencePulse, Countdown, TimelineSteal |
+| Kronensplitter-Wächter (Ael'Dorun) | Thaelarch (55) | 268 | ×6 | 1608 | – | – | 70/40/15 % | TypeShield, Weakpoint, Adds |
+| Missklang-Hydra (Prismtiefen) | Missgrath (62) | 229 | ×6 | 1374 | – | – | 70/40/15 % | Split, Stack, SilencePulse |
+| Aldric Venn mit der Resonanzkrone | Kronvaal (68) | 248 | ×7 | 1736 | – | – | 70/40/15 % | Countdown, TypeShield, TimelineSteal, ResonanceSurge |
+| Velnox – die Große Pause | Velnox (70) | 330 | ×8 | 2640 | – | – | 75/50/25 % | Countdown, SilencePulse, GravityWell, ResonanceSurge |
+| Brandkoloss | Sengrath (80) | 314 | ×10 | 1884 | 5338 | 9734 | 70/40/15 % | AnnounceWave, TerrainCycle, Adds, SoftEnrage |
+| Gezeitenleviathan | Ariuna (82) | 339 | ×10 | 2034 | 5763 | 10509 | 70/40/15 % | RowSwap, AnnounceWave, Tether, SoftEnrage |
+| Bergfürst Orh-Schatten | Orh'gruun (84) | 458 | ×11 | 3022 | 8564 | 15617 | 70/40/15 % | GravityWell, TypeShield, Weakpoint, SoftEnrage |
+| Sturmkrone | Nimbaroth (86) | 396 | ×11 | 2613 | 7405 | 13503 | 70/40/15 % | TimelineSteal, Split, Stack, SoftEnrage |
+| Spiegelkönigin | Klirrathan (88) | 311 | ×11 | 2052 | 5815 | 10605 | 70/40/15 % | Mirror, TypeShield, Adds, SoftEnrage |
+| Zenthrax – Sternenfall | Zenthrax (90) | 401 | ×12 | 2887 | 8180 | 14917 | 75/50/25 % | GravityWell, AnnounceWave, Weakpoint, BindWindow |
+| Missklang-Urquell | Missgrath (92) | 323 | ×12 | 2325 | 6589 | 12015 | 70/40/15 % | SilencePulse, Stack, Split, Countdown |
+| Nachhall der Stille | Velnox (95) | 433 | ×13 | 3377 | 9569 | 17449 | 75/50/25 % | Countdown, ResonanceSurge, GravityWell, TimelineSteal |
+| Wurzelwächter | Myrthorn (72) | 286 | ×8 | 2288 | – | – | 60/25 % | PhaseHeal, Weakpoint, Stack |
+| Gratschlund | Ponderath (74) | 298 | ×8 | 2384 | – | – | 60/25 % | GravityWell, AnnounceWave |
+| Versunkener Turmgeist | Irraune (76) | 280 | ×8 | 2240 | – | – | 60/25 % | Mirror, SilencePulse |
+| Glutsandkönig | Sengrath (78) | 307 | ×9 | 2763 | – | – | 60/25 % | TerrainCycle, AnnounceWave |
+| Kraterherz | Nucleox (80) | 286 | ×9 | 2574 | – | – | 60/25 % | PhaseHeal, GravityWell |
+| Tiefseegrotten-Echo | Aquadral (82) | 300 | ×9 | 2700 | – | – | 60/25 % | RowSwap, TypeShield |
+| Gletscherdom-Wache | Kjalgrund (84) | 387 | ×10 | 3870 | – | – | 60/25 % | Countdown, Stack |
+| Zenthrax (Solo) | Zenthrax (88) | 393 | ×12 | 4716 | – | – | 75/50/25 % | GravityWell, AnnounceWave, BindWindow |
+| Resonanzkammer-Herz | Stalakkord (90) | 360 | ×11 | 3960 | – | – | 70/40/15 % | Split, Mirror, Weakpoint |
+| Sternenarena-Echo | Astraviel (95) | 333 | ×12 | 3996 | – | – | 70/40/15 % | ResonanceSurge, TimelineSteal, TypeShield |
+
+---
+
+## 6. Story-Bosse
+
+Die zehn Story-Bosse folgen dem Story-Rückgrat (CANON §38). Jeder prüft eine Schicht und trägt eine Wahrheit:
+
+| Boss | Akt / Ort | Geprüfte Schicht | Erzählfunktion |
+|---|---|---|---|
+| Verstummter Wächter (Lorncant) | Prolog, Lindwald | Zeitleiste, Ankündigung | Erste Begegnung mit der Stille (W1); Sieg heilt das Echo |
+| Stillkern von Lindwald (Vernaune) | Akt I, Verdanthain | Stillezähler, Adds | Die Stille breitet sich aus – Zähler = Bedrohung sichtbar |
+| Ordenskommandant am Kharsgrat (Kraggoth) | Akt I Mitte | Terrainwechsel, Stillepuls | W2: Der Orden verstärkt Zonen mit Stillsteinen |
+| Stillkern im Morvenmoor (Umbracoil) | Akt I Ende | Phasen-Heilung unterbrechen | W3: Der Riegel um Velnox schwächelt – das Moor „atmet“ Stille |
+| Glaskoloss der Weite (Dunmarsch) | Akt II | Großwelle, Spiegelung | Spur zur Hochkultur (Glasebene) |
+| Venns Schatten (Tysvorn) | Akt II, Hvitfell | Taktraub, Stillezähler | W6-Vorahnung: jemand steuert den Orden |
+| Kronensplitter-Wächter (Thaelarch) | Akt II, Ael'Dorun | Klangpanzer, Schwachstelle | W7: Maedryns Krone und Ilens Tat |
+| Missklang-Hydra (Missgrath) | Akt III, Prismtiefen | Stimmspaltung, Lastenklang | Der Missklang wird körperlich |
+| Aldric Venn mit der Resonanzkrone (Kronvaal) | Akt III, Nimbara | alles: Zähler, Panzer, Taktraub, Resonanzflut | W8: Venn aktiviert die Krone |
+| Velnox – die Große Pause | Finale | Stille selbst: Zähler, Puls, Schwerebrunnen | W9: Rückgabe des Nachklangs entscheidet das Ende (K46) |
+
+**DR-09:** Story-Bosse sind auf „Wärter“ ohne Kombos/Formation schaffbar – Mechaniken sind über Grundwerkzeuge konterbar (Schild, Verzögern, Reihe räumen). Auf „Entspannt“ dauern Ankündigungen eine Runde länger.
+
+**Stille-Echos heilen:** Wie im Prolog etabliert, werden Stille-Echos durch einen Sieg geheilt, nicht gebunden; Lorncant, Vernaune und Umbracoil kehren danach als **normale Wildechos** in ihre Zonen zurück (Weltreaktion, DR-13).
+
+---
+
+## 7. Raids
+
+Acht Raids (`RAID_01–08`) bilden das kooperative Endgame (K62). Sie sind um je ein Thema gebaut:
+
+| Raid | Thema | Kernfrage an die Gruppe |
+|---|---|---|
+| RAID_01 Brandkoloss | Feldkontrolle | Wer legt die Gegen-Terrains im Feldwechsel? |
+| RAID_02 Gezeitenleviathan | Reihen | Wie bleibt die Formation nach jeder Umwälzung funktionsfähig? |
+| RAID_03 Bergfürst Orh-Schatten | Typenwechsel | Wer bringt die Klangfarbe für den nächsten Klangpanzer? |
+| RAID_04 Sturmkrone | Zeitleiste | Wer verzögert vor dem Taktraub, wer verteilt Schaden auf beide Hälften? |
+| RAID_05 Spiegelkönigin | Reihenfolge | Welche Kategorie zuerst, um Spiegelung zu „verbrauchen“? |
+| RAID_06 Zenthrax – Sternenfall | Mythisch | Schwachstelle fokussieren, Schwerebrunnen überstehen, Bindungsfenster nutzen |
+| RAID_07 Missklang-Urquell | Harmonie | Wie überlebt die Gruppe Stillepuls + Zähler ohne Harmonie? |
+| RAID_08 Nachhall der Stille | Meisterprüfung | Alle Mechaniken; der „Epilog-Kampf“ des Nachhalls |
+
+**Raid-Rollen** entstehen aus Typ-Identitäten, nicht aus Klassen: *Anker* (Stein/Metall: Schild, Spott), *Taktgeber* (Klang/Frost/Sturm: Zeitleiste), *Heiler* (Blüte/Licht/Flut), *Brecher* (Geist/Kristall/Arkan: Schwachstelle, Panzer). Jede Rolle ist mit Echos aus mindestens drei Regionen besetzbar.
+
+---
+
+## 8. Tiefenresonanz-Bosse
+
+Tiefenresonanzen (`DR_01–DR_10`, Endgame-Dungeons, Struktur in K62) enden in einem Boss, der die Region seines Ortes spiegelt. Sie werden im **Trio** gespielt (Solo oder Koop bis 3 Spieler) und besitzen 2–3 Mechaniken. **DR_08** ist der Solo-Weg zu Zenthrax (CANON §34, DR-19) und spiegelt RAID_06 mit eigenem Takt.
+
+| DR | Ort | Boss | Fokus |
+|---|---|---|---|
+| DR_01 | Wurzelhalle (R01) | Wurzelwächter (Myrthorn) | Heilung unterbrechen |
+| DR_02 | Schlund (R02) | Gratschlund (Ponderath) | Schwerebrunnen + Großwelle |
+| DR_03 | Versunkener Turm (R03) | Turmgeist (Irraune) | Spiegelung + Stillepuls |
+| DR_04 | Sonnenhof-Tiefe (R04) | Glutsandkönig (Sengrath) | Feldwechsel |
+| DR_05 | Kraterherz (R05) | Kraterherz (Nucleox) | Heilung + Schwerkraft |
+| DR_06 | Tiefseegrotte (R06) | Tiefseegrotten-Echo (Aquadral) | Reihen + Klangpanzer |
+| DR_07 | Gletscherdom (R07) | Gletscherdom-Wache (Kjalgrund) | Zähler + Lastenklang |
+| DR_08 | Sternenfall-Krater | Zenthrax (Solo) | Mythischer Solo-Weg |
+| DR_09 | Resonanzkammer (R09) | Resonanzkammer-Herz (Stalakkord) | Spaltung, Spiegel, Schwachstelle |
+| DR_10 | Sternenarena-Tiefe (R10) | Sternenarena-Echo (Astraviel) | Resonanzflut, Taktraub, Panzer |
+
+Die Tiefenresonanz-Orte liegen unter den Schlafstätten der Ursprungsstimmen (ADR-038) und sind nach dem Erwachen der jeweiligen Stimme zugänglich (K62).
+
+---
+
+## 9. Mythische Bosse und Bindung
+
+Mythische Echos haben immer einen Solo-Weg (CANON §8). Für die als Boss auftretenden Mythischen (Zenthrax in RAID_06/DR_08; Velnox im Finale, bindbar erst im Nachhall) gilt:
+
+| Regel | Wert |
+|---|---|
+| Bindungsfenster | ab ≤ 15 % HP: Klangmal leuchtet (Mechanik `MECH_BIND_WINDOW`) |
+| Bindung | Resonanzbindung (K36) mit Spezialsiegel; Erfolg garantiert, wenn der Bindungsdialog fehlerfrei gelingt (DR-03, DR-07: kein Glückswurf) |
+| Raid | Jeder Teilnehmer, der die Bindung noch nicht besitzt, erhält eine eigene Bindungsszene (instanziert) – niemand „schnappt“ anderen das Mythische weg |
+| Verfehlte Bindung | Boss verklingt; neuer Versuch beim nächsten Abschluss (keine Strafe) |
+| Velnox | Finale-Begegnung nicht bindbar; im Nachhall eigene Begegnung „Stille Stunde“ (K46/K62) mit Bindungsfenster |
+
+---
+
+## 10. Skalierung und Balancing
+
+**Ziel-Kampfdauern** (DR-11 erweitert): Story-Boss 5–10 min · Tiefenresonanz-Boss 8–12 min · Raid 12–20 min (4 Spieler) · Solo-Raid 15–25 min.
+
+Überschlagsrechnung (K32-Formel, Lv. 80, 4 Spieler mit je 2 Echos):
+
+| Größe | Wert |
+|---|---|
+| Schaden je Schadensaktion (Stärke 90, Eigenklang, neutral) | ≈ 90 |
+| Anteil Schadensaktionen (Rest: Schild, Heilung, Tempo, Mechanik-Antworten) | ≈ 55 % |
+| Aktionen je Runde (8 Echos, Ø 1,0) | ≈ 8 |
+| Schaden je Runde | ≈ 400 |
+| Brandkoloss (4 Spieler) 9.734 HP | ≈ 24 Runden ≈ 14 min |
+| Nachhall der Stille (4 Spieler) 17.449 HP | ≈ 40 Runden ≈ 20 min (Meisterprüfung) |
+
+Weiches Anschwellen beginnt bei Raids nach Runde 30 (Story: 20, Tiefenresonanz: 25) und sorgt dafür, dass Kämpfe nicht endlos werden, ohne einen harten Timer zu setzen.
+
+---
+
+## 11. Inszenierung
+
+| Element | Vorgabe |
+|---|---|
+| Boss-Einführung | Kamerafahrt ≤ 6 s, überspringbar; Name + Titel + Klangfarben-Symbole |
+| Phasenwechsel | ≤ 4 s; Musik wechselt Layer (Quartz-synchron, K55) |
+| Ankündigungen | Symbol über dem Boss + Zeitleisten-Marker + Bodenmarkierung (Reihe) + Ton |
+| Bosse sind Echos | Boss-Animationen nutzen das Rig der Basisart (K57) mit Boss-Zusatz-Clips; keine Sonder-Skelette (Pipeline-Kosten) |
+| Musik | Jeder Story-Boss hat ein Thema auf dem Leitmotiv seiner Region (CANON §56); Raids teilen sich ein Raid-Thema mit Varianten |
+
+---
+
+## 12. Code
+
+```cpp
+// GF_Combat – Boss als Kämpfer mit mehreren Spuren
+UCLASS() class UBossDefinition : public UAethrisDefinition
+{
+    GENERATED_BODY()
+public:
+    UPROPERTY(EditAnywhere) TSoftObjectPtr<UEchoSpeciesDefinition> BaseSpecies;
+    UPROPERTY(EditAnywhere) int32 Level = 50;
+    UPROPERTY(EditAnywhere) int32 HPFactor = 5;
+    UPROPERTY(EditAnywhere) int32 PlayerScalePermille = 0;
+    UPROPERTY(EditAnywhere) TArray<int32> PhaseThresholdsPercent;      // absteigend
+    UPROPERTY(EditAnywhere) TArray<FGameplayTag> Mechanics;            // Boss.Mechanic.*
+    UPROPERTY(EditAnywhere) int32 Tracks = 1;
+};
+
+int32 Aethris::Boss::MaxHP(int32 SpeciesHP, int32 HPFactor, int32 PlayerScalePermille, int32 Players, bool bSoloRaid)
+{
+    int64 HP = int64(SpeciesHP) * HPFactor * (1000 + PlayerScalePermille * (Players - 1)) / 1000;
+    return int32(bSoloRaid ? HP * 600 / 1000 : HP);
+}
+
+void UBossController::OnDamaged(FCombatContext& Ctx, int32& InOutDamage)
+{
+    const int32 Next = NextThresholdHP();                               // Schwelle wird nicht übersprungen
+    if (Next > 0 && Boss.HP - InOutDamage < Next) { InOutDamage = Boss.HP - Next; EnterNextPhase(Ctx); }
+}
+```
+
+Mechaniken sind `UBossMechanic`-Primitiva in der Combat-Registry (Tag `Boss.Mechanic.*`), konfiguriert über `BossMechanics.csv`; Bosse sind reine Daten (DR-25).
+
+---
+
+## 13. Tests
+
+| Test | Inhalt |
+|---|---|
+| `Aethris.Unit.Boss.HP` | HP-Formel inkl. Spielerzahl, Solo-Raid |
+| `…Boss.PhaseClamp` | Schaden wird an Schwelle gekappt, Phasenwechsel genau einmal |
+| `…Boss.MechanicAnnounce` | jede Mechanik ≥ 1 Runde angekündigt (Daten-Validierung) |
+| `…Boss.StatusAntiLock` | zweimal derselbe Status → 3 Runden Immunität |
+| `Aethris.Func.Raid.Netcode` | 4 Clients, 30 Runden, Desync-Prüfung per Zustands-Hash je Runde |
+| `Aethris.Func.Raid.Solo` | jeder Raid solo offline abschließbar (Bot-Lauf, K66) |
+
+---
+
+## 14. Decision Records
+
+| ADR | Entscheidung | Begründung | Verworfen |
+|---|---|---|---|
+| ADR-127 | Bosse = Basisart + Spuren + Phasen + Mechanik-Primitiva | Wiederverwendung, DR-25, lesbar | Handgebaute Bosskämpfe (teuer, inkonsistent) |
+| ADR-128 | Weiches Anschwellen statt hartem Timer | DR-23, Fairness | Enrage-Timer mit Auslöschung |
+| ADR-129 | Raid-Belohnungen gleich für alle, nicht beitragsgewichtet; kein Sperrtimer | DR-20, DR-23, Koop-Klima | Beitrags-Ranking (toxisch), Wochen-Sperren |
+| ADR-130 | Instanzierte Bindung Mythischer im Raid | Kein Wettlauf um Mythische, Solo-Weg bleibt | Erster gewinnt |
+
+---
+
+## 15. Kanon-Änderungen
+
+| Bereich | Eintrag | Status |
+|---|---|---|
+| §128 | Boss = Basisart + 1–3 Spuren + Phasen (HP-Schwellen, Schaden gekappt) + 2–4 Mechaniken; HP = Art-HP (Anlage 15) × Faktor × (1 + Skalierung × (Spieler−1)); Status-Anti-Lock (2× → 3 Runden immun), Starre = +50 Ticks; weiches Anschwellen ×1,1/Runde (max. ×1,5) ab Runde 20/25/30 | LOCKED |
+| §129 | Raid: 1–4 Spieler (ab Rang 22), 2 Aktive je Spieler (2 Spieler: 3; Solo: Trio), gemeinsame Formation (je max. 4) und Harmonie, 1 Revive je Echo, Solo-Variante HP ×0,6 offline, gleiche Belohnungen, kein Sperrtimer | LOCKED |
+| §130 | 18 Boss-Mechaniken (`BossMechanics.csv`), alle angekündigt mit Gegenspiel; max. 4 je Boss, 2 aktiv je Phase | LOCKED |
+| §131 | 28 Bosse (`Bosses.csv`): 10 Story, 8 Raids (RAID_06 Zenthrax), 10 Tiefenresonanz (DR_08 Zenthrax solo); Mythische Bindung instanziert im Bindungsfenster ≤ 15 % | LOCKED |
+| §10 | ADR-127 – ADR-130 | LOCKED |
+
+---
+
+## 16. Kapitel-Checkliste
+
+- [x] Boss-Philosophie und Anatomie (Spuren, Phasen, HP-Formel)
+- [x] Raid-Format für 1–4 Spieler inkl. Solo-Variante (offline)
+- [x] 18 Boss-Mechaniken als Daten mit Gegenspiel
+- [x] 28 Bosse als Daten (Story, Raids, Tiefenresonanzen), HP berechnet
+- [x] Story-Bosse an Story-Wahrheiten gebunden; Raid-Themen und Rollen
+- [x] Mythische Bosse und instanzierte Bindung
+- [x] Skalierung/Balancing-Überschlag, Inszenierung, Code, Tests
+- [x] ADR-127 – ADR-130, CANON §128–§131
+
+➡️ **Nächstes Kapitel: K36 – Resonanzbindung: das Fangsystem (Annäherung, Beruhigen, Locken, Fallen, Timing) – löst Q12.**

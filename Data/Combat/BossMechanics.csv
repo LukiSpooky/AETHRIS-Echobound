@@ -1,0 +1,20 @@
+# Boss-Mechaniken (K35 §4): wiederverwendbare Primitiva; Bosse kombinieren 3–6 davon. Alle Mechaniken sind angekündigt (DR-06, DR-14) und haben Gegenspiel.
+Name,DisplayName,Announce,Effect,CounterPlay,Formats
+MECH_ANNOUNCE_WAVE,Großwelle,Ankündigung 2 Runden vorher,"Flächenschaden 45 % Max-HP auf eine Reihe","Reihe räumen, Schilde ≥ 25 %, Verzögern (Deckel gilt)",Alle
+MECH_ADDS,Begleitchor,Banner bei Phasenwechsel,"Beschwört 2 Begleit-Echos (eigene Zeitleistenspur)","Begleiter zuerst oder Flächen; Begleiter geben Harmonie",Alle
+MECH_TYPE_SHIELD,Klangpanzer,Symbol der benötigten Klangfarbe,"Boss nimmt nur von einem Typ vollen Schaden (andere 250 ‰)","Typ wechseln; rotiert je Phase",Raid|Tiefenresonanz
+MECH_SILENCE_PULSE,Stillepuls,Ankündigung 1 Runde,"Entzieht 30 Harmonie aller Gegner; Verstummt 1 Zug für Echos ohne Schild","Schild, Klangfeld, Crescendo vor dem Puls",Alle
+MECH_ROW_SWAP,Umwälzung,Zähler am Boss,"Vertauscht alle Reihen der Spielerseite","Bind/Wurzelgriff schützt einzelne Echos; Formation für beide Zustände planen",Raid
+MECH_WEAKPOINT,Schwachstelle,Leuchtender Teil,"Ein Körperteil nimmt ×1,6 Schaden für 2 Runden","Fokus-Feuer; Geist ignoriert Formation des Teils",Raid|Tiefenresonanz
+MECH_TIMELINE_STEAL,Taktraub,Pulsierender Ring,"Boss stiehlt 50 Ticks vom schnellsten Spieler-Echo und rückt vor","Verzögern vor dem Raub; Taktgefühl/Immunität",Raid
+MECH_SOFT_ENRAGE,Anschwellen,Rundenzähler sichtbar,"Ab Runde N: Boss-Fähigkeiten ×1,1 je Runde (max. ×1,5)","Schaden priorisieren; kein harter Zeitdruck (DR-23)",Alle
+MECH_TERRAIN_CYCLE,Feldwechsel,Vorschau des nächsten Terrains,"Terrain wechselt alle 3 Runden in fester Folge","Gegen-Terrain legen (Neutralisation)",Alle
+MECH_MIRROR,Spiegelung,Spiegelsymbol,"Reflektiert die erste Fähigkeit jeder Kategorie pro Runde","Status-Fähigkeit zuerst; Reveal beendet",Tiefenresonanz
+MECH_TETHER,Klangband,Leuchtendes Band,"Verbindet zwei Spieler-Echos: Schaden wird geteilt","Band durch Reihenwechsel lösen (Zeitkosten 40)",Raid
+MECH_STACK,Lastenklang,Stapelsymbol,"Stapelnder Debuff auf der Seite (−5 % GES je Stapel, max. 6)","Reinigen (Gruppe) setzt zurück",Raid|Tiefenresonanz
+MECH_PHASE_HEAL,Nachklang-Heilung,Ankündigung (Charge),"Boss heilt 15 % Max-HP, wenn die Aufladung nicht unterbrochen wird","Starre, Verstummt, Verzögerung bis nach Phasenende",Alle
+MECH_COUNTDOWN,Stillezähler,Großer Zähler über dem Feld,"Bei 0: Stillefeld 3 Runden und Harmonie aller Spieler 0","Zähler sinkt nur bei Boss-Zügen; Crescendo setzt +2",Story|Raid
+MECH_BIND_WINDOW,Bindungsfenster,Klangmal leuchtet,"Unter 15 % HP kann der Boss (Mythisch) gebunden werden (K36)","Schaden dosieren, Beruhigen",Mythisch
+MECH_SPLIT,Stimmspaltung,Zwei Marker,"Boss teilt sich in zwei Hälften (je 50 % HP); beide müssen binnen 2 Runden fallen","Schaden gleichmäßig verteilen",Raid
+MECH_GRAVITY_WELL,Schwerebrunnen,Wirbel am Boden,"Zieht alle Echos jede Runde in die Vorderreihe","Schwebend/Bind schützen; Hinterreihen-Plan aufgeben",Raid|Tiefenresonanz
+MECH_RESONANCE_SURGE,Resonanzflut,Weltlied-Akkord,"Harmonie aller ×2 für 2 Runden (beide Seiten)","Eigenes Crescendo in das Fenster legen",Mythisch|Raid

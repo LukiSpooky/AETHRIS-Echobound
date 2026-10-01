@@ -292,6 +292,26 @@ def power_table():
     return "\n".join(out) + f"\n\nReferenz-Echo Lv. 50: HP {hp_}, Kernwerte {a}."
 
 
+def boss_table():
+    sp = {r["Name"]: r for r in load_species()}
+    rows = [r for r in csv.DictReader(l for l in open(ROOT / "Data/Combat/Bosses.csv", encoding="utf-8") if not l.startswith("#"))]
+    out = ["| Boss | Basis (Lv.) | Basis-HP (Anlage 15) | ×Faktor | HP Solo/1 | HP 2 Spieler | HP 4 Spieler | Phasen | Mechaniken |",
+           "|---|---|---|---|---|---|---|---|---|"]
+    for r in rows:
+        b = sp[r["BaseSpecies"]]
+        lv = int(r["Level"])
+        hp_ = st.hp(int(b["HP"]), lv, 15)
+        f = int(r["HPFactor"])
+        sc = int(r["PlayerScale"])
+        one = hp_ * f
+        two = one * (1000 + sc) // 1000
+        four = one * (1000 + 3 * sc) // 1000
+        solo = one * 600 // 1000 if sc else one
+        mech = ", ".join(m.replace("MECH_", "").title().replace("_", "") for m in r["Mechanics"].split("|"))
+        out.append(f"| {r['DisplayName']} | {b['DisplayName']} ({lv}) | {hp_} | ×{f} | {solo} | {two if sc else '–'} | {four if sc else '–'} | {r['Phases'].replace('|', '/')} % | {mech} |")
+    return "\n".join(out)
+
+
 def sample_log():
     """Durchgerechnetes Duo-Beispiel (K31 §13.2): Wisplet & Brokkar gegen Uvlet & Kharsgrat-Spinne (Ligrel)."""
     rng = AethrisRandom(0xC31, 0x7)

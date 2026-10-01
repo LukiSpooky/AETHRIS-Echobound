@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K34
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K35
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -343,6 +343,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-124 | Wild-KI aus Merkmalen und Temperament | K34 |
 | ADR-125 | Fairness-Regeln F-1 bis F-5 | K34 |
 | ADR-126 | Adaptiver Rivale mit einer Anpassung je Begegnung | K34 |
+| ADR-127 | Bosse als Basisart + Spuren + Phasen + Mechanik-Primitiva | K35 |
+| ADR-128 | Weiches Anschwellen statt hartem Timer | K35 |
+| ADR-129 | Raid-Belohnungen gleich für alle, kein Sperrtimer | K35 |
+| ADR-130 | Instanzierte Bindung Mythischer im Raid | K35 |
 
 ## §11 Change Requests
 
@@ -1519,3 +1523,20 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §127 Arenameister & Rivale (LOCKED, K34 §7)
 
 - Signatur-Taktik je Arena als Gewichts-Overlay + Startaktion passend zur Feldregel; Rivale Kael adaptiv mit genau einer Anpassung je Begegnung (aus Spielstand, offline).
+
+## §128 Boss-Anatomie (LOCKED, K35 §2)
+
+- Boss = Basisart + 1–3 Spuren auf der Zeitleiste + Phasen (HP-Schwellen; Schaden an der Schwelle gekappt) + 2–4 Mechaniken. HP = Art-HP (Anlage 15) × HP-Faktor × (1 + Skalierung‰ × (Spieler − 1)).
+- Status-Anti-Lock (gleicher Status 2× → 3 Runden immun); Starre auf Bosse = +50 Ticks; Fremdverzögerungs-Deckel je Spur; weiches Anschwellen ×1,1 je Runde (max. ×1,5) ab Runde 20 (Story) / 25 (Tiefenresonanz) / 30 (Raid) – kein harter Timer.
+
+## §129 Raid-Format (LOCKED, K35 §3)
+
+- 1–4 Spieler ab Wärterrang 22; 2 Aktive je Spieler (2 Spieler: 3; Solo: Trio); gemeinsame Vorder-/Hinterreihe (je max. 4), gemeinsame Harmonie, 1 Revive je Echo; Solo-Variante offline (HP ×0,6, Ankündigungen +1 Runde); Belohnungen gleich für alle; kein Sperrtimer (Erstabschluss je Spieltag, K62).
+
+## §130 Boss-Mechaniken (LOCKED, K35 §4 · `Data/Combat/BossMechanics.csv`)
+
+- 18 Mechaniken, alle angekündigt (≥ 1 Runde) mit Gegenspiel aus einer anderen Klangfarbe als der des Bosses; max. 4 je Boss, 2 aktiv je Phase.
+
+## §131 Boss-Verzeichnis (LOCKED, K35 §5–§9 · `Data/Combat/Bosses.csv`)
+
+- 28 Bosse: 10 Story (Prolog bis Velnox-Finale), 8 Raids RAID_01–08 (RAID_06 Zenthrax), 10 Tiefenresonanzen DR_01–10 (DR_08 Zenthrax solo). Raid-HP-Faktoren 10–13, Skalierung 700 ‰. Mythische Bindung im Fenster ≤ 15 % HP, instanziert je Teilnehmer; Velnox im Finale nicht bindbar (Nachhall „Stille Stunde“). Stille-Echos werden durch Sieg geheilt.
