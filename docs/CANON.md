@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K32
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K33
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -333,6 +333,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-114 | Volltreffer ×1,5 ignoriert ungünstige Stufen | K32 |
 | ADR-115 | Ein Haupt-Status ohne Überschreiben | K32 |
 | ADR-116 | Gegen-Terrains neutralisieren | K32 |
+| ADR-117 | Zwei Reihen mit Hinterreihen-Schutz 750 ‰ und Kontaktregel | K33 |
+| ADR-118 | Kombos über Typfolge und 60-Tick-Fenster | K33 |
+| ADR-119 | Harmonie als gemeinsame Seitenleiste | K33 |
+| ADR-120 | Chor-Akkorde als kleine Kompositions-Synergie | K33 |
+| ADR-121 | Leihbegleitung bei nicht freigeschaltetem Arena-Format | K33 |
 
 ## §11 Change Requests
 
@@ -1467,3 +1472,27 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §118 Kampfwetter (LOCKED, K32 §7)
 
 - Kampf übernimmt Weltwetter der Zone; `Weather(X,n)` überschreibt n Runden; Sonderregeln je Runde (Blitz alle 4 Runden, Sand −4 %, Aurora +5 Harmonie …); Ranked Klar; unter Tage nur Resonanzsturm und Fähigkeitswetter; Schilde addieren bis 50 % Max-HP; Revive 1× je Echo/Kampf.
+
+## §119 Formation (LOCKED, K33 §2–§3)
+
+- Vorder-/Hinterreihe in Duo (VV/VH), Trio (mind. 1 vorn), Raid (K35); Duell ohne Formation.
+- Kontakt-Fähigkeiten nur gegen die Vorderreihe (außer IgnoreFormation oder leere Vorderreihe); übrige Fähigkeiten gegen Hinterreihe ×750 ‰.
+- Hinterreihe: keine Kontakt-Fähigkeiten; Heilung/Schilde ×1,1; Status-Fähigkeiten +2 Harmonie. Leere Vorderreihe → Hinterreihe rückt kostenlos vor.
+- Stellungswechsel Zeitkosten 40 (Flutfeld 20, Schwerefeld 60); Schwebend/Bind verhindern Reihenwechsel.
+
+## §120 Harmonie-Ökonomie (LOCKED, K33 §4)
+
+- Leiste 0–100 je Seite. Quellen: Treffer +5, sehr effektiv +8, Kombo +10–20, Fehlschlag +5, erlittener Volltreffer +5, verklungener Verbündeter +10, Daten (Harmony), Wetter/Terrain. Senken: Crescendo, HarmonyDrain, Stillefeld, Entzug, Missklang (½).
+
+## §121 Kombos (LOCKED, K33 §5–§6 · `Data/Combat/Combos.csv`)
+
+- 36 Kombos: Typ First → Typ Second, zwei verschiedene Verbündete, gleiches Ziel, Fenster 60 Ticks (+20 Bindungs-Duett); Bonus 1100–1400 ‰ auf die zweite Fähigkeit + Effekte + Harmonie; 1 Kombo je Ziel/Auflösung; Fehlschlag behält Anklang; Gegner können kombinieren. Jeder Typ ≥ 4 Kombos.
+
+## §122 Synergien (LOCKED, K33 §7 · `Data/Combat/Chords.csv`)
+
+- 15 Chor-Akkorde (jeder Typ in 3), wirksam bei je ≥ 1 Echo der drei Typen im Chor; max. 2 aktiv; +10 Start-Harmonie, Typen ×1,05. Bindungs-Duett (beide Bindungsstufe ≥ 4): Fenster +20, erste Kombo +5. Linienklang (2 Echos einer Linie): +5. Start-Harmonie aus Synergien ≤ 30.
+
+## §123 Formate & Begegnungen (LOCKED, K33 §8–§10)
+
+- Duell 1+5, Duo 2+4 (ab Rang 5), Trio 3+3 (ab Rang 10), Raid 4 Spieler (ab Rang 22). Arena-Formate laut K02 §9.2; Leihbegleitung bei fehlender Freischaltung.
+- Begegnungen: Einzel (Duell), Herde (Format = Anzahl), Alpha, Wärter, Rivale, Arena, Stille-Echo (Sieg heilt, keine Bindung), Boss/Raid, PvP. Koop: Format nach Spielerzahl, gemeinsame Harmonie, Kombos zwischen Spielern.

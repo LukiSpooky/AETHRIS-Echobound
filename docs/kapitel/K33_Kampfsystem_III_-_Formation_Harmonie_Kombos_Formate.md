@@ -1,0 +1,435 @@
+# K33 · Kampfsystem III – Formation, Harmonie, Kombos, Synergien und Formate
+
+| Feld | Wert |
+|---|---|
+| Dokument | Kapitel 33 von 68 · Combat Guide, Teil VI |
+| Version | 1.0 |
+| Owner | Lead Combat Designer |
+| Mitwirkende | RPG Systems Designer, UX Lead (Formation/Harmonie-UI), Online-Designer (Koop-Kampf), Balancing Analyst, Audio Lead (Kombo-Akkorde) |
+| Baut auf | CANON §6 (Chor, Harmonie, Formation, Formate §6.1), DR-09 (Story ohne Kombos/Formation gewinnbar), §106 (Crescendo), §109–§118 (Zeitleiste, Schaden), K02 §9.2 (Arena-Formate) |
+| Status | ✅ Freigegeben |
+| Im Repository | `Data/Combat/Combos.csv` (36 Kombos), `Data/Combat/Chords.csv` (15 Chor-Akkorde), `tools/gen_combat_data.py` (Validator) |
+| Neue Kanon-Einträge | CANON §119 (Formation), §120 (Harmonie-Ökonomie), §121 (Kombos), §122 (Synergien), §123 (Formate & Begegnungsarten) |
+
+---
+
+## Inhalt
+
+1. [Taktische Schichten](#1-taktische-schichten)
+2. [Formation: Vorder- und Hinterreihe](#2-formation-vorder--und-hinterreihe)
+3. [Positionswechsel](#3-positionswechsel)
+4. [Harmonie](#4-harmonie)
+5. [Kombos](#5-kombos)
+6. [Die 36 Kombos](#6-die-36-kombos)
+7. [Synergien: Chor-Akkorde, Bindungs-Duett, Linienklang](#7-synergien-chor-akkorde-bindungs-duett-linienklang)
+8. [Formate](#8-formate)
+9. [Begegnungsarten](#9-begegnungsarten)
+10. [Koop-Kampf](#10-koop-kampf)
+11. [Lesbarkeit und UI](#11-lesbarkeit-und-ui)
+12. [Code](#12-code)
+13. [Tests und Telemetrie](#13-tests-und-telemetrie)
+14. [Decision Records](#14-decision-records)
+15. [Kanon-Änderungen](#15-kanon-änderungen)
+16. [Kapitel-Checkliste](#16-kapitel-checkliste)
+
+---
+
+## 1. Taktische Schichten
+
+AETHRIS stapelt die taktische Tiefe in Schichten, die nacheinander eingeführt werden und **einzeln abschaltbar** bleiben (DR-09: Die Story ist auf „Wärter“ ohne Kombos und Formation gewinnbar).
+
+| Schicht | Frage | Eingeführt | Kapitel |
+|---|---|---|---|
+| 1 Typen | Wer ist gegen wen stark? | Prolog (Rivalenkampf) | K17 |
+| 2 Zeitleiste | Wann handelt wer? | Prolog (erster Kampf) | K31 |
+| 3 Status & Feld | Was wirkt über Zeit? | Akt I früh | K32 |
+| 4 **Formation** | Wer steht vorn, wer hinten? | Duo-Format (Rang 5) | K33 |
+| 5 **Harmonie & Kombos** | Wie spielt der Chor zusammen? | Duo, Arena 2–3 | K33 |
+| 6 Crescendo | Wann entlade ich die Harmonie? | Bindungsstufe 2 | K30 |
+| 7 **Synergien** | Wie stelle ich meinen Chor zusammen? | Akt I Ende (Hain) | K33 |
+
+---
+
+## 2. Formation: Vorder- und Hinterreihe
+
+In Duo, Trio und Raid steht jedes aktive Echo in der **Vorderreihe** oder der **Hinterreihe**. Im Duell gibt es keine Formation.
+
+```
+        GEGNER                                   EIGENE SEITE
+  ┌──────────────┐                         ┌──────────────┐
+  │ Hinterreihe  │  ◄── geschützt ──       │ Vorderreihe  │  Kontakt möglich
+  │   (0–2)      │                         │   (1–3)      │
+  ├──────────────┤        Kampffeld        ├──────────────┤
+  │ Vorderreihe  │  ◄── Kontakt ──         │ Hinterreihe  │  Unterstützung
+  │   (1–3)      │                         │   (0–2)      │
+  └──────────────┘                         └──────────────┘
+```
+
+| Regel | Wert |
+|---|---|
+| Besetzung | Duo: VV oder VH; Trio: VVV, VVH, VHH (mind. 1 vorn); Standard Trio: 2 vorn, 1 hinten |
+| Kontakt-Fähigkeiten (Tag `Contact`) | nur gegen die **Vorderreihe**; gegen die Hinterreihe nur mit `IgnoreFormation` oder wenn die Vorderreihe leer ist |
+| Andere Einzelziel-Fähigkeiten | gegen die Hinterreihe mit **Formationsfaktor 750 ‰** (Hinterreihen-Schutz); `IgnoreFormation` hebt auf |
+| Row-Fähigkeiten | Spieler wählt die Reihe; Hinterreihe mit 750 ‰ |
+| Enemies-Fähigkeiten | treffen alle; Hinterreihe mit 750 ‰ |
+| Aus der Hinterreihe | keine Kontakt-Fähigkeiten (ausgegraut); Unterstützungsbonus: Heilung/Schilde ×1,1, Status-Fähigkeiten +2 Harmonie |
+| Leere Vorderreihe | rückt die Hinterreihe zu Beginn ihres nächsten Zuges kostenlos vor |
+| Tank-Werkzeuge | Spott (Taunt), Schilde für die Reihe (Felswall, Rüstwerk), Fundament-Passiv |
+
+**Warum 750 ‰?** Der Faktor halbiert nicht – die Hinterreihe soll Fernkämpfer *schützen*, nicht unverwundbar machen. Mit 750 ‰ braucht ein Gegner etwa einen zusätzlichen Treffer, um ein Hinterreihen-Echo zu besiegen; genug für die Entscheidung „lohnt sich der Umweg?“.
+
+### 2.1 Formation und Typ-Identitäten
+
+| Typ | Formationswerkzeug |
+|---|---|
+| Geist | ignoriert Formation (fast alle Angriffe) |
+| Flut | Push/Pull: zieht Hinterreihen-Echos nach vorn, stößt Tanks nach hinten |
+| Schwerkraft | Pull, Bind, **Reihentausch** (Umkehrfeld) |
+| Stein/Metall | Reihenschilde, Spott |
+| Sturm | Zyklonsprung (eigener Reihenwechsel ohne Zeitkosten) |
+
+---
+
+## 3. Positionswechsel
+
+| Weg | Zeitkosten | Anmerkung |
+|---|---|---|
+| **Stellungswechsel** (Aktion) | 40 | eigenes Echo wechselt die Reihe; mit Flutfeld 20, mit Schwerefeld 60 |
+| `MoveSelf` in einer Fähigkeit | 0 | zusätzlich zur Fähigkeit |
+| Push / Pull (Gegner) | Teil der Fähigkeit | Bind/Wurzelgriff verhindern; Stein immun gegen Rückstoß |
+| SwapRows | Teil der Fähigkeit | vertauscht alle gegnerischen Reihen |
+| Arena-Mechanik „Wandernde Plattformen“ (ARN_02) | – | Reihentausch alle 4 Runden |
+| Feldklang „Gezeitenwende“ | – | jede zweite Runde |
+
+Schwebende Echos können die Reihe nicht wechseln; gebundene (Bind) auch nicht.
+
+---
+
+## 4. Harmonie
+
+**Harmonie** ist die gemeinsame Leiste einer Seite (0–100). Sie entsteht aus Zusammenspiel und wird für **Crescendos** ausgegeben (K30).
+
+### 4.1 Quellen und Senken
+
+| Quelle | Harmonie |
+|---|---|
+| Treffer | +5 |
+| sehr effektiver Treffer | +8 (statt +5) |
+| Kombo | +10 bis +20 (Daten) |
+| Fehlschlag einer Fähigkeit | +5 (DR-10) |
+| Erlittener Volltreffer | +5 |
+| Verbündeter verklingt („Trauerton“) | +10 |
+| Klang-Fähigkeiten, Passive | laut Daten (Harmony(n)) |
+| Aurora / Klangfeld / Resonanzsturm | +5 bzw. +3 je Runde; Resonanzsturm ×2 |
+| Chor-Akkord bei Kampfbeginn | +10 je Akkord (max. 2) |
+
+| Senke | Wirkung |
+|---|---|
+| Crescendo | −60 bis −90 |
+| HarmonyDrain (Leere) | −n bei Gegnern |
+| Stillefeld | kein Gewinn |
+| Entzug (Status) | dieses Echo erzeugt keine Harmonie |
+| Missklang-Terrain | Gewinn halbiert |
+
+### 4.2 Erwarteter Verlauf
+
+Ein Trio erzeugt bei normalem Spiel etwa 15–20 Harmonie pro Runde (3 Echos × ~1,1 Aktionen × 5–8). Das erste Crescendo ist damit nach **4–6 Runden** verfügbar, mit Kombos nach 3–4. In einem Arena-Trio (8–15 min, ~25–40 Runden) sind 2–4 Crescendos je Seite realistisch – das Ziel aus K30.
+
+```
+Harmonie  100 ┤                         ▲ Crescendo (−70)
+           80 ┤               ●───●────┘
+           60 ┤          ●───┘             ●──●
+           40 ┤     ●───┘ Kombo +15     ●─┘
+           20 ┤ ●──┘                ●──┘
+            0 ┼──┴───┴───┴───┴───┴───┴───┴───┴──── Runden
+               1   2   3   4   5   6   7   8
+```
+
+### 4.3 Darstellung
+
+Die Leiste liegt unter der Zeitleiste, unterteilt in Zehnerschritte; bei ≥ 60 leuchtet sie in der Farbe des günstigsten Crescendos im Chor, bei 100 pulsiert sie und ein Chor-Akkord erklingt (DR-24).
+
+---
+
+## 5. Kombos
+
+Eine **Kombo** entsteht, wenn **zwei verschiedene Verbündete** dasselbe Ziel kurz hintereinander mit Fähigkeiten bestimmter Typen treffen.
+
+| Regel | Wert |
+|---|---|
+| Auslösung | Fähigkeit vom Typ *First* trifft Ziel Z (Markierung „Anklang“), danach trifft ein **anderer** Verbündeter Z innerhalb von **60 Ticks** mit einer Fähigkeit vom Typ *Second* |
+| Wirkung | Schaden der zweiten Fähigkeit × Bonus (1100–1400 ‰), Effekte der Kombo, Harmonie +10–20 |
+| Verbrauch | Der Anklang wird verbraucht; pro Auflösung höchstens 1 Kombo je Ziel |
+| Status-Fähigkeiten | zählen als First oder Second (dann nur Effekte, kein Schadensbonus) |
+| Fehlschlag | Anklang bleibt bestehen, wenn die zweite Fähigkeit verfehlt |
+| Gegner | Gegnerische Echos (inkl. KI-Wärter, K34) können ebenfalls Kombos auslösen |
+| Bindungs-Duett | Fenster +20 Ticks, wenn beide Echos Bindungsstufe ≥ 4 haben |
+| Anzeige | Anklang-Symbol in Typfarbe am Ziel mit Restzeit-Ring; Vorschau zeigt „Kombo: Dampfstoß“ bei passender Fähigkeit |
+
+Die Zeitleiste macht Kombos **planbar**: Der Spieler sieht, ob der zweite Verbündete innerhalb von 60 Ticks nach dem ersten handelt. Klang (Taktgeber) und Sturm (Böenchor) sind deshalb die natürlichen Kombo-Enabler – sie ziehen Verbündete nach vorn.
+
+---
+
+## 6. Die 36 Kombos
+
+| DisplayName | First | Second | WindowTicks | BonusPermille | Effects | Harmony |
+|---|---|---|---|---|---|---|
+| Dampfstoß | Tide | Ember | 60 | 1300 | Status(Ausgetrocknet,1000) | 15 |
+| Nebelschwaden | Ember | Tide | 60 | 1000 | Terrain(Nebelfeld,2) | 10 |
+| Frostbruch | Frost | Stone | 60 | 1300 | Status(Gebrochen,1000) | 15 |
+| Vereisung | Tide | Frost | 60 | 1200 | Status(Verlangsamt,1000);Delay(Target,30) | 15 |
+| Sturmflut | Storm | Tide | 60 | 1200 | Push(Target) | 10 |
+| Feuersturm | Storm | Ember | 60 | 1200 | Status(Brand,1000) | 15 |
+| Giftblüte | Bloom | Venom | 60 | 1000 | Status(Vergiftet,1000,2) | 10 |
+| Ätzlicht | Venom | Light | 60 | 1200 | Dispel(Target) | 10 |
+| Meteorschlag | Gravity | Stone | 60 | 1300 | Status(Erschuettert,1000) | 15 |
+| Resonanzbruch | Sound | Crystal | 60 | 1300 | Status(Gebrochen,1000) | 15 |
+| Prismenbündel | Crystal | Light | 60 | 1300 | Status(Geblendet,1000) | 15 |
+| Finsternisriss | Light | Void | 60 | 1200 | HarmonyDrain(15) | 15 |
+| Seelenleere | Void | Spirit | 60 | 1200 | Status(Furcht,1000) | 10 |
+| Geisterformel | Spirit | Arcane | 60 | 1200 | Status(Verflucht,1000) | 10 |
+| Runengesang | Arcane | Sound | 60 | 1100 | Harmony(15) | 20 |
+| Leiterblitz | Metal | Storm | 60 | 1300 | Status(Erschuettert,1000) | 15 |
+| Ambossstoß | Stone | Metal | 60 | 1300 | Status(Gebrochen,500) | 10 |
+| Weißglut | Ember | Metal | 60 | 1300 |  | 10 |
+| Schneesturm | Frost | Storm | 60 | 1200 | Delay(Target,40) | 10 |
+| Wurzelsprengung | Bloom | Stone | 60 | 1300 |  | 10 |
+| Bewässerung | Tide | Bloom | 60 | 1100 | Heal(Allies,10) | 10 |
+| Kanon | Sound | Sound | 60 | 1100 | Harmony(20) | 20 |
+| Stilleschlag | Void | Sound | 60 | 1100 | Status(Verstummt,1000) | 10 |
+| Faulgasexplosion | Venom | Ember | 60 | 1200 | Status(Vergiftet,1000) | 15 |
+| Sturz | Gravity | Storm | 60 | 1400 |  | 15 |
+| Bannbruch | Arcane | Void | 60 | 1200 | Dispel(Target);StealBuffs() | 10 |
+| Spiegelklinge | Crystal | Metal | 60 | 1300 |  | 10 |
+| Erlösung | Spirit | Light | 60 | 1100 | Heal(Allies,10);Cleanse(Allies) | 10 |
+| Erdsog | Stone | Gravity | 60 | 1200 | Bind(2) | 10 |
+| Raureifblüte | Bloom | Frost | 60 | 1200 | Status(Verlangsamt,1000) | 10 |
+| Giftflut | Venom | Tide | 60 | 1100 | Status(Vergiftet,1000,2) | 10 |
+| Totenchor | Sound | Spirit | 60 | 1200 | Status(Furcht,1000) | 15 |
+| Eisprisma | Frost | Crystal | 60 | 1200 | Status(Gebrochen,500) | 10 |
+| Gezeitensog | Gravity | Tide | 60 | 1200 | SwapRows() | 10 |
+| Glyphenprisma | Arcane | Crystal | 60 | 1200 | Charged() | 10 |
+| Sternenfall | Light | Gravity | 60 | 1300 | Reveal() | 10 |
+
+**Typ-Beteiligung** (Validator: jeder Typ ≥ 4): Flut 7 · Klang 6 · Glut, Frost, Stein, Sturm, Licht, Schwerkraft, Kristall je 5 · Blüte, Gift, Leere, Geist, Arkan, Metall je 4.
+
+### 6.1 Kombo-Familien
+
+| Familie | Beispiele | Idee |
+|---|---|---|
+| Elementar-Reaktion | Dampfstoß, Vereisung, Feuersturm, Faulgasexplosion | Naturphänomene, die jeder versteht (Wasser + Glut = Dampf) |
+| Bruch | Frostbruch, Resonanzbruch, Ambossstoß, Eisprisma | spröde machen → Gebrochen |
+| Kontrolle | Sturmflut, Gezeitensog, Erdsog, Schneesturm | Position und Zeit |
+| Klangfolgen | Kanon, Runengesang, Totenchor, Stilleschlag | Klang als Dirigent |
+| Licht/Leere | Finsternisriss, Ätzlicht, Sternenfall, Seelenleere | Enthüllen und Entziehen |
+| Team | Bewässerung, Erlösung | Kombos, die die eigene Seite heilen |
+
+---
+
+## 7. Synergien: Chor-Akkorde, Bindungs-Duett, Linienklang
+
+### 7.1 Chor-Akkorde
+
+Ein **Chor-Akkord** wirkt, wenn der Chor (6 Echos, inkl. Reserve) bei Kampfbeginn mindestens je ein Echo aller drei Akkord-Typen enthält (Primär- oder Sekundärtyp). Jeder Typ ist Teil von genau drei Akkorden; höchstens zwei Akkorde wirken gleichzeitig (die ersten in Datenreihenfolge, Spieler kann im Chor-Menü priorisieren).
+
+| DisplayName | Type1 | Type2 | Type3 | StartHarmony | TypePowerPermille | Theme |
+|---|---|---|---|---|---|---|
+| Sonnenakkord | Ember | Light | Storm | 10 | 1050 | Mittagsglut der Weite |
+| Gezeitenakkord | Tide | Storm | Gravity | 10 | 1050 | Mond zieht das Meer |
+| Bergakkord | Stone | Metal | Crystal | 10 | 1050 | Erz im Fels |
+| Waldakkord | Bloom | Tide | Spirit | 10 | 1050 | Verdanthains Atem |
+| Winterakkord | Frost | Light | Sound | 10 | 1050 | Polarlicht singt |
+| Stilleakkord | Void | Spirit | Arcane | 10 | 1050 | Was die Große Stille verschwieg |
+| Moorakkord | Venom | Bloom | Void | 10 | 1050 | Kreislauf aus Fäulnis und Wachstum |
+| Schmiedeakkord | Ember | Metal | Stone | 10 | 1050 | Esse und Amboss |
+| Sternenakkord | Light | Gravity | Arcane | 10 | 1050 | Sternwarten der Alten |
+| Tiefenakkord | Crystal | Sound | Gravity | 10 | 1050 | Resonanz unter Prismara |
+| Ahnenakkord | Spirit | Frost | Stone | 10 | 1050 | Wegmarken des Nordens |
+| Sturmakkord | Storm | Sound | Venom | 10 | 1050 | Heulende Halden |
+| Glutmoorakkord | Venom | Ember | Tide | 10 | 1050 | Dampf über dem Sumpf |
+| Glyphenakkord | Arcane | Crystal | Bloom | 10 | 1050 | Lebende Schrift |
+| Leerenfrostakkord | Void | Frost | Metal | 10 | 1050 | Kälte ohne Klang |
+
+Wirkung: **+10 Start-Harmonie** und Fähigkeiten der drei Typen **×1,05**. Bewusst klein: Akkorde belohnen vielfältige Chöre (S2 Sammeln) und lehren Typbeziehungen, sind aber kein Pflicht-Meta. Im Ranked zählen nur die drei aktiven + drei Reserve-Echos des Kampfteams (6 von 6).
+
+### 7.2 Bindungs-Duett
+
+Zwei aktive Echos mit Bindungsstufe ≥ 4: Kombo-Fenster +20 Ticks, und das erste Kombo des Kampfes gibt +5 Harmonie zusätzlich. Bindung (S2) wird so im Kampf spürbar, ohne Werte zu erhöhen.
+
+### 7.3 Linienklang
+
+Zwei Echos derselben Evolutionslinie im Chor: +5 Start-Harmonie (einmal je Kampf, nicht mit sich selbst stapelnd). Kleine Belohnung für Züchter und Sammler.
+
+### 7.4 Synergie-Grenzen
+
+| Grenze | Wert |
+|---|---|
+| Start-Harmonie aus Synergien | max. 30 |
+| Typ-Boni aus Akkorden | max. ×1,05 je Typ (nicht stapelnd) |
+| Koop | Akkorde je Spieler-Chor getrennt; Koop-Boni nie Machtvorteile (DR-20) |
+
+---
+
+## 8. Formate
+
+| Format | Aktiv/Seite | Reserve | Formation | Eingeführt | Einsatz |
+|---|---|---|---|---|---|
+| **Duell 1v1** | 1 | bis 5 | – | Prolog | Wildkämpfe (einzeln), Rivale, Arenen Stufe 1/2/4/7, Ranked-Duell |
+| **Duo 2v2** | 2 | bis 4 | VV/VH | Wärterrang 5 | Trainer, Herden (2), Arenen 3/5/8, Koop (2 Spieler × 1) |
+| **Trio 3v3** | 3 | bis 3 | VVV/VVH/VHH | Wärterrang 10 | Arenen 6/9/10, Ranked-Trio (Standard), Koop (3 Spieler × 1) |
+| **Raid** | 4 Spieler × 1–2 | je Spieler | eigene Raid-Formation (K35) | Wärterrang 22 | Boss-Echos, Tiefenresonanzen, Mythische |
+
+**Arena-Formate** übernehmen die Stufentabelle aus K02 §9.2 (Duell, Duell, Duo, Duell, Duo, Trio, Duell, Duo, Trio, Trio). Ein Spieler ohne Freischaltung eines Formats erhält in diesem Format eine **Leihbegleitung** (NPC-Echo der Arena, Lv. = Ass − 3), damit freie Regionsreihenfolge nie blockiert (S1).
+
+---
+
+## 9. Begegnungsarten
+
+| Begegnung | Format | Besonderheiten |
+|---|---|---|
+| Einzelnes Wildecho | Duell | Bindung möglich (K36); Flucht per Rückzugsmarker |
+| Herde (2–3) | Duo/Trio entsprechend | Spieler nutzt so viele Aktive wie Wildechos; Bindung nur am letzten verbleibenden oder per Spezial-Fallen (K36) |
+| Alpha-Echo | Duell oder Duo (+1 Begleiter) | erhöhte Anlagen, eigene KI-Persönlichkeit (K34), sichtbar in der Welt (DR-14) |
+| Wärter (NPC) | laut NPC-Daten (K53) | Belohnung Sol + EP; Revanche nach 1 Spieltag |
+| Rivale Kael | Duell → Duo → Trio (Story) | skaliert mit Akkordzahl |
+| Arena | Stufentabelle | Feldregel (CANON §51) |
+| Stille-Echo (verstummt) | Duell/Duo | Echo ist „grau“; Sieg heilt es (Story K44), keine Bindung im Kampf |
+| Boss / Raid | Raid | Phasen (K35) |
+| PvP | Duell/Trio | Ranked serverautoritativ, levelnormalisiert (K61) |
+
+---
+
+## 10. Koop-Kampf
+
+| Regel | Wert |
+|---|---|
+| Teilnehmer | 2–4 Spieler (Koop-Reise); jeder steuert eigene Echos |
+| Format | Anzahl Spieler bestimmt das Format (2 → Duo, 3 → Trio); bei 4 Spielern Trio + rotierende Reserve oder Raid |
+| Harmonie | gemeinsam für die Spielerseite |
+| Kombos | zwischen Echos verschiedener Spieler möglich (ausdrücklich gewollt) |
+| Zugtimer | 30 s je Zug (Koop entspannt: Option 60 s) |
+| Belohnung | jeder Spieler erhält volle EP/Sol für eigene Echos; Bindung durch den Spieler, der die Bindung startet |
+| Synergien | Akkorde je Spieler-Chor; Bindungs-Duett nur innerhalb eines Spielers |
+
+---
+
+## 11. Lesbarkeit und UI
+
+```
+┌──────────────────────────────── KAMPF-HUD (Trio) ────────────────────────────────┐
+│  Zeitleiste ▸ [◆Wisplet][●Uvlet][◆Brokkar][●Ligrel ✦][◆Fernwyn][●Uvlet] …         │
+│  Harmonie   ▰▰▰▰▰▰▱▱▱▱  62   · Akkorde: Sonnenakkord, Waldakkord                  │
+│                                                                                    │
+│      GEGNER   Hinter: [Uvlet ❄]                 EIGENE  Vorder: [Brokkar ⛨][Wisplet]│
+│               Vorder: [Ligrel ◎Anklang Glut 41]          Hinter: [Fernwyn ✚]       │
+│                                                                                    │
+│  Fähigkeit: Strudelzug  → „Kombo: Dampfstoß“ (Fenster 41 Ticks)  ×1,3  +15 Harmonie│
+└────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+- Reihen sind räumlich dargestellt (Kampffeld in Weltgeometrie, K57), nicht nur als Liste.
+- Anklang-Markierung mit Restzeit-Ring (Ticks) – Farbe + Form + Ton.
+- Formationsfaktor erscheint in der Schadensvorschau („×0,75 Hinterreihe“).
+
+---
+
+## 12. Code
+
+```cpp
+// GF_Combat – Formation
+UENUM() enum class ECombatRow : uint8 { Front, Back };
+
+struct FFormationState
+{
+    TArray<ECombatRow> RowOf;            // je aktivem Kämpfer
+    bool CanTarget(const FCombatant& User, const FCombatant& Target, const UAbilityDefinition& A) const
+    {
+        if (A.Tags.HasTagExact(TAG_Ability_Tag_Contact) && RowOf[Target.Slot] == ECombatRow::Back
+            && !A.HasEffect(TEXT("IgnoreFormation")) && FrontCount(Target.Side) > 0) return false;
+        return true;
+    }
+    int32 FormationPermille(const FCombatant& Target, const UAbilityDefinition& A) const
+    {
+        return (RowOf[Target.Slot] == ECombatRow::Back && !A.HasEffect(TEXT("IgnoreFormation"))) ? 750 : 1000;
+    }
+};
+
+// Kombos – Anklang-Tracker je Ziel
+struct FResonanceMark { uint8 Side; int32 SourceSlot; FGameplayTag Type; int32 Tick; };
+
+void UComboService::OnHit(FCombatContext& Ctx, const FCombatant& User, FCombatant& Target, const UAbilityDefinition& A)
+{
+    if (FResonanceMark* M = Target.Mark.GetPtrOrNull())
+    {
+        const int32 Window = 60 + (BondDuet(Ctx, User, M->SourceSlot) ? 20 : 0);
+        if (M->Side == User.Side && M->SourceSlot != User.Slot && Ctx.Timeline.Now() - M->Tick <= Window)
+            if (const FComboRow* C = Combos.Find(M->Type, A.Type))
+            {
+                Ctx.Damage->PushBonus(C->BonusPermille);       // gilt für diese Auflösung
+                Ctx.Effects->ApplyList(Ctx, C->Effects, User, Target);
+                Ctx.Harmony->Add(User.Side, C->Harmony);
+                Ctx.Bus->Broadcast(TAG_Combat_Combo, FComboMessage{ C->Id, User.Slot, Target.Slot });
+                Target.Mark.Reset();
+                return;
+            }
+    }
+    Target.Mark = FResonanceMark{ User.Side, User.Slot, A.Type, Ctx.Timeline.Now() };
+}
+```
+
+Die Harmonie-Leiste ist ein `FTeamState::Harmony` (int32, 0–100) mit genau einer Schreibstelle (`UHarmonyService::Add`), die Stillefeld, Entzug, Missklang und Resonanzsturm berücksichtigt.
+
+---
+
+## 13. Tests und Telemetrie
+
+| Test | Inhalt |
+|---|---|
+| `Aethris.Unit.Combat.Formation.Targeting` | Kontakt nicht gegen Hinterreihe; IgnoreFormation; leere Vorderreihe |
+| `…Formation.Factor` | 750 ‰ für Einzel/Row/Enemies gegen Hinterreihe |
+| `…Combo.Window` | 60/80 Ticks, nur anderer Verbündeter, Verbrauch, Fehlschlag behält Anklang |
+| `…Harmony.Sources` | alle Quellen/Senken laut §4.1, Deckel 0–100 |
+| `…Chord.Detect` | Akkord-Erkennung über Primär-/Sekundärtypen, max. 2, Grenze 30 Start-Harmonie |
+| `Data.Combat.Validate` | `tools/gen_combat_data.py` in CI |
+
+**Telemetrie-Ziele (K66):** Kombos je Arenakampf ≥ 2 (Median), Anteil Kämpfe mit Crescendo ≥ 60 % (Arena), Formationswechsel je Trio-Kampf ≥ 1, keine Kombo > 12 % aller ausgelösten Kombos (Vielfalt).
+
+---
+
+## 14. Decision Records
+
+| ADR | Entscheidung | Begründung | Verworfen |
+|---|---|---|---|
+| ADR-117 | Zwei Reihen mit Hinterreihen-Schutz 750 ‰ und Kontaktregel | Lesbare Positionierung ohne Raster | Hex-Raster (zu komplex für Controller), keine Formation (flach) |
+| ADR-118 | Kombos über Typfolge + 60-Tick-Fenster zwischen zwei Verbündeten | Zeitleiste macht Kombos planbar; Teamspiel | Fähigkeitsspezifische Kombos (zu viele Sonderfälle) |
+| ADR-119 | Harmonie als gemeinsame Seitenleiste 0–100 | Ein Team-Rhythmus, Crescendo als Höhepunkt | Leiste je Echo (Ressourcen-Buchhaltung) |
+| ADR-120 | Chor-Akkorde als kleine Kompositions-Synergie (+10 Harmonie, ×1,05) | Belohnt Vielfalt ohne Pflicht-Meta | Starke Mono-Typ-Boni (homogenisiert Teams) |
+| ADR-121 | Leihbegleitung, wenn Arena-Format noch nicht freigeschaltet | freie Reihenfolge ohne Blockade (S1) | Arena gesperrt bis Rang X |
+
+---
+
+## 15. Kanon-Änderungen
+
+| Bereich | Eintrag | Status |
+|---|---|---|
+| §119 | Formation: Vorder-/Hinterreihe (Duo VV/VH, Trio mind. 1 vorn); Kontakt nur gegen Vorderreihe (außer IgnoreFormation/leer); Hinterreihen-Schutz 750 ‰; Hinterreihe: keine Kontakt-Fähigkeiten, Heilung/Schilde ×1,1, Status +2 Harmonie; Stellungswechsel Zeitkosten 40 (Flutfeld 20, Schwerefeld 60) | LOCKED |
+| §120 | Harmonie 0–100 je Seite; Quellen Treffer +5, sehr effektiv +8, Kombo +10–20, Fehlschlag +5, erlittener Volltreffer +5, Verklingen eines Verbündeten +10; Senken laut K33 §4.1 | LOCKED |
+| §121 | 36 Kombos (`Combos.csv`): First → Second, anderer Verbündeter, gleiches Ziel, Fenster 60 Ticks (+20 Bindungs-Duett), Bonus 1100–1400 ‰, 1 Kombo je Ziel und Auflösung; Gegner können kombinieren | LOCKED |
+| §122 | 15 Chor-Akkorde (`Chords.csv`), jeder Typ in 3, max. 2 aktiv: +10 Start-Harmonie, ×1,05; Bindungs-Duett (≥ 4); Linienklang +5; Start-Harmonie aus Synergien ≤ 30 | LOCKED |
+| §123 | Formate Duell/Duo/Trio/Raid mit Reserve-Grenzen; Arena-Formate nach K02 §9.2; Leihbegleitung; Begegnungsarten (Einzel, Herde, Alpha, Wärter, Rivale, Arena, Stille-Echo, Boss, PvP); Koop-Regeln | LOCKED |
+| §10 | ADR-117 – ADR-121 | LOCKED |
+
+---
+
+## 16. Kapitel-Checkliste
+
+- [x] Formation mit Zielregeln, Schutzfaktor, Positionswechsel
+- [x] Harmonie-Ökonomie mit Quellen, Senken, erwartetem Verlauf
+- [x] 36 Kombos als Daten (jeder Typ ≥ 4), Regeln, Familien
+- [x] Synergien: 15 Chor-Akkorde, Bindungs-Duett, Linienklang, Grenzen
+- [x] Formate 1v1/2v2/3v3/Raid und alle Begegnungsarten
+- [x] Koop-Kampfregeln
+- [x] HUD-Spezifikation, Code (Formation, Kombo-Tracker), Tests, Telemetrie
+- [x] ADR-117 – ADR-121, CANON §119–§123
+
+➡️ **Nächstes Kapitel: K34 – Kampf-KI: Wildechos, Wärter, Arenameister (Utility-KI, Persönlichkeiten, Schwierigkeitsgrade).**

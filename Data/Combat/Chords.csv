@@ -1,0 +1,18 @@
+# Chor-Akkorde (K33 §7): Synergie, wenn der Chor (6) bei Kampfbeginn mindestens je ein Echo aller drei Typen enthält (Primär- oder Sekundärtyp).
+# Wirkung: StartHarmony für die Seite + TypePowerPermille für Fähigkeiten der drei Typen. Höchstens 2 Akkorde gleichzeitig (die ersten in Datenreihenfolge).
+Name,DisplayName,Type1,Type2,Type3,StartHarmony,TypePowerPermille,Theme
+CHD_01,Sonnenakkord,Ember,Light,Storm,10,1050,Mittagsglut der Weite
+CHD_02,Gezeitenakkord,Tide,Storm,Gravity,10,1050,Mond zieht das Meer
+CHD_03,Bergakkord,Stone,Metal,Crystal,10,1050,Erz im Fels
+CHD_04,Waldakkord,Bloom,Tide,Spirit,10,1050,Verdanthains Atem
+CHD_05,Winterakkord,Frost,Light,Sound,10,1050,Polarlicht singt
+CHD_06,Stilleakkord,Void,Spirit,Arcane,10,1050,Was die Große Stille verschwieg
+CHD_07,Moorakkord,Venom,Bloom,Void,10,1050,Kreislauf aus Fäulnis und Wachstum
+CHD_08,Schmiedeakkord,Ember,Metal,Stone,10,1050,Esse und Amboss
+CHD_09,Sternenakkord,Light,Gravity,Arcane,10,1050,Sternwarten der Alten
+CHD_10,Tiefenakkord,Crystal,Sound,Gravity,10,1050,Resonanz unter Prismara
+CHD_11,Ahnenakkord,Spirit,Frost,Stone,10,1050,Wegmarken des Nordens
+CHD_12,Sturmakkord,Storm,Sound,Venom,10,1050,Heulende Halden
+CHD_13,Glutmoorakkord,Venom,Ember,Tide,10,1050,Dampf über dem Sumpf
+CHD_14,Glyphenakkord,Arcane,Crystal,Bloom,10,1050,Lebende Schrift
+CHD_15,Leerenfrostakkord,Void,Frost,Metal,10,1050,Kälte ohne Klang
