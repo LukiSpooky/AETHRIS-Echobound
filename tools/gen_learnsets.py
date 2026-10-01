@@ -20,6 +20,9 @@ OUT_LS = ROOT / "Data/Echos/Learnsets.csv"
 OUT_PO = ROOT / "Data/Echos/PassiveOptions.csv"
 OUT_KS = ROOT / "Data/Items/Klangschriften.csv"
 OUT_TU = ROOT / "Data/Abilities/Tutors.csv"
+OUT_CO = ROOT / "Data/Echos/CrescendoOptions.csv"
+OUT_FO = ROOT / "Data/Echos/FieldOptions.csv"
+SIZES = ["XS", "S", "M", "L", "XL", "XXL"]
 TYPES = ["Ember", "Tide", "Stone", "Storm", "Bloom", "Frost", "Void", "Light", "Venom", "Metal", "Spirit",
          "Crystal", "Sound", "Gravity", "Arcane"]
 PHYS_ROLES = {"Striker", "Tank", "AllRound"}
@@ -57,6 +60,8 @@ class Data:
         ab = rows(ABIL)
         self.act = [a for a in ab if a["Kind"] == "Active"]
         self.pas = [a for a in ab if a["Kind"] == "Passive"]
+        self.cre = [a for a in ab if a["Kind"] == "Crescendo"]
+        self.fld = [a for a in ab if a["Kind"] == "Field"]
         self.by_type = defaultdict(list)
         for a in self.act:
             self.by_type[a["Type"]].append(a)
@@ -226,7 +231,42 @@ def build():
           "# Klangschriften (K29, 90, wiederverwendbar, nicht handelbar – CANON §18). Fundorte → K41/K42/K49–K51.")
     write(OUT_TU, ["Tutor", "Ability", "Type", "Faction", "ReputationRank", "CostSol", "Compat"], tu_rows,
           "# Tutoren (K29, 30 Fähigkeiten): Fraktionslehrer, Rufrang 3–4 (K47), Sol-Kosten (K42).")
+    build_k30(D)
     print(f"Lernsets {len(ls_rows)} Einträge, Passiv-Optionen {len(po_rows)}, Klangschriften {len(ks_rows)}, Tutoren {len(tu_rows)}")
+
+
+def field_ok(s, cond):
+    if cond == "Any":
+        return True
+    for c in cond.split("|"):
+        k, v = c.split(":")
+        if k == "Trait" and f"Behavior.{v}" in s["Traits"].split("|"):
+            return True
+        if k == "Size" and SIZES.index(s["SizeClass"]) >= SIZES.index(v.rstrip("+")):
+            return True
+    return False
+
+
+def build_k30(D):
+    co, fo = [], []
+    used = Counter()
+    for s in D.sp:
+        types = [s["PrimaryType"].split(".")[1]] + ([s["SecondaryType"].split(".")[1]] if s["SecondaryType"] else [])
+        opts = [a for a in D.cre if a["Type"] in types]
+        dmg_role = s["Role"] in ("Striker", "Caster", "Speed")
+        pref = next((a for a in opts if a["Type"] == types[0] and (a["Category"] != "Status") == dmg_role), opts[0])
+        for a in opts:
+            co.append(dict(Species=s["Name"], Ability=a["Name"], Preferred=int(a is pref)))
+        cands = [a for a in D.fld if a["Type"] in types and field_ok(s, a["Trigger"])]
+        if cands:
+            f = min(cands, key=lambda a: (used[a["Name"]] // 4, h(s["Name"], a["Name"])))
+            used[f["Name"]] += 1
+            fo.append(dict(Species=s["Name"], Ability=f["Name"]))
+    write(OUT_CO, ["Species", "Ability", "Preferred"], co,
+          "# Crescendo-Optionen (K30): alle Crescendos der eigenen Typen; Preferred = Signatur-/Wildvorgabe. Nutzbar ab Bindungsstufe 2.")
+    write(OUT_FO, ["Species", "Ability"], fo,
+          "# Feldfähigkeit je Art (K30): 0–1, aus eigenen Typen, Bedingung (Merkmal/Größe) erfüllt. Nutzbar ab Bindungsstufe 1.")
+    print(f"Crescendo-Optionen {len(co)}, Feldfähigkeiten {len(fo)}")
 
 
 def write(path, fields, data, comment):
@@ -296,6 +336,18 @@ def validate():
     unused = [a["DisplayName"] for a in D.pas if a["Name"] not in used_p]
     if unused:
         errs.append(f"LS-12 {len(unused)} Passive ungenutzt: {', '.join(unused[:12])}")
+    if OUT_CO.exists():
+        co, fo = rows(OUT_CO), rows(OUT_FO)
+        have = Counter(r["Species"] for r in co)
+        for s in D.sp:
+            if have[s["Name"]] < 2:
+                errs.append(f"LS-13 {s['Name']}: < 2 Crescendo-Optionen")
+        use = Counter(r["Ability"] for r in fo)
+        for a in D.fld:
+            if use[a["Name"]] < 3:
+                errs.append(f"LS-14 Feldfähigkeit {a['DisplayName']} nur {use[a['Name']]}× vergeben (≥ 3)")
+        if len(fo) * 100 < 75 * len(D.sp):
+            errs.append(f"LS-14 nur {len(fo)} Arten mit Feldfähigkeit (≥ 75 %)")
     return errs
 
 
@@ -312,6 +364,12 @@ def show(name):
         out.append(f"| {r['Method']} | {lvl} | {a['DisplayName']} | {a['Type']} | {a['Category']} | {a['TimeCost']} |")
     out.append("")
     out.append("Passiv: " + ", ".join(ab[r["Ability"]]["DisplayName"] + (" (versteckt)" if r["Hidden"] == "1" else "") for r in po))
+    if OUT_CO.exists():
+        co = [r for r in rows(OUT_CO) if r["Species"] == s["Name"]]
+        fo = [r for r in rows(OUT_FO) if r["Species"] == s["Name"]]
+        out.append("")
+        out.append("Crescendo: " + ", ".join(ab[r["Ability"]]["DisplayName"] + (" ★" if r["Preferred"] == "1" else "") for r in co)
+                   + " · Feld: " + (", ".join(ab[r["Ability"]]["DisplayName"] for r in fo) or "–"))
     return "\n".join(out)
 
 

@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K29
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K30
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -319,6 +319,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-100 | Feldklang als exklusive Passive der Legendären/Mythischen | K29 |
 | ADR-101 | Versteckte Passive aus Fremdtyp | K29 |
 | ADR-102 | Tutoren lehren Schwer-Fähigkeiten gegen Fraktionsruf | K29 |
+| ADR-103 | Crescendo mit Zeitkosten 200 und Ankündigung auf der Zeitleiste | K30 |
+| ADR-104 | Harmoniekosten aus dem Machtbudget (60–90) | K30 |
+| ADR-105 | Feldfähigkeiten statt Schlüssel-Items; Pfad-Tore mit ≥ 2 Lösungen | K30 |
+| ADR-106 | Reitarten bleiben Art-Eigenschaft | K30 |
 
 ## §11 Change Requests
 
@@ -1389,3 +1393,20 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 - 90 Klangschriften `ITM_KS_001–090`, 6 je Typ (Mittel/Spät/Status); nutzbar, wenn Fähigkeitstyp = Typ des Echos oder Abdeckungstyp.
 - 30 Tutor-Fähigkeiten (2 je Typ, bevorzugt Schwer-Fähigkeit), Fraktionslehrer, Rufrang 3–4, 2.000/3.500 ◎ (Startwerte → K42/K47).
+
+## §106 Crescendo-Regeln (LOCKED, K30 §1–§5 · `Data/Echos/CrescendoOptions.csv`)
+
+- 30 Crescendos (2 je Typ: Schaden + Team); Budget 200–320 MP; Zeitkosten 200; Harmoniekosten clamp(rund10(60 + (V−200)/3), 60, 100) → 60–90 (Tag `HarmonyCost`).
+- Ankündigung als goldener Marker auf der Zeitleiste; 1 je Echo und Kampf, 1 je Seite und Runde; ab Bindungsstufe 2, ab Stufe 5 Kosten −10; Verklingen vor Ausführung → 50 % Rückerstattung.
+- Inszenierung ≤ 4,0 s (Option kurz 1,5 s, PvP immer kurz). Arten lernen alle Crescendos ihrer Typen bei Bindungsstufe 2; ★ bevorzugt (Schaden für Striker/Caster/Speed, sonst Team).
+- Harmonie-Leiste 100; Startwerte Harmonie-Gewinn: Treffer +5, sehr effektiv +8, Kombo +10–20, Status-Fehlschlag +5, erlittener Volltreffer +5 (final K33).
+
+## §107 Feldfähigkeiten & Pfad-Tore (LOCKED, K30 §6–§9 · `Data/Echos/FieldOptions.csv`)
+
+- 30 Feldfähigkeiten (2 je Typ), Kategorien `Field.Traversal|Sense|Gather|Puzzle|Social`; ab Bindungsstufe 1, Echo im Chor; Ausdauerkosten 25/10/10/15/10, Regeneration 5/s.
+- Bedingung: Typ der Art + Merkmal/Größe; 0–1 je Art (240 von 256 Arten); jede Feldfähigkeit ≥ 3 Arten.
+- 12 Pfad-Tor-Typen (Eis/Dorn, Geröll, Spalt, Wasser, Gestrüpp, Dunkel, Mechanik, Ahnen, Prisma, Glyphe, Siegel, Last); PT-1 ≥ 2 Lösungen, davon ≥ 1 typunabhängig; PT-2 nie auf Hauptpfad; PT-3 ≥ 6 Tor-Typen je Region. Reitarten sind keine Feldfähigkeiten.
+
+## §108 Fähigkeitenbestand (LOCKED, K30 §10)
+
+- 330 Fähigkeiten: 180 aktiv · 90 passiv (inkl. 16 Feldklänge) · 30 Crescendo · 30 Feld; `tools/gen_abilities.py validate --final` und `tools/gen_learnsets.py validate` ohne Verstöße.
