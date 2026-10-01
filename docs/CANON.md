@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K03
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K04
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -238,6 +238,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-019 | Deterministischer Ungehorsam (+40 % Zeitkosten) | K03 |
 | ADR-020 | Kodex-Nummerierung nach Story-Erstvorkommen | K03 |
 | ADR-021 | Online-Aktionen nur mit geladenem Weltstand | K03 |
+| ADR-022 | Echo-Namen global identisch (lat.), CJK transkribiert | K04 |
+| ADR-023 | Deutsch = Design-Quellsprache, Englisch = Übersetzungspivot (parallel gepflegt) | K04 |
+| ADR-024 | Zeitrechnung n.St., Gegenwart 1004 n.St. | K04 |
+| ADR-025 | Echos grammatisch Neutrum, Zucht geschlechtsunabhängig | K04 |
 
 ## §11 Change Requests
 
@@ -306,7 +310,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 |---|---|---|
 | Starterwahl | Diegetisch durch Spurwahl im Prolog (ADR-011) | LOCKED |
 | Starter-Zyklus | **Blüte > Stein > Sturm > Blüte** (bindend für K17) | LOCKED |
-| Starter-Arbeitsnamen | Fernlit (Blüte), Brokk (Stein), Wisplet (Sturm); Kodex #001–#009 | PROVISIONAL → K04/K20 |
+| Starterlinien | Fernlit → Fernwyn → Verdrath (Blüte) · Brokk → Brokkar → Torgrath (Stein) · Wisplet → Galewix → Zephyrion (Sturm); Kodex #001–#009 | LOCKED (Namen, K04); Zweittypen → K20 |
 | Startdorf | Lindwiesen (R01), angrenzend Lindwald | LOCKED |
 | Mentorin | Ysolde Varn – Wildwacht-Wärterin, ehem. Arenameisterin Eichenhall | LOCKED |
 | Rivale | Kael Duran – Jugendfreund, Akademie-Anwärter | LOCKED |
@@ -399,3 +403,33 @@ Sonderdörfer: **Wanderdorf** (R04, mobil), **Treibdorf** (R06, schwimmend). Jed
 | #251–#256 | 6 Mythische | K27 |
 
 Linienstruktur: 40 × 3-stufig (120) + 45 × 2-stufig (90) + 22 ohne Evolution + 8 Spezial-/Zweigformen = **240** regulär. Linien bleiben zusammenhängend nummeriert.
+
+## §21 Glossar & verbotene Begriffe (LOCKED, K04 §2)
+
+Vollständiges Glossar: `docs/kapitel/K04_Kanon_Glossar_Konventionen.md` §2. Ergänzte Begriffe: **Anlagen** (`Aptitude`, genetische Wertpotenziale), **Aufträge** (`Contract`, wiederholbar, nicht Teil der 210 Nebenquests), **Einklang** (perfekter Anschlag), **Einstimmen** (Beruhigungsphase), **Verstummt** (durch Stillezone erstarrtes, feindliches Echo).
+Verboten im Spiel: „Monster“, Ball/Kapsel/Fangkugel/werfen (Bindung), „-dex“, „Box/PC“, „Orden“ als Abzeichen, „KP“, töten/sterben für Echos.
+
+## §22 Namenssystem (LOCKED, K04 §3–§5)
+
+- **Klangfamilien:** R01 Linnisch · R02 Kharsk · R03 Morvisch · R04 Sahrunisch · R05 Ignar · R06 Saltisch · R07 Hvitnisch · R08 Dorunisch (Altsprache, Apostrophe) · R09 Prismanisch · R10 Nimbari. Keine 1:1-Abbildung realer Kulturen; Sensitivity-Review für R04/R07.
+- **Echo-Namen N1–N8:** 4–10 Zeichen; ASCII-Buchstaben (Apostrophe nur Ursprungsstimmen); Wurzel- + Form-Morphem; Linien teilen ein Element; kein reales Wort; erste 4 Buchstaben einzigartig **über Linien hinweg**; global identisch; ≤ 60 % Ähnlichkeit zu Fremdnamen. Prüfung: `tools/nameguard/nameguard.py` (CSV: id,name,kind,line).
+- **Form-Morpheme:** Stufe 1 `-let -lit -kin -ling -i -o -ette -pip` · Stufe 2 `-ar -en -ix -ward -ow -el -una` · Stufe 3 `-ath -gor -oth -ion -rex -mire -aune -dral` · Gestalt `-wing/-wyn -paw -coil -fin -shell -hoof -mote`.
+- **Wissenschaftliche Namen:** Aethrisch-Latein, *Genus epitheton* Autor, Jahr n.St. (z. B. Fernlit = *Pteridolis cantans* Vael, 812 n.St.).
+- **Zeitrechnung:** n.St.; Gegenwart **1004 n.St.**
+
+## §23 IDs, Tags, Assets (LOCKED, K04 §7–§9)
+
+- IDs: `ECHO_###`, `ABL_A###/P###/U###/F###`, `ITM_<KAT>_<NAME>` (KAT: SEAL, HEAL, MAT, KEY, SCRIPT, GEAR, FOOD, LURE, TRAP, DECO), `RCP_…`, `R##`, `R##_Z##`, `SET_C|V|O_<NAME>`, `POI_R##_####`, `RST_R##_##`, `NPC_<NAME>`, `MQ_A#_##`, `SQ_###`, `FQ_F##_##`, `CT_R##_##`, `DLG_<Quest>_##`, `ARN_##`, `RAID_##`, `DR_##`, `GEN_<NAME>`, `STS_<NAME>`, `TER_<NAME>`. Instanzen: `FGuid`.
+- IDs nie wiederverwenden → `Data/Meta/RetiredIds.csv`.
+- Tag-Wurzeln: `Type. Stat. Status. Terrain. Weather. TimeOfDay. Region. Biome. Faction. Ability. Ability.Range. Formation. Combat.Format. Item. Niche. Mount. Behavior. Personality. Temperament. Feature. GameFlow. Event. Quest. Input. Cheat./Debug.`
+- Weather-Tags: `Clear Rain Thunderstorm Fog Snow Heatwave Sandstorm Aurora Ashfall ResonanceStorm`; TimeOfDay: `Dawn Day Dusk Night`; Biome: `Forest Mountain Swamp Desert Volcano Coast Snow Ruins Crystal Sky`; Mount: `Ground Swim Climb Dig Fly`; Niche: `Combat Field Breeding Research Mount`.
+- Asset-Präfixe: BP_, DA_, DT_, CT_/CV_, SM_, SK_, SKEL_, AS_, ABP_, AM_, M_/MI_, T_ (_D/_N/_ORM/_E/_M), NS_, MSS_, SW_, WBP_, L_/LI_, PCG_, ST_, BT_/BB_, GA_/GE_.
+
+## §24 Stil & Lokalisierung (LOCKED, K04 §10–§11)
+
+- Ton: warm, staunend, geheimnisvoll; Bedrohung durch Stille; ≤ 3 Zeilen / 160 Zeichen pro Textbox.
+- Werte-Abkürzungen: **HP, ANG, VER, SAN, SVE, GES, PRÄ, AUS**.
+- Spieler wird geduzt (Akademie-Würdenträger siezen). Ansprache wählbar: er / sie / neutral.
+- Echos: grammatisch Neutrum. Typnamen als Eigennamen („Glut-Echo“). Sol: „250 ◎“.
+- Sprachen: Text 12 (DE, EN, FR, ES-EU, ES-LatAm, IT, PT-BR, PL, JA, KO, ZH-Hans, ZH-Hant), Vertonung 5 (DE, EN, JA, FR, ES).
+- String-Keys: `<Domäne>.<Id>.<Feld>`; Fähigkeits-/Itemnamen werden übersetzt, Echo-Namen nicht.

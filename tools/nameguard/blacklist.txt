@@ -1,0 +1,8 @@
+monster
+ball
+kapsel
+fangkugel
+dex
+box
+zentrum
+kp
