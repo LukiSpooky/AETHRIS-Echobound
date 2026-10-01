@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K41
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K42
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -370,6 +370,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-151 | Echo-Materialien nur abgeworfen/geschenkt/gesammelt | K41 |
 | ADR-152 | Sofortige Herstellung, regionale Meisterwerkstätten | K41 |
 | ADR-153 | Rezepte aus Item-Tabellen generiert und validiert | K41 |
+| ADR-154 | Preise aus Wertmodell | K42 |
+| ADR-155 | Keine Sol aus Wildkämpfen | K42 |
+| ADR-156 | Kein Spielermarkt, Sol nicht tauschbar | K42 |
+| ADR-157 | Deterministische Tagespreise | K42 |
 
 ## §11 Change Requests
 
@@ -1683,3 +1687,20 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §159 Verbrauchsgüter & Gerichte (LOCKED, K41 §7–§8 · `Data/Items/Consumables.csv`)
 
 - 13 Verbrauchsgüter (Heilung, Weckklang 1× je Echo/Kampf, Läuterwasser, Bergtee, Ruhrauch, Wandelklang, Klangsalz, Wesensklang …) und 12 Gerichte (Wirkung für den Chor 1 Spieltag, ein Gericht gleichzeitig). Kampf-Items Zeitkosten 60; Ranked ohne Items; Klangbrunnen heilen kostenlos.
+
+## §160 Sol (LOCKED, K42 §2)
+
+- Sol ◎ (Singular = Plural): Start 1.000, Maximum 9.999.999, nicht käuflich; Verlust nur im Meister-Grad (−10 %, max. 5.000).
+
+## §161 Preismodell (LOCKED, K42 §3 · `Data/Economy/ItemPrices.csv`, `tools/ref/aethris_economy.py`)
+
+- Ressourcen 12/25/45/80/140 ◎ (Stufe I–V) × Seltenheit 1,0/1,5/2,5; Klangsplitter 30, übrige Echo-Materialien 60, Stillstein-Splitter 250; hergestellt = Σ Zutaten × 1,25; Kauf = Wert (auf 5 gerundet), Verkauf = 35 %; Siegel fest 150/450/1.200. Nicht käuflich: Klangschriften, Stimm-/Sternensiegel, Wesensklang, Klangstimmung, Ausrüstung IV–V.
+
+## §162 Quellen & Senken (LOCKED, K42 §4–§6; Tuning → K63)
+
+- Quellen: Wärterkämpfe Ass-Lv. × 25 × Klasse (0,8/1,0/1,5/3,0); Aufträge Basis-Sol × RewardScale = (L+10)/20; Kisten 60 × RewardScale; Arenen 2.000/5.000/12.000 ◎ je Akkord (Akt I/II/III); Nebenquests 300–3.000. Keine Sol aus Wildkämpfen, PvP, Raids.
+- Senken: Siegel, Verbrauch, Material-Zukauf, Tutoren, Hain-Ausbau (530.000 gesamt), Rezeptbücher, Klangbad 1.500, Kosmetik, Gasthaus 50. Zielquote kumuliert 105–140 % je Akt.
+
+## §163 Händler (LOCKED, K42 §7–§10 · `Data/Economy/Merchants.csv`)
+
+- 54 Händler, Kategorien General/Heal/Material/Food/Gear/Rare/Faction/Tutor/Scripts mit Freischaltungen; Tagespreise ±10 % (Fork(4) + Spieltag), Heimat ×0,9 / fremd ×1,15, Ereignisse (Resonanzsturm +10 %); Fraktionsrabatte 5/10/15 % (höchster gilt); kein Spielermarkt, Sol nicht tauschbar, Geschenke ≤ 50 Ressourcen/Tag.

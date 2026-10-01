@@ -17,6 +17,7 @@ import aethris_bond as abd
 import aethris_bond_progress as abp
 import aethris_genetics as agen
 import aethris_traversal as atr
+import aethris_economy as aeco
 sys.path.insert(0, str(ROOT / "tools/authoring"))
 import research_k39 as rk39
 import crafting_k41 as ck41
@@ -37,7 +38,7 @@ def repl(m):
     if parts[0] == "csv":
         return table_csv(parts[1], parts[2] if len(parts) > 2 else None)
     if parts[0] == "file":
-        return {"combat_report_speed": ac.report_speed, "combat_report_levels": ac.report_levels, "combat_sample_log": ac.sample_log, "combat_matrix": ac.report_matrix, "combat_examples": ac.example_table, "combat_power": ac.power_table, "combo_matrix": gcd.combo_matrix, "chord_examples": gcd.chord_examples, "ai_matrix": lambda: aai.matrix(150), "ai_explain": aai.explain, "ai_kits": aai.kit_table, "boss_table": ac.boss_table, "bond_scenarios": abd.scenarios, "bond_sheet": abd.bond_sheet, "bond_progress": abp.table, "genetics_dr18": agen.dr18_table, "genetics_groups": agen.group_table, "genetics_eggs": agen.egg_table, "kodex_tasks": rk39.task_sample, "mount_table": atr.mount_table, "travel_table": atr.travel_table, "recipe_table": ck41.recipe_table}[parts[1]]()
+        return {"combat_report_speed": ac.report_speed, "combat_report_levels": ac.report_levels, "combat_sample_log": ac.sample_log, "combat_matrix": ac.report_matrix, "combat_examples": ac.example_table, "combat_power": ac.power_table, "combo_matrix": gcd.combo_matrix, "chord_examples": gcd.chord_examples, "ai_matrix": lambda: aai.matrix(150), "ai_explain": aai.explain, "ai_kits": aai.kit_table, "boss_table": ac.boss_table, "bond_scenarios": abd.scenarios, "bond_sheet": abd.bond_sheet, "bond_progress": abp.table, "genetics_dr18": agen.dr18_table, "genetics_groups": agen.group_table, "genetics_eggs": agen.egg_table, "kodex_tasks": rk39.task_sample, "mount_table": atr.mount_table, "travel_table": atr.travel_table, "recipe_table": ck41.recipe_table, "eco_income": lambda: aeco.act_report()[0], "eco_spend": lambda: aeco.spend_report()[0], "eco_balance": aeco.balance, "eco_prices": aeco.price_sample}[parts[1]]()
     if parts[0] == "py":   # py MODUL FUNKTION [ARGS]
         import importlib
         return str(getattr(importlib.import_module(parts[1]), parts[2])(*parts[3:]))
