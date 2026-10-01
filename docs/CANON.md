@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K05
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K06
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -248,6 +248,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-029 | Determinismus-Zone mit Ganzzahl/Festkomma + eigenem RNG | K05 |
 | ADR-030 | Horde + BuildGraph + UGS | K05 |
 | ADR-031 | Definition-Basisklassen in AethrisCore, Erweiterung per Fragmente | K05 |
+| ADR-032 | GAS als Effekt-Framework, Zeitleiste als Aktivierungsinstanz | K06 |
+| ADR-033 | Eigener Event-Bus (UAethrisEventBus) | K06 |
+| ADR-034 | PCG32 als Projekt-RNG (FAethrisRandom) | K06 |
+| ADR-035 | Fragmentierte, explizit serialisierte Saves | K06 |
+| ADR-036 | CSV als Quelle der Wahrheit für Designdaten | K06 |
 
 ## §11 Change Requests
 
@@ -479,3 +484,29 @@ Verboten im Spiel: „Monster“, Ball/Kapsel/Fangkugel/werfen (Bindung), „-de
 - Kommentare Deutsch, Bezeichner Englisch; `TODO(AET-####)` Pflicht.
 - Tests: `Aethris.Unit.<Plugin>.<Thema>` (Automation Spec), `Aethris.Functional.*`; Coverage Domain 80 %, Feature 60 %.
 - Log-Kategorien `LogAethris<Bereich>` aus `AethrisCore/AethrisLog.h`.
+
+## §29 Core-Framework (LOCKED, K06 · Code in `Source/AethrisCore`)
+
+- Klassen: `UAethrisDefinition` (+ `UDefinitionFragment`), `UEchoSpeciesDefinition`, `UAbilityDefinition`, `UItemDefinition`, `UQuestDefinition`, `UAethrisEventBus`, `UAethrisServiceLocator`, `FAethrisRandom` (PCG32, Referenz `tools/ref/aethris_random.py`), `FAethrisFixed` (Q16.16, Referenz `tools/ref/aethris_fixed.py`), `TAethrisStateMachine<E>`, `UAethrisTelemetrySubsystem`, `ISaveFragmentProvider`, `FAethrisSaveHeader`.
+- Echo-Daten: `FEchoStats` {HP, Attack, Defense, SpAttack, SpDefense, Speed, Precision, Evasion} (int32), `FEchoBaseStats`, `FEchoGenome` {Aptitudes, Loci[{Locus,A,B}], Morph, Mutations}, `FEchoOrigin` (Wärter, Zone, Wetter, Tageszeit, Spieltag, UTC, Methode 0 Bindung/1 Zucht/2 Geschenk/3 Event, Eltern, Signatur), `FEchoInstance` (InstanceId, Species, Nickname, Level, Experience, Bond, Personality, Temperament, Genome, Polish, CurrentHP, PersistentStatus, Repertoire, ActiveSlots ≤4, PassiveAbility, HeldItem, Origin).
+- `EEchoRarity`: Common, Uncommon, Rare, VeryRare, Legendary, Mythical (ab Rare SpawnConditions Pflicht).
+- Zustandsmaschinen: global `UAethrisGameFlowSubsystem` · Code-Abläufe `TAethrisStateMachine` · KI StateTree + Behavior Trees.
+- GAS (in GF_Combat): `UEchoAbilitySystemComponent::ExecuteTurnAbility()` liefert Zeitkosten in Ticks; `UEchoAttributeSet` {CurrentHP, MaxHP, Attack, Defense, SpAttack, SpDefense, Speed, Precision, Evasion}; GAS-01 ganzzahlige Attribute, GAS-02 nur additive Ganzzahl-Modifikatoren oder Buff-Stufen −4…+4, GAS-03 Basiswerte nur bei Kampfbeginn, GAS-04 Rückschreiben nur CurrentHP + PersistentStatus. Keine Prediction, keine zeitbasierten Dauern.
+- Seed-Hierarchie: Weltstand-Seed → Fork(1) Wetter, Fork(2) Spawn je Zone, Fork(3) Zucht, Fork(4) Loot; Kampf-Seed = Hash(Weltseed, Kampfzähler) → Fork(Teilnehmer). PvP/Raid: Server-Seed, im Replay gespeichert.
+- ECS: Mass für ferne Echos (> 150 m) und Hintergrund-NPCs; Actor nah/in Interaktion.
+
+## §30 Event-Kanäle & Services (LOCKED, K06 §4–§5)
+
+- Kanäle: `Event.GameFlow.StateChanged`, `Event.Combat.Started|Ended`, `Event.Echo.Bonded|LevelUp|Evolved`, `Event.World.WeatherChanged|TimeOfDayChanged|Zone.BandFixed`, `Event.Quest.StepCompleted`, `Event.Save.Requested` (+ Erweiterungen der Fachkapitel). Nachrichtentypen liegen in `AethrisCore/Public/Events/Messages/`.
+- Core-Interfaces: `IEchoRosterService` (GF_Monsters), `IWorldStateService` (GF_World), `IInventoryService` (GF_Inventory), `IBondingService` (GF_Capture), `ICombatService` (GF_Combat), `IKodexService` (GF_Research), `IQuestService` + `IReputationService` (GF_Quests), `IEconomyService` (GF_Economy), `ISaveService` (GF_Save). Regeln SV-01–SV-04 (Pflicht-Services: Roster, WorldState, Inventory, Save).
+
+## §31 Datenpipeline (LOCKED, K06 §2–§3)
+
+- `Data/**/*.csv` ist Quelle der Wahrheit → `data_lint.py` → Commandlet `AethrisCsvImport` → Definitionen (Felder im Editor gesperrt).
+- CSV: erste Spalte `Id`; Fragment-Spalten `<Fragment>.<Feld>`; Listen `|`; Tags vollqualifiziert; Zahlen als Ganzzahl/Promille; Texte nur über String Tables; `#` = Kommentar.
+- DD-01 Definitionen zur Laufzeit unveränderlich · DD-02 Referenzen per PrimaryAssetId/Soft · DD-03 Selbstvalidierung · DD-04 Ganzzahl/Promille.
+
+## §32 Save-Architektur (LOCKED, K06 §10 · Detail K64)
+
+- Datei = `FAethrisSaveHeader` (Magic 'AETH', ContainerVersion, Build, Zeit, Vorschau, CRC) + Fragment-Verzeichnis + Fragmente (je Id + Version), Oodle-komprimiert.
+- SA-01 fragmentiert · SA-02 Migration pro Fragment · SA-03 fehlertolerant (Reset statt Absturz) · SA-04 unbekannte Fragmente mitschleppen · SA-05 atomar + 3 rotierende Autosaves · SA-06 explizite FArchive-Serialisierung.

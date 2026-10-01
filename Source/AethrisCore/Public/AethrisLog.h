@@ -1,0 +1,14 @@
+// Copyright AETHRIS Team.
+#pragma once
+
+#include "Logging/LogMacros.h"
+
+/** Projektweite Log-Kategorien (CS-12, K05 §8.3). Neue Kategorien nur hier ergänzen. */
+AETHRISCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogAethris, Log, All);
+AETHRISCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogAethrisEvents, Log, All);
+AETHRISCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogAethrisFlow, Log, All);
+AETHRISCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogAethrisCombat, Log, All);
+AETHRISCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogAethrisSave, Log, All);
+AETHRISCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogAethrisData, Log, All);
+AETHRISCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogAethrisNet, Log, All);
+AETHRISCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogAethrisAI, Log, All);
