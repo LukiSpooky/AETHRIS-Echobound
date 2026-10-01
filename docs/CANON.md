@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K16
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K17
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -295,6 +295,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-076 | Klangmal als universelles Gestaltungselement | K16 |
 | ADR-077 | Nicht gewählte Starter solo erhältlich (Uralthain nach Akt I + Zucht) | K16 |
 | ADR-078 | Präzision/Ausweichen als Sekundärwerte außerhalb der Kernsumme | K16 |
+| ADR-079 | Effektivitätsstufen 1,6 / 1,0 / 0,625 / 0,4 (keine Immunität) | K17 |
+| ADR-080 | Typtabelle als generierte Daten mit Balance-Bericht | K17 |
+| ADR-081 | Gift schlägt Metall (Korrosion) | K17 |
+| ADR-082 | Licht und Leere gegenseitig sehr effektiv | K17 |
+| ADR-083 | Effektivitätsvorschau ab Kodex-Stufe 2 (Entspannt immer) | K17 |
 
 ## §11 Change Requests
 
@@ -307,7 +312,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | # | Punkt | Ziel-Kapitel |
 |---|---|---|
 | Q1 | Zeitleisten-Formel, Tick-Größe | K31 |
-| Q2 | Effektivitätsmultiplikatoren | K17 |
+| Q2 | ~~Effektivitätsmultiplikatoren~~ ✅ K17 §2 | K17 |
 | Q3 | Genom: Allelanzahl, Morph-Wahrscheinlichkeiten | K38 |
 | Q4 | Koop: geteilter Story-Fortschritt? | K60 |
 | Q5 | Ranked-Level-Normalisierung | K61 |
@@ -923,3 +928,45 @@ Jedes Echo trägt ein leuchtendes **Klangmal** (Grundfrequenz sichtbar): Timing-
 
 - #001 **Fernlit**: *Pteridolis cantans*, Farnkitz-Echo, L001 Stufe 1, A01, S 0,45 m 6,2 kg, Blüte, Dämmerungsaktiv, Scheu/Sänger/Familienverband, Kampf+Feld, Support, Werte 48/42/50/55/58/47 = 300, PRÄ 100, AUS 105, Wachstum Steady, → Fernwyn ab Lv. 16, Bindungsrate 45, Vorliebe Lindblüten-Honig, Klangmal Lindgold-Spirale 52 BPM.
 - Nicht gewählte Starter wild im Uralthain (R01_Z06) nach Akt I (VeryRare): Fernlit Regen + Morgendämmerung, Brokk Klar + Mittag an Felsen, Wisplet Gewitter; zusätzlich Zucht.
+
+## §75 Effektivitätsstufen (LOCKED, K17 §2 – löst Q2)
+
+Sehr effektiv **1600** (●) · neutral **1000** (·) · resistent **625** (○) · gedämpft **400** (◌) Promille. Keine Immunität. Stärke × Resistenz = 1.
+
+## §76 Typtabelle (LOCKED, K17 §3 · `Data/Combat/TypeChart.csv`, Quelle `tools/build_typechart.py`)
+
+| Fähigkeitstyp | sehr effektiv gegen | resistiert von | gedämpft von |
+|---|---|---|---|
+| Glut | Blüte, Frost, Metall | Glut, Flut, Stein | – |
+| Flut | Glut, Stein, Gift | Flut, Blüte, Frost | – |
+| Stein | Glut, Sturm, Frost | Blüte, Metall, Geist, Schwerkraft | – |
+| Sturm | Flut, Blüte, Klang | Sturm, Frost, Kristall | Stein |
+| Blüte | Flut, Stein, Leere | Glut, Sturm, Gift | – |
+| Frost | Sturm, Blüte, Gift | Glut, Frost, Metall, Klang | – |
+| Leere | Licht, Klang, Arkan | Blüte, Schwerkraft | Leere |
+| Licht | Leere, Gift, Geist | Licht, Metall, Kristall | – |
+| Gift | Flut, Blüte, Metall | Stein, Sturm, Gift, Geist, Kristall | – |
+| Metall | Stein, Frost, Kristall | Flut, Metall | – |
+| Geist | Geist, Schwerkraft, Arkan | Stein, Leere, Licht | – |
+| Kristall | Leere, Licht, Geist | Metall, Kristall | – |
+| Klang | Stein, Metall, Kristall | Blüte, Gift, Klang, Arkan | Leere |
+| Schwerkraft | Sturm, Metall, Kristall | Schwerkraft, Arkan | Geist |
+| Arkan | Kristall, Schwerkraft, Arkan | Stein, Leere, Metall | – |
+
+Balance: jeder Typ 3× sehr effektiv; Offensiv-EV 0,980 (Klang) – 1,070 (Metall/Kristall); Defensiv-EV 0,990 (Leere) – 1,070 (Arkan); Doppeltypen 0,25–2,56 (39 von 105 mit ×2,56-Schwäche). Starter-Zyklus und Rückrichtung automatisch geprüft. Licht ↔ Leere gegenseitig sehr effektiv; Gift > Metall (Korrosion).
+
+## §77 Typregeln (LOCKED, K17 §6–§8)
+
+- Doppeltyp-Faktor = Produkt in Promille, gerundet; mögliche Werte 2560, 1600, 1000, 640, 625, 400, 391, 250.
+- **Eigenklang** (Fähigkeitstyp = eigener Typ) ×1,25, durch Boni max. ×1,4. Keine typlosen Schadensfähigkeiten.
+- Tabellenumkehr (Glyphenfeld, Arkan): 1600→625, 625→1600, 400→1600, 1000 bleibt; 1 Zug, angekündigt.
+- Faktor-Reihenfolge (Vorgabe K32): Basis × Eigenklang × Typfaktor × Wetter × Kritisch × Formation × Sonstige.
+- Typwechsel nur durch Arkan-Fähigkeiten (2 Züge) und Evolution; Morphs nie.
+- `FAethrisTypeChart` in AethrisCore (Promille-Lookup, Umkehr, Eigenklang).
+
+## §78 Typ-Identitäten & Darstellung (LOCKED, K17 §7, §9)
+
+- Kernmechaniken: Glut DoT/Glutboden · Flut Positionsverschiebung/Heilung über Zeit · Stein Schilde/Rückstoß-Resistenz · Sturm eigene Zeitkosten −/Mehrfachtreffer · Blüte Heilung/Überwuchs · Frost Gegner-Zeitkosten +/Präzision · Leere Entzug von Harmonie/Buffs/Schilden · Licht Enthüllen/Reinigen · Gift stapelnde Schwächung · Metall Rüstung/Konter · Geist Täuschung/Formation ignorieren · Kristall Reflexion/Laden · Klang Zeitleisten-Manipulation/Harmonie · Schwerkraft Ziehen/Stoßen/Reihentausch · Arkan Regelbruch.
+- Je Typ genau eine Status-Immunität (Arbeitsnamen: Brand, Ausgetrocknet, Rückstoß, Verlangsamt, Welke, Starre, Entzug, Geblendet, Vergiftet, Erschüttert, Furcht, Gebrochen, Verstummt, Schwebend, Verflucht) – final in K32.
+- Typfarben (Arbeitsstand, final K56): Glut #E8562A · Flut #2E8BC0 · Stein #8C7B65 · Sturm #7FD1E8 · Blüte #5DAA4C · Frost #BFE6F5 · Leere #2B2240 · Licht #F6D86B · Gift #8E4FB0 · Metall #9AA3AD · Geist #B7A4E0 · Kristall #E28FC6 · Klang #F2A93B · Schwerkraft #4B5BA6 · Arkan #3FB8A8; jeder Typ mit eigener Symbolform; immer Symbol + Name.
+- Effektivitätsvorschau im Kampf ab Kodex-Stufe 2 der Zielart (Entspannt: immer).
