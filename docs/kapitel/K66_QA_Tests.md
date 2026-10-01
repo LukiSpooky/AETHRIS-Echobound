@@ -8,7 +8,7 @@
 | Mitwirkende | QA Leads (Funktion, Online, Plattform, Lokalisierung, Barrierefreiheit), SDETs (Testautomatisierung), Build Engineer, Producer, Data Scientist, externe Partner (LQA, Kompatibilität) |
 | Baut auf | K05 (CI, Coding Standards, Testnamensraum, CANON §27–§28), alle Fachkapitel mit Prüfregeln (K16–K65), K54 (Barrierefreiheit), K59 (Online-Tests), K63 (Playtests), K64 (Save-Tests), K65 (Performance-Gates) |
 | Status | ✅ Freigegeben |
-| Im Repository | `Data/QA/Checks.csv` (22 Datenprüfungen), `TestSuites.csv`, `BugSeverity.csv`, `CertAreas.csv`; Runner `tools/ref/aethris_qa.py`; Automation Specs `Aethris.Unit.Core.CombatNet`, `Aethris.Unit.Save.Container`, `Aethris.Unit.PvP.Glicko2`; Exitcodes aller Prüfer vereinheitlicht |
+| Im Repository | `Data/QA/Checks.csv` (23 Datenprüfungen), `TestSuites.csv`, `BugSeverity.csv`, `CertAreas.csv`; Runner `tools/ref/aethris_qa.py`; Automation Specs `Aethris.Unit.Core.CombatNet`, `Aethris.Unit.Save.Container`, `Aethris.Unit.PvP.Glicko2`; Exitcodes aller Prüfer vereinheitlicht |
 | Neue Kanon-Einträge | CANON §260 (Teststrategie), §261 (Datenprüfungen und Automatisierung), §262 (Fehler-Workflow, Zertifizierung), §263 (Qualitätstore und Kennzahlen) |
 
 ---
@@ -63,7 +63,7 @@ Qualität ist in AETHRIS keine Phase am Ende, sondern eine Eigenschaft jeder Än
              ┌─┴────────────────────────────────────────────────────┴─┐
              │ Unit (Automation Specs, Referenzvektoren)               │  Pre-Submit
            ┌─┴──────────────────────────────────────────────────────────┴─┐
-           │ Datenprüfungen (22 Prüfer, Data Validation, Layers, Lint)     │  Pre-Submit
+           │ Datenprüfungen (23 Prüfer, Data Validation, Layers, Lint)     │  Pre-Submit
            └────────────────────────────────────────────────────────────────┘
 ```
 
@@ -166,7 +166,7 @@ Alle Prüfer der Fachkapitel sind in `Data/QA/Checks.csv` registriert und laufen
 | Data-Lint (Spalten, IDs, Tags, Referenzen) | K06, K54 | PreSubmit | `tools/data_lint.py` | ✅ | 0,0 s |
 | Modul-Schichten | K05 | PreSubmit | `tools/check_layers.py` | ✅ | 0,0 s |
 | Kreaturenkatalog (256 Arten) | K16–K27 | PreSubmit | `tools/gen_catalog.py validate` | ✅ | 0,1 s |
-| Wetterfahrplan-Kalibrierung (≤ 3 pp) | K14 | Nightly | `tools/sim_weather.py` | ✅ | 32,1 s |
+| Wetterfahrplan-Kalibrierung (≤ 3 pp) | K14 | Nightly | `tools/sim_weather.py` | ✅ | 31,7 s |
 | Kombos und Akkorde | K33 | PreSubmit | `tools/gen_combat_data.py` | ✅ | 0,0 s |
 | Items (336) | K39–K42 | PreSubmit | `tools/gen_items.py` | ✅ | 0,0 s |
 | Lernsets LS-01–LS-12 | K29 | PreSubmit | `tools/gen_learnsets.py validate` | ✅ | 0,1 s |
@@ -180,13 +180,14 @@ Alle Prüfer der Fachkapitel sind in `Data/QA/Checks.csv` registriert und laufen
 | VFX-01–VFX-06 | K58 | PreSubmit | `tools/ref/aethris_vfx.py validate` | ✅ | 0,0 s |
 | NET-01–NET-06 | K59 | PreSubmit | `tools/ref/aethris_net.py validate` | ✅ | 0,0 s |
 | SO-01–SO-07 | K60 | Nightly | `tools/ref/aethris_social.py validate` | ✅ | 0,0 s |
-| PV-01–PV-06 | K61 | Nightly | `tools/ref/aethris_pvp.py validate` | ✅ | 1,7 s |
+| PV-01–PV-06 | K61 | Nightly | `tools/ref/aethris_pvp.py validate` | ✅ | 1,6 s |
 | EG-01–EG-06 | K62 | PreSubmit | `tools/ref/aethris_endgame.py validate` | ✅ | 0,0 s |
 | BL-01–BL-07 | K63 | Nightly | `tools/ref/aethris_balance.py validate` | ✅ | 0,0 s |
-| SV-01–SV-06 | K64 | PreSubmit | `tools/ref/aethris_save.py validate` | ✅ | 0,1 s |
+| SV-01–SV-06 | K64 | PreSubmit | `tools/ref/aethris_save.py validate` | ✅ | 0,0 s |
 | PF-01–PF-06 | K65 | PreSubmit | `tools/ref/aethris_perf.py validate` | ✅ | 0,0 s |
+| Produktionsplan RM-01–RM-07 | K67 | PreSubmit | `tools/ref/aethris_roadmap.py validate` | ✅ | 0,0 s |
 
-**Ergebnis beim Abschluss dieses Kapitels:** **22 von 22 Prüfungen grün**; Laufzeit gesamt 35 s (davon PreSubmit 1 s).
+**Ergebnis beim Abschluss dieses Kapitels:** **23 von 23 Prüfungen grün**; Laufzeit gesamt 34 s (davon PreSubmit 1 s).
 
 ### 4.1 Katalog aller Prüfregeln
 
@@ -277,6 +278,13 @@ Die Prüfer tragen benannte Regeln (z. B. `VFX-04`, `SV-05`), damit Fehlermeldun
 | QV-08 | Detailprüfung (Meldungstext im Werkzeug) | `tools/gen_quests.py` |
 | QV-09 | trifft keine Quest | `tools/gen_quests.py` |
 | QV-10 | Hauptquest-EP … = … (Ziel 25 % ± 5) | `tools/gen_quests.py` |
+| RM-01 | Arbeitspakete liegen im Projektzeitraum (M0–M49), Ende ≥ Start | `tools/ref/aethris_roadmap.py` |
+| RM-02 | Abhängigkeiten beginnen vorher | `tools/ref/aethris_roadmap.py` |
+| RM-03 | Spitze ≤ 210 FTE, Durchschnitt 130–150 FTE (K01 §15/§16) | `tools/ref/aethris_roadmap.py` |
+| RM-04 | Personalkosten ±5 % um 118 Mio. € (16,8 T€ je FTE-Monat, K01 §16.3) | `tools/ref/aethris_roadmap.py` |
+| RM-05 | Meilensteine = Kanon-Daten (Greenlight 06/27, P2 07/27, VS 03/28, Alpha/Engine-Lock 02/30, Gold 09/30, Launch 11/30) | `tools/ref/aethris_roadmap.py` |
+| RM-06 | jedes Kapitel K01–K68 gehört zu mindestens einem Arbeitspaket | `tools/ref/aethris_roadmap.py` |
+| RM-07 | Durchsatz monoton, Endwerte = Kanon-Mengen | `tools/ref/aethris_roadmap.py` |
 | SO-01 | jede Art hat einen Solo-Zugang (Wildvorkommen, Evolution, Stimmsiegel-Quest, Mythos-Zugang §34) | `tools/ref/aethris_social.py` |
 | SO-02 | nur Ursprungsstimmen und Mythische sind vom Tausch ausgeschlossen | `tools/ref/aethris_social.py` |
 | SO-03 | Tauschliste enthält nur Ressourcen, Gerichte, Lockmittel/Futter (keine Schlüssel-/Siegel-/Ausrüstungsgegenstände) | `tools/ref/aethris_social.py` |
@@ -302,7 +310,7 @@ Die Prüfer tragen benannte Regeln (z. B. `VFX-04`, `SV-05`), damit Fehlermeldun
 | VFX-04 | Helligkeitswechsel ≤ 3 Hz: Klangmal-Puls (BPM × 1,3 Angst) und alle Story-VFX | `tools/ref/aethris_vfx.py` |
 | VFX-05 | jede Typfarbe aus TypeColors.csv vorhanden (alle Modi) | `tools/ref/aethris_vfx.py` |
 | VFX-06 | jedes Terrain (Terrains.csv) und jeder Status (StatusEffects.csv) hat eine Darstellung | `tools/ref/aethris_vfx.py` |
-| **Σ** | **108 Prüfregeln** | |
+| **Σ** | **115 Prüfregeln** | |
 
 Die Datenprüfungen sind schnell genug für jeden Pre-Submit (Ziel < 20 min für die gesamte Stufe, CANON §27). Sie ersetzen keine Tests im Spiel, verhindern aber die häufigste Fehlerklasse großer Rollenspiele: widersprüchliche Daten (fehlende Referenzen, unerreichbare Inhalte, Werte außerhalb der Regeln).
 
@@ -484,7 +492,7 @@ Werkzeuge: Fehlerdatenbank mit Pflichtfeldern und Signatur-Gruppierung, Testfall
 | Bereich | Eintrag | Status |
 |---|---|---|
 | §260 | Teststrategie (Datenprüfungen → Unit → Functional → Plattform/Performance → Manuell → Playtests → Telemetrie), Grundsätze TS-1–TS-5, Ziele QZ-1–QZ-6 | LOCKED |
-| §261 | `Checks.csv` (22 Prüfer, Runner `aethris_qa.py`, Erfolg = Exitcode 0 + „0 Verstöße“), `TestSuites.csv` (≥ 1.300 Tests), erste Specs (CombatNet, Save.Container, PvP.Glicko2), Bots/Gauntlet | LOCKED |
+| §261 | `Checks.csv` (23 Prüfer, Runner `aethris_qa.py`, Erfolg = Exitcode 0 + „0 Verstöße“), `TestSuites.csv` (≥ 1.300 Tests), erste Specs (CombatNet, Save.Container, PvP.Glicko2), Bots/Gauntlet | LOCKED |
 | §262 | Fehlerschwere S1–S4 (`BugSeverity.csv`), Lebenszyklus, Pflichtfelder, Absturz-Signaturen; Zertifizierungsbereiche (`CertAreas.csv`) und Phasen | LOCKED |
 | §263 | Qualitätstore VS/Alpha/Beta/RC/Patches, Organisation, Kennzahlen (crashfrei ≥ 99,8 %, Escape ≤ 5 %, Flake ≤ 1 %) | LOCKED |
 | §10 | ADR-279 – ADR-284 | LOCKED |

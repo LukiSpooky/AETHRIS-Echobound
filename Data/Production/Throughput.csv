@@ -1,0 +1,9 @@
+# Durchsatzziele je Meilenstein (K67 §5). Total = Launch-Umfang; VS/PreAlpha/Alpha/Beta = kumulierte Zielwerte.
+Name,DisplayName,Total,VS,PreAlpha,Alpha,Beta
+TP_ECHOS,"Echo-Arten final (Modell, Textur, Rig, Animation, VFX)",256,16,80,160,256
+TP_REGIONS,Regionen in Endqualität,10,0,3,10,10
+TP_QUESTS,Quests (32 Haupt- + 210 Neben-) implementiert,242,5,60,242,242
+TP_CINE,Zwischensequenzen in Endqualität,70,2,15,50,70
+TP_NPCS,Benannte NPCs mit Tagesablauf und Dialogen,194,12,70,194,194
+TP_ABILITIES,Fähigkeiten mit VFX und Animation,330,40,150,330,330
+TP_LANGUAGES,Sprachen (Text) vollständig,12,1,2,2,12

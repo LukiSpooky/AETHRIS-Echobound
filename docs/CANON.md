@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K66
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K67
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -20,7 +20,7 @@ Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapi
 | FPS-Ziel | 60 auf PS5, Xbox Series X\|S, PC; Switch 2: 30 fps gesperrt (Planungsziel, VS-Review bestätigt; CR-009) | LOCKED | K01 §11, K65 |
 | Altersfreigabe-Ziel | PEGI 7 / USK 6 / ESRB E10+ | LOCKED | K01 §10 |
 | Geschäftsmodell | Premium + Expansion-Pass (2 Erweiterungen) + rein kosmetischer Shop, keine Lootboxen, kein P2W | LOCKED | K01 §14 |
-| Release-Ziel | November 2030 | PROVISIONAL → K67 | K01 §16 |
+| Release-Ziel | November 2030 (Gold Sep 2030, alle Plattformen gleichzeitig) | LOCKED | K01 §16, K67 |
 
 ## §2 Design-Säulen (LOCKED, K01 §3)
 
@@ -501,6 +501,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-282 | Flake-Quarantäne ≤ 5 Tage | K66 |
 | ADR-283 | Zertifizierungs-Testfälle ab Alpha | K66 |
 | ADR-284 | Qualitätstore mit harten S1/S2-Grenzen | K66 |
+| ADR-285 | Produktionsplan als Daten mit Prüfregeln | K67 |
+| ADR-286 | Alpha = Content Complete, Beta = Content Final | K67 |
+| ADR-287 | Kreaturen-Durchsatz als Taktgeber | K67 |
+| ADR-288 | Text-Freeze April 2030 | K67 |
+| ADR-289 | Kein geplanter Crunch | K67 |
+| ADR-290 | Gleichzeitiger Release aller Plattformen mit Crossplay | K67 |
 
 ## §11 Change Requests
 
@@ -2089,7 +2095,7 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 ## §226 Validierung & Abnahme (LOCKED, K57 §10–§12)
 
-- Validatoren: Namen (`UAethrisAssetNamingValidator`, im Repo), Echo, Textur, Material, Animation, Blueprint, Welt; Pre-Submit: data_lint + Generatoren, Data Validation, check_layers, `[ART-BULK]`-Regel. Nächtliche Berichte: Platzhalter-Kurve, Budgets, Shader, Cook-Größe, Animation-Abdeckung. Aufwand Kreaturen ≈ 7.110 PT (≈ 32 Personenjahre); Ziele VS 25 Arten, Alpha 160, Beta 256/0 Platzhalter. Externe Lieferungen: Konzept/Rigs/geteilte Clips intern; Abnahme automatisch → Art-Review → In-Engine.
+- Validatoren: Namen (`UAethrisAssetNamingValidator`, im Repo), Echo, Textur, Material, Animation, Blueprint, Welt; Pre-Submit: data_lint + Generatoren, Data Validation, check_layers, `[ART-BULK]`-Regel. Nächtliche Berichte: Platzhalter-Kurve, Budgets, Shader, Cook-Größe, Animation-Abdeckung. Aufwand Kreaturen ≈ 7.110 PT (≈ 32 Personenjahre); Ziele VS 16 Arten, Alpha 160, Beta 256/0 Platzhalter (K67). Externe Lieferungen: Konzept/Rigs/geteilte Clips intern; Abnahme automatisch → Art-Review → In-Engine.
 
 ## §227 VFX-Säulen & Bildsprache (LOCKED, K58 §1–§2)
 
@@ -2229,7 +2235,7 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 ## §261 Datenprüfungen & Automatisierung (LOCKED, K66 §3–§4 · `Data/QA/Checks.csv`, `TestSuites.csv`, `tools/ref/aethris_qa.py`)
 
-- 22 registrierte Prüfer (Data-Lint, Layers, Katalog, Fähigkeiten, Lernsets, Items, Kombos, Quests, Nebenquests, NPCs, UI, Ökologie, Wetter, Palette, VFX, Netz, Soziales, PvP, Endgame, Balancing, Save, Performance); Erfolg = Exitcode 0 + „0 Verstöße/Fehler“; Regelkatalog aus den Werkzeugen. 16 Suiten (Unit Core/Combat/Breeding/Save/PvP/Quests/World, Functional Onboarding/Combat/Bond/Traversal/Quests/Save/Online/Accessibility, Soak), erste Specs `Aethris.Unit.Core.CombatNet`, `Aethris.Unit.Save.Container`, `Aethris.Unit.PvP.Glicko2`; Funktionale Testfälle FT-001–FT-090.
+- 23 registrierte Prüfer (Data-Lint, Layers, Katalog, Fähigkeiten, Lernsets, Items, Kombos, Quests, Nebenquests, NPCs, UI, Ökologie, Wetter, Palette, VFX, Netz, Soziales, PvP, Endgame, Balancing, Save, Performance, Roadmap); Erfolg = Exitcode 0 + „0 Verstöße/Fehler“; Regelkatalog aus den Werkzeugen. 16 Suiten (Unit Core/Combat/Breeding/Save/PvP/Quests/World, Functional Onboarding/Combat/Bond/Traversal/Quests/Save/Online/Accessibility, Soak), erste Specs `Aethris.Unit.Core.CombatNet`, `Aethris.Unit.Save.Container`, `Aethris.Unit.PvP.Glicko2`; Funktionale Testfälle FT-001–FT-090.
 
 ## §262 Fehler-Workflow & Zertifizierung (LOCKED, K66 §6–§7 · `BugSeverity.csv`, `CertAreas.csv`)
 
@@ -2238,3 +2244,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §263 Qualitätstore & Kennzahlen (LOCKED, K66 §8–§10)
 
 - VS (Daten grün, Prolog/R01 ohne S1/S2, Onboarding-Bot), Alpha (Quest-Bot alle Quests, Golden Saves G01–G12, S1 = 0), Beta (Platzhalter 0, LQA, A11y-Suite, Pre-Cert, Online-Beta), RC (S1 = S2 = 0, S3 ≤ 50 abseits Hauptpfad, crashfrei ≥ 99,8 % in 2 Wochen Soak). Organisation: Embedded QA je Team, zentrale QA 25, SDETs 6, Plattform-QA 5, A11y 2 + extern, LQA/Kompatibilität extern. Kennzahlen: Flake ≤ 1 %, Triage ≤ 1 Tag, Regression ≤ 8 %, Escape ≤ 5 %.
+
+## §264 Phasen & Meilensteine (LOCKED, K67 §2 · `Data/Production/Milestones.csv`)
+
+- P1 Preproduction Okt 26 – Jun 27 · P2 Vertical Slice Jul 27 – Mär 28 · P3 Core Systems Apr 28 – Mär 29 · P4 Content Apr 29 – Feb 30 · P5 Polishing Mär – Aug 30 · P6 Release Sep – Nov 30. Meilensteine: Greenlight 06/27, Perforce 07/27, VS 03/28 (16 Echos final, Switch-2-Messung), Pre-Alpha 03/29, Alpha 02/30 (Content Complete, Engine-Lock), Text-Freeze 04/30, Beta 06/30 (Content Final, Closed Online Beta), Gold 09/30, Launch 11/30 (alle Plattformen, Crossplay).
+
+## §265 Arbeitspakete, Personal, Budget (LOCKED, K67 §3–§4 · `Data/Production/Workstreams.csv`, `tools/ref/aethris_roadmap.py`; präzisiert K01 §16)
+
+- 24 Arbeitspakete in Pods Combat, Echos, World, Story, Online, Shared, Leadership. Personalkurve Spitze ≈ 199, Ø ≈ 142 FTE; Personalkosten ≈ 119 Mio. € (16,8 T€/FTE-Monat); Budget gesamt ≈ 190 Mio. € (Outsourcing 22, externe QA 7, Lokalisierung 9, Musik 2,5, Online 6, Reserve 25). Stückkosten: Art ≈ 60 T€, Region ≈ 2,6 Mio. €, Quest ≈ 30 T€, Zwischensequenz ≈ 60 T€.
+
+## §266 Durchsatz & kritischer Pfad (LOCKED, K67 §5–§6 · `Data/Production/Throughput.csv`)
+
+- Echos final 16/80/160/256 (VS/Pre-Alpha/Alpha/Beta), Regionen 0/3/10/10, Quests 5/60/242/242, Zwischensequenzen 2/15/50/70, NPCs 12/70/194/194, Fähigkeiten 40/150/330/330, Sprachen 1/2/2/12. Kreaturen-Durchsatz als Taktgeber (Platzhalter-Kurve). Kritischer Pfad: Spezifikation → Prototypen → VS → Kreaturen-Pipeline/Welt → Alpha → Beta; Text-Freeze → Lokalisierung → LQA; Switch-2-Messung → Profile → Performance-Gates → Pre-Cert; Backend → Closed Beta → Lasttests.
+
+## §267 Prozesse, Risiken, Release (LOCKED, K67 §7–§10)
+
+- Sprints 2 Wochen, Quartalsplanung, Definition of Done (spielbar, Prüfer grün, Tests, Daten, Kapitel, A11y, Budget), Kapitel-Gates und CR-Prozess, kein geplanter Crunch (Umfangsprüfung bei > 2 Wochen über 45 h). Gremien: Leadership Council, Pod-Leads, Kanon-Rat, Balance-Rat, Qualitätsrat, Publisher-Review. Outsourcing (≈ 140 Arten Modell/Textur, Umgebungs-Varianten, Performance Capture, externe QA, PC-Labor). Risikoregister R-01–R-15 mit neuen Scores. Release: Einreichung Anfang Sep 2030, Gold Ende Sep, Day-One-Patch, Launch Nov 2030, 30 Tage Launch-Raum, Übergabe an K68.

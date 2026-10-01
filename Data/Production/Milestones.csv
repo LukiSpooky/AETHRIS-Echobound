@@ -1,0 +1,11 @@
+# Meilensteine (K67 §2). Month = M ab Oktober 2026.
+Name,DisplayName,Month,Date,Criteria
+MS_GREENLIGHT,Greenlight,8,2027-06,"Spezifikation K01–K19 final, 4 Prototypen bestätigt, Budget freigegeben"
+MS_PERFORCE,Umzug Perforce (P2 Start),9,2027-07,"//Aethris/Main + Streams, Art-Pipeline produktiv (CANON §25)"
+MS_VS,Vertical Slice Review,17,2028-03,"Verdanthain-Teilgebiet ~3 km², Eichenhall, 16 Echos final, 1 Arena, 5 Quests, Koop-Prototyp; PS5 60 fps, Switch-2-Messung (CR-009)"
+MS_PREALPHA,Pre-Alpha,29,2029-03,"Alle Must-Features funktional, Pipelines skaliert, 3 Regionen spielbar"
+MS_ALPHA,"Alpha (Content Complete, Engine-Lock)",40,2030-02,"Alle Inhalte implementiert (Platzhalter erlaubt), Quest-Bot erreicht alle Quests, Engine-Lock"
+MS_LOCFREEZE,Text-Freeze (Lokalisierung),42,2030-04,Alle Texte final für Übersetzung und Vertonung
+MS_BETA,Beta (Content Final),44,2030-06,"Platzhalter = 0, LQA, Barrierefreiheit, Pre-Cert, Closed Online Beta (~5.000)"
+MS_GOLD,Gold Master,47,2030-09,"Zertifizierung bestanden, RC-Qualitätstor"
+MS_LAUNCH,Launch,49,2030-11,"Weltweiter Release, Day-One-Patch, Live-Betrieb"

@@ -636,7 +636,7 @@ Mit 220 produktiven Tagen je Person und Jahr sind das ≈ 32 Personenjahre. Bei 
 
 | Phase | Ziel | Messung |
 |---|---|---|
-| Vertical Slice (K67) | 25 Arten final (R01), 18 Archetyp-Sätze in Rohfassung | Platzhalter-Kurve |
+| Vertical Slice (K67) | 16 Arten final (R01, K01 §16.2), 18 Archetyp-Sätze in Rohfassung | Platzhalter-Kurve |
 | Alpha | 160 Arten final, alle Archetypen final | Platzhalter-Kurve |
 | Beta | 256 Arten final, 0 Platzhalter | Platzhalter-Kurve = 0 |
 

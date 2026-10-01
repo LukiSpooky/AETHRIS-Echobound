@@ -1,0 +1,26 @@
+# Arbeitspakete (Epics) der Produktion (K67 §3). Monate ab Oktober 2026 (M0) bis November 2030 (M49). FTE = durchschnittlich besetzte interne Stellen. DependsOn = muss vorher begonnen haben. Chapters = verantwortete Kapitel.
+Name,DisplayName,Pod,StartMonth,EndMonth,FTE,DependsOn,Chapters
+EP_LEAD,Leitung & Produktion,Leadership,0,49,14,,"K01, K67, K68"
+EP_SPEC,Spezifikation (Kapitelsystem),Leadership,0,8,12,,K01–K68
+EP_PROTO,"Prototypen (Zeitleiste, Bindung, Ökologie, Switch-2-Rendering)",Shared,2,8,14,,"K31, K36, K52, K65"
+EP_ENGINE,"Engine, Rendering, Plattformprofile",Shared,3,49,9,,"K05, K15, K65"
+EP_TOOLS,"Tools, Datenpipeline, Build, Validatoren",Shared,3,46,8,,"K05, K06, K57, K66"
+EP_CORE,"Core-Framework, Save",Shared,6,40,6,EP_PROTO,"K06, K64"
+EP_COMBAT,"Pod Combat: Kampf, KI, Bosse, Formate",Combat,9,44,11,EP_PROTO,K28–K35
+EP_ECHOS,"Pod Echos: Bindung, Hain, Zucht, Evolution, Kodex",Echos,9,44,8,EP_PROTO,"K16–K19, K36–K39"
+EP_CREATURES,"Kreaturen-Art, Rigs, Animation (256 Arten, 18 Archetypen)",Echos,12,44,12,EP_TOOLS,"K20–K27, K57"
+EP_WORLD,"Pod World: Regionen, PCG, Level Design, Traversal",World,12,44,24,EP_TOOLS,"K08–K15, K40"
+EP_LIFE,"Siedlungen, NPCs, Ökologie",World,15,44,10,EP_WORLD,"K11–K13, K52, K53"
+EP_STORY,"Pod Story & Quests: Narrative, Haupt- und Nebenquests, Fraktionen",Story,9,44,12,EP_SPEC,"K07, K44–K51"
+EP_CINE,"Zwischensequenzen, Performance Capture",Story,24,44,10,EP_STORY,"K44–K46, K57"
+EP_ONLINE,"Pod Online: Netz, Backend, Koop, Tausch, PvP, Raids",Online,12,49,12,EP_CORE,K59–K61
+EP_UI,"UI/UX, Barrierefreiheit",Shared,9,46,8,EP_SPEC,K54
+EP_AUDIO,"Audio, Musik",Shared,12,46,7,EP_SPEC,K55
+EP_VFX,VFX,Shared,18,46,6,EP_TOOLS,K58
+EP_TECHART,"Technical Art, Art Direction",Shared,9,46,6,EP_SPEC,"K56, K57"
+EP_ECONOMY,"Wirtschaft, Crafting, Fortschritt, Endgame",Echos,15,44,6,EP_COMBAT,"K40–K43, K62"
+EP_QA,"QA intern, Testautomatisierung",Shared,9,49,11,EP_TOOLS,K66
+EP_LOC,"Lokalisierung, Vertonung (Koordination)",Story,30,46,4,EP_STORY,"K04, K54"
+EP_BALANCE,"Balancing, Data Science",Combat,24,49,4,EP_COMBAT,K63
+EP_CERT,"Plattform-Programmierung, Zertifizierung",Shared,30,49,5,EP_ENGINE,"K65, K66"
+EP_LIVE,"Live-Ops-Vorbereitung, Events, Community",Online,36,49,6,EP_ONLINE,K68
