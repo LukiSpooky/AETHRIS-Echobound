@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K25
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K26
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -1257,3 +1257,40 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 | 190 | Sarkothar | Geist/Arkan | L083/3 Three | – | Striker | Bodenreiten |
 | 191 | Tilgel | Leere | L084/1 Two | Tilgrath [Level>=30] | Control | – |
 | 192 | Tilgrath | Leere/Arkan | L084/2 Two | – | Control | – |
+
+## §95 Arten #193–#224 (LOCKED, K26 · `Data/Echos/Species.csv`)
+
+| # | Name | Typen | Linie/Stufe | Evolution → | Rolle | Reiten |
+|---|---|---|---|---|---|---|
+| 193 | Hymlit | Klang | L085/1 Two | Hymnora [Level>=26 & BondTier>=3] | Support | – |
+| 194 | Hymnora | Klang/Geist | L085/2 Two | – | Support | – |
+| 195 | Optil | Licht | L086/1 Two | Optikor [Level>=32 & TimeOfDay=Night] | Caster | – |
+| 196 | Optikor | Schwerkraft/Licht | L086/2 Two | – | Caster | – |
+| 197 | Menhirok | Stein/Arkan | L087/1 Single | – | Tank | – |
+| 198 | Kronvaal | Arkan/Metall | L088/1 Single | – | Caster | – |
+| 199 | Klirrit | Kristall | L089/1 Three | Klirrflug [Level>=20] | Speed | – |
+| 200 | Klirrflug | Kristall/Klang | L089/2 Three | Klirrathan [Level>=38]; Klirrnox [Level>=38 & Zone=R09_Z04] | Speed | – |
+| 201 | Klirrathan | Kristall/Klang | L089/3 Three | – | Speed | Flugreiten |
+| 202 | Klirrnox | Leere/Kristall | L089/3 Branch | – | Striker | – |
+| 203 | Spatling | Kristall | L090/1 Three | Spatwurm [Level>=22] | Tank | – |
+| 204 | Spatwurm | Kristall/Stein | L090/2 Three | Spathorn [Level>=40] | Tank | Grabreiten |
+| 205 | Spathorn | Kristall/Schwerkraft | L090/3 Three | – | Tank | Grabreiten |
+| 206 | Ligrel | Schwerkraft | L091/1 Three | Ligrath [Level>=20] | Control | – |
+| 207 | Ligrath | Schwerkraft/Leere | L091/2 Three | Ligravor [Level>=38] | Control | – |
+| 208 | Ligravor | Schwerkraft/Kristall | L091/3 Three | – | Control | Kletterreiten |
+| 209 | Facetin | Kristall | L092/1 Two | Facettor [Level>=28 & BondTier>=3] | Caster | – |
+| 210 | Facettor | Kristall/Licht | L092/2 Two | – | Caster | – |
+| 211 | Mullit | Metall | L093/1 Two | Mullhorn [Level>=30] | Striker | – |
+| 212 | Mullhorn | Metall/Stein | L093/2 Two | – | Striker | – |
+| 213 | Misslit | Leere | L094/1 Two | Missgrath [Level>=32] | Caster | – |
+| 214 | Missgrath | Leere/Kristall | L094/2 Two | – | Caster | – |
+| 215 | Psionit | Arkan | L095/1 Two | Psioneth [Level>=30 & Moon=FullMoon] | Control | – |
+| 216 | Psioneth | Arkan/Kristall | L095/2 Two | – | Control | – |
+| 217 | Miasmar | Gift/Leere | L096/1 Single | – | Control | – |
+| 218 | Stalakkord | Klang/Kristall | L097/1 Single | – | Support | – |
+| 219 | Nimbel | Sturm | L098/1 Three | Nimbor [Level>=26] | Tank | – |
+| 220 | Nimbor | Sturm/Klang | L098/2 Three | Nimbaroth [Level>=44] | Tank | Flugreiten |
+| 221 | Nimbaroth | Sturm/Schwerkraft | L098/3 Three | – | Tank | Flugreiten |
+| 222 | Cirrel | Sturm | L099/1 Three | Cirrhawk [Level>=20] | Speed | – |
+| 223 | Cirrhawk | Sturm/Licht | L099/2 Three | Cirrhaven [Level>=38] | Speed | – |
+| 224 | Cirrhaven | Sturm/Licht | L099/3 Three | – | Speed | Flugreiten |
