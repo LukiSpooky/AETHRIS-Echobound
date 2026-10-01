@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K12
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K13
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -278,6 +278,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-059 | Schweigegelübde als Präsentationsform (Tafel-/Gestendialoge) | K12 |
 | ADR-060 | Weltlied-Fragmente in allen Stadtthemen | K12 |
 | ADR-061 | Energiekrise als Weltzustand ab Akt II | K12 |
+| ADR-062 | Siedlungen algorithmisch vorplatziert (Farthest-Point, ≥ 400 m, LD-Toleranz 300 m) | K13 |
+| ADR-063 | Siedlungszustände Bedroht/Stabil/Blühend ohne Rückfall | K13 |
+| ADR-064 | Wanderdorf Ashurim mit mitreisendem Resonanzstein | K13 |
+| ADR-065 | Aufträge ohne Exklusivbelohnungen (DR-31) | K13 |
 
 ## §11 Change Requests
 
@@ -339,6 +343,8 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | DR-27 | Kein Belohnungstyp >50 % in 30 min | quer |
 | DR-28 | Hauptpfad jeder Region mit frühester Traversal-Ausstattung spielbar | S1 |
 | DR-29 | Atemzug-Regel: ≥20 min Ruhe nach Intensität ≥7 | quer |
+| DR-30 | ≤ 800 m Hauptpfad zwischen zwei Klangbrunnen | S1 |
+| DR-31 | Aufträge nie einzige Quelle einer Belohnung | quer |
 
 ## §14 Onboarding & Starter (K02 §8)
 
@@ -522,7 +528,7 @@ Verboten im Spiel: „Monster“, Ball/Kapsel/Fangkugel/werfen (Bindung), „-de
 
 ## §30 Event-Kanäle & Services (LOCKED, K06 §4–§5)
 
-- Kanäle: `Event.GameFlow.StateChanged`, `Event.Combat.Started|Ended`, `Event.Echo.Bonded|LevelUp|Evolved`, `Event.World.WeatherChanged|TimeOfDayChanged|Zone.BandFixed`, `Event.Quest.StepCompleted`, `Event.Save.Requested` (+ Erweiterungen der Fachkapitel). Nachrichtentypen liegen in `AethrisCore/Public/Events/Messages/`.
+- Kanäle: `Event.GameFlow.StateChanged`, `Event.Combat.Started|Ended`, `Event.Echo.Bonded|LevelUp|Evolved`, `Event.World.WeatherChanged|TimeOfDayChanged|Zone.BandFixed`, `Event.Quest.StepCompleted`, `Event.Save.Requested`, `Event.World.SettlementStateChanged` (K13) (+ Erweiterungen der Fachkapitel). Nachrichtentypen liegen in `AethrisCore/Public/Events/Messages/`.
 - Core-Interfaces: `IEchoRosterService` (GF_Monsters), `IWorldStateService` (GF_World), `IInventoryService` (GF_Inventory), `IBondingService` (GF_Capture), `ICombatService` (GF_Combat), `IKodexService` (GF_Research), `IQuestService` + `IReputationService` (GF_Quests), `IEconomyService` (GF_Economy), `ISaveService` (GF_Save). Regeln SV-01–SV-04 (Pflicht-Services: Roster, WorldState, Inventory, Save).
 
 ## §31 Datenpipeline (LOCKED, K06 §2–§3)
@@ -775,3 +781,38 @@ R07 am Pass (≈ 3,3/1,1 km), Ordenssitz, ~120 Mitglieder, Schweigegelübde (Dia
 - Gesamtbevölkerung der 10 Städte ≈ 59.300.
 - **Weltlied-Leitmotiv** (7 Töne, Komposition K55 vor den Stadtthemen): Eichenhall Töne 1–2 · Kharsholm 2–3 · Morvenfurt 3–4 · Saltrand 4–5 · Qasr Sahrun 5–6 · Schlackenwehr 6–7 · Hvitmark Umkehrung · Dorunsruh Krebs, fragmentiert · Prismara arpeggiert 1/3/5/7 · Aerion vollständig; Finale verschmilzt alle Fragmente.
 - Dialog-Präsentation `EDialoguePresentation` {Voiced, Barked, SlateWritten, Gesture}, `FDialogueLineSpec`.
+
+## §57 Dörfer (LOCKED, K13 §2 · Koordinaten `Data/World/Settlements.csv`)
+
+| Region | Dorf (Einw.) – Schlüssel-NPC – Haken |
+|---|---|
+| R01 | **Lindwiesen** (240, Start; Ysolde, Bäckerin Hedda, Müller Jost) · **Moosgrund** (310; Köhlerin Brida; Pilzringe) |
+| R02 | **Brakkfels** (420; Ulf Brakk; Lorenlauf/Minenunglück) · **Hrallsted** (280; Hirtin Svala; verlorene Herde) |
+| R03 | **Fennhaven** (190; Lorcan; Reusen-Mysterium) · **Duvreth** (230, halb evakuiert; Moorweise Ama Duvreth; Rückkehr nach Heilung) |
+| R04 | **Harrâd** (520; Brunnenwächterin Nadira) · **Mirsaan** (260; Dünenbauer Kesh) · **Wanderdorf Ashurim** (150; Imran; Route A 6,3/5,9 → B 3,5/5,5 → C 2,6/5,8 → D 4,7/6,0, je ~18 Spielstunden, Stein reist mit) |
+| R05 | **Vorthax** (330; Thessa; Ausbruchstag) · **Kaldra** (210; Kurwirtin Malva; Klangpest-Kurgäste) |
+| R06 | **Tangwerft** (360; Marlene) · **Möwenhuk** (180; Okko) · **Treibdorf Flottholm** (140; Ebba; Ebbe 1,3/4,9 – Flut 1,1/4,6) |
+| R07 | **Fjallstad** (250; Leif; Schwester im Kloster) · **Eiðvik-Neu** (160; Halla, Klangpest-Überlebende) |
+| R08 | **Thae'Luun** (300; Dr. Imke Vael) · **Säulenrast** (140; Bruder Odvar – spricht außerhalb des Klosters) |
+| R09 | **Glanzschacht** (380, −120 m; Steiger Brannoc d. Ä.) · **Quarzgrund** (120, −310 m; Schleiferin Nyx; Dunkelheit) |
+| R10 | **Lumeya** (90, 1.650 m; Elun) · **Wolkenrast** (110, 1.500 m; Windseglerin Ria) |
+
+Σ ≈ 5.560 Einwohner. Dienste-Standard: Klangbrunnen, Stein, 1–3 Händler, Questbrett, Gasthaus; teils Werkbank/Kessel/Hain-Portal.
+
+## §58 Außenposten (LOCKED, K13 §3)
+
+- 30 Posten, Typen: **WW** Wildwacht 9 · **AK** Akademie 8 · **GK** Kontor 4 · **ZV** zivil 9. Standarddienste: Feldbrunnen (10 s), Wildstein ≤ 150 m, Werkbank, Auftragsbrett, Zelt; Wanderhändler an 50 % (rotierend).
+- Story-relevant: Dünenwacht (Sandsturm-Gate), Aschehütte (Ascheschleier-Gate), Passhütte (Schneesturm-Gate), Archontenwacht (große Stillezone), Liftstation Kraterrand (Aussicht ab Akt I, Lift ab Akt III), Kronenwerft-Wacht (Akt III), Kraterrand-Posten (kündigt Ausbrüche 1 Spieltag vorher an).
+- Platzierung `tools/place_settlements.py` (Farthest-Point, Mindestabstand ≥ 0,4 km, real ≥ 0,54 km; LD darf ≤ 300 m verschieben).
+
+## §59 Aufträge (LOCKED, K13 §4 · `Data/Quests/ContractTemplates.csv`)
+
+- 10 Vorlagen: CT_OBSERVE, CT_PHOTO, CT_BOND, CT_GATHER, CT_DELIVER, CT_ESCORT, CT_CALM, CT_RESCUE, CT_SILENCE, CT_SURVEY (Basis-Sol 70–240, Abklingzeit 1–3 Spieltage, Fraktionsruf Akademie/Kontor/Wildwacht).
+- Slots: Außenposten 1, Dorf 2, Stadt 3; Generierung bei Spieltag-Wechsel, deterministisch über Loot-Strom Fork(4); bevorzugt Arten mit niedriger Kodex-Stufe; Belohnung = BaseSol × RewardScale(Zonenband-Mitte) (K42).
+- **DR-31:** Aufträge sind nie die einzige Quelle einer Belohnung.
+
+## §60 Siedlungszustände & Ereignisse (LOCKED, K13 §5–§6)
+
+- Zustände **Bedroht (0) / Stabil (1) / Blühend (2)**, nur aufwärts (ADR-063). Bedroht: Sortiment −40 %, nur Aufträge Stufe 0. Blühend: +1 Händler (Sonderwaren), Aufträge Stufe 2, einmaliges Dorffest, EP-Bonus. Außenposten: 5 Aufträge → Blühend.
+- Data Layers `DL_SET_<Id>_State0/1/2`, Save-Fragment `Settlements`, Event `Event.World.SettlementStateChanged`, `USettlementSubsystem`.
+- Ereignisse: Echo-Besuch (1 pro 2 Spieltage je Dorf), Herde am Rand, Händlerkarawane (1/Woche je Region), Wetterschaden (20 % nach Unwetter), Alpha-Bedrohung, Dorffest (einmalig), verirrter Reisender.

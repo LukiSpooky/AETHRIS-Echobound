@@ -1,0 +1,12 @@
+# Aufträge (wiederholbar, nicht Teil der 210 Nebenquests) – K13 §4. Belohnungsbasis in Sol bei Zonenband-Mitte 10; skaliert mit RewardScale(Level) aus K42.
+Name,Kind,Description,Source,MinTier,CooldownGameDays,BaseSol,WardenXP,ResearchBonus,Faction
+CT_OBSERVE,Observe,"Beobachte 3 Verhaltensmerkmale einer Art",Questbrett|Outpost,0,1,80,60,1,Faction.Academy
+CT_PHOTO,Photo,"Fotografiere eine Art mit Bewertung ≥ 2 Sterne",Questbrett|Outpost,0,1,90,60,1,Faction.Academy
+CT_BOND,Bond,"Binde eine bestimmte Art (darf anschließend freigelassen werden)",Questbrett,0,2,140,90,0,Faction.Wildwatch
+CT_GATHER,Gather,"Sammle 8 Einheiten einer regionalen Ressource",Questbrett|Outpost,0,1,70,40,0,Faction.Goldklang
+CT_DELIVER,Deliver,"Liefere eine Ware in eine andere Siedlung der Region",Questbrett,0,1,110,50,0,Faction.Goldklang
+CT_ESCORT,Escort,"Begleite einen Reisenden zum nächsten Außenposten",Outpost,1,2,160,110,0,Faction.Wildwatch
+CT_CALM,Calm,"Beruhige ein aggressives Alphatier (Kampf oder Einstimmen)",Outpost,1,3,200,140,1,Faction.Wildwatch
+CT_RESCUE,Rescue,"Finde ein verirrtes Echo und bringe es zurück",Questbrett|Outpost,0,2,120,80,0,Faction.Wildwatch
+CT_SILENCE,Silence,"Löse eine kleine Stillezone-Nachwirkung (nach Regionsheilung)",Outpost,2,3,240,160,1,Faction.Wildwatch
+CT_SURVEY,Survey,"Vermesse 3 Punkte mit dem Resonator (Akademie-Kartografie)",Outpost,1,2,130,90,1,Faction.Academy
