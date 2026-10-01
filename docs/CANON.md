@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K22
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K23
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -1146,3 +1146,40 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 | 094 | Aquapip | Flut | L041/1 Three | Aquafin [Level>=16] | Caster | – |
 | 095 | Aquafin | Flut/Licht | L041/2 Three | Aquadral [Level>=32]; Mystdral [Level>=32 & Moon=NewMoon & Zone=R06_Z05] | Caster | – |
 | 096 | Aquadral | Flut/Licht | L041/3 Three | – | Caster | Schwimmreiten |
+
+## §92 Arten #097–#128 (LOCKED, K23 · `Data/Echos/Species.csv`)
+
+| # | Name | Typen | Linie/Stufe | Evolution → | Rolle | Reiten |
+|---|---|---|---|---|---|---|
+| 097 | Mystdral | Arkan/Flut | L041/3 Branch | – | Control | – |
+| 098 | Aerlet | Sturm | L042/1 Two | Aerluna [Level>=24] | Control | – |
+| 099 | Aerluna | Sturm/Licht | L042/2 Two | – | Control | – |
+| 100 | Stonlet | Stein | L043/1 Two | Stonshell [Level>=26] | Tank | – |
+| 101 | Stonshell | Stein/Flut | L043/2 Two | – | Tank | Bodenreiten |
+| 102 | Glimkin | Licht | L044/1 Two | Glimar [Level>=22] | Support | – |
+| 103 | Glimar | Licht/Flut | L044/2 Two | – | Support | – |
+| 104 | Ariette | Klang | L045/1 Two | Ariuna [Level>=28 & TimeOfDay=Dusk] | Support | – |
+| 105 | Ariuna | Klang/Flut | L045/2 Two | – | Support | Schwimmreiten |
+| 106 | Tangi | Blüte | L046/1 Two | Tangix [Level>=24 & Weather=Rain] | Support | – |
+| 107 | Tangix | Gift/Blüte | L046/2 Two | – | Control | – |
+| 108 | Brassel | Metall/Flut | L047/1 Single | – | AllRound | – |
+| 109 | Sheamast | Geist/Flut | L048/1 Single | – | Caster | – |
+| 110 | Opalisk | Kristall/Flut | L049/1 Single | – | Tank | – |
+| 111 | Solkit | Licht | L050/1 Three | Solvar [Level>=18] | Striker | – |
+| 112 | Solvar | Licht | L050/2 Three | Solaryx [Level>=36] | Striker | – |
+| 113 | Solaryx | Licht/Glut | L050/3 Three | – | Striker | – |
+| 114 | Dunkalb | Stein | L051/1 Three | Dunhorn [Level>=20] | Tank | – |
+| 115 | Dunhorn | Stein | L051/2 Three | Dunmarsch [Level>=38 & Zone=R04_Z04] | Tank | Bodenreiten |
+| 116 | Dunmarsch | Stein/Schwerkraft | L051/3 Three | – | Tank | Bodenreiten |
+| 117 | Skarit | Schwerkraft | L052/1 Three | Skaral [Level>=18] | Control | – |
+| 118 | Skaral | Schwerkraft/Stein | L052/2 Three | Skarabon [Level>=34] | Control | – |
+| 119 | Skarabon | Schwerkraft/Licht | L052/3 Three | – | Control | – |
+| 120 | Sengel | Glut | L053/1 Three | Sengar [Level>=22] | Striker | – |
+| 121 | Sengar | Glut/Stein | L053/2 Three | Sengrath [Level>=40] | Striker | Grabreiten |
+| 122 | Sengrath | Glut/Stein | L053/3 Three | – | Striker | Grabreiten |
+| 123 | Stachik | Gift | L054/1 Two | Stacharon [Level>=26] | Striker | – |
+| 124 | Stacharon | Gift/Stein | L054/2 Two | – | Striker | – |
+| 125 | Sirrkorn | Sturm | L055/1 Two | Sirrsturm [Level>=26 & Weather=Sandstorm] | Speed | – |
+| 126 | Sirrsturm | Sturm/Stein | L055/2 Two | – | Speed | – |
+| 127 | Mirasel | Arkan | L056/1 Two | Mirazhar [Level>=28 & Weather=Heatwave] | Control | – |
+| 128 | Mirazhar | Arkan/Licht | L056/2 Two | – | Control | – |

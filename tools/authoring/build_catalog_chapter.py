@@ -31,7 +31,7 @@ def main():
             chain.append(m["DisplayName"] if not chain else f"──[{cond.split(') | (')[0].strip('()')}]──► {m['DisplayName']}")
         tree.append(f"{lid}  " + " ".join(chain))
         for b in br:
-            prev = next(x for x in main if b["Name"] in x["EvolvesTo"].split("|"))
+            prev = next(x for x in v.sp if b["Name"] in x["EvolvesTo"].split("|"))
             cond = prev["EvoCondition"].split(") | (")[-1].strip("()")
             tree.append(f"{' ' * 6}└─ Zweig von {prev['DisplayName']} ──[{cond}]──► {b['DisplayName']}")
     tree.append("```")
