@@ -1,0 +1,8 @@
+# Zucht-Gegenstände (K38 §4). Keine käuflichen Werte (CANON §8): alle über Crafting/Hain/Fraktion, nie Shop-Echtgeld.
+Name,DisplayName,Effect,Reusable,Sources
+ITM_BREED_ERBKLANG,Erbklang,"Vererbt 4 vom Spieler gewählte Anlagen sicher vom gewählten Elternteil",nein,Crafting (Kristall + Obertonkristall) · Akademie Ruf 2
+ITM_BREED_WESENSBAND,Wesensband,"Persönlichkeit des Trägers wird sicher vererbt",ja (Halteitem),Crafting · Wildwacht Ruf 2
+ITM_BREED_STIMMBAND,Stimmband,"Temperament des Trägers wird sicher vererbt",ja (Halteitem),Crafting · Freie Stimmen Ruf 2
+ITM_BREED_KEIMWAERME,Keimwärmer,"Reife des Resonanzkeims ×2 für 1 Keim",nein,Crafting (Glut-Material) · Hain-Ertrag
+ITM_BREED_FERNKLANG,Fernklang-Brief,"Zählt als Elternteil aus fernster Region (Morph-Faktor ×3), wenn ein Elternteil getauscht wurde",–,Automatisch bei Tausch (K60) – kein Item im Inventar
+ITM_BREED_KLANGSTIMMUNG,Klangstimmung,"Setzt eine Anlage eines Echos auf 15 (Endgame, CANON §80)",nein,Endgame-Crafting (Tiefenresonanz-Material)

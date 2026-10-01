@@ -1,6 +1,6 @@
 # 00 · Kapitelplan – AETHRIS: Echobound
 
-**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K37 abgeschlossen
+**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K38 abgeschlossen
 
 Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel baut auf den vorherigen auf und darf nur Entscheidungen verwenden, die in [`CANON.md`](CANON.md) eingetragen sind (oder es trägt neue ein).
 
@@ -75,7 +75,7 @@ Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel bau
 |---|---|---|---|---|
 | K36 | Fangsystem (Resonanzbindung) | Lead Gameplay Programmer, RPG Systems Designer | K31 | ✅ |
 | K37 | Begleitersystem | RPG Systems Designer, Animation | K36 | ✅ |
-| K38 | Zucht & Genetik | RPG Systems Designer | K18, K37 | ⬜ |
+| K38 | Zucht & Genetik | RPG Systems Designer | K18, K37 | ✅ |
 | K39 | Forschung, Echo-Kodex & Fotografie | RPG Systems Designer, UI/UX | K36 | ⬜ |
 
 ## Teil VI – Spielersysteme

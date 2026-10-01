@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K37
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K38
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -355,6 +355,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-136 | Tagesdeckel je Bindungshandlung | K37 |
 | ADR-137 | Stimmung wirkt nur auf Bindungstempo | K37 |
 | ADR-138 | Begehbarer Resonanzhain mit Menü-Tausch | K37 |
+| ADR-139 | Resonanzgruppen = 10 Phyla | K38 |
+| ADR-140 | Keimreife durch Spielzeit statt Echtzeit/Schritte | K38 |
+| ADR-141 | Anlagen-Vererbung 400/400/200 ‰ mit Erbklang | K38 |
+| ADR-142 | Morph-Grundchance 1/1.024 mit Faktoren | K38 |
 
 ## §11 Change Requests
 
@@ -369,7 +373,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 |---|---|---|
 | Q1 | ~~Zeitleisten-Formel, Tick-Größe~~ ✅ K31 §3: Verzögerung = ⌊Kosten×300/(GES+200)⌋, 100 Ticks = Standardzug | K31 |
 | Q2 | ~~Effektivitätsmultiplikatoren~~ ✅ K17 §2 | K17 |
-| Q3 | Genom: Allelanzahl, Morph-Wahrscheinlichkeiten | K38 |
+| Q3 | ~~Genom: Allelanzahl, Morph-Wahrscheinlichkeiten~~ ✅ K38 §5–§6: 6 Loci (2–4 Allele, Mendel), Morph 1/1.024 mit Faktoren bis 24/1.024 | K38 |
 | Q4 | Koop: geteilter Story-Fortschritt? | K60 |
 | Q5 | Ranked-Level-Normalisierung | K61 |
 | Q6 | Split-Screen-Koop Machbarkeit | K65 |
@@ -1588,3 +1592,25 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §140 Resonanzhain (LOCKED, K37 §8 · `Data/World/SanctuaryGardens.csv`)
 
 - 10 Biom-Gärten, je 20/30/40/50/60 Plätze nach Ausbaustufe (gesamt 600); Freischaltung mit erstem Resonanzstein der Region; bevorzugte Klangfarben (Stimmung +10); Tagesertrag (max. 1 Bündel je 10 Echos); Chor-Tausch im Hain oder an jedem Klangbrunnen/Resonanzstein; Koop-Besuch ohne Entnahme; Überlauf per Freilassen/Tausch.
+
+## §141 Zuchtregeln (LOCKED, K38 §2–§3)
+
+- Ab Wärterrang 14; Brutnischen im Hain (Garten-Ausbau 3, max. 10). Paar: gleiche Art oder gleiche Resonanzgruppe (= 10 Phyla der Archetypen), beide Bindungsstufe ≥ 2; ausgeschlossen: Ursprungsstimmen, Mythische, Leih-Echos.
+- Resonanzkeim je Nische alle 15 Spielminuten (max. 3 wartend), Reife 10/15/20/25 Spielminuten nach Seltenheit (Keimwärmer ×2), Keimtasche 6. Schlüpfling = Stufe 1 der Linie des gewählten Trägers, Lv. 1, Bindung 120, Herkunft „Zucht“.
+
+## §142 Vererbung (LOCKED, K38 §4 · `tools/ref/aethris_genetics.py`)
+
+- Anlagen je Wert 400 ‰ A / 400 ‰ B / 200 ‰ neu; Erbklang: 4 gewählte Werte sicher. Persönlichkeit 50/50 (Wesensband sicher), Temperament 40/40/20 (Stimmband sicher). Passive: 70 % Träger-Option, versteckte 50 % bei aktivem Elternteil. Ei-Fähigkeiten (max. 4). Zuchtvorschau zeigt alle Wahrscheinlichkeiten. DR-18: Ø 14,2 h für 6×15 mit Erbklang.
+
+## §143 Loci & Morphs (LOCKED, K38 §5–§6 – löst Q3 · `Data/Echos/GeneticLoci.csv`)
+
+- 6 Loci (Grundton 4 Allele, Musterung 3, Klangmal-Leuchten 2 rezessiv, Größe 3 intermediär ±8 %, Stimmlage 3, Klangmal-Form 2 rezessiv), Mendel je Locus, regionale Wildhäufigkeiten.
+- Morph 1/1.024; Faktoren Fernklang ×3, Skill Morphkunde ×2, Resonanzsturm ×2 (max. 12/1.024), Morph-Elternteil ×2 (max. 24/1.024); Mutationen 1/2.048; keine Kampfwirkung.
+
+## §144 Zucht-Meisterschaft (LOCKED, K38 §9)
+
+- Zuchtbuch-Meilensteine (10/25 Arten, 1 Morph, 6×15); Zucht-Meisterschaft = 50 Arten + 5 Morphs + 1 Echo 6×15 → Questreihe zu Ouroveth.
+
+## §145 Online-Genom (LOCKED, K38 §10)
+
+- Server-Plausibilität (Anlagen, Loci, Morph-Herkunft, Lernset-Erreichbarkeit) bei Tausch/Ranked; Signatur nach Prüfung; Fernklang ab 3 Regionen Abstand.

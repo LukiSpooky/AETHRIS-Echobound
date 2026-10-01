@@ -1,0 +1,8 @@
+# Genetische Loci (K38 §5, löst Q3): rein optisch/merkmalbezogen (DR-17), keine Kampfwerte. Allele: Kürzel:Name:Dominanz (höher dominiert; gleiche Dominanz = intermediär).
+Name,DisplayName,Alleles,Effect,WildFrequencyRule
+GEN_HUE,Grundton,H0:Artfarbe:2|H1:Warmton:1|H2:Kaltton:1|H3:Fahlton:0,"Farbton der Hauptpalette ±18° (intermediär bei H1/H2 = Mischton)","H0 85 %, H1/H2 je 7 % (Region warm/kalt), H3 1 %"
+GEN_PATTERN,Musterung,P0:Artmuster:2|P1:Gesprenkelt:1|P2:Gestreift:1,"Musterkanal der Haut/Federn/Panzer","P0 90 %, P1/P2 je 5 %"
+GEN_GLOW,Klangmal-Leuchten,G1:Normal:1|G0:Hell:0,"Rezessiv: G0G0 → Klangmal leuchtet doppelt hell","G0-Allel 10 %"
+GEN_SIZE,Größe,S0:Klein:1|S1:Mittel:1|S2:Groß:1,"Intermediär: Körpergröße 92 % / 100 % / 108 % (Mittelwert der Allele)","S1 80 %, S0/S2 je 10 %"
+GEN_VOICE,Stimmlage,V0:Tief:1|V1:Mittel:2|V2:Hoch:1,"Tonhöhe der Rufe ±3 Halbtöne (Audio K55)","V1 70 %, V0/V2 je 15 %"
+GEN_MARK,Klangmal-Form,M0:Artform:1|M1:Gespiegelt:0,"Rezessiv: M1M1 → Klangmal gespiegelt (Sammlerreiz)","M1-Allel 5 %"
