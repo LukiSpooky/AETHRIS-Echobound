@@ -1,0 +1,181 @@
+Name,Kind,Type,DisplayName,Category,Power,Accuracy,Target,TimeCost,Budget,Effects,Trigger,Tags,Description
+ABL_A001,Active,Ember,Funkenbiss,Physical,40,1000,Single,60,44,"Status(Brand,100)",,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner; 10 % Chance auf Brand."
+ABL_A002,Active,Ember,Glutfunke,Special,40,1000,Single,60,44,"Status(Brand,100)",,,"Spezieller Schaden, Stärke 40, gegen einen Gegner; 10 % Chance auf Brand."
+ABL_A003,Active,Ember,Aschewirbel,Special,60,950,Single,80,63,"Stage(Target,Precision,-1,300)",,,"Spezieller Schaden, Stärke 60, gegen einen Gegner; 30 % Chance: PRÄ −1 für das Ziel."
+ABL_A004,Active,Ember,Glutklaue,Physical,70,950,Single,100,75,"Status(Brand,200)",,Contact,"Physischer Schaden, Stärke 70, gegen einen Gegner; 20 % Chance auf Brand."
+ABL_A005,Active,Ember,Feuersaat,Special,55,1000,Row,120,101,"Terrain(Glutboden,3)",,,"Spezieller Schaden, Stärke 55, gegen eine gegnerische Reihe; erzeugt Glutboden für 3 Runden."
+ABL_A006,Active,Ember,Schmelzhieb,Physical,90,900,Single,110,91,Crit(1),,Contact,"Physischer Schaden, Stärke 90, gegen einen Gegner; Volltrefferstufe +1."
+ABL_A007,Active,Ember,Feueratem,Special,95,900,Single,120,98,"Status(Brand,300)",,,"Spezieller Schaden, Stärke 95, gegen einen Gegner; 30 % Chance auf Brand."
+ABL_A008,Active,Ember,Esseneruption,Special,100,850,Enemies,130,114,Exhaust(),,,"Spezieller Schaden, Stärke 100, gegen alle Gegner; Anwender muss danach eine Runde aussetzen."
+ABL_A009,Active,Ember,Hitzeflimmern,Status,0,0,Self,60,40,"Stage(Self,Evasion,+1);Stage(Self,Speed,+1)",,,AUS +1 für sich selbst; GES +1 für sich selbst.
+ABL_A010,Active,Ember,Schwelbrand,Status,0,900,Single,60,40,"Status(Brand,1000)",,,Wirkt auf einen Gegner; verursacht Brand.
+ABL_A011,Active,Ember,Sonnenesse,Status,0,0,Field,50,30,"Weather(Heatwave,5)",,,Ruft Hitzewelle für 5 Runden herbei.
+ABL_A012,Active,Ember,Lodernder Ansturm,Physical,80,1000,Single,110,88,Priority(1);Recoil(330),,Contact,"Physischer Schaden, Stärke 80, gegen einen Gegner; Priorität +1; Rückschlag: Anwender erleidet 33 % des Schadens."
+ABL_A013,Active,Tide,Spritzer,Special,40,1000,Single,60,40,,,,"Spezieller Schaden, Stärke 40, gegen einen Gegner."
+ABL_A014,Active,Tide,Strudelzug,Special,50,1000,Single,90,65,Pull(Target),,,"Spezieller Schaden, Stärke 50, gegen einen Gegner; zieht das Ziel in die Vorderreihe."
+ABL_A015,Active,Tide,Brandungsschlag,Physical,65,1000,Single,100,80,Push(Target),,Contact,"Physischer Schaden, Stärke 65, gegen einen Gegner; stößt das Ziel in die Hinterreihe."
+ABL_A016,Active,Tide,Gezeitenwelle,Special,60,950,Row,110,94,Push(Target),,,"Spezieller Schaden, Stärke 60, gegen eine gegnerische Reihe; stößt das Ziel in die Hinterreihe."
+ABL_A017,Active,Tide,Quellbad,Status,0,0,Ally,50,24,"Regen(Ally,8,3)",,,Wirkt auf einen Verbündeten; einen Verbündeten heilt 3 Runden je 8 % der max. HP.
+ABL_A018,Active,Tide,Tiefenstrom,Special,90,950,Single,110,85,,,,"Spezieller Schaden, Stärke 90, gegen einen Gegner."
+ABL_A019,Active,Tide,Sturzflut,Special,110,850,Single,90,73,"Stage(Self,SpAttack,-1)",,,"Spezieller Schaden, Stärke 110, gegen einen Gegner; SAN −1 für sich selbst."
+ABL_A020,Active,Tide,Ebbe und Flut,Status,0,0,Field,50,32,"Terrain(Flutfeld,4)",,,Erzeugt Flutfeld für 4 Runden.
+ABL_A021,Active,Tide,Nebelschleier,Status,0,0,Allies,50,32,"Stage(Allies,Evasion,+1)",,,Wirkt auf alle Verbündeten; AUS +1 für alle Verbündeten.
+ABL_A022,Active,Tide,Wasserpeitsche,Physical,35,1000,Single,100,76,"Multi(2,2);Stage(Target,Speed,-1,300)",,Contact,"Physischer Schaden, Stärke 35, gegen einen Gegner; trifft 2–2-mal; 30 % Chance: GES −1 für das Ziel."
+ABL_A023,Active,Tide,Regenruf,Status,0,0,Field,50,30,"Weather(Rain,5)",,,Ruft Regen für 5 Runden herbei.
+ABL_A024,Active,Tide,Schaumwall,Status,0,0,AllyRow,50,32,"Shield(AllyRow,15);Regen(AllyRow,5,2)",,,Wirkt auf eigene Reihe; Schild für die eigene Reihe (15 % der max. HP); die eigene Reihe heilt 2 Runden je 5 % der max. HP.
+ABL_A025,Active,Stone,Kieselwurf,Physical,40,1000,Single,60,40,,,,"Physischer Schaden, Stärke 40, gegen einen Gegner."
+ABL_A026,Active,Stone,Felsrammen,Physical,60,950,Single,80,64,"Status(Erschuettert,200)",,Contact,"Physischer Schaden, Stärke 60, gegen einen Gegner; 20 % Chance auf Erschüttert."
+ABL_A027,Active,Stone,Sandschleuder,Special,50,950,Single,80,57,"Stage(Target,Precision,-1,500)",,,"Spezieller Schaden, Stärke 50, gegen einen Gegner; 50 % Chance: PRÄ −1 für das Ziel."
+ABL_A028,Active,Stone,Geröllschauer,Physical,25,900,Row,110,90,"Multi(2,4)",,,"Physischer Schaden, Stärke 25, gegen eine gegnerische Reihe; trifft 2–4-mal."
+ABL_A029,Active,Stone,Erdgrollen,Special,70,1000,Enemies,140,119,,,Ground,"Spezieller Schaden, Stärke 70, gegen alle Gegner."
+ABL_A030,Active,Stone,Monolithstoß,Physical,110,850,Single,120,103,"Status(Erschuettert,300)",,Contact,"Physischer Schaden, Stärke 110, gegen einen Gegner; 30 % Chance auf Erschüttert."
+ABL_A031,Active,Stone,Steinhaut,Status,0,0,Self,60,40,"Stage(Self,Defense,+2)",,,VER +2 für sich selbst.
+ABL_A032,Active,Stone,Felswall,Status,0,0,AllyRow,50,26,"Shield(AllyRow,20)",,,Wirkt auf eigene Reihe; Schild für die eigene Reihe (20 % der max. HP).
+ABL_A033,Active,Stone,Bergrücken,Status,0,0,Self,60,40,"Shield(Self,25);Taunt(1)",,,Schild für sich selbst (25 % der max. HP); Gegner müssen 1 Runde(n) den Anwender angreifen.
+ABL_A034,Active,Stone,Splitterfalle,Status,0,0,Field,50,30,Trap(Splitter),,,Legt eine Falle (Splitter) auf die gegnerische Seite.
+ABL_A035,Active,Stone,Gerölllawine,Physical,95,900,Row,150,125,"Stage(Target,Speed,-1,300)",,,"Physischer Schaden, Stärke 95, gegen eine gegnerische Reihe; 30 % Chance: GES −1 für das Ziel."
+ABL_A036,Active,Stone,Grundfeste,Status,0,0,Self,80,58,"Stage(Self,Defense,+1);Stage(Self,SpDefense,+1);Heal(Self,15)",,,VER +1 für sich selbst; SVE +1 für sich selbst; heilt sich selbst um 15 % der max. HP.
+ABL_A037,Active,Storm,Böenhieb,Physical,40,1000,Single,80,55,Priority(1),,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner; Priorität +1."
+ABL_A038,Active,Storm,Klingenwind,Special,45,1000,Single,80,55,Crit(1),,,"Spezieller Schaden, Stärke 45, gegen einen Gegner; Volltrefferstufe +1."
+ABL_A039,Active,Storm,Flatterschlag,Physical,20,950,Single,90,66,"Multi(2,5)",,Contact,"Physischer Schaden, Stärke 20, gegen einen Gegner; trifft 2–5-mal."
+ABL_A040,Active,Storm,Rückenwindschlag,Physical,60,1000,Single,100,76,"Haste(Self,40)",,Contact,"Physischer Schaden, Stärke 60, gegen einen Gegner; sich selbst rückt 40 Ticks auf der Zeitleiste vor."
+ABL_A041,Active,Storm,Blitzbogen,Special,90,900,Single,110,88,"Status(Erschuettert,200)",,,"Spezieller Schaden, Stärke 90, gegen einen Gegner; 20 % Chance auf Erschüttert."
+ABL_A042,Active,Storm,Donnerkeil,Special,115,800,Single,120,102,WeatherBoost(Thunderstorm),,,"Spezieller Schaden, Stärke 115, gegen einen Gegner; Stärke ×1,5 bei Gewitter."
+ABL_A043,Active,Storm,Wirbelsturm,Special,60,900,Enemies,120,102,"Status(Schwebend,200)",,,"Spezieller Schaden, Stärke 60, gegen alle Gegner; 20 % Chance auf Schwebend."
+ABL_A044,Active,Storm,Böenchor,Status,0,0,Allies,50,32,"Haste(Allies,50)",,,Wirkt auf alle Verbündeten; alle Verbündeten rückt 50 Ticks auf der Zeitleiste vor.
+ABL_A045,Active,Storm,Sturmlauf,Status,0,0,Self,60,40,"Stage(Self,Speed,+2)",,,GES +2 für sich selbst.
+ABL_A046,Active,Storm,Gewitterruf,Status,0,0,Field,50,30,"Weather(Thunderstorm,5)",,,Ruft Gewitter für 5 Runden herbei.
+ABL_A047,Active,Storm,Kettenblitz,Special,30,900,Row,110,92,"Multi(2,3)",,,"Spezieller Schaden, Stärke 30, gegen eine gegnerische Reihe; trifft 2–3-mal."
+ABL_A048,Active,Storm,Zyklonsprung,Physical,75,1000,Single,120,97,"Haste(Self,30);MoveSelf()",,Contact,"Physischer Schaden, Stärke 75, gegen einen Gegner; sich selbst rückt 30 Ticks auf der Zeitleiste vor; Anwender wechselt die Reihe ohne Zeitkosten."
+ABL_A049,Active,Bloom,Rankenhieb,Physical,40,1000,Single,60,40,,,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner."
+ABL_A050,Active,Bloom,Pollenschuss,Special,40,1000,Single,60,44,"Stage(Target,Precision,-1,200)",,,"Spezieller Schaden, Stärke 40, gegen einen Gegner; 20 % Chance: PRÄ −1 für das Ziel."
+ABL_A051,Active,Bloom,Saugwurzel,Special,60,1000,Single,90,69,Drain(500),,,"Spezieller Schaden, Stärke 60, gegen einen Gegner; heilt den Anwender um 50 % des Schadens."
+ABL_A052,Active,Bloom,Dornenranke,Physical,65,950,Single,100,81,Bind(2),,Contact,"Physischer Schaden, Stärke 65, gegen einen Gegner; Ziel kann 2 Runde(n) die Reihe nicht wechseln."
+ABL_A053,Active,Bloom,Blütensturm,Special,85,950,Row,130,112,,,,"Spezieller Schaden, Stärke 85, gegen eine gegnerische Reihe."
+ABL_A054,Active,Bloom,Urwaldzorn,Physical,110,850,Single,110,85,Recoil(250),,Contact,"Physischer Schaden, Stärke 110, gegen einen Gegner; Rückschlag: Anwender erleidet 25 % des Schadens."
+ABL_A055,Active,Bloom,Heiltau,Status,0,0,Ally,70,48,"Heal(Ally,40)",,,Wirkt auf einen Verbündeten; heilt einen Verbündeten um 40 % der max. HP.
+ABL_A056,Active,Bloom,Keimsegen,Status,0,0,Allies,50,28,"Regen(Allies,6,3)",,,Wirkt auf alle Verbündeten; alle Verbündeten heilt 3 Runden je 6 % der max. HP.
+ABL_A057,Active,Bloom,Wuchern,Status,0,0,Field,60,40,"Terrain(Ueberwuchs,5)",,,Erzeugt Überwuchs für 5 Runden.
+ABL_A058,Active,Bloom,Betäubungspollen,Status,0,900,Single,60,36,"Stage(Target,Speed,-2)",,,Wirkt auf einen Gegner; GES −2 für das Ziel.
+ABL_A059,Active,Bloom,Sonnentrunk,Status,0,0,Self,90,70,"Heal(Self,50);WeatherBoost(Clear)",,,"Heilt sich selbst um 50 % der max. HP; Stärke ×1,5 bei Klar."
+ABL_A060,Active,Bloom,Wurzelgriff,Status,0,0,Self,70,52,"Regen(Self,8,4);Stage(Self,Defense,+1)",,,Sich selbst heilt 4 Runden je 8 % der max. HP; VER +1 für sich selbst.
+ABL_A061,Active,Frost,Raureifhauch,Special,40,1000,Single,70,48,"Delay(Target,20)",,,"Spezieller Schaden, Stärke 40, gegen einen Gegner; das Ziel rückt 20 Ticks auf der Zeitleiste zurück."
+ABL_A062,Active,Frost,Frostsplitter,Physical,40,1000,Single,70,50,Crit(1),,,"Physischer Schaden, Stärke 40, gegen einen Gegner; Volltrefferstufe +1."
+ABL_A063,Active,Frost,Frostbiss,Physical,60,950,Single,90,69,"Status(Verlangsamt,300)",,Contact,"Physischer Schaden, Stärke 60, gegen einen Gegner; 30 % Chance auf Verlangsamt."
+ABL_A064,Active,Frost,Gletscherdruck,Physical,85,900,Single,110,92,"Delay(Target,40)",,Contact,"Physischer Schaden, Stärke 85, gegen einen Gegner; das Ziel rückt 40 Ticks auf der Zeitleiste zurück."
+ABL_A065,Active,Frost,Firnwind,Special,60,950,Row,110,85,"Stage(Target,Precision,-1,300)",,,"Spezieller Schaden, Stärke 60, gegen eine gegnerische Reihe; 30 % Chance: PRÄ −1 für das Ziel."
+ABL_A066,Active,Frost,Eissturz,Special,100,850,Single,110,94,"Status(Starre,150)",,,"Spezieller Schaden, Stärke 100, gegen einen Gegner; 15 % Chance auf Starre."
+ABL_A067,Active,Frost,Kältestarre,Status,0,850,Single,70,51,"Status(Starre,1000)",,,Wirkt auf einen Gegner; verursacht Starre.
+ABL_A068,Active,Frost,Weißer Atem,Status,0,900,Enemies,50,28,"Stage(Enemies,Precision,-1)",,,Wirkt auf alle Gegner; PRÄ −1 für alle Gegner.
+ABL_A069,Active,Frost,Schneeruf,Status,0,0,Field,50,30,"Weather(Snow,5)",,,Ruft Schneefall für 5 Runden herbei.
+ABL_A070,Active,Frost,Eisspiegel,Status,0,0,Field,50,32,"Terrain(Eisflaeche,4)",,,Erzeugt Eisfläche für 4 Runden.
+ABL_A071,Active,Frost,Frostpanzer,Status,0,0,Self,60,40,"Shield(Self,20);Stage(Self,SpDefense,+1)",,,Schild für sich selbst (20 % der max. HP); SVE +1 für sich selbst.
+ABL_A072,Active,Frost,Winterstille,Special,50,900,Enemies,120,95,"Delay(Enemies,30)",,,"Spezieller Schaden, Stärke 50, gegen alle Gegner; alle Gegner rückt 30 Ticks auf der Zeitleiste zurück."
+ABL_A073,Active,Void,Dunkelgriff,Physical,40,1000,Single,70,45,HarmonyDrain(5),,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner; entzieht dem Gegnerteam 5 Harmonie."
+ABL_A074,Active,Void,Leerstoß,Special,45,1000,Single,70,45,,,,"Spezieller Schaden, Stärke 45, gegen einen Gegner."
+ABL_A075,Active,Void,Hohlklang,Special,60,1000,Single,110,90,Dispel(Target),,,"Spezieller Schaden, Stärke 60, gegen einen Gegner; entfernt Schilde und positive Stufen von das Ziel."
+ABL_A076,Active,Void,Seelenzehrer,Special,70,950,Single,100,76,Drain(500),,,"Spezieller Schaden, Stärke 70, gegen einen Gegner; heilt den Anwender um 50 % des Schadens."
+ABL_A077,Active,Void,Schweigeschnitt,Physical,80,950,Single,110,88,"Status(Entzug,300)",,Contact,"Physischer Schaden, Stärke 80, gegen einen Gegner; 30 % Chance auf Entzug."
+ABL_A078,Active,Void,Abgrundwelle,Special,95,900,Row,150,129,HarmonyDrain(10),,,"Spezieller Schaden, Stärke 95, gegen eine gegnerische Reihe; entzieht dem Gegnerteam 10 Harmonie."
+ABL_A079,Active,Void,Nullpunkt,Special,120,800,Single,80,56,"Stage(Self,SpAttack,-2)",,,"Spezieller Schaden, Stärke 120, gegen einen Gegner; SAN −2 für sich selbst."
+ABL_A080,Active,Void,Verschlingen,Status,0,900,Single,50,31,StealBuffs(),,,Wirkt auf einen Gegner; stiehlt die positiven Stufen des Ziels.
+ABL_A081,Active,Void,Leerer Raum,Status,0,0,Field,50,24,"Terrain(Stillefeld,3)",,,Erzeugt Stillefeld für 3 Runden.
+ABL_A082,Active,Void,Entzugsfluch,Status,0,900,Single,60,36,"Status(Entzug,1000)",,,Wirkt auf einen Gegner; verursacht Entzug.
+ABL_A083,Active,Void,Lichtschlucker,Status,0,900,Enemies,60,43,Dispel(Enemies),,,Wirkt auf alle Gegner; entfernt Schilde und positive Stufen von alle Gegner.
+ABL_A084,Active,Void,Stille Klinge,Physical,65,1000,Single,100,80,IgnoreShield(),,Contact,"Physischer Schaden, Stärke 65, gegen einen Gegner; durchdringt Schilde."
+ABL_A085,Active,Light,Lichtnadel,Special,40,1000,Single,70,50,SureHit(),,,"Spezieller Schaden, Stärke 40, gegen einen Gegner; verfehlt nie."
+ABL_A086,Active,Light,Sonnenhieb,Physical,45,1000,Single,70,45,,,Contact,"Physischer Schaden, Stärke 45, gegen einen Gegner."
+ABL_A087,Active,Light,Blendschein,Special,55,1000,Single,90,67,"Status(Geblendet,300)",,,"Spezieller Schaden, Stärke 55, gegen einen Gegner; 30 % Chance auf Geblendet."
+ABL_A088,Active,Light,Prismenstrahl,Special,75,950,Single,110,86,Reveal(),,,"Spezieller Schaden, Stärke 75, gegen einen Gegner; enthüllt das Ziel (Ausweichen, Täuschung und Tarnung wirkungslos)."
+ABL_A089,Active,Light,Morgenrot,Physical,80,950,Single,110,86,WeatherBoost(Clear),,Contact,"Physischer Schaden, Stärke 80, gegen einen Gegner; Stärke ×1,5 bei Klar."
+ABL_A090,Active,Light,Zenitstoß,Special,120,900,Single,110,90,Charge(),,,"Spezieller Schaden, Stärke 120, gegen einen Gegner; benötigt eine Aufladerunde (sichtbar auf der Zeitleiste)."
+ABL_A091,Active,Light,Läuterung,Status,0,0,Allies,60,40,Cleanse(Allies),,,Wirkt auf alle Verbündeten; entfernt negative Status von alle Verbündeten.
+ABL_A092,Active,Light,Sonnenwehr,Status,0,0,AllyRow,50,26,"Shield(AllyRow,20)",,,Wirkt auf eigene Reihe; Schild für die eigene Reihe (20 % der max. HP).
+ABL_A093,Active,Light,Strahlenkranz,Special,65,950,Enemies,140,116,"Status(Geblendet,200)",,,"Spezieller Schaden, Stärke 65, gegen alle Gegner; 20 % Chance auf Geblendet."
+ABL_A094,Active,Light,Enthüllung,Status,0,0,Enemies,70,47,"Reveal();Stage(Enemies,Evasion,-1)",,,"Wirkt auf alle Gegner; enthüllt das Ziel (Ausweichen, Täuschung und Tarnung wirkungslos); AUS −1 für alle Gegner."
+ABL_A095,Active,Light,Lichtung,Status,0,0,Field,50,32,"Terrain(Lichtfeld,4)",,,Erzeugt Lichtfeld für 4 Runden.
+ABL_A096,Active,Light,Heilschein,Status,0,0,Ally,90,67,"Heal(Ally,35);Cleanse(Ally)",,,Wirkt auf einen Verbündeten; heilt einen Verbündeten um 35 % der max. HP; entfernt negative Status von einen Verbündeten.
+ABL_A097,Active,Venom,Nesselstich,Physical,40,1000,Single,70,46,"Status(Vergiftet,300)",,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner; 30 % Chance auf Vergiftet."
+ABL_A098,Active,Venom,Säurespritzer,Special,40,1000,Single,60,44,"Stage(Target,SpDefense,-1,200)",,,"Spezieller Schaden, Stärke 40, gegen einen Gegner; 20 % Chance: SVE −1 für das Ziel."
+ABL_A099,Active,Venom,Nesselpeitsche,Physical,55,950,Single,90,72,"Status(Vergiftet,1000)",,Contact,"Physischer Schaden, Stärke 55, gegen einen Gegner; verursacht Vergiftet."
+ABL_A100,Active,Venom,Miasma,Special,50,950,Row,100,79,"Status(Vergiftet,500)",,,"Spezieller Schaden, Stärke 50, gegen eine gegnerische Reihe; 50 % Chance auf Vergiftet."
+ABL_A101,Active,Venom,Ätzklaue,Physical,75,950,Single,100,81,"Stage(Target,Defense,-1,500)",,Contact,"Physischer Schaden, Stärke 75, gegen einen Gegner; 50 % Chance: VER −1 für das Ziel."
+ABL_A102,Active,Venom,Toxinwelle,Special,90,900,Single,120,101,"Status(Vergiftet,500,2)",,,"Spezieller Schaden, Stärke 90, gegen einen Gegner; 50 % Chance auf Vergiftet (2 Stapel)."
+ABL_A103,Active,Venom,Fäulnisbiss,Physical,100,850,Single,120,95,TerrainBoost(Sumpf),,Contact,"Physischer Schaden, Stärke 100, gegen einen Gegner; Stärke ×1,5 auf Sumpf."
+ABL_A104,Active,Venom,Giftnebel,Status,0,0,Field,50,32,"Terrain(Sumpf,4)",,,Erzeugt Sumpf für 4 Runden.
+ABL_A105,Active,Venom,Schleichendes Gift,Status,0,900,Single,70,54,"Status(Vergiftet,1000,3)",,,Wirkt auf einen Gegner; verursacht Vergiftet (3 Stapel).
+ABL_A106,Active,Venom,Korrosion,Status,0,900,Single,60,36,"Stage(Target,Defense,-2)",,,Wirkt auf einen Gegner; VER −2 für das Ziel.
+ABL_A107,Active,Venom,Giftkleid,Status,0,0,Self,80,55,"Shield(Self,15);Counter(Physical,300)",,,Schild für sich selbst (15 % der max. HP); kontert den nächsten physischen Angriff mit 30 % Schaden.
+ABL_A108,Active,Venom,Verwesung,Special,70,1000,Enemies,150,130,"Status(Welke,200)",,,"Spezieller Schaden, Stärke 70, gegen alle Gegner; 20 % Chance auf Welke."
+ABL_A109,Active,Metal,Erzfaust,Physical,40,1000,Single,60,40,,,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner."
+ABL_A110,Active,Metal,Klingenwurf,Physical,45,1000,Single,80,55,Crit(1),,,"Physischer Schaden, Stärke 45, gegen einen Gegner; Volltrefferstufe +1."
+ABL_A111,Active,Metal,Hammerschlag,Physical,65,950,Single,90,67,"Stage(Target,Defense,-1,300)",,Contact,"Physischer Schaden, Stärke 65, gegen einen Gegner; 30 % Chance: VER −1 für das Ziel."
+ABL_A112,Active,Metal,Stahlwirbel,Physical,30,950,Row,100,78,"Multi(2,2)",,Contact,"Physischer Schaden, Stärke 30, gegen eine gegnerische Reihe; trifft 2–2-mal."
+ABL_A113,Active,Metal,Magnetpuls,Special,60,1000,Single,90,67,"Status(Erschuettert,200)",,,"Spezieller Schaden, Stärke 60, gegen einen Gegner; 20 % Chance auf Erschüttert."
+ABL_A114,Active,Metal,Schmiedeschlag,Physical,100,850,Single,110,94,"Status(Gebrochen,200)",,Contact,"Physischer Schaden, Stärke 100, gegen einen Gegner; 20 % Chance auf Gebrochen."
+ABL_A115,Active,Metal,Spiegelstahl,Status,0,0,Self,60,40,"Counter(Special,1000)",,,Kontert den nächsten speziellen Angriff mit 100 % Schaden.
+ABL_A116,Active,Metal,Konterhieb,Status,0,0,Self,60,40,"Counter(Physical,1500)",,,Kontert den nächsten physischen Angriff mit 150 % Schaden.
+ABL_A117,Active,Metal,Panzerplatten,Status,0,0,Self,60,40,"Stage(Self,Defense,+2)",,,VER +2 für sich selbst.
+ABL_A118,Active,Metal,Rüstwerk,Status,0,0,AllyRow,60,39,"Stage(AllyRow,Defense,+1);Shield(AllyRow,10)",,,Wirkt auf eigene Reihe; VER +1 für die eigene Reihe; Schild für die eigene Reihe (10 % der max. HP).
+ABL_A119,Active,Metal,Schrapnell,Special,70,900,Enemies,130,107,,,,"Spezieller Schaden, Stärke 70, gegen alle Gegner."
+ABL_A120,Active,Metal,Stahlsturm,Physical,85,950,Single,120,95,"Shield(Self,15)",,Contact,"Physischer Schaden, Stärke 85, gegen einen Gegner; Schild für sich selbst (15 % der max. HP)."
+ABL_A121,Active,Spirit,Geisterhauch,Special,40,1000,Single,70,50,IgnoreFormation(),,,"Spezieller Schaden, Stärke 40, gegen einen Gegner; ignoriert Formationsschutz."
+ABL_A122,Active,Spirit,Spukgriff,Physical,40,1000,Single,60,44,"Stage(Target,Attack,-1,200)",,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner; 20 % Chance: ANG −1 für das Ziel."
+ABL_A123,Active,Spirit,Schreckensschrei,Special,60,950,Single,90,70,"Status(Furcht,300)",,Sound,"Spezieller Schaden, Stärke 60, gegen einen Gegner; 30 % Chance auf Furcht."
+ABL_A124,Active,Spirit,Seelenpfeil,Special,70,1000,Single,110,90,IgnoreFormation();SureHit(),,,"Spezieller Schaden, Stärke 70, gegen einen Gegner; ignoriert Formationsschutz; verfehlt nie."
+ABL_A125,Active,Spirit,Phantomklaue,Physical,80,950,Single,120,96,IgnoreFormation();Crit(1),,Contact,"Physischer Schaden, Stärke 80, gegen einen Gegner; ignoriert Formationsschutz; Volltrefferstufe +1."
+ABL_A126,Active,Spirit,Totenklage,Special,95,900,Row,150,131,"Status(Furcht,200)",,Sound,"Spezieller Schaden, Stärke 95, gegen eine gegnerische Reihe; 20 % Chance auf Furcht."
+ABL_A127,Active,Spirit,Doppelgänger,Status,0,0,Self,60,35,Decoy(),,,"Erschafft ein Trugbild, das den nächsten Angriff abfängt."
+ABL_A128,Active,Spirit,Albdruck,Status,0,900,Single,60,40,"Status(Furcht,1000)",,,Wirkt auf einen Gegner; verursacht Furcht.
+ABL_A129,Active,Spirit,Ahnenwacht,Status,0,0,Allies,50,32,"Stage(Allies,SpDefense,+1)",,,Wirkt auf alle Verbündeten; SVE +1 für alle Verbündeten.
+ABL_A130,Active,Spirit,Seelenband,Status,0,0,Ally,80,56,"Heal(Ally,30);Stage(Ally,Evasion,+1)",,,Wirkt auf einen Verbündeten; heilt einen Verbündeten um 30 % der max. HP; AUS +1 für einen Verbündeten.
+ABL_A131,Active,Spirit,Verschwinden,Status,0,0,Self,70,50,"Stage(Self,Evasion,+2);MoveSelf()",,,AUS +2 für sich selbst; Anwender wechselt die Reihe ohne Zeitkosten.
+ABL_A132,Active,Spirit,Geisterzug,Special,110,850,Single,110,87,Charge();IgnoreFormation(),,,"Spezieller Schaden, Stärke 110, gegen einen Gegner; benötigt eine Aufladerunde (sichtbar auf der Zeitleiste); ignoriert Formationsschutz."
+ABL_A133,Active,Crystal,Kristallsplitter,Physical,40,1000,Single,70,50,Crit(1),,,"Physischer Schaden, Stärke 40, gegen einen Gegner; Volltrefferstufe +1."
+ABL_A134,Active,Crystal,Glitzerstrahl,Special,40,1000,Single,60,40,,,,"Spezieller Schaden, Stärke 40, gegen einen Gegner."
+ABL_A135,Active,Crystal,Facettenschnitt,Physical,65,950,Single,90,70,"Status(Gebrochen,200)",,Contact,"Physischer Schaden, Stärke 65, gegen einen Gegner; 20 % Chance auf Gebrochen."
+ABL_A136,Active,Crystal,Resonanzprisma,Special,70,1000,Single,110,90,Charged(),,,"Spezieller Schaden, Stärke 70, gegen einen Gegner; lädt den Anwender auf: nächster Angriff +50 % Stärke."
+ABL_A137,Active,Crystal,Kristallregen,Special,55,900,Row,90,68,,,,"Spezieller Schaden, Stärke 55, gegen eine gegnerische Reihe."
+ABL_A138,Active,Crystal,Diamantlanze,Special,120,900,Single,110,90,Charge(),,,"Spezieller Schaden, Stärke 120, gegen einen Gegner; benötigt eine Aufladerunde (sichtbar auf der Zeitleiste)."
+ABL_A139,Active,Crystal,Spiegelwand,Status,0,0,Self,60,35,Reflect(Special),,,Reflektiert den nächsten speziellen Angriff.
+ABL_A140,Active,Crystal,Prismenpanzer,Status,0,0,Self,80,55,"Reflect(Physical);Stage(Self,Defense,+1)",,,Reflektiert den nächsten physischen Angriff; VER +1 für sich selbst.
+ABL_A141,Active,Crystal,Aufladen,Status,0,0,Self,60,40,"Charged();Stage(Self,SpAttack,+1)",,,Lädt den Anwender auf: nächster Angriff +50 % Stärke; SAN +1 für sich selbst.
+ABL_A142,Active,Crystal,Drusenfeld,Status,0,0,Field,50,32,"Terrain(Kristallfeld,4)",,,Erzeugt Kristallfeld für 4 Runden.
+ABL_A143,Active,Crystal,Prismenfächer,Special,65,950,Enemies,120,103,,,,"Spezieller Schaden, Stärke 65, gegen alle Gegner."
+ABL_A144,Active,Crystal,Klirrschlag,Physical,90,900,Single,110,94,"Status(Gebrochen,300)",,Contact,"Physischer Schaden, Stärke 90, gegen einen Gegner; 30 % Chance auf Gebrochen."
+ABL_A145,Active,Sound,Summton,Special,40,1000,Single,70,45,Harmony(5),,Sound,"Spezieller Schaden, Stärke 40, gegen einen Gegner; Harmonie +5."
+ABL_A146,Active,Sound,Klangschlag,Physical,40,1000,Single,70,48,"Delay(Target,20)",,Contact|Sound,"Physischer Schaden, Stärke 40, gegen einen Gegner; das Ziel rückt 20 Ticks auf der Zeitleiste zurück."
+ABL_A147,Active,Sound,Trommelschlag,Physical,30,1000,Single,80,60,"Multi(2,2)",,Contact|Sound,"Physischer Schaden, Stärke 30, gegen einen Gegner; trifft 2–2-mal."
+ABL_A148,Active,Sound,Dissonanz,Special,70,950,Single,100,75,"Status(Verstummt,200)",,Sound,"Spezieller Schaden, Stärke 70, gegen einen Gegner; 20 % Chance auf Verstummt."
+ABL_A149,Active,Sound,Taktbruch,Special,60,1000,Single,100,80,"Delay(Target,50)",,Sound,"Spezieller Schaden, Stärke 60, gegen einen Gegner; das Ziel rückt 50 Ticks auf der Zeitleiste zurück."
+ABL_A150,Active,Sound,Schallwand,Status,0,0,AllyRow,50,29,"Shield(AllyRow,15);Harmony(10)",,Sound,Wirkt auf eigene Reihe; Schild für die eigene Reihe (15 % der max. HP); Harmonie +10.
+ABL_A151,Active,Sound,Donnerhall,Special,100,850,Enemies,130,114,Exhaust(),,Sound,"Spezieller Schaden, Stärke 100, gegen alle Gegner; Anwender muss danach eine Runde aussetzen."
+ABL_A152,Active,Sound,Kampflied,Status,0,0,Allies,60,42,"Stage(Allies,Attack,+1);Harmony(10)",,Sound,Wirkt auf alle Verbündeten; ANG +1 für alle Verbündeten; Harmonie +10.
+ABL_A153,Active,Sound,Taktgeber,Status,0,0,Ally,50,24,"Haste(Ally,60)",,Sound,Wirkt auf einen Verbündeten; einen Verbündeten rückt 60 Ticks auf der Zeitleiste vor.
+ABL_A154,Active,Sound,Wiegenlied,Status,0,850,Single,60,44,"Delay(Target,80);Stage(Target,Speed,-1)",,Sound,Wirkt auf einen Gegner; das Ziel rückt 80 Ticks auf der Zeitleiste zurück; GES −1 für das Ziel.
+ABL_A155,Active,Sound,Resonanzkreis,Status,0,0,Field,50,32,"Terrain(Klangfeld,4)",,Sound,Erzeugt Klangfeld für 4 Runden.
+ABL_A156,Active,Sound,Fortissimo,Special,90,950,Single,120,95,Harmony(10),,Sound,"Spezieller Schaden, Stärke 90, gegen einen Gegner; Harmonie +10."
+ABL_A157,Active,Gravity,Schwerefaust,Physical,40,1000,Single,60,40,,,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner."
+ABL_A158,Active,Gravity,Massezug,Special,45,1000,Single,80,60,Pull(Target),,,"Spezieller Schaden, Stärke 45, gegen einen Gegner; zieht das Ziel in die Vorderreihe."
+ABL_A159,Active,Gravity,Gravistoß,Special,60,1000,Single,100,75,Push(Target),,,"Spezieller Schaden, Stärke 60, gegen einen Gegner; stößt das Ziel in die Hinterreihe."
+ABL_A160,Active,Gravity,Erdanziehung,Physical,70,950,Single,110,86,Bind(2),,Contact,"Physischer Schaden, Stärke 70, gegen einen Gegner; Ziel kann 2 Runde(n) die Reihe nicht wechseln."
+ABL_A161,Active,Gravity,Umkehrfeld,Status,0,900,Enemies,50,25,SwapRows(),,,Wirkt auf alle Gegner; vertauscht die gegnerischen Reihen.
+ABL_A162,Active,Gravity,Meteorsturz,Physical,110,850,Single,100,77,Charge(),,,"Physischer Schaden, Stärke 110, gegen einen Gegner; benötigt eine Aufladerunde (sichtbar auf der Zeitleiste)."
+ABL_A163,Active,Gravity,Schwerkraftfeld,Status,0,0,Field,50,32,"Terrain(Schwerefeld,4)",,,Erzeugt Schwerefeld für 4 Runden.
+ABL_A164,Active,Gravity,Bahnbrecher,Special,85,950,Row,150,127,Push(Target),,,"Spezieller Schaden, Stärke 85, gegen eine gegnerische Reihe; stößt das Ziel in die Hinterreihe."
+ABL_A165,Active,Gravity,Schwebe,Status,0,0,Self,50,30,"Stage(Self,Evasion,+1);MoveSelf()",,,AUS +1 für sich selbst; Anwender wechselt die Reihe ohne Zeitkosten.
+ABL_A166,Active,Gravity,Gewichtslast,Status,0,950,Single,60,38,"Stage(Target,Speed,-2)",,,Wirkt auf einen Gegner; GES −2 für das Ziel.
+ABL_A167,Active,Gravity,Singularität,Special,95,900,Single,140,120,"Pull(Target);Stage(Target,Evasion,-1)",,,"Spezieller Schaden, Stärke 95, gegen einen Gegner; zieht das Ziel in die Vorderreihe; AUS −1 für das Ziel."
+ABL_A168,Active,Gravity,Implosion,Special,70,950,Enemies,140,122,Bind(1),,,"Spezieller Schaden, Stärke 70, gegen alle Gegner; Ziel kann 1 Runde(n) die Reihe nicht wechseln."
+ABL_A169,Active,Arcane,Runenpfeil,Special,40,1000,Single,70,50,SureHit(),,,"Spezieller Schaden, Stärke 40, gegen einen Gegner; verfehlt nie."
+ABL_A170,Active,Arcane,Glyphenschlag,Physical,45,1000,Single,70,45,,,Contact,"Physischer Schaden, Stärke 45, gegen einen Gegner."
+ABL_A171,Active,Arcane,Bannzeichen,Special,60,950,Single,90,67,"Status(Verflucht,200)",,,"Spezieller Schaden, Stärke 60, gegen einen Gegner; 20 % Chance auf Verflucht."
+ABL_A172,Active,Arcane,Spiegelformel,Status,0,1000,Single,60,40,Copy(),,,Wirkt auf einen Gegner; kopiert die zuletzt vom Ziel eingesetzte Fähigkeit.
+ABL_A173,Active,Arcane,Wandlungsglyphe,Status,0,1000,Single,60,40,"TypeChange(Target,Arcane,2)",,,Wirkt auf einen Gegner; ändert den Typ von das Ziel für 2 Runden zu Arkan.
+ABL_A174,Active,Arcane,Umkehrrune,Status,0,0,Field,70,50,InvertChart(1),,,Kehrt die Typtabelle für 1 Runde(n) um (angekündigt).
+ABL_A175,Active,Arcane,Siegelbruch,Physical,80,950,Single,130,106,Dispel(Target),,Contact,"Physischer Schaden, Stärke 80, gegen einen Gegner; entfernt Schilde und positive Stufen von das Ziel."
+ABL_A176,Active,Arcane,Formelraub,Status,0,900,Single,50,31,StealBuffs(),,,Wirkt auf einen Gegner; stiehlt die positiven Stufen des Ziels.
+ABL_A177,Active,Arcane,Arkansturm,Special,100,850,Row,140,119,,,,"Spezieller Schaden, Stärke 100, gegen eine gegnerische Reihe."
+ABL_A178,Active,Arcane,Glyphenkreis,Status,0,0,Field,50,24,"Terrain(Glyphenfeld,3)",,,Erzeugt Glyphenfeld für 3 Runden.
+ABL_A179,Active,Arcane,Mantra,Status,0,0,Self,60,40,"Stage(Self,SpAttack,+1);Stage(Self,SpDefense,+1)",,,SAN +1 für sich selbst; SVE +1 für sich selbst.
+ABL_A180,Active,Arcane,Fluchwort,Status,0,900,Single,70,45,"Status(Verflucht,1000)",,,Wirkt auf einen Gegner; verursacht Verflucht.

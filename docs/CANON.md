@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K27
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K28
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -309,6 +309,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-090 | Spieler kontrolliert jede Evolution, „Später“ kostenlos | K19 |
 | ADR-091 | Evolution gibt +50 Bindung | K19 |
 | ADR-092 | Spezialentwicklungen brauchen eine Weltbedingung | K19 |
+| ADR-093 | Zeitkosten aus Machtbudget berechnet, nie handgesetzt | K28 |
+| ADR-094 | Keine Abklingzeiten auf aktiven Fähigkeiten | K28 |
+| ADR-095 | Effekt-DSL mit Primitiv-Registry | K28 |
+| ADR-096 | Jeder Typ mit physischen und speziellen Fähigkeiten (12 je Typ) | K28 |
+| ADR-097 | Ein Haupt-Status + Gift parallel; Starre-Immunität | K28 |
 
 ## §11 Change Requests
 
@@ -1331,3 +1336,30 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 | 254 | Ouroveth | Gift/Blüte | L121/1 Mythical | – | Tank | – |
 | 255 | Zenthrax | Schwerkraft/Metall | L122/1 Mythical | – | Striker | – |
 | 256 | Aurelune | Licht/Leere | L123/1 Mythical | – | Caster | – |
+
+## §97 Fähigkeitsarten & IDs (LOCKED, K28 §1–§2 · `Data/Abilities/Abilities.csv`)
+
+- Aktiv **180** (12 je Typ, `ABL_A001–A180`) · Passiv **90** (6 je Typ, `ABL_P001–P090`) · Crescendo **30** (2 je Typ, `ABL_U001–U030`) · Feld **30** (2 je Typ, `ABL_F001–F030`) = **330**.
+- Kampfset 4 aktiv + 1 passiv + 1 Crescendo (+ 0–1 Feld); Repertoire ohne Vergessen; **keine Abklingzeiten** auf Aktiven (ADR-094).
+- Jede Fähigkeit hat einen Typ (keine typlosen); Anzeigenamen global eindeutig, keine Kollision mit Echo-Namen.
+
+## §98 Machtbudget & Zeitkosten (LOCKED, K28 §3 · `tools/abilities/abl.py`, `AbilityDefinition.h`)
+
+- V = Schaden + Σ Effektwerte; Schaden = Stärke × Gen/1000 × Zielfaktor/1000 × mittlere Treffer/1000 (ganzzahlig).
+- **Zeitkosten = clamp(rund10(20 + V), 50, 200)**, 100 = Standardzug; nie handgesetzt (ADR-093). Zielfaktoren Single 1000 · Row 1400 · Enemies 1700 ‰.
+- Effektwerte K28 §3.2 (Tuning in K63). Wer-Faktor Einzel 1000 · Reihe 1300 · Gruppe 1600 ‰.
+
+## §99 Effekt-DSL (LOCKED, K28 §4)
+
+- `Effekt(Arg,…)` mit `;` getrennt; 42 Primitiva in 9 Gruppen; Laufzeit über Primitiv-Registry in `GF_Combat` (DR-25); Regeltexte generiert.
+
+## §100 Status-Effekte (LOCKED Namen/Immunitäten, Zahlen PROVISIONAL → K32 · `Data/Abilities/StatusEffects.csv`)
+
+- 15 Status, je Typ eine Immunität: Brand (Glut) · Ausgetrocknet (Flut) · Rückstoß (Stein) · Verlangsamt (Sturm) · Welke (Blüte) · Starre (Frost) · Entzug (Leere) · Geblendet (Licht) · Vergiftet (Gift) · Erschüttert (Metall) · Furcht (Geist) · Gebrochen (Kristall) · Verstummt (Klang) · Schwebend (Schwerkraft) · Verflucht (Arkan).
+- Ein Haupt-Status + Gift (1–5 Stapel) parallel; Rückstoß/Erschüttert sind Sofort-Effekte; nach Starre 2 Runden Immunität (ADR-097).
+
+## §101 Aktive Fähigkeiten (LOCKED, K28 §7–§8)
+
+- 12 je Typ nach Slot-Schema (Einstieg 1–2, Mittel 3–5, Schwer 6, Status/Feld/Identität 7–12); ≥ 2 physisch, ≥ 2 speziell, ≥ 3 Status je Typ; ≥ 3 Identitäts-Fähigkeiten je Typ (CANON §78).
+- Kennzahlen: Physisch 48 · Speziell 63 · Status 69; Ø Stärke 66; Zeitkosten 50–150.
+- Tags: `Contact`, `Sound` (durch Verstummt blockiert), `Ground` (verfehlt Schwebend). Validator `tools/gen_abilities.py` AB-01…AB-14.
