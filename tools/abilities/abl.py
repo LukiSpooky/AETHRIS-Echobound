@@ -29,7 +29,7 @@ TARGETS = {"Single": ("einen Gegner", 1000), "Row": ("eine gegnerische Reihe", 1
 CATEGORIES = {"Physical": "Physisch", "Special": "Speziell", "Status": "Status"}
 KINDS = {"Active": "A", "Passive": "P", "Crescendo": "U", "Field": "F"}
 WHO_FACTOR = {"Self": 1000, "Ally": 1000, "Target": 1000, "Allies": 1600, "Enemies": 1600, "AllyRow": 1300, "Row": 1300}
-WHO_DE = {"Self": "sich selbst", "Ally": "einen Verbündeten", "Target": "das Ziel", "Allies": "alle Verbündeten",
+WHO_DE = {"Attacker": "den Angreifer", "Self": "sich selbst", "Ally": "einen Verbündeten", "Target": "das Ziel", "Allies": "alle Verbündeten",
           "Enemies": "alle Gegner", "AllyRow": "die eigene Reihe", "Row": "die Zielreihe"}
 
 # Startwerte der Status-Effekte (Mechanik final in K32) – Wert in MP bei 100 % Chance
@@ -48,6 +48,18 @@ WEATHERS = {"Clear": "Klar", "Rain": "Regen", "Thunderstorm": "Gewitter", "Snow"
             "Sandstorm": "Sandsturm", "Heatwave": "Hitzewelle"}
 
 # Effektdefinitionen: Name -> (Wertfunktion(args, power, ctx) -> MP, Beschreibung(args) -> str, Identitätsmarken)
+SUBJ = {"Self": "der Anwender", "Ally": "ein Verbündeter", "Target": "das Ziel", "Allies": "alle Verbündeten",
+        "Enemies": "alle Gegner", "AllyRow": "die eigene Reihe", "Row": "die Zielreihe", "Attacker": "der Angreifer"}
+
+
+def _subj(w):
+    return SUBJ.get(w, w)
+
+
+def _v(w):
+    return "rücken" if w in ("Allies", "Enemies") else "rückt"
+
+
 def _who(a):
     return WHO_FACTOR.get(a, 1000)
 
@@ -80,9 +92,9 @@ EFFECTS = {
     "Status": (v_status, d_status, {"Status"}),
     "Stage": (v_stage, d_stage, {"Stage"}),
     "Delay": (lambda a, p, c: int(a[1]) * 4 // 10 * _who(a[0]) // 1000,
-              lambda a: f"{WHO_DE[a[0]]} rückt {a[1]} Ticks auf der Zeitleiste zurück", {"Delay"}),
+              lambda a: f"{_subj(a[0])} {_v(a[0])} {a[1]} Ticks auf der Zeitleiste zurück", {"Delay"}),
     "Haste": (lambda a, p, c: int(a[1]) * 4 // 10 * _who(a[0]) // 1000,
-              lambda a: f"{WHO_DE[a[0]]} rückt {a[1]} Ticks auf der Zeitleiste vor", {"Haste"}),
+              lambda a: f"{_subj(a[0])} {_v(a[0])} {a[1]} Ticks auf der Zeitleiste vor", {"Haste"}),
     "Push": (lambda a, p, c: 15, lambda a: "stößt das Ziel in die Hinterreihe", {"Push"}),
     "Pull": (lambda a, p, c: 15, lambda a: "zieht das Ziel in die Vorderreihe", {"Pull"}),
     "SwapRows": (lambda a, p, c: 25, lambda a: "vertauscht die gegnerischen Reihen", {"SwapRows"}),
@@ -197,6 +209,36 @@ def budget(power: int, acc: int, target: str, category: str, effects) -> tuple[i
     v = dmg + ev
     cost = max(50, min(200, (20 + v + 5) // 10 * 10))
     return v, cost
+
+
+# Passive Primitiva (K29) – kein Zeitbudget; Wert nur für Vergleichsberichte
+EFFECTS.update({
+    "Mod": (lambda a, p, c: 0, lambda a: f"{STATS[a[0]]} ×{int(a[1]) / 1000:.2f}".replace(".", ","), {"Mod"}),
+    "TypePower": (lambda a, p, c: 0, lambda a: f"{TYPE_DE[a[0]]}-Fähigkeiten ×{int(a[1]) / 1000:.2f}".replace(".", ","), {"TypePower"}),
+    "Resist": (lambda a, p, c: 0, lambda a: f"erlittener {TYPE_DE[a[0]]}-Schaden ×{int(a[1]) / 1000:.2f}".replace(".", ","), {"Resist"}),
+    "Immune": (lambda a, p, c: 0, lambda a: f"immun gegen {STATUS_DE[a[0]]}", {"Immune"}),
+    "StatusChance": (lambda a, p, c: 0, lambda a: f"eigene Status-Chancen ×{int(a[0]) / 1000:.2f}".replace(".", ","), set()),
+    "HealPower": (lambda a, p, c: 0, lambda a: f"eigene Heilwirkung ×{int(a[0]) / 1000:.2f}".replace(".", ","), set()),
+    "TimeCost": (lambda a, p, c: 0, lambda a: f"eigene Zeitkosten {'+' if int(a[0]) > 0 else '−'}{abs(int(a[0]))}", set()),
+    "Custom": (lambda a, p, c: 0, lambda a: "Feldklang (siehe Beschreibung)", {"Custom"}),
+})
+TRIGGERS = {"Always": "dauerhaft", "BattleStart": "bei Kampfbeginn", "TurnStart": "zu Beginn jedes eigenen Zuges",
+            "HitTaken": "wenn getroffen", "ContactTaken": "bei Kontakt-Treffer", "HitDealt": "nach eigenem Treffer",
+            "CritDealt": "nach eigenem Volltreffer", "LowHP": "bei HP ≤ 33 % (einmal)", "StatusReceived": "wenn ein Status erlitten wird",
+            "AllyFainted": "wenn ein Verbündeter verklingt", "EnemyFainted": "wenn ein Gegner verklingt",
+            "RowFront": "solange in der Vorderreihe", "RowBack": "solange in der Hinterreihe", "SwitchIn": "beim Einwechseln",
+            "HarmonyFull": "bei voller Harmonie", "FieldSong": "solange auf dem Feld (Feldklang)"}
+for w, de in WEATHERS.items():
+    TRIGGERS[f"Weather.{w}"] = f"bei {de}"
+for t, de in TERRAINS.items():
+    TRIGGERS[f"Terrain.{t}"] = f"auf {de}"
+
+
+def describe_passive(row) -> str:
+    eff = parse(row["Effects"])
+    trig = TRIGGERS[row["Trigger"]]
+    s = "; ".join(EFFECTS[n][1](a) for n, a in eff if n != "Custom")
+    return f"{trig[0].upper() + trig[1:]}: {s}." if s else ""
 
 
 def describe(row) -> str:

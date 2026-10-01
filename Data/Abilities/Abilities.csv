@@ -38,15 +38,15 @@ ABL_A036,Active,Stone,Grundfeste,Status,0,0,Self,80,58,"Stage(Self,Defense,+1);S
 ABL_A037,Active,Storm,Böenhieb,Physical,40,1000,Single,80,55,Priority(1),,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner; Priorität +1."
 ABL_A038,Active,Storm,Klingenwind,Special,45,1000,Single,80,55,Crit(1),,,"Spezieller Schaden, Stärke 45, gegen einen Gegner; Volltrefferstufe +1."
 ABL_A039,Active,Storm,Flatterschlag,Physical,20,950,Single,90,66,"Multi(2,5)",,Contact,"Physischer Schaden, Stärke 20, gegen einen Gegner; trifft 2–5-mal."
-ABL_A040,Active,Storm,Rückenwindschlag,Physical,60,1000,Single,100,76,"Haste(Self,40)",,Contact,"Physischer Schaden, Stärke 60, gegen einen Gegner; sich selbst rückt 40 Ticks auf der Zeitleiste vor."
+ABL_A040,Active,Storm,Rückenwindschlag,Physical,60,1000,Single,100,76,"Haste(Self,40)",,Contact,"Physischer Schaden, Stärke 60, gegen einen Gegner; der Anwender rückt 40 Ticks auf der Zeitleiste vor."
 ABL_A041,Active,Storm,Blitzbogen,Special,90,900,Single,110,88,"Status(Erschuettert,200)",,,"Spezieller Schaden, Stärke 90, gegen einen Gegner; 20 % Chance auf Erschüttert."
 ABL_A042,Active,Storm,Donnerkeil,Special,115,800,Single,120,102,WeatherBoost(Thunderstorm),,,"Spezieller Schaden, Stärke 115, gegen einen Gegner; Stärke ×1,5 bei Gewitter."
 ABL_A043,Active,Storm,Wirbelsturm,Special,60,900,Enemies,120,102,"Status(Schwebend,200)",,,"Spezieller Schaden, Stärke 60, gegen alle Gegner; 20 % Chance auf Schwebend."
-ABL_A044,Active,Storm,Böenchor,Status,0,0,Allies,50,32,"Haste(Allies,50)",,,Wirkt auf alle Verbündeten; alle Verbündeten rückt 50 Ticks auf der Zeitleiste vor.
+ABL_A044,Active,Storm,Böenchor,Status,0,0,Allies,50,32,"Haste(Allies,50)",,,Wirkt auf alle Verbündeten; alle Verbündeten rücken 50 Ticks auf der Zeitleiste vor.
 ABL_A045,Active,Storm,Sturmlauf,Status,0,0,Self,60,40,"Stage(Self,Speed,+2)",,,GES +2 für sich selbst.
 ABL_A046,Active,Storm,Gewitterruf,Status,0,0,Field,50,30,"Weather(Thunderstorm,5)",,,Ruft Gewitter für 5 Runden herbei.
 ABL_A047,Active,Storm,Kettenblitz,Special,30,900,Row,110,92,"Multi(2,3)",,,"Spezieller Schaden, Stärke 30, gegen eine gegnerische Reihe; trifft 2–3-mal."
-ABL_A048,Active,Storm,Zyklonsprung,Physical,75,1000,Single,120,97,"Haste(Self,30);MoveSelf()",,Contact,"Physischer Schaden, Stärke 75, gegen einen Gegner; sich selbst rückt 30 Ticks auf der Zeitleiste vor; Anwender wechselt die Reihe ohne Zeitkosten."
+ABL_A048,Active,Storm,Zyklonsprung,Physical,75,1000,Single,120,97,"Haste(Self,30);MoveSelf()",,Contact,"Physischer Schaden, Stärke 75, gegen einen Gegner; der Anwender rückt 30 Ticks auf der Zeitleiste vor; Anwender wechselt die Reihe ohne Zeitkosten."
 ABL_A049,Active,Bloom,Rankenhieb,Physical,40,1000,Single,60,40,,,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner."
 ABL_A050,Active,Bloom,Pollenschuss,Special,40,1000,Single,60,44,"Stage(Target,Precision,-1,200)",,,"Spezieller Schaden, Stärke 40, gegen einen Gegner; 20 % Chance: PRÄ −1 für das Ziel."
 ABL_A051,Active,Bloom,Saugwurzel,Special,60,1000,Single,90,69,Drain(500),,,"Spezieller Schaden, Stärke 60, gegen einen Gegner; heilt den Anwender um 50 % des Schadens."
@@ -70,7 +70,7 @@ ABL_A068,Active,Frost,Weißer Atem,Status,0,900,Enemies,50,28,"Stage(Enemies,Pre
 ABL_A069,Active,Frost,Schneeruf,Status,0,0,Field,50,30,"Weather(Snow,5)",,,Ruft Schneefall für 5 Runden herbei.
 ABL_A070,Active,Frost,Eisspiegel,Status,0,0,Field,50,32,"Terrain(Eisflaeche,4)",,,Erzeugt Eisfläche für 4 Runden.
 ABL_A071,Active,Frost,Frostpanzer,Status,0,0,Self,60,40,"Shield(Self,20);Stage(Self,SpDefense,+1)",,,Schild für sich selbst (20 % der max. HP); SVE +1 für sich selbst.
-ABL_A072,Active,Frost,Winterstille,Special,50,900,Enemies,120,95,"Delay(Enemies,30)",,,"Spezieller Schaden, Stärke 50, gegen alle Gegner; alle Gegner rückt 30 Ticks auf der Zeitleiste zurück."
+ABL_A072,Active,Frost,Winterstille,Special,50,900,Enemies,120,95,"Delay(Enemies,30)",,,"Spezieller Schaden, Stärke 50, gegen alle Gegner; alle Gegner rücken 30 Ticks auf der Zeitleiste zurück."
 ABL_A073,Active,Void,Dunkelgriff,Physical,40,1000,Single,70,45,HarmonyDrain(5),,Contact,"Physischer Schaden, Stärke 40, gegen einen Gegner; entzieht dem Gegnerteam 5 Harmonie."
 ABL_A074,Active,Void,Leerstoß,Special,45,1000,Single,70,45,,,,"Spezieller Schaden, Stärke 45, gegen einen Gegner."
 ABL_A075,Active,Void,Hohlklang,Special,60,1000,Single,110,90,Dispel(Target),,,"Spezieller Schaden, Stärke 60, gegen einen Gegner; entfernt Schilde und positive Stufen von das Ziel."
@@ -151,7 +151,7 @@ ABL_A149,Active,Sound,Taktbruch,Special,60,1000,Single,100,80,"Delay(Target,50)"
 ABL_A150,Active,Sound,Schallwand,Status,0,0,AllyRow,50,29,"Shield(AllyRow,15);Harmony(10)",,Sound,Wirkt auf eigene Reihe; Schild für die eigene Reihe (15 % der max. HP); Harmonie +10.
 ABL_A151,Active,Sound,Donnerhall,Special,100,850,Enemies,130,114,Exhaust(),,Sound,"Spezieller Schaden, Stärke 100, gegen alle Gegner; Anwender muss danach eine Runde aussetzen."
 ABL_A152,Active,Sound,Kampflied,Status,0,0,Allies,60,42,"Stage(Allies,Attack,+1);Harmony(10)",,Sound,Wirkt auf alle Verbündeten; ANG +1 für alle Verbündeten; Harmonie +10.
-ABL_A153,Active,Sound,Taktgeber,Status,0,0,Ally,50,24,"Haste(Ally,60)",,Sound,Wirkt auf einen Verbündeten; einen Verbündeten rückt 60 Ticks auf der Zeitleiste vor.
+ABL_A153,Active,Sound,Taktgeber,Status,0,0,Ally,50,24,"Haste(Ally,60)",,Sound,Wirkt auf einen Verbündeten; ein Verbündeter rückt 60 Ticks auf der Zeitleiste vor.
 ABL_A154,Active,Sound,Wiegenlied,Status,0,850,Single,60,44,"Delay(Target,80);Stage(Target,Speed,-1)",,Sound,Wirkt auf einen Gegner; das Ziel rückt 80 Ticks auf der Zeitleiste zurück; GES −1 für das Ziel.
 ABL_A155,Active,Sound,Resonanzkreis,Status,0,0,Field,50,32,"Terrain(Klangfeld,4)",,Sound,Erzeugt Klangfeld für 4 Runden.
 ABL_A156,Active,Sound,Fortissimo,Special,90,950,Single,120,95,Harmony(10),,Sound,"Spezieller Schaden, Stärke 90, gegen einen Gegner; Harmonie +10."
@@ -179,3 +179,93 @@ ABL_A177,Active,Arcane,Arkansturm,Special,100,850,Row,140,119,,,,"Spezieller Sch
 ABL_A178,Active,Arcane,Glyphenkreis,Status,0,0,Field,50,24,"Terrain(Glyphenfeld,3)",,,Erzeugt Glyphenfeld für 3 Runden.
 ABL_A179,Active,Arcane,Mantra,Status,0,0,Self,60,40,"Stage(Self,SpAttack,+1);Stage(Self,SpDefense,+1)",,,SAN +1 für sich selbst; SVE +1 für sich selbst.
 ABL_A180,Active,Arcane,Fluchwort,Status,0,900,Single,70,45,"Status(Verflucht,1000)",,,Wirkt auf einen Gegner; verursacht Verflucht.
+ABL_P001,Passive,Ember,Glutherz,,,,,,,"TypePower(Ember,1500)",LowHP,,"Bei HP ≤ 33 % (einmal): Glut-Fähigkeiten ×1,50."
+ABL_P002,Passive,Ember,Funkenhaut,,,,,,,"Status(Brand,300)",ContactTaken,,Bei Kontakt-Treffer: 30 % Chance auf Brand. Der Status trifft den Angreifer.
+ABL_P003,Passive,Ember,Hitzespeicher,,,,,,,"Heal(Self,6)",Weather.Heatwave,,Bei Hitzewelle: heilt sich selbst um 6 % der max. HP. Wirkt zu Beginn jedes eigenen Zuges.
+ABL_P004,Passive,Ember,Flammentanz,,,,,,,"Haste(Self,30)",CritDealt,,Nach eigenem Volltreffer: der Anwender rückt 30 Ticks auf der Zeitleiste vor.
+ABL_P005,Passive,Ember,Aschefell,,,,,,,"Resist(Tide,800);Immune(Ausgetrocknet)",Always,,"Dauerhaft: erlittener Flut-Schaden ×0,80; immun gegen Ausgetrocknet."
+ABL_P006,Passive,Ember,Weltenschmiede,,,,,,,Custom(Pyrthagon),FieldSong,Feldklang|Exclusive,Pyr'thagon: Jeder eigene Treffer erhöht die eigene VER um 1 Stufe (max. +4); das Feld bleibt dauerhaft Glutboden.
+ABL_P007,Passive,Tide,Gezeitenkörper,,,,,,,"Heal(Self,5)",TurnStart,,Zu Beginn jedes eigenen Zuges: heilt sich selbst um 5 % der max. HP. Nur in Regen oder auf Flutfeld.
+ABL_P008,Passive,Tide,Strömungssinn,,,,,,,"Haste(Self,40)",SwitchIn,,Beim Einwechseln: der Anwender rückt 40 Ticks auf der Zeitleiste vor.
+ABL_P009,Passive,Tide,Glatte Haut,,,,,,,"Immune(Rueckstoss);Mod(Evasion,1100)",Always,,"Dauerhaft: immun gegen Rückstoß; AUS ×1,10."
+ABL_P010,Passive,Tide,Brandungsschild,,,,,,,"Resist(Ember,750)",RowFront,,"Solange in der Vorderreihe: erlittener Glut-Schaden ×0,75."
+ABL_P011,Passive,Tide,Tiefenruhe,,,,,,,"Regen(Self,4,99)",RowBack,,Solange in der Hinterreihe: sich selbst heilt 99 Runden je 4 % der max. HP. Solange das Echo in der Hinterreihe steht.
+ABL_P012,Passive,Tide,Gezeitenwende,,,,,,,Custom(Thalassyr),FieldSong,Feldklang|Exclusive,Thal'assyr: Jede zweite Runde tauschen die Reihen beider Seiten; die eigene Seite handelt danach zuerst.
+ABL_P013,Passive,Stone,Felsenhaut,,,,,,,"Mod(Defense,1150)",Always,,"Dauerhaft: VER ×1,15."
+ABL_P014,Passive,Stone,Standfest,,,,,,,Immune(Rueckstoss);Immune(Erschuettert),Always,,Dauerhaft: immun gegen Rückstoß; immun gegen Erschüttert. Rückstoß ist für Stein ohnehin wirkungslos; Standfest ergänzt Erschüttert.
+ABL_P015,Passive,Stone,Bergruhe,,,,,,,"Shield(Self,25)",LowHP,,Bei HP ≤ 33 % (einmal): Schild für sich selbst (25 % der max. HP).
+ABL_P016,Passive,Stone,Sandverbunden,,,,,,,"Mod(SpDefense,1300)",Weather.Sandstorm,,"Bei Sandsturm: SVE ×1,30."
+ABL_P017,Passive,Stone,Fundament,,,,,,,"Shield(AllyRow,5)",RowFront,,Solange in der Vorderreihe: Schild für die eigene Reihe (5 % der max. HP). Zu Beginn jeder Runde für die eigene Reihe.
+ABL_P018,Passive,Stone,Bergschwere,,,,,,,Custom(Orhgruun),FieldSong,Feldklang|Exclusive,Orh'gruun: Gegner können die Reihe nicht wechseln; alle Verbündeten VER +2 Stufen.
+ABL_P019,Passive,Storm,Windläufer,,,,,,,TimeCost(-10),Always,,Dauerhaft: eigene Zeitkosten −10. Gilt für alle eigenen aktiven Fähigkeiten.
+ABL_P020,Passive,Storm,Böenreiter,,,,,,,"Mod(Speed,1300)",Weather.Thunderstorm,,"Bei Gewitter: GES ×1,30."
+ABL_P021,Passive,Storm,Blitzreflex,,,,,,,"Haste(Self,20)",HitTaken,,Wenn getroffen: der Anwender rückt 20 Ticks auf der Zeitleiste vor.
+ABL_P022,Passive,Storm,Sturmauge,,,,,,,"Immune(Verlangsamt);Mod(Precision,1050)",Always,,"Dauerhaft: immun gegen Verlangsamt; PRÄ ×1,05."
+ABL_P023,Passive,Storm,Kettenfunke,,,,,,,"Status(Erschuettert,100)",HitDealt,,Nach eigenem Treffer: 10 % Chance auf Erschüttert. Nur bei Mehrfachtreffern: je Treffer.
+ABL_P024,Passive,Storm,Rückenwindgeist,,,,,,,"Haste(Allies,30)",SwitchIn,,Beim Einwechseln: alle Verbündeten rücken 30 Ticks auf der Zeitleiste vor.
+ABL_P025,Passive,Bloom,Photosynth,,,,,,,"Heal(Self,6)",Weather.Clear,,Bei Klar: heilt sich selbst um 6 % der max. HP. Zu Beginn jedes eigenen Zuges bei klarem Wetter.
+ABL_P026,Passive,Bloom,Wurzelkraft,,,,,,,"Immune(Rueckstoss);Mod(Defense,1100)",RowFront,,"Solange in der Vorderreihe: immun gegen Rückstoß; VER ×1,10."
+ABL_P027,Passive,Bloom,Pollenwolke,,,,,,,"Stage(Attacker,Precision,-1,300)",ContactTaken,,Bei Kontakt-Treffer: 30 % Chance: PRÄ −1 für den Angreifer.
+ABL_P028,Passive,Bloom,Grüner Daumen,,,,,,,HealPower(1300),Always,,"Dauerhaft: eigene Heilwirkung ×1,30."
+ABL_P029,Passive,Bloom,Keimkraft,,,,,,,"Heal(Allies,15)",AllyFainted,,Wenn ein Verbündeter verklingt: heilt alle Verbündeten um 15 % der max. HP.
+ABL_P030,Passive,Bloom,Wurzellied,,,,,,,Custom(Sylvanor),FieldSong,Feldklang|Exclusive,Sylv'anor: Jede Runde heilen alle Verbündeten 6 % HP; Blüte-Fähigkeiten kosten 20 Zeit weniger.
+ABL_P031,Passive,Frost,Eiskern,,,,,,,"Resist(Ember,800);Immune(Starre)",Always,,"Dauerhaft: erlittener Glut-Schaden ×0,80; immun gegen Starre."
+ABL_P032,Passive,Frost,Kältehauch,,,,,,,"Delay(Attacker,30)",ContactTaken,,Bei Kontakt-Treffer: der Angreifer rückt 30 Ticks auf der Zeitleiste zurück.
+ABL_P033,Passive,Frost,Schneetarnung,,,,,,,"Mod(Evasion,1250)",Weather.Snow,,"Bei Schneefall: AUS ×1,25."
+ABL_P034,Passive,Frost,Präzisionsfrost,,,,,,,"Stage(Target,Precision,-1,200)",HitDealt,,Nach eigenem Treffer: 20 % Chance: PRÄ −1 für das Ziel.
+ABL_P035,Passive,Frost,Firnpanzer,,,,,,,"Shield(Self,20);Delay(Enemies,20)",LowHP,,Bei HP ≤ 33 % (einmal): Schild für sich selbst (20 % der max. HP); alle Gegner rücken 20 Ticks auf der Zeitleiste zurück.
+ABL_P036,Passive,Frost,Aurora der Erhaltung,,,,,,,Custom(Isvaldr),FieldSong,Feldklang|Exclusive,"Isv'aldr: Positive Stufen und Schilde der Verbündeten können nicht entfernt, gestohlen oder durchdrungen werden."
+ABL_P037,Passive,Void,Leerer Blick,,,,,,,Dispel(Target),SwitchIn,,Beim Einwechseln: entfernt Schilde und positive Stufen von das Ziel. Trifft den Gegner gegenüber.
+ABL_P038,Passive,Void,Seelenhunger,,,,,,,"Heal(Self,20);HarmonyDrain(10)",EnemyFainted,,Wenn ein Gegner verklingt: heilt sich selbst um 20 % der max. HP; entzieht dem Gegnerteam 10 Harmonie.
+ABL_P039,Passive,Void,Schweigsam,,,,,,,"Immune(Verstummt);Resist(Sound,750)",Always,,"Dauerhaft: immun gegen Verstummt; erlittener Klang-Schaden ×0,75."
+ABL_P040,Passive,Void,Nichtigkeit,,,,,,,HarmonyDrain(3),HitTaken,,Wenn getroffen: entzieht dem Gegnerteam 3 Harmonie.
+ABL_P041,Passive,Void,Schattenkörper,,,,,,,"Mod(Evasion,1150)",RowBack,,"Solange in der Hinterreihe: AUS ×1,15."
+ABL_P042,Passive,Void,Große Pause,,,,,,,Custom(Velnox),FieldSong,Feldklang|Exclusive,Velnox: Die Harmonie beider Seiten wird zu Beginn jeder Runde auf 0 gesetzt; Fähigkeiten mit Tag Sound verstummen.
+ABL_P043,Passive,Light,Strahlkraft,,,,,,,"TypePower(Light,1100);Immune(Geblendet)",Always,,"Dauerhaft: Licht-Fähigkeiten ×1,10; immun gegen Geblendet."
+ABL_P044,Passive,Light,Lichtgestalt,,,,,,,Reveal(),BattleStart,,"Bei Kampfbeginn: enthüllt das Ziel (Ausweichen, Täuschung und Tarnung wirkungslos). Enthüllt alle Gegner für 2 Runden."
+ABL_P045,Passive,Light,Reiner Glanz,,,,,,,Cleanse(Self),StatusReceived,,Wenn ein Status erlitten wird: entfernt negative Status von sich selbst. Einmal pro Kampf.
+ABL_P046,Passive,Light,Morgenwache,,,,,,,"Mod(SpAttack,1200)",Weather.Clear,,"Bei Klar: SAN ×1,20."
+ABL_P047,Passive,Light,Rätselglanz,,,,,,,Custom(Ashkareth),FieldSong,Feldklang|Exclusive,"Ash'kareth: Alle verborgenen Werte, Passiven und Kampfsets werden enthüllt; Täuschung, Tarnung und Trugbilder enden sofort."
+ABL_P048,Passive,Light,Finsternis,,,,,,,Custom(Aurelune),FieldSong,Feldklang|Exclusive,"Aurelune: Licht und Leere tauschen ihre Typvorteile, solange Aurelune auf dem Feld steht."
+ABL_P049,Passive,Venom,Giftdrüsen,,,,,,,StatusChance(1500),Always,,"Dauerhaft: eigene Status-Chancen ×1,50. Gilt nur für Vergiftet."
+ABL_P050,Passive,Venom,Zähe Säfte,,,,,,,"Immune(Vergiftet);Resist(Bloom,800)",Always,,"Dauerhaft: immun gegen Vergiftet; erlittener Blüte-Schaden ×0,80."
+ABL_P051,Passive,Venom,Fäulniskreis,,,,,,,"Status(Vergiftet,1000,2)",EnemyFainted,,Wenn ein Gegner verklingt: verursacht Vergiftet (2 Stapel). Trifft den nächsten Gegner.
+ABL_P052,Passive,Venom,Stachelkleid,,,,,,,"Status(Vergiftet,500)",ContactTaken,,Bei Kontakt-Treffer: 50 % Chance auf Vergiftet. Der Status trifft den Angreifer.
+ABL_P053,Passive,Venom,Moorgedächtnis,,,,,,,Custom(Nhaelvesh),FieldSong,Feldklang|Exclusive,Nhael'vesh: Verklingende Echos beider Seiten hinterlassen Nebel: Vergiftet überträgt sich auf Gegner und heilt Verbündete.
+ABL_P054,Passive,Venom,Ewiger Kreis,,,,,,,Custom(Ouroveth),FieldSong,Feldklang|Exclusive,Ouroveth: Gift heilt Verbündete statt zu schaden; ein verklingender Verbündeter keimt einmal mit 25 % HP neu.
+ABL_P055,Passive,Metal,Stahlkörper,,,,,,,"Mod(Defense,1100);Immune(Erschuettert)",Always,,"Dauerhaft: VER ×1,10; immun gegen Erschüttert."
+ABL_P056,Passive,Metal,Konterinstinkt,,,,,,,"Counter(Physical,500)",HitTaken,,Wenn getroffen: kontert den nächsten physischen Angriff mit 50 % Schaden. Einmal pro Runde.
+ABL_P057,Passive,Metal,Magnetfeld,,,,,,,"Resist(Storm,750)",Always,,"Dauerhaft: erlittener Sturm-Schaden ×0,75."
+ABL_P058,Passive,Metal,Schmiedeglut,,,,,,,"Stage(Self,Attack,+2)",LowHP,,Bei HP ≤ 33 % (einmal): ANG +2 für sich selbst.
+ABL_P059,Passive,Metal,Rüstmeister,,,,,,,"Shield(AllyRow,10)",SwitchIn,,Beim Einwechseln: Schild für die eigene Reihe (10 % der max. HP).
+ABL_P060,Passive,Metal,Rostfrei,,,,,,,"Resist(Venom,700)",Always,,"Dauerhaft: erlittener Gift-Schaden ×0,70."
+ABL_P061,Passive,Spirit,Durchscheinend,,,,,,,"Mod(Evasion,1100);Immune(Furcht)",Always,,"Dauerhaft: AUS ×1,10; immun gegen Furcht."
+ABL_P062,Passive,Spirit,Spukgestalt,,,,,,,Decoy(),BattleStart,,"Bei Kampfbeginn: erschafft ein Trugbild, das den nächsten Angriff abfängt."
+ABL_P063,Passive,Spirit,Seelenwacht,,,,,,,"Stage(Allies,SpDefense,+1);Harmony(15)",AllyFainted,,Wenn ein Verbündeter verklingt: SVE +1 für alle Verbündeten; Harmonie +15.
+ABL_P064,Passive,Spirit,Grenzgänger,,,,,,,"TypePower(Spirit,1100)",Always,,"Dauerhaft: Geist-Fähigkeiten ×1,10. Geist-Fähigkeiten ignorieren zusätzlich Schilde."
+ABL_P065,Passive,Spirit,Ahnenhauch,,,,,,,"Heal(Self,25)",LowHP,,Bei HP ≤ 33 % (einmal): heilt sich selbst um 25 % der max. HP.
+ABL_P066,Passive,Spirit,Weltgedächtnis,,,,,,,Custom(Kathurel),FieldSong,Feldklang|Exclusive,Ka'thurel: Jede eingesetzte Fähigkeit wird gespeichert; jeder Verbündete kann einmal pro Kampf eine gespeicherte Fähigkeit des Gegners einsetzen.
+ABL_P067,Passive,Crystal,Prismenhaut,,,,,,,Reflect(Special),HitTaken,,Wenn getroffen: reflektiert den nächsten speziellen Angriff. Einmal pro Kampf.
+ABL_P068,Passive,Crystal,Resonanzspeicher,,,,,,,Charged(),HitTaken,,Wenn getroffen: lädt den Anwender auf: nächster Angriff +50 % Stärke. Nach dem ersten erlittenen Treffer.
+ABL_P069,Passive,Crystal,Kristallgitter,,,,,,,"Mod(SpDefense,1150);Immune(Gebrochen)",Always,,"Dauerhaft: SVE ×1,15; immun gegen Gebrochen."
+ABL_P070,Passive,Crystal,Lichtbrecher,,,,,,,"Resist(Light,700)",Always,,"Dauerhaft: erlittener Licht-Schaden ×0,70."
+ABL_P071,Passive,Crystal,Brechung,,,,,,,Custom(Prismaion),FieldSong,Feldklang|Exclusive,Prism'aion: Jeder Klang- oder Kristall-Angriff trifft zusätzlich ein zweites Ziel mit 50 % Stärke.
+ABL_P072,Passive,Crystal,Spiegelwelt,,,,,,,Custom(Mirrowisp),FieldSong,Feldklang|Exclusive,Mirrowisp: Jeder Angriff trifft zusätzlich ein Spiegelbild des Angreifers mit 30 % Stärke.
+ABL_P073,Passive,Sound,Taktgefühl,,,,,,,TimeCost(-5);Immune(Verstummt),Always,,Dauerhaft: eigene Zeitkosten −5; immun gegen Verstummt.
+ABL_P074,Passive,Sound,Chorstimme,,,,,,,Harmony(5),HitDealt,,Nach eigenem Treffer: Harmonie +5.
+ABL_P075,Passive,Sound,Echoohr,,,,,,,"Stage(Self,Evasion,+1,300)",HitTaken,,Wenn getroffen: 30 % Chance: AUS +1 für sich selbst.
+ABL_P076,Passive,Sound,Resonanzkörper,,,,,,,"TypePower(Sound,1100);Resist(Sound,800)",Always,,"Dauerhaft: Klang-Fähigkeiten ×1,10; erlittener Klang-Schaden ×0,80."
+ABL_P077,Passive,Sound,Einklang,,,,,,,Custom(Aethrion),FieldSong,Feldklang|Exclusive,"Aeth'rion: Der Eigenklang-Bonus aller Verbündeten gilt für jede Fähigkeit, deren Typ einer ihrer Typen ist – auch für Zweittypen der Fähigkeitswahl."
+ABL_P078,Passive,Sound,Taktwechsel,,,,,,,Custom(Chronaire),FieldSong,Feldklang|Exclusive,Chronaire: Die Zeitleiste läuft rückwärts – das langsamste Echo handelt zuerst.
+ABL_P079,Passive,Gravity,Schwerpunkt,,,,,,,Immune(Schwebend);Immune(Rueckstoss),Always,,Dauerhaft: immun gegen Schwebend; immun gegen Rückstoß.
+ABL_P080,Passive,Gravity,Massenträgheit,,,,,,,"Mod(Defense,1150);Mod(Speed,900)",RowFront,,"Solange in der Vorderreihe: VER ×1,15; GES ×0,90."
+ABL_P081,Passive,Gravity,Anziehung,,,,,,,Pull(Target),SwitchIn,,Beim Einwechseln: zieht das Ziel in die Vorderreihe. Zieht den Gegner gegenüber nach vorn.
+ABL_P082,Passive,Gravity,Bahnlenker,,,,,,,"Stage(Target,Evasion,-1,300)",HitDealt,,Nach eigenem Treffer: 30 % Chance: AUS −1 für das Ziel.
+ABL_P083,Passive,Gravity,Fallgewicht,,,,,,,"TypePower(Gravity,1100)",Always,,"Dauerhaft: Schwerkraft-Fähigkeiten ×1,10. Zusätzlich +10 % gegen Schwebend-Ziele."
+ABL_P084,Passive,Gravity,Sternensturz,,,,,,,Custom(Zenthrax),FieldSong,Feldklang|Exclusive,"Zenthrax: Zu Beginn jeder Runde schlägt ein Meteor (Stärke 60, Schwerkraft) auf ein zufälliges gegnerisches Feld; Schwerkraft-Effekte doppelt."
+ABL_P085,Passive,Arcane,Formelgeist,,,,,,,"TypePower(Arcane,1100);Immune(Verflucht)",Always,,"Dauerhaft: Arkan-Fähigkeiten ×1,10; immun gegen Verflucht."
+ABL_P086,Passive,Arcane,Glyphenwacht,,,,,,,"Stage(Self,SpDefense,+1)",StatusReceived,,Wenn ein Status erlitten wird: SVE +1 für sich selbst.
+ABL_P087,Passive,Arcane,Umkehrsinn,,,,,,,"Stage(Self,SpAttack,+1)",BattleStart,,"Bei Kampfbeginn: SAN +1 für sich selbst. Zusätzlich +1 SAN, solange die Typtabelle umgekehrt ist."
+ABL_P088,Passive,Arcane,Wandelhaut,,,,,,,"TypeChange(Self,Arcane,2)",HitTaken,,Wenn getroffen: ändert den Typ von sich selbst für 2 Runden zu Arkan. Einmal pro Kampf; nur bei sehr effektivem Treffer.
+ABL_P089,Passive,Arcane,Regelbrecher,,,,,,,TimeCost(-10),Always,,Dauerhaft: eigene Zeitkosten −10. Gilt nur für Arkan-Status-Fähigkeiten.
+ABL_P090,Passive,Arcane,Spiegelgedächtnis,,,,,,,Copy(),EnemyFainted,,Wenn ein Gegner verklingt: kopiert die zuletzt vom Ziel eingesetzte Fähigkeit. Kopiert die letzte Fähigkeit des verklungenen Gegners ins Kampfset (bis Kampfende).

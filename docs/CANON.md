@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K28
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K29
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -314,6 +314,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-095 | Effekt-DSL mit Primitiv-Registry | K28 |
 | ADR-096 | Jeder Typ mit physischen und speziellen Fähigkeiten (12 je Typ) | K28 |
 | ADR-097 | Ein Haupt-Status + Gift parallel; Starre-Immunität | K28 |
+| ADR-098 | Lernsets regelbasiert und deterministisch generiert | K29 |
+| ADR-099 | Zwei Abdeckungstypen je Art aus der Typtabelle | K29 |
+| ADR-100 | Feldklang als exklusive Passive der Legendären/Mythischen | K29 |
+| ADR-101 | Versteckte Passive aus Fremdtyp | K29 |
+| ADR-102 | Tutoren lehren Schwer-Fähigkeiten gegen Fraktionsruf | K29 |
 
 ## §11 Change Requests
 
@@ -1363,3 +1368,24 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 - 12 je Typ nach Slot-Schema (Einstieg 1–2, Mittel 3–5, Schwer 6, Status/Feld/Identität 7–12); ≥ 2 physisch, ≥ 2 speziell, ≥ 3 Status je Typ; ≥ 3 Identitäts-Fähigkeiten je Typ (CANON §78).
 - Kennzahlen: Physisch 48 · Speziell 63 · Status 69; Ø Stärke 66; Zeitkosten 50–150.
 - Tags: `Contact`, `Sound` (durch Verstummt blockiert), `Ground` (verfehlt Schwebend). Validator `tools/gen_abilities.py` AB-01…AB-14.
+
+## §102 Passive & Auslöser (LOCKED, K29 §1–§3 · `Data/Abilities/Abilities.csv` ABL_P, `Data/Echos/PassiveOptions.csv`)
+
+- 6 Passive je Typ (90, inkl. 16 Feldklänge); 1 aktive Passive je Echo; 1–3 sichtbare Optionen aus eigenen Typen + 1 versteckte aus Fremdtyp; Wildverteilung 60/30/10 % (versteckt 0 %, Sehr selten 5 %); Wechsel per **Wandelklang**; versteckt frei über Kodex 4 oder Zucht.
+- Auslöser: Always, BattleStart, SwitchIn, TurnStart, HitTaken, ContactTaken, HitDealt, CritDealt, LowHP (≤ 33 %, einmal), StatusReceived, AllyFainted, EnemyFainted, RowFront, RowBack, HarmonyFull, Weather.X, Terrain.X, FieldSong.
+- Statische Primitiva: Mod (≤ 1150 ‰ dauerhaft, ≤ 1300 bedingt), TypePower (≤ 1100, LowHP ≤ 1500), Resist (≥ 700), Immune, StatusChance, HealPower, TimeCost (≥ −10), Custom (nur Feldklang); Mod-Ketten ≤ 1500 ‰.
+
+## §103 Feldklänge (LOCKED, K29 §4)
+
+- 16 exklusive Passive der Ursprungsstimmen/Mythischen (Wurzellied, Bergschwere, Moorgedächtnis, Gezeitenwende, Rätselglanz, Weltenschmiede, Aurora der Erhaltung, Weltgedächtnis, Brechung, Einklang, Große Pause, Taktwechsel, Spiegelwelt, Ewiger Kreis, Sternensturz, Finsternis); nur einer gleichzeitig aktiv (zuerst eingewechselt); nicht Ranked; je ein `UFieldSongPrimitive`.
+
+## §104 Lernsets (LOCKED, K29 §5–§7 · `Data/Echos/Learnsets.csv`, `tools/gen_learnsets.py`)
+
+- Generiert und deterministisch (stabile Hashes); Overrides nur per `LearnsetOverrides.csv` (K63).
+- Lernstufen E (≤ 45, Lv. 1–8) · M (50–75, Lv. 10–30) · S (Status, Lv. 6–34) · L (≥ 80 oder Zeit ≥ 110, Lv. 28–44) · H (≥ 100, Lv. 36–52); Zielgrößen 9/11/13 (Dreier), 10/12 (Zweier), 13 (Einzel/Zweig/Legendär).
+- Je Art 2 **Abdeckungstypen** (sehr effektiv gegen die Resistenzen der Primärfarbe); 1 Evolutionsfähigkeit ab Stufe 2; 3 Ei-Fähigkeiten je Linie. Regeln LS-01…LS-12.
+
+## §105 Klangschriften & Tutoren (LOCKED, K29 §8–§9 · `Data/Items/Klangschriften.csv`, `Data/Abilities/Tutors.csv`)
+
+- 90 Klangschriften `ITM_KS_001–090`, 6 je Typ (Mittel/Spät/Status); nutzbar, wenn Fähigkeitstyp = Typ des Echos oder Abdeckungstyp.
+- 30 Tutor-Fähigkeiten (2 je Typ, bevorzugt Schwer-Fähigkeit), Fraktionslehrer, Rufrang 3–4, 2.000/3.500 ◎ (Startwerte → K42/K47).

@@ -1,0 +1,32 @@
+# Tutoren (K29, 30 Fähigkeiten): Fraktionslehrer, Rufrang 3–4 (K47), Sol-Kosten (K42).
+Tutor,Ability,Type,Faction,ReputationRank,CostSol,Compat
+TUT_EMBER_1,ABL_A008,Ember,F01,3,2000,Typ des Echos
+TUT_EMBER_2,ABL_A003,Ember,F02,4,3500,Typ des Echos
+TUT_TIDE_1,ABL_A019,Tide,F02,3,2000,Typ des Echos
+TUT_TIDE_2,ABL_A014,Tide,F03,4,3500,Typ des Echos
+TUT_STONE_1,ABL_A030,Stone,F03,3,2000,Typ des Echos
+TUT_STONE_2,ABL_A027,Stone,F04,4,3500,Typ des Echos
+TUT_STORM_1,ABL_A042,Storm,F04,3,2000,Typ des Echos
+TUT_STORM_2,ABL_A040,Storm,F05,4,3500,Typ des Echos
+TUT_BLOOM_1,ABL_A054,Bloom,F05,3,2000,Typ des Echos
+TUT_BLOOM_2,ABL_A056,Bloom,F01,4,3500,Typ des Echos
+TUT_FROST_1,ABL_A066,Frost,F01,3,2000,Typ des Echos
+TUT_FROST_2,ABL_A065,Frost,F02,4,3500,Typ des Echos
+TUT_VOID_1,ABL_A079,Void,F02,3,2000,Typ des Echos
+TUT_VOID_2,ABL_A076,Void,F03,4,3500,Typ des Echos
+TUT_LIGHT_1,ABL_A090,Light,F03,3,2000,Typ des Echos
+TUT_LIGHT_2,ABL_A087,Light,F04,4,3500,Typ des Echos
+TUT_VENOM_1,ABL_A103,Venom,F04,3,2000,Typ des Echos
+TUT_VENOM_2,ABL_A101,Venom,F05,4,3500,Typ des Echos
+TUT_METAL_1,ABL_A114,Metal,F05,3,2000,Typ des Echos
+TUT_METAL_2,ABL_A111,Metal,F01,4,3500,Typ des Echos
+TUT_SPIRIT_1,ABL_A132,Spirit,F01,3,2000,Typ des Echos
+TUT_SPIRIT_2,ABL_A124,Spirit,F02,4,3500,Typ des Echos
+TUT_CRYSTAL_1,ABL_A138,Crystal,F02,3,2000,Typ des Echos
+TUT_CRYSTAL_2,ABL_A136,Crystal,F03,4,3500,Typ des Echos
+TUT_SOUND_1,ABL_A151,Sound,F03,3,2000,Typ des Echos
+TUT_SOUND_2,ABL_A152,Sound,F04,4,3500,Typ des Echos
+TUT_GRAVITY_1,ABL_A162,Gravity,F04,3,2000,Typ des Echos
+TUT_GRAVITY_2,ABL_A159,Gravity,F05,4,3500,Typ des Echos
+TUT_ARCANE_1,ABL_A177,Arcane,F05,3,2000,Typ des Echos
+TUT_ARCANE_2,ABL_A173,Arcane,F01,4,3500,Typ des Echos

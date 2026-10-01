@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Schreibt Fähigkeiten einer Art (Active/Passive/Crescendo/Field) idempotent in Data/Abilities/Abilities.csv."""
 import csv
-from abl import ABIL, KINDS, parse, budget, describe, load
+from abl import ABIL, KINDS, parse, budget, describe, describe_passive, load
 
 FIELDS = ["Name", "Kind", "Type", "DisplayName", "Category", "Power", "Accuracy", "Target", "TimeCost", "Budget",
           "Effects", "Trigger", "Tags", "Description"]
@@ -21,7 +21,9 @@ def write_kind(kind, rows):
         else:
             r["Budget"], r["TimeCost"] = "", ""
         if not r.get("Description"):
-            r["Description"] = describe(r)
+            r["Description"] = describe_passive(r) if kind == "Passive" else describe(r)
+        elif kind == "Passive" and describe_passive(r):
+            r["Description"] = describe_passive(r)[:-1] + ". " + r["Description"]
         out.append({k: r.get(k, "") for k in FIELDS})
     old = [x for x in load() if x["Kind"] != kind]
     allr = sorted(old + out, key=lambda x: (ORDER[x["Kind"]], int(x["Name"][5:])))
