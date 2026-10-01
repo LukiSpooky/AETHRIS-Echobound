@@ -18,8 +18,8 @@ struct AETHRISCORE_API FAethrisSaveHeader
 	static constexpr uint32 Magic = 0x48544541;
 
 	UPROPERTY() uint32 FileMagic = Magic;
-	/** Version des Container-Formats (nicht der Inhalte). */
-	UPROPERTY() int32 ContainerVersion = 1;
+	/** Version des Container-Formats (nicht der Inhalte). v2 (K64): CRC32 je Fragment + Nutzlast-CRC. */
+	UPROPERTY() int32 ContainerVersion = 2;
 	/** Build, der den Save geschrieben hat (Diagnose). */
 	UPROPERTY() FString BuildVersion;
 	UPROPERTY() FDateTime SavedAtUtc;

@@ -1,0 +1,38 @@
+# Save-Fragmente (K64 §3). Scope: World = Weltstand-Slot, Profile = Profil (plattformgebunden, cloud-synchron). Count × BytesEach = Größe unkomprimiert (Schätzung, Obergrenze). Version = aktuelle Schema-Version.
+Name,Owner,Scope,Version,Content,Count,BytesEach,Since
+Meta.Header,GF_Save,World,1,"Header, Vorschau (Region, Rang, Akkorde, Chor), Spielzeit, Build",1,256,K06
+Chor,GF_Monsters,World,3,"Aktive Echos (FEchoInstance, max. 6)",6,240,K06
+Sanctuary,GF_Companion,World,1,"Resonanzhain: Gärten, Ausbaustufen, Echos (max. 600), Deko",600,240,K37
+Inventory,GF_Inventory,World,2,"Gegenstände, Mengen, Sol, Taschenplätze",600,8,K06
+Equipment,GF_Inventory,World,1,"Wärter-Ausrüstung I–V, Halteitems-Zuordnung, Garderobe",120,12,K40
+Kodex,GF_Research,World,1,"Forschungsstufen 256 × 4, Klangfragmente, Lore-Funde",1400,4,K39
+Breeding,GF_Breeding,World,1,"Brutnischen, laufende Zuchten (Seed, Eltern), Zuchtbuch",40,64,K38
+Crafting,GF_Economy,World,1,"Bekannte Rezepte, Reifungen, Händler-Rotation (Spieltag)",200,6,K41
+Warden,GF_Companion,World,1,"Wärterrang, Wärter-EP, Skilltree (48 Fähigkeiten), Titel",1,160,K43
+Traversal,GF_World,World,1,"Freigeschaltete Traversal-Fähigkeiten, Reitarten, Gleiter, Ausdauer-Boni",1,64,K40
+Player.Position,GF_World,World,1,"Ort, Blickrichtung, aktiver Resonanzstein, Reittier",1,64,K64
+Player.Map,GF_World,World,1,"Entdeckte POIs, Resonanzsteine, Kartenschleier (Bitfeld je 128-m-Zelle)",4500,1,K08
+World.Time,GF_World,World,1,"Spielzeit, Spieltag, Mondphase, Wetter-Fahrplan-Seed, aktive Overrides",1,96,K14
+World.Zones,GF_World,World,1,Fixierte Zonenbänder (ADR-044),150,4,K09
+World.Population,GF_AI,World,1,"Bestand je (Zone, Art), letzte Tagesrechnung",2200,4,K52
+World.Npcs,GF_AI,World,1,"NPC-Zustände (Abweichungen vom Tagesplan, Beziehungen, Barks gehört)",194,24,K53
+World.Settlements,GF_World,World,1,"Siedlungszustände 0/1/2, Feste, Händlerstand",80,16,K13
+World.Nodes,GF_Economy,World,1,Ressourcen-Knoten: Nachwachs-Zeitpunkte (nur geerntete),800,8,K41
+World.QuestConsequences,GF_Quests,World,1,"Dauerhafte Weltänderungen aus Quests (Data-Layer-Schalter, NPC-Umzüge)",300,4,K48
+Player.Quests,GF_Quests,World,2,"Questzustände, aktueller Schritt, Ziele, StepId-Migration",400,16,K48
+Player.StoryFlags,GF_Quests,World,1,"Story-Flags (Haltungen, Entscheidungen, Wahrheitsstufen, Ende)",120,8,K44
+Player.Reputation,GF_Quests,World,1,"Ruf je Fraktion, Tageskappen, Rang-Belohnungen",5,32,K47
+Player.Memories,GF_Quests,World,1,"Tagebuch-Erinnerungen („Gemeinsam erlebt“, Abschiede)",200,48,K60
+Player.Social,GF_Multiplayer,World,1,"Zirkel-Verweis, Grußgaben-Zähler, Gesten-Freischaltungen",1,128,K60
+Player.TradeDeltas,GF_Multiplayer,World,1,"Offene Tausch-Deltas, Echos „unterwegs“",10,300,K60
+Player.CoopLedger,GF_Multiplayer,World,1,Gast-Protokoll der letzten Sitzung bis zur Anwendung,200,64,K59
+Player.GhostTeams,GF_PvP,World,1,"Geister-Teams der Woche (30 × 6 Echos, kompakt)",180,96,K61
+Player.Endgame,GF_Combat,World,1,"Tiefen je Ort, Spieltag-Erstabschlüsse, Meisterschaften",30,16,K62
+Player.Mythics,GF_Quests,World,1,Fortschritt der sechs Mythischen Wege,6,32,K62
+Player.TimeTrials,GF_World,World,1,Taktproben-Bestzeiten,12,8,K62
+Player.Photos,GF_Research,World,1,"Fotobewertungen, Album-Verweise (Bilder separat)",500,24,K39
+Player.Tutorials,GF_UI,World,1,"Gesehene Hinweise, Einführungsstand",150,2,K54
+Profile.Settings,GF_UI,Profile,1,"Einstellungen inkl. Barrierefreiheit, Steuerung, Audio, Grafik",1,2048,K54
+Profile.Achievements,GF_Save,Profile,1,"Erfolge, Titel, Meisterschafts-Akkord",120,8,K62
+Profile.PvP,GF_PvP,Profile,1,"Saisonstufen (Cache), Replays-Liste",40,24,K61
+Profile.PhotoAlbum,GF_Research,Profile,1,"Fotoalbum (Bilder als eigene Dateien, max. 500 × 200 KB)",500,16,K39

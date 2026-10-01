@@ -1,0 +1,14 @@
+# Autosave-Auslöser (K64 §4). Mindestabstand zwischen zwei Autosaves 30 s (außer AS_FINALE, AS_SUSPEND, AS_QUIT).
+Name,Trigger,Rhythm,Note
+AS_STONE,Resonanzstein aktiviert oder Schnellreise,sofort,
+AS_QUEST,Quest-Schritt abgeschlossen,sofort,
+AS_BOSS,"Bosskampf, Arena, Tiefe, Raid beendet",sofort,
+AS_BOND,"Echo gebunden, entwickelt, geschlüpft, getauscht",sofort,
+AS_REGION,Region gewechselt,sofort,
+AS_SANCTUARY,"Hain-Ausbau, Chor-Tausch",sofort,
+AS_TIMER,Zeitintervall ohne anderen Auslöser,alle 10 min Spielzeit,"nicht im Kampf, nicht in Zwischensequenz"
+AS_ONLINE,"Vor Online-Sitzung (Koop, Tausch, Ranked)",sofort,K59 §6.2
+AS_COOP_LEDGER,Koop-Gast: Protokoll sichern,alle 60 s,nur Fragment Player.CoopLedger
+AS_FINALE,Vor der Finalentscheidung,einmalig,gesonderter Slot (ADR-176)
+AS_SUSPEND,Konsole geht in Ruhemodus / App verliert Fokus,sofort,Plattform-Ereignis
+AS_QUIT,Spiel beenden / Titelbildschirm,sofort,

@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K63
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K64
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -483,6 +483,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-264 | Tuning-Knöpfe zentral, Änderungen nur per Patch | K63 |
 | ADR-265 | Balance-Rat, Ranked-Änderungen zum Saisonwechsel, öffentliche Begründung | K63 |
 | ADR-266 | Katalogkapitel automatisch neu erzeugt | K63 |
+| ADR-267 | Save-Container v2 mit CRC32 je Fragment | K64 |
+| ADR-268 | Zentrales Fragment-Register mit Prüfregel über alle Kapitel | K64 |
+| ADR-269 | Chor/Hain bei Defekt aus älterer Kopie übernehmen | K64 |
+| ADR-270 | Eiserner Wärter: ein Stand, Sofort-Speichern | K64 |
+| ADR-271 | Cross-Save opt-in, Konflikte nie automatisch | K64 |
+| ADR-272 | Saves enthalten nur Instanzzustand | K64 |
 
 ## §11 Change Requests
 
@@ -2171,3 +2177,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §251 Tuning, Grade, Live-Balancing, Playtests (LOCKED, K63 §7–§10 · `Data/Balance/TuningKnobs.csv`)
 
 - 18 Tuning-Knöpfe mit Quelle, Standard, sicherem Bereich, Owner; Änderungen nur per Patch, Ranked nur zum Saisonwechsel. Grade: Entspannt (EP ×1,25, Vorschau immer, KI −1 Stufe, Bindungsfenster +20 %), Wärter, Meister (KI +1, Arena-Ass +2, −10 % Sol max. 5.000), Eiserner Wärter. Live-Signale (Arena-Erstniederlage > 55 %, Zeit bis Akkord > 130 %, Bindungsabbruch > 40 %, Sol < 20 % Bedarf, Raid/Tiefe < 25 % nach 10 Versuchen); Balance-Rat wöchentlich, PvE-Datenpatch monatlich, Patch-Notizen mit Begründung. Playtests intern, VS (30), Alpha (200), Beta (~5.000), Barrierefreiheit (15), Familien (20).
+
+## §252 Save-Container v2 & Fragment-Register (LOCKED, K64 §2–§3 · `Data/Save/Fragments.csv`, `tools/ref/aethris_save.py`, `GF_Save/AethrisSaveContainer.h`; präzisiert §32)
+
+- Little Endian: Magic 'AETH' · ContainerVersion 2 · HeaderSize · Header (Build, SavedAtUnix, PlayTime, Region, Rang, Akkorde, Chor-Vorschau ≤ 6) · FragmentCount · Einträge (Id, Version, Offset, Size, CRC32) · Nutzlast · Nutzlast-CRC32; Oodle und Verschlüsselung in der Plattform-Schicht; Testvektor Python = C++. 36 Fragmente (32 Weltstand, 4 Profil) mit Owner-Modul, Scope, Version, Obergrenzen; Weltstand ≤ 250 KB unkomprimiert (≈ 86 KB komprimiert); Echo-Instanz ≈ 240 Byte; Referenzen über Namens-Tabelle je Fragment. Jedes in Kapiteln genannte Fragment muss registriert sein (SV-01).
+
+## §253 Slots & Autosave (LOCKED, K64 §4 · `Data/Save/AutosaveTriggers.csv`)
+
+- 3 Weltstände (je 3 Rotationskopien), Eiserner Wärter (ein Stand, Sofort-Speichern bei Erschöpfung/Bindung/Kampfende, Absturz startet laufenden Kampf neu), Finale-Speicherpunkt (einmal geschrieben, schreibgeschützt, Laden erzeugt Kopie), Profil. 12 Autosave-Auslöser, Mindestabstand 30 s (außer Finale/Suspend/Beenden), Kampf verzögert Autosave. Ladereihenfolge Weltgerüst → Erzählung → Spielfigur/Echos → lebende Welt → übrige; Start ab 256 m geladener Zellen.
+
+## §254 Migration, Fehlertoleranz, Plattformen (LOCKED, K64 §5–§8)
+
+- MG-01–MG-05 (reine Migrationen, IDs nie wiederverwendet + Ersatztabelle, alle Versionen lesbar, Daten-Hooks nach dem Laden, Vorgängerpatch muss neue Versionen mitschleppen); Launch-Versionen Chor v3, Inventory v2, Player.Quests v2, sonst v1. Fehler: Container → Rotationskopie; Fragment-CRC → nur Fragment zurücksetzen; Chor/Hain aus älterer Kopie übernehmen; neuere Version → Rohbytes behalten. Plattform-Speicher/Cloud je Plattform; Cross-Save opt-in über Aethris-Konto (≤ 3 Weltstände, Konflikte nie automatisch, 12 Monate Aufbewahrung). Determinismus (Wetter, Spawns, Kampf-, Zucht-, Loot-Zähler, Preise, Dissonanzen) macht Neuladen wirkungslos. Saves enthalten nur Instanzzustand (ADR-272).
+
+## §255 Save-Leistung, UX, Tests (LOCKED, K64 §9–§11)
+
+- Game Thread ≤ 4 ms (PS5) / 6 ms (Switch 2), Worker ≤ 20/40 ms, Laden ≤ 300/600 ms; Dirty-Flags für Hain/Population. Speicher-Symbol (Klangmal), Slot-Vorschau, Konfliktansicht mit Halten 3 s. Tests: Golden-Save-Korpus G01–G20, Rundreise byte-identisch, Stromausfall 1.000×, Korruptions-Fuzzing, Migrationstests je `[SAVE-SCHEMA]`, Cross-Save-Paare, Speicher voll, Leistung nächtlich.
