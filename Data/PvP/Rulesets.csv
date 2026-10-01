@@ -1,0 +1,10 @@
+# PvP-Regelsätze (K61 §3). Level: Norm = alle Echos auf NormLevel umgerechnet (Q5), Eigen = echte Level. Team = registrierte Echos / gewählte / aktiv.
+Name,DisplayName,Format,Level,NormLevel,Team,Preview,Items,Weather,Timer,MatchLimitMin,Restrictions
+RS_RANKED_TRIO,Ranked Trio,Trio 3+3,Norm,70,6/6/3,"Arten der Gegenseite, 90 s Aufstellung",Halteitems ohne Duplikate; keine Verbrauchsgüter,Klar (Fähigkeitswetter erlaubt),30 s + 90 s Bank,20,"Keine Ursprungsstimmen, keine Mythischen, keine Leih-Echos, Art höchstens 1×, nur signierte Echos, nur Informations-/Komfort-Skills"
+RS_RANKED_DUEL,Ranked Duell (Saison-Rotation),Duell 1+5,Norm,70,6/6/1,"Arten der Gegenseite, 60 s Reihenfolge",Halteitems ohne Duplikate; keine Verbrauchsgüter,Klar,30 s + 90 s Bank,15,"Keine Ursprungsstimmen, keine Mythischen, keine Leih-Echos, Art höchstens 1×, nur signierte Echos, nur Informations-/Komfort-Skills"
+RS_FREE_DUEL,Arena-Halle frei – Duell,Duell 1+5,Norm,70,6/6/1,"Arten, 60 s",Halteitems,Klar,30 s + 90 s Bank,15,"Ursprungsstimmen/Mythische erlaubt, Art höchstens 1×"
+RS_FREE_DUO,Arena-Halle frei – Duo,Duo 2+4,Norm,70,6/6/2,"Arten, 75 s",Halteitems,Klar,30 s + 90 s Bank,18,wie frei Duell
+RS_FREE_TRIO,Arena-Halle frei – Trio,Trio 3+3,Norm,70,6/6/3,"Arten, 90 s",Halteitems,Klar,30 s + 90 s Bank,20,wie frei Duell
+RS_FRIEND,Freundeskampf,Duell/Duo/Trio,Norm oder Eigen,70,frei,frei,frei,frei (inkl. Weltwetter),frei (Standard 60 s),0,frei; ungewertet
+RS_GHOST,Geister-Teams (offline),Duell/Duo/Trio,Norm,70,6/6/x,Arten,Halteitems,Klar,ohne,0,Gegner = gespeicherte Teams + Kampf-KI (AI_NPC_VETERAN, mit der aufgezeichneten Aufstellung)
+RS_SEASON_SPECIAL,Saisonregel (Beispiel „Kleine Stimmen“),Trio 3+3,Norm,50,6/6/3,"Arten, 90 s",Halteitems ohne Duplikate,Klar,30 s + 90 s Bank,20,"nur Stufe-1-Arten oder Einzelarten mit Kernsumme ≤ 430; ungewertet für den Hauptrang, eigene Rangliste"

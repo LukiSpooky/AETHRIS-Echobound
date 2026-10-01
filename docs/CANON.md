@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K60
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K61
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -465,6 +465,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-246 | Klangbörse ohne Preise mit 2er-/3er-Ringen | K60 |
 | ADR-247 | Klangzirkel ohne Machtvorteile, Chronik kosmetisch | K60 |
 | ADR-248 | Asynchrone Hain-Besuche und Grußgaben | K60 |
+| ADR-249 | Q5: Normstufe 70 mit echten Anlagen/Schliff | K61 |
+| ADR-250 | Glicko-2, sichtbare Stufe aus R − 2·RD | K61 |
+| ADR-251 | Schachuhr und Tiebreak verklungen → HP-‰ → Bank | K61 |
+| ADR-252 | Keine Bannliste zum Launch, Meta-Signale | K61 |
+| ADR-253 | Belohnung nach höchster Saisonstufe, kosmetisch | K61 |
+| ADR-254 | Geister-Teams als Offline-PvP | K61 |
 
 ## §11 Change Requests
 
@@ -486,7 +492,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q2 | ~~Effektivitätsmultiplikatoren~~ ✅ K17 §2 | K17 |
 | Q3 | ~~Genom: Allelanzahl, Morph-Wahrscheinlichkeiten~~ ✅ K38 §5–§6: 6 Loci (2–4 Allele, Mendel), Morph 1/1.024 mit Faktoren bis 24/1.024 | K38 |
 | Q4 | ~~Koop: geteilter Story-Fortschritt?~~ ✅ K60 §3: Story persönlich, Erinnerungen/EP/Beute/Kodex mitgenommen, Gleichklang bei gleichem Schritt (§237) | K60 |
-| Q5 | Ranked-Level-Normalisierung | K61 |
+| Q5 | ~~Ranked-Level-Normalisierung~~ ✅ K61 §2: Normstufe 70, Anlagen/Schliff zählen (§240) | K61 |
 | Q6 | Split-Screen-Koop Machbarkeit | K65 |
 | Q7 | ~~Namen der 10 Ursprungsstimmen~~ ✅ K07: 10 Ursprungsstimmen benannt | K07/K27 |
 | Q8 | ~~Bindungsstufen 0–1000~~ ✅ K37 §2: Stufen 0/150/350/550/750/900 | K37 |
@@ -2104,3 +2110,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §239 Klangzirkel, Freunde, Kommunikation (LOCKED, K60 §5–§8 · `GuildRoles.csv`, `GuildGoals.csv`, `QuickChat.csv`)
 
 - Klangzirkel: 50 Mitglieder (Leitung 1, Stimmführung 5, Mitglieder 44) + 10 Gäste (7 Tage); 1 Zirkel je Konto; Wappen-Baukasten; Launch: Liste, Rollen, Chat, Raid-Gruppensuche, Zirkel-Tausch; ab Saison 1: Zirkel-Chronik (12 Wochenziele, 3 je Woche, Ziel skaliert mit aktiven Mitgliedern, min. 10; nur kosmetisch), Banner, Fotowand. Freunde 200 (plattformübergreifend), Präsenz abschaltbar, Grußgabe 1/Tag/Freund (≤ 10 Ressourcen oder 1 Gericht), asynchrone Hain-Besuche, 24 Schnellchat-Sätze, 24 Gesten (12 frei + 12 freischaltbar), Freitext nur Freunde/Zirkel opt-in; Fremde nur strukturiert (Börse, Matchmaking). Save-Fragmente `Player.Social`, `Player.TradeDeltas`, `Player.CoopLedger`, `Player.Memories`.
+
+## §240 Ranked-Normalisierung – Q5 (LOCKED, K61 §2 · `tools/ref/aethris_pvp.py`)
+
+- Normstufe 70 (Ranked, freie Arena standard): Werte nach K18-Formeln bei Level 70 mit echten Anlagen, Schliff, Persönlichkeit; Level selbst unverändert. Begründung: alle Evolutions-Levelschwellen ≤ 44, Gehorsam voll (Grenze 100), Story-Endstand. 240 zulässige Arten (ohne Ursprungsstimmen/Mythische); Art-Klausel 1×; Halteitems ohne Duplikate; keine Verbrauchsgüter; Klar; Crescendo kurz; nur Info-/Komfort-Skills; nur signierte Echos.
+
+## §241 PvP-Regelsätze (LOCKED, K61 §3 · `Data/PvP/Rulesets.csv`)
+
+- Ranked Trio (Hauptliste, 6/6/3, Vorschau Arten 90 s, 20 min), Ranked Duell (Saison-Nebenliste, 15 min), frei Duell/Duo/Trio (Ursprungsstimmen/Mythische erlaubt), Freundeskampf (alle Regeln frei, inkl. Norm/Eigen und „Gleichklang“: Anlagen 15, Schliff ignoriert), Geister-Teams offline (30 Teams/Woche, KI-Profil Veteran), Saisonregel (z. B. „Kleine Stimmen“, Norm 50).
+
+## §242 Ranked-Wertung, Stufen, Saisons (LOCKED, K61 §4 · `RankTiers.csv`, `SeasonCalendar.csv`, `GF_PvP/Ranked/AethrisRankedTypes.h`)
+
+- Glicko-2 (Start R 1500, RD 350, σ 0,06; τ 0,5; ein Kampf = eine Periode; wöchentlicher RD-Zuwachs bis 350). Sichtbare Klangstufe aus R − 2·RD: Summen 0 · Ruf 1150 · Lied 1350 · Chor 1550 · Hymne 1750 · Weltakkord 2050 (je 3 Unterstufen, Weltakkord mit Top-500-Platz). Platzierung 5 Kämpfe. Simulation: Spearman 0,977 nach 40 Kämpfen, Weltakkord ≈ 1 %. Matchmaking ± 100 → +50/15 s → ± 400, Paarung max. 2×/24 h. Schachuhr 30 s + 90 s Bank, 3× Abwarten bei leerer Bank = Aufgabe; Zeitlimit 20/15 min; Tiebreak verklungen → HP-‰ → Bank → 0,5. Saisons 12 + 1 Wochen, weicher Reset R' = 1500 + 0,5(R − 1500), RD' ≥ 150. Belohnung nach höchster Saisonstufe, nur kosmetisch.
+
+## §243 Fair Play, Meta-Pflege, Zuschauen (LOCKED, K61 §5–§8)
+
+- Verlassen = Niederlage (3 in 24 h → Wartezeit 15 min/1 h), Absprachen/Zweitkonten → Ranked-Sperre; Gesten einzige Kommunikation (1 je Zug, ausblendbar). Zuschauen mit 1 Zug Verzögerung (Ranked nur mit Erlaubnis beider), Replays Ranked 90 / frei 30 Tage, Teilen per Code. Turniere: Schweizer System + Top-8-K.-o. Keine Bannliste zum Launch; Meta-Signale (Nutzung > 40 %, Siegquote > 56 %, Median > 16 min, Zeitlimit > 8 %, Typ < 2 %, Crescendo-Siege > 50 %); Eingriffe: Konter → Fähigkeit → Basiswerte → Saisonbeschränkung.

@@ -1,0 +1,8 @@
+# Sichtbare Ranked-Stufen (K61 §4). Grenze = konservative Wertung R − 2·RD (Glicko-2-Skala 1500). Klangstufen nach musikalischer Steigerung.
+Name,DisplayName,MinConservative,Subdivisions,Reward
+TIER_1,Summen,0,3,Titel „Summende Stimme“
+TIER_2,Ruf,1150,3,Arena-Halle-Banner (Saisonfarbe)
+TIER_3,Lied,1350,3,Geste „Saisonverbeugung“
+TIER_4,Chor,1550,3,Resonator-Muster der Saison
+TIER_5,Hymne,1750,3,Gleiter-Muster der Saison
+TIER_6,Weltakkord,2050,1,Titel „Weltakkord S#“ + Rahmen; Top 500 je Region mit Platzierung

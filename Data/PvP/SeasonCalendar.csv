@@ -1,0 +1,6 @@
+# Ranked-Saisons (K61 §5). Länge 12 Wochen + 1 Woche Pause (Saisonregel-Event). Daten relativ zum Launch (W = Woche).
+Name,Start,End,Format,Special,Note
+S0,W3,W14,RS_RANKED_TRIO,–,Vorsaison: Ränge ohne Endbelohnung außer Titel
+S1,W16,W27,RS_RANKED_TRIO,RS_SEASON_SPECIAL,Zirkel-Chronik startet (K60)
+S2,W29,W40,RS_RANKED_TRIO,RS_RANKED_DUEL,Duell als Nebenrangliste
+S3,W42,W53,RS_RANKED_TRIO,RS_SEASON_SPECIAL,Jahresabschluss-Turnier (K68)
