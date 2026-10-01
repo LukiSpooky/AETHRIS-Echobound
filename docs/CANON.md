@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K01
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K02
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -146,6 +146,11 @@ Regel: Ein Echo hat 1 oder 2 Typen. Klang hat erzählerische Sonderrolle, **kein
 | **Resonanzsteine** | Schnellreisepunkte | K08 |
 | **Tiefenresonanzen** | Endgame-Dungeons | K62 |
 | **Arenameister** | Leiter einer Stadt-Arena | K11/K12 |
+| **Akkord** | Arena-Abzeichen; 10 Akkorde = *Weltakkord* | K02 §9.2 |
+| **Sol** (◎) | Währung (Singular = Plural) | K42 |
+| **Rückklang** | Fehlerzustand bei erschöpftem Chor (Regeln §16) | K02 §11.2 |
+| **Klangbrunnen** | Heilpunkt in Siedlungen | K02 §4.5 |
+| **Lager-Moment** | Rastplatz-Interaktion (Kochen, Füttern, Chor) | K02 §4.4 |
 
 ### §6.1 Kampfformate (LOCKED)
 Duell 1v1 · Duo 2v2 · Trio 3v3 · Raid (4 Spieler vs. Boss). Wechsel aus Reserve kostet Zeitleisten-Zeit.
@@ -203,6 +208,9 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | `FEchoGenome` | USTRUCT | Allele, Morph, Mutationen |
 | `UEchoAbilitySystemComponent` | UAbilitySystemComponent | Rundenbasierter GAS-Wrapper |
 
+**Pflichtfelder `UEchoSpeciesDefinition` (K02, Validator DR-02/05/15):** `ObservableTraits` (≥3), `Niches` (≥1), `Rarity`, `SpawnConditions` (Pflicht ab Rarity ≥ Rare).
+**Progression:** `FWardenRankRow` → Data Table `DT_WardenRank` (Quelle `Data/Progression/WardenRank.csv`).
+
 **Namenskonvention:** statische Designdaten = `U…Definition`; Laufzeitdaten = `F…Instance` / `U…Component`. Spezies-IDs `ECHO_###`.
 
 ## §10 ADR-Index
@@ -218,6 +226,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-007 | Echos sterben nicht | K01 |
 | ADR-008 | Level 1–100, Wärterrang 1–40 | K01 |
 | ADR-009 | Chor = 6 Echos | K01 |
+| ADR-010 | Design-Regeln DR-01–DR-29 als Regelwerk (DR-19/21/22 unverhandelbar) | K02 |
+| ADR-011 | Diegetische Starterwahl „Erstresonanz“ | K02 |
+| ADR-012 | Gestaffelte Offenheit, Akkord-skalierte Arenen, einmalig fixierte Wildzonen | K02 |
+| ADR-013 | Nahtloser Kampf am Ort (Kampfkreis 12–18 m) | K02 |
+| ADR-014 | Rückklang ohne Bindungsverlust | K02 |
+| ADR-015 | Spielzeit statt Echtzeit für Wartezeiten | K02 |
 
 ## §11 Change Requests
 
@@ -239,3 +253,78 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q8 | Bindungsstufen 0–1000 | K37 |
 | Q9 | Tagesphasen-Stundengrenzen | K15 |
 | Q10 | Hauptquartiere der Fraktionen | K47 |
+| Q11 | Bewegungs-/Ausdauer-/Gleiter-Tuning (Startwerte K02 §4.1) | K40 |
+| Q12 | Bindungs-Timingfenster (Startwerte K02 §4.2) | K36 |
+| Q13 | Arena-Stufentabelle (Startwerte K02 §9.2) | K63 |
+| Q14 | Wärterrang-EP-Kurve (Startwerte K02 §13.2) | K43/K63 |
+
+---
+
+## §13 Design-Regeln (LOCKED, K02 §2)
+
+| ID | Kurzform | Säule |
+|---|---|---|
+| DR-01 | Wissen schlägt Items bei Bindung | S2 |
+| DR-02 | ≥3 beobachtbare Verhaltensmerkmale pro Art | S2 |
+| DR-03 | Bindung = Dialog; Entscheidung vor Timing | S2 |
+| DR-04 | Echos reagieren sichtbar auf Spieler | S2 |
+| DR-05 | Kein Echo ist wertlos (≥1 Nische) | S2 |
+| DR-06 | Zeitleiste zeigt ≥8 Züge, Zeitkosten vor Bestätigung | S3 |
+| DR-07 | Zufall nur mit Gegenspiel und Deckel | S3 |
+| DR-08 | Jeder Typ hat eigene Mechanik-Identität | S3 |
+| DR-09 | Story auf Standard ohne Combos/Formation gewinnbar | S3 |
+| DR-10 | Kein Zug ist verschwendet | S3 |
+| DR-11 | Kampfdauer: Wild 60–120 s, Trainer 3–6 min, Arena 8–15 min, Ranked-Trio ≤20 min | S3 |
+| DR-12 | Welt läuft ohne Zuschauer (Sim-LOD) | S1 |
+| DR-13 | Jedes Weltsystem beeinflusst ≥2 andere | S1 |
+| DR-14 | Sichtbare Begegnungen; max. 1 angekündigter Hinterhalt pro Quest | S1 |
+| DR-15 | Seltenheit = erlernbare Bedingungen; reiner Zufall nur für Morphs | S1 |
+| DR-16 | Jede Instanz speichert Herkunft | S4 |
+| DR-17 | Optik nur durch Genetik/Fundort/Leistung, nie Shop | S4 |
+| DR-18 | Kompetitiv perfektes Echo in ≤15 h züchtbar | S4 |
+| DR-19 | Allein vollständig; keine tauschexklusiven Arten | S5 (unverhandelbar) |
+| DR-20 | Koop-Boni nie Machtvorteile | S5 |
+| DR-21 | Kompetitives serverautoritativ + levelnormalisiert | S5 (unverhandelbar) |
+| DR-22 | Clean-Room hat Vorrang | quer (unverhandelbar) |
+| DR-23 | Keine Pflicht-Wartezeit >30 s, keine Echtzeit-Timer für Kernfortschritt | quer |
+| DR-24 | Jedes Signal visuell **und** akustisch | quer |
+| DR-25 | Content ohne neuen C++-Code (außer neue Primitiva) | quer |
+| DR-26 | Drei-Ding-Regel: ≥3 ungeplante Angebote pro 300 m | S1 |
+| DR-27 | Kein Belohnungstyp >50 % in 30 min | quer |
+| DR-28 | Hauptpfad jeder Region mit frühester Traversal-Ausstattung spielbar | S1 |
+| DR-29 | Atemzug-Regel: ≥20 min Ruhe nach Intensität ≥7 | quer |
+
+## §14 Onboarding & Starter (K02 §8)
+
+| Schlüssel | Wert | Status |
+|---|---|---|
+| Starterwahl | Diegetisch durch Spurwahl im Prolog (ADR-011) | LOCKED |
+| Starter-Zyklus | **Blüte > Stein > Sturm > Blüte** (bindend für K17) | LOCKED |
+| Starter-Arbeitsnamen | Fernlit (Blüte), Brokk (Stein), Wisplet (Sturm); Kodex #001–#009 | PROVISIONAL → K04/K20 |
+| Startdorf | Lindwiesen (R01), angrenzend Lindwald | LOCKED |
+| Mentorin | Ysolde Varn – Wildwacht-Wärterin, ehem. Arenameisterin Eichenhall | LOCKED |
+| Rivale | Kael Duran – Jugendfreund, Akademie-Anwärter | LOCKED |
+| Onboarding-Ende | Ankunft Eichenhall (~3:00 h); Gleiter bei ~2:20 h | LOCKED (Timing-Ziel) |
+
+## §15 Progression (K02 §9)
+
+| Schlüssel | Wert | Status |
+|---|---|---|
+| Struktur | Prolog (R01) → Akt I: R01, dann R02/R03/R06 frei → Akt II: R04/R05/R07 frei, R08 nach 2 weiteren → Akt III: R09, R10 | LOCKED |
+| Akkorde | Akt I: 4 (Eichenhall fix zuerst), Akt II: 4, Akt III: 2 (Prismara = Stufe 9, Aerion = Stufe 10) | LOCKED |
+| Wild-Level-Korridore | Prolog 2–5 · Akt I 5–28 · Akt II 25–55 · Akt III 50–70 · Endgame 70–100 | LOCKED |
+| Zonen-Skalierung | Frei wählbare Regionen: Stufe nach Akkordanzahl, beim ersten Betreten **einmalig fixiert** | LOCKED |
+| Story-Finale | Spieler-Echos ~Lv. 68–70, Wärterrang ~28 | PROVISIONAL → K63 |
+| Chorgröße | Rang 1: 2 · Rang 2: 3 · Rang 5: 4 · Rang 10: 5 · Rang 14: 6 | PROVISIONAL → K43 |
+| Freischaltungen | Duo ab Rang 5, Trio ab 10, Zucht ab 14 (Ende Akt I), Raid ab 22, Ranked ab 28 | PROVISIONAL → K43 |
+| Traversal-Reihenfolge | Gleiter (Prolog) → Bodenreiten (nach Akkord 1) → Schwimm-/Kletterreiten (Akt I) → Grabreiten (Akt II, Sahrun) → Flugreiten (Akt II, nach 6 Akkorden) | LOCKED |
+
+## §16 Schwierigkeit & Fehlerzustand (K02 §11)
+
+| Schlüssel | Wert | Status |
+|---|---|---|
+| Grade | Entspannt (EP 1,25×) · Wärter (Standard) · Meister · Modifikator Eiserner Wärter | LOCKED |
+| Rückklang | Teleport zum nächsten aktivierten Resonanzstein/Klangbrunnen, Heilung, **kein** Bindungsverlust; Boss → Retry vor Arena | LOCKED |
+| Strafe | Nur Meister: −10 % Sol, max. 5.000 ◎ | LOCKED |
+| Eiserner Wärter | Erschöpfte Echos für laufende Region gesperrt | LOCKED |
+| Zugänglichkeit | Jede Frequenz-Mechanik hat visuelles Wellenmuster (DR-24) | LOCKED |
