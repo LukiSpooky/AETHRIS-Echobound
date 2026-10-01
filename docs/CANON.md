@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K33
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K34
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -338,6 +338,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-119 | Harmonie als gemeinsame Seitenleiste | K33 |
 | ADR-120 | Chor-Akkorde als kleine Kompositions-Synergie | K33 |
 | ADR-121 | Leihbegleitung bei nicht freigeschaltetem Arena-Format | K33 |
+| ADR-122 | Utility-KI mit Nutzwert je Zeiteinheit | K34 |
+| ADR-123 | Schwierigkeit über mehrere Hebel | K34 |
+| ADR-124 | Wild-KI aus Merkmalen und Temperament | K34 |
+| ADR-125 | Fairness-Regeln F-1 bis F-5 | K34 |
+| ADR-126 | Adaptiver Rivale mit einer Anpassung je Begegnung | K34 |
 
 ## §11 Change Requests
 
@@ -1496,3 +1501,21 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 - Duell 1+5, Duo 2+4 (ab Rang 5), Trio 3+3 (ab Rang 10), Raid 4 Spieler (ab Rang 22). Arena-Formate laut K02 §9.2; Leihbegleitung bei fehlender Freischaltung.
 - Begegnungen: Einzel (Duell), Herde (Format = Anzahl), Alpha, Wärter, Rivale, Arena, Stille-Echo (Sieg heilt, keine Bindung), Boss/Raid, PvP. Koop: Format nach Spielerzahl, gemeinsame Harmonie, Kombos zwischen Spielern.
+
+## §124 KI-Architektur (LOCKED, K34 §2–§3 · `tools/ref/aethris_ai.py`)
+
+- Utility-KI: Aktionsgenerator → 12 Betrachtungen (Schaden, Kill, Status, Setup, Debuff, Heilung, Tempo, Kombo, Wechsel, Crescendo, Formation, Risiko) → Nutzwert / Verzögerung × 100 → Auswahl (Profil-Rauschen, Gleichstand = Datenreihenfolge). StateTree nur außerhalb des Kampfes. Kampf-RNG, < 2 ms/Entscheidung.
+
+## §125 KI-Profile (LOCKED, K34 §4–§6 · `Data/Combat/AIProfiles.csv`)
+
+- 11 Profile (Wild, Scheu, Angriffslustig, Verspielt, Alpha, Anfänger, Geübt, Veteran, Arenameister, Rivale, Boss). Wild-Profile über Merkmale/Temperamente moduliert (Shy: Fluchtmarker < 50 % HP; Aggressive/Territorial: keine Flucht).
+- Kampfset-Bau Learnset / Best / Signature / Script; Wechsel per MatchupScore mit Hysterese 2 Züge; Crescendo bei ≥ 35 % gegnerischer HP-Summe, Not oder Konter; Harmonie nie > 2 Runden auf 100.
+
+## §126 Schwierigkeit & Fairness (LOCKED, K34 §8–§9)
+
+- Grade skalieren Profil, Kampfset, Anlagen NPC (5/9/13), Schliff NPC (0/40/80 % des Levels), Wechsel, KI-Kombos, Wissensstand (Sichtbar/Kodex2). Zielbänder Arena erster Versuch: Entspannt ≥ 90 %, Wärter 65–80 %, Meister 35–55 % (→ K63).
+- Fairness F-1 kein Eingabelesen, F-2 kein Würfelbetrug, F-3 Wissensstand, F-4 keine verdeckten Werte-Boni, F-5 Absicht im Protokoll.
+
+## §127 Arenameister & Rivale (LOCKED, K34 §7)
+
+- Signatur-Taktik je Arena als Gewichts-Overlay + Startaktion passend zur Feldregel; Rivale Kael adaptiv mit genau einer Anpassung je Begegnung (aus Spielstand, offline).

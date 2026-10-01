@@ -1,0 +1,14 @@
+# Kampf-KI-Profile (K34 §4). Gewichte der Betrachtungen (Promille; 1000 = Referenz). Noise = Anteil zufälliger legaler Züge.
+# Lookahead: 0 = nur aktueller Zug, 1 = berücksichtigt nächsten gegnerischen Zug/Ankündigung. KitQuality: Kampfset-Bau (K34 §6). Knowledge: Informationsstand (K34 §9).
+Name,DisplayName,Damage,Kill,Status,Setup,Debuff,Heal,Tempo,Combo,Switch,Crescendo,NoisePermille,Lookahead,KitQuality,Knowledge,UsedBy
+AI_WILD,Wild-Instinkt,1000,500,500,300,300,600,300,0,0,800,300,0,Learnset,Sichtbar,Wildechos (Standard)
+AI_WILD_SHY,Scheu,600,300,800,200,600,1200,800,0,0,600,250,0,Learnset,Sichtbar,Wildechos mit Merkmal Shy (Flucht bei HP < 50 %)
+AI_WILD_AGGR,Angriffslustig,1300,900,300,500,200,300,200,0,0,1000,200,0,Learnset,Sichtbar,Wildechos mit Aggressive/Territorial (keine Flucht)
+AI_WILD_PLAY,Verspielt,700,400,1000,600,800,500,1000,0,0,700,350,0,Learnset,Sichtbar,Wildechos mit Playful/Curious
+AI_ALPHA,Alpha,1100,800,900,800,800,900,900,500,0,1000,50,1,Best,Sichtbar,Alpha-Echos (K52)
+AI_NPC_NOVICE,Anfänger,1000,300,200,0,0,200,0,0,200,500,150,0,Learnset,Sichtbar,Wärter Stufe 1–2 (Akt I früh)
+AI_NPC_TRAINED,Geübt,1000,600,1000,800,800,1000,1000,600,700,900,50,1,Best,Sichtbar,Wärter Akt I–II
+AI_NPC_VETERAN,Veteran,1000,800,1200,1000,1000,1200,1200,1000,1000,1000,0,1,Best,Kodex2,Wärter Akt III und Endgame
+AI_ARENA,Arenameister,1000,800,1200,1000,1000,1200,1200,1200,1000,1200,0,1,Signature,Kodex2,Arenameister (mit Signatur-Taktik)
+AI_RIVAL,Rivale (adaptiv),1000,700,1000,900,900,1000,1000,900,900,1000,30,1,Best,Kodex2,Kael Duran (passt Profil an Spielerverlauf an)
+AI_BOSS,Boss,1000,600,1200,1000,1000,1000,1200,1200,0,1300,0,1,Script,Voll,Bosse/Raids (Phasenskripte K35)
