@@ -1,0 +1,14 @@
+# Meisterschaften des Endgames (K62 §6). Completion = zählt für „Weltakkord vollendet“ (100 %). Alle zählenden Meisterschaften sind offline erreichbar (DR-19).
+Name,DisplayName,Requirement,Reward,Completion,Offline
+MST_KODEX,Kodex-Meisterschaft,Alle 256 Arten × 4 Forschungsstufen (1.024),"Titel „Stimme des Kodex“, goldener Kodex-Einband",ja,ja
+MST_BREED,Zucht-Meisterschaft,"50 Arten gezüchtet, 5 Morphs, 1 Echo 6 × 15","Ouroveth-Questreihe, Titel „Kreishüter“",ja,ja
+MST_PHOTO,Foto-Meisterschaft,"100 Arten ★★★, 20 Verhaltensfotos ★★★★, 10 Regionen-Tagesphasen","Spiegellinse, Mirrowisp-Questreihe",ja,ja
+MST_TEMPO,Takt-Meisterschaft,"12 Taktproben, Gold in ≥ 10","Chronaire-Begegnung, Titel „Takthüter“",ja,ja
+MST_DEPTH,Tiefen-Meisterschaft,Alle 10 Tiefenresonanzen auf Tiefe V,"Titel „Tiefenstimme“, Resonator-Muster „Abgrund“",ja,ja
+MST_RAID,Raid-Meisterschaft,Alle 8 Raids abgeschlossen (Solo-Variante zählt),"Titel „Chorführung“, Banner",ja,ja (Solo-Varianten)
+MST_GROVE,Hain-Meisterschaft,Alle 10 Gärten Ausbaustufe V,Hain-Deko „Weltakkord-Brunnen“,ja,ja
+MST_FACTION,Ruf-Meisterschaft,Alle 5 Fraktionen Rang 6 (Getragen),Titel „Getragen von allen“,ja,ja
+MST_WARDEN,Wärter-Meisterschaft,Wärterrang 40,"Titel (Rang 40), Resonator-Gravur",ja,ja
+MST_MYTHIC,Mythen-Meisterschaft,Alle 6 Mythischen gebunden,Titel „Hörende der Pause“,ja,ja
+MST_IRON,Eiserne Meisterschaft,Story im Modus Eiserner Wärter abgeschlossen,Titel „Eiserne Stimme“,nein (Zusatz),ja
+MST_RANKED,Arena-Meisterschaft,Klangstufe Hymne in einer Saison,Titel „Hymne S#“,"nein (online, optional)",nein

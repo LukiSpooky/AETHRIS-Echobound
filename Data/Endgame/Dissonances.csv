@@ -1,0 +1,14 @@
+# Dissonanzen: Modifikatoren der Tiefenresonanzen (K62 §3.4). Deterministisch je Spieltag und Ort (Weltseed), vorab sichtbar. Factor = Wirkung in ‰ (1000 = neutral). Kein reiner Zufall (DR-07).
+Name,DisplayName,Effect,Factor,Counterplay,RewardBonus
+DIS_TEMPO,Schneller Takt,Gegner-Zeitkosten −10 %,900,"Verlangsamen, Fremdverzögerung",150
+DIS_MUTED,Gedämpfte Saiten,Eigener Harmoniegewinn −30 %,700,"Kombos statt Einzelangriffe, Klang-Effekte",150
+DIS_RESTLESS,Unruhiger Boden,Terrain wechselt alle 3 Runden (1 Runde angekündigt),1000,Gegen-Terrain bereithalten,100
+DIS_ARMOR,Klangpanzer,Gegner beginnen mit Schild 15 % Max-HP,1150,"Leere (Schilde entziehen), Durchschlag",150
+DIS_DRY,Versiegter Brunnen,Heilung zwischen Strophen 50 % statt 100 %,500,"Heiler, Schilde, Halteitems",150
+DIS_FOREIGN,Fremde Tonart,Gegner erhalten einen zweiten Typ (in der Vorschau sichtbar),1000,Teamwahl anpassen,100
+DIS_FOG,Nebel der Tiefe,Gegnerinfo erst nach dem ersten eigenen Zug (Kodex-Stufen ignoriert),1000,"Resonanzsinn-Skills, flexible Teams",100
+DIS_ECHO,Widerhall,Gegner-Fähigkeiten hallen im nächsten Zug mit 50 % Stärke nach (angekündigt),1150,"Schilde zeitlich setzen, Reihen wechseln",150
+DIS_NARROW,Enge Halle,Nur Vorderreihe (keine Hinterreihe),1000,"Robuste Vorderreihe, Wechsel planen",100
+DIS_TAUT,Gespannte Saiten,Wechsel aus der Reserve +50 Ticks,1000,Startaufstellung wichtiger,100
+DIS_LATE,Später Höhepunkt,"Gegner starten mit 30 Harmonie, Spielerseite mit 0",1000,"Früher Druck, Harmonie-Entzug",100
+DIS_STORM,Sturmnacht,"Resonanzsturm im Dungeon: Gegner-Aggression +1, Rufe quantisiert, Klang +10 %",1100,"Klang nutzen, Ruhe bewahren",150

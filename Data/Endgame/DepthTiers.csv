@@ -1,0 +1,7 @@
+# Tiefen-Stufen der Tiefenresonanzen (K62 §3.3). LevelOffset auf Boss-/Gegnerlevel (max. 100), HP-Faktor in ‰, Dissonanzen = Anzahl aktiver Modifikatoren, Splinters = Stillstein-Splitter (ITM_EMAT_STILLSHARD) je Abschluss, Erstabschluss je Spieltag und Ort ×2; ab Tiefe III zusätzlich 1 Sternmetall + 1 Resonanzkristall.
+Name,DisplayName,LevelOffset,HPPermille,Dissonances,Splinters,Unlock
+DEPTH_1,Tiefe I,0,1000,0,1,Nachhall
+DEPTH_2,Tiefe II,3,1100,1,1,Tiefe I dieses Ortes
+DEPTH_3,Tiefe III,6,1200,2,1,Tiefe II dieses Ortes
+DEPTH_4,Tiefe IV,9,1350,3,2,Tiefe III + Wärterrang 32 (Tiefenresonanz-Meister)
+DEPTH_5,Tiefe V,12,1500,3,2,Tiefe IV dieses Ortes

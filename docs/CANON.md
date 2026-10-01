@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K61
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K62
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -47,8 +47,8 @@ Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapi
 | Fraktionen | 5 |
 | Wetterzustände | 10 |
 | Arenen | 10 (1 pro Stadt) |
-| Endgame-Dungeons („Tiefenresonanzen“) | 8 |
-| Raid-Bosse zum Launch | 6 |
+| Endgame-Dungeons („Tiefenresonanzen“) | 10 (CR-008) |
+| Raid-Bosse zum Launch | 8 (CR-008) |
 
 ## §4 Welt
 
@@ -471,6 +471,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-252 | Keine Bannliste zum Launch, Meta-Signale | K61 |
 | ADR-253 | Belohnung nach höchster Saisonstufe, kosmetisch | K61 |
 | ADR-254 | Geister-Teams als Offline-PvP | K61 |
+| ADR-255 | 10 Tiefenresonanzen, R08 ohne Tiefe (Rückkehrort der Pause) | K62 |
+| ADR-256 | Tiefen I–V, deterministische sichtbare Dissonanzen | K62 |
+| ADR-257 | Stillstein-Splitter im Nachhall erneuerbar, Klangstimmung ≈ 3 h | K62 |
+| ADR-258 | Eigener Weg je Mythischem mit Solo-Zugang; Velnox über Pausen | K62 |
+| ADR-259 | Endgame-Rhythmus an Spieltagen, keine Dailies | K62 |
+| ADR-260 | „Weltakkord vollendet“ = 10 offline Meisterschaften | K62 |
 
 ## §11 Change Requests
 
@@ -483,6 +489,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | CR-005 | K51 | K11/K12 „Nebenquest-Haken“ je Stadt, K13 Dorf-Haken (§57) | Haken sind Vorgaben, keine Quest-IDs; Umsetzung laut K51 §9 (eigene SQ mit Hakentitel, Teil einer SQ, Sammelreihe oder Weltereignis); Titel/NPCs in K49/K50 angeglichen (u. a. Steinbrecher Arnulf, Ulf Brakk, Fährmeisterin Ailsa Duvreth) | Gerüstverteilung K48 verbindlich | Lead Quest Designer, Narrative Director |
 | CR-006 | K57 | §31 „erste Spalte `Id`“ | Erste CSV-Spalte heißt `Name` (Primärschlüssel, unveränderlich); Importer akzeptiert `Id` als Alias; Bestand (> 100 Dateien) bleibt (ADR-228) | Massenumbenennung zu `Id` | Technical Director, Tools Programmer |
 | CR-007 | K58 | §26 Schicht Presentation = GF_UI, GF_Audio | Neues Modul GF_VFX (Presentation; Abhängigkeiten Core, GF_Monsters, GF_World, GF_Combat) für Budgets, Blitzbegrenzung, Vorlagenzuordnung (ADR-233) | VFX-Logik in GF_Combat/GF_UI | Technical Director, Technical Art Director |
+| CR-008 | K62 | §3 „Endgame-Dungeons 8“, „Raid-Bosse zum Launch 6“ | Angeglichen an §131 (K35): 10 Tiefenresonanzen, 8 Raids | §3-Werte behalten und K35 kürzen | Game Director, Lead Content Designer |
 
 ## §12 Offene Punkte (PROVISIONAL-Tracker)
 
@@ -2126,3 +2133,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §243 Fair Play, Meta-Pflege, Zuschauen (LOCKED, K61 §5–§8)
 
 - Verlassen = Niederlage (3 in 24 h → Wartezeit 15 min/1 h), Absprachen/Zweitkonten → Ranked-Sperre; Gesten einzige Kommunikation (1 je Zug, ausblendbar). Zuschauen mit 1 Zug Verzögerung (Ranked nur mit Erlaubnis beider), Replays Ranked 90 / frei 30 Tage, Teilen per Code. Turniere: Schweizer System + Top-8-K.-o. Keine Bannliste zum Launch; Meta-Signale (Nutzung > 40 %, Siegquote > 56 %, Median > 16 min, Zeitlimit > 8 %, Typ < 2 %, Crescendo-Siege > 50 %); Eingriffe: Konter → Fähigkeit → Basiswerte → Saisonbeschränkung.
+
+## §244 Nachhall & Endgame-Säulen (LOCKED, K62 §1–§2)
+
+- Gleiches Endgame für beide Enden; Finale-Speicherpunkt zusätzlich ladbar; `DL_Nachhall`; Nachhall-Spawns 72–90; Regionsthemen je Region; NPC-Barks je Ende. Säulen Vollenden/Meistern/Pflegen/Entdecken. EZ-1 gleiches Endgame · EZ-2 solo vollständig · EZ-3 Herausforderung wählbar · EZ-4 kein Echtzeit-Druck (Spieltag-Boni) · EZ-5 Pflege statt Grind (Klangstimmung ≈ 3 h je Echo, Level 70→100 4–8 h).
+
+## §245 Tiefenresonanzen (LOCKED, K62 §3 · `Data/Endgame/DeepResonances.csv`, `DepthTiers.csv`, `Dissonances.csv`, `tools/ref/aethris_endgame.py`)
+
+- 10 Orte: DR_01 Wurzelhalle (R01) · DR_02 Schlund (R02) · DR_03 Versunkener Turm (R03) · DR_04 Sonnenhof-Tiefe (R04) · DR_05 Kraterherz (R05) · DR_06 Tiefseegrotte (R06) · DR_07 Gletscherdom (R07) · DR_08 Sternenfall-Krater (Glasebene R04, Solo-Weg Zenthrax) · DR_09 Resonanzkammer (R09) · DR_10 Sternenarena-Tiefe (R10); R08 ohne Tiefe (Thronsaal = Rückkehrort der Pause). Zugang: Stimmsiegel-Quest der Region im Nachhall (DR_08: Spur „Der fallende Stern“). 3 Strophen (DR_08: 2, DR_10: 4) + Boss, Ø 31 min; Trio solo oder Koop ≤ 3; Tiefen-Echos bindbar (3 Anlagen 15). Tiefen I–V: Level +0/3/6/9/12 (max. 100), HP 1000/1100/1200/1350/1500 ‰, 0/1/2/3/3 Dissonanzen, Stillstein-Splitter 1/1/1/2/2 (Erstabschluss je Ort/Spieltag ×2), ab III + Sternmetall/Resonanzkristall; Tiefe IV ab Wärterrang 32. 12 Dissonanzen deterministisch je Spieltag/Ort (Fork(6)), vorab sichtbar, mit Gegenspiel und Bonus.
+
+## §246 Mythische Wege (LOCKED, K62 §5 · `Data/Endgame/MythicPaths.csv`)
+
+- Velnox „Die Pause hören“ (SQ_210, 6 Rückkehrorte, Stille Stunde, Bindung durch 3 gehaltene Pausen) · Chronaire „Der Takthüter“ (SQ_159, 12 Taktproben, Gold ≥ 10, ACC_TIMING +25 %, Uhrwerkturm) · Mirrowisp „Der Blick hinter das Glas“ (SQ_178, Foto-Meisterschaft → Spiegellinse, Fotokampf) · Ouroveth „Der Kreis schließt sich“ (Zucht-Meisterschaft, Schlupf nach 3 Spieltagen) · Zenthrax „Der fallende Stern“ (RAID_06 oder DR_08) · Aurelune „Nacht des Sturms“ (SQ_196; Event, Sturmstimmgabel oder Solo-Sturm). Alle mit Solo-Weg.
+
+## §247 Meisterschaften, Rhythmus, Umfang (LOCKED, K62 §4, §6–§10 · `Data/Endgame/Masteries.csv`)
+
+- „Weltakkord vollendet“ = 10 offline erreichbare Meisterschaften (Kodex, Zucht, Foto, Takt, Tiefen V, Raids inkl. Solo, Hain V, Ruf 6, Wärterrang 40, Mythische); Zusätze Eisern, Arena. Raids im Nachhall alle offen, RAID_08 zuletzt (Titel „Letzter Ton“), Erstabschluss je Spieltag ×2 Material. Keine Dailies, keine Login-Boni, keine Energie. Umfang ≈ 100 h nach dem Finale, Komplettlauf ≈ 200 h. Neuer Zieltyp `OBJ_TIMETRIAL`; Save-Fragmente `Player.Endgame`, `Player.Mythics`, `Player.TimeTrials`. Seed-Hierarchie: Fork(6) Endgame.

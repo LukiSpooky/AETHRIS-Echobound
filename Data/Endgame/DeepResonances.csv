@@ -1,0 +1,12 @@
+# Tiefenresonanzen (K62 §3). Boss = Bosses.csv. Unlock: Nachhall + Bedingung. Strophen = Abschnitte vor dem Boss. Theme = Lernziel. Voice = Ursprungsstimme, unter deren Schlafstätte der Ort liegt (ADR-038). Material = regionales Dekor-/Rezeptmaterial zusätzlich zu Stillstein-Splittern (DepthTiers.csv).
+Name,DisplayName,Region,Location,Voice,Unlock,Boss,Level,Strophes,Theme,Material
+DR_01,Wurzelhalle,R01,unter der Arena Eichenhall,ECHO_241,Stimmsiegel-Quest Sylv'anor abgeschlossen,DR_01_BOSS,72,3,"Heilung unterbrechen, Wachstum lesen",Wurzelklang-Splitter
+DR_02,Schlund,R02,unter Kharsholm,ECHO_242,Stimmsiegel-Quest Orh'gruun abgeschlossen,DR_02_BOSS,74,3,"Schwere und Wellen, Reihen halten",Grattiefen-Splitter
+DR_03,Versunkener Turm,R03,unter Morvenfurt,ECHO_243,Stimmsiegel-Quest Nhael'vesh abgeschlossen,DR_03_BOSS,76,3,"Spiegelung und Stille, Kategorie wechseln",Moortiefen-Splitter
+DR_04,Sonnenhof-Tiefe,R04,unter Qasr Sahrun,ECHO_245,Stimmsiegel-Quest Ash'kareth abgeschlossen,DR_04_BOSS,78,3,"Feldwechsel, Gegen-Terrain",Glutsand-Splitter
+DR_05,Kraterherz,R05,unter Schlackenwehr,ECHO_246,Stimmsiegel-Quest Pyr'thagon abgeschlossen,DR_05_BOSS,80,3,Heilung und Schwere zugleich,Kraterherz-Splitter
+DR_06,Tiefseegrotte,R06,vor Saltrand-Hafen,ECHO_244,Stimmsiegel-Quest Thal'assyr abgeschlossen,DR_06_BOSS,82,3,"Reihenwechsel, Typ-Panzer",Gezeitentiefen-Splitter
+DR_07,Gletscherdom,R07,unter Hvitmark,ECHO_247,Stimmsiegel-Quest Isv'aldr abgeschlossen,DR_07_BOSS,84,3,"Zähler und Stapel, Zeit einteilen",Gletscher-Splitter
+DR_08,Sternenfall-Krater,R04,Glasebene (Einschlagkrater),–,Spur „Der fallende Stern“ (Sternwärter Elun) im Nachhall,DR_08,88,2,Mythischer Solo-Weg Zenthrax,Sternenstaub
+DR_09,Resonanzkammer,R09,unter Prismara,ECHO_249,Stimmsiegel-Quest Prism'aion abgeschlossen,DR_09_BOSS,90,3,"Spaltung, Spiegel, Schwachstelle",Prismen-Splitter
+DR_10,Sternenarena-Tiefe,R10,unter der Sternenarena von Aerion,ECHO_250,Stimmsiegel-Quest Aeth'rion abgeschlossen,DR_10_BOSS,95,4,"Alles zusammen: Flut, Taktraub, Panzer",Leitstimmen-Splitter
