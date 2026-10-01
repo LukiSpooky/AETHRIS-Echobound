@@ -1,0 +1,11 @@
+# Asset-Budgets (K56 §10; Details und Plattformprofile K57/K65). Tris = Dreiecke LOD0.
+Name,Kind,TrisLOD0,Nanite,Textures,LOD,Notes
+Echo Stufe 1 (XS–M),Skeletal,18.000,Nanite nein (Skinned),"2× 2K (Basis, Klangmal-Maske)",LOD 4,Klangmal als Emissive-Maske (K16 §3)
+Echo Stufe 3 / L–XL,Skeletal,45.000,nein,2× 4K,LOD 5,Reitbar ab L (CD-17)
+Ursprungsstimme / Mythisch,Skeletal,90.000,nein,3× 4K,LOD 6,Nur in eigenen Arenen/Begegnungen gleichzeitig
+Benannter NPC,"Skeletal (MetaHuman-ähnlich, eigener Stil)",60.000,nein,"Körper 4K, Gesicht 4K",LOD 5,"Kleidung modular (Fraktion, Region)"
+Ambient-NPC (Mass),Skeletal + Vertex-Animation,12.000,nein,1× 2K Atlas,LOD 3 + Impostor,Crowd-Varianten 12 je Region
+Architektur-Modul,Statisch,beliebig,Nanite ja,"Material-Layering, 4K Trim-Sheets",Nanite,Je Kultur ein Modulsatz (§7)
+Vegetation,Statisch/Foliage,Nanite Foliage,ja (UE 5.6),2K Atlas,Nanite + WPO,"Budget K09: PS5 ≤ 1,6 Mio. Instanzen"
+Requisite klein,Statisch,Nanite,ja,1K–2K,Nanite,Trim-Sheets bevorzugt
+Hain-Dekor,Statisch,20.000,ja,2K,Nanite,Decor.csv (K49–K51)

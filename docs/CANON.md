@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K55
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K56
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -432,6 +432,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-213 | Gameplay-Signale mit Mix-Vorrang vor Dialog | K55 |
 | ADR-214 | Absolute Stille nur gestaltet, ≤ 4 s, untertitelt | K55 |
 | ADR-215 | Nur Verwirrung verlässt die Skala | K55 |
+| ADR-216 | Typfarben final nach CIEDE2000-Prüfung (Leere, Frost angepasst) | K56 |
+| ADR-217 | Farbenblind-Paletten generiert | K56 |
+| ADR-218 | Typfarbe an Echos nur als Akzent | K56 |
+| ADR-219 | Exklusive Signaturfarbe je Region | K56 |
+| ADR-220 | Klangmale als Lichtquellen der Nacht | K56 |
 
 ## §11 Change Requests
 
@@ -1105,7 +1110,7 @@ Balance: jeder Typ 3× sehr effektiv; Offensiv-EV 0,980 (Klang) – 1,070 (Metal
 
 - Kernmechaniken: Glut DoT/Glutboden · Flut Positionsverschiebung/Heilung über Zeit · Stein Schilde/Rückstoß-Resistenz · Sturm eigene Zeitkosten −/Mehrfachtreffer · Blüte Heilung/Überwuchs · Frost Gegner-Zeitkosten +/Präzision · Leere Entzug von Harmonie/Buffs/Schilden · Licht Enthüllen/Reinigen · Gift stapelnde Schwächung · Metall Rüstung/Konter · Geist Täuschung/Formation ignorieren · Kristall Reflexion/Laden · Klang Zeitleisten-Manipulation/Harmonie · Schwerkraft Ziehen/Stoßen/Reihentausch · Arkan Regelbruch.
 - Je Typ genau eine Status-Immunität (Arbeitsnamen: Brand, Ausgetrocknet, Rückstoß, Verlangsamt, Welke, Starre, Entzug, Geblendet, Vergiftet, Erschüttert, Furcht, Gebrochen, Verstummt, Schwebend, Verflucht) – final in K32.
-- Typfarben (Arbeitsstand, final K56): Glut #E8562A · Flut #2E8BC0 · Stein #8C7B65 · Sturm #7FD1E8 · Blüte #5DAA4C · Frost #BFE6F5 · Leere #2B2240 · Licht #F6D86B · Gift #8E4FB0 · Metall #9AA3AD · Geist #B7A4E0 · Kristall #E28FC6 · Klang #F2A93B · Schwerkraft #4B5BA6 · Arkan #3FB8A8; jeder Typ mit eigener Symbolform; immer Symbol + Name.
+- Typfarben (Arbeitsstand; **final in §218**, K56): Glut #E8562A · Flut #2E8BC0 · Stein #8C7B65 · Sturm #7FD1E8 · Blüte #5DAA4C · Frost #BFE6F5 · Leere #2B2240 · Licht #F6D86B · Gift #8E4FB0 · Metall #9AA3AD · Geist #B7A4E0 · Kristall #E28FC6 · Klang #F2A93B · Schwerkraft #4B5BA6 · Arkan #3FB8A8; jeder Typ mit eigener Symbolform; immer Symbol + Name.
 - Effektivitätsvorschau im Kampf ab Kodex-Stufe 2 der Zielart (Entspannt: immer).
 
 ## §79 Statusformeln & Stufen (LOCKED, K18 §2–§3 · `EchoStatCalculator.h`, `tools/ref/aethris_stats.py`)
@@ -1977,3 +1982,23 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §216 Stille, Mix, Technik (LOCKED, K55 §8, §11–§12 · `MixBuses.csv`)
 
 - Stillezone: Hochpass 400 Hz, keine Rufe; Orte der Pause: alle 8 s 1 s Stille; absolute Stille ≤ 4 s, mit Untertitel „[Stille]“ (ADR-214). Mix: −16 LUFS (Handheld −14), ≤ −1 dBTP; Vorrang Gameplay-Signale > Dialog > Kampf > Rufe > Musik > Ambient (ADR-213). MetaSounds (Patch je Typ), Quartz, Audio Modulation; Budgets Audio-CPU PS5 1,5 / Switch 2 2,5 / PC 2,0 ms, Stimmen 192/96/160, Speicher 450/220/500 MB.
+
+## §217 Art-Säulen & Stil (LOCKED, K56 §1–§2)
+
+- Säulen: Gesungene Welt (Formen folgen Klang) · Staunen vor Nähe · Wärme mit Wehmut · Lesbar zuerst · Würde statt Grausamkeit. Stilisierter Realismus (PBR, Lumen, überhöhte Formen). Formsprache und Leitmerkmal je Typ (CD-06), drei Detailebenen (30 m / 5–10 m / Kodex-Linse).
+
+## §218 Typfarben final (LOCKED, K56 §3 · `Data/Art/TypeColors.csv`, `tools/ref/aethris_palette.py` – ersetzt Arbeitsstand §78)
+
+- Wie §78, außer Leere `#4A3A6E` und Frost `#C9EEF7` (ADR-216). Farbenblind-Paletten Protan/Deutan/Tritan generiert durch Helligkeitsspreizung (ADR-217); Mindestabstand CIEDE2000 ≥ 10 normal, ≥ 6 simuliert (Machado 2009); Kontrast zum UI-Grund `#1C1B24` ≥ 1,6 : 1. Typfarbe an Echos nur Akzent (ADR-218). Regionspaletten (`RegionPalettes.csv`) mit exklusiver Signaturfarbe je Region (ADR-219).
+
+## §219 Kreaturen, Menschen, Architektur (LOCKED, K56 §5–§7)
+
+- Klangmal: immer sichtbar, Linien-Grundmuster, Typfarbe als Akzent, Puls = Rufprofil-Tempo (K55), Morph in Komplementärfarbe; Emotionen über Körper + Klangmal. Fraktionskleidung in Fraktionsfarben (`Factions.csv`). Je Kultur ein Architektur-Modulsatz mit Klangmotiv (Holzresonanz, Orgelpfeifen-Türme, Wasserglocken, singendes Glas, Ambosse, Bojenglocken, Stille, Hall, Licht = Ton, Wind).
+
+## §220 Licht, Stille, Enden (LOCKED, K56 §4, §9)
+
+- Goldene Stunde: Klangmale +20 %; Nachts sind Klangmale Lichtquellen (ADR-220). Stillezone: Entsättigung bis 90 % (`MPC_Silence`), Heilungswelle 4 s; Orte der Pause: stehender Staub im Takt; Krone: kalte Symmetrie; Velnox: Negativraum; Neues Lied: Aurora in zehn Farben; Sanfte Stille: Silberschleier, −15 % Sättigung.
+
+## §221 Asset-Regeln (LOCKED, K56 §10–§12 · `AssetBudgets.csv`)
+
+- Budgets je Asset-Klasse (Echo S1 18k / S3 45k / Stimmen 90k Tris; NPC 60k; Mass-NPC 12k; Nanite für statische Geometrie und Foliage). Texeldichte 10,24 px/cm (Hero/Echos 20,48). Master-Materialien + Instanzen; Präfixe §23. Switch-2-Profil (SSGI + Lightprobes, ≤ 400k Foliage). Clean-Room: Ähnlichkeitstest + Erklärung je Konzept; Review-Pipeline Brief → Silhouetten → Farbskizze → In-Engine-Test (30 m, Nacht, Nebel, Farbenblind).

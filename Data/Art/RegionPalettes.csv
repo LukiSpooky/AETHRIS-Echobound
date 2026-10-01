@@ -1,0 +1,12 @@
+# Regionspaletten (LOCKED in K09/K10, CANON §46/§48; gebündelt K56 §3.3). Je 5 Leitfarben + Lichtcharakter.
+Name,DisplayName,C1,C2,C3,C4,C5,Light
+R01,Verdanthain,Moosgrün #4F7A3A,Lindgold #D9B44A,Rindenbraun #5B4632,Himmelsdunst #A9C6D9,Glockenblütenviolett #8C6FB8,"Warmes, gefiltertes Waldlicht; goldene Stunde lang"
+R02,Kharsgrat,Granitgrau #6E6E73,Flechtengelb #C8B560,Eisenrot #8A3B2A,Gipfelweiß #E8EEF2,Kiefernblaugrün #2F5A55,"Hartes, klares Höhenlicht; lange Schatten"
+R03,Morvenmoor,Moorgrün #3E4F2C,Torfbraun #4A3424,Nebelgrau #9BA59A,Irrlichtcyan #6FD3C2,Sumpfblüten-Magenta #B0457D,"Diffus, Nebel als Lichtträger; Irrlichter als Akzente"
+R04,Sahrun-Weite,Dünengold #E0B46A,Terrakotta #B5653B,Himmelstürkis #3FA7B5,Glasweiß #F3EBDD,Abendviolett #5E3B6E,"Gleißend am Tag, violette Nächte; Glas spiegelt"
+R05,Ignareth,Basaltschwarz #1E1C1F,Lavaorange #F05A1A,Glutrot #A3201B,Schwefelgelb #D8C23A,Aschegrau #7A7470,Licht von unten (Lava); Asche dämpft den Himmel
+R06,Saltrand,Meerblau #1F5F8B,Gischtweiß #EEF4F6,Sandbeige #D9C7A3,Rostrot #9B3D2E,Algengrün #4E7D5B,Salzige Helligkeit; Glitzern auf Wasser
+R07,Hvitfell,Schneeweiß #F4F7FA,Gletscherblau #7FB6D6,Nordnacht #1B2440,Auroragrün #4FE3A5,Holzrot #8E2F2A,"Niedrige Sonne (Max. 30°), Polarlicht als zweite Lichtquelle"
+R08,Ael'Dorun,Alabaster #E6DFD1,Patinagrün #5F8F7F,Glyphengold #E3B54C,Schattenviolett #3C2F4F,Stilleschwarz #141418,"Heller Stein, tiefe Schatten; Glyphen glühen"
+R09,Prismtiefen,Amethyst #7E57C2,Quarzrosa #E9A6C8,Tiefblau #14203A,Kristallcyan #5ED6E8,Missklang-Rot #C2185B,"Kein Himmel; Licht aus Kristallen, gebrochen in Farben"
+R10,Nimbara,Himmelsblau #7EC8F0,Wolkenweiß #FFFFFF,Morgenrosa #F5B3C6,Weißgold #F0D78C,Sternennacht #0D1330,Licht von allen Seiten; Wolken als Reflektoren; Sonne 05–21 Uhr

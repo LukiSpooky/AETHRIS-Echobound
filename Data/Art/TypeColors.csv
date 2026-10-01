@@ -1,0 +1,17 @@
+# Typfarben final (K56 §3, generiert von tools/ref/aethris_palette.py). Normal = Standard; Protan/Deutan/Tritan = Farbenblind-Modi (K54 ACC_COLORBLIND). Symbole farbunabhängig (K17 §9.1).
+Name,DisplayName,Normal,Protan,Deutan,Tritan,Symbol,ContrastOnUI
+Ember,Glut,#E8562A,#E8562A,#E8562A,#E8562A,Flamme in Dreieck,"4,7"
+Tide,Flut,#2E8BC0,#2E8BC0,#3690C6,#2E8BC0,Welle in Kreis,"4,5"
+Stone,Stein,#8C7B65,#8C7B65,#8C7B65,#8C7B65,"Sechseck, gefüllt","4,2"
+Storm,Sturm,#7FD1E8,#7FD1E8,#85D7EE,#7FD1E8,Spirale,"9,9"
+Bloom,Blüte,#5DAA4C,#5DAA4C,#5DAA4C,#5DAA4C,Blatt in Tropfen,"5,9"
+Frost,Frost,#C9EEF7,#C9EEF7,#C9EEF7,#C9EEF7,Sechszackiger Stern,"13,8"
+Void,Leere,#4A3A6E,#4A3A6E,#4A3A6E,#4A3A6E,Ring (Negativraum),"1,7"
+Light,Licht,#F6D86B,#F6D86B,#F6D86B,#F6D86B,Strahlenkranz,"12,1"
+Venom,Gift,#8E4FB0,#9859BB,#8E4FB0,#8E4FB0,Drei Tropfen,"3,2"
+Metal,Metall,#9AA3AD,#9AA3AD,#9099A3,#9AA3AD,Quadrat mit Niet,"6,7"
+Spirit,Geist,#B7A4E0,#BDA9E6,#B19FDA,#B7A4E0,Halbmond mit Schleier,"7,6"
+Crystal,Kristall,#E28FC6,#DC8AC0,#DC8AC0,#E28FC6,Raute mit Facette,"7,3"
+Sound,Klang,#F2A93B,#F2A93B,#F2A93B,#F2A93B,Drei Bögen (Schall),"8,5"
+Gravity,Schwerkraft,#4B5BA6,#3F519C,#4556A1,#4B5BA6,Kreis mit Punkt (Orbit),"2,7"
+Arcane,Arkan,#3FB8A8,#3FB8A8,#53CAB7,#3FB8A8,Glyphe (Achtstern),"7,0"
