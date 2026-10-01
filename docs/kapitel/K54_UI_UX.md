@@ -8,7 +8,7 @@
 | Mitwirkende | UX Researcher, UI Artist, UI Programmer (CommonUI/MVVM), Accessibility Lead, Localization Lead, Audio (UI-Klang) |
 | Baut auf | K02 §5 (Steuerung, Kamera), §11.3 (Zugänglichkeit), K03 §9 (Menüarchitektur), K17 (Typ-Symbole), K31–K36 (Kampf, Bindung), K39 (Kodex, Fotografie), K43 (Wärter), K46 (Entscheidungs-UX), K47 (Fraktionsseite), K48 (Tagebuch, Hinweisstufen), CANON §9 (CommonUI + UMG + MVVM), §24 (Sprachen), DR-06, DR-24, DR-27 |
 | Status | ✅ Freigegeben |
-| Im Repository | `Data/UI/InputActions.csv` (45 Aktionen), `Screens.csv` (28 Bildschirme), `HudElements.csv`, `AccessibilityOptions.csv` (23 Optionen), Prüfer `tools/gen_ui.py` (UI-01–UI-06); `tools/data_lint.py` um Spaltenprüfung DL-COL erweitert |
+| Im Repository | `Data/UI/InputActions.csv` (45 Aktionen), `Screens.csv` (28 Bildschirme), `HudElements.csv`, `AccessibilityOptions.csv` (24 Optionen), Prüfer `tools/gen_ui.py` (UI-01–UI-06); `tools/data_lint.py` um Spaltenprüfung DL-COL erweitert |
 | Neue Kanon-Einträge | CANON §206 (UX-Prinzipien), §207 (Eingabe), §208 (Bildschirme, HUD), §209 (Kampf- und Bindungs-UI), §210 (Barrierefreiheit, Lokalisierung), §211 (UI-Technik) |
 
 ---
@@ -364,6 +364,7 @@ Im Standard sind nur Kompass und Interaktions-Hinweis sichtbar; Chor-Leiste und 
 | Sehen | Hochkontrast-UI | an/aus | aus | Hintergründe abdunkeln, Konturen |
 | Sehen | Hochkontrast-Resonanzsinn | an/aus | aus | Wellen kräftiger, Formen statt Farben |
 | Sehen | Bewegungsreduktion | an/aus | aus | Kamerawackeln, Bildschirmblitze, Bewegungsunschärfe aus |
+| Sehen | Effektdichte | 100 % / 70 % / 40 % | 100 % | Partikelanzahl und Helligkeitsspitzen von Fähigkeiten, Crescendos und Wetter (K58 §7); UI-Markierungen unverändert |
 | Hören | Untertitel | aus/Dialog/Dialog+Klänge | Dialog | Sprecherfarbe + Name, Richtungspfeil |
 | Hören | Visuelle Klangsignale | an (fest) | an | Jede Frequenz-Mechanik mit Wellenmuster (DR-24) – nicht abschaltbar |
 | Hören | Klangradar | an/aus | aus | HUD_SOUND_RADAR |
@@ -547,7 +548,7 @@ Die einzige Überschreitung (Einstellungen) ist bewusst: Einstellungen sind selt
 | §207 | Eingabe: `InputActions.csv` (45 Aktionen, 7 Kontexte), vollständiges Remapping, Kontextregel Interagieren > Springen | LOCKED |
 | §208 | Bildschirme `Screens.csv` (CommonUI-Ebenen Game/GameMenu/Menu/Modal), Radial-Hub/Tab-Leiste, HUD `HudElements.csv` (Kontext-Sichtbarkeit) | LOCKED |
 | §209 | Kampf-UI (Zeitleiste ≥ 8, Vorschau, Effektivität mit Wort, Gegnerinfo nach Kodex-Stufe), Bindungs-UI (ohne Prozent, Welle + Haptik) | LOCKED |
-| §210 | Barrierefreiheit `AccessibilityOptions.csv` (23 Optionen, Ersteinrichtung, Stummschalt-Durchlauf), Lokalisierung (+40 % Reserve, CJK, Gender-Tokens, Pseudo-Loc) | LOCKED |
+| §210 | Barrierefreiheit `AccessibilityOptions.csv` (23 Optionen, mit `ACC_VFX_INTENSITY` aus K58: 24; Ersteinrichtung, Stummschalt-Durchlauf), Lokalisierung (+40 % Reserve, CJK, Gender-Tokens, Pseudo-Loc) | LOCKED |
 | §211 | UI-Technik (CommonUI + MVVM, Budgets), Prüfer UI-01–UI-06, DL-COL | LOCKED |
 | §10 | ADR-206 – ADR-210 | LOCKED |
 

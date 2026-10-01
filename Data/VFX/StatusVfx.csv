@@ -1,0 +1,17 @@
+# Status-Darstellung am Echo (K58 §5). Shape = farbunabhängiges Merkmal (Farbenblind, Symbol im UI zusätzlich). Loop läuft für die Dauer; Onset/End je 0,4–0,8 s.
+Name,DisplayName,Loop,Shape,Onset,End,SourceType
+Brand,Brand,"Glutfunken steigen aus Fugen, Hitzeflimmern",Zungen nach oben,Aufflammen,Erlöschen mit Rauchfaden,Ember
+Ausgetrocknet,Ausgetrocknet,"Risse in der Oberfläche, Staubrieseln",Risslinien,Haut wird matt,Feuchter Glanz kehrt zurück,Ember
+Rueckstoss,Rückstoß,Kurzer Schub-Schleier hinter dem Echo,Pfeil nach hinten,Stoßwelle,–,Gravity
+Verlangsamt,Verlangsamt,Nachzieh-Bilder (Ghosting) bei Bewegung,Doppelkontur,Zeitlupen-Ring,Ring springt auf,Frost
+Welke,Welke,"Fallende graue Blätter, Farbverlust an Rändern",Fallende Blätter,Ränder ergrauen,Farbe kehrt zurück,Venom
+Starre,Starre,Eisschale um den Körper,Sechseck-Panzer,"Einfrieren (0,6 s)",Eis springt ab,Frost
+Entzug,Entzug,Dünne Fäden ziehen zum Gegner,Fäden,Faden spannt sich,Faden reißt,Void
+Geblendet,Geblendet,"Glanzpunkte vor den Augen, Kopf abgewandt",Sternchen am Kopf,"Lichtblitz (gedämpft, ≤ 1 Blitz)",Blinzeln,Light
+Vergiftet,Vergiftet,"Blasen steigen auf, Drüsen glimmen",Blasen,Tropfen trifft,Blasen platzen,Venom
+Erschuettert,Erschüttert,"Zittern, Staub fällt ab",Zickzack-Linien,Stoßwelle,Abschütteln,Stone
+Furcht,Furcht,"Schatten wächst hinter dem Echo, Körper geduckt",Schatten-Halbmond,Schatten fällt,Schatten zieht ab,Spirit
+Gebrochen,Gebrochen,"Feine Risse leuchten, Splitter lösen sich",Bruchlinien,Knacken,Risse schließen sich,Crystal
+Verstummt,Verstummt,"Klangmal erlischt, Schallringe fehlen",Durchgestrichener Ring,"Klangmal blendet aus (1,5 s)",Erster Puls kehrt zurück,Sound
+Schwebend,Schwebend,"Echo hebt 0,5 m ab, Orbit-Splitter",Orbit unter den Füßen,Abheben,Landung mit Staub,Gravity
+Verflucht,Verflucht,"Glyphe über dem Kopf, dreht sich",Glyphe,Glyphe brennt sich ein,Glyphe zerfällt,Arcane

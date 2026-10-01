@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K57
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K58
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -445,6 +445,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-226 | Neun Master-Materialien, ≤ 250 Permutationen | K57 |
 | ADR-227 | PCG im Editor gebacken | K57 |
 | ADR-228 | Erste CSV-Spalte `Name` (CR-006) | K57 |
+| ADR-229 | Fähigkeits-VFX als Vorlagen + Typ-Module | K58 |
+| ADR-230 | Farbunabhängige Form je Typ und Status | K58 |
+| ADR-231 | Zentraler Blitzbegrenzer (≤ 3 Spitzen/s) | K58 |
+| ADR-232 | Option `ACC_VFX_INTENSITY` (100/70/40 %) | K58 |
+| ADR-233 | Modul GF_VFX in Schicht Presentation (CR-007) | K58 |
+| ADR-234 | Velnox als Negativraum über Custom Depth/Stencil | K58 |
 
 ## §11 Change Requests
 
@@ -456,6 +462,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | CR-004 | K46 | §46 Story-Platzierung (K09): „W2 in der ersten freien Akt-I-Region“, „Sereth-Erstauftritt in erster Akt-II-Region“ | W2 in der zweiten Region (ADR-161); Sereth erscheint kurz in MQ_A1_06, ausführlich in Eiðvik (MQ_A2_04) | Erste Region bleibt ein ungestörter Einstieg; Sereth muss vor dem Verrat (W6) als Person bekannt sein | Narrative Director, Game Director |
 | CR-005 | K51 | K11/K12 „Nebenquest-Haken“ je Stadt, K13 Dorf-Haken (§57) | Haken sind Vorgaben, keine Quest-IDs; Umsetzung laut K51 §9 (eigene SQ mit Hakentitel, Teil einer SQ, Sammelreihe oder Weltereignis); Titel/NPCs in K49/K50 angeglichen (u. a. Steinbrecher Arnulf, Ulf Brakk, Fährmeisterin Ailsa Duvreth) | Gerüstverteilung K48 verbindlich | Lead Quest Designer, Narrative Director |
 | CR-006 | K57 | §31 „erste Spalte `Id`“ | Erste CSV-Spalte heißt `Name` (Primärschlüssel, unveränderlich); Importer akzeptiert `Id` als Alias; Bestand (> 100 Dateien) bleibt (ADR-228) | Massenumbenennung zu `Id` | Technical Director, Tools Programmer |
+| CR-007 | K58 | §26 Schicht Presentation = GF_UI, GF_Audio | Neues Modul GF_VFX (Presentation; Abhängigkeiten Core, GF_Monsters, GF_World, GF_Combat) für Budgets, Blitzbegrenzung, Vorlagenzuordnung (ADR-233) | VFX-Logik in GF_Combat/GF_UI | Technical Director, Technical Art Director |
 
 ## §12 Offene Punkte (PROVISIONAL-Tracker)
 
@@ -661,7 +668,7 @@ Verboten im Spiel: „Monster“, Ball/Kapsel/Fangkugel/werfen (Bindung), „-de
 | Game | AethrisGame | Core |
 | Domain | GF_Monsters, GF_World, GF_Inventory | Core |
 | Feature | GF_Combat, GF_Capture, GF_Companion, GF_Breeding, GF_Research, GF_Economy (inkl. Crafting), GF_Quests, GF_AI, GF_Save, GF_Multiplayer, GF_PvP | Core, Domain |
-| Presentation | GF_UI, GF_Audio | Core, Domain, Feature |
+| Presentation | GF_UI, GF_Audio, GF_VFX (CR-007) | Core, Domain, Feature |
 | Editor | AethrisEditor | alle |
 
 - Schicht steht im `.uplugin`-Feld `"AethrisLayer"`. Features kennen sich nie: nur **Event-Bus** (`UAethrisEventBus`), **Core-Interfaces** über `UAethrisServiceLocator`, **Domain-Daten**.
@@ -1966,7 +1973,7 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 ## §210 Barrierefreiheit & Lokalisierung (LOCKED, K54 §10–§11 · `AccessibilityOptions.csv`)
 
-- 23 Optionen (Motorik, Sehen, Hören, Kognition, Tempo, Allgemein); Ersteinrichtung mit Live-Vorschau; visuelle Klangsignale nicht abschaltbar; Stummschalt-Durchlauf in QA. Text +40 % Reserve, CJK +2 px, Gender-Tokens, Pseudo-Lokalisierung in CI.
+- 23 Optionen (+ `ACC_VFX_INTENSITY` aus K58 = 24; Motorik, Sehen, Hören, Kognition, Tempo, Allgemein); Ersteinrichtung mit Live-Vorschau; visuelle Klangsignale nicht abschaltbar; Stummschalt-Durchlauf in QA. Text +40 % Reserve, CJK +2 px, Gender-Tokens, Pseudo-Lokalisierung in CI.
 
 ## §211 UI-Technik (LOCKED, K54 §13)
 
@@ -2031,3 +2038,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §226 Validierung & Abnahme (LOCKED, K57 §10–§12)
 
 - Validatoren: Namen (`UAethrisAssetNamingValidator`, im Repo), Echo, Textur, Material, Animation, Blueprint, Welt; Pre-Submit: data_lint + Generatoren, Data Validation, check_layers, `[ART-BULK]`-Regel. Nächtliche Berichte: Platzhalter-Kurve, Budgets, Shader, Cook-Größe, Animation-Abdeckung. Aufwand Kreaturen ≈ 7.110 PT (≈ 32 Personenjahre); Ziele VS 25 Arten, Alpha 160, Beta 256/0 Platzhalter. Externe Lieferungen: Konzept/Rigs/geteilte Clips intern; Abnahme automatisch → Art-Review → In-Engine.
+
+## §227 VFX-Säulen & Bildsprache (LOCKED, K58 §1–§2)
+
+- Säulen V-1 Klang wird Licht · V-2 Lesbar vor prächtig · V-3 Form trägt Typ, Farbe bestätigt · V-4 Würde (keine Verletzung) · V-5 Stille ist ein Effekt. Jeder Kampfeffekt: Antizipation 20–30 % · Wirkung 10–20 % · Nachhall 50–70 %. Größe = 0,6 + Stärke/150 (max. 1,6, Status 0,8). Klang-Typ und Crescendos treffen auf Quartz-Schlag. Helle Flächen im Kampf ≤ 25 % (Crescendo ≤ 40 %).
+
+## §228 Fähigkeiten-, Status-, Terrain-VFX (LOCKED, K58 §3–§5 · `Data/VFX/TypeVfx.csv`, `StatusVfx.csv`, `tools/ref/aethris_vfx.py`)
+
+- 15 Typ-Sprachen mit farbunabhängiger Form (paarweise verschieden). Vorlagen `NS_Abl_<Phys|Spec|Stat>_<Form>` (13) + `NS_Abl_PassiveTrigger` + `NS_Abl_FieldUse` + Typ-Module `NM_Type_<Typ>`; 30 Crescendo-Signaturen `NS_Cresc_ABL_U###` auf Grundgerüst nach K30 §3 (Anlauf 0–0,8 s, Entladung –2,6 s, Nachhall –4,0 s; Kurzfassung 1,5 s), Art-Varianten als Modul-Overrides. Status-Loops max. 2 sichtbar je Echo. Terrain = Decal + Bodennebel ≤ 50 % Trefferhelligkeit. Kombo = Resonanzfaden + verschmolzene Impacts; Akkord = Notenlinien-Dreieck.
+
+## §229 Welt- & Story-VFX (LOCKED, K58 §6 · `Data/VFX/StoryVfx.csv`)
+
+- Klangmale als Material (Partikel nur bei Ruf, Freude, Streicheln, Nacht < 15 m). Ambiente je Region in Signaturfarbe, Significance ≤ 60 m voll / ≤ 150 m halb / darüber Sprites; Stillezonen 0 außer stehendem Staub. Wetter kameragebunden (40 × 40 × 30 m). Resonanzsinn-Welle 40 m/s, 120 m. 14 Story-VFX; Heilungswelle 2.000 m in 4 s mit Vorladen 30 s; Velnox als Negativraum (Custom Depth/Stencil, subtraktiv); Krone deterministisch synchron; Enden-Effekte auf `DL_Nachhall`.
+
+## §230 VFX-Budgets, Barrierefreiheit, Technik (LOCKED, K58 §7–§9 · `Data/VFX/VfxBudgets.csv`, `Plugins/GameFeatures/GF_VFX`)
+
+- Budgets je Kategorie; Worst Case Trio 3+3 (Crescendo, Fähigkeit, 12 Status, Terrain, Gewitter) PS5 228 k / 3,34 ms ≤ 300 k / 4,0 ms, Switch 2 64,3 k / 4,95 ms ≤ 90 k / 5,5 ms; Story-Setpiece halbiert andere Kategorien. Blitzgrenze ≤ 3 Spitzen/s im Code (`Aethris::Vfx::AllowFlash`, ADR-231); ACC_MOTION: Spitzen 40 %, keine Kamerastöße; `ACC_VFX_INTENSITY` 100/70/40 % (Formträger, Pflicht-Effekte, UI3D bleiben). Ruf-Tempo ≤ 138 BPM. Niagara Data Channel `NDC_CombatHits`; GPU-Simulation, Pooling, Effect Types je Kategorie. VFX nicht repliziert. Modul GF_VFX (Presentation, CR-007).

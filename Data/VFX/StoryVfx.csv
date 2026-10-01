@@ -1,0 +1,16 @@
+# Story- und Setpiece-VFX (K58 §6). FlashHz = höchste Helligkeitswechsel-Frequenz (Grenze 3 Hz, VFX-04).
+Name,DisplayName,Chapter,Look,Technique,FlashHz
+SVFX_SILENCE,Stillezone,"K10, K44","Graue Schleier, stehende Staubkörner, verstummte Klangmale","MPC_Silence + NS_Silence_Dust (Partikel stehen still, Zeit-Skala 0)",0
+SVFX_HEAL,Heilungswelle,K44–K46,"Farbwelle vom Resonanzstein, 2.000 m in 4 s, Blüten öffnen sich in der Front","MF_Healing + NS_Heal_Front (GPU, Ring-Emitter, Lumen-Emissive)",0.25
+SVFX_EVOLUTION,Evolution,K19,"Lichtkokon in Typfarbe, Klangmal-Ringe, heller Höhepunkt verdeckt Mesh-Wechsel","NS_Evolution + MF_DitherFade, Bloom-Spitze 1×",1
+SVFX_CRESCENDO_BASE,Crescendo-Grundgerüst,K30,"Szene dimmt, Typ-Motiv baut sich in drei Phasen auf (Sammeln, Entladen, Nachhall)",NS_Crescendo_<Typ> + Signatur-Modul je Art,2
+SVFX_STORM,Resonanzsturm,"K15, K55","Himmel in Notenlinien, Blitze quantisiert auf den Takt","NS_ResonanceStorm (Himmel), Blitze auf Quartz-Schläge (≤ 2 Hz)",2
+SVFX_CROWN,Krone,"K45, K46","Kalte Symmetrie, Kristallgitter breitet sich aus, alle Partikel exakt synchron","NS_Crown_Lattice (Mesh-Partikel, deterministisch)",0.5
+SVFX_VELNOX,Velnox-Negativraum,"K46, K62","Formen aus fehlendem Licht; Partikel schwarz ohne Rand, Ton fehlt","NS_Velnox_Void (subtraktiv über Custom Depth, Stencil-Maske)",0
+SVFX_NEWSONG,Neues Lied (Ende),K46,"Aurora in zehn Regionsfarben, Klangmale aller Echos leuchten im Takt",NS_Aurora_TenColors + MPC_Resonance.CrownPulse,0.5
+SVFX_SOFTSILENCE,Sanfte Stille (Ende),K46,"Silberschleier, langsames Schneefallen aus Licht","NS_SilverVeil, Sättigung −15 %",0
+SVFX_BOND,Bindung (Einstimmen),K33,"Resonanzfäden zwischen Resonator und Echo, Anschlag-Ringe",NS_Bond_Threads + NS_Bond_Strike (gut/perfekt/daneben),2
+SVFX_RESONANCE_SENSE,Resonanzsinn,K14,"Schallwellen über die Landschaft, Echos als Klangmal-Konturen",Post-Process (Kantenerkennung) + NS_Sense_Wave,1
+SVFX_STONE,Resonanzstein,K08,"Ruhiges Pulsieren, beim Aktivieren Säule aus Notenlinien",NS_Stone_Idle + NS_Stone_Activate,1
+SVFX_GLYPH,Dorun-Glyphen,"K12, K45",Glyphen leuchten in Leserichtung auf,"MF_Glyph, Material-Animation",1
+SVFX_ERUPTION,Ignar-Ausbruch,K09,"Ascheregen, Lavafontänen, Glutlicht am Himmel",NS_Eruption + Lava-Layer-Wechsel,0.5

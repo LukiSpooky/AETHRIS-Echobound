@@ -11,6 +11,7 @@ ACC_TEXTSIZE,Sehen,Textgröße,S/M/L/XL,M,"Min. 28 px bei 1080p (TV), 22 px Hand
 ACC_CONTRAST,Sehen,Hochkontrast-UI,an/aus,aus,"Hintergründe abdunkeln, Konturen"
 ACC_SENSE_CONTRAST,Sehen,Hochkontrast-Resonanzsinn,an/aus,aus,"Wellen kräftiger, Formen statt Farben"
 ACC_MOTION,Sehen,Bewegungsreduktion,an/aus,aus,"Kamerawackeln, Bildschirmblitze, Bewegungsunschärfe aus"
+ACC_VFX_INTENSITY,Sehen,Effektdichte,100 % / 70 % / 40 %,100 %,"Partikelanzahl und Helligkeitsspitzen von Fähigkeiten, Crescendos und Wetter (K58 §7); UI-Markierungen unverändert"
 ACC_SUBTITLES,Hören,Untertitel,aus/Dialog/Dialog+Klänge,Dialog,"Sprecherfarbe + Name, Richtungspfeil"
 ACC_VISUAL_SOUND,Hören,Visuelle Klangsignale,an (fest),an,Jede Frequenz-Mechanik mit Wellenmuster (DR-24) – nicht abschaltbar
 ACC_SOUND_RADAR,Hören,Klangradar,an/aus,aus,HUD_SOUND_RADAR

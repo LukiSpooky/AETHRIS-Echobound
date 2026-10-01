@@ -1,0 +1,17 @@
+# VFX-Sprache je Typ (K58 §3). Farbe immer aus Data/Art/TypeColors.csv (Modus-abhängig). Shape = farbunabhängige Form (Farbenblind, K54). Motion = Bewegungscharakter. Smoke = Anteil entsättigter Rauch/Staub in ‰.
+Name,DisplayName,Motif,Shape,Motion,Cast,Impact,FieldLook,Smoke
+Ember,Glut,"Funken, Glutzungen, Hitzeflimmern",Zungen nach oben,"aufsteigend, flackernd",Glut sammelt sich in den Fugen,Funkenstern + Glutring,glimmende Risse im Boden,300
+Tide,Flut,"Wasserschleier, Tropfen, Gischt",Bögen/Wellenkämme,"fließend, schwappend",Wasser steigt spiralförmig auf,Gischtkrone,"spiegelnde Pfützen, Wellenringe",100
+Stone,Stein,"Splitter, Staub, Plattenbruch",Blöcke/Facetten,"schwer, fallend",Steinplatten heben sich,Bruchkrater mit Brocken,"Geröllfelder, Plattenkanten",450
+Storm,Sturm,"Böen, Federn, Blitzbögen",Spiralen,"wirbelnd, schnell",Wirbel um den Körper,Spiralknall,"Windwirbel, Laubfahnen",150
+Bloom,Blüte,"Blätter, Pollen, Ranken",Blattformen,"wachsend, sanft",Knospen öffnen sich,Blütenregen,"sprießende Ranken, Pollenschweben",50
+Frost,Frost,"Reif, Eisnadeln, Schneekristalle",Sechsecke,"knisternd, erstarrend",Reif kriecht über die Haut,Eisnadelstern,"Eisplatten, Reifmuster",100
+Void,Leere,"Negativraum, Ringe, Löcher",Ringe/Lücken,einziehend (nach innen),Licht wird eingesogen,Implosion mit Ring,"dunkle Löcher, gedämpfte Farben",0
+Light,Licht,"Strahlen, Kränze, Glanz",Strahlenkranz,"strahlend, ruhig",Lichtkranz hinter dem Kopf,Strahlenstern,"Lichtsäulen, Glanzpunkte",0
+Venom,Gift,"Blasen, Tropfen, Sporen",Tropfen/Blasen,"blubbernd, zäh",Drüsen glimmen auf,Blasenplatzer + Tropfen,"Pfützen mit Blasen, Sporennebel",200
+Metal,Metall,"Funkenflug, Klingen, Nieten",Kanten/Dreiecke,"schneidend, klirrend",Platten verschieben sich,Klingen-Funkenkreuz,"Metallsplitter, Reflexe",250
+Spirit,Geist,"Schleier, Halbmonde, Irrlichter",Halbmonde,"schwebend, unscharf",Schleier löst sich vom Körper,Halbmondwelle,"Nebelschleier, Irrlichter",350
+Crystal,Kristall,"Prismen, Lichtbrechung, Rauten",Rauten,"klirrend, brechend",Kristalle wachsen aus dem Boden,Prismensplitter mit Spektrum,"Kristallsprossen, Regenbogenkanten",0
+Sound,Klang,"Schallringe, Membranen, Notenlinien",Konzentrische Bögen,pulsierend im Takt,Schallringe im Ruf-Tempo,Resonanzring (Quartz-Schlag),schwingende Linien am Boden,0
+Gravity,Schwerkraft,"Orbits, schwebende Splitter, Verzerrung",Orbits/Kreisbahnen,"kreisend, verlangsamt",Splitter beginnen zu kreisen,Verzerrungsblase + Orbit,"schwebende Steine, Raumkrümmung",150
+Arcane,Arkan,"Glyphen, Kanons, Spiegelungen",Glyphen,"gespiegelt, kanonisch",Glyphenkreis unter dem Echo,Glyphensiegel bricht,leuchtende Glyphenbahnen,0
