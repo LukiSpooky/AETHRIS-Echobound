@@ -13,6 +13,7 @@ from collections import Counter, defaultdict
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "Data"
 sys.path.insert(0, str(ROOT / "tools" / "nameguard"))
+sys.path.insert(0, str(ROOT / "tools" / "ref"))
 
 TYPE_DE = {"Ember": "Glut", "Tide": "Flut", "Stone": "Stein", "Storm": "Sturm", "Bloom": "Blüte", "Frost": "Frost",
            "Void": "Leere", "Light": "Licht", "Venom": "Gift", "Metal": "Metall", "Spirit": "Geist", "Crystal": "Kristall",
@@ -52,6 +53,7 @@ class Validator:
         self.traits = {r["Name"] for r in rows("Echos/BehaviorTraits.csv")}
         self.zones = {r["Name"] for r in rows("World/Zones.csv")}
         self.typedist = {r["Name"]: r for r in rows("World/RegionTypeDistribution.csv")}
+        self.evo_items = {r["Name"] for r in rows("Items/EvolutionItems.csv")}
 
     def err(self, sid, msg):
         self.errors.append(f"{sid}: {msg}")
@@ -157,6 +159,36 @@ class Validator:
                     self.err(sid, f"Evolution {nxt} hat Stufe {n['Stage']} ≠ {stage + 1}")
             if not r["EvoCondition"]:
                 self.err(sid, "Evolution ohne Bedingung")
+        if r["EvoCondition"]:
+            self.check_evo_condition(sid, r)
+
+    def check_evo_condition(self, sid, r):
+        """K19 §4: Syntax + Referenzen der Evolutionsbedingung."""
+        from evo_condition import parse, atoms, ParseError
+        try:
+            node = parse(r["EvoCondition"])
+        except ParseError as e:
+            self.err(sid, f"EvoCondition ungültig: {e}")
+            return
+        allowed = {"TimeOfDay": {"Dawn", "Day", "Dusk", "Night"},
+                   "Weather": {"Clear", "Rain", "Thunderstorm", "Fog", "Snow", "Heatwave", "Sandstorm", "Aurora", "Ashfall", "ResonanceStorm"},
+                   "Moon": {"NewMoon", "WaxingCrescent", "FirstQuarter", "WaxingGibbous", "FullMoon", "WaningGibbous", "LastQuarter", "WaningCrescent"},
+                   "Region": {f"R{i:02d}" for i in range(1, 11)}}
+        for _, key, op, val, stat in atoms(node):
+            if key == "Item" and val not in self.evo_items:
+                self.err(sid, f"Evolutions-Item {val} unbekannt")
+            if key == "Zone" and val not in self.zones:
+                self.err(sid, f"Zone {val} unbekannt")
+            if key in allowed and val not in allowed[key]:
+                self.err(sid, f"{key}={val} ungültig")
+            if key == "BondTier" and not 1 <= int(val) <= 6:
+                self.err(sid, "BondTier außerhalb 1–6")
+            if key == "Level" and not 2 <= int(val) <= 100:
+                self.err(sid, "Level-Schwelle außerhalb 2–100")
+            if key == "Knows" and not re.fullmatch(r"ABL_[APUF]\d{3}", val):
+                self.err(sid, f"Fähigkeits-ID {val} ungültig")
+            if key == "ChorHas" and not val.startswith("Type."):
+                self.err(sid, "ChorHas erwartet Type.*")
 
     def check_lines(self, by_id):
         lines = defaultdict(list)

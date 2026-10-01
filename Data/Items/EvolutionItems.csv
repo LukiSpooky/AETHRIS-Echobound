@@ -1,0 +1,27 @@
+# Evolutionsgegenstände (K19 §5). Werden beim Auslösen verbraucht. Quelle: F=Fund, C=Crafting (K41), M=Händler (K42), Q=Quest.
+Name,DisplayName,Kind,Type,Sources,FirstRegion,Description
+ITM_EVO_EMBER,Obertonkristall (Glut),Overtone,Type.Ember,F|C|M,R05,Kristall mit eingeschlossener Glutfrequenz
+ITM_EVO_TIDE,Obertonkristall (Flut),Overtone,Type.Tide,F|C|M,R06,Kristall mit eingeschlossener Flutfrequenz
+ITM_EVO_STONE,Obertonkristall (Stein),Overtone,Type.Stone,F|C|M,R02,Kristall mit eingeschlossener Steinfrequenz
+ITM_EVO_STORM,Obertonkristall (Sturm),Overtone,Type.Storm,F|C|M,R06,Kristall mit eingeschlossener Sturmfrequenz
+ITM_EVO_BLOOM,Obertonkristall (Blüte),Overtone,Type.Bloom,F|C|M,R01,Kristall mit eingeschlossener Blütenfrequenz
+ITM_EVO_FROST,Obertonkristall (Frost),Overtone,Type.Frost,F|C|M,R07,Kristall mit eingeschlossener Frostfrequenz
+ITM_EVO_VOID,Obertonkristall (Leere),Overtone,Type.Void,F|C,R08,Trüber Kristall; gewonnen aus geheilten Stillezonen
+ITM_EVO_LIGHT,Obertonkristall (Licht),Overtone,Type.Light,F|C|M,R04,Kristall mit eingeschlossener Lichtfrequenz
+ITM_EVO_VENOM,Obertonkristall (Gift),Overtone,Type.Venom,F|C|M,R03,Kristall mit eingeschlossener Giftfrequenz
+ITM_EVO_METAL,Obertonkristall (Metall),Overtone,Type.Metal,F|C|M,R05,Kristall mit eingeschlossener Metallfrequenz
+ITM_EVO_SPIRIT,Obertonkristall (Geist),Overtone,Type.Spirit,F|C|M,R03,Kristall mit eingeschlossener Geistfrequenz
+ITM_EVO_CRYSTAL,Obertonkristall (Kristall),Overtone,Type.Crystal,F|C|M,R09,Kristall mit eingeschlossener Kristallfrequenz
+ITM_EVO_SOUND,Obertonkristall (Klang),Overtone,Type.Sound,F|C|M,R01,Kristall mit eingeschlossener Klangfrequenz
+ITM_EVO_GRAVITY,Obertonkristall (Schwerkraft),Overtone,Type.Gravity,F|C|M,R02,Kristall mit eingeschlossener Schwerefrequenz
+ITM_EVO_ARCANE,Obertonkristall (Arkan),Overtone,Type.Arcane,F|C|M,R08,Kristall mit eingeschlossener Arkanfrequenz
+ITM_EVO_MOONDEW,Mondtau,Special,,F,R04,Tau einer Vollmondnacht in der Wüste
+ITM_EVO_ASHFEATHER,Aschefeder,Special,,F,R05,Feder aus erkalteter Vulkanasche
+ITM_EVO_TIDEPEARL,Gezeitenperle,Special,,F,R06,Perle aus einem Gezeitenbecken bei Springflut
+ITM_EVO_GLYPHSHARD,Glyphensplitter,Special,,F|Q,R08,Leuchtendes Fragment einer dorunischen Glyphe
+ITM_EVO_AURORATHREAD,Aurorafaden,Special,,F,R07,Leuchtfaden; nur in Auroranächten zu finden
+ITM_EVO_STARDUST,Sternenstaub,Special,,F,R10,Staub von den Kristallankern Nimbaras
+ITM_EVO_ROOTHEART,Wurzelherz,Special,,F|Q,R01,Herzholz aus dem Uralthain
+ITM_EVO_MISTVEIL,Nebelschleier,Special,,F,R03,Kondensierter Moornebel
+ITM_EVO_EMBERCORE,Glutkern,Special,,F|C,R05,Gehärteter Kern aus Schlackenstahl
+ITM_EVO_ECHOSHELL,Klangmuschel,Special,,F,R06,Muschel; man hört darin das Meer singen

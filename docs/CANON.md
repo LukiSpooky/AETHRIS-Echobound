@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K18
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K19
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -304,6 +304,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-085 | Anlage multiplikativ (bis +15 %), Schliff additiv | K18 |
 | ADR-086 | Trefferchance gedeckelt auf 50–100 % | K18 |
 | ADR-087 | Bindung gibt mehr EP als Erschöpfen (×1,2) | K18 |
+| ADR-088 | Evolutions-Bedingungssprache (DSL) statt fester Enums | K19 |
+| ADR-089 | Keine tauschgebundenen Evolutionen | K19 |
+| ADR-090 | Spieler kontrolliert jede Evolution, „Später“ kostenlos | K19 |
+| ADR-091 | Evolution gibt +50 Bindung | K19 |
+| ADR-092 | Spezialentwicklungen brauchen eine Weltbedingung | K19 |
 
 ## §11 Change Requests
 
@@ -368,6 +373,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | DR-30 | ≤ 800 m Hauptpfad zwischen zwei Klangbrunnen | S1 |
 | DR-31 | Aufträge nie einzige Quelle einer Belohnung | quer |
 | DR-32 | Jede Region in jeder Tagesphase ≥ 1 exklusive Aktivität | S1 |
+| DR-33 | Jede Evolutionsbedingung im Spiel erlernbar (Kodex 2–4, NPC, Lore) | S2 |
 
 ## §14 Onboarding & Starter (K02 §8)
 
@@ -1002,3 +1008,28 @@ Ruhig (Fenster ×1,2, 4 Anschläge, bleibt, Flucht 15 %) · Feurig (×0,9, 2, gr
 - Swift 0,6·L³ (L100 600.000) · Steady 0,8·L³ (800.000) · Late L³·(0,45+0,65·L/100) (1.100.000) · Wave L³·(0,8+0,08·sin(L/6)) (734.524); Legendäre/Mythische Late.
 - EP = ⌊Ertrag × Ld × (2·Ld+10) / ((Ld+Lp+10)·6)⌋ × Quelle (Kampf 1,0 · Bindung 1,2 · Trainer 1,3) × Bonus (Reserve 0,5, Entspannt 1,25, Items ≤ 1,2). Ertrag Stufe 1 ≈ 60 · Stufe 2 ≈ 140 · Stufe 3/Einzel ≈ 210 · Legendär 320 (Tuning K63).
 - `Species.csv` + Spalten `ExpYield`, `PolishYield`; `FEchoInstance` + `PolishLocks`.
+
+## §84 Evolutionsformen (LOCKED, K19 §2–§3)
+
+- Single 22 · Two 45 · Three 40 · **Branch 8** (alternative Endformen: gleiche Gattung und Stufe wie Standard-Endform, Kernsumme ±10, ≥ 1 Weltbedingung, Spielerwahl bei gleichzeitiger Erfüllung); Legendäre/Mythische entwickeln sich nicht.
+- Auslöser-Verteilungsziel der Evolutionsschritte: reines Level 55 % · Level + Weltbedingung 18 % · Bindung 10 % · Item 10 % · Sonstige 7 %.
+
+## §85 Bedingungssprache (LOCKED, K19 §4 · `tools/ref/evo_condition.py`)
+
+- `expr := term {'|' term}`, `term := factor {'&' factor}`, `factor := '!' factor | '(' expr ')' | KEY OP VALUE`.
+- Schlüssel: Level, BondTier (1–6), Item (`EvolutionItems.csv`), TimeOfDay (Dawn/Day/Dusk/Night), Weather (10 Namen), Zone (`Zones.csv`), Region (R01–R10), Moon (8 Phasen), Knows (`ABL_*`), ChorHas (`Type.*`), Personality, Temperament, WinsWhileHolding, StepsInRegion, `Stat:<A>` (Vergleich zweier Werte). Kategorie-Schlüssel nur `=`.
+- Validierung im Katalog-Validator; Laufzeit `FEvoCondition` (flacher AST), Auswertung ereignisgetrieben (LevelUp, Wetter/Tageszeit, Bindungsstufe, Item, Zonenwechsel, Lager).
+
+## §86 Evolutionsablauf & Übertragung (LOCKED, K19 §6–§7, §11)
+
+- Evolutionsahnung (Klangmal pulsiert doppelt) → Dialog am sicheren Moment (Entwickeln/Später/Zweigwahl) → Sequenz 6–10 s (überspringbar). „Später“ kostenlos; Option Auto-Annahme. Welt-Bedingungen müssen beim Auslösen gelten.
+- Bleibt: InstanceId, Herkunft, Name, Level, EP-Fortschritt im Level, Persönlichkeit, Temperament, Genom, Schliff, Repertoire, HeldItem, HP-Anteil. Neu: Spezies, Basiswerte, Typen, Größe. Bindung **+50**; Morph/Passive auf neue Stufe abgebildet; Evolutionsfähigkeit gelernt; Kodex der neuen Art ≥ Stufe 3.
+- Keine Tauschevolutionen; Koop: Weltbedingungen des Hosts; Server prüft Linien-Erreichbarkeit.
+
+## §87 Evolutions-Items (LOCKED, K19 §5 · `Data/Items/EvolutionItems.csv`)
+
+15 **Obertonkristalle** `ITM_EVO_<TYP>` (Leere nur aus geheilten Stillezonen) + 10 Spezialitems an Weltereignisse gebunden: Mondtau (R04, Vollmondnacht), Aschefeder (R05), Gezeitenperle (R06, Springflut), Glyphensplitter (R08), Aurorafaden (R07, Aurora), Sternenstaub (R10), Wurzelherz (R01), Nebelschleier (R03), Glutkern (R05), Klangmuschel (R06). Verbrauch beim Auslösen.
+
+## §88 Evolutions-Pacing (LOCKED, K19 §8)
+
+3-stufig: Akt I 14–22 / 30–38 · Akt II 28–36 / 42–50 · Akt III 40–48 / 56–62. 2-stufig: Akt I 20–30 · Akt II 34–44 · Akt III 50–58. **Starter: Lv. 16 → Stufe 2, Lv. 34 → Stufe 3.**
