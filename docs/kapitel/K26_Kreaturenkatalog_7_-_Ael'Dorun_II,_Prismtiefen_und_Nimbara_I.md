@@ -244,7 +244,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 - **Herkunft:** Ein Arkan-Oberton, der aus dem letzten Befehl des letzten Königs von Ael'Dorun entstand.
 - **Verhalten:** Sitzt in Neumondnächten auf dem leeren Thron und spricht Dekrete in einer toten Sprache.
 - **Mythologie:** Die Dorunsruher glauben, Kronvaal warte auf einen würdigen Erben.
-- **Beziehung zu Menschen:** Rektorin Venn hält den Kronvaal für den Schlüssel zur Frage, warum Ael'Dorun fiel.
+- **Beziehung zu Menschen:** Rektor Venn hält den Kronvaal für den Schlüssel zur Frage, warum Ael'Dorun fiel.
 - *Kodex-Notiz (Stufe 4):* Wild nur in Neumondnächten. Entwickelt sich nicht.
 
 ### #199 Klirrit

@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K38
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K39
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -359,6 +359,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-140 | Keimreife durch Spielzeit statt Echtzeit/Schritte | K38 |
 | ADR-141 | Anlagen-Vererbung 400/400/200 ‰ mit Erbklang | K38 |
 | ADR-142 | Morph-Grundchance 1/1.024 mit Faktoren | K38 |
+| ADR-143 | Kodex-Aufgaben aus Artdaten generiert | K39 |
+| ADR-144 | Beobachtung als 3-s-Fokus während Verhaltensausführung | K39 |
+| ADR-145 | Klangfragmente als Regionen × Themen-Raster mit Wahrheitsebenen | K39 |
+| ADR-146 | Fotobewertung über Klassifizierungsmaske | K39 |
 
 ## §11 Change Requests
 
@@ -1614,3 +1618,25 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §145 Online-Genom (LOCKED, K38 §10)
 
 - Server-Plausibilität (Anlagen, Loci, Morph-Herkunft, Lernset-Erreichbarkeit) bei Tausch/Ranked; Signatur nach Prüfung; Fernklang ab 3 Regionen Abstand.
+
+## §146 Kodex-Stufen (LOCKED, K39 §2–§3 · `Data/Research/KodexTasks.csv`)
+
+- 1 Gesichtet (erfasst/getroffen/fotografiert) · 2 Beobachtet (2 Merkmale oder 3 Kämpfe oder 1 Bindung → Typen, Köder, Merkmale, Effektivitätsvorschau) · 3 Erforscht (gebunden + alle Merkmale + Foto ≥ ★★ → Evolutionsahnung, Fallen, Resonanzgruppe, Lernset) · 4 Verstanden (3 Kodex-Aufgaben → L4-Lore, Allele, versteckte Passive). Evolution setzt neue Art ≥ 3.
+- 768 Kodex-Aufgaben aus Artdaten generiert (Beobachten, Foto bei Spawn-Bedingung, Reiten, Entwicklung, Bindung, Einklang, Kämpfe).
+
+## §147 Beobachtung & Resonanzsinn (LOCKED, K39 §4)
+
+- Ebenen: Frequenz 60 m, Stimmung 40 m (Sinus/Dreieck/Säge/Rauschen), Spuren 30 m (10 Spielminuten), Verhalten (Symbol bei Ausführung), Nester/Ressourcen 40 m. Beobachtung = Merkmal während Ausführung 3 s unentdeckt fokussiert.
+
+## §148 Klangfragmente (LOCKED, K39 §6 · `Data/Lore/LoreEntries.csv`)
+
+- 120 Fragmente `LORE_FRG_001–120` = 10 Regionen × 12 Themen (Erstchor, Alltag, Archivare, Maedryn, Ilen) mit Wahrheitsebenen 0–9; Ebene ≥ 4 an den Schlafstätten der Ursprungsstimmen; oberhalb des Story-Wissens verzerrt (L-01).
+
+## §149 Kodex-Linse & Fotobewertung (LOCKED, K39 §7–§9)
+
+- Linse: Zoom 1–8× (Upgrades), Nacht-/Makro-/Spiegellinse, 3 s Klangaufnahme. Bewertung: Motiv 30, Verhalten 25, Komposition 15, Seltenheit 15, Moment 15 → ★ 20 · ★★ 45 · ★★★ 65 · ★★★★ 85; Bewertung über Klassifizierungsmaske. Album 500.
+
+## §150 Fotografie-Meisterschaft & Kodex-Belohnungen (LOCKED, K39 §10–§11)
+
+- Meisterschaft: 100 Arten ★★★ + 20 Verhaltensfotos ★★★★ + 10 Regionen-Tagesphasen → Spiegellinse → Mirrowisp (Solo).
+- Wärter-EP: Kodex-Stufe 10/30/60/120, Fragment 80, erstes ★★★/★★★★ je Art 20/40; Meilensteine 10/25/50/75/100 %.

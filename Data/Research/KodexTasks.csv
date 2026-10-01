@@ -1,0 +1,770 @@
+# Kodex-Aufgaben Stufe 4 (K39 §3): je Art 3 Aufgaben, abgeleitet aus Artdaten. Kind: Observe|Photo|Ride|Evolve|Bond|Battle|Perfect.
+Species,Index,Kind,Text,Param
+ECHO_001,1,Observe,Beobachte das Verhalten „Familienverband“ mit dem Resonanzsinn (in der Dämmerung),Behavior.FamilyGroup
+ECHO_001,2,Photo,Fotografiere es bei Regen mit mindestens 2 Sternen,Weather.Rain
+ECHO_001,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=16
+ECHO_002,1,Observe,Beobachte das Verhalten „Neugierig“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Curious
+ECHO_002,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_002,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=34
+ECHO_003,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Solitary
+ECHO_003,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_003,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_004,1,Observe,Beobachte das Verhalten „Gräber“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Burrower
+ECHO_004,2,Photo,Fotografiere es bei klarem Wetter mit mindestens 2 Sternen,Weather.Clear
+ECHO_004,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=16
+ECHO_005,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Guardian
+ECHO_005,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_005,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=34
+ECHO_006,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Solitary
+ECHO_006,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_006,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_007,1,Observe,Beobachte das Verhalten „Neugierig“ mit dem Resonanzsinn (tagsüber),Behavior.Curious
+ECHO_007,2,Photo,Fotografiere es bei Gewitter mit mindestens 2 Sternen,Weather.Thunderstorm
+ECHO_007,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=16
+ECHO_008,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (tagsüber),Behavior.Flier
+ECHO_008,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_008,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=34
+ECHO_009,1,Observe,Beobachte das Verhalten „Jäger“ mit dem Resonanzsinn (tagsüber),Behavior.Hunter
+ECHO_009,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_009,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_010,1,Observe,Beobachte das Verhalten „Sammler“ mit dem Resonanzsinn (tagsüber),Behavior.Hoarder
+ECHO_010,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_010,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_011,1,Observe,Beobachte das Verhalten „Sänger“ mit dem Resonanzsinn (tagsüber),Behavior.Singer
+ECHO_011,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_011,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),(Level>=32 & TimeOfDay=Dusk) | (Level>=32 & Weather=Fog & TimeOfDay=Night)
+ECHO_012,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Guardian
+ECHO_012,2,Photo,Fotografiere es in der Abenddämmerung mit mindestens 2 Sternen,TimeOfDay.Dusk
+ECHO_012,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_013,1,Observe,Beobachte das Verhalten „Nachahmer“ mit dem Resonanzsinn (nachts),Behavior.Mimic
+ECHO_013,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_013,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_014,1,Observe,Beobachte das Verhalten „Herde“ mit dem Resonanzsinn (tagsüber),Behavior.Herd
+ECHO_014,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_014,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_015,1,Observe,Beobachte das Verhalten „Weidegänger“ mit dem Resonanzsinn (tagsüber),Behavior.Grazer
+ECHO_015,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_015,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),(BondTier>=4) | (BondTier>=4 & Moon=FullMoon & Zone=R01_Z06)
+ECHO_016,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (tagsüber),Behavior.Glowing
+ECHO_016,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_016,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_017,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_017,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_017,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_018,1,Observe,Beobachte das Verhalten „Schläfer“ mit dem Resonanzsinn (nachts),Behavior.Sleepy
+ECHO_018,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_018,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=15
+ECHO_019,1,Observe,Beobachte das Verhalten „Bestäuber“ mit dem Resonanzsinn (nachts),Behavior.Pollinator
+ECHO_019,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_019,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30 & TimeOfDay=Night
+ECHO_020,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_020,2,Photo,Fotografiere es bei Nebel mit mindestens 2 Sternen,Weather.Fog
+ECHO_020,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_021,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Swimmer
+ECHO_021,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_021,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=22
+ECHO_022,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Swimmer
+ECHO_022,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_022,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_023,1,Observe,Beobachte das Verhalten „Symbiont“ mit dem Resonanzsinn (nachts),Behavior.Symbiont
+ECHO_023,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_023,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=24 & Weather=Fog
+ECHO_024,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_024,2,Photo,Fotografiere es bei Nebel mit mindestens 2 Sternen,Weather.Fog
+ECHO_024,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_025,1,Observe,Beobachte das Verhalten „Schwarm“ mit dem Resonanzsinn (tagsüber),Behavior.Swarm
+ECHO_025,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_025,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=22
+ECHO_026,1,Observe,Beobachte das Verhalten „Sänger“ mit dem Resonanzsinn (tagsüber),Behavior.Singer
+ECHO_026,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_026,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_027,1,Observe,Beobachte das Verhalten „Lauerjäger“ mit dem Resonanzsinn (tagsüber),Behavior.Ambusher
+ECHO_027,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_027,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Item=ITM_EVO_BLOOM
+ECHO_028,1,Observe,Beobachte das Verhalten „Getarnt“ mit dem Resonanzsinn (tagsüber),Behavior.Camouflaged
+ECHO_028,2,Photo,Fotografiere es bei Regen mit mindestens 2 Sternen,Weather.Rain
+ECHO_028,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_029,1,Observe,Beobachte das Verhalten „Gräber“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Burrower
+ECHO_029,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_029,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Stat:Defense>Attack & Level>=24
+ECHO_030,1,Observe,Beobachte das Verhalten „Schläfer“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Sleepy
+ECHO_030,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_030,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_031,1,Observe,Beobachte das Verhalten „Muster-Sammler“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Collector
+ECHO_031,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_031,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_032,1,Observe,Beobachte das Verhalten „Werkzeugnutzer“ mit dem Resonanzsinn (nachts),Behavior.ToolUser
+ECHO_032,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_032,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_033,1,Observe,Beobachte das Verhalten „Scheu“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Shy
+ECHO_033,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_033,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_034,1,Observe,Beobachte das Verhalten „Kletterer“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Climber
+ECHO_034,2,Ride,Lege auf ihm reitend 2 km zurück (Climb),Mount.Climb
+ECHO_034,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),(Level>=34) | (Level>=34 & Zone=R02_Z02 & Moon=FullMoon)
+ECHO_035,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Guardian
+ECHO_035,2,Ride,Lege auf ihm reitend 2 km zurück (Climb),Mount.Climb
+ECHO_035,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_036,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Drifter
+ECHO_036,2,Ride,Lege auf ihm reitend 2 km zurück (Climb),Mount.Climb
+ECHO_036,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_037,1,Observe,Beobachte das Verhalten „Schläfer“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Sleepy
+ECHO_037,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_037,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_038,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_038,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_038,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=36
+ECHO_039,1,Observe,Beobachte das Verhalten „Sternschauer“ mit dem Resonanzsinn (nachts),Behavior.Stargazer
+ECHO_039,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_039,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_040,1,Observe,Beobachte das Verhalten „Neugierig“ mit dem Resonanzsinn (nachts),Behavior.Curious
+ECHO_040,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_040,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_041,1,Observe,Beobachte das Verhalten „Gesteinsfresser“ mit dem Resonanzsinn (nachts),Behavior.Lithophage
+ECHO_041,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_041,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=34
+ECHO_042,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_042,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_042,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_043,1,Observe,Beobachte das Verhalten „Neugierig“ mit dem Resonanzsinn (tagsüber),Behavior.Curious
+ECHO_043,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_043,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_044,1,Observe,Beobachte das Verhalten „Jäger“ mit dem Resonanzsinn (tagsüber),Behavior.Hunter
+ECHO_044,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_044,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=36 & Weather=Thunderstorm
+ECHO_045,1,Observe,Beobachte das Verhalten „Jäger“ mit dem Resonanzsinn (tagsüber),Behavior.Hunter
+ECHO_045,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_045,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_046,1,Observe,Beobachte das Verhalten „Gräber“ mit dem Resonanzsinn (tagsüber),Behavior.Burrower
+ECHO_046,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_046,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=24
+ECHO_047,1,Observe,Beobachte das Verhalten „Herde“ mit dem Resonanzsinn (tagsüber),Behavior.Herd
+ECHO_047,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_047,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_048,1,Observe,Beobachte das Verhalten „Schläfer“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Sleepy
+ECHO_048,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_048,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=26
+ECHO_049,1,Observe,Beobachte das Verhalten „Schläfer“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Sleepy
+ECHO_049,2,Photo,Fotografiere es in der Abenddämmerung mit mindestens 2 Sternen,TimeOfDay.Dusk
+ECHO_049,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_050,1,Observe,Beobachte das Verhalten „Scheu“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Shy
+ECHO_050,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_050,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=24 & Weather=Snow
+ECHO_051,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Solitary
+ECHO_051,2,Photo,Fotografiere es bei Schneefall mit mindestens 2 Sternen,Weather.Snow
+ECHO_051,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_052,1,Observe,Beobachte das Verhalten „Gräber“ mit dem Resonanzsinn (nachts),Behavior.Burrower
+ECHO_052,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_052,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=26
+ECHO_053,1,Observe,Beobachte das Verhalten „Revierverteidigend“ mit dem Resonanzsinn (nachts),Behavior.Territorial
+ECHO_053,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_053,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_054,1,Observe,Beobachte das Verhalten „Sonnenbader“ mit dem Resonanzsinn (),Behavior.Sunbather
+ECHO_054,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_054,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=26 & TimeOfDay=Dawn
+ECHO_055,1,Observe,Beobachte das Verhalten „Sonnenbader“ mit dem Resonanzsinn (tagsüber),Behavior.Sunbather
+ECHO_055,2,Photo,Fotografiere es in der Morgendämmerung mit mindestens 2 Sternen,TimeOfDay.Dawn
+ECHO_055,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_056,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_056,2,Photo,Fotografiere es bei Nebel mit mindestens 2 Sternen,Weather.Fog
+ECHO_056,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_057,1,Observe,Beobachte das Verhalten „Klangorter“ mit dem Resonanzsinn (nachts),Behavior.Echolocator
+ECHO_057,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_057,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_058,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_058,2,Photo,Fotografiere es bei Neumond mit mindestens 2 Sternen,Moon.NewMoon
+ECHO_058,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_059,1,Observe,Beobachte das Verhalten „Schlammbader“ mit dem Resonanzsinn (nachts),Behavior.Mudbather
+ECHO_059,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_059,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_060,1,Observe,Beobachte das Verhalten „Lauerjäger“ mit dem Resonanzsinn (nachts),Behavior.Ambusher
+ECHO_060,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_060,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=32
+ECHO_061,1,Observe,Beobachte das Verhalten „Schlammbader“ mit dem Resonanzsinn (nachts),Behavior.Mudbather
+ECHO_061,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_061,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_062,1,Observe,Beobachte das Verhalten „Aasfresser“ mit dem Resonanzsinn (nachts),Behavior.Scavenger
+ECHO_062,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_062,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_063,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (nachts),Behavior.Swimmer
+ECHO_063,2,Ride,Lege auf ihm reitend 2 km zurück (Swim),Mount.Swim
+ECHO_063,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=34 & Weather=Rain
+ECHO_064,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (nachts),Behavior.Swimmer
+ECHO_064,2,Ride,Lege auf ihm reitend 2 km zurück (Swim),Mount.Swim
+ECHO_064,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_065,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_065,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_065,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=16 & TimeOfDay=Night
+ECHO_066,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_066,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_066,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),(Level>=32) | (Level>=32 & Zone=R03_Z05 & Moon=NewMoon)
+ECHO_067,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_067,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_067,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_068,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_068,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_068,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_069,1,Observe,Beobachte das Verhalten „Getarnt“ mit dem Resonanzsinn (tagsüber),Behavior.Camouflaged
+ECHO_069,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_069,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_070,1,Observe,Beobachte das Verhalten „Revierverteidigend“ mit dem Resonanzsinn (tagsüber),Behavior.Territorial
+ECHO_070,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_070,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=36
+ECHO_071,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_071,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_071,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_072,1,Observe,Beobachte das Verhalten „Schwarm“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Swarm
+ECHO_072,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_072,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=24
+ECHO_073,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Flier
+ECHO_073,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_073,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_074,1,Observe,Beobachte das Verhalten „Lauerjäger“ mit dem Resonanzsinn (nachts),Behavior.Ambusher
+ECHO_074,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_074,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=26
+ECHO_075,1,Observe,Beobachte das Verhalten „Revierverteidigend“ mit dem Resonanzsinn (nachts),Behavior.Territorial
+ECHO_075,2,Photo,Fotografiere es bei Nebel mit mindestens 2 Sternen,Weather.Fog
+ECHO_075,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_076,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (tagsüber),Behavior.Swimmer
+ECHO_076,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_076,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28
+ECHO_077,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_077,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_077,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_078,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (nachts),Behavior.Swimmer
+ECHO_078,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_078,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28 & TimeOfDay=Night
+ECHO_079,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (nachts),Behavior.Swimmer
+ECHO_079,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_079,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_080,1,Observe,Beobachte das Verhalten „Schläfer“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Sleepy
+ECHO_080,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_080,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),BondTier>=3 & TimeOfDay=Dusk
+ECHO_081,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_081,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_081,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_082,1,Observe,Beobachte das Verhalten „Jäger“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Hunter
+ECHO_082,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_082,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_083,1,Observe,Beobachte das Verhalten „Revierverteidigend“ mit dem Resonanzsinn (nachts),Behavior.Territorial
+ECHO_083,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_083,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_084,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (zu jeder Tageszeit),Behavior.Guardian
+ECHO_084,2,Photo,Fotografiere es bei Regen mit mindestens 2 Sternen,Weather.Rain
+ECHO_084,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_085,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (tagsüber),Behavior.Swimmer
+ECHO_085,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_085,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_086,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (tagsüber),Behavior.Swimmer
+ECHO_086,2,Ride,Lege auf ihm reitend 2 km zurück (Swim),Mount.Swim
+ECHO_086,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=36 & Weather=Thunderstorm
+ECHO_087,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (tagsüber),Behavior.Flier
+ECHO_087,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_087,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_088,1,Observe,Beobachte das Verhalten „Werkzeugnutzer“ mit dem Resonanzsinn (in der Dämmerung),Behavior.ToolUser
+ECHO_088,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_088,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_089,1,Observe,Beobachte das Verhalten „Getarnt“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Camouflaged
+ECHO_089,2,Ride,Lege auf ihm reitend 2 km zurück (Swim),Mount.Swim
+ECHO_089,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=34
+ECHO_090,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_090,2,Ride,Lege auf ihm reitend 2 km zurück (Swim),Mount.Swim
+ECHO_090,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_091,1,Observe,Beobachte das Verhalten „Neugierig“ mit dem Resonanzsinn (tagsüber),Behavior.Curious
+ECHO_091,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_091,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_092,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (tagsüber),Behavior.Flier
+ECHO_092,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_092,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=36
+ECHO_093,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (tagsüber),Behavior.Solitary
+ECHO_093,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_093,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_094,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_094,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_094,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=16
+ECHO_095,1,Observe,Beobachte das Verhalten „Lauerjäger“ mit dem Resonanzsinn (nachts),Behavior.Ambusher
+ECHO_095,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_095,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),(Level>=32) | (Level>=32 & Moon=NewMoon & Zone=R06_Z05)
+ECHO_096,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_096,2,Ride,Lege auf ihm reitend 2 km zurück (Swim),Mount.Swim
+ECHO_096,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_097,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_097,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_097,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_098,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (tagsüber),Behavior.Drifter
+ECHO_098,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_098,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=24
+ECHO_099,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (tagsüber),Behavior.Glowing
+ECHO_099,2,Photo,Fotografiere es bei Gewitter mit mindestens 2 Sternen,Weather.Thunderstorm
+ECHO_099,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_100,1,Observe,Beobachte das Verhalten „Gräber“ mit dem Resonanzsinn (tagsüber),Behavior.Burrower
+ECHO_100,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_100,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=26
+ECHO_101,1,Observe,Beobachte das Verhalten „Wanderer“ mit dem Resonanzsinn (tagsüber),Behavior.Migratory
+ECHO_101,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_101,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_102,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_102,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_102,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=22
+ECHO_103,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_103,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_103,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_104,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Swimmer
+ECHO_104,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_104,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28 & TimeOfDay=Dusk
+ECHO_105,1,Observe,Beobachte das Verhalten „Wanderer“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Migratory
+ECHO_105,2,Ride,Lege auf ihm reitend 2 km zurück (Swim),Mount.Swim
+ECHO_105,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_106,1,Observe,Beobachte das Verhalten „Getarnt“ mit dem Resonanzsinn (tagsüber),Behavior.Camouflaged
+ECHO_106,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_106,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=24 & Weather=Rain
+ECHO_107,1,Observe,Beobachte das Verhalten „Lauerjäger“ mit dem Resonanzsinn (tagsüber),Behavior.Ambusher
+ECHO_107,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_107,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_108,1,Observe,Beobachte das Verhalten „Werkzeugnutzer“ mit dem Resonanzsinn (tagsüber),Behavior.ToolUser
+ECHO_108,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_108,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_109,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_109,2,Photo,Fotografiere es bei Nebel mit mindestens 2 Sternen,Weather.Fog
+ECHO_109,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_110,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_110,2,Photo,Fotografiere es bei Vollmond mit mindestens 2 Sternen,Moon.FullMoon
+ECHO_110,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_111,1,Observe,Beobachte das Verhalten „Verspielt“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Playful
+ECHO_111,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_111,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_112,1,Observe,Beobachte das Verhalten „Sonnenbader“ mit dem Resonanzsinn (tagsüber),Behavior.Sunbather
+ECHO_112,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_112,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=36
+ECHO_113,1,Observe,Beobachte das Verhalten „Sonnenbader“ mit dem Resonanzsinn (tagsüber),Behavior.Sunbather
+ECHO_113,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_113,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_114,1,Observe,Beobachte das Verhalten „Weidegänger“ mit dem Resonanzsinn (tagsüber),Behavior.Grazer
+ECHO_114,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_114,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_115,1,Observe,Beobachte das Verhalten „Weidegänger“ mit dem Resonanzsinn (tagsüber),Behavior.Grazer
+ECHO_115,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_115,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=38 & Zone=R04_Z04
+ECHO_116,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_116,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_116,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_117,1,Observe,Beobachte das Verhalten „Sammler“ mit dem Resonanzsinn (tagsüber),Behavior.Hoarder
+ECHO_117,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_117,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_118,1,Observe,Beobachte das Verhalten „Revierverteidigend“ mit dem Resonanzsinn (tagsüber),Behavior.Territorial
+ECHO_118,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_118,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=34
+ECHO_119,1,Observe,Beobachte das Verhalten „Muster-Sammler“ mit dem Resonanzsinn (tagsüber),Behavior.Collector
+ECHO_119,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_119,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_120,1,Observe,Beobachte das Verhalten „Lauerjäger“ mit dem Resonanzsinn (tagsüber),Behavior.Ambusher
+ECHO_120,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_120,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=22
+ECHO_121,1,Observe,Beobachte das Verhalten „Gräber“ mit dem Resonanzsinn (tagsüber),Behavior.Burrower
+ECHO_121,2,Ride,Lege auf ihm reitend 2 km zurück (Dig),Mount.Dig
+ECHO_121,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=40
+ECHO_122,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (tagsüber),Behavior.Solitary
+ECHO_122,2,Ride,Lege auf ihm reitend 2 km zurück (Dig),Mount.Dig
+ECHO_122,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_123,1,Observe,Beobachte das Verhalten „Angriffslustig“ mit dem Resonanzsinn (nachts),Behavior.Aggressive
+ECHO_123,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_123,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=26
+ECHO_124,1,Observe,Beobachte das Verhalten „Lauerjäger“ mit dem Resonanzsinn (nachts),Behavior.Ambusher
+ECHO_124,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_124,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_125,1,Observe,Beobachte das Verhalten „Schwarm“ mit dem Resonanzsinn (tagsüber),Behavior.Swarm
+ECHO_125,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_125,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=26 & Weather=Sandstorm
+ECHO_126,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (tagsüber),Behavior.Drifter
+ECHO_126,2,Photo,Fotografiere es bei Sandsturm mit mindestens 2 Sternen,Weather.Sandstorm
+ECHO_126,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_127,1,Observe,Beobachte das Verhalten „Nachahmer“ mit dem Resonanzsinn (tagsüber),Behavior.Mimic
+ECHO_127,2,Photo,Fotografiere es zur Mittagszeit mit mindestens 2 Sternen,TimeOfDay.Noon
+ECHO_127,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28 & Weather=Heatwave
+ECHO_128,1,Observe,Beobachte das Verhalten „Nachahmer“ mit dem Resonanzsinn (tagsüber),Behavior.Mimic
+ECHO_128,2,Photo,Fotografiere es bei Hitzewelle mit mindestens 2 Sternen,Weather.Heatwave
+ECHO_128,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_129,1,Observe,Beobachte das Verhalten „Schwarm“ mit dem Resonanzsinn (nachts),Behavior.Swarm
+ECHO_129,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_129,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=24 & TimeOfDay=Night
+ECHO_130,1,Observe,Beobachte das Verhalten „Tänzer“ mit dem Resonanzsinn (nachts),Behavior.Dancer
+ECHO_130,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_130,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_131,1,Observe,Beobachte das Verhalten „Sonnenbader“ mit dem Resonanzsinn (tagsüber),Behavior.Sunbather
+ECHO_131,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_131,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30
+ECHO_132,1,Observe,Beobachte das Verhalten „Gesteinsfresser“ mit dem Resonanzsinn (tagsüber),Behavior.Lithophage
+ECHO_132,2,Photo,Fotografiere es bei Hitzewelle mit mindestens 2 Sternen,Weather.Heatwave
+ECHO_132,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_133,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_133,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_133,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_134,1,Observe,Beobachte das Verhalten „Sänger“ mit dem Resonanzsinn (nachts),Behavior.Singer
+ECHO_134,2,Photo,Fotografiere es bei Sandsturm mit mindestens 2 Sternen,Weather.Sandstorm
+ECHO_134,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_135,1,Observe,Beobachte das Verhalten „Schlammbader“ mit dem Resonanzsinn (tagsüber),Behavior.Mudbather
+ECHO_135,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_135,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_136,1,Observe,Beobachte das Verhalten „Wärmesucher“ mit dem Resonanzsinn (tagsüber),Behavior.Thermal
+ECHO_136,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_136,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=36
+ECHO_137,1,Observe,Beobachte das Verhalten „Schwimmer“ mit dem Resonanzsinn (tagsüber),Behavior.Swimmer
+ECHO_137,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_137,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_138,1,Observe,Beobachte das Verhalten „Neugierig“ mit dem Resonanzsinn (tagsüber),Behavior.Curious
+ECHO_138,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_138,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_139,1,Observe,Beobachte das Verhalten „Werkzeugnutzer“ mit dem Resonanzsinn (tagsüber),Behavior.ToolUser
+ECHO_139,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_139,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=38
+ECHO_140,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (tagsüber),Behavior.Solitary
+ECHO_140,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_140,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_141,1,Observe,Beobachte das Verhalten „Aasfresser“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Scavenger
+ECHO_141,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_141,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=16
+ECHO_142,1,Observe,Beobachte das Verhalten „Jäger“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Hunter
+ECHO_142,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_142,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=34
+ECHO_143,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_143,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_143,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_144,1,Observe,Beobachte das Verhalten „Gesteinsfresser“ mit dem Resonanzsinn (nachts),Behavior.Lithophage
+ECHO_144,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_144,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=22
+ECHO_145,1,Observe,Beobachte das Verhalten „Getarnt“ mit dem Resonanzsinn (nachts),Behavior.Camouflaged
+ECHO_145,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_145,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=40
+ECHO_146,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_146,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_146,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_147,1,Observe,Beobachte das Verhalten „Wärmesucher“ mit dem Resonanzsinn (tagsüber),Behavior.Thermal
+ECHO_147,2,Photo,Fotografiere es bei Hitzewelle mit mindestens 2 Sternen,Weather.Heatwave
+ECHO_147,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=42
+ECHO_148,1,Observe,Beobachte das Verhalten „Wärmesucher“ mit dem Resonanzsinn (tagsüber),Behavior.Thermal
+ECHO_148,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_148,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_149,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_149,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_149,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28 & TimeOfDay=Night
+ECHO_150,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_150,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_150,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_151,1,Observe,Beobachte das Verhalten „Kletterer“ mit dem Resonanzsinn (tagsüber),Behavior.Climber
+ECHO_151,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_151,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28
+ECHO_152,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_152,2,Photo,Fotografiere es in seiner Kristallhöhle mit mindestens 2 Sternen,Zone.R05_Z04
+ECHO_152,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_153,1,Observe,Beobachte das Verhalten „Aasfresser“ mit dem Resonanzsinn (tagsüber),Behavior.Scavenger
+ECHO_153,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_153,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30
+ECHO_154,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (tagsüber),Behavior.Flier
+ECHO_154,2,Photo,Fotografiere es bei Gewitter mit mindestens 2 Sternen,Weather.Thunderstorm
+ECHO_154,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_155,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_155,2,Photo,Fotografiere es bei Gewitter mit mindestens 2 Sternen,Weather.Thunderstorm
+ECHO_155,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_156,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_156,2,Photo,Fotografiere es bei Hitzewelle mit mindestens 2 Sternen,Weather.Heatwave
+ECHO_156,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_157,1,Observe,Beobachte das Verhalten „Verspielt“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Playful
+ECHO_157,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_157,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_158,1,Observe,Beobachte das Verhalten „Getarnt“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Camouflaged
+ECHO_158,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_158,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=36
+ECHO_159,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_159,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_159,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_160,1,Observe,Beobachte das Verhalten „Weidegänger“ mit dem Resonanzsinn (tagsüber),Behavior.Grazer
+ECHO_160,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_160,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=22
+ECHO_161,1,Observe,Beobachte das Verhalten „Weidegänger“ mit dem Resonanzsinn (tagsüber),Behavior.Grazer
+ECHO_161,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_161,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=40 & Weather=Snow
+ECHO_162,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_162,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_162,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_163,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (nachts),Behavior.Flier
+ECHO_163,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_163,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_164,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (nachts),Behavior.Flier
+ECHO_164,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_164,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),(Level>=36) | (Level>=36 & Zone=R07_Z03 & TimeOfDay=Night)
+ECHO_165,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_165,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_165,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_166,1,Observe,Beobachte das Verhalten „Getarnt“ mit dem Resonanzsinn (nachts),Behavior.Camouflaged
+ECHO_166,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_166,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_167,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_167,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_167,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20 & Weather=Clear
+ECHO_168,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_168,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_168,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=38
+ECHO_169,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_169,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_169,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_170,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_170,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_170,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28
+ECHO_171,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_171,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_171,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_172,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_172,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_172,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30 & Moon=FullMoon
+ECHO_173,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_173,2,Photo,Fotografiere es bei Vollmond mit mindestens 2 Sternen,Moon.FullMoon
+ECHO_173,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_174,1,Observe,Beobachte das Verhalten „Verspielt“ mit dem Resonanzsinn (tagsüber),Behavior.Playful
+ECHO_174,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_174,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30
+ECHO_175,1,Observe,Beobachte das Verhalten „Revierverteidigend“ mit dem Resonanzsinn (tagsüber),Behavior.Territorial
+ECHO_175,2,Ride,Lege auf ihm reitend 2 km zurück (Climb),Mount.Climb
+ECHO_175,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_176,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (tagsüber),Behavior.Drifter
+ECHO_176,2,Photo,Fotografiere es bei Schneefall mit mindestens 2 Sternen,Weather.Snow
+ECHO_176,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28 & Weather=Snow
+ECHO_177,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (tagsüber),Behavior.Drifter
+ECHO_177,2,Photo,Fotografiere es bei Schneefall mit mindestens 2 Sternen,Weather.Snow
+ECHO_177,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_178,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_178,2,Photo,Fotografiere es bei Schneefall mit mindestens 2 Sternen,Weather.Snow
+ECHO_178,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_179,1,Observe,Beobachte das Verhalten „Werkzeugnutzer“ mit dem Resonanzsinn (nachts),Behavior.ToolUser
+ECHO_179,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_179,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_180,1,Observe,Beobachte das Verhalten „Werkzeugnutzer“ mit dem Resonanzsinn (nachts),Behavior.ToolUser
+ECHO_180,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_180,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=38
+ECHO_181,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_181,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_181,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_182,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_182,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_182,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_183,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (tagsüber),Behavior.Glowing
+ECHO_183,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_183,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=40
+ECHO_184,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (tagsüber),Behavior.Glowing
+ECHO_184,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_184,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_185,1,Observe,Beobachte das Verhalten „Muster-Sammler“ mit dem Resonanzsinn (tagsüber),Behavior.Collector
+ECHO_185,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_185,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_186,1,Observe,Beobachte das Verhalten „Muster-Sammler“ mit dem Resonanzsinn (tagsüber),Behavior.Collector
+ECHO_186,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_186,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=36
+ECHO_187,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (tagsüber),Behavior.Solitary
+ECHO_187,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_187,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_188,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_188,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_188,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=24
+ECHO_189,1,Observe,Beobachte das Verhalten „Revierverteidigend“ mit dem Resonanzsinn (nachts),Behavior.Territorial
+ECHO_189,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_189,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=42 & Moon=NewMoon
+ECHO_190,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_190,2,Ride,Lege auf ihm reitend 2 km zurück (Ground),Mount.Ground
+ECHO_190,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_191,1,Observe,Beobachte das Verhalten „Scheu“ mit dem Resonanzsinn (nachts),Behavior.Shy
+ECHO_191,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_191,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30
+ECHO_192,1,Observe,Beobachte das Verhalten „Getarnt“ mit dem Resonanzsinn (nachts),Behavior.Camouflaged
+ECHO_192,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_192,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_193,1,Observe,Beobachte das Verhalten „Sänger“ mit dem Resonanzsinn (tagsüber),Behavior.Singer
+ECHO_193,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_193,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=26 & BondTier>=3
+ECHO_194,1,Observe,Beobachte das Verhalten „Sänger“ mit dem Resonanzsinn (tagsüber),Behavior.Singer
+ECHO_194,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_194,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_195,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_195,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_195,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=32 & TimeOfDay=Night
+ECHO_196,1,Observe,Beobachte das Verhalten „Sternschauer“ mit dem Resonanzsinn (nachts),Behavior.Stargazer
+ECHO_196,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_196,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_197,1,Observe,Beobachte das Verhalten „Sternschauer“ mit dem Resonanzsinn (nachts),Behavior.Stargazer
+ECHO_197,2,Photo,Fotografiere es bei Vollmond mit mindestens 2 Sternen,Moon.FullMoon
+ECHO_197,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_198,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_198,2,Photo,Fotografiere es bei Neumond mit mindestens 2 Sternen,Moon.NewMoon
+ECHO_198,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_199,1,Observe,Beobachte das Verhalten „Schwarm“ mit dem Resonanzsinn (nachts),Behavior.Swarm
+ECHO_199,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_199,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_200,1,Observe,Beobachte das Verhalten „Jäger“ mit dem Resonanzsinn (nachts),Behavior.Hunter
+ECHO_200,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_200,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),(Level>=38) | (Level>=38 & Zone=R09_Z04)
+ECHO_201,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (nachts),Behavior.Flier
+ECHO_201,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_201,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_202,1,Observe,Beobachte das Verhalten „Klangorter“ mit dem Resonanzsinn (nachts),Behavior.Echolocator
+ECHO_202,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_202,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_203,1,Observe,Beobachte das Verhalten „Gesteinsfresser“ mit dem Resonanzsinn (nachts),Behavior.Lithophage
+ECHO_203,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_203,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=22
+ECHO_204,1,Observe,Beobachte das Verhalten „Revierverteidigend“ mit dem Resonanzsinn (nachts),Behavior.Territorial
+ECHO_204,2,Ride,Lege auf ihm reitend 2 km zurück (Dig),Mount.Dig
+ECHO_204,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=40
+ECHO_205,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_205,2,Ride,Lege auf ihm reitend 2 km zurück (Dig),Mount.Dig
+ECHO_205,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_206,1,Observe,Beobachte das Verhalten „Getarnt“ mit dem Resonanzsinn (nachts),Behavior.Camouflaged
+ECHO_206,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_206,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_207,1,Observe,Beobachte das Verhalten „Jäger“ mit dem Resonanzsinn (nachts),Behavior.Hunter
+ECHO_207,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_207,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=38
+ECHO_208,1,Observe,Beobachte das Verhalten „Kletterer“ mit dem Resonanzsinn (nachts),Behavior.Climber
+ECHO_208,2,Ride,Lege auf ihm reitend 2 km zurück (Climb),Mount.Climb
+ECHO_208,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_209,1,Observe,Beobachte das Verhalten „Neugierig“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Curious
+ECHO_209,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_209,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28 & BondTier>=3
+ECHO_210,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Solitary
+ECHO_210,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_210,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_211,1,Observe,Beobachte das Verhalten „Muster-Sammler“ mit dem Resonanzsinn (nachts),Behavior.Collector
+ECHO_211,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_211,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30
+ECHO_212,1,Observe,Beobachte das Verhalten „Revierverteidigend“ mit dem Resonanzsinn (nachts),Behavior.Territorial
+ECHO_212,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_212,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_213,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_213,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_213,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=32
+ECHO_214,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_214,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_214,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_215,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_215,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_215,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30 & Moon=FullMoon
+ECHO_216,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_216,2,Photo,Fotografiere es bei Vollmond mit mindestens 2 Sternen,Moon.FullMoon
+ECHO_216,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_217,1,Observe,Beobachte das Verhalten „Lauerjäger“ mit dem Resonanzsinn (nachts),Behavior.Ambusher
+ECHO_217,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_217,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_218,1,Observe,Beobachte das Verhalten „Schläfer“ mit dem Resonanzsinn (nachts),Behavior.Sleepy
+ECHO_218,2,Photo,Fotografiere es bei Regen mit mindestens 2 Sternen,Weather.Rain
+ECHO_218,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_219,1,Observe,Beobachte das Verhalten „Verspielt“ mit dem Resonanzsinn (tagsüber),Behavior.Playful
+ECHO_219,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_219,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=26
+ECHO_220,1,Observe,Beobachte das Verhalten „Sänger“ mit dem Resonanzsinn (tagsüber),Behavior.Singer
+ECHO_220,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_220,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=44
+ECHO_221,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_221,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_221,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_222,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (tagsüber),Behavior.Flier
+ECHO_222,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_222,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=20
+ECHO_223,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (tagsüber),Behavior.Flier
+ECHO_223,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_223,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=38
+ECHO_224,1,Observe,Beobachte das Verhalten „Jäger“ mit dem Resonanzsinn (tagsüber),Behavior.Hunter
+ECHO_224,2,Ride,Lege auf ihm reitend 2 km zurück (Fly),Mount.Fly
+ECHO_224,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_225,1,Observe,Beobachte das Verhalten „Sonnenbader“ mit dem Resonanzsinn (tagsüber),Behavior.Sunbather
+ECHO_225,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_225,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=18
+ECHO_226,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (tagsüber),Behavior.Drifter
+ECHO_226,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_226,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),(Level>=34) | (Level>=34 & Moon=NewMoon & Zone=R10_Z02)
+ECHO_227,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (tagsüber),Behavior.Drifter
+ECHO_227,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_227,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_228,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (nachts),Behavior.Drifter
+ECHO_228,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_228,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_229,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (tagsüber),Behavior.Flier
+ECHO_229,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_229,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=28
+ECHO_230,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (tagsüber),Behavior.Flier
+ECHO_230,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_230,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_231,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Drifter
+ECHO_231,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_231,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30 & TimeOfDay=Dusk
+ECHO_232,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Solitary
+ECHO_232,2,Photo,Fotografiere es in der Abenddämmerung mit mindestens 2 Sternen,TimeOfDay.Dusk
+ECHO_232,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_233,1,Observe,Beobachte das Verhalten „Sonnenbader“ mit dem Resonanzsinn (tagsüber),Behavior.Sunbather
+ECHO_233,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_233,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=34
+ECHO_234,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_234,2,Photo,Fotografiere es bei klarem Wetter mit mindestens 2 Sternen,Weather.Clear
+ECHO_234,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_235,1,Observe,Beobachte das Verhalten „Neugierig“ mit dem Resonanzsinn (tagsüber),Behavior.Curious
+ECHO_235,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_235,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=32
+ECHO_236,1,Observe,Beobachte das Verhalten „Werkzeugnutzer“ mit dem Resonanzsinn (tagsüber),Behavior.ToolUser
+ECHO_236,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_236,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_237,1,Observe,Beobachte das Verhalten „Treiber“ mit dem Resonanzsinn (tagsüber),Behavior.Drifter
+ECHO_237,2,Photo,Fotografiere es bei Schneefall mit mindestens 2 Sternen,Weather.Snow
+ECHO_237,3,Evolve,Erlebe eine Entwicklung dieser Art (Evolutionsahnung lesen),Level>=30 & Weather=Thunderstorm
+ECHO_238,1,Observe,Beobachte das Verhalten „Angriffslustig“ mit dem Resonanzsinn (tagsüber),Behavior.Aggressive
+ECHO_238,2,Photo,Fotografiere es bei Gewitter mit mindestens 2 Sternen,Weather.Thunderstorm
+ECHO_238,3,Perfect,Binde ein Echo dieser Art mit Einklang,Bond=Perfect
+ECHO_239,1,Observe,Beobachte das Verhalten „Wanderer“ mit dem Resonanzsinn (tagsüber),Behavior.Migratory
+ECHO_239,2,Photo,Fotografiere es bei klarem Wetter mit mindestens 2 Sternen,Weather.Clear
+ECHO_239,3,Battle,Gewinne 10 Kämpfe gegen oder mit dieser Art,Wins>=10
+ECHO_240,1,Observe,Beobachte das Verhalten „Sternschauer“ mit dem Resonanzsinn (nachts),Behavior.Stargazer
+ECHO_240,2,Photo,Fotografiere es nachts mit mindestens 2 Sternen,TimeOfDay.Night
+ECHO_240,3,Bond,Erreiche Bindungsstufe 3 mit einem Echo dieser Art,BondTier>=3
+ECHO_241,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_241,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_241,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_242,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_242,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_242,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_243,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Flier
+ECHO_243,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_243,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_244,1,Observe,Beobachte das Verhalten „Flieger“ mit dem Resonanzsinn (tagsüber),Behavior.Flier
+ECHO_244,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_244,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_245,1,Observe,Beobachte das Verhalten „Sonnenbader“ mit dem Resonanzsinn (tagsüber),Behavior.Sunbather
+ECHO_245,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_245,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_246,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (tagsüber),Behavior.Guardian
+ECHO_246,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_246,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_247,1,Observe,Beobachte das Verhalten „Sänger“ mit dem Resonanzsinn (nachts),Behavior.Singer
+ECHO_247,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_247,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_248,1,Observe,Beobachte das Verhalten „Hüter“ mit dem Resonanzsinn (nachts),Behavior.Guardian
+ECHO_248,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_248,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_249,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_249,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_249,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_250,1,Observe,Beobachte das Verhalten „Sänger“ mit dem Resonanzsinn (tagsüber),Behavior.Singer
+ECHO_250,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_250,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_251,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (nachts),Behavior.Solitary
+ECHO_251,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_251,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_252,1,Observe,Beobachte das Verhalten „Einzelgänger“ mit dem Resonanzsinn (tagsüber),Behavior.Solitary
+ECHO_252,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_252,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_253,1,Observe,Beobachte das Verhalten „Scheu“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Shy
+ECHO_253,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_253,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_254,1,Observe,Beobachte das Verhalten „Bestäuber“ mit dem Resonanzsinn (in der Dämmerung),Behavior.Pollinator
+ECHO_254,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_254,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_255,1,Observe,Beobachte das Verhalten „Sternschauer“ mit dem Resonanzsinn (nachts),Behavior.Stargazer
+ECHO_255,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_255,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4
+ECHO_256,1,Observe,Beobachte das Verhalten „Leuchtend“ mit dem Resonanzsinn (nachts),Behavior.Glowing
+ECHO_256,2,Photo,"Fotografiere es bei einer Verhaltensanimation (Verhaltensfoto, ≥ 2 Sterne)",Behavior
+ECHO_256,3,Bond,Erreiche Bindungsstufe 4 mit diesem Echo,BondTier>=4

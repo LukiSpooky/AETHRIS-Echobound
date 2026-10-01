@@ -27,7 +27,7 @@ c.line_of("Three", "Scriptorius", [
          lore=["Der heranwachsende Schreiber liest Säulen, die seit tausend Jahren niemand verstand.",
                "Wandert durch das Säulenfeld und kopiert Inschriften in Luftzeichen, die bis zum Morgen bleiben.",
                "Studenten folgen Skrivars heimlich, weil sie glauben, die Echos könnten die alte Schrift lesen.",
-               "Rektorin Venn ließ Skrivar-Zeichen sammeln – ein Drittel davon entspricht echten Dorun-Glyphen.",
+               "Rektor Venn ließ Skrivar-Zeichen sammeln – ein Drittel davon entspricht echten Dorun-Glyphen.",
                "Ab Level 38 erreicht er die Endform."]),
     dict(name="Skriveth", epithet="magister", cat="Glyphenmeister-Echo", arch="A04", size="L", h=2.0, types=("Arcane", "Light"),
          habitat="Archontenviertel", zones=[], rarity="Rare", conds=["Spawn.None"], act="Nocturnal",
@@ -255,7 +255,7 @@ c.line_of("Single", "Regalisvox", [
          lore=["Ein Arkan-Oberton, der aus dem letzten Befehl des letzten Königs von Ael'Dorun entstand.",
                "Sitzt in Neumondnächten auf dem leeren Thron und spricht Dekrete in einer toten Sprache.",
                "Die Dorunsruher glauben, Kronvaal warte auf einen würdigen Erben.",
-               "Rektorin Venn hält den Kronvaal für den Schlüssel zur Frage, warum Ael'Dorun fiel.",
+               "Rektor Venn hält den Kronvaal für den Schlüssel zur Frage, warum Ael'Dorun fiel.",
                "Wild nur in Neumondnächten. Entwickelt sich nicht."])],
 )
 

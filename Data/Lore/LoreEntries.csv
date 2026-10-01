@@ -1,0 +1,122 @@
+# Lore-Einträge (CANON §38, ULoreEntryDefinition). K39: 120 Klangfragmente (FRG). TruthLevel 0–9 (L-01: erst ab Enthüllung unverzerrt).
+Name,Category,Region,Title,Speaker,TruthLevel,Location
+LORE_FRG_001,FRG,R01,Das erste Lied – Wurzelhalle,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_002,FRG,R01,Ein Kinderlied – Wurzelhalle,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_003,FRG,R01,Die Stimme dieses Landes – Wurzelhalle,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_004,FRG,R01,Warnung der Hüter – Wurzelhalle,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_005,FRG,R01,Der Missklang beginnt – Wurzelhalle,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_006,FRG,R01,Der Erstchor versammelt sich – Wurzelhalle,Erstchor,4,Wurzelhalle
+LORE_FRG_007,FRG,R01,Die Arena über dem Schlaf – Wurzelhalle,Erstchor,4,Wurzelhalle
+LORE_FRG_008,FRG,R01,Ilens Zweifel – Wurzelhalle,Ilen,5,Wurzelhalle
+LORE_FRG_009,FRG,R01,Maedryns Versprechen – Wurzelhalle,Archon Maedryn,6,Wurzelhalle
+LORE_FRG_010,FRG,R01,Die letzte Nacht vor der Stille – Wurzelhalle,Ilen,7,Wurzelhalle
+LORE_FRG_011,FRG,R01,Der Riegel – Wurzelhalle,Ilen,8,Wurzelhalle
+LORE_FRG_012,FRG,R01,Was danach bleibt – Wurzelhalle,Ilen,9,Wurzelhalle
+LORE_FRG_013,FRG,R02,Das erste Lied – Kharsholmer Schlund,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_014,FRG,R02,Ein Kinderlied – Kharsholmer Schlund,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_015,FRG,R02,Die Stimme dieses Landes – Kharsholmer Schlund,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_016,FRG,R02,Warnung der Hüter – Kharsholmer Schlund,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_017,FRG,R02,Der Missklang beginnt – Kharsholmer Schlund,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_018,FRG,R02,Der Erstchor versammelt sich – Kharsholmer Schlund,Erstchor,4,Kharsholmer Schlund
+LORE_FRG_019,FRG,R02,Die Arena über dem Schlaf – Kharsholmer Schlund,Erstchor,4,Kharsholmer Schlund
+LORE_FRG_020,FRG,R02,Ilens Zweifel – Kharsholmer Schlund,Ilen,5,Kharsholmer Schlund
+LORE_FRG_021,FRG,R02,Maedryns Versprechen – Kharsholmer Schlund,Archon Maedryn,6,Kharsholmer Schlund
+LORE_FRG_022,FRG,R02,Die letzte Nacht vor der Stille – Kharsholmer Schlund,Ilen,7,Kharsholmer Schlund
+LORE_FRG_023,FRG,R02,Der Riegel – Kharsholmer Schlund,Ilen,8,Kharsholmer Schlund
+LORE_FRG_024,FRG,R02,Was danach bleibt – Kharsholmer Schlund,Ilen,9,Kharsholmer Schlund
+LORE_FRG_025,FRG,R03,Das erste Lied – Versunkener Turm,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_026,FRG,R03,Ein Kinderlied – Versunkener Turm,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_027,FRG,R03,Die Stimme dieses Landes – Versunkener Turm,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_028,FRG,R03,Warnung der Hüter – Versunkener Turm,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_029,FRG,R03,Der Missklang beginnt – Versunkener Turm,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_030,FRG,R03,Der Erstchor versammelt sich – Versunkener Turm,Erstchor,4,Versunkener Turm
+LORE_FRG_031,FRG,R03,Die Arena über dem Schlaf – Versunkener Turm,Erstchor,4,Versunkener Turm
+LORE_FRG_032,FRG,R03,Ilens Zweifel – Versunkener Turm,Ilen,5,Versunkener Turm
+LORE_FRG_033,FRG,R03,Maedryns Versprechen – Versunkener Turm,Archon Maedryn,6,Versunkener Turm
+LORE_FRG_034,FRG,R03,Die letzte Nacht vor der Stille – Versunkener Turm,Ilen,7,Versunkener Turm
+LORE_FRG_035,FRG,R03,Der Riegel – Versunkener Turm,Ilen,8,Versunkener Turm
+LORE_FRG_036,FRG,R03,Was danach bleibt – Versunkener Turm,Ilen,9,Versunkener Turm
+LORE_FRG_037,FRG,R04,Das erste Lied – Sonnenhof,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_038,FRG,R04,Ein Kinderlied – Sonnenhof,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_039,FRG,R04,Die Stimme dieses Landes – Sonnenhof,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_040,FRG,R04,Warnung der Hüter – Sonnenhof,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_041,FRG,R04,Der Missklang beginnt – Sonnenhof,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_042,FRG,R04,Der Erstchor versammelt sich – Sonnenhof,Erstchor,4,Sonnenhof
+LORE_FRG_043,FRG,R04,Die Arena über dem Schlaf – Sonnenhof,Erstchor,4,Sonnenhof
+LORE_FRG_044,FRG,R04,Ilens Zweifel – Sonnenhof,Ilen,5,Sonnenhof
+LORE_FRG_045,FRG,R04,Maedryns Versprechen – Sonnenhof,Archon Maedryn,6,Sonnenhof
+LORE_FRG_046,FRG,R04,Die letzte Nacht vor der Stille – Sonnenhof,Ilen,7,Sonnenhof
+LORE_FRG_047,FRG,R04,Der Riegel – Sonnenhof,Ilen,8,Sonnenhof
+LORE_FRG_048,FRG,R04,Was danach bleibt – Sonnenhof,Ilen,9,Sonnenhof
+LORE_FRG_049,FRG,R05,Das erste Lied – Kraterherz,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_050,FRG,R05,Ein Kinderlied – Kraterherz,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_051,FRG,R05,Die Stimme dieses Landes – Kraterherz,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_052,FRG,R05,Warnung der Hüter – Kraterherz,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_053,FRG,R05,Der Missklang beginnt – Kraterherz,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_054,FRG,R05,Der Erstchor versammelt sich – Kraterherz,Erstchor,4,Kraterherz
+LORE_FRG_055,FRG,R05,Die Arena über dem Schlaf – Kraterherz,Erstchor,4,Kraterherz
+LORE_FRG_056,FRG,R05,Ilens Zweifel – Kraterherz,Ilen,5,Kraterherz
+LORE_FRG_057,FRG,R05,Maedryns Versprechen – Kraterherz,Archon Maedryn,6,Kraterherz
+LORE_FRG_058,FRG,R05,Die letzte Nacht vor der Stille – Kraterherz,Ilen,7,Kraterherz
+LORE_FRG_059,FRG,R05,Der Riegel – Kraterherz,Ilen,8,Kraterherz
+LORE_FRG_060,FRG,R05,Was danach bleibt – Kraterherz,Ilen,9,Kraterherz
+LORE_FRG_061,FRG,R06,Das erste Lied – Thal'assyrs Rippe,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_062,FRG,R06,Ein Kinderlied – Thal'assyrs Rippe,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_063,FRG,R06,Die Stimme dieses Landes – Thal'assyrs Rippe,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_064,FRG,R06,Warnung der Hüter – Thal'assyrs Rippe,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_065,FRG,R06,Der Missklang beginnt – Thal'assyrs Rippe,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_066,FRG,R06,Der Erstchor versammelt sich – Thal'assyrs Rippe,Erstchor,4,Thal'assyrs Rippe
+LORE_FRG_067,FRG,R06,Die Arena über dem Schlaf – Thal'assyrs Rippe,Erstchor,4,Thal'assyrs Rippe
+LORE_FRG_068,FRG,R06,Ilens Zweifel – Thal'assyrs Rippe,Ilen,5,Thal'assyrs Rippe
+LORE_FRG_069,FRG,R06,Maedryns Versprechen – Thal'assyrs Rippe,Archon Maedryn,6,Thal'assyrs Rippe
+LORE_FRG_070,FRG,R06,Die letzte Nacht vor der Stille – Thal'assyrs Rippe,Ilen,7,Thal'assyrs Rippe
+LORE_FRG_071,FRG,R06,Der Riegel – Thal'assyrs Rippe,Ilen,8,Thal'assyrs Rippe
+LORE_FRG_072,FRG,R06,Was danach bleibt – Thal'assyrs Rippe,Ilen,9,Thal'assyrs Rippe
+LORE_FRG_073,FRG,R07,Das erste Lied – Gletscherdom,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_074,FRG,R07,Ein Kinderlied – Gletscherdom,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_075,FRG,R07,Die Stimme dieses Landes – Gletscherdom,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_076,FRG,R07,Warnung der Hüter – Gletscherdom,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_077,FRG,R07,Der Missklang beginnt – Gletscherdom,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_078,FRG,R07,Der Erstchor versammelt sich – Gletscherdom,Erstchor,4,Gletscherdom
+LORE_FRG_079,FRG,R07,Die Arena über dem Schlaf – Gletscherdom,Erstchor,4,Gletscherdom
+LORE_FRG_080,FRG,R07,Ilens Zweifel – Gletscherdom,Ilen,5,Gletscherdom
+LORE_FRG_081,FRG,R07,Maedryns Versprechen – Gletscherdom,Archon Maedryn,6,Gletscherdom
+LORE_FRG_082,FRG,R07,Die letzte Nacht vor der Stille – Gletscherdom,Ilen,7,Gletscherdom
+LORE_FRG_083,FRG,R07,Der Riegel – Gletscherdom,Ilen,8,Gletscherdom
+LORE_FRG_084,FRG,R07,Was danach bleibt – Gletscherdom,Ilen,9,Gletscherdom
+LORE_FRG_085,FRG,R08,Das erste Lied – Säulenfeld Thae'Luun,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_086,FRG,R08,Ein Kinderlied – Säulenfeld Thae'Luun,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_087,FRG,R08,Die Stimme dieses Landes – Säulenfeld Thae'Luun,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_088,FRG,R08,Warnung der Hüter – Säulenfeld Thae'Luun,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_089,FRG,R08,Der Missklang beginnt – Säulenfeld Thae'Luun,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_090,FRG,R08,Der Erstchor versammelt sich – Säulenfeld Thae'Luun,Erstchor,4,Säulenfeld Thae'Luun
+LORE_FRG_091,FRG,R08,Die Arena über dem Schlaf – Säulenfeld Thae'Luun,Erstchor,4,Säulenfeld Thae'Luun
+LORE_FRG_092,FRG,R08,Ilens Zweifel – Säulenfeld Thae'Luun,Ilen,5,Säulenfeld Thae'Luun
+LORE_FRG_093,FRG,R08,Maedryns Versprechen – Säulenfeld Thae'Luun,Archon Maedryn,6,Säulenfeld Thae'Luun
+LORE_FRG_094,FRG,R08,Die letzte Nacht vor der Stille – Säulenfeld Thae'Luun,Ilen,7,Säulenfeld Thae'Luun
+LORE_FRG_095,FRG,R08,Der Riegel – Säulenfeld Thae'Luun,Ilen,8,Säulenfeld Thae'Luun
+LORE_FRG_096,FRG,R08,Was danach bleibt – Säulenfeld Thae'Luun,Ilen,9,Säulenfeld Thae'Luun
+LORE_FRG_097,FRG,R09,Das erste Lied – Resonanzkammer,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_098,FRG,R09,Ein Kinderlied – Resonanzkammer,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_099,FRG,R09,Die Stimme dieses Landes – Resonanzkammer,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_100,FRG,R09,Warnung der Hüter – Resonanzkammer,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_101,FRG,R09,Der Missklang beginnt – Resonanzkammer,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_102,FRG,R09,Der Erstchor versammelt sich – Resonanzkammer,Erstchor,4,Resonanzkammer
+LORE_FRG_103,FRG,R09,Die Arena über dem Schlaf – Resonanzkammer,Erstchor,4,Resonanzkammer
+LORE_FRG_104,FRG,R09,Ilens Zweifel – Resonanzkammer,Ilen,5,Resonanzkammer
+LORE_FRG_105,FRG,R09,Maedryns Versprechen – Resonanzkammer,Archon Maedryn,6,Resonanzkammer
+LORE_FRG_106,FRG,R09,Die letzte Nacht vor der Stille – Resonanzkammer,Ilen,7,Resonanzkammer
+LORE_FRG_107,FRG,R09,Der Riegel – Resonanzkammer,Ilen,8,Resonanzkammer
+LORE_FRG_108,FRG,R09,Was danach bleibt – Resonanzkammer,Ilen,9,Resonanzkammer
+LORE_FRG_109,FRG,R10,Das erste Lied – Sternenarena,Erstchor,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_110,FRG,R10,Ein Kinderlied – Sternenarena,Alltagsstimme,0,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_111,FRG,R10,Die Stimme dieses Landes – Sternenarena,Erstchor,1,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_112,FRG,R10,Warnung der Hüter – Sternenarena,Dorunische Archivarin,2,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_113,FRG,R10,Der Missklang beginnt – Sternenarena,Dorunischer Archivar,3,Region (Fundort-Tabelle K49–K51)
+LORE_FRG_114,FRG,R10,Der Erstchor versammelt sich – Sternenarena,Erstchor,4,Sternenarena
+LORE_FRG_115,FRG,R10,Die Arena über dem Schlaf – Sternenarena,Erstchor,4,Sternenarena
+LORE_FRG_116,FRG,R10,Ilens Zweifel – Sternenarena,Ilen,5,Sternenarena
+LORE_FRG_117,FRG,R10,Maedryns Versprechen – Sternenarena,Archon Maedryn,6,Sternenarena
+LORE_FRG_118,FRG,R10,Die letzte Nacht vor der Stille – Sternenarena,Ilen,7,Sternenarena
+LORE_FRG_119,FRG,R10,Der Riegel – Sternenarena,Ilen,8,Sternenarena
+LORE_FRG_120,FRG,R10,Was danach bleibt – Sternenarena,Ilen,9,Sternenarena

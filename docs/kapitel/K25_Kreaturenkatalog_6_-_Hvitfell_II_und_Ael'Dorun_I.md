@@ -576,7 +576,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 - **Herkunft:** Der heranwachsende Schreiber liest Säulen, die seit tausend Jahren niemand verstand.
 - **Verhalten:** Wandert durch das Säulenfeld und kopiert Inschriften in Luftzeichen, die bis zum Morgen bleiben.
 - **Mythologie:** Studenten folgen Skrivars heimlich, weil sie glauben, die Echos könnten die alte Schrift lesen.
-- **Beziehung zu Menschen:** Rektorin Venn ließ Skrivar-Zeichen sammeln – ein Drittel davon entspricht echten Dorun-Glyphen.
+- **Beziehung zu Menschen:** Rektor Venn ließ Skrivar-Zeichen sammeln – ein Drittel davon entspricht echten Dorun-Glyphen.
 - *Kodex-Notiz (Stufe 4):* Ab Level 38 erreicht er die Endform.
 
 ### #181 Skriveth
