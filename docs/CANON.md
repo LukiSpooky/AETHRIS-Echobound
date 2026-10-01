@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K44
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K45
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -380,6 +380,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-161 | W2-Enthüllung dynamisch in der zweiten besuchten Region | K44 |
 | ADR-162 | Drei gleichwertige Haltungen statt Moral-Meter | K44 |
 | ADR-163 | Ysolde in Akt I präsent ohne mitzulaufen | K44 |
+| ADR-164 | W6 hängt an Akkordanzahl (6), nicht an einer Region | K45 |
+| ADR-165 | Entscheidungen verhindern Venns Splitterfortschritt nie | K45 |
+| ADR-166 | Unterschlupf nach dem Verrat nach FS_STANCE | K45 |
+| ADR-167 | Kael nimmt den 8. Splitter in einer Szene, kein Kampf | K45 |
 
 ## §11 Change Requests
 
@@ -1743,3 +1747,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §171 Story-Flags (LOCKED, K44 §8 · `Data/Quests/StoryFlags.csv`)
 
 - FS_STANCE, KAEL_TRUST, SERETH_RESPECT (−2…+2), KONTOR_DEBT, STARTER_LINE, W2_REGION; steuern Dialoge und die 4 Epilog-Varianten je Ende.
+
+## §172 Akt-II-Struktur (LOCKED, K45 §2)
+
+- Auftakt Eichenhall (W4) → R04/R05/R07 frei → W5 nach dem 2. Akt-II-Akkord (Ort: Siedlung dieser Region) → Messung und Verrat in Dorunsruh bei 6 Akkorden (W6) → Arena Dorunsruh + dritte Region beliebig → Thronsaal bei 8 Akkorden (W7). ~20 h, Wärterrang ~24. Flugsattel mit der Messung (oder über Hralda, wenn vertagt).
+
+## §173 Akt-II-Quests (LOCKED, K45 §5–§8 · `Data/Quests/MainQuests.csv`)
+
+- MQ_A2_01 Die Schlösser der Stimmen · 02 Die Wahrheit unter dem Sonnenhof (BOSS_A2_01) · 03 Das Kraterherz (Kontor-Kisten, Lagerbefreiung) · 04 Eiðvik (Sereths Herkunft, BOSS_A2_02) · 05 Was Ysolde verschwieg · 06 Die Messung · 07 Der Verrat · 08 Unter Freunden · 09 Glyphen von Dorunsruh · 10 Der Thronsaal (BOSS_A2_03, Vision Maedryn/Ilen) · 11 Neun von Zehn. Kael bleibt bei Venn und nimmt den 8. Splitter (keine Kampfszene). Sereth bricht mit Venn.
+
+## §174 Kronensplitter (LOCKED, K45 §4)
+
+- Ein Splitter je Stimme am Schlafort; nur nach dem jeweiligen Akkord ~3 Wochen hörbar; Venn ortet per Resonometer, Orden/Kontor bergen. Ende Akt II: Venn hält 9 (Aerion seit 983, acht über Orden/Kontor/Kael); der 10. liegt in Prismara (Akt III). Bezeichnung vor W6: „Stillstein-Rohstoff/Kristallkern“. Spielerentscheidungen verhindern den Splitterfortschritt nie (ADR-165).
+
+## §175 Flags Akt II (LOCKED, K45 §10 · `StoryFlags.csv`)
+
+- FLAG_KONTOR_CRATES (0 geliefert/1 geöffnet+geliefert/2 zurückgegeben), FLAG_YSOLDE_BOND (−2…2, nur Ton), FLAG_SHELTER (FS bei FS_STANCE ≥ 0, sonst WW), FLAG_W6_DONE (System).

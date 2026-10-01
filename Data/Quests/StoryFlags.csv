@@ -6,3 +6,7 @@ FLAG_SERETH_RESPECT,Respekt Sereth,-2..2,MQ_A1_06|MQ_A2_*|MQ_A3_*,"Sereths Angeb
 FLAG_KONTOR_DEBT,Schuld beim Kontor,0..1,MQ_A1_05,"Marieke Holms Gefallen in Akt II"
 FLAG_STARTER_LINE,Starterlinie,Bloom|Stone|Storm,MQ_P01,"Kaels Starter (Vorteil), Dialogvarianten"
 FLAG_W2_REGION,Region der W2-Enthüllung,R02|R03|R06,MQ_A1_06,"Ortsbezug späterer Dialoge"
+FLAG_KONTOR_CRATES,Umgang mit den Kontor-Kisten,0..2,MQ_A2_03,"0 geliefert, 1 geöffnet und geliefert, 2 zurückgegeben; Mariekes Haltung in Akt III, Kontor-Ruf (K47)"
+FLAG_YSOLDE_BOND,Nähe zu Ysolde,-2..2,MQ_A2_05|MQ_A2_08|MQ_A3_*,"Dialoge in Akt III, Ysoldes Szene vor dem Finale (nur Ton, nie Inhalt)"
+FLAG_SHELTER,Unterschlupf nach dem Verrat,FS|WW,MQ_A2_08,"FS bei FLAG_FS_STANCE ≥ 0, sonst WW (Wildwacht); Ortsbezug Akt III"
+FLAG_W6_DONE,Verrat erlebt (System),0..1,MQ_A2_07,"Varianten der dritten freien Region (K45 §9); nicht vom Spieler wählbar"
