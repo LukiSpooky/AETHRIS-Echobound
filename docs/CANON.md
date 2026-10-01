@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K23
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K24
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -1183,3 +1183,40 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 | 126 | Sirrsturm | Sturm/Stein | L055/2 Two | – | Speed | – |
 | 127 | Mirasel | Arkan | L056/1 Two | Mirazhar [Level>=28 & Weather=Heatwave] | Control | – |
 | 128 | Mirazhar | Arkan/Licht | L056/2 Two | – | Control | – |
+
+## §93 Arten #129–#160 (LOCKED, K24 · `Data/Echos/Species.csv`)
+
+| # | Name | Typen | Linie/Stufe | Evolution → | Rolle | Reiten |
+|---|---|---|---|---|---|---|
+| 129 | Vitrel | Licht | L057/1 Two | Vitrapha [Level>=24 & TimeOfDay=Night] | Support | – |
+| 130 | Vitrapha | Licht/Kristall | L057/2 Two | – | Support | – |
+| 131 | Mesakil | Stein | L058/1 Two | Mesakor [Level>=30] | Tank | – |
+| 132 | Mesakor | Stein/Glut | L058/2 Two | – | Tank | Bodenreiten |
+| 133 | Qadrant | Metall/Schwerkraft | L059/1 Single | – | Control | – |
+| 134 | Mahrsil | Geist/Sturm | L060/1 Single | – | Caster | – |
+| 135 | Pyrolm | Glut | L061/1 Three | Pyrolax [Level>=18] | Caster | – |
+| 136 | Pyrolax | Glut | L061/2 Three | Pyroluth [Level>=36] | Caster | – |
+| 137 | Pyroluth | Glut/Stein | L061/3 Three | – | Caster | – |
+| 138 | Ambolt | Metall | L062/1 Three | Ambrak [Level>=20] | Tank | – |
+| 139 | Ambrak | Metall/Glut | L062/2 Three | Ambross [Level>=38] | Tank | – |
+| 140 | Ambross | Metall/Glut | L062/3 Three | – | Tank | – |
+| 141 | Aschwel | Glut | L063/1 Three | Aschund [Level>=16] | Speed | – |
+| 142 | Aschund | Glut | L063/2 Three | Aschgrim [Level>=34] | Speed | – |
+| 143 | Aschgrim | Glut/Leere | L063/3 Three | – | Speed | – |
+| 144 | Obsikin | Stein | L064/1 Three | Obsidar [Level>=22] | Tank | – |
+| 145 | Obsidar | Stein/Kristall | L064/2 Three | Obsidrax [Level>=40] | Tank | – |
+| 146 | Obsidrax | Stein/Kristall | L064/3 Three | – | Tank | Bodenreiten |
+| 147 | Ignavyr | Glut | L065/1 Two | Ignavor [Level>=42] | Striker | – |
+| 148 | Ignavor | Glut/Schwerkraft | L065/2 Two | – | Striker | Flugreiten |
+| 149 | Fumel | Leere | L066/1 Two | Fumaroth [Level>=28 & TimeOfDay=Night] | Control | – |
+| 150 | Fumaroth | Leere/Glut | L066/2 Two | – | Control | – |
+| 151 | Drusil | Kristall | L067/1 Two | Drusaro [Level>=28] | Support | – |
+| 152 | Drusaro | Kristall/Glut | L067/2 Two | – | Support | – |
+| 153 | Volket | Sturm | L068/1 Two | Voltarn [Level>=30] | Speed | – |
+| 154 | Voltarn | Metall/Sturm | L068/2 Two | – | Speed | Flugreiten |
+| 155 | Bassalt | Klang/Stein | L069/1 Single | – | Support | – |
+| 156 | Nucleox | Schwerkraft/Glut | L070/1 Single | – | Caster | – |
+| 157 | Snevel | Frost | L071/1 Three | Snevar [Level>=18] | Speed | – |
+| 158 | Snevar | Frost | L071/2 Three | Snevrik [Level>=36] | Speed | – |
+| 159 | Snevrik | Frost/Licht | L071/3 Three | – | Speed | – |
+| 160 | Kjalf | Frost | L072/1 Three | Kjalmur [Level>=22] | Tank | – |
