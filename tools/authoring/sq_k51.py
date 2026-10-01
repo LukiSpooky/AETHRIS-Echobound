@@ -242,7 +242,7 @@ Q("SQ_173", "Labore im Krater", "NPC_LABORLEITERIN_SANNE|Laborleiterin Sanne (Ak
   ["OBJ_TALK NPC_LABORLEITERIN_SANNE 1 @SET_C_PRISMARA | Sanne im Labor",
    "OBJ_INVESTIGATE - 3 @R09 | Messwerte in Glanzschacht, Quarzgrund und Kaverne nehmen",
    "OBJ_OBSERVE ECHO_213 1 @R09_Z04 | Misslits am Rand der Adern beobachten",
-   "OBJ_TALK NPC_STIMMERGILDE_SEREN 1 @SET_C_PRISMARA | Seren Quarz (Stimmergilde) die Werte zeigen"],
+   "OBJ_TALK NPC_R09_SEREN 1 @SET_C_PRISMARA | Seren Quarz (Stimmergilde) die Werte zeigen"],
   "ITM_GEAR_LENS_4; Kodex-Fragment „Puls“", "Rat von Prismara verlagert Energie auf alte Lichtschächte", truth=7)
 Q("SQ_174", "Spatlings im Dunkeln", "NPC_SCHLEIFERIN_NYX|Schleiferin Nyx", "SET_V_QUARZGRUND", 2, 25,
   "In Quarzgrund, 310 Meter unter dem Kraterrand, ist es dunkel – Nyx schleift bei Spatling-Licht. Seit der Energiekrise leuchten die Spatlings schwächer. Nyx glaubt, sie hungern; der Wärter findet heraus, dass sie sich vor dem Puls verstecken.",
@@ -257,14 +257,14 @@ Q("SQ_175", "Der Kristall, der zählt", "NPC_LABORLEITERIN_SANNE|Laborleiterin S
    "OBJ_INVESTIGATE - 3 @R09_Z04 | Den Kristall an drei Adern ablesen",
    "OBJ_OBSERVE ECHO_214 1 @R09_Z04 | Einen ruhigen Missgrath beobachten"],
   "Kodex-Fragment „Zählkristall“; ITM_MAT_GLYPHCRYSTAL ×2", "Sannes Messreihe je Ende verschieden (Kodex)", truth=9)
-Q("SQ_176", "Kristallpuls-Nacht", "NPC_STIMMERGILDE_SEREN|Seren Quarz (Stimmergilde)", "SET_C_PRISMARA", 3, 30,
+Q("SQ_176", "Kristallpuls-Nacht", "NPC_R09_SEREN|Seren Quarz (Stimmergilde)", "SET_C_PRISMARA", 3, 30,
   "Prismaras Fest: In einer Nacht pro Monat lässt die Stimmergilde alle Kristalle der Stadt im selben Takt pulsieren. Wegen der Energiekrise wollen sie es absagen. Seren bittet den Wärter, einen Takt zu finden, der den Puls der Adern ausgleicht statt verstärkt.",
   ["OBJ_CONDITION Time=Night 1 @SET_C_PRISMARA | Nacht in Prismara",
    "OBJ_OBSERVE ECHO_218 1 @R09_Z03 | Den Stalakkord-Takt hören",
    "OBJ_PUZZLE PZ_SQ176_PULSE 1 @SET_C_PRISMARA | Den Gegentakt setzen",
    "OBJ_REST SET_C_PRISMARA 1 @SET_C_PRISMARA | Das Fest erleben"],
   "Hain-Dekor ITM_DECO_PULSECRYSTAL; ITM_LURE_STARCHIME", "Kristallpuls-Nacht findet statt (Weltereignis WE_PULSE_NIGHT)", var="Time=Night", truth=7)
-Q("SQ_177", "Psionits Traum", "NPC_STIMMERGILDE_SEREN|Seren Quarz (Stimmergilde)", "SET_C_PRISMARA", 4, 35,
+Q("SQ_177", "Psionits Traum", "NPC_R09_SEREN|Seren Quarz (Stimmergilde)", "SET_C_PRISMARA", 4, 35,
   "Psionits träumen laut: In ihrer Nähe sehen Menschen Bilder. Seren will der Akademie erlauben, die Bilder aufzuzeichnen; der Wärter fragt erst, ob die Psionits das wollen. Eine Beobachtung entscheidet, ob die Studie stattfindet.",
   ["OBJ_OBSERVE ECHO_215 2 @R09_Z05 | Psionits beim Träumen beobachten",
    "OBJ_INVESTIGATE - 2 @R09_Z05 | Die Bilder deuten",

@@ -1,0 +1,196 @@
+# NPC-Register (K53 §3, generiert von tools/gen_npcs.py aus Quests, Händlern, Arenen, Fraktionen, Dörfern). Abweichungen über STORY/VILLAGE-Tabellen im Generator.
+Name,Aliases,DisplayName,Kind,Faction,HomeSettlement,Region,Schedule,Presentation,Quests,FirstQuest
+NPC_AELTESTE_INGRID,–,Aelteste Ingrid,Quest,–,SET_V_BRAKKFELS,R02,Tagwerk,Voiced,1,SQ_036
+NPC_AEVRIN,NPC_R08_AEVRIN_TUTOR,Aevrin Thal,Arena,F01,SET_C_DORUNSRUH,R08,Gelehrt,Voiced,9,MQ_A2_09
+NPC_AILSA,–,Fährmeisterin Ailsa Duvreth,Quest,–,SET_C_MORVENFURT,R03,Fischer,Voiced,1,SQ_054
+NPC_AMA_DUVRETH,–,Moorweise Ama Duvreth,Village,–,SET_V_DUVRETH,R03,Tagwerk,Voiced,0,–
+NPC_BAUMEISTERIN_IRIS,–,Baumeisterin Iris,Quest,–,SET_C_AERION,R10,Tagwerk,Voiced,1,SQ_207
+NPC_BEKE,–,Beke Tamsen,Arena,–,SET_C_SALTRANDHAFEN,R06,Fischer,Voiced,1,SQ_085
+NPC_BOTENJUNGE_LUTZ,–,Botenjunge Lutz,Quest,–,SET_C_SALTRANDHAFEN,R06,Tagwerk,Voiced,1,SQ_076
+NPC_BRANDA,–,Bergführerin Branda,Quest,–,SET_O_GROLLHORNBIWAK,R02,Tagwerk,Voiced,2,SQ_028
+NPC_BRIDA,–,Köhlerin Brida,Village,–,SET_V_MOOSGRUND,R01,Tagwerk,Voiced,0,–
+NPC_BRUDER_ODVAR,–,Bruder Odvar,Village,F05,SET_V_SAEULENRAST,R08,Kloster,Voiced,1,SQ_163
+NPC_BRUECKENWART_ELWYN,–,Brückenwart Elwyn,Quest,–,SET_V_FENNHAVEN,R03,Wache,Voiced,1,SQ_056
+NPC_DR_IMKE_VAEL,–,Dr. Imke Vael,Village,–,SET_V_THAELUUN,R08,Gelehrt,Voiced,2,SQ_165
+NPC_EBBA,–,Ebba,Village,–,SET_V_FLOTTHOLM,R06,Tagwerk,Voiced,0,–
+NPC_EISHAENDLER_BJARNE,–,Eishaendler Bjarne,Quest,–,SET_C_HVITMARK,R07,Tagwerk,Voiced,1,SQ_142
+NPC_EISPRUEFER_1,–,Eispruefer 1,Trainer,–,SET_C_HVITMARK,R07,Wache,Barked,1,SQ_149
+NPC_ELSBETH_MOOR,–,Rätin Elsbeth Moor,Story,–,SET_C_EICHENHALL,R01,Tagwerk,Voiced,0,–
+NPC_ENNIS,–,Ennis Rook,Quest,F04,SET_V_MOOSGRUND,R01,Nachtvolk,Voiced,8,SQ_022
+NPC_EVHE,–,Evhe Corrach,Arena,–,SET_C_MORVENFURT,R03,Nachtvolk,Voiced,2,SQ_062
+NPC_FAENGER_RASK,–,Faenger Rask,Trainer,–,R02_Z01,R02,Wache,Barked,1,SQ_041
+NPC_FENJA,–,Zeugmeisterin Fenja,Quest,F03,SET_C_EICHENHALL,R01,Wache,Voiced,5,SQ_013
+NPC_FEUERTRAEGER_KNUT,–,Feuertraeger Knut,Quest,–,SET_V_HRALLSTED,R02,Tagwerk,Voiced,1,SQ_045
+NPC_FISCHERIN_TJARKE,–,Fischerin Tjarke,Quest,–,SET_V_MOEWENHUK,R06,Fischer,Voiced,1,SQ_069
+NPC_FORSCHERIN_LIV,–,Meeresforscherin Liv,Quest,–,SET_O_RIFFPOSTEN,R06,Gelehrt,Voiced,2,SQ_083
+NPC_FORSCHER_IDRIS,–,Forscher Idris,Quest,–,SET_O_PLATEAULAGER,R04,Gelehrt,Voiced,1,SQ_104
+NPC_FOTOGRAFIN_SIGNE,–,Fotografin Signe,Quest,–,SET_C_HVITMARK,R07,Gelehrt,Voiced,1,SQ_147
+NPC_FS_ZELLE_AERION,–,Freie Stimmen,Group,F04,SET_C_AERION,R10,Nachtvolk,Barked,1,SQ_207
+NPC_FS_ZELLE_DORUNSRUH,–,Zelle Dorunsruh,Group,F04,SET_C_DORUNSRUH,R08,Nachtvolk,Barked,2,SQ_166
+NPC_FS_ZELLE_HVITMARK,–,Zelle Hvitmark,Group,F04,SET_C_HVITMARK,R07,Nachtvolk,Barked,1,SQ_142
+NPC_FS_ZELLE_MIRSAAN,–,Zelle Mirsaan,Group,F04,SET_V_MIRSAAN,R04,Nachtvolk,Barked,1,SQ_112
+NPC_FS_ZELLE_SALTRAND,–,Fs Zelle Saltrand,Group,F04,SET_C_SALTRANDHAFEN,R06,Nachtvolk,Barked,1,SQ_088
+NPC_FS_ZELLE_SCHLACKENWEHR,–,Zelle Schlackenwehr,Group,F04,SET_C_SCHLACKENWEHR,R05,Nachtvolk,Barked,2,SQ_129
+NPC_GAERTNERIN_SOLA,–,Gärtnerin Sola,Quest,F03,SET_C_AERION,R10,Wache,Voiced,1,SQ_203
+NPC_GARDENER_1,–,Gardener 1,Trainer,–,SET_C_EICHENHALL,R01,Wache,Barked,1,SQ_020
+NPC_GARDENER_2,–,Gardener 2,Trainer,–,SET_C_EICHENHALL,R01,Wache,Barked,1,SQ_020
+NPC_GELEHRTE_OONA,–,Gelehrte Oona,Quest,F01,SET_C_MORVENFURT,R03,Gelehrt,Voiced,3,SQ_047
+NPC_GEZEITENPRUEFER_1,–,Gezeitenpruefer 1,Trainer,–,SET_C_SALTRANDHAFEN,R06,Wache,Barked,1,SQ_085
+NPC_GEZEITENPRUEFER_2,–,Gezeitenpruefer 2,Trainer,–,SET_C_SALTRANDHAFEN,R06,Wache,Barked,1,SQ_085
+NPC_GIESSER_BRAM,–,Glockengießer Bram,Quest,–,SET_C_SCHLACKENWEHR,R05,Schicht,Voiced,1,SQ_116
+NPC_GLETSCHERWART_TORA,–,Gletscherwartin Tora,Quest,F03,SET_O_GLETSCHERWACHT,R07,Wache,Voiced,3,SQ_134
+NPC_GLYPHENFECHTER_IVO,–,Glyphenfechter Ivo,Trainer,–,SET_C_DORUNSRUH,R08,Wache,Barked,1,SQ_169
+NPC_GLYPHENSTUDENTIN_MAREK,–,Glyphenstudent Marek,Quest,–,SET_V_THAELUUN,R08,Gelehrt,Voiced,1,SQ_155
+NPC_GRABUNGSHELFER_TAMIR,–,Grabungshelfer Tamir,Quest,–,SET_V_ASHURIM,R04,Karawane,Voiced,1,SQ_099
+NPC_GRABUNGSWACHE_ODO,–,Grabungswache Odo,Trainer,–,R04_Z03,R04,Wache,Barked,1,SQ_097
+NPC_GUNNHILD,–,Gunnhild,Quest,F05,LOC_KLOSTER_SCHWEIGFELS,R07,Kloster,SlateWritten,0,–
+NPC_HAENDLER_BRISK,–,Haendler Brisk,Quest,–,R01_Z03,R01,Tagwerk,Voiced,1,SQ_011
+NPC_HALLA,–,Halla,Village,–,SET_V_EIDVIKNEU,R07,Tagwerk,Voiced,1,SQ_143
+NPC_HEDDA,–,Bäckerin Hedda,Village,–,SET_V_LINDWIESEN,R01,Tagwerk,Voiced,0,–
+NPC_HIRTE_HALVAR,–,Hirte Halvar,Quest,F03,SET_V_FJALLSTAD,R07,Wache,Voiced,1,SQ_140
+NPC_HIRTIN_NAJLA,–,Hirtin Najla,Quest,–,SET_V_ASHURIM,R04,Hirte,Voiced,1,SQ_092
+NPC_HRALDA,–,Hralda Brakk,Story,F03,SET_C_EICHENHALL,R01,Wache,Voiced,2,MQ_A1_01
+NPC_ILYX,NPC_R09_ILYX_TUTOR,Ilyx Brannoc,Arena,–,SET_C_PRISMARA,R09,Tagwerk,Voiced,3,MQ_A3_01
+NPC_IMKERIN_HILDE,–,Imkerin Hilde,Quest,–,SET_V_LINDWIESEN,R01,Tagwerk,Voiced,2,SQ_007
+NPC_IMRAN,–,Imran,Village,–,SET_V_ASHURIM,R04,Karawane,Voiced,0,–
+NPC_JOST,–,Müller Jost,Village,–,SET_V_LINDWIESEN,R01,Tagwerk,Voiced,0,–
+NPC_KAEL,–,Kael Duran,Story,F01,SET_V_LINDWIESEN,R01,Gelehrt,Voiced,2,MQ_A1_01
+NPC_KALDREX,–,Kaldrex Vorn,Arena,–,SET_C_SCHLACKENWEHR,R05,Schicht,Voiced,1,SQ_128
+NPC_KARAWANENKAEMPFER_ZAHIR,–,Karawanenkaempfer Zahir,Trainer,–,SET_V_HARRAD,R04,Wache,Barked,1,SQ_108
+NPC_KESH,–,Dünenbauer Kesh,Village,–,SET_V_MIRSAAN,R04,Tagwerk,Voiced,0,–
+NPC_KIND_TAMSIN,–,Tamsin,Quest,F01,SET_C_DORUNSRUH,R08,Gelehrt,Voiced,2,SQ_051
+NPC_KLANKRIEGER_1,–,Klankrieger 1,Trainer,–,R02_Z02,R02,Wache,Barked,1,SQ_042
+NPC_KLANKRIEGER_2,–,Klankrieger 2,Trainer,–,R02_Z02,R02,Wache,Barked,1,SQ_042
+NPC_KLANPRUEFER_ASKE,–,Klanpruefer Aske,Trainer,–,SET_C_KHARSHOLM,R02,Wache,Barked,1,SQ_035
+NPC_KONTORAGENTIN_RIEKE,–,Kontoragentin Rieke,Quest,F02,SET_C_PRISMARA,R09,Tagwerk,Voiced,2,SQ_183
+NPC_KRATERWART_OSK,–,Kraterwart Osk,Quest,–,SET_O_KRATERRANDPOSTEN,R05,Wache,Voiced,1,SQ_120
+NPC_KRISTALLKUNDLERIN_MAJA,–,Kristallkundlerin Maja,Quest,–,SET_V_KALDRA,R05,Tagwerk,Voiced,1,SQ_126
+NPC_KUTSCHERIN_ALMA,–,Kutscherin Alma,Quest,–,SET_V_BRAKKFELS,R02,Tagwerk,Voiced,1,SQ_044
+NPC_LABORLEITERIN_SANNE,–,Laborleiterin Sanne,Quest,F01,SET_C_PRISMARA,R09,Gelehrt,Voiced,3,SQ_173
+NPC_LANDBESITZER_GRIM,–,Landbesitzer Grim,Quest,–,R05_Z02,R05,Tagwerk,Voiced,1,SQ_131
+NPC_LEHRERIN_DALIA,–,Lehrerin Dalia,Quest,–,SET_V_MIRSAAN,R04,Tagwerk,Voiced,1,SQ_093
+NPC_LEHRLING_MIKKEL,–,Akademie-Lehrling Mikkel,Quest,–,SET_O_ERZGRATHUETTE,R02,Gelehrt,Voiced,1,SQ_038
+NPC_LEIF,–,Leif,Village,–,SET_V_FJALLSTAD,R07,Tagwerk,Voiced,1,SQ_144
+NPC_LEUCHTWART_FOKKE,–,Leuchtwart Fokke,Quest,–,SET_O_LEUCHTFELSENWACHT,R06,Wache,Voiced,1,SQ_071
+NPC_LINA,–,Lina,Quest,–,SET_V_LINDWIESEN,R01,Kind,Voiced,1,SQ_002
+NPC_LORCAN,–,Lorcan,Village,–,SET_V_FENNHAVEN,R03,Tagwerk,Voiced,0,–
+NPC_LUND,–,Grabungsleiterin Saphira Lund,Quest,F01,SET_O_GLASEBENETURM,R04,Gelehrt,Voiced,4,SQ_091
+NPC_MAELIS,–,Maelis Wendt,Arena,–,SET_C_EICHENHALL,R01,Tagwerk,Voiced,1,SQ_020
+NPC_MALVA,–,Kurwirtin Malva,Village,–,SET_V_KALDRA,R05,Tagwerk,Voiced,0,–
+NPC_MAREN,–,Maren,Quest,–,SET_V_LINDWIESEN,R01,Tagwerk,Voiced,1,SQ_012
+NPC_MARIEKE,NPC_R06_MARIEKE_OFFICE,Marieke Holm,Story,F02,SET_C_SALTRANDHAFEN,R06,Tagwerk,Voiced,7,MQ_A1_05
+NPC_MARLENE,–,Marlene,Village,–,SET_V_TANGWERFT,R06,Tagwerk,Voiced,0,–
+NPC_MESSER_HAKON,–,Messmeister Hakon,Quest,F01,SET_C_KHARSHOLM,R02,Gelehrt,Voiced,2,SQ_025
+NPC_MOORKOENIG_ORRIN,–,Moorkoenig Orrin,Trainer,–,R03_Z05,R03,Wache,Barked,1,SQ_064
+NPC_NADIRA,–,Brunnenwächterin Nadira,Village,–,SET_V_HARRAD,R04,Wache,Voiced,0,–
+NPC_NEBELPRUEFER_1,–,Nebelpruefer 1,Trainer,–,SET_C_MORVENFURT,R03,Wache,Barked,1,SQ_062
+NPC_NETZKNUEPFER_HARM,–,Netzknuepfer Harm,Trainer,–,R06_Z03,R06,Wache,Barked,1,SQ_089
+NPC_NOTAR_BASIM,–,Notar Basim,Quest,–,SET_V_MIRSAAN,R04,Tagwerk,Voiced,1,SQ_110
+NPC_OKKO,–,Okko,Village,–,SET_V_MOEWENHUK,R06,Tagwerk,Voiced,0,–
+NPC_ORDENSANHAENGERIN_SOLVEIG,–,Ordensanhaengerin Solveig,Quest,–,SET_C_HVITMARK,R07,Tagwerk,Voiced,1,SQ_141
+NPC_ORDENSPOSTEN_BRUDER_EIK,–,Ordensposten Bruder Eik,Quest,–,R07_Z03,R07,Tagwerk,Voiced,1,SQ_136
+NPC_ORUMA,NPC_R10_ORUMA_TUTOR,Oruma Siyel,Arena,–,SET_C_AERION,R10,Tagwerk,Voiced,2,SQ_200
+NPC_OSSIAN,–,Kontorschreiber Ossian,Quest,F02,SET_C_EICHENHALL,R01,Tagwerk,Voiced,3,SQ_007
+NPC_PASSWART_JORN,–,Passwart Jorn,Quest,F03,SET_O_PASSWACHTNORD,R02,Wache,Voiced,10,SQ_037
+NPC_PELL,NPC_R08_PELL,Archivarin Pell,Quest,F01,SET_C_EICHENHALL,R01,Gelehrt,Voiced,5,SQ_001
+NPC_PERLENSCHLEIFERIN_ANKE,–,Perlenschleiferin Anke,Quest,–,SET_C_SALTRANDHAFEN,R06,Tagwerk,Voiced,1,SQ_088
+NPC_PRISMENPRUEFER_1,–,Prismenpruefer 1,Trainer,–,SET_C_PRISMARA,R09,Wache,Barked,1,SQ_188
+NPC_PROFESSOR_ALBRECHT,–,Professor Albrecht,Quest,–,SET_C_DORUNSRUH,R08,Gelehrt,Voiced,1,SQ_156
+NPC_R01_ANSELM,–,Anselm – Schnitzerei Anselm,Merchant,–,SET_C_EICHENHALL,R01,Tagwerk,Voiced,1,SQ_008
+NPC_R01_GRETA,–,Greta – Wildwacht-Kammer,Merchant,–,SET_C_EICHENHALL,R01,Wache,Voiced,1,SQ_010
+NPC_R01_LORIN,–,Lorin – Lindenapotheke,Merchant,–,SET_C_EICHENHALL,R01,Tagwerk,Voiced,1,SQ_016
+NPC_R01_ODO,–,Odo – Zum Wurzelkrug,Merchant,–,SET_C_EICHENHALL,R01,Nachtvolk,Voiced,2,SQ_006
+NPC_R01_TILDA,–,Tilda – Harzhaus,Merchant,–,SET_C_EICHENHALL,R01,Tagwerk,Voiced,0,–
+NPC_R01_WENDEL,–,Wendel – Wendels Wärterbedarf,Merchant,–,SET_C_EICHENHALL,R01,Tagwerk,Voiced,0,–
+NPC_R02_BRANN,–,Brann – Brann & Söhne,Merchant,–,SET_C_KHARSHOLM,R02,Schicht,Voiced,0,–
+NPC_R02_GERD,–,Gerd – Halle der Klans,Merchant,F03,SET_C_KHARSHOLM,R02,Nachtvolk,Voiced,4,SQ_025
+NPC_R02_HRALDA_SMITH,–,Hralda Smith – Grollschmiede,Merchant,–,SET_C_KHARSHOLM,R02,Schicht,Voiced,1,SQ_034
+NPC_R02_TOVA,–,Tova – Erzkontor,Merchant,F02,SET_C_KHARSHOLM,R02,Schicht,Voiced,4,SQ_029
+NPC_R02_YRSA,–,Yrsa – Ahnenstein-Tutorin,Merchant,–,SET_C_KHARSHOLM,R02,Schicht,Voiced,2,SQ_030
+NPC_R03_CORRACH,–,Corrach – Moorweise Corrach,Merchant,–,SET_C_MORVENFURT,R03,Nachtvolk,Voiced,2,SQ_052
+NPC_R03_DUVA,–,Duva – Fischhalle Duva,Merchant,–,SET_C_MORVENFURT,R03,Nachtvolk,Voiced,0,–
+NPC_R03_FINN,–,Finn – Bootsbauer Finn,Merchant,–,SET_C_MORVENFURT,R03,Nachtvolk,Voiced,1,SQ_050
+NPC_R03_NIALLA,–,Nialla – Laternensteg,Merchant,–,SET_C_MORVENFURT,R03,Nachtvolk,Voiced,1,SQ_048
+NPC_R03_SHADE,–,Der Schatten,Merchant,F04,SET_C_MORVENFURT,R03,Nachtvolk,Voiced,7,SQ_055
+NPC_R04_AMARA,–,Amara – Karawanserei Amara,Merchant,F02,SET_C_QASRSAHRUN,R04,Nachtvolk,Voiced,3,SQ_098
+NPC_R04_HARUN,–,Harun – Sterndeuter Harun,Merchant,–,SET_C_QASRSAHRUN,R04,Nachtvolk,Voiced,2,SQ_094
+NPC_R04_IMRA,–,Imra – Lichttutorin Imra,Merchant,–,SET_C_QASRSAHRUN,R04,Nachtvolk,Voiced,0,–
+NPC_R04_MIRSA,–,Mirsa – Gewänder Mirsa,Merchant,–,SET_C_QASRSAHRUN,R04,Nachtvolk,Voiced,0,–
+NPC_R04_SAYA,–,Saya – Brunnenküche,Merchant,–,SET_C_QASRSAHRUN,R04,Nachtvolk,Voiced,1,SQ_102
+NPC_R04_TAVI,–,Tavi – Glasbläserei Tavi,Merchant,–,SET_C_QASRSAHRUN,R04,Nachtvolk,Voiced,1,SQ_101
+NPC_R05_ASHA,–,Asha – Glutnarben-Tutorin Asha,Merchant,–,SET_C_SCHLACKENWEHR,R05,Schicht,Voiced,1,SQ_122
+NPC_R05_ITHREN,–,Ithren – Wehrmarkt Ithren,Merchant,F02,SET_C_SCHLACKENWEHR,R05,Schicht,Voiced,1,SQ_115
+NPC_R05_KALDREX_GUILD,–,Kaldrex Guild – Zunfthalle der Schmiede,Merchant,F02,SET_C_SCHLACKENWEHR,R05,Schicht,Voiced,2,SQ_119
+NPC_R05_SERAPHE,–,Seraphe – Thermen Seraphe,Merchant,–,SET_C_SCHLACKENWEHR,R05,Schicht,Voiced,2,SQ_118
+NPC_R05_VOLK,–,Volk – Erzwaage Volk,Merchant,F02,SET_C_SCHLACKENWEHR,R05,Schicht,Voiced,1,SQ_113
+NPC_R06_BEKE_FISH,–,Beke Fish – Fischmarkt,Merchant,–,SET_C_SALTRANDHAFEN,R06,Tagwerk,Voiced,1,SQ_079
+NPC_R06_HAUKE,–,Hauke – Taucherbedarf Hauke,Merchant,–,SET_C_SALTRANDHAFEN,R06,Fischer,Voiced,1,SQ_073
+NPC_R06_JONTE,–,Jonte – Kontor am Kai,Merchant,–,SET_C_SALTRANDHAFEN,R06,Tagwerk,Voiced,0,–
+NPC_R06_KLAAS,–,Klaas – Werftmeister Klaas,Merchant,F02,SET_C_SALTRANDHAFEN,R06,Tagwerk,Voiced,2,SQ_070
+NPC_R06_ODALIS,–,Odalis – Kuriositäten Odalis,Merchant,–,SET_C_SALTRANDHAFEN,R06,Tagwerk,Voiced,1,SQ_077
+NPC_R07_ASKEL,–,Askel – Eisfischer Askel,Merchant,–,SET_C_HVITMARK,R07,Fischer,Voiced,1,SQ_133
+NPC_R07_ASTRID,–,Sprecherin Astrid Eiðsen,Quest,–,SET_C_HVITMARK,R07,Tagwerk,Voiced,2,SQ_134
+NPC_R07_EIRIK,–,Eirik – Silberschmied Eirik,Merchant,–,SET_C_HVITMARK,R07,Schicht,Voiced,1,SQ_139
+NPC_R07_HALDOR,–,Haldor – Langhaus-Handel Haldor,Merchant,–,SET_C_HVITMARK,R07,Tagwerk,Voiced,0,–
+NPC_R07_IVRA,–,Ivra – Ordensladen Schweigfels,Merchant,–,LOC_KLOSTER_SCHWEIGFELS,R07,Tagwerk,Voiced,0,–
+NPC_R07_RUNA,–,Runa – Runa die Erinnernde,Merchant,–,SET_C_HVITMARK,R07,Nachtvolk,Voiced,3,SQ_132
+NPC_R07_YLVA,–,Ylva – Wollstube Ylva,Merchant,–,SET_C_HVITMARK,R07,Tagwerk,Voiced,1,SQ_137
+NPC_R08_ACADEMY_STORE,–,Academy Store – Akademie-Kammer,Merchant,–,SET_C_DORUNSRUH,R08,Tagwerk,Voiced,0,–
+NPC_R08_GRAVE,–,Grave – Hehler Grave,Merchant,–,SET_C_DORUNSRUH,R08,Nachtvolk,Voiced,1,SQ_161
+NPC_R08_MENSA,–,Mensa – Mensa der Akademie,Merchant,–,SET_C_DORUNSRUH,R08,Tagwerk,Voiced,0,–
+NPC_R08_MIRA,–,Mira – Grabungsbedarf Mira,Merchant,–,SET_C_DORUNSRUH,R08,Tagwerk,Voiced,0,–
+NPC_R09_BRANNOC_SR,–,Brannoc Sr – Stimmwerkstatt Brannoc,Merchant,F01,SET_C_PRISMARA,R09,Gelehrt,Voiced,1,SQ_179
+NPC_R09_DELVE,–,Delve – Pilzküche Delve,Merchant,–,SET_C_PRISMARA,R09,Tagwerk,Voiced,0,–
+NPC_R09_QUILL,–,Quill – Glasbläserin Quill,Merchant,F02,SET_C_PRISMARA,R09,Tagwerk,Voiced,2,SQ_178
+NPC_R09_SEREN,–,Seren – Kristallmarkt Seren,Merchant,F01,SET_C_PRISMARA,R09,Gelehrt,Voiced,4,SQ_173
+NPC_R10_AELIA,–,Aelia – Windhandel Aelia,Merchant,F02,SET_C_AERION,R10,Tagwerk,Voiced,2,SQ_194
+NPC_R10_BRISK,–,Brisk – Federschneiderei Brisk,Merchant,F04,SET_C_AERION,R10,Nachtvolk,Voiced,1,SQ_209
+NPC_R10_LUMEN,–,Lumen – Sternenküche,Merchant,–,SET_C_AERION,R10,Nachtvolk,Voiced,0,–
+NPC_R10_SIYEL_ARCHIVE,–,Siyel Archive – Archiv der Baumeister,Merchant,F01,SET_C_AERION,R10,Gelehrt,Voiced,2,SQ_195
+NPC_RAGNA,–,Kapitänin Ragna,Quest,F02,SET_C_SALTRANDHAFEN,R06,Fischer,Voiced,4,SQ_080
+NPC_RENNFLIEGER_KESTREL,–,Rennflieger Kestrel,Trainer,–,R10_Z02,R10,Wache,Barked,1,SQ_206
+NPC_SALZMEISTERIN_FARAH,–,Salzmeisterin Farah,Quest,–,SET_V_HARRAD,R04,Tagwerk,Voiced,2,SQ_109
+NPC_SALZSIEDER_OLE,–,Salzsieder Ole,Quest,–,SET_V_TANGWERFT,R06,Tagwerk,Voiced,1,SQ_090
+NPC_SCHLEIFERIN_NYX,–,Schleiferin Nyx,Village,–,SET_V_QUARZGRUND,R09,Tagwerk,Voiced,1,SQ_174
+NPC_SCHMIEDEGESELLE_1,–,Schmiedegeselle 1,Trainer,–,SET_C_SCHLACKENWEHR,R05,Wache,Barked,1,SQ_128
+NPC_SCHMIEDEGESELLE_2,–,Schmiedegeselle 2,Trainer,–,SET_C_SCHLACKENWEHR,R05,Wache,Barked,1,SQ_128
+NPC_SCHMIEDIN_ISOLDE,–,Schmiedin Isolde,Quest,–,SET_V_VORTHAX,R05,Schicht,Voiced,1,SQ_114
+NPC_SCHULDNER_ROAN,–,Schuldner Roan,Quest,–,SET_C_MORVENFURT,R03,Nachtvolk,Voiced,1,SQ_055
+NPC_SCHWESTER_IVRA,–,Schwester Ivra,Quest,F05,LOC_KLOSTER_SCHWEIGFELS,R07,Kloster,SlateWritten,12,SQ_066
+NPC_SERETH,–,Sereth Vaun,Story,F05,LOC_KLOSTER_SCHWEIGFELS,R07,Kloster,Voiced,2,MQ_A2_04
+NPC_SHIRAH,–,Shirah Harrad,Arena,–,SET_C_QASRSAHRUN,R04,Nachtvolk,Voiced,2,SQ_096
+NPC_SIEGELSCHNEIDER_EDO,–,Siegelschneider Edo,Quest,–,SET_V_MOEWENHUK,R06,Tagwerk,Voiced,1,SQ_074
+NPC_SIGGA,–,Sigga,Quest,–,SET_V_BRAKKFELS,R02,Tagwerk,Voiced,1,SQ_026
+NPC_SIGRUN,–,Sigrun Fjall,Arena,–,SET_C_HVITMARK,R07,Tagwerk,Voiced,1,SQ_149
+NPC_SPIEGELTRAEGER_1,–,Spiegeltraeger 1,Trainer,–,SET_C_QASRSAHRUN,R04,Wache,Barked,1,SQ_106
+NPC_SPIEGELTRAEGER_2,–,Spiegeltraeger 2,Trainer,–,SET_C_QASRSAHRUN,R04,Wache,Barked,1,SQ_106
+NPC_STADTRAETIN_MAIRE,–,Stadtraetin Maire,Quest,–,SET_C_MORVENFURT,R03,Nachtvolk,Voiced,1,SQ_061
+NPC_STAMMGAST_ALDO,–,Stammgast Aldo,Quest,–,SET_C_SCHLACKENWEHR,R05,Schicht,Voiced,1,SQ_124
+NPC_STEIGER_BRANNOC,–,Steiger Brannoc d. Ä.,Village,F03,SET_V_GLANZSCHACHT,R09,Wache,Voiced,3,SQ_180
+NPC_STEINBRECHER_ARNULF,–,Steinbrecher Arnulf,Quest,–,R01_Z04,R01,Tagwerk,Voiced,1,SQ_023
+NPC_STERNPRUEFER_1,–,Sternpruefer 1,Trainer,–,SET_C_AERION,R10,Wache,Barked,1,SQ_208
+NPC_STERNPRUEFER_2,–,Sternpruefer 2,Trainer,–,SET_C_AERION,R10,Wache,Barked,1,SQ_208
+NPC_STERNWAERTER_ELUN,–,Sternwärter Elun,Village,F01,SET_V_LUMEYA,R10,Gelehrt,Voiced,3,SQ_191
+NPC_STIMMER_JOREN,–,Stimmer Joren,Quest,–,SET_V_GLANZSCHACHT,R09,Tagwerk,Voiced,1,SQ_189
+NPC_STUDENTIN_HELKE,–,Studentin Helke,Quest,F01,SET_C_DORUNSRUH,R08,Gelehrt,Voiced,2,SQ_156
+NPC_SVALA,–,Hirtin Svala,Village,–,SET_V_HRALLSTED,R02,Hirte,Voiced,0,–
+NPC_TANGSAMMLERIN_GESA,–,Tangsammlerin Gesa,Quest,–,SET_V_TANGWERFT,R06,Fischer,Voiced,1,SQ_075
+NPC_TAVESH,–,Tavesh Amaru,Story,F04,SET_C_MORVENFURT,R03,Nachtvolk,Voiced,4,MQ_A1_04
+NPC_THESSA,–,Thessa,Village,–,SET_V_VORTHAX,R05,Tagwerk,Voiced,0,–
+NPC_TORBEN,–,Holzfäller Torben,Quest,–,SET_O_URALTHAINLAGER,R01,Tagwerk,Voiced,1,SQ_004
+NPC_TORFSTECHER_BRAN,–,Torfstecher Bran,Quest,–,SET_V_DUVRETH,R03,Tagwerk,Voiced,1,SQ_060
+NPC_TORVIK,–,Torvik Hrall,Arena,–,SET_C_KHARSHOLM,R02,Schicht,Voiced,1,SQ_042
+NPC_UHRMACHER_ODIL,–,Uhrmacher Odil,Quest,–,SET_V_SAEULENRAST,R08,Tagwerk,Voiced,2,SQ_153
+NPC_ULF_BRAKK,–,Ulf Brakk,Village,–,SET_V_BRAKKFELS,R02,Tagwerk,Voiced,1,SQ_033
+NPC_ULREK,–,Ulrek,Story,F05,LOC_KLOSTER_SCHWEIGFELS,R07,Kloster,Voiced,1,SQ_148
+NPC_VENN,–,Aldric Venn,Story,F01,SET_C_DORUNSRUH,R08,Gelehrt,Voiced,3,MQ_A1_07
+NPC_WAERTERIN_GRETE,–,Waerterin Grete,Quest,–,SET_C_HVITMARK,R07,Tagwerk,Voiced,1,SQ_141
+NPC_WANDERER_PIET,–,Wanderer Piet,Quest,–,SET_O_PASSWACHTNORD,R02,Tagwerk,Voiced,1,SQ_043
+NPC_WERFT_NORD,–,Werft Nord,Trainer,–,R06_Z02,R06,Wache,Barked,1,SQ_087
+NPC_WERFT_SUED,–,Werft Sued,Trainer,–,R06_Z02,R06,Wache,Barked,1,SQ_087
+NPC_WIEBKE,–,Prokuristin Wiebke,Quest,F02,SET_C_SALTRANDHAFEN,R06,Tagwerk,Voiced,5,SQ_072
+NPC_WILDWAECHTERIN_EILA,–,Wildwächterin Eila,Quest,F03,SET_O_ASCHEHUETTE,R05,Wache,Voiced,2,SQ_123
+NPC_WILDWAECHTER_BOAZ,–,Wildwächter Boaz,Quest,F03,SET_O_ARCHONTENWACHT,R08,Wache,Voiced,3,SQ_164
+NPC_WINDSEGLERIN_RIA,–,Windseglerin Ria,Village,–,SET_V_WOLKENRAST,R10,Fischer,Voiced,2,SQ_192
+NPC_WITWE_ALKE,–,Alke,Quest,–,SET_V_MOEWENHUK,R06,Tagwerk,Voiced,1,SQ_081
+NPC_YSOLDE,–,Ysolde Varn,Story,F03,SET_V_LINDWIESEN,R01,Wache,Voiced,4,MQ_A2_05

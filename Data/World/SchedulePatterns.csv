@@ -1,0 +1,15 @@
+# Tagesablauf-Muster (K11 §3.2, erweitert K53 §4). H00–H23 = Aktivität je Spielstunde. Codes: Sleep Wake Work Meal Free Tavern Market Home Patrol Shift Lecture Lab Library Read Silence Fish Herd School Play Travel Rest.
+Name,Description,H00,H01,H02,H03,H04,H05,H06,H07,H08,H09,H10,H11,H12,H13,H14,H15,H16,H17,H18,H19,H20,H21,H22,H23
+Tagwerk,"Händler, Handwerk (K11 §3.2)",Sleep,Sleep,Sleep,Sleep,Sleep,Wake,Wake,Wake,Work,Work,Work,Work,Meal,Meal,Work,Work,Work,Work,Tavern,Tavern,Tavern,Tavern,Sleep,Sleep
+Schicht,"Gruppe A/B/C wechselt um 6/14/22 Uhr (Kharsholm, Schlackenwehr)",Sleep,Sleep,Sleep,Sleep,Sleep,Wake,Work,Work,Work,Work,Work,Work,Work,Work,Meal,Free,Free,Free,Free,Tavern,Tavern,Sleep,Sleep,Sleep
+SchichtA,"Schicht A (6–14)",Sleep,Sleep,Sleep,Sleep,Sleep,Wake,Work,Work,Work,Work,Work,Work,Work,Work,Meal,Free,Free,Free,Free,Tavern,Tavern,Sleep,Sleep,Sleep
+SchichtB,"Schicht B (14–22)",Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Wake,Wake,Free,Free,Meal,Work,Work,Work,Work,Work,Work,Work,Work,Tavern,Sleep
+SchichtC,"Schicht C (22–6)",Work,Work,Work,Work,Work,Work,Meal,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Wake,Free,Free,Free,Meal,Tavern,Tavern,Work,Work
+Nachtvolk,"Morvenfurt, Qasr Sahrun, Freie Stimmen",Market,Market,Market,Market,Work,Home,Home,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Wake,Wake,Meal,Meal,Work,Work,Market,Market,Market,Market
+Wache,"Wildwacht, Stadtwache, Prüfer",Patrol,Patrol,Patrol,Patrol,Patrol,Shift,Meal,Patrol,Patrol,Patrol,Patrol,Patrol,Meal,Meal,Patrol,Patrol,Patrol,Patrol,Shift,Sleep,Sleep,Sleep,Sleep,Sleep
+Gelehrt,"Akademie",Read,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Lecture,Lecture,Lecture,Lecture,Meal,Meal,Lab,Lab,Lab,Lab,Library,Library,Library,Library,Read,Read
+Kloster,"Orden der Stille (Stille Stunden 4–6, 12, 18–20)",Sleep,Sleep,Sleep,Sleep,Silence,Silence,Work,Work,Work,Work,Work,Meal,Silence,Work,Work,Work,Work,Work,Silence,Silence,Meal,Sleep,Sleep,Sleep
+Fischer,"Küste, Seen, Fähren",Sleep,Sleep,Sleep,Wake,Fish,Fish,Fish,Fish,Fish,Market,Market,Market,Meal,Sleep,Sleep,Sleep,Work,Work,Work,Fish,Fish,Tavern,Tavern,Sleep
+Hirte,"Herden, Weiden",Sleep,Sleep,Sleep,Sleep,Sleep,Wake,Herd,Herd,Herd,Herd,Herd,Herd,Meal,Herd,Herd,Herd,Herd,Herd,Herd,Home,Home,Sleep,Sleep,Sleep
+Kind,"Kinder",Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Sleep,Wake,School,School,School,School,Meal,Play,Play,Play,Play,Play,Play,Home,Home,Sleep,Sleep,Sleep
+Karawane,"Wanderdorf Ashurim, Karawanen",Sleep,Sleep,Sleep,Sleep,Travel,Travel,Travel,Travel,Travel,Rest,Rest,Rest,Rest,Rest,Travel,Travel,Travel,Travel,Market,Market,Market,Tavern,Sleep,Sleep

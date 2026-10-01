@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K52
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K53
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -417,6 +417,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-198 | Deterministische Spawnauswahl über Fork(2) | K52 |
 | ADR-199 | Ökologie-Fragmente generiert, überschreibbar | K52 |
 | ADR-200 | Vier Sim-Stufen (Actor, MassNear, MassFar, Statistisch) | K52 |
+| ADR-201 | NPC-Register aus Daten generiert | K53 |
+| ADR-202 | Händler-IDs kanonisch, Mehrfachrollen als Aliasse | K53 |
+| ADR-203 | NPC-Reaktionen deterministisch je (NPC, Tag, Reiz) | K53 |
+| ADR-204 | NPC-Zustandswechsel nur außerhalb der Sicht | K53 |
+| ADR-205 | Keine Gewalt-/Diebstahlsysteme gegen NPCs | K53 |
 
 ## §11 Change Requests
 
@@ -1898,3 +1903,23 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §200 Sim-LOD (LOCKED, K52 §10)
 
 - Actor < 150 m/Interaktion (PS5 40 / Switch 2 16) · MassNear 150–500 m, 4 Hz (400/120) · MassFar bis Streaming-Grenze, 1 Hz (1.500/400) · Statistisch je (Zone, Art), Tagestakt. Hysterese 30 m, Actor-Pool 8 je Archetyp. Ökologie-Budget ≤ 1,6 ms (PS5) / 2,2 ms (Switch 2). Prozessoren Spawn, Perception, GroupSteering, Behavior, LOD, Population (ADR-200).
+
+## §201 NPC-Klassen & Register (LOCKED, K53 §2–§3 · `Data/World/Npcs.csv`, `tools/gen_npcs.py`)
+
+- Klassen: Story (9), Arenameister (10), Quest-NPC, Händler (55), Dorf-Schlüssel (23), Prüfer/Kämpfer, Rollen-NPC, Mass-Bevölkerung. Register generiert aus Quests, Händlern, Arenen, Fraktionen, Dörfern (ADR-201); Händler-IDs K11/K12 kanonisch, Mehrfachrollen als Aliasse (`NPC_R08_PELL` → `NPC_PELL`, `NPC_R08_AEVRIN_TUTOR` → `NPC_AEVRIN`, `NPC_R09_ILYX_TUTOR` → `NPC_ILYX`, `NPC_R10_ORUMA_TUTOR` → `NPC_ORUMA`, `NPC_R06_MARIEKE_OFFICE` → `NPC_MARIEKE`) (ADR-202). Quest-IDs auf Händler-IDs umgestellt: Odo, Lorin, Greta, Anselm (R01), Amara, Harun (R04), Seren (R09). Validator NP-01–NP-05.
+
+## §202 Tagesabläufe (LOCKED, K53 §4 · `SchedulePatterns.csv`)
+
+- Muster: Tagwerk, Schicht (A/B/C, 8 h Versatz, Wechsel 6/14/22), Nachtvolk, Wache (Schichtgruppen), Gelehrt, Kloster (Stille Stunden 4–6, 12, 18–20), Fischer, Hirte, Kind, Karawane. Öffnungszeiten der Händler vor Muster; Nachtläden = Nachtvolk/Fischer. `Aethris::Npc::ActivityAt` (GF_AI).
+
+## §203 Reaktionen & Gruppen (LOCKED, K53 §6, §8 · `NpcReactions.csv`)
+
+- Priorität: Bedrohung > Szene/Quest > Wetter > Fest > Spieler > Plan. Wetterchancen laut CANON §62 (Regen 600 ‰, Gewitter 850 ‰, Siesta, Tore zu). Auswahl deterministisch je (NPC, Spieltag, Reiz) (ADR-203). Zustandswechsel nur außerhalb der Sicht (ADR-204). Keine Gewalt-/Diebstahlsysteme gegen NPCs (ADR-205). Gruppen: Gespräch, Familie, Karawane, Streife, Prozession, Arbeitskolonne, Fest.
+
+## §204 Barks (LOCKED, K53 §7 · `BarkTriggers.csv`)
+
+- 14 Auslöser mit Priorität, NPC-Cooldown (Spielminuten), globalem Cooldown (Echtzeit-s), Reichweite; Auswahl: Bedingung → Cooldown → Priorität → am längsten ungespielt → Hash. Jede Zeile ≤ 3× je Spielstand (außer Grüße). Umfang ~4.000 (Allgemein 900, Region 600, Story 1.200, Fraktion 500, Nebenquests ~840) + 1.200 Ende-Varianten.
+
+## §205 NPC-Technik (LOCKED, K53 §11)
+
+- `UNpcScheduleSubsystem`, StateTree „NPC“, `UNpcCrowdSubsystem` (Mass + Zone Graph), `UBarkSubsystem`. LOD: Voll < 25 m, Nah 25–80 m, Fern 80–250 m, Aus. Budget PS5 ≤ 1,2 ms, Switch 2 ≤ 1,8 ms. Save `World.Npcs` nur Abweichungen.

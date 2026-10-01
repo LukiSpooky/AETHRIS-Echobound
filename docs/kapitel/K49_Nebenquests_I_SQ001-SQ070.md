@@ -1458,7 +1458,6 @@ Je NPC höchstens drei Geschichten; eine Fraktionskette zählt als eine Geschich
 | NPC-ID | Name | Quests |
 |---|---|---|
 | NPC_AILSA | Fährmeisterin Ailsa Duvreth | SQ_054 |
-| NPC_ANSELM | Schnitzer Anselm | SQ_008 |
 | NPC_BRANDA | Bergführerin Branda | SQ_028, SQ_032 |
 | NPC_BRUECKENWART_ELWYN | Brückenwart Elwyn | SQ_056 |
 | NPC_ENNIS | Ennis Rook (Kurierin) | SQ_022, SQ_023, SQ_024, SQ_046 |
@@ -1466,17 +1465,18 @@ Je NPC höchstens drei Geschichten; eine Fraktionskette zählt als eine Geschich
 | NPC_FENJA | Zeugmeisterin Fenja | SQ_013, SQ_015, SQ_017, SQ_019, SQ_021 |
 | NPC_FISCHERIN_TJARKE | Fischerin Tjarke | SQ_069 |
 | NPC_GELEHRTE_OONA | Gelehrte Oona (Akademie) | SQ_047, SQ_049, SQ_068 |
-| NPC_GRETA | Greta (Wildwacht-Kammer) | SQ_010 |
 | NPC_LEHRLING_MIKKEL | Akademie-Lehrling Mikkel | SQ_038 |
 | NPC_LINA | Lina (Kind, Lindwiesen) | SQ_002 |
-| NPC_LORIN | Apotheker Lorin | SQ_016 |
 | NPC_MAELIS | Maelis Wendt | SQ_020 |
 | NPC_MAREN | Maren (Lindwiesen) | SQ_012 |
 | NPC_MESSER_HAKON | Messmeister Hakon (Akademie) | SQ_025, SQ_027 |
-| NPC_ODO | Wirt Odo | SQ_006, SQ_014 |
 | NPC_OSSIAN | Kontorschreiber Ossian | SQ_007, SQ_009, SQ_011 |
 | NPC_PASSWART_JORN | Passwart Jorn (Wildwacht) | SQ_037, SQ_039, SQ_041, SQ_043, SQ_044, SQ_051, SQ_053 |
 | NPC_PELL | Archivarin Pell | SQ_001, SQ_003, SQ_005, SQ_018 |
+| NPC_R01_ANSELM | Schnitzer Anselm | SQ_008 |
+| NPC_R01_GRETA | Greta (Wildwacht-Kammer) | SQ_010 |
+| NPC_R01_LORIN | Apotheker Lorin | SQ_016 |
+| NPC_R01_ODO | Wirt Odo | SQ_006, SQ_014 |
 | NPC_R02_GERD | Gerd (Halle der Klans) | SQ_036, SQ_045 |
 | NPC_R02_HRALDA_SMITH | Grollschmied Hraldur | SQ_034 |
 | NPC_R02_TOVA | Tova (Erzkontor) | SQ_029, SQ_031, SQ_033, SQ_035 |

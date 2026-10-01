@@ -301,7 +301,7 @@ Die erste Fahrt der Salzbraut gerät in einen Sturm vor der Südküste. Ragna wi
 |---|---|---|
 | 1 | Bedingung | Sturm auf See |
 | 2 | Entscheidung | Umkehren oder weiter |
-| 3 | Kampf | Einen aufgebrachten Brision-Leitbullen erschöpfen |
+| 3 | Kampf | Einen aufgebrachten Brision-Leitbullen erschöpfen (Wildkampf) |
 | 4 | Gehen | Die Bucht vor der Harrâd-Oase erreichen |
 
 **Voraussetzung:** `Quest.MQ_A1_05 & Rank.F02>=4 & Quest.SQ_080` · **Variante/Bedingung:** `Weather=Thunderstorm`
@@ -1442,7 +1442,6 @@ Vardholms ziehen jedes Jahr über das Fjallstad-Tal. Dieses Jahr fehlt der Leitb
 | NPC_HIRTE_HALVAR | Hirte Halvar (Wildwacht-Helfer) | SQ_140 |
 | NPC_HIRTIN_NAJLA | Hirtin Najla (Ashurim) | SQ_092 |
 | NPC_KALDREX | Kaldrex Vorn | SQ_128 |
-| NPC_KARAWANENFUEHRERIN_AMARA | Amara (Karawanserei) | SQ_098, SQ_105, SQ_108 |
 | NPC_KRATERWART_OSK | Kraterwart Osk | SQ_120 |
 | NPC_KRISTALLKUNDLERIN_MAJA | Kristallkundlerin Maja | SQ_126 |
 | NPC_LEUCHTWART_FOKKE | Leuchtwart Fokke | SQ_071 |
@@ -1450,6 +1449,8 @@ Vardholms ziehen jedes Jahr über das Fjallstad-Tal. Dieses Jahr fehlt der Leitb
 | NPC_MARIEKE | Marieke Holm | SQ_117, SQ_121 |
 | NPC_PASSWART_JORN | Passwart Jorn (Wildwacht) | SQ_084, SQ_086, SQ_107 |
 | NPC_R03_SHADE | Der Schatten | SQ_088, SQ_089 |
+| NPC_R04_AMARA | Amara (Karawanserei) | SQ_098, SQ_105, SQ_108 |
+| NPC_R04_HARUN | Sterndeuter Harun | SQ_094, SQ_100 |
 | NPC_R04_SAYA | Brunnenköchin Saya | SQ_102 |
 | NPC_R05_ASHA | Glutnarben-Tutorin Asha | SQ_122 |
 | NPC_R05_ITHREN | Wehrmarkt-Händler Ithren | SQ_115 |
@@ -1467,7 +1468,6 @@ Vardholms ziehen jedes Jahr über das Fjallstad-Tal. Dieses Jahr fehlt der Leitb
 | NPC_RAGNA | Kapitänin Ragna | SQ_080, SQ_082, SQ_101, SQ_103 |
 | NPC_SCHMIEDIN_ISOLDE | Schmiedin Isolde | SQ_114 |
 | NPC_SHIRAH | Shirah Harrad | SQ_096, SQ_106 |
-| NPC_STERNDEUTER_HARUN | Sterndeuter Harun | SQ_094, SQ_100 |
 | NPC_TANGSAMMLERIN_GESA | Tangsammlerin Gesa | SQ_075 |
 | NPC_TAVESH | Tavesh Amaru | SQ_127, SQ_130 |
 | NPC_WIEBKE | Prokuristin Wiebke | SQ_072, SQ_074, SQ_076, SQ_078 |

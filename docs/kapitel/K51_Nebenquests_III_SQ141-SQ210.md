@@ -1555,6 +1555,7 @@ K11 und K12 nannten je Stadt „Nebenquest-Haken“, K13 (CANON §57) Schlüssel
 | NPC_R09_BRANNOC_SR | Stimmwerkstatt Brannoc | SQ_179 |
 | NPC_R09_QUILL | Glasbläserin Quill | SQ_178, SQ_185 |
 | NPC_R09_SEREN | Kristallmarkt Seren | SQ_181 |
+| NPC_R09_SEREN | Seren Quarz (Stimmergilde) | SQ_176, SQ_177 |
 | NPC_R10_AELIA | Windhändlerin Aelia | SQ_194, SQ_197 |
 | NPC_R10_BRISK | Federschneider Brisk | SQ_209 |
 | NPC_R10_ORUMA_TUTOR | Hüterin Oruma | SQ_200 |
@@ -1564,7 +1565,6 @@ K11 und K12 nannten je Stadt „Nebenquest-Haken“, K13 (CANON §57) Schlüssel
 | NPC_SIGRUN | Sigrun Fjall | SQ_149 |
 | NPC_STEIGER_BRANNOC | Steiger Brannoc d. Ä. | SQ_180, SQ_187, SQ_189 |
 | NPC_STERNWAERTER_ELUN | Sternwärter Elun (Lumeya) | SQ_191, SQ_196, SQ_204 |
-| NPC_STIMMERGILDE_SEREN | Seren Quarz (Stimmergilde) | SQ_176, SQ_177 |
 | NPC_STUDENTIN_HELKE | Studentin Helke | SQ_156 |
 | NPC_UHRMACHER_ODIL | Uhrmacher Odil | SQ_153, SQ_159 |
 | NPC_WILDWAECHTER_BOAZ | Wildwächter Boaz | SQ_164, SQ_201, SQ_205 |

@@ -1,0 +1,16 @@
+# Bark-Auslöser (K53 §7). Priority 1 (höchste) – 5. CooldownMin = Spielminuten je NPC; GlobalCooldownS = Echtzeit-Sekunden zwischen zwei Barks in Hörweite. RangeM = Auslöseabstand.
+Name,Trigger,Priority,CooldownMin,GlobalCooldownS,RangeM,Example
+BARK_GREET,Spieler nähert sich (erstes Mal am Spieltag),4,240,6,6,„Morgen, Wärter.“
+BARK_STORY_STATE,Story-Zustand geändert (Wahrheit/Akt/Ende),1,1440,4,10,„Hast du gehört? Die Akademie…“ (nach W6)
+BARK_QUEST_AFTER,Nebenquest abgeschlossen (Quest.<ID>.After),2,720,5,10,„Seit der Wärter die Brücke gebaut hat…“
+BARK_REP_HIGH,Rufrang ≥ 4 der NPC-Fraktion (K47 §9.3),3,480,6,8,„Für dich immer, Freund der Wildwacht.“
+BARK_REP_STANCE,Story-Haltung zur Fraktion (Flag),3,480,6,8,„Du hilfst uns mehr, als du zugibst.“
+BARK_WEATHER,Wetterwechsel,3,120,8,12,„Regen. Gut für die Rillos.“
+BARK_ECHO_COMMENT,Begleiter-Echo des Spielers sichtbar,4,180,8,6,„Was für ein schönes Chimbal!“
+BARK_COMBAT_NEARBY,Kampf in < 40 m,2,30,4,40,„Pass auf, das Alpha ist gereizt!“
+BARK_STORM,Resonanzsturm beginnt,1,1440,3,30,„Die Echos singen alle zugleich… hörst du das?“
+BARK_SETTLEMENT_STATE,Siedlungszustand steigt (K13 §5),2,1440,5,15,„Endlich wieder ein Fest!“
+BARK_RUMOR,Gerücht über Nebenquest der Region (K48 §9.2),3,360,10,8,„Im Moor soll ein Irrlicht weiß leuchten…“
+BARK_SCHEDULE,Tätigkeitswechsel (Mittag, Feierabend),5,0,12,5,„Mittag! Ab in den Wurzelkrug.“
+BARK_SILENCE_ZONE,Stillezone in < 200 m,1,720,6,15,„Da drüben… alles grau.“
+BARK_ENDING,Nachhall-Variante je Ende,2,1440,5,10,„Seit dem neuen Lied klingen die Glocken anders.“
