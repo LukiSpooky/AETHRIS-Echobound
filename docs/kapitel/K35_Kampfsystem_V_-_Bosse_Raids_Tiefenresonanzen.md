@@ -137,7 +137,7 @@ Alle 28 Bosse mit berechneten HP-Werten (Anlage 15 der Basisart, Faktor, Spieler
 |---|---|---|---|---|---|---|---|---|
 | Verstummter Wächter | Lorncant (6) | 57 | ×3 | 171 | – | – | 50 % | Countdown, PhaseHeal |
 | Stillkern von Lindwald | Vernaune (14) | 101 | ×4 | 404 | – | – | 60/25 % | Countdown, Adds, SilencePulse |
-| Ordenskommandant am Kharsgrat | Kraggoth (24) | 138 | ×4 | 552 | – | – | 50 % | SilencePulse, TerrainCycle, Adds |
+| Ordenskommandant Ulrek | Kraggoth (24) | 138 | ×4 | 552 | – | – | 50 % | SilencePulse, TerrainCycle, Adds |
 | Stillkern im Morvenmoor | Umbracoil (28) | 120 | ×5 | 600 | – | – | 60/25 % | Countdown, PhaseHeal, Adds |
 | Glaskoloss der Weite | Dunmarsch (42) | 212 | ×5 | 1060 | – | – | 70/40 % | AnnounceWave, Mirror, SoftEnrage |
 | Venns Schatten (Hvitfell) | Tysvorn (50) | 198 | ×5 | 990 | – | – | 60/30 % | SilencePulse, Countdown, TimelineSteal |
@@ -174,7 +174,7 @@ Die zehn Story-Bosse folgen dem Story-Rückgrat (CANON §38). Jeder prüft eine 
 |---|---|---|---|
 | Verstummter Wächter (Lorncant) | Prolog, Lindwald | Zeitleiste, Ankündigung | Erste Begegnung mit der Stille (W1); Sieg heilt das Echo |
 | Stillkern von Lindwald (Vernaune) | Akt I, Verdanthain | Stillezähler, Adds | Die Stille breitet sich aus – Zähler = Bedrohung sichtbar |
-| Ordenskommandant am Kharsgrat (Kraggoth) | Akt I Mitte | Terrainwechsel, Stillepuls | W2: Der Orden verstärkt Zonen mit Stillsteinen |
+| Ordenskommandant Ulrek (Kraggoth) | Akt I Mitte – in der zweiten besuchten Region (R02/R03/R06) | Terrainwechsel, Stillepuls | W2: Der Orden verstärkt Zonen mit Stillsteinen |
 | Stillkern im Morvenmoor (Umbracoil) | Akt I Ende | Phasen-Heilung unterbrechen | W3: Der Riegel um Velnox schwächelt – das Moor „atmet“ Stille |
 | Glaskoloss der Weite (Dunmarsch) | Akt II | Großwelle, Spiegelung | Spur zur Hochkultur (Glasebene) |
 | Venns Schatten (Tysvorn) | Akt II, Hvitfell | Taktraub, Stillezähler | W6-Vorahnung: jemand steuert den Orden |
@@ -189,7 +189,7 @@ Die zehn Story-Bosse folgen dem Story-Rückgrat (CANON §38). Jeder prüft eine 
 
 **Stillkern von Lindwald (Akt I, Duo, Lv. 14).** *Phase 1:* Vernaune ist von Stillsteinen umgeben (2 Begleiter „Stillstein-Splitter“ mit eigener Spur, je 20 % der Boss-HP); solange beide stehen, sinkt der Zähler doppelt. *Phase 2 (< 60 %):* Stillepuls jede 3. Runde. *Phase 3 (< 25 %):* Zähler-Reset auf 4, letzte Chance. Lehre: Begleiter zuerst, Schild vor dem Puls.
 
-**Ordenskommandant am Kharsgrat (Akt I Mitte, Duo, Lv. 24).** Ein Ordensmitglied führt Kraggoth. *Phase 1:* Feldwechsel Sandsturm-artig zwischen Sumpf → Stillefeld → Schwerefeld (je 3 Runden). *Phase 2 (< 50 %):* Der Kommandant ruft Verstärkung (2 Ordens-Echos). Dialog enthüllt Stillsteine (W2). Lehre: Gegen-Terrain legen (Klangfeld neutralisiert Stillefeld).
+**Ordenskommandant Ulrek (Akt I Mitte, Duo, Lv. 24).** Der Ordenskommandant Ulrek reist mit seinem Kraggoth von Zone zu Zone und stellt sich dem Spieler in dessen **zweiter** besuchter Region (freie Reihenfolge, CANON §15). *Phase 1:* Feldwechsel Sandsturm-artig zwischen Sumpf → Stillefeld → Schwerefeld (je 3 Runden). *Phase 2 (< 50 %):* Der Kommandant ruft Verstärkung (2 Ordens-Echos). Dialog enthüllt Stillsteine (W2). Lehre: Gegen-Terrain legen (Klangfeld neutralisiert Stillefeld).
 
 **Stillkern im Morvenmoor (Akt I Ende, Trio, Lv. 28).** *Phase 1:* Umbracoil in einem versunkenen Becken; Nachklang-Heilung (Charge) jede 4. Runde. *Phase 2 (< 60 %):* Begleiter (Moorechos) setzen Anklänge, um gegen den Spieler zu kombinieren. *Phase 3 (< 25 %):* Zähler + Heilung gleichzeitig – der Spieler muss Starre/Verstummt oder Verzögerung einsetzen. Abschluss: Vision Ilens (W3).
 
@@ -203,7 +203,7 @@ Die zehn Story-Bosse folgen dem Story-Rückgrat (CANON §38). Jeder prüft eine 
 
 **Aldric Venn mit der Resonanzkrone (Akt III, Nimbara, Trio, Lv. 68).** Venn führt Kronvaal, die Krone verstärkt beide. *Phase 1:* Klangpanzer + Taktraub. *Phase 2 (< 70 %):* Stillezähler; Venns Dialog zur „Ordnung gegen Leid“ (CANON §37). *Phase 3 (< 40 %):* Resonanzflut – beide Seiten Harmonie ×2: ein Crescendo-Duell. *< 15 %:* Kael greift ein (Story: Umkehr, K46). Lehre: alle Schichten.
 
-**Velnox – die Große Pause (Finale, Trio, Lv. 70).** *Phase 1 (100–75 %):* Stillepuls und Schwerebrunnen – die Welt verstummt. *Phase 2 (< 75 %):* Die zehn Ursprungsstimmen antworten: Resonanzflut je Runde einer anderen Klangfarbe (die Stimmen helfen dem Spieler). *Phase 3 (< 50 %):* Stillezähler 3 – erreicht er 0, setzt Velnox „Große Pause“ (Harmonie 0, Stillefeld). *Phase 4 (< 25 %):* Kampf endet nicht durch HP, sondern durch die **Entscheidung** des Spielers (Nachklang zurückgeben → „Neues Lied“; Velnox wieder binden → „Sanfte Stille“, K46). Der Kampf ist nicht verlierbar, sobald Phase 4 erreicht ist (Erzählhoheit, DR-09).
+**Velnox – die Große Pause (Finale, Trio, Lv. 70).** *Phase 1 (100–75 %):* Stillepuls und Schwerebrunnen – die Welt verstummt. *Phase 2 (< 75 %):* Die zehn Ursprungsstimmen antworten: Resonanzflut je Runde einer anderen Klangfarbe (die Stimmen helfen dem Spieler). *Phase 3 (< 50 %):* Stillezähler 3 – erreicht er 0, setzt Velnox „Große Pause“ (Harmonie 0, Stillefeld). *Phase 4 (< 25 %):* Kampf endet nicht durch HP, sondern durch die **Entscheidung** des Spielers (Nachklang an die Stimmen zurückgeben → „Neues Lied“; Sereths Angebot annehmen → „Sanfte Stille“, CANON §38, K46). Der Kampf ist nicht verlierbar, sobald Phase 4 erreicht ist (Erzählhoheit, DR-09).
 
 **DR-09:** Story-Bosse sind auf „Wärter“ ohne Kombos/Formation schaffbar – Mechaniken sind über Grundwerkzeuge konterbar (Schild, Verzögern, Reihe räumen). Auf „Entspannt“ dauern Ankündigungen eine Runde länger.
 

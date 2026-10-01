@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K43
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K44
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -377,6 +377,9 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-158 | Kämpfe geben keine Wärter-EP | K43 |
 | ADR-159 | Skilltree ohne rohe Kampfkraft | K43 |
 | ADR-160 | 52 von 88 Skillkosten erreichbar | K43 |
+| ADR-161 | W2-Enthüllung dynamisch in der zweiten besuchten Region | K44 |
+| ADR-162 | Drei gleichwertige Haltungen statt Moral-Meter | K44 |
+| ADR-163 | Ysolde in Akt I präsent ohne mitzulaufen | K44 |
 
 ## §11 Change Requests
 
@@ -1571,7 +1574,7 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 ## §131 Boss-Verzeichnis (LOCKED, K35 §5–§9 · `Data/Combat/Bosses.csv`)
 
-- 28 Bosse: 10 Story (Prolog bis Velnox-Finale), 8 Raids RAID_01–08 (RAID_06 Zenthrax), 10 Tiefenresonanzen DR_01–10 (DR_08 Zenthrax solo). Raid-HP-Faktoren 10–13, Skalierung 700 ‰. Mythische Bindung im Fenster ≤ 15 % HP, instanziert je Teilnehmer; Velnox im Finale nicht bindbar (Nachhall „Stille Stunde“). Stille-Echos werden durch Sieg geheilt.
+- 28 Bosse: 10 Story (Prolog bis Velnox-Finale), 8 Raids RAID_01–08 (RAID_06 Zenthrax), 10 Tiefenresonanzen DR_01–10 (DR_08 Zenthrax solo). Raid-HP-Faktoren 10–13, Skalierung 700 ‰. Mythische Bindung im Fenster ≤ 15 % HP, instanziert je Teilnehmer; Velnox im Finale nicht bindbar (Nachhall „Stille Stunde“); Finale endet in Phase 4 durch die Entscheidung des Spielers (Neues Lied / Sanfte Stille). Stille-Echos werden durch Sieg geheilt.
 
 ## §132 Resonanzbindung – Ablauf (LOCKED, K36 §2)
 
@@ -1724,3 +1727,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §167 Skillpunkte & Neustimmung (LOCKED, K43 §6)
 
 - 52 Punkte (39 Ränge + 4 Rangboni bei 10/20/30/40 + 4 Kodex-Meilensteine + 5 Akkord-Paare); Neustimmung: erste gratis, danach 500 ◎ × ⌈Rang/10⌉; Teil-Neustimmung 1/5.
+
+## §168 Erzählprinzipien (LOCKED, K44 §2)
+
+- Freie Regionsreihenfolge mit dynamischer Mitte (W2 in der zweiten besuchten Region); Atemzug-Regel DR-29 (nach Intensität ≥ 8 folgt ≤ 4). Drei gleichwertige Haltungen (einfühlsam/neugierig/entschlossen), kein Moral-Meter; Flag-Änderungen werden nie angekündigt. Echos sind Figuren, reagieren nonverbal.
+
+## §169 Prolog (LOCKED, K44 §5 · `Data/Quests/MainQuests.csv`)
+
+- MQ_P01 Ein Ton im Dunkel, MQ_P02 Der verstummte Wächter, MQ_P03 Was der Wald erzählt; Wahrheit W1; Resonator von Ysolde; Gleiter aus der Ruine; erstes Klangfragment; ~3 h.
+
+## §170 Akt I (LOCKED, K44 §6–§7)
+
+- MQ_A1_01–09: Arena der Wurzeln, Stille über Lindwald, drei freie Regionsquests (Kharsgrat/Morvenmoor/Saltrand), Die Stillsteine (2. Region, Ordenskommandant Ulrek, Sereth, W2), Ein Riss im Lied (Venn, Kael Anwärter), Der versunkene Turm (W3, Vision Ilens), Nachklang (Zucht ab Rang 14). Ysolde präsent ohne mitzulaufen. Prolog + Akt I ≈ 18 h, Rang ~16.
+
+## §171 Story-Flags (LOCKED, K44 §8 · `Data/Quests/StoryFlags.csv`)
+
+- FS_STANCE, KAEL_TRUST, SERETH_RESPECT (−2…+2), KONTOR_DEBT, STARTER_LINE, W2_REGION; steuern Dialoge und die 4 Epilog-Varianten je Ende.

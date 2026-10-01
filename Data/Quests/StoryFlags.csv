@@ -1,0 +1,8 @@
+# Story-Flags (K44–K46): beeinflussen Epilog-Varianten (CANON §38: 2 Enden × 4 Epilog-Varianten) und Dialoge. Wert: −2 … +2 (Trust) bzw. 0/1.
+Name,DisplayName,Range,SetIn,Affects
+FLAG_FS_STANCE,Haltung zu den Freien Stimmen,-2..2,MQ_A1_04|MQ_A2_*,"Epilog Freie Stimmen verbündet/verfeindet; Tavesh im Finale"
+FLAG_KAEL_TRUST,Vertrauen Kael,-2..2,MQ_P02|MQ_A1_07|MQ_A2_*|MQ_A3_*,"Kaels Umkehr (immer), Epilog Kael gerettet/an Venns Seite verloren (nie tot)"
+FLAG_SERETH_RESPECT,Respekt Sereth,-2..2,MQ_A1_06|MQ_A2_*|MQ_A3_*,"Sereths Angebot im Finale (immer möglich), Epilog Sereth versöhnt/gebrochen"
+FLAG_KONTOR_DEBT,Schuld beim Kontor,0..1,MQ_A1_05,"Marieke Holms Gefallen in Akt II"
+FLAG_STARTER_LINE,Starterlinie,Bloom|Stone|Storm,MQ_P01,"Kaels Starter (Vorteil), Dialogvarianten"
+FLAG_W2_REGION,Region der W2-Enthüllung,R02|R03|R06,MQ_A1_06,"Ortsbezug späterer Dialoge"
