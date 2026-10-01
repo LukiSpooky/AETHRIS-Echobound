@@ -1,6 +1,6 @@
 # 00 · Kapitelplan – AETHRIS: Echobound
 
-**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K08 abgeschlossen
+**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K09 abgeschlossen
 
 Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel baut auf den vorherigen auf und darf nur Entscheidungen verwenden, die in [`CANON.md`](CANON.md) eingetragen sind (oder es trägt neue ein).
 
@@ -31,7 +31,7 @@ Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel bau
 |---|---|---|---|---|
 | K07 | World Bible I – Kosmologie, Weltlied, Geschichte | Creative Director, Narrative Writer | K04 | ✅ |
 | K08 | Weltgeographie & Makro-Layout (36 km²) | Level Designer | K07 | ✅ |
-| K09 | Biome I – Verdanthain, Kharsgrat, Morvenmoor, Sahrun-Weite, Ignareth | Level Designer, Technical Artist | K08 | ⬜ |
+| K09 | Biome I – Verdanthain, Kharsgrat, Morvenmoor, Sahrun-Weite, Ignareth | Level Designer, Technical Artist | K08 | ✅ |
 | K10 | Biome II – Saltrand, Hvitfell, Ael'Dorun, Prismtiefen, Nimbara | Level Designer, Technical Artist | K08 | ⬜ |
 | K11 | Städte I (5 Städte) | Level Designer, Narrative Writer | K09 | ⬜ |
 | K12 | Städte II (5 Städte) | Level Designer, Narrative Writer | K10 | ⬜ |

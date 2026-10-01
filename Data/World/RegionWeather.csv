@@ -1,0 +1,12 @@
+# Wettergewichte je Region in Prozent (K09/K10; Mechanik K14). Aurora nur nachts – tagsüber gezogen → Klar. Resonanzsturm (W10) nur global/storygesteuert (Gewicht 0).
+Name,Clear,Rain,Thunderstorm,Fog,Snow,Heatwave,Sandstorm,Aurora,Ashfall,ResonanceStorm
+R01,50,30,5,15,0,0,0,0,0,0
+R02,45,10,20,10,15,0,0,0,0,0
+R03,25,35,5,35,0,0,0,0,0,0
+R04,55,0,0,0,0,25,20,0,0,0
+R05,35,0,5,0,0,25,0,0,35,0
+R06,45,25,15,15,0,0,0,0,0,0
+R07,30,0,0,10,45,0,0,15,0,0
+R08,50,15,5,30,0,0,0,0,0,0
+R09,100,0,0,0,0,0,0,0,0,0
+R10,45,10,20,10,0,0,0,15,0,0

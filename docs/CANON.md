@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K08
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K09
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -262,6 +262,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-043 | Welt faltet sich zur Mitte (Akt III unter/über dem Zentrum) | K08 |
 | ADR-044 | Regionsweise Stufenfixierung beim ersten Betreten | K08 |
 | ADR-045 | Höhen auf ~40 % skaliert | K08 |
+| ADR-046 | Umweltbelastung ohne Tod, mit automatischem Rückzug | K09 |
+| ADR-047 | Typverteilung pro Region als bindende Datenvorgabe | K09 |
+| ADR-048 | Umgekehrte Tagesrhythmen als Biom-Identität (Sahrun, Morvenmoor) | K09 |
+| ADR-049 | Ressourcen-Stufen spiegeln Akt-Progression | K09 |
 
 ## §11 Change Requests
 
@@ -610,6 +614,7 @@ Spieler (trägt Ilens **Nachklang**) · Ysolde Varn (Mentorin, kennt das Erbe) �
 | Kharsholm | R02 | 4,2/2,2 | Felsstadt |
 | Morvenfurt | R03 | 5,4/4,8 | Kanalstadt, Freie Stimmen |
 | Qasr Sahrun | R04 | 4,1/5,9 | Fuß des Sonnenhof-Plateaus |
+| Q15 | Mondphasen (für seltene Spawns, z. B. Neumond in Sahrun) | K15 |
 | Schlackenwehr | R05 | 6,7/3,5 | Festungsstadt an der Lavawehr |
 | Hvitmark | R07 | 4,1/0,7 | Gletschertal; Kloster Schweigfels ≈ 3,3/1,1 |
 | Dorunsruh | R08 | 4,8/3,3 | Akademie-HQ |
@@ -634,3 +639,40 @@ Bundesstraßen: 13 Verbindungen (Wegfaktor 1,35); Weltquerung ≈ 7,3 km ≈ 29 
 - Grids: MainGrid 128 m / 768 m (Switch 2: 512 m) · FarGrid 512 m / 3 km · Underground 64 m / 256 m · Sky 256 m / 2 km; 3 HLOD-Ebenen.
 - Data Layers: `DL_Base`, `DL_Story_R##_Silence`, `DL_Story_R##_Healed`, `DL_Story_Gates`, `DL_Nachhall`, `DL_Event_*`, `DL_Editor_Blockout`.
 - Validatoren: Regionsfläche ±3 %, POI 400 m, Brunnen 800 m, Steine 900 m, Rückkehr-POIs ≥ 3, Kampfflächen alle 250 m.
+
+## §44 Biom-Template & Umweltbelastung (LOCKED, K09 §1–§2)
+
+- Biom-Template (Steckbrief, Fantasie, Visuell, Wahrzeichen, Wetter/Tageszeit, Belastung, Ökologie, Ressourcen, Kultur, Quests, Stillezone, Tech-Art/Audio) gilt für alle 10 Regionen.
+- Umweltbelastung `Exposure.Heat|Cold|Miasma|Ash|Silence`, Wert 0–100; Raten Schwach 0,5 · Mittel 1 · Stark 2 · Extrem 4 pro s; Stufen ≥ 50 Ausdauer-Regen −40 %, ≥ 80 kein Sprint/Klettern −30 %, 100 → automatischer **Rückzug** zum nächsten Rastpunkt (kein Tod); Schutzzonen −20/s.
+- Schutz: Kleidung ≤ 60 % · Nahrung/Trank ≤ 30 % · Echo-Aura ≤ 25 % · Skilltree ≤ 20 % (Summe ≤ 100 %). Meister: Rückzug −5 % Sol (max. 2.000 ◎).
+- Echo-Auren (Begleiterslot): Glut→Kälte 25 · Frost→Hitze 25 · Blüte/Licht→Dunst 20 · Stein→Asche 15 · Klang→Stille 25 (%). Echos erleiden außerhalb des Kampfes keine Belastung.
+
+## §45 Regionsdaten (LOCKED, K09 §3 · `Data/World/RegionTypeDistribution.csv`, `RegionWeather.csv`, `Data/Items/Resources.csv`)
+
+- Primärtyp-Verteilung der Erstvorkommen je Region ist **bindend** für K20–K27 (Summen: Glut 13, Flut 16, Stein 25, Sturm 24, Blüte 13, Frost 12, Leere 12, Licht 18, Gift 13, Metall 15, Geist 16, Kristall 15, Klang 17, Schwerkraft 16, Arkan 15 = 240).
+- Wetter je Region (Summe 100 %), Aurora nur nachts, Resonanzsturm nur global; R09 Höhlenklima 100 % Klar; Kraterrand nutzt R08.
+- 48 Ressourcen (Holz 10, Erz 12, Kristall 11, Kraut 15), Stufen I–II Akt I, III–IV Akt II, V Akt III (ADR-049).
+- Prüfung: `tools/data_lint.py`.
+
+## §46 Biome R01–R05 (LOCKED, K09 §4–§8)
+
+| Region | Wahrzeichen | Besonderheit | Belastung | Nebenq. |
+|---|---|---|---|---|
+| R01 Verdanthain | Wurzelhain Eichenhall, Ruinenturm Lindwald, Farnschlucht, Uralthain, Linnbrücke | Glockenblüten tönen im Wind | keine (Prolog-Stille) | 24 |
+| R02 Kharsgrat | Grollhorn, Kharsholm (Kettenbrücken), Schwebende Ahnenfelsen, Erzgrat-Minen, Linn-Quelle | Schichtbetrieb (NPCs auch nachts), Schwerkraft-Anomalien | Kälte Z04/Z05 | 22 |
+| R03 Morvenmoor | Morvenfurt, Versunkener Turm, Nebelwald Corrach, Riesen-Seerosen, Morve-Delta | Nachtmärkte; Regen hebt Wasserstand +0,4 m | Dunst Z03/Z05 | 21 |
+| R04 Sahrun-Weite | Sonnenhof-Plateau, Glasebene, Singende Dünen, Harrâd-Oase, Wanderdorf | nachtaktiv; Sandsturm-Navigation per Resonanzsinn; Sensitivity-Review | Hitze Tag / Kälte Nacht | 22 |
+| R05 Ignareth | Ignar-Krater, Schlackenwehr, Obsidianklamm, Vorthax-Schlackenstrom, Schmiedeterrassen | Ausbruch alle 3 Spieltage (Lava-Layer A/B); 6 Schmiedeglocken/Tag | Hitze, Asche | 19 |
+
+Story-Platzierung: W2 (Stillsteine) in der ersten betretenen freien Akt-I-Region; Tavesh-Erstkontakt in Morvenmoor bzw. erster Akt-I-Region; Sereth-Erstauftritt in erster Akt-II-Region; Venn-Grabung am Sonnenhof (Akt II).
+Tech-Art: PCG `PCG_R##_<Layer>` (Canopy, Understory, Ground, Rocks, Water, Props, Hazards), Editorzeit-gebacken; Foliage-Budget PS5 ≤ 1,6 Mio. Nanite-Instanzen / 250 k Gras, Switch 2 ≤ 400 k / 60 k; Stille über `MPC_Silence`.
+
+## §47 Siedlungsnamen R01–R05 (LOCKED, K09)
+
+| Region | Dörfer | Außenposten |
+|---|---|---|
+| R01 | Lindwiesen, Moosgrund | Farnwacht, Linnfurt-Posten, Uralthain-Lager |
+| R02 | Brakkfels, Hrallsted | Passwacht Nord, Erzgrat-Hütte, Grollhorn-Biwak |
+| R03 | Fennhaven, Duvreth | Corrach-Stelzenposten, Riedwacht, Senkenlager |
+| R04 | Harrâd, Mirsaan, Wanderdorf Ashurim | Glasebene-Turm, Dünenwacht, Plateau-Lager |
+| R05 | Vorthax, Kaldra | Aschehütte, Obsidianwacht, Kraterrand-Posten |
