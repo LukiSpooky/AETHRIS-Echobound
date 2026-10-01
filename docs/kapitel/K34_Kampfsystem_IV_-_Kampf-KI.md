@@ -227,7 +227,7 @@ Feldregeln laut CANON §51 (`Data/World/Arenas.csv`); „Züge“ der Arena-Rege
 
 ### 7.1 Fallstudie: Eine Entscheidung des Arenameisters (ARN_07, Wärter-Grad)
 
-Lage: Trio, Runde 9. Sigrun Fjall (Frost) hat Snevrik (vorn), Kjalmur (vorn), Glazvind (hinten). Spieler: Pyroluth (vorn, Glut), Brokkar (vorn), Nubilo (hinten). Pyroluth hat eine **Ankündigung** gesetzt (Zenit-artiger Glut-Schlag „Feueratem“ wäre normal; hier Crescendo *Sonnensturz*, Marker in 74 Ticks). Sigruns Harmonie: 55. Snevrik ist am Zug.
+Lage: Trio, Runde 9. Sigrun Fjall (Frost) hat Snevrik (vorn), Kjalmur (vorn), Glazvind (hinten). Spieler: Pyroluth (vorn, Glut), Brokkar (vorn), Nubilo (hinten). Pyroluth hat das Crescendo *Sonnensturz* **angekündigt** (goldener Marker in 74 Ticks). Sigruns Harmonie: 55. Snevrik ist am Zug.
 
 | Option | Betrachtungen (gewichtet) | Nutzwert / 100 Ticks |
 |---|---|---|
@@ -261,7 +261,34 @@ Snevrik wählt **Gletscherdruck**: Die Ankündigung rückt von 74 auf 114 Ticks;
 
 Absichtstexte sind lokalisierte Vorlagen (`ST_CombatIntent`), gewählt aus der dominanten Betrachtung der gewählten Aktion.
 
-### 7.3 Wildverhalten nach Region (Beispiele)
+### 7.3 Benannte Gegner
+
+| Gegner | Profil | Besonderheit |
+|---|---|---|
+| Kael Duran (Rivale) | AI_RIVAL | adaptiv (1 Anpassung je Begegnung), bevorzugt Kombos mit seinem Starter |
+| Ysolde Varn (Mentorin, Übungskämpfe) | AI_NPC_TRAINED, Rauschen 100 | erklärt nach dem Kampf eine Entscheidung („Hast du gesehen, warum ich gewechselt habe?“) |
+| Aldric Venn (Antagonist) | AI_NPC_VETERAN + Signatur | Leere/Arkan-Fokus, entzieht Harmonie, nutzt Stillefeld vor Crescendos |
+| Sereth Vaun (Orden) | AI_NPC_VETERAN | Stille-Taktik: Verstummt, Entzug, Uvasil als Ass |
+| Hralda Brakk (Wildwacht) | AI_NPC_VETERAN | Tank-lastig, Spott, schützt Hinterreihe konsequent |
+| Marieke Holm (Kontor) | AI_NPC_TRAINED, Switch 1300 | wechselt oft, „kauft“ Matchups |
+| Tavesh Amaru (Freie Stimmen) | AI_NPC_TRAINED, Tempo 1300 | Klang/Sturm-Tempo, viele Kombos |
+| Ordens-Patrouillen | AI_NPC_TRAINED | Stillsteine erzeugen Stillefeld bei Kampfbeginn (Story K44–K45) |
+| Kontor-Söldner | AI_NPC_NOVICE/TRAINED | gute Kampfsets (Best), schwache Anlagen |
+
+### 7.4 Sonderfälle der KI
+
+| Fall | Verhalten |
+|---|---|
+| Nur noch ein Echo, keine Reserve | Risiko-Gewicht ×1,5; Heilung bevorzugt; kein Setup |
+| Gegner hat Reflect aktiv | Kategorie-Wechsel oder Status statt Schaden |
+| Eigenes Echo verstummt | nur Schadensfähigkeiten ohne Sound-Tag; Wechsel-Wert +40 |
+| Spieler nutzt Decoy | KI greift mit Fläche an oder wartet (Status) |
+| Gegner kündigt Crescendo an | Lookahead: Delay/Schild/Stellungswechsel bevorzugt; Konter-Crescendo prüfen |
+| Feldklang des Spielers aktiv | Profil-spezifische Reaktion (z. B. gegen Große Pause: Schaden statt Harmonie-Aufbau) |
+| Bindungsversuch des Spielers | Wildecho: Modus „Bindung“ (K36), Kampf-KI pausiert |
+| Koop-Spieler getrennt | Ersatz-KI „vorsichtig“ (AI_NPC_TRAINED, Risiko ×1,5) für 60 s, dann Host-KI |
+
+### 7.5 Wildverhalten nach Region (Beispiele)
 
 | Region | Typische Wild-KI-Prägung | Beispiel |
 |---|---|---|
