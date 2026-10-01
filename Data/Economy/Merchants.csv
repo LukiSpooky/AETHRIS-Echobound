@@ -1,0 +1,30 @@
+# Händler (K11/K12; Sortimente und Preise K42). Öffnungszeiten in Spielstunden (0–24; From>To = über Mitternacht).
+Name,Settlement,Npc,ShopName,Category,OpenFrom,OpenTo,Special
+MER_EICH_01,SET_C_EICHENHALL,NPC_R01_WENDEL,Wendels Wärterbedarf,General,7,20,Starter-Siegel; Rabatt für Wildwacht-Ruf
+MER_EICH_02,SET_C_EICHENHALL,NPC_R01_LORIN,Lindenapotheke,Heal,8,19,Lindblüten-Tonika
+MER_EICH_03,SET_C_EICHENHALL,NPC_R01_TILDA,Harzhaus,Material,6,14,Klangharz (rotierend)
+MER_EICH_04,SET_C_EICHENHALL,NPC_R01_ODO,Zum Wurzelkrug,Food,10,1,Lager-Rezepte
+MER_EICH_05,SET_C_EICHENHALL,NPC_R01_ANSELM,Schnitzerei Anselm,Gear,8,18,Gleiter-Bespannungen I-II
+MER_EICH_06,SET_C_EICHENHALL,NPC_R01_GRETA,Wildwacht-Kammer,Faction,6,22,Wildwacht-Rufwaren
+MER_KHAR_01,SET_C_KHARSHOLM,NPC_R02_BRANN,Brann & Söhne,General,5,21,Kletterhaken
+MER_KHAR_02,SET_C_KHARSHOLM,NPC_R02_HRALDA_SMITH,Grollschmiede,Gear,6,22,Ausrüstung II; Schichtrabatt nachts
+MER_KHAR_03,SET_C_KHARSHOLM,NPC_R02_TOVA,Erzkontor,Material,0,24,Rund um die Uhr (Schichtbetrieb)
+MER_KHAR_04,SET_C_KHARSHOLM,NPC_R02_GERD,Halle der Klans,Food,12,2,Gipfelenzian-Schnaps (Kälteschutz)
+MER_KHAR_05,SET_C_KHARSHOLM,NPC_R02_YRSA,Ahnenstein-Tutorin,Tutor,9,17,Stein/Schwerkraft-Tutor
+MER_MORV_01,SET_C_MORVENFURT,NPC_R03_NIALLA,Laternensteg,General,18,6,Nachtmarkt
+MER_MORV_02,SET_C_MORVENFURT,NPC_R03_CORRACH,Moorweise Corrach,Heal,16,4,Dunst-Tees; Gift-Heilmittel
+MER_MORV_03,SET_C_MORVENFURT,NPC_R03_FINN,Bootsbauer Finn,Gear,6,18,Schwimmreit-Sättel
+MER_MORV_04,SET_C_MORVENFURT,NPC_R03_SHADE,Der Schatten (Unterstadt),Rare,22,4,Schwarzmarkt; nur mit Freie-Stimmen-Ruf 2+
+MER_MORV_05,SET_C_MORVENFURT,NPC_R03_DUVA,Fischhalle Duva,Food,4,12,Morgenmarkt
+MER_QASR_01,SET_C_QASRSAHRUN,NPC_R04_AMARA,Karawanserei Amara,General,16,8,Nachtöffnung; Hitzeschutz
+MER_QASR_02,SET_C_QASRSAHRUN,NPC_R04_TAVI,Glasbläserei Tavi,Material,17,3,Sonnenglas
+MER_QASR_03,SET_C_QASRSAHRUN,NPC_R04_MIRSA,Gewänder Mirsa,Gear,17,2,Kleidung III (Hitze)
+MER_QASR_04,SET_C_QASRSAHRUN,NPC_R04_HARUN,Sterndeuter Harun,Rare,20,5,Mondphasen-Kalender; seltene Lockmittel
+MER_QASR_05,SET_C_QASRSAHRUN,NPC_R04_SAYA,Brunnenküche,Food,18,4,Oasenminz-Tee
+MER_QASR_06,SET_C_QASRSAHRUN,NPC_R04_IMRA,Lichttutorin Imra,Tutor,19,1,Licht/Arkan-Tutor
+MER_SALT_01,SET_C_SALTRANDHAFEN,NPC_R06_JONTE,Kontor am Kai,General,6,20,Größtes Sortiment Akt I
+MER_SALT_02,SET_C_SALTRANDHAFEN,NPC_R06_MARIEKE_OFFICE,Goldklang-Haupthaus,Faction,8,18,Goldklang-Rufwaren; Handelsaufträge
+MER_SALT_03,SET_C_SALTRANDHAFEN,NPC_R06_HAUKE,Taucherbedarf Hauke,Gear,6,18,Taucherausrüstung; Schwimmsattel
+MER_SALT_04,SET_C_SALTRANDHAFEN,NPC_R06_BEKE_FISH,Fischmarkt,Food,4,11,Nur bei Ebbe geöffnet + Morgen
+MER_SALT_05,SET_C_SALTRANDHAFEN,NPC_R06_ODALIS,Kuriositäten Odalis,Rare,10,22,Wechselnde Importware (seltene Waren)
+MER_SALT_06,SET_C_SALTRANDHAFEN,NPC_R06_KLAAS,Werftmeister Klaas,Material,6,17,Treibholz; Perlmutt

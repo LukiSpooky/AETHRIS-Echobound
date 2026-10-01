@@ -1,0 +1,12 @@
+# Arenen (K11/K12). ARN_## = Regionsnummer. Stufe: FIXED oder SCALED (nach Akkordzahl, K02 §9.2). FieldRule = Arena-Eigenregel (K11 §2.3).
+Name,City,RegionId,Master,Specialty,StageMode,FixedStage,FieldRule,Voice
+ARN_01,SET_C_EICHENHALL,R01,Maelis Wendt,Type.Bloom,FIXED,1,Arena.Rule.Overgrowth,ECHO_241
+ARN_02,SET_C_KHARSHOLM,R02,Torvik Hrall,Type.Stone|Type.Gravity,SCALED,0,Arena.Rule.ShiftingPlatforms,ECHO_242
+ARN_03,SET_C_MORVENFURT,R03,Evhe Corrach,Type.Venom|Type.Spirit,SCALED,0,Arena.Rule.Mist,ECHO_243
+ARN_04,SET_C_QASRSAHRUN,R04,Shirah Harrad,Type.Light,SCALED,0,Arena.Rule.SunMirrors,ECHO_245
+ARN_05,SET_C_SCHLACKENWEHR,R05,Kaldrex Vorn,Type.Ember|Type.Metal,SCALED,0,Arena.Rule.ForgeHeat,ECHO_246
+ARN_06,SET_C_SALTRANDHAFEN,R06,Beke Tamsen,Type.Tide|Type.Storm,SCALED,0,Arena.Rule.Tide,ECHO_244
+ARN_07,SET_C_HVITMARK,R07,Sigrun Fjall,Type.Frost,SCALED,0,Arena.Rule.Ice,ECHO_247
+ARN_08,SET_C_DORUNSRUH,R08,Aevrin Thal,Type.Arcane,SCALED,0,Arena.Rule.Glyphs,ECHO_248
+ARN_09,SET_C_PRISMARA,R09,Ilyx Brannoc,Type.Crystal,FIXED,9,Arena.Rule.Refraction,ECHO_249
+ARN_10,SET_C_AERION,R10,Oruma Siyel,Type.Sound|Type.Light,FIXED,10,Arena.Rule.Starfall,ECHO_250

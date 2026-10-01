@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K10
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K11
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -270,6 +270,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-051 | Resonanzsprung statt Fallschaden | K10 |
 | ADR-052 | Lichtwert ohne GPU-Readback (Lichtproben-Gitter) | K10 |
 | ADR-053 | Regionale Tageslängen: Hvitfell +2 h Nacht, Nimbara +2 h Tag | K10 |
+| ADR-054 | Arena-Stufe beim ersten Betreten der Arena fixiert | K11 |
+| ADR-055 | Arena-Feldregeln als Kampfsystem-Lektionen | K11 |
+| ADR-056 | Lore-Einwohner ≠ dargestellte NPCs (Mass Crowds) | K11 |
+| ADR-057 | Umgekehrte Stadtzeiten (Morvenfurt, Qasr Sahrun) | K11 |
 
 ## §11 Change Requests
 
@@ -709,3 +713,39 @@ Damit sind alle 22 Dörfer und 30 Außenposten benannt (§47 + §49).
 - **Dunkelheit:** Lichtwert 0–100 (Lichtproben-Gitter 2 m + Gameplay-Lichtquellen); < 15 eingeschränkte Sicht; Lichtquellen: Laterne, Kristall-Leuchten, Licht/Glut-Begleiter (8 m).
 - **Fallrettung:** Fall > 30 m → Auto-Gleiter (Option, Standard an); Fall ins Nichts > 2 s → Resonanzsprung zum letzten sicheren Boden, keine Strafe.
 - **Aufwinde** 6 m/s, **Windströme** 18 m/s; Gewitter: Aufwind +50 %, Flugsteuerung −20 %, Blitzwarnung 1,5 s.
+
+## §51 Stadt-Template & Arena-System (LOCKED, K11 §1–§2 · `Data/World/Arenas.csv`)
+
+- Stadt-Template: Steckbrief · Geschichte · Architektur & Layout · Dienste · Händler · Arena · Quests · Musik · Einwohner/Tagesabläufe/Feste.
+- Arena: Vorprüfung (2–3 Arena-Wärter, nach einmaligem Sieg überspringbar) + Meister. Stufe beim ersten Betreten **der Arena** fixiert (ADR-054): ARN_01 fest 1, ARN_09 fest 9, ARN_10 fest 10; Akt I = Clamp(Akkorde+1, 2, 4), Akt II = Clamp(Akkorde+1, 5, 8). Belohnung: Akkord + Klangschrift (Spezialtyp) + Sol + Wärter-EP. Niederlage → Rückklang vor die Arena. Post-Game-Meisterrunde Lv. 75–85. Meister öffnet danach die Schlafstätte.
+
+| ID | Stadt | Meister | Typ | Feldregel (Tag) |
+|---|---|---|---|---|
+| ARN_01 | Eichenhall | Maelis Wendt | Blüte | Überwuchs (`Arena.Rule.Overgrowth`) |
+| ARN_02 | Kharsholm | Torvik Hrall | Stein/Schwerkraft | Wandernde Plattformen (`ShiftingPlatforms`) – Reihentausch alle 4 Züge |
+| ARN_03 | Morvenfurt | Evhe Corrach | Gift/Geist | Moornebel (`Mist`) – AUS +1, Hinterreihe nur per Bereich; nur nachts |
+| ARN_04 | Qasr Sahrun | Shirah Harrâd | Licht | Sonnenspiegel (`SunMirrors`) – Licht trifft 2. Ziel 60 %; nur nachts (Mondspiegel 50 %) |
+| ARN_05 | Schlackenwehr | Kaldrex Vorn | Glut/Metall | Schmiedeglut (`ForgeHeat`) – Glutboden, 3 % Max-HP/Zug Vorderreihe |
+| ARN_06 | Saltrand-Hafen | Beke Tamsen | Flut/Sturm | Gezeitenbecken (`Tide`) – Ebbe/Flut alle 3 Züge |
+| ARN_07 | Hvitmark | Sigrun Fjall | Frost | Spiegeleis (`Ice`) – Wechsel −50 % Zeit, Rückstoß ×2 |
+| ARN_08 | Dorunsruh | Aevrin Thal | Arkan | Glyphenfeld (`Glyphs`) – Typtabelle alle 5 Züge für 1 Zug umgekehrt |
+| ARN_09 | Prismara | Ilyx Brannoc | Kristall | Lichtbrechung (`Refraction`) – 25 % Brechung auf anderes Ziel |
+| ARN_10 | Aerion | Oruma Siyel | Klang/Licht | Sternenfall (`Starfall`) – alle 4 Züge, Treffer + Harmonie +15 |
+
+## §52 Städte I (LOCKED, K11 §4–§8)
+
+| Stadt | Einw. | Regierung | Fraktionen | Fest (Spieltag-Rhythmus) |
+|---|---|---|---|---|
+| Eichenhall | 9.000 | Stadtrat (7) + Bundesrat (Lindentisch) | Wildwacht-HQ, Akademie-Außenstelle, Kontor | Lindenfest (jeder 7.) |
+| Kharsholm | 6.500 | Klanrat (Brakk, Hrall, Torv) | Wildwacht, Kontor | Schwurnacht (jeder 10.) |
+| Morvenfurt | 5.000 (+600 Unterstadt) | Zunft der Fährleute (Fährmeisterin Ailsa Duvreth) | Freie Stimmen (Unterstadt), Kontor, Orden-Kapelle | Laternennacht (jeder 5.) |
+| Qasr Sahrun | 7.500 | Rat der Sonnenhöfe | Kontor, Akademie-Grabung (Akt II), Freie-Stimmen-Zelle | Nacht der Gäste (jeder 9.) |
+| Saltrand-Hafen | 11.000 | Hafenrat (kontorgeprägt) | Goldklang-HQ, Wildwacht-Hafenwache, Freie-Stimmen-Zelle | Glockenflut (jeder 6., Springflut) |
+
+Wahrzeichen/Arenen: Wurzelarena unter der Riesenlinde · Schlundring über dem Grollschlund · Turmspitzen-Arena auf dem Versunkenen Turm · Sonnenhof-Arena auf dem Plateau (Treppe der tausend Stufen) · Gezeitenbecken-Arena mit Schleusen (goldene Glocke läutet bei Flut). Neue NPCs: Rätin Elsbeth Moor (Eichenhall), Fährmeisterin Ailsa Duvreth, Händler gemäß `Data/Economy/Merchants.csv`.
+
+## §53 Bevölkerungsdarstellung (LOCKED, K11 §3 · `Data/World/Settlements.csv`)
+
+- Budgets (benannt / Mass / sichtbar PS5 / Switch 2): Eichenhall 48/220/140/70 · Kharsholm 40/180/120/60 · Morvenfurt 42/160/110/55 · Qasr Sahrun 44/200/130/65 · Saltrand-Hafen 52/260/160/80. Mass-NPCs werden < 25 m zu leichten Actors.
+- Tagesablauf-Muster: **Tagwerk**, **Schicht A/B/C** (6/14/22 Uhr), **Nachtvolk**, **Wache**, **Gelehrt**.
+- `Settlements.csv`: 62 Siedlungen (10 City, 22 Village, 30 Outpost), IDs `SET_C|V|O_<NAME>`.
