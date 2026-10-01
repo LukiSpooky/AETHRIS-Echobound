@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K09
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K10
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -266,6 +266,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-047 | Typverteilung pro Region als bindende Datenvorgabe | K09 |
 | ADR-048 | Umgekehrte Tagesrhythmen als Biom-Identität (Sahrun, Morvenmoor) | K09 |
 | ADR-049 | Ressourcen-Stufen spiegeln Akt-Progression | K09 |
+| ADR-050 | Unterwasser ohne Ertrinken, nur mit Schwimm-Echo (Atemkugel) | K10 |
+| ADR-051 | Resonanzsprung statt Fallschaden | K10 |
+| ADR-052 | Lichtwert ohne GPU-Readback (Lichtproben-Gitter) | K10 |
+| ADR-053 | Regionale Tageslängen: Hvitfell +2 h Nacht, Nimbara +2 h Tag | K10 |
 
 ## §11 Change Requests
 
@@ -676,3 +680,32 @@ Tech-Art: PCG `PCG_R##_<Layer>` (Canopy, Understory, Ground, Rocks, Water, Props
 | R03 | Fennhaven, Duvreth | Corrach-Stelzenposten, Riedwacht, Senkenlager |
 | R04 | Harrâd, Mirsaan, Wanderdorf Ashurim | Glasebene-Turm, Dünenwacht, Plateau-Lager |
 | R05 | Vorthax, Kaldra | Aschehütte, Obsidianwacht, Kraterrand-Posten |
+
+## §48 Biome R06–R10 (LOCKED, K10 §2–§6)
+
+| Region | Wahrzeichen | Besonderheit | Belastung | Nebenq. |
+|---|---|---|---|---|
+| R06 Saltrand | Saltrand-Hafen, Leuchtfelsen (180 m), Treibdorf Flottholm, Riffgrund, Felsbogen „Thal'assyrs Rippe“ | **Gezeiten**: 12-Spielstunden-Zyklus, ±1,2 m, Ebbe < −60 cm öffnet Pfade; Flottholm 2 Positionen; Unterwasser | keine (Böen an Klippen) | 23 |
+| R07 Hvitfell | Isvaldtind, Hvitmark, Kloster Schweigfels, Eiðvik-Ruinen, Gletscherdom | **Erinnerungseis** (Lore-Medium), Nacht +2 h, Aurora | Kälte mittel–extrem | 20 |
+| R08 Ael'Dorun | Thronstadt/Archontenkuppel, Säulenfeld Thae'Luun, Dorunsruh, Resonanzturm-Stumpf, **Treppe der Zehn** (Ilen gesichtslos) | 12 Geisterszenen bei Nebel; Glyphen (`MPC_Glyphs`); Metall-Echos sind keine Roboter; W6/W7 | Stille | 21 |
+| R09 Prismtiefen | Kraterrand + Liftstation (ab Akt I), Prismara (Geodenkaverne), Kristallsee, Missklang-Adern, Tiefe Resonanz | Höhlen Akt III; Kristallpuls alle 6 Spielstunden; Lichtbrechungsrätsel; blinde Klang-Jäger | Dunkelheit, Dunst | 18 |
+| R10 Nimbara | Aerion (1.800 m, ~800 Einw.), Sternenarena (2.600 m, Finale), Kronenwerft, Lumeya-Inseln, Wolkenfälle | Tag +2 h; Aufwinde/Windströme; Inselendemiten; nach „Sanfte Stille“ Inseln niedriger, Inhalte gleich | Kälte | 20 |
+
+## §49 Siedlungsnamen R06–R10 (LOCKED, K10)
+
+| Region | Dörfer | Außenposten |
+|---|---|---|
+| R06 | Tangwerft, Möwenhuk, Treibdorf Flottholm | Leuchtfelsen-Wacht, Dünenkate, Riffposten |
+| R07 | Fjallstad, Eiðvik-Neu | Gletscherwacht, Passhütte, Isvaldtind-Biwak (+ Sonderort Kloster Schweigfels) |
+| R08 | Thae'Luun, Säulenrast | Grabungslager Nord, Archontenwacht, Ruinenpfad-Posten |
+| R09 | Glanzschacht, Quarzgrund | Liftstation Kraterrand, Kristallsee-Lager, Missklang-Wacht |
+| R10 | Lumeya, Wolkenrast | Kronenwerft-Wacht, Sternwarte Oruma, Windanker |
+
+Damit sind alle 22 Dörfer und 30 Außenposten benannt (§47 + §49).
+
+## §50 Sondermechaniken (LOCKED, K10 §1)
+
+- **Unterwasser:** Tauchen nur mit Schwimmreiten (Atemkugel); Oberflächenschwimmen Ausdauer −6/s, bei 0 Treiben ans Ufer; kein Ertrinken.
+- **Dunkelheit:** Lichtwert 0–100 (Lichtproben-Gitter 2 m + Gameplay-Lichtquellen); < 15 eingeschränkte Sicht; Lichtquellen: Laterne, Kristall-Leuchten, Licht/Glut-Begleiter (8 m).
+- **Fallrettung:** Fall > 30 m → Auto-Gleiter (Option, Standard an); Fall ins Nichts > 2 s → Resonanzsprung zum letzten sicheren Boden, keine Strafe.
+- **Aufwinde** 6 m/s, **Windströme** 18 m/s; Gewitter: Aufwind +50 %, Flugsteuerung −20 %, Blitzwarnung 1,5 s.
