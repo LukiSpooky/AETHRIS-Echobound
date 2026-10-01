@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K19
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K20
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -1033,3 +1033,42 @@ Ruhig (Fenster ×1,2, 4 Anschläge, bleibt, Flucht 15 %) · Feurig (×0,9, 2, gr
 ## §88 Evolutions-Pacing (LOCKED, K19 §8)
 
 3-stufig: Akt I 14–22 / 30–38 · Akt II 28–36 / 42–50 · Akt III 40–48 / 56–62. 2-stufig: Akt I 20–30 · Akt II 34–44 · Akt III 50–58. **Starter: Lv. 16 → Stufe 2, Lv. 34 → Stufe 3.**
+
+## §89 Arten #001–#032 (LOCKED, K20 · `Data/Echos/Species.csv`)
+
+| # | Name | Typen | Linie/Stufe | Evolution → | Rolle | Reiten |
+|---|---|---|---|---|---|---|
+| 001 | Fernlit | Blüte | L001/1 Three | Fernwyn [Level>=16] | Support | – |
+| 002 | Fernwyn | Blüte/Sturm | L001/2 Three | Verdrath [Level>=34] | Support | – |
+| 003 | Verdrath | Blüte/Klang | L001/3 Three | – | Support | Bodenreiten |
+| 004 | Brokk | Stein | L002/1 Three | Brokkar [Level>=16] | Tank | – |
+| 005 | Brokkar | Stein | L002/2 Three | Torgrath [Level>=34] | Tank | – |
+| 006 | Torgrath | Stein/Schwerkraft | L002/3 Three | – | Tank | Bodenreiten |
+| 007 | Wisplet | Sturm | L003/1 Three | Galewix [Level>=16] | Speed | – |
+| 008 | Galewix | Sturm | L003/2 Three | Zephyrion [Level>=34] | Speed | – |
+| 009 | Zephyrion | Sturm/Licht | L003/3 Three | – | Speed | Flugreiten |
+| 010 | Chimkin | Klang | L004/1 Three | Chimbal [Level>=18] | Control | – |
+| 011 | Chimbal | Klang | L004/2 Three | Cantaroth [Level>=32 & TimeOfDay=Dusk]; Lorncant [Level>=32 & Weather=Fog & TimeOfDay=Night] | Control | – |
+| 012 | Cantaroth | Klang/Blüte | L004/3 Three | – | Control | Kletterreiten |
+| 013 | Lorncant | Geist/Klang | L004/3 Branch | – | Control | – |
+| 014 | Mossling | Blüte | L005/1 Three | Myrthorn [Level>=18] | Tank | – |
+| 015 | Myrthorn | Blüte | L005/2 Three | Vernaune [BondTier>=4]; Glyphaune [BondTier>=4 & Moon=FullMoon & Zone=R01_Z06] | Tank | Bodenreiten |
+| 016 | Vernaune | Blüte/Licht | L005/3 Three | – | Tank | Bodenreiten |
+| 017 | Glyphaune | Arkan/Blüte | L005/3 Branch | – | Control | Bodenreiten |
+| 018 | Lumpip | Licht | L006/1 Three | Lumow [Level>=15] | Caster | – |
+| 019 | Lumow | Licht/Geist | L006/2 Three | Phantalume [Level>=30 & TimeOfDay=Night] | Caster | – |
+| 020 | Phantalume | Geist/Licht | L006/3 Three | – | Caster | – |
+| 021 | Rillo | Flut | L007/1 Two | Rillward [Level>=22] | Caster | – |
+| 022 | Rillward | Flut/Blüte | L007/2 Two | – | Caster | – |
+| 023 | Sporlet | Gift | L008/1 Two | Sporix [Level>=24 & Weather=Fog] | Control | – |
+| 024 | Sporix | Gift/Geist | L008/2 Two | – | Control | – |
+| 025 | Skirmote | Sturm | L009/1 Two | Skirrow [Level>=22] | Speed | – |
+| 026 | Skirrow | Sturm/Klang | L009/2 Two | – | Speed | – |
+| 027 | Thornkin | Blüte | L010/1 Two | Thorncoil [Item=ITM_EVO_BLOOM] | Striker | – |
+| 028 | Thorncoil | Blüte/Gift | L010/2 Two | – | Striker | – |
+| 029 | Pebi | Stein | L011/1 Two | Orbeloth [Stat:Defense>Attack & Level>=24] | Tank | – |
+| 030 | Orbeloth | Schwerkraft/Stein | L011/2 Two | – | Tank | – |
+| 031 | Rivetkin | Metall | L012/1 Single | – | Tank | – |
+| 032 | Cindrel | Glut | L013/1 Single | – | Caster | – |
+
+Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-Werkzeuge: `tools/authoring/catalog_lib.py`, `build_catalog_chapter.py`; Linienplan `docs/kapitel/_Linienplan_K20-K27.md` (R01 6/5/2/2, R02 4/5/3/1, R03 4/5/3/1, R06 4/5/3/1, R04 4/5/2/0, R05 4/4/2/0, R07 4/4/1/1, R08 4/3/2/0, R09 3/4/2/1, R10 3/5/2/1 – 3er/2er/Einzel/Zweig).

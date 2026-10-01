@@ -1,0 +1,26 @@
+# Lockmittel & Lieblingsfutter (K20, Wirkung in K36). Food = auch Begleiterfutter (K37).
+Name,DisplayName,Kind,Region,Description
+ITM_FOOD_LINDHONEY,Lindblüten-Honig,Food,R01,Süßer Honig aus Lindenblüten
+ITM_FOOD_BERRYMIX,Waldbeeren,Food,R01,Gemischte Beeren aus dem Lindwald
+ITM_FOOD_MOSSCAKE,Moosküchlein,Food,R01,Gebäck aus Moosmehl (Moosgrund)
+ITM_LURE_BELLCHIME,Glockenspiel,Lure,R01,Kleines Glockenspiel – lockt Klang-Echos
+ITM_FOOD_ORECRUMBS,Erzkrümel,Food,R02,Zermahlenes Erz für Gesteinsfresser
+ITM_FOOD_ALPINECHEESE,Bergkäse,Food,R02,Würziger Käse aus Hrallsted
+ITM_LURE_WHISTLE,Pfeifholz,Lure,R02,Hohe Pfeife – lockt Sturm-Echos
+ITM_FOOD_SMOKEDFISH,Räucherfisch,Food,R03,Fisch aus Fennhavens Räucherhütten
+ITM_FOOD_MOORBERRY,Moorbeeren,Food,R03,Säuerliche Beeren aus dem Ried
+ITM_LURE_LANTERN,Irrlicht-Laterne,Lure,R03,Laterne mit Irrlichtmoos – lockt Geist- und Licht-Echos
+ITM_FOOD_KELPSNACK,Tangkeks,Food,R06,Knuspriger Keks aus Seetang
+ITM_FOOD_SHELLMEAT,Muschelfleisch,Food,R06,Frisches Muschelfleisch
+ITM_LURE_WINDCHIME,Windspiel,Lure,R06,Klingendes Windspiel aus Treibholz
+ITM_FOOD_DATES,Datteln,Food,R04,Süße Datteln aus Harrâd
+ITM_LURE_MIRROR,Spiegelscherbe,Lure,R04,Glänzende Scherbe – lockt Licht-Echos und Sammler
+ITM_FOOD_CHARCOAL,Glutkohle,Food,R05,Glühende Holzkohle für Glut-Echos
+ITM_FOOD_SULFURCANDY,Schwefelzucker,Food,R05,Kristallisierter Zucker mit Schwefelnote
+ITM_FOOD_ICEFISH,Eisfisch,Food,R07,Gefrorener Fisch aus Hvitmark
+ITM_LURE_AURORAGLASS,Auroraglas,Lure,R07,Glas, das Polarlicht einfängt
+ITM_LURE_GLYPHTOKEN,Glyphenmünze,Lure,R08,Dorunische Münze mit leuchtender Glyphe
+ITM_FOOD_CRYSTALSALT,Kristallsalz,Food,R09,Salz aus den Prismtiefen
+ITM_LURE_TUNINGFORK,Lockstimmgabel,Lure,R09,Stimmgabel – lockt Kristall- und Klang-Echos
+ITM_FOOD_CLOUDFRUIT,Wolkenfrucht,Food,R10,Leichte Frucht der Wolkenholz-Bäume
+ITM_LURE_STARCHIME,Sternenglocke,Lure,R10,Glocke aus Himmelsglas
