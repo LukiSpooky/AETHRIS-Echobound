@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K07
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K08
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -258,6 +258,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-039 | Zwei Enden + 4 Epilog-Varianten, beide mit vollem Endgame | K07 |
 | ADR-040 | Keine Jahreszeiten in 1.0 | K07 |
 | ADR-041 | Keine Schusswaffen, keine Verbrennungsmotoren (Klangwerk-Technik) | K07 |
+| ADR-042 | Makrokarte als generierte, validierte Rasterdatei | K08 |
+| ADR-043 | Welt faltet sich zur Mitte (Akt III unter/über dem Zentrum) | K08 |
+| ADR-044 | Regionsweise Stufenfixierung beim ersten Betreten | K08 |
+| ADR-045 | Höhen auf ~40 % skaliert | K08 |
 
 ## §11 Change Requests
 
@@ -583,3 +587,50 @@ Spieler (trägt Ilens **Nachklang**) · Ysolde Varn (Mentorin, kennt das Erbe) �
 - Enden: **„Neues Lied“** (kanonisch) / **„Sanfte Stille“**; 4 Epilog-Varianten (Freie Stimmen, Kael, Sereth); beide → Post-Game **„Nachhall“** mit identischem Endgame.
 - Lore-Kanäle: Kodex (256×3), **Klangfragmente (120)**, Wendelin-Tagebuch (20), Bücher (150), ~4.000 Barks. **L-01:** Keine Lore vor ihrer Wahrheitsebene; spätere Fragmente verzerrt bis zur Enthüllung.
 - `ULoreEntryDefinition` (Primary Asset Type `Lore`, IDs `LORE_<KAT>_###`, Quelle `Data/Lore/LoreEntries.csv`, Feld TruthLevel 0–9).
+
+## §39 Makrokarte & Koordinaten (LOCKED, K08 §2–§3, §10.1)
+
+- Raster `Data/World/MacroMap.txt` 40 × 35 Zellen à 200 m (8 × 7 km), Himmel `MacroMap_Sky.txt`, Werte `MacroRegions.csv`, Generator `tools/gen_macromap.py` (prüft Flächen exakt + Zusammenhang). Grenzklippen 114 Zellen (nicht spielbar).
+- Lage: R07 Hvitfell Norden · R02 Kharsgrat Nord-Mitte · R09 Prismtiefen-Krater West-Mitte · R08 Ael'Dorun Zentrum · R05 Ignareth Osten · R06 Saltrand Westküste · R01 Verdanthain Südwest-Mitte (Start) · R03 Morvenmoor Südost-Mitte · R04 Sahrun Süden · R10 Nimbara über dem Zentrum (1.400–2.600 m).
+- UE-Koordinaten: X = (x_km − 4,0)·100.000, Y = (y_km − 3,5)·100.000 (Karten-y nach Süden), 1 m = 100 UU.
+
+## §40 Zonen & Level (LOCKED, K08 §6 · `Data/World/Zones.csv`, `ZoneTiers.csv`)
+
+- 50 Zonen: R01 6 (fest 2–14), R02/R03/R06 je 5 (T1–T3), R04/R05/R07 je 5 (T4–T7), R08 4 (T6–T7), R09 5 (fest 50–62), R10 5 (fest 58–70).
+- Stufenbänder: T1 10–18 · T2 15–23 · T3 20–28 · T4 25–35 · T5 31–41 · T6 37–47 · T7 43–55. Stufe = Clamp(Akkorde, MinTier, MaxTier); Zonenband = [TierMin+OffMin, min(TierMax, TierMin+OffMax)].
+- Erste Betretung fixiert **alle Zonen der Region** (ADR-044); Save-Fragment `World.Zones`. Alphas/Seltene +3…+8. Post-Game: Nachhall-Spawns 72–90 zusätzlich.
+
+## §41 Siedlungsorte & Wege (LOCKED, K08 §5)
+
+| Ort | Region | x/y km | Besonderheit |
+|---|---|---|---|
+| Lindwiesen | R01 | 1,9/5,7 | Startdorf |
+| Eichenhall | R01 | 2,6/4,8 | Bundesrat, Wildwacht-HQ |
+| Saltrand-Hafen | R06 | 0,7/3,7 | Linn-Mündung, Goldklang-HQ |
+| Kharsholm | R02 | 4,2/2,2 | Felsstadt |
+| Morvenfurt | R03 | 5,4/4,8 | Kanalstadt, Freie Stimmen |
+| Qasr Sahrun | R04 | 4,1/5,9 | Fuß des Sonnenhof-Plateaus |
+| Schlackenwehr | R05 | 6,7/3,5 | Festungsstadt an der Lavawehr |
+| Hvitmark | R07 | 4,1/0,7 | Gletschertal; Kloster Schweigfels ≈ 3,3/1,1 |
+| Dorunsruh | R08 | 4,8/3,3 | Akademie-HQ |
+| Prismara | R09 | 2,9/3,0 | unterirdisch −180 m, Kraterlift |
+| Aerion | R10 | 4,1/3,1 | Himmelsstadt 1.800 m |
+
+Bundesstraßen: 13 Verbindungen (Wegfaktor 1,35); Weltquerung ≈ 7,3 km ≈ 29 min joggend / 9 min reitend.
+
+## §42 Höhen, Grenzen, Gates, Steine, Metriken (LOCKED, K08 §4, §7–§9)
+
+- Höhen (~40 % skaliert): Meer 0 · Morvenmoor 5–60 · Verdanthain 20–260 · Saltrand 0–180 · Sahrun 40–420 · Prismtiefen-Rand 150–380 (Krater −250, Höhlen −600) · Ael'Dorun 300–520 · Ignareth bis 1.150 · Kharsgrat bis 1.650 (Grollhorn) · Hvitfell bis 2.100 (Isvaldtind) · Nimbara 1.400–2.600 (Sternenarena 2.600).
+- Gewässer: Linn (Kharsgrat → Verdanthain → Saltrand-Hafen), Morve (Ael'Dorun → Morvenmoor-Delta), Ignar-Lavastrom, Kristallsee (unterirdisch), Oasen (6).
+- Weltgrenzen ohne unsichtbare Wände: Meeresströmung ab 400 m, Gletscherwände N, Resonanzwirbel > 2.800 m.
+- Story-Gates: Sandsturm (R04), Ascheschleier (R05), Pass-Schneesturm (R07), Ruinensiegel (R08). Prolog-Grenze: Linn (eingestürzte Brücke).
+- Traversal: Schwimm-/Kletter-/Grab-/Flugreiten öffnen ~6/5/5/4 % optionale Fläche; ≥ 3 Rückkehr-POIs je Region.
+- Resonanzsteine: 10 Stadt + 22 Dorf + 48 Wild = 80; Hauptpfad ≤ 900 m zum nächsten Stein; kostenlos; nicht im Kampf.
+- POI-Mix: Habitat 25 · Ressourcen 15 · Ruinen 12 · NPC 12 · Klangrätsel 8 · Cache 8 · Traversal 6 · Aussicht 5 · Schrein 5 · Höhle 4 (%). LD-Metriken: POI Ø 150–250 m (max 400), Straße 6 m / Pfad 2,5 m, ebene Kampffläche (r ≥ 12 m) alle 250 m, Wahrzeichen aus ≥ 2 km sichtbar, Kletterrast alle 20 m.
+
+## §43 World Partition (LOCKED, K08 §10)
+
+- `L_Aethris_World`; Landscape 8,1 × 7,1 km, 1 m Auflösung, −600…+2.800 m.
+- Grids: MainGrid 128 m / 768 m (Switch 2: 512 m) · FarGrid 512 m / 3 km · Underground 64 m / 256 m · Sky 256 m / 2 km; 3 HLOD-Ebenen.
+- Data Layers: `DL_Base`, `DL_Story_R##_Silence`, `DL_Story_R##_Healed`, `DL_Story_Gates`, `DL_Nachhall`, `DL_Event_*`, `DL_Editor_Blockout`.
+- Validatoren: Regionsfläche ±3 %, POI 400 m, Brunnen 800 m, Steine 900 m, Rückkehr-POIs ≥ 3, Kampfflächen alle 250 m.
