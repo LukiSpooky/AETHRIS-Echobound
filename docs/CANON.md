@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K02
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K03
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -232,6 +232,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-013 | Nahtloser Kampf am Ort (Kampfkreis 12–18 m) | K02 |
 | ADR-014 | Rückklang ohne Bindungsverlust | K02 |
 | ADR-015 | Spielzeit statt Echtzeit für Wartezeiten | K02 |
+| ADR-016 | Kampfset 4 aktiv + 1 passiv + 1 Crescendo, Repertoire frei wechselbar | K03 |
+| ADR-017 | Klangschriften wiederverwendbar, nicht handelbar | K03 |
+| ADR-018 | Chor-Lernen (Reserve 50 % EP) statt EP-Teiler-Item | K03 |
+| ADR-019 | Deterministischer Ungehorsam (+40 % Zeitkosten) | K03 |
+| ADR-020 | Kodex-Nummerierung nach Story-Erstvorkommen | K03 |
+| ADR-021 | Online-Aktionen nur mit geladenem Weltstand | K03 |
 
 ## §11 Change Requests
 
@@ -328,3 +334,68 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Strafe | Nur Meister: −10 % Sol, max. 5.000 ◎ | LOCKED |
 | Eiserner Wärter | Erschöpfte Echos für laufende Region gesperrt | LOCKED |
 | Zugänglichkeit | Jede Frequenz-Mechanik hat visuelles Wellenmuster (DR-24) | LOCKED |
+
+## §17 Spielstruktur & Zustände (LOCKED, K03 §1–§3)
+
+- **Modi:** Weltspiel · Koop-Reise (2–4) · Arena-Halle (PvP) · Raid (1–4, Solo-Variante offline) · Tauschhalle · Fotomodus · Eiserner Wärter.
+- **Profil** (Einstellungen, Erfolge, PvP-Rang, Gilde, Fotoalbum) vs. **Weltstand** (3 Slots + 1 Eiserner-Wärter-Slot).
+- **Zustands-Tags:** `GameFlow.Boot|Title|Loading|ArenaHall`, `GameFlow.World.Explore|Combat|Bond|Sanctuary|Cinematic`, Overlays `GameFlow.Overlay.Dialogue|Menu|Photo|Map|SystemPrompt`.
+- **Klassen:** `UAethrisGameFlowSubsystem` (GameInstance-Subsystem, einziger Weg für Zustandswechsel, sendet `GameFlow.StateChanged`), `UGameFlowStateDefinition` (Data Asset je Zustand).
+- **Pausieren:** Solo-Menü/Dialog/Foto pausiert Weltzeit; Koop pausiert nie (60 s Schutz im Menü).
+- **DR-30:** ≤ 800 m Hauptpfad zwischen zwei Klangbrunnen.
+- **Zeit vorspulen:** Gasthaus/Zelt/Lager auf Morgendämmerung, Mittag, Abenddämmerung, Mitternacht; Wetter wird neu gewürfelt.
+
+## §18 Echo-Progression & Kampfset (K03 §4–§6)
+
+| Schlüssel | Wert | Status |
+|---|---|---|
+| Progressionsspuren | P1 Level · P2 Bindung · P3 Kampfset · P4 Evolution · P5 Schliff · P6 Wärterrang · P7 Skilltree · P8 Ausrüstung (Stufe I–V) · P9 Ruf · P10 Akkorde · P11 Kodex (256×4 Stufen) · P12 Hain-Ausbau | LOCKED |
+| Kampfset | 4 aktiv + 1 passiv + 1 Crescendo (+ 0–1 Feldfähigkeit); alle gelernten Aktiven bleiben im **Repertoire** | LOCKED |
+| Crescendo / Feld | Crescendo ab Bindungsstufe 2, Feldfähigkeit ab Bindungsstufe 1 | LOCKED |
+| Passiv | 1–3 art-spezifische Optionen + 1 versteckte; Wechsel mit Item **Wandelklang** | LOCKED |
+| Fähigkeitserwerb | Lernset · **Klangschriften** (90, wiederverwendbar, nicht handelbar) · Tutoren · Vererbung · Evolution | LOCKED |
+| Schliff | Summe 240, max. 80 pro Wert | PROVISIONAL → K18 |
+| Bindungsstufen | 6 Stufen (Grenzen → K37) | LOCKED (Anzahl) |
+| Ruf | 6 Ränge pro Fraktion | LOCKED (Anzahl) |
+| Gehorsam | Voll bei: selbst gebunden/gezüchtet ODER Level ≤ 20 + 8 × Akkorde ODER Bindungsstufe ≥ 3; sonst +40 % Zeitkosten | LOCKED |
+| Chor-Lernen | Reserve-Echos 50 % EP (Option 100/50/0) | LOCKED |
+| Echo-EP-Anteile | Kampf 70 % · Training 10 % · Entdeckung 15 % · Quests 5 % | LOCKED (Ziel) |
+| Wärter-EP-Anteile | Haupt 25 · Neben 25 · Kodex 20 · Entdeckung 15 · Arenen 10 · Sonst 5 (%) | LOCKED (Ziel) |
+| Hain | 10 Biom-Gärten, Kapazität 600 | PROVISIONAL → K37 |
+
+## §19 Content-Verteilung (LOCKED, K03 §7 · Daten: `Data/World/RegionBudget.csv`)
+
+| Region | km² | Erstvork. Arten | Dörfer | Außenp. | Nebenq. | Steine | POIs | Dungeons |
+|---|---|---|---|---|---|---|---|---|
+| R01 | 4,0 | 32 | 2 | 3 | 24 | 9 | 130 | 3 |
+| R02 | 4,0 | 26 | 2 | 3 | 22 | 9 | 125 | 4 |
+| R03 | 3,2 | 26 | 2 | 3 | 21 | 7 | 105 | 3 |
+| R04 | 4,4 | 24 | 3 | 3 | 22 | 9 | 120 | 3 |
+| R05 | 3,0 | 22 | 2 | 3 | 19 | 7 | 95 | 4 |
+| R06 | 3,4 | 26 | 3 | 3 | 23 | 8 | 115 | 3 |
+| R07 | 3,6 | 22 | 2 | 3 | 20 | 8 | 105 | 3 |
+| R08 | 2,8 | 20 | 2 | 3 | 21 | 6 | 110 | 5 |
+| R09 | 3,6 | 20 | 2 | 3 | 18 | 8 | 100 | 6 |
+| R10 | 4,0 | 22 | 2 | 3 | 20 | 9 | 110 | 3 |
+| **Σ** | **36,0** | **240** | **22** | **30** | **210** | **80** | **1.115** | **37** |
+
+Sonderdörfer: **Wanderdorf** (R04, mobil), **Treibdorf** (R06, schwimmend). Jede Region beherbergt 45–65 auffindbare Arten. Prismtiefen-Höhlen liegen unter R02/R08 (keine Doppelzählung).
+
+## §20 Kodex-Nummerierung (LOCKED, K03 §8)
+
+| Kodex | Bereich | Katalog |
+|---|---|---|
+| #001–#032 | R01 Verdanthain (Starter #001–#009) | K20 |
+| #033–#058 | R02 Kharsgrat | K21 |
+| #059–#084 | R03 Morvenmoor | K21/K22 |
+| #085–#110 | R06 Saltrand | K22/K23 |
+| #111–#134 | R04 Sahrun-Weite | K23/K24 |
+| #135–#156 | R05 Ignareth | K24 |
+| #157–#178 | R07 Hvitfell | K25 |
+| #179–#198 | R08 Ael'Dorun | K25/K26 |
+| #199–#218 | R09 Prismtiefen | K26 |
+| #219–#240 | R10 Nimbara | K27 |
+| #241–#250 | 10 Ursprungsstimmen | K27 |
+| #251–#256 | 6 Mythische | K27 |
+
+Linienstruktur: 40 × 3-stufig (120) + 45 × 2-stufig (90) + 22 ohne Evolution + 8 Spezial-/Zweigformen = **240** regulär. Linien bleiben zusammenhängend nummeriert.
