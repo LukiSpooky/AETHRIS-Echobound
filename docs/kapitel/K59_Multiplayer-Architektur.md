@@ -1,0 +1,571 @@
+# K59 · Multiplayer-Architektur
+
+| Feld | Wert |
+|---|---|
+| Dokument | Kapitel 59 von 68 · Online I |
+| Version | 1.0 |
+| Owner | Technical Director, Lead Online Engineer |
+| Mitwirkende | Network Programmer, Backend Engineers, DevOps/Live Ops Engineer, Security Engineer, Combat Programmer, Producer Online, Datenschutzbeauftragte Person, QA Online |
+| Baut auf | K01 §11/§13 (Plattformen, Technik, CANON §9), K02 (DR-19–DR-21, Modi), K03 (Spielstruktur, CANON §17), K05/K06 (Module, Server-Target, Seeds, CANON §25–§32), K28–K35 (Kampf, Raid, CANON §129), K36 (Bindungs-Timing), K38 (Server-Plausibilität Zucht), K52/K53 (Ökologie, NPCs), K54 (Koop pausiert nie) |
+| Status | ✅ Freigegeben |
+| Im Repository | `Data/Online/ModeTopology.csv`, `NetMessages.csv`, `ServerRegions.csv`; Referenzmodell `tools/ref/aethris_net.py` (NET-01–NET-06); `Source/AethrisCore/…/Net/AethrisCombatNet.h/.cpp` (Kampfbefehl-Packing, Zustands-Prüfsumme); `GF_Multiplayer/…/Session/AethrisSessionTypes.h/.cpp` (Sitzungszustände, Gast-Protokoll) |
+| Neue Kanon-Einträge | CANON §231 (Online-Modi und Topologie), §232 (Replikation Koop), §233 (Kampf im Netz), §234 (Sitzungen, Infrastruktur, Kapazität), §235 (Sicherheit, Datenschutz, Kommunikation) |
+
+---
+
+## Inhalt
+
+1. [Ziele und Leitplanken](#1-ziele-und-leitplanken)
+2. [Modi und Topologien](#2-modi-und-topologien)
+3. [Architekturüberblick](#3-architekturüberblick)
+4. [Replikation in der Koop-Reise](#4-replikation-in-der-koop-reise)
+5. [Kampf im Netz](#5-kampf-im-netz)
+6. [Sitzungen, Beitritt, Wiederverbinden](#6-sitzungen-beitritt-wiederverbinden)
+7. [Infrastruktur und Kapazität](#7-infrastruktur-und-kapazität)
+8. [Backend-Dienste](#8-backend-dienste)
+9. [Sicherheit und Fairness](#9-sicherheit-und-fairness)
+10. [Datenschutz, Altersfreigabe, Kommunikation](#10-datenschutz-altersfreigabe-kommunikation)
+11. [Fehlerfälle und Offline-Robustheit](#11-fehlerfälle-und-offline-robustheit)
+12. [Tests](#12-tests)
+13. [Prüfregeln](#13-prüfregeln)
+14. [Offene Punkte und Übergaben](#14-offene-punkte-und-übergaben)
+15. [Decision Records](#15-decision-records)
+16. [Kanon-Änderungen](#16-kanon-änderungen)
+17. [Kapitel-Checkliste](#17-kapitel-checkliste)
+
+---
+
+## 1. Ziele und Leitplanken
+
+AETHRIS ist zuerst ein Einzelspieler-Abenteuer. Online-Funktionen machen das Spiel **reicher, nie vollständiger** (DR-19, DR-20, CANON §8.3). Kompetitive Modi sind **serverautoritativ und levelnormalisiert** (DR-21, unverhandelbar). Daraus ergeben sich die Architekturziele:
+
+| Ziel | Bedeutung | Messbar an |
+|---|---|---|
+| **NZ-1 Offline vollständig** | Ohne Netzwerk startet, läuft und speichert das Spiel vollständig; kein Online-Dienst ist für Story, Kodex oder Legendäre nötig | Smoke-Test „Netzwerk aus“ in jedem Build (K66) |
+| **NZ-2 Fairness durch Autorität** | Ergebnisse kompetitiver und belohnungsrelevanter Kämpfe berechnet nur der Server | 0 Client-Nachrichten mit Zustand in Kampfmodi (NET-05) |
+| **NZ-3 Klein und robust** | Rundenbasierter Kampf braucht wenig Bandbreite; Koop bleibt auch auf schwachen Leitungen spielbar | Koop-Gast ≤ 256 kbit/s, Host-Upload ≤ 1.024 kbit/s (NET-03) |
+| **NZ-4 Überall gemeinsam** | Crossplay zwischen PC, PS5, Xbox Series X\|S und Switch 2 in allen Modi | Gemeinsame Matchmaking-Pools |
+| **NZ-5 Ausfallsicher** | Fällt das Backend aus, spielt jeder weiter; laufende Koop-Sitzungen bleiben bestehen | Chaos-Tests (§12) |
+| **NZ-6 Datensparsam** | Nur Daten, die eine Funktion braucht; Freitext-Chat nur mit Einwilligung | Datenschutz-Folgenabschätzung (§10) |
+
+**Was nicht online ist:** Das Weltspiel einer Person, ihre Spielstände (lokal, optional Cloud-Speicher der Plattform, K64), die Zucht, das Crafting, alle Nebenquests. Es gibt **keine** permanente Verbindung, keinen Online-Zwang beim Start und keine Echtzeit-Timer außer Saisons und Events (K02 §13).
+
+---
+
+## 2. Modi und Topologien
+
+| DisplayName | Players | Topology | Authority | Unlock | Crossplay | OfflineFallback | Persistence |
+|---|---|---|---|---|---|---|---|
+| Koop-Reise | 2–4 | Listen-Server (Host-Welt) | Host (Welt, Kampf); Backend nur Sitzung/Einladung | Rang 1 (Prolog abgeschlossen) | ja | Solo-Weltspiel | Gast: eigene Fragmente lokal + Ereignisprotokoll |
+| Raid | 1–4 | Dedicated Server | Server | Rang 22 | ja | Solo-Variante offline (HP ×0,6) | Server-Ergebnis → Belohnung signiert |
+| Arena-Halle (frei) | 2 (1v1, 2v2 als Duo/Trio) | Dedicated Server | Server | Rang 5 | ja | Lokale Übungskämpfe gegen Geister-Teams | Replay (Seed + Eingaben) |
+| Arena-Halle (Ranked) | 2 | Dedicated Server | Server (levelnormalisiert, DR-21) | Rang 28 | ja (Eingabe irrelevant, rundenbasiert) | – | Rangliste, Replay |
+| Tauschhalle | 2 (direkt) / n (Börse) | Backend-Dienst (Treuhand) | Backend | Rang 3 | ja | – | Treuhand-Transaktion, Echo-Signatur |
+| Freunde, Gilden, Besuche | 1–50 | Backend-Dienst | Backend | Rang 1 | ja | – | Profil (CANON §17) |
+| Online-Events und Saisons | 1 | Backend-Konfiguration | Backend (Kalender), Client spielt lokal | Rang 1 | ja | Events ohne Online nicht verfügbar; keine exklusiven Echos (DR-19) | Profil |
+| Fotoalbum teilen | 1 | Backend-Dienst + Plattform-Teilen | Backend | Rang 1 | ja | lokales Album | Profil |
+
+**Begründung der Topologien:**
+
+- **Koop-Reise als Listen-Server:** Die Welt des Hosts ist ein vollständiges Einzelspieler-Spiel mit World Partition, Ökologie, NPC-Tagesabläufen und Story-Flags. Diese Welt auf einem Dedicated Server zu betreiben, hieße, das gesamte Weltspiel serverseitig zu simulieren – teuer und für ein kooperatives Abenteuer ohne Wettbewerb unnötig. Der Host ist Autorität; Gäste sind vertrauenswürdige Freunde (Einladung). Belohnungen, die Gäste mitnehmen, werden beim Zurückkehren geprüft (§6.4).
+- **Raid und PvP auf Dedicated Servern:** Hier geht es um Belohnungen (Raid) oder Rang (PvP). Der Server löst jeden Zug auf (DR-21). Weil der Kampf rundenbasiert und ganzzahlig ist (CANON §29, §31 DD-04), braucht ein Kampfserver keine Welt, keine Physik und kaum Rechenzeit: Ein Prozess hostet Dutzende Kämpfe gleichzeitig (§7).
+- **Tausch, Freunde, Events als Backend-Dienste:** Kein Spielserver nötig; HTTPS/WebSocket-Dienste mit Treuhand-Transaktionen (Tausch) und Konfiguration (Events).
+
+### 2.1 Freischaltungen und Erreichbarkeit
+
+Freischaltungen folgen dem Wärterrang (CANON §17, K43): Koop nach dem Prolog, Tausch ab Rang 3, PvP frei ab Rang 5 (Duo-Format), Raid ab Rang 22, Ranked ab Rang 28. Jede Online-Freischaltung hat einen **Offline-Ersatz** oder ist reine Ergänzung: Raids haben die Solo-Variante (CANON §129), PvP-Übung gegen Geister-Teams (aufgezeichnete Teams anderer Spielender, lokal gegen die Kampf-KI), Tausch hat keinen Ersatz, weil es keine tausch-exklusiven Echos gibt (DR-19).
+
+---
+
+## 3. Architekturüberblick
+
+```
+ ┌───────────────────── Client (PC / PS5 / XSX / Switch 2) ─────────────────────┐
+ │  Weltspiel (offline-fähig)   GF_Multiplayer (Sitzungen, Koop)   GF_PvP (Arena) │
+ │  Plattform-SDK (Konto, Freunde, Einladungen, Party, Cloud-Saves)               │
+ └───────┬──────────────────────────────┬───────────────────────────┬──────────────┘
+         │ Iris (UDP, Relay bei NAT)     │ Iris (UDP)                │ HTTPS / WebSocket (TLS 1.3)
+         ▼                               ▼                           ▼
+ ┌──────────────────┐         ┌────────────────────────┐   ┌─────────────────────────────────────────┐
+ │ Listen-Server    │         │ Dedicated Kampfserver  │   │ Aethris-Backend (Kubernetes, 3 Primär-   │
+ │ (Host-Client,    │         │ AethrisServer (Linux), │   │ regionen EU/NA/APAC)                    │
+ │ Koop 2–4)        │         │ Agones-Flotten je      │◄──┤ Konto · Profil · Sitzung/Lobby ·         │
+ │                  │         │ Region (8)             │   │ Matchmaking · Ranked · Tausch-Treuhand · │
+ └──────────────────┘         └────────────────────────┘   │ Legalität · Soziales · Events/LiveConfig │
+         ▲                               │                 │ · Telemetrie · Moderation · Fotos        │
+         └──────── Relay/NAT-Traversal ──┘                 └─────────────────────────────────────────┘
+                (Crossplay-Sitzungsdienst)                                 │
+                                                                           ▼
+                                                     Plattformdienste (PSN, Xbox Live, Nintendo, Steam/Epic)
+```
+
+| Baustein | Technik | Verantwortung |
+|---|---|---|
+| Replikation | **Iris** (UE 5.6), Push-Model, Prioritäten je Objekt | Koop-Welt, Kampfserver |
+| Server-Target | `AethrisServer` (Linux, Dedicated, CANON §27) – lädt nur Kampf-, Raid- und Daten-Module, keine Welt | Raid, PvP |
+| Flotten | Kubernetes + **Agones** (Gameserver-Orchestrierung), je Region eine Flotte, Autoscaling nach Puffer | DevOps |
+| Crossplay-Sitzungen | Plattformunabhängiger Sitzungs-/Lobby-Dienst mit NAT-Traversal und Relay (z. B. Epic Online Services Connect/Lobbies/P2P) | Koop-Verbindungen zwischen Plattformen |
+| Backend | Eigene Dienste (Go/C++), PostgreSQL (Konten, Tausch), Redis (Sitzungen, Ranglisten-Cache), Objektspeicher (Fotos, Replays) | Backend-Team |
+| Plattformen | Konto, Freunde, Einladungen, Elternkontrolle, Cloud-Speicher, Zertifizierung | je Plattform |
+
+**Grundsatz Konto:** Spielende melden sich mit ihrem Plattform-Konto an; das Backend legt dazu ein **Aethris-Konto** an (pseudonyme ID), das Plattform-IDs verknüpft. Crossplay-Freundeslisten nutzen das Aethris-Konto; plattformeigene Freunde werden zusätzlich angezeigt. Kein eigenes Passwort, keine E-Mail-Pflicht.
+
+---
+
+## 4. Replikation in der Koop-Reise
+
+### 4.1 Was wird repliziert?
+
+Das Weltspiel ist zu einem großen Teil **deterministisch** aus dem Weltseed ableitbar (CANON §29): Wetterfahrplan, NPC-Tagesabläufe (K53), statistische Populationen (K52), Händlerbestände. Deshalb überträgt der Host nicht die ganze Welt, sondern **Seed + Abweichungen**.
+
+| Objekt | Repliziert? | Wie | Begründung |
+|---|---|---|---|
+| Weltseed, Spielzeit | ja, einmal + Korrektur alle 10 s | Beitritts-Snapshot | Wetter, Tageszeit, NPC-Abläufe lokal berechnet (CANON §61: Koop-Wetter lokal berechnet) |
+| Wetter-Overrides (Story, Resonanzsturm, Fähigkeitswetter) | ja | `NM_WORLD_EVENT` | nicht aus dem Fahrplan ableitbar |
+| Spieler (alle) | ja | `NM_PLAYER_REPL`, 20 Hz | Bewegung, Animation-Zustand |
+| Begleit-Echos | ja | `NM_COMPANION_REPL`, 10 Hz | sichtbar neben ihren Wärtern |
+| Echo-Actors (< 150 m) | ja, relevanzgefiltert | `NM_ECHO_ACTOR_REPL`, 5 Hz | Kämpfe, Bindung, Verhalten müssen bei allen gleich sein |
+| Mass-Echos (> 150 m) | **nein** | lokal aus Seed + Zonen-Population | kosmetisch; Wechsel zu Actor erfolgt durch Host-Spawn |
+| NPC-Actors | Abweichungen | `NM_NPC_REPL`, 2 Hz | Tagesablauf deterministisch; Reaktionen (Flucht, Gespräch) repliziert |
+| Ressourcen-Knoten | nein (eigene Knoten je Spieler, CANON Wirtschaft) | – | jeder erntet seine eigenen Knoten |
+| Quests/Story-Flags | Host-Zustand, Ereignisse | `NM_WORLD_EVENT` | Fortschritt der Host-Welt (Q4 → K60) |
+| VFX, Audio, UI | nein | lokal aus Ereignissen | K58 §9.3 |
+| Kämpfe | Ergebnisse | §5 | Host löst auf |
+
+### 4.2 Relevanz und Prioritäten
+
+| Regel | Wert |
+|---|---|
+| Relevanzradius Echo-Actors | 150 m um jeden Spieler (Vereinigung aller Spieler), max. 40 je Gast |
+| Relevanzradius NPCs | 100 m, max. 60 je Gast |
+| Priorität | Spieler 1,0 · Begleiter 0,8 · Echos im Kampf/in Bindung 0,9 · Echos in Sicht 0,5 · NPCs 0,3 |
+| Spielerabstand | Unbegrenzt; Gäste dürfen sich frei bewegen. Streaming der Host-Welt um jeden Spieler (World Partition Streaming-Quellen je Spieler, max. 4) |
+| Schnellreise | Jeder Spieler einzeln; Host sieht „Mitspieler reist“; Story-Zwischensequenzen holen alle zusammen (Abstimmung) |
+
+**Host-Last:** Der Host streamt bis zu vier Gebiete gleichzeitig. Auf Switch 2 ist der Koop deshalb auf **2 Spieler bei Switch-2-Host** begrenzt (andere Plattformen hosten bis 4; ein Switch-2-Gast kann in 4er-Gruppen mitspielen). Die endgültige Messung erfolgt in K65.
+
+### 4.3 Bandbreite
+
+`aethris_net.py` rechnet aus `NetMessages.csv` (Nutzlast nach Quantisierung, Rate, Anzahl) plus Paket-Header bei 30 Paketen/s:
+
+| Strom (Koop, 4 Spieler) | Gast ↓ Ø | Gast ↓ Max (40 Echos, 60 NPCs) | Gast ↑ |
+|---|---|---|---|
+| Andere Spieler | 8,64 | 8,64 | – |
+| Begleit-Echos | 5,12 | 5,12 | – |
+| Echo-Actors | 10,08 | 22,40 | – |
+| NPCs | 3,20 | 9,60 | – |
+| Weltereignisse | 0,03 | 0,03 | – |
+| Kampf (Start, Ergebnisse) | 0,04 | 0,04 | – |
+| Paket-Header | 9,60 | 9,60 | – |
+| Bewegung (Gast → Host) | – | – | 2,88 |
+| Interaktion, Kampfbefehle, Hash, Bindung (Gast → Host) | – | – | 0,03 |
+| Herzschlag (Gast → Host) | – | – | 0,03 |
+| Paket-Header (Gast → Host) | – | – | 9,60 |
+| **Σ je Gast (kbit/s)** | **36,7** | **55,4** (Budget 256) | **12,5** |
+| **Host-Upload (3 Gäste, kbit/s)** | **110,2** | **166,3** (Budget 1.024) | |
+
+Damit liegt ein Koop-Gast selbst im ungünstigsten Fall bei rund einem Fünftel des Budgets – die Reserve deckt Spitzen (Kampfbeginn mit Startzustand, Beitritts-Snapshot) und schlechte Verbindungen (Neuübertragungen).
+
+### 4.4 Quantisierung
+
+| Wert | Format | Fehler |
+|---|---|---|
+| Position | Zellen-ID (World Partition 128 m) + 3 × 16 Bit innerhalb der Zelle | ≤ 0,2 cm |
+| Blickrichtung | 8 Bit Yaw | 1,4° |
+| Geschwindigkeit | aus Positionsdelta abgeleitet (nicht übertragen) | – |
+| Bewegungszustand | 8 Bit (Gehen, Laufen, Gleiten, Klettern, Schwimmen, Reiten × Reitart) | – |
+| Echo-Zustand | 4 Bit Verhalten (StateTree-Zweig) + 6 Bit Emotion (6 × Stufe) | – |
+
+---
+
+## 5. Kampf im Netz
+
+### 5.1 Prinzip
+
+Der Kampf ist **ganzzahlig und deterministisch** (Ticks, Promille, Q16.16, PCG32-Kampfseed, CANON §29/§31). Daraus folgt ein schlankes Modell: **Befehle hoch, Ergebnisse runter**.
+
+```
+ Client A                 Server (Host im Koop / Dedicated in Raid, PvP)                 Client B
+    │  NM_COMBAT_START (Format, Teilnehmer, Seed, Startzustand-Hash) ──────────────────────►│
+    │◄──────────────────────────────────────────────────────────────────────────────────────│
+    │  Zug von Echo A1 fällig (Tick 1200) – Zeitfenster offen
+    │── NM_COMBAT_COMMAND (7 Byte) ──►  prüfen: gehört A1 dem Absender? Fähigkeit im Set? Ziel gültig?
+    │                                  auflösen (GF_Combat, identischer Code wie offline)
+    │◄── NM_COMBAT_RESULT ─────────────┼──────────────────── NM_COMBAT_RESULT ─────────────►│
+    │  Präsentation (Animation, VFX, Audio) lokal
+    │── NM_COMBAT_HASH ──►  Vergleich mit Server-Hash; Abweichung → Neusynchronisation (Snapshot)
+```
+
+Der Client simuliert den Kampf **nicht voraus**; er stellt nur dar. Weil zwischen zwei Zügen ohnehin Animationen von 1–3 s laufen, ist die Latenz (≤ 150 ms) unsichtbar. Dasselbe Modul `GF_Combat` läuft offline lokal, im Koop auf dem Host und auf dem Dedicated Server – eine Implementierung, drei Ausführungsorte.
+
+### 5.2 Befehlsformat
+
+`FAethrisCombatCommand` (AethrisCore, `Net/AethrisCombatNet.h`) packt einen Befehl in **49 Bit → 7 Byte**: Tick 32 · Slot 3 · Aktion 3 · Fähigkeit 4 · Ziel 4 · Reserve 3. Werte außerhalb der Bitbreiten oder gesetzte Bits jenseits des Layouts weisen das Paket ab (Manipulationsschutz). Referenzbeispiele aus `aethris_net.py` (identisch mit dem C++-Packing):
+
+| Befehl | Tick | Slot | Aktion | Fähigkeit | Ziel | Reserve | 7 Byte (hex) |
+|---|---|---|---|---|---|---|---|
+| Fähigkeit 2 auf Gegnerplatz 9 | 1200 | 0 | 0 | 2 | 9 | 0 | `b0 04 00 00 80 24 00` |
+| Crescendo (Index 4) auf Gegnerplatz 8 | 3450 | 1 | 0 | 4 | 8 | 0 | `7a 0d 00 00 01 21 00` |
+| Wechsel auf Reserveplatz 3 | 5100 | 0 | 1 | 0 | 0 | 3 | `ec 13 00 00 08 c0 00` |
+| Aufgeben | 7000 | 0 | 6 | 0 | 0 | 0 | `58 1b 00 00 30 00 00` |
+
+| Aktion | Code | Bedeutung von „Fähigkeit“ | Erlaubt in |
+|---|---|---|---|
+| Ability | 0 | Index 0–3 im Kampfset, 4 = Crescendo | alle |
+| Switch | 1 | – (Reserve = Reserveplatz) | alle |
+| Item | 2 | Taschenplatz 0–15 | Koop, Raid; PvP nach Regelsatz (K61) |
+| Bond | 3 | – | Wildkampf (Koop) |
+| Guard | 4 | – | alle |
+| Flee | 5 | – | Wildkampf (Koop) |
+| Forfeit | 6 | – | PvP |
+
+### 5.3 Gleichzeitiges Planen und Zeitgrenzen
+
+Haben Echos verschiedener Spieler denselben Tick, planen beide gleichzeitig (CANON Kampf: „PvP/Koop planen gleichzeitig bei gleichem Tick“); der Server wartet auf beide Befehle und löst nach der Gleichstandsregel auf (GES_eff → Seite, die zuletzt nicht handelte → PCG).
+
+| Modus | Zugtimer | Bei Ablauf |
+|---|---|---|
+| Koop (Wildkampf) | 60 s, nur wenn ein anderer Spieler wartet | Echo wählt „Abwarten“ |
+| Raid | 45 s + 60 s Reservebank je Spieler | Kampf-KI des Spielers (Profil „Assistent“) wählt |
+| PvP frei | 30 s + 90 s Reservebank | „Abwarten“ |
+| PvP Ranked | 30 s + 90 s Reservebank (K02) | „Abwarten“; dreimal hintereinander → Aufgabe |
+
+### 5.4 Bindungs-Timing im Koop
+
+Das Einstimmen (K36) verlangt einen Anschlag im Gut-/Perfekt-Fenster (160–400 ms). Weil der Host autoritativ ist, aber der Gast lokal reagiert, gilt **Gast-Zeitstempel mit Toleranz**: Der Gast sendet den lokalen Zeitpunkt seines Anschlags relativ zum Fensterstart (`NM_BOND_TIMING`); der Host akzeptiert ihn, wenn er innerhalb des Fensters ± RTT/2 liegt (max. 150 ms Toleranz). Damit fühlt sich Bindung im Koop genauso an wie solo; Missbrauch ist wirkungslos, weil Koop nicht kompetitiv ist und die Toleranz begrenzt ist.
+
+### 5.5 Prüfsumme, Neusynchronisation, Replays
+
+- Nach jedem Ergebnis berechnet jeder Client eine **FNV-1a-64-Prüfsumme** über die kanonische Serialisierung des Kampfzustands (`Aethris::Net::Fnv1a64`) und sendet sie (`NM_COMBAT_HASH`). Abweichungen (Fehler, nicht Betrug – der Client entscheidet nichts) führen zu einem Zustands-Snapshot vom Server und zu einem Telemetrie-Ereignis `Net.Desync` (Ziel: < 1 je 10.000 Kämpfe).
+- **Replays** = Seed + Startzustand + Befehlsfolge (CANON §29). Ein PvP-Replay ist im Mittel < 2 KB groß und wird 30 Tage gespeichert (Ranked: 90 Tage, Grundlage für Meldungen, K61).
+
+### 5.6 Latenztoleranz
+
+| Strecke | Ziel | Wirkung bei Überschreitung |
+|---|---|---|
+| Befehl → Ergebnis (PvP, Raid) | ≤ 150 ms (RTT) | unsichtbar bis ≈ 600 ms (Animation läuft); darüber Ladesymbol am Zug |
+| Koop-Bewegung | ≤ 120 ms | Interpolation 100 ms Puffer, Extrapolation max. 250 ms |
+| Bindung | ≤ 150 ms Toleranz | darüber gilt Host-Zeit (Gast-Nachteil, Hinweis „Verbindung langsam“) |
+
+---
+
+## 6. Sitzungen, Beitritt, Wiederverbinden
+
+### 6.1 Zustände
+
+Die Sitzungszustände liegen in `GF_Multiplayer` (`EAethrisSessionState`); Übergänge prüft `Aethris::Session::IsTransitionAllowed`. Ein Wechsel nach **Offline** ist aus jedem Zustand erlaubt – das Spiel läuft immer weiter.
+
+| Von | Erlaubte Ziele |
+|---|---|
+| Offline | Connecting |
+| Connecting | OnlineIdle |
+| OnlineIdle | Hosting, JoiningHost, Matchmaking |
+| Hosting | OnlineIdle |
+| JoiningHost | InGuestWorld, OnlineIdle |
+| InGuestWorld | Returning, Reconnecting |
+| Matchmaking | InDedicatedMatch, OnlineIdle |
+| InDedicatedMatch | OnlineIdle, Reconnecting |
+| Reconnecting | InGuestWorld, InDedicatedMatch, Returning |
+| Returning | OnlineIdle |
+| (jeder) | Offline |
+
+### 6.2 Koop-Beitritt
+
+```
+Host: Einladung (Plattform oder Aethris-Freund) ─► Sitzung im Crossplay-Dienst (Relay-Fallback)
+Gast: Annehmen ─► eigener Spielstand wird gesichert (Autosave) ─► Verbindung zum Host
+Host → Gast: Beitritts-Snapshot (Weltseed, Spielzeit, Story-Flags der Host-Welt, aktive Overrides,
+             relevante Actors) ≈ 40–80 KB ─► Gast lädt Zellen um den Host ─► Gast erscheint am Host
+             oder am nächsten Resonanzstein
+Gast spielt mit eigenem Chor, eigenem Inventar, eigenen Ressourcen-Knoten; Welt-/Story-Zustand = Host
+```
+
+**Beitritt jederzeit**, außer während Zwischensequenzen, Bosskämpfen und Entscheidungen (Finale K46): Dort wartet der Beitritt bis zum Ende. Koop pausiert nie (UX-04, CANON §17); Menüs geben 60 s Schutz.
+
+### 6.3 Story im Koop (Übergabe an K60)
+
+Ob Gäste Story-Fortschritt aus der Host-Welt mitnehmen (Q4), entscheidet K60. K59 stellt die **Technik** bereit, die jede Antwort tragen kann: das Gast-Protokoll (§6.4) kann Story-Flags als Einträge aufnehmen, und die Host-Welt kann Story-Momente als „gemeinsam erlebt“ markieren.
+
+### 6.4 Gast-Protokoll
+
+Ein Gast schreibt während der Sitzung ein **Gast-Protokoll** (`FAethrisGuestLedgerEntry`): erhaltene Gegenstände, gebundene Echos (mit Ursprung „Koop-Welt von …“, CANON §29 `FEchoOrigin`), Erfahrung, Kodex-Einträge, Sol, Ruf. Jeder Eintrag ist vom Host signiert. Beim Zurückkehren in die eigene Welt (`Returning`) prüft der Client die Signaturen und wendet das Protokoll auf den eigenen Spielstand an. Das Protokoll wird zusätzlich **alle 60 s lokal gespeichert** – stürzt der Host ab, verliert der Gast höchstens eine Minute.
+
+| Eintrag | Regel |
+|---|---|
+| Echo | Bindung zählt für den Gast (eigene Bindungsaktion); Server-Plausibilität beim nächsten Online-Kontakt (Legalität §9) |
+| Gegenstände | eigene Beute (kein Teilen nötig, kein Wegschnappen: Beute ist je Spieler, CANON Wirtschaft) |
+| Erfahrung, Kodex | voll |
+| Ruf | nur bei Fraktionsquests, die der Gast selbst freigeschaltet hat |
+| Sol | voll |
+| Story-Flags | laut K60 |
+
+### 6.5 Verbindungsverlust
+
+| Ereignis | Folge |
+|---|---|
+| Gast verliert Verbindung | Fenster 120 s (Koop): Figur bleibt als „verbindet …“ stehen (unverwundbar, nicht im Kampf: Kampf-KI übernimmt seine Echos mit „Abwarten“-Tendenz); danach Rückkehr mit Gast-Protokoll |
+| Host verliert Verbindung / beendet | Alle Gäste kehren in ihre Welt zurück (`Returning`), Protokoll angewendet; keine Host-Migration (die Welt gehört dem Host) |
+| Dedicated Match, Spieler verliert Verbindung | Fenster 60 s (PvP) / 90 s (Raid); PvP: Zugtimer läuft weiter; Raid: Kampf-KI spielt die Echos |
+| Backend fällt aus | Laufende Koop-Sitzungen laufen weiter (Peer-Verbindung); neue Einladungen nicht möglich; Dedicated Matches laufen zu Ende, Ergebnisse werden gepuffert und nachgereicht |
+
+### 6.6 Matchmaking
+
+| Modus | Kriterien | Ziel-Wartezeit |
+|---|---|---|
+| Raid | Region (RTT ≤ 80 ms), Raid-ID, Wärterrang-Band ± 6, Sprache optional | ≤ 60 s, danach Angebot „mit weniger Spielern starten“ (Skalierung CANON §129) |
+| PvP frei | Region, Format, verdeckte Wertung (Glicko-2) | ≤ 45 s, Ausweitung der Wertungsspanne alle 15 s |
+| PvP Ranked | K61 | K61 |
+
+Crossplay ist Standard; Spielende können es in den Einstellungen **für Matchmaking** auf die eigene Plattformfamilie beschränken (Konsole/PC). Freundes-Koop über Plattformgrenzen bleibt immer möglich.
+
+---
+
+## 7. Infrastruktur und Kapazität
+
+### 7.1 Regionen
+
+| DisplayName | Location | Covers | Share | RttMs | Backend |
+|---|---|---|---|---|---|
+| Europa Mitte | Frankfurt | DACH, Benelux, Polen, Skandinavien, Osteuropa | 240 | 35 | ja (Primär EU) |
+| Europa West | Dublin | UK, Irland, Frankreich, Iberien | 140 | 40 | nein |
+| Nordamerika Ost | Virginia | USA Ost, Kanada Ost | 170 | 40 | ja (Primär NA) |
+| Nordamerika West | Oregon | USA West, Kanada West, Mexiko Nord | 110 | 45 | nein |
+| Südamerika | São Paulo | Brasilien, Argentinien, Chile | 60 | 55 | nein |
+| Asien Nordost | Tokio | Japan, Korea | 180 | 35 | ja (Primär APAC) |
+| Asien Südost | Singapur | Südostasien, Indien | 50 | 60 | nein |
+| Ozeanien | Sydney | Australien, Neuseeland | 50 | 40 | nein |
+
+### 7.2 Kapazitätsmodell
+
+Annahmen (zu überprüfen in der Closed Beta P5, K67): Spitzen-CCU im Launch-Monat 150.000 (≈ 2,5 Mio. Spielende × 6 % gleichzeitig); davon 4 % im Raid (Ø 3,2 Spieler je Kampf), 7 % im PvP (2 je Kampf), 18 % im Koop. Ein Kern trägt 25 Raid- oder 60 PvP-Kämpfe (rundenbasiert, Auflösung ≈ 0,5 ms je Zug, Iris-Verwaltung je Verbindung). Reserve +30 %.
+
+| Region | Standort | Anteil | Spitzen-CCU | davon Koop (Listen-Server, ohne Serverkosten) | Dedicated-Kerne (Spitze, +30 %) |
+|---|---|---|---|---|---|
+| Europa Mitte | Frankfurt | 24 % | 36.000 | 6.480 | 51 |
+| Europa West | Dublin | 14 % | 21.000 | 3.780 | 30 |
+| Nordamerika Ost | Virginia | 17 % | 25.500 | 4.590 | 36 |
+| Nordamerika West | Oregon | 11 % | 16.500 | 2.970 | 24 |
+| Südamerika | São Paulo | 6 % | 9.000 | 1.620 | 13 |
+| Asien Nordost | Tokio | 18 % | 27.000 | 4.860 | 39 |
+| Asien Südost | Singapur | 5 % | 7.500 | 1.350 | 11 |
+| Ozeanien | Sydney | 5 % | 7.500 | 1.350 | 11 |
+| **Σ** | | 100 % | **150.000** | **27.000** | **215** |
+
+Monatliche Kosten Dedicated Server bei Autoscaling (Ø 45 % der Spitzenkerne, 0,045 € je Kernstunde): **≈ 3.135 €** zuzüglich Backend-Dienste (§8).
+
+Die Rechnung zeigt den wichtigsten Vorteil der rundenbasierten Architektur: Dedicated Server für alle kompetitiven Modi kosten weniger als ein einziger Mitarbeitender. Der größere Kostenblock sind Backend-Dienste, Datenbanken, Relay-Verkehr und Betrieb (§8).
+
+### 7.3 Betrieb
+
+| Thema | Festlegung |
+|---|---|
+| Server-Build | `AethrisServer` (Linux), Container-Image je Build, signiert; Startzeit ≤ 3 s; ein Prozess = 1 Kern, viele Kämpfe |
+| Flotten | Agones-Flotte je Region mit Puffer (10 % freie Prozesse), Autoscaler nach belegten Plätzen |
+| Versionen | Protokollversion + **Daten-Hash** (alle kampfrelevanten CSVs) müssen zwischen Client und Server übereinstimmen; ältere Clients werden zum Update aufgefordert, das Weltspiel bleibt spielbar |
+| Live-Konfiguration | Nur nicht-kampfrelevante Werte (Event-Kalender, Texte, Matchmaking-Parameter) ohne Patch änderbar; Balance-Änderungen nur per Patch (Daten-Hash) |
+| Wartung | Rollierend je Region, keine globalen Ausfallzeiten; Raid/PvP-Warteschlangen schließen 15 min vorher |
+| Beobachtung | Metriken (Belegung, Zugzeiten, Desyncs, Abbrüche), verteiltes Tracing im Backend, Alarmierung 24/7 (K68) |
+
+---
+
+## 8. Backend-Dienste
+
+| Dienst | Aufgabe | Daten | Abhängigkeiten |
+|---|---|---|---|
+| Konto | Plattform-Login → Aethris-Konto (pseudonyme ID), Verknüpfung mehrerer Plattformen | Konto-ID, Plattform-IDs, Einwilligungen | Plattform-SDKs |
+| Profil | Profil-Daten (CANON §17: Einstellungen-Sync optional, Erfolge, PvP-Rang, Gilde, Fotoalbum-Verweise) | Profil-Dokument | Konto |
+| Sitzung/Lobby | Koop-Sitzungen, Raid-Lobbys, Einladungen, Crossplay-Relay-Vermittlung | flüchtig | Crossplay-Dienst |
+| Matchmaking | Raid, PvP frei, Ranked; Zuteilung von Agones-Servern | flüchtig | Ranked, Flotten |
+| Ranked | Wertung, Saisons, Ranglisten (K61) | Wertungen, Historie | Matchmaking |
+| Tausch-Treuhand | Zweiphasen-Tausch, Börse (K60) | Transaktionen, Echo-Snapshots | Legalität |
+| Legalität | Prüft Echos (Anlagen, Loci, Morph-Herkunft, Lernset-Erreichbarkeit, Level/EP-Kurve, Ursprung) und signiert sie | Prüfregeln = Spieldaten-Version | – |
+| Soziales | Freunde, Gilden (K60), Blockieren, Präsenz | Beziehungen | Konto |
+| Events/LiveConfig | Event-Kalender, Saisons, Matchmaking-Parameter | Konfiguration | – |
+| Telemetrie | Spielereignisse (opt-out wo möglich), Absturzberichte | pseudonym | – |
+| Moderation | Meldungen, Prüfung, Sanktionen, Freitext-Filter | Meldungen, Replays | Soziales, Ranked |
+| Fotos | Teilen von Fotoalbum-Bildern (K39) mit Moderation | Bilder (Objektspeicher) | Moderation |
+
+**Echo-Signatur:** Wenn ein Echo in eine Online-Funktion eintritt (Tausch, Ranked-Team-Registrierung, Raid-Teilnahme), prüft der Legalitätsdienst es und signiert den kanonischen Echo-Snapshot mit einem Server-Schlüssel (Ed25519). Die Signatur wird in `FEchoOrigin` gespeichert (CANON §29) und bei späteren Online-Kontakten nur noch verglichen; ändert sich das Echo regulär (Level, Lernen), wird neu geprüft.
+
+---
+
+## 9. Sicherheit und Fairness
+
+### 9.1 Bedrohungsmodell
+
+| Bedrohung | Ziel | Abwehr |
+|---|---|---|
+| Manipulierte Kampfergebnisse | Ranked, Raid-Belohnungen | Server berechnet alles; Client sendet nur Befehle (NET-05) |
+| Manipulierte Spielstände (offline) | Unmögliche Echos in Tausch/Ranked | Legalitätsprüfung + Signatur; offline ist alles erlaubt (eigene Welt, eigene Sache) |
+| Speedhack/Teleport im Koop | Mitspielende stören | Host prüft Bewegung (`NM_PLAYER_MOVE`: Geschwindigkeit ≤ Traversal-Max + 10 %); Koop nur mit Eingeladenen; Rauswurf durch Host |
+| Bot-Farmen | Ranked-Wertung, Börse | Ratenlimits, Verhaltensanalyse (Telemetrie), Tauschgrenzen (K60) |
+| Paketmanipulation | Absturz, Exploits | Strenge Deserialisierung (Bitbreiten, Längen, Bereichsprüfungen), Fuzzing (§12) |
+| Kontoübernahme | Verlust von Profil/Rang | Login nur über Plattform-Konten (deren Zwei-Faktor-Mechanismen) |
+| DDoS auf Server | Ausfälle | Anbieter-Schutz, Relay für Koop (IP-Adressen nicht offengelegt), Rate-Limits |
+| Belästigung | Wohlbefinden | Standardmäßig nur Schnellchat/Emotes, Blockieren, Melden, Moderation (§10) |
+
+### 9.2 Kein Kernel-Anti-Cheat
+
+AETHRIS verzichtet auf Anti-Cheat-Software mit Kernelzugriff. Der rundenbasierte, serverautoritative Kampf macht die klassischen Betrugsformen (Zielhilfe, Wallhack, Schadenmanipulation) wirkungslos; die verbleibenden Risiken (manipulierte Echos, Bots) werden serverseitig erkannt. Auf PC kommt eine leichtgewichtige Integritätsprüfung des Clients hinzu (signierte Pakete, Prüfung der Spieldaten-Hashes) – ausschließlich für Ranked.
+
+### 9.3 Legalitätsprüfung (Server)
+
+| Prüfung | Quelle | Beispiel-Abweisung |
+|---|---|---|
+| Art existiert, Stufe erreichbar | `Species.csv`, Evolutionsbedingungen | Stufe-3-Art auf Level 5 |
+| Basiswerte/Anlagen/Schliff im erlaubten Bereich | K18, K39 | Anlage 33 bei Maximum 31 |
+| Genom (Loci, Allele, Morph-Herkunft) | K38 (CANON Zucht) | Morph ohne Zucht-/Wildherkunft |
+| Lernset-Erreichbarkeit | Lernsets, Tutoren (K29) | Fähigkeit nicht lernbar |
+| Level/EP passend zur Wachstumskurve | K18 | EP über Level-Grenze |
+| Ursprung plausibel | `FEchoOrigin` (Zone, Wetter, Zeit) | Mythisches ohne Raid-/Tiefenresonanz-Herkunft |
+
+Die Prüfung nutzt **dieselben Daten** wie der Client (Daten-Hash). Abgewiesene Echos bleiben im Spielstand; sie können nur nicht in Online-Funktionen verwendet werden. Es gibt keine automatische Sperre für den Besitz – Sanktionen nur bei wiederholten Versuchen, manipulierte Echos in Ranked oder Tausch zu bringen.
+
+---
+
+## 10. Datenschutz, Altersfreigabe, Kommunikation
+
+| Thema | Festlegung |
+|---|---|
+| Rechtsgrundlagen | DSGVO (EU), UK-GDPR, CCPA (Kalifornien), APPI (Japan), LGPD (Brasilien); Datenverarbeitung in der Region des Kontos, wo erforderlich |
+| Datensparsamkeit | Pseudonyme Konto-ID; keine Klarnamen, keine Standortdaten (Region nur grob aus dem Matchmaking) |
+| Einwilligungen | Telemetrie (wo nicht notwendig) per Opt-out/Opt-in je nach Rechtsraum; Freitext-Chat und Foto-Teilen per Opt-in |
+| Kinder | Altersfreigabe-Ziel PEGI 7 / USK 6 / ESRB E10+ (K01) – Kinder gehören zur Zielgruppe; Plattform-Elternkontrollen werden respektiert (Kommunikation, Online-Spiel, Käufe); unter 13 bzw. 16 Jahren (je Rechtsraum) standardmäßig kein Freitext |
+| Kommunikation | Standard: 24 Schnellchat-Sätze + Gesten (`NM_EMOTE`) in allen Sprachen automatisch übersetzt; Freitext nur in Gilden/Freundeskreis, Filter der Plattform + eigener Filter; **kein** Sprachchat im Spiel (Plattform-Party bleibt möglich) |
+| Blockieren/Melden | Überall mit ≤ 2 Eingaben; Blockieren wirkt plattformübergreifend; Meldungen mit Kontext (letzte Nachrichten, Replay) |
+| Auskunft/Löschung | Selbstbedienung im Konto-Menü (Datenexport, Löschung innerhalb 30 Tagen; Ranglisten anonymisiert) |
+| Aufbewahrung | Replays 30/90 Tage, Telemetrie roh 13 Monate, Chat-Meldungen 12 Monate |
+
+Die Schnellchat-Sätze nutzen die Haltung der Welt: „Guter Klang!“, „Ich warte am Stein“, „Hilfe bei der Bindung?“, „Vorsicht, Stille“, „Danke für den Kampf“ … Damit ist Verständigung sprachübergreifend möglich, und die meisten Spielenden brauchen nie Freitext.
+
+---
+
+## 11. Fehlerfälle und Offline-Robustheit
+
+| Fall | Verhalten | Spielende sehen |
+|---|---|---|
+| Kein Netzwerk beim Start | Start offline, keine Wartezeit, Online-Menüpunkte grau mit Erklärung | „Online-Funktionen nicht verfügbar“ (kein Pop-up) |
+| Backend nicht erreichbar | Wiederholung mit Backoff (5 s … 5 min), Spiel unbeeinflusst | dezentes Symbol im Profil-Menü |
+| Plattformdienst gestört | Koop-Einladungen über Aethris-Freunde weiter möglich, wenn Backend erreichbar | Hinweis im Freundesmenü |
+| Version veraltet | Online-Modi gesperrt bis Update; Weltspiel normal | „Update für Online-Funktionen nötig“ |
+| Daten-Hash weicht ab (Mod, Beschädigung) | Ranked/Tausch gesperrt; Koop mit Warnung möglich | Hinweis mit Reparaturangebot (Plattform-Prüfung) |
+| Desync im Kampf | Snapshot vom Server, Kampf läuft weiter | keine Unterbrechung |
+| Host-Absturz im Koop | Rückkehr in eigene Welt, Protokoll ≤ 60 s alt angewendet | „Verbindung zum Host verloren – Fortschritt gesichert“ |
+| Dedicated Server stürzt ab | Raid: Neustart des Kampfes mit gleichem Seed ab letzter Runde (Zustand im Backend gesichert je Runde); PvP: Match ungewertet | „Kampf wird fortgesetzt“ / „Match ungewertet“ |
+
+---
+
+## 12. Tests
+
+| Testart | Inhalt | Rhythmus |
+|---|---|---|
+| Netzwerk-Emulation | Profile: Gut (30 ms, 0 %), Normal (80 ms, 0,5 %), Schlecht (200 ms, 2 %, Jitter 40 ms), Mobil (350 ms, 5 %) – alle Modi | nächtlich (Bots) |
+| Bot-Spielende | Koop-Bots (folgen, kämpfen, binden), PvP-Bots (Kampf-KI), Raid-Bots | nächtlich, Last-Tests |
+| Last-Test Backend | 2× Spitzen-CCU (300.000 simuliert), 10× Tausch-Spitze | vor jeder Beta, vor Launch |
+| Soak | 72 h Dauerbetrieb einer Flotte, Speicher- und Verbindungs-Lecks | vor Launch, je Hauptpatch |
+| Fuzzing | Zufällige/manipulierte Pakete gegen Server-Deserialisierung (Kampfbefehl, Tausch) | CI (täglich) |
+| Determinismus | Gleiche Seeds + Befehle → gleicher Hash auf allen Plattformen (x64, ARM) | CI (jeder Commit an GF_Combat) |
+| Chaos | Backend-Dienste, Datenbank, Relay gezielt abschalten; Erwartung §11 | monatlich ab Beta |
+| Crossplay-Matrix | Alle Plattformpaare in Koop, Raid, PvP | je Release-Kandidat |
+| Zertifizierung | Plattform-Anforderungen (Online-Fehlerbehandlung, Elternkontrolle, Blockieren) | je Einreichung (K66) |
+
+---
+
+## 13. Prüfregeln
+
+`tools/ref/aethris_net.py validate`:
+
+| Regel | Inhalt |
+|---|---|
+| NET-01 | Jeder Command (Client → Server) hat eine Serverprüfung |
+| NET-02 | State-Nachrichten nur über zuverlässige Kanäle |
+| NET-03 | Koop mit 4 Spielern im ungünstigsten Fall: Gast-Download ≤ 256 kbit/s, Host-Upload ≤ 1.024 kbit/s |
+| NET-04 | Regionsanteile = 1.000 ‰, Ziel-RTT ≤ 60 ms |
+| NET-05 | In Kampf-, Raid- und PvP-Modi sendet der Client keinen Zustand (DR-21) |
+| NET-06 | Kampfbefehl passt in die Nutzlast (Bit-Layout) |
+
+**Ergebnis:** Prüfregeln NET-01–NET-06 über 20 Nachrichten, 8 Modi, 8 Regionen: **0 Verstöße**. Koop (4 Spieler): Gast ↓ 36,7 kbit/s, Gast ↑ 12,5 kbit/s, Host ↑ 110,2 kbit/s; PvP je Spieler ≈ 0,76 kbit/s; Kampfbefehl 49 Bit → 7 Byte.
+
+Die vollständige Nachrichtenliste:
+
+| Nachricht | Modus | Richtung | Art | Kanal | Rate | Bytes | Serverprüfung |
+|---|---|---|---|---|---|---|---|
+| `NM_PLAYER_MOVE` | MODE_COOP | C→S | Stream | Iris Unreliable | 20 Hz | 18 | Geschwindigkeit ≤ Traversal-Max (K40) + 10 %; Teleport nur über Rückklang/Stein |
+| `NM_PLAYER_REPL` | MODE_COOP | S→C | Stream | Iris Property | 20 Hz | 18 | – |
+| `NM_COMPANION_REPL` | MODE_COOP | S→C | Stream | Iris Property | 10 Hz | 16 | – |
+| `NM_ECHO_ACTOR_REPL` | MODE_COOP | S→C | Stream | Iris Property | 5 Hz | 14 | – |
+| `NM_NPC_REPL` | MODE_COOP | S→C | Stream | Iris Property | 2 Hz | 10 | – |
+| `NM_WORLD_EVENT` | MODE_COOP | S→C | State | Iris Reliable RPC | Ereignis (~6/min) | 40 | – |
+| `NM_INTERACT` | MODE_COOP | C→S | Command | Iris Reliable RPC | Ereignis (~8/min) | 12 | Distanz ≤ 3 m, Objekt existiert, Bedingungen (Quest/Werkzeug) |
+| `NM_COMBAT_START` | ALL_COMBAT | S→C | State | Reliable | Ereignis (~0,5/min) | 96 | – |
+| `NM_COMBAT_COMMAND` | ALL_COMBAT | C→S | Command | Reliable | Ereignis (~6/min) | 8 | Echo am Zug gehört dem Absender, Fähigkeit im Kampfset, Ziel gültig, Zeitfenster offen |
+| `NM_COMBAT_RESULT` | ALL_COMBAT | S→C | State | Reliable | Ereignis (~6/min) | 48 | – |
+| `NM_COMBAT_TIMER` | MODE_PVP_RANKED | S→C | State | Reliable | 1 Hz | 6 | – |
+| `NM_COMBAT_HASH` | ALL_COMBAT | C→S | Command | Reliable | Ereignis (~6/min) | 8 | Abweichung → Neusynchronisation (Server-Zustand gewinnt) |
+| `NM_BOND_TIMING` | MODE_COOP | C→S | Command | Reliable | Ereignis (~1/min) | 10 | Zeitstempel innerhalb Fenster ± RTT/2 (max. 150 ms Toleranz), Fenster serverseitig berechnet |
+| `NM_EMOTE` | ALL_SOCIAL | C→S | Command | Reliable | Ereignis (~2/min) | 4 | Ratenlimit 1/s |
+| `NM_CHAT_TEXT` | ALL_SOCIAL | C→S | Command | Backend WebSocket | Ereignis (~1/min) | 120 | Opt-in, Plattformfilter, Ratenlimit |
+| `NM_TRADE_OFFER` | MODE_TRADE | C→S | Command | HTTPS | Ereignis (~0,5/min) | 900 | Legalität (Anlagen, Loci, Morph-Herkunft, Lernset), Signatur, Tauschsperren |
+| `NM_TRADE_CONFIRM` | MODE_TRADE | C→S | Command | HTTPS | Ereignis (~0,5/min) | 64 | Beide Bestätigungen (Halten 3 s, UX-06), Treuhand atomar |
+| `NM_RAID_STATE` | MODE_RAID | S→C | State | Reliable | Ereignis (~8/min) | 64 | – |
+| `NM_PRESENCE` | ALL_SOCIAL | C→S | State | Backend WebSocket | Ereignis (~0,2/min) | 48 | – |
+| `NM_HEARTBEAT` | ALL | C→S | Stream | Unreliable | 1 Hz | 4 | Zeitüberschreitung 10 s → Wiederverbinden |
+
+---
+
+## 14. Offene Punkte und Übergaben
+
+| Punkt | Stand | Kapitel |
+|---|---|---|
+| Q4 Koop: geteilter Story-Fortschritt? | Technik bereit (Gast-Protokoll, „gemeinsam erlebt“-Markierung); Entscheidung | K60 |
+| Q5 Ranked-Level-Normalisierung | Server-Autorität und Daten-Hash bereit; Regeln | K61 |
+| Q6 Split-Screen-Koop | Nicht Teil der Online-Architektur; Machbarkeit (zwei Ansichten, Speicher) | K65 |
+| Switch-2-Host-Grenze (2 Spieler) | Vorläufig; Messung | K65 |
+| Gilden, Tauschbörse, Geschenke | Backend-Dienste vorgesehen; Regeln | K60 |
+| Cloud-Speicher, Cross-Save | Plattform-Cloud vorgesehen; Fragmente | K64 |
+
+---
+
+## 15. Decision Records
+
+| ADR | Entscheidung | Begründung | Verworfen |
+|---|---|---|---|
+| ADR-235 | Koop als Listen-Server ohne Host-Migration; Gäste nehmen ein signiertes Gast-Protokoll mit | Welt gehört dem Host; kein Serverbetrieb für Weltsimulation; Gäste verlieren ≤ 60 s | Dedicated Welt-Server; Host-Migration |
+| ADR-236 | Kampf netzwerkseitig als „Befehle hoch, Ergebnisse runter“ ohne Vorausberechnung im Client | Deterministischer, rundenbasierter Kampf; Latenz unsichtbar; ein Codepfad | Lockstep mit Client-Simulation; Rollback |
+| ADR-237 | Kampfbefehl 7 Byte mit strenger Bitprüfung; Zustands-Prüfsumme FNV-1a 64 | Minimale Bandbreite, Manipulationsschutz, Desync-Erkennung | Freie Strukturen per RPC |
+| ADR-238 | Koop-Welt als Seed + Abweichungen; Mass-Echos nicht repliziert | Bandbreite ≈ 40–55 kbit/s je Gast | Volle Weltreplikation |
+| ADR-239 | Dedicated Kampfserver als Mehrfach-Kampf-Prozesse auf Agones, 8 Regionen | Geringe Kosten, globale Latenz ≤ 60 ms | Ein Prozess je Kampf; wenige Regionen |
+| ADR-240 | Crossplay in allen Modi standardmäßig an, Matchmaking-Filter je Plattformfamilie optional | Gemeinsame Gemeinschaft; rundenbasiert keine Eingabe-Nachteile | Getrennte Plattform-Pools |
+| ADR-241 | Kein Kernel-Anti-Cheat; Server-Autorität + Legalität + Signatur | Wirksam für dieses Spiel, datensparsam, plattformübergreifend | Kernel-Anti-Cheat |
+| ADR-242 | Kommunikation standardmäßig nur Schnellchat/Gesten; Freitext opt-in; kein Sprachchat im Spiel | Sicherheit (Altersfreigabe PEGI 7, Kinder in der Zielgruppe), Verständigung über Sprachen | Freitext und Sprachchat standardmäßig |
+
+---
+
+## 16. Kanon-Änderungen
+
+| Bereich | Eintrag | Status |
+|---|---|---|
+| §231 | Online-Modi und Topologie (`ModeTopology.csv`): Koop Listen-Server, Raid/PvP Dedicated, Tausch/Soziales/Events Backend; Offline-Ersatz je Modus; Aethris-Konto (pseudonym) über Plattform-Login; Crossplay überall | LOCKED |
+| §232 | Koop-Replikation: Seed + Abweichungen, Relevanz 150 m (Echos ≤ 40) / 100 m (NPCs ≤ 60), Mass nicht repliziert, eigene Knoten/Beute je Spieler, Bandbreite Gast ≤ 256 kbit/s, Host ≤ 1.024 kbit/s; Switch-2-Host max. 2 Spieler (vorläufig, K65) | LOCKED |
+| §233 | Kampf im Netz: Befehle hoch/Ergebnisse runter, `FAethrisCombatCommand` 49 Bit/7 Byte, FNV-1a-64-Prüfsumme, Zugtimer je Modus, Bindungs-Toleranz ± RTT/2 (≤ 150 ms), Replays = Seed + Befehle (30/90 Tage) | LOCKED |
+| §234 | Sitzungszustände (`EAethrisSessionState`), Beitritt jederzeit außer Zwischensequenz/Boss/Entscheidung, Gast-Protokoll (signiert, alle 60 s gesichert), Wiederverbindung 120/90/60 s, Matchmaking-Ziele, 8 Regionen (`ServerRegions.csv`), Kapazitätsmodell, Daten-Hash-Pflicht | LOCKED |
+| §235 | Backend-Dienste, Echo-Signatur (Ed25519) nach Legalitätsprüfung, Bedrohungsmodell, kein Kernel-Anti-Cheat, Datenschutz/Kinder, Schnellchat-Standard, kein Sprachchat, Fehlerfälle, Testmatrix | LOCKED |
+| §10 | ADR-235 – ADR-242 | LOCKED |
+
+---
+
+## 17. Kapitel-Checkliste
+
+- [x] Ziele NZ-1–NZ-6, Leitplanken DR-19–DR-21
+- [x] Modi mit Topologie, Autorität, Freischaltung, Offline-Ersatz
+- [x] Architekturüberblick (Client, Listen-Server, Dedicated, Backend, Plattformen)
+- [x] Koop-Replikation mit Relevanz, Quantisierung, Bandbreitenrechnung
+- [x] Kampf im Netz: Befehlsformat (C++ + Referenz), gleichzeitiges Planen, Timer, Bindungs-Timing, Prüfsumme, Replays
+- [x] Sitzungszustände, Beitritt, Gast-Protokoll, Verbindungsverlust, Matchmaking
+- [x] Regionen, Kapazität und Kosten, Betrieb
+- [x] Backend-Dienste, Echo-Signatur, Sicherheit, Legalitätsprüfung
+- [x] Datenschutz, Kinder, Kommunikation; Fehlerfälle; Tests
+- [x] Prüfregeln NET-01–NET-06 (0 Verstöße); offene Punkte an K60/K61/K64/K65 übergeben
+- [x] ADR-235 – ADR-242, CANON §231–§235
+
+➡️ **Nächstes Kapitel: K60 – Koop, Tausch und Gilden.**

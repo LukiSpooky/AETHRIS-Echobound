@@ -1,0 +1,10 @@
+# Online-Modi und Netztopologie (K59 §2). Authority = wer Spielergebnisse festlegt. Unlock = Wärterrang (CANON §17/§129, K43).
+Name,DisplayName,Players,Topology,Authority,Unlock,Crossplay,OfflineFallback,Persistence
+MODE_COOP,Koop-Reise,2–4,Listen-Server (Host-Welt),"Host (Welt, Kampf); Backend nur Sitzung/Einladung",Rang 1 (Prolog abgeschlossen),ja,Solo-Weltspiel,Gast: eigene Fragmente lokal + Ereignisprotokoll
+MODE_RAID,Raid,1–4,Dedicated Server,Server,Rang 22,ja,"Solo-Variante offline (HP ×0,6)",Server-Ergebnis → Belohnung signiert
+MODE_PVP_CASUAL,Arena-Halle (frei),"2 (1v1, 2v2 als Duo/Trio)",Dedicated Server,Server,Rang 5,ja,Lokale Übungskämpfe gegen Geister-Teams,Replay (Seed + Eingaben)
+MODE_PVP_RANKED,Arena-Halle (Ranked),2,Dedicated Server,"Server (levelnormalisiert, DR-21)",Rang 28,"ja (Eingabe irrelevant, rundenbasiert)",–,"Rangliste, Replay"
+MODE_TRADE,Tauschhalle,2 (direkt) / n (Börse),Backend-Dienst (Treuhand),Backend,Rang 3,ja,–,"Treuhand-Transaktion, Echo-Signatur"
+MODE_FRIENDS,"Freunde, Gilden, Besuche",1–50,Backend-Dienst,Backend,Rang 1,ja,–,Profil (CANON §17)
+MODE_EVENTS,Online-Events und Saisons,1,Backend-Konfiguration,"Backend (Kalender), Client spielt lokal",Rang 1,ja,Events ohne Online nicht verfügbar; keine exklusiven Echos (DR-19),Profil
+MODE_PHOTO_SHARE,Fotoalbum teilen,1,Backend-Dienst + Plattform-Teilen,Backend,Rang 1,ja,lokales Album,Profil

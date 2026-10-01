@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K58
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K59
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -451,6 +451,14 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-232 | Option `ACC_VFX_INTENSITY` (100/70/40 %) | K58 |
 | ADR-233 | Modul GF_VFX in Schicht Presentation (CR-007) | K58 |
 | ADR-234 | Velnox als Negativraum über Custom Depth/Stencil | K58 |
+| ADR-235 | Koop als Listen-Server ohne Host-Migration, signiertes Gast-Protokoll | K59 |
+| ADR-236 | Kampf: Befehle hoch, Ergebnisse runter | K59 |
+| ADR-237 | Kampfbefehl 7 Byte, Prüfsumme FNV-1a 64 | K59 |
+| ADR-238 | Koop-Welt als Seed + Abweichungen | K59 |
+| ADR-239 | Mehrfach-Kampf-Prozesse auf Agones, 8 Regionen | K59 |
+| ADR-240 | Crossplay standardmäßig in allen Modi | K59 |
+| ADR-241 | Kein Kernel-Anti-Cheat | K59 |
+| ADR-242 | Schnellchat-Standard, Freitext opt-in, kein Sprachchat | K59 |
 
 ## §11 Change Requests
 
@@ -2054,3 +2062,23 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §230 VFX-Budgets, Barrierefreiheit, Technik (LOCKED, K58 §7–§9 · `Data/VFX/VfxBudgets.csv`, `Plugins/GameFeatures/GF_VFX`)
 
 - Budgets je Kategorie; Worst Case Trio 3+3 (Crescendo, Fähigkeit, 12 Status, Terrain, Gewitter) PS5 228 k / 3,34 ms ≤ 300 k / 4,0 ms, Switch 2 64,3 k / 4,95 ms ≤ 90 k / 5,5 ms; Story-Setpiece halbiert andere Kategorien. Blitzgrenze ≤ 3 Spitzen/s im Code (`Aethris::Vfx::AllowFlash`, ADR-231); ACC_MOTION: Spitzen 40 %, keine Kamerastöße; `ACC_VFX_INTENSITY` 100/70/40 % (Formträger, Pflicht-Effekte, UI3D bleiben). Ruf-Tempo ≤ 138 BPM. Niagara Data Channel `NDC_CombatHits`; GPU-Simulation, Pooling, Effect Types je Kategorie. VFX nicht repliziert. Modul GF_VFX (Presentation, CR-007).
+
+## §231 Online-Modi & Topologie (LOCKED, K59 §1–§3 · `Data/Online/ModeTopology.csv`)
+
+- Ziele NZ-1–NZ-6 (offline vollständig, Fairness durch Autorität, klein/robust, Crossplay, ausfallsicher, datensparsam). Koop-Reise 2–4 = Listen-Server (Host-Welt, Autorität Host); Raid, PvP frei/Ranked = Dedicated `AethrisServer` (Agones-Flotten); Tausch, Freunde/Gilden, Events, Foto-Teilen = Backend-Dienste. Jeder Modus mit Offline-Ersatz oder reiner Ergänzung (Raid solo, PvP-Übung gegen Geister-Teams). Aethris-Konto (pseudonym) über Plattform-Login, kein Passwort. Crossplay in allen Modi (Matchmaking-Filter je Plattformfamilie optional).
+
+## §232 Koop-Replikation (LOCKED, K59 §4 · `Data/Online/NetMessages.csv`, `tools/ref/aethris_net.py`)
+
+- Iris, Seed + Abweichungen: Weltseed/Spielzeit (Korrektur 10 s), Overrides als Ereignisse; Spieler 20 Hz, Begleiter 10 Hz, Echo-Actors 5 Hz (150 m, ≤ 40), NPC-Abweichungen 2 Hz (100 m, ≤ 60); Mass-Echos, VFX, Audio nicht repliziert; eigene Knoten/Beute je Spieler; Streaming-Quellen je Spieler (max. 4). Bandbreite Koop 4 Spieler: Gast ↓ Ø 36,7 / max. 55,4 kbit/s (Budget 256), Host ↑ max. 166,3 kbit/s (Budget 1.024). Switch-2-Host max. 2 Spieler (vorläufig → K65).
+
+## §233 Kampf im Netz (LOCKED, K59 §5 · `AethrisCore/Net/AethrisCombatNet.h`)
+
+- Befehle hoch, Ergebnisse runter; keine Client-Vorausberechnung; gleicher GF_Combat-Code offline/Host/Dedicated. `FAethrisCombatCommand` Tick 32 | Slot 3 | Aktion 3 (Ability, Switch, Item, Bond, Guard, Flee, Forfeit) | Fähigkeit 4 | Ziel 4 | Reserve 3 = 49 Bit → 7 Byte, Bitprüfung. Prüfsumme FNV-1a 64 je Ergebnis (Desync-Ziel < 1/10.000 Kämpfe). Zugtimer: Koop 60 s (nur wenn jemand wartet), Raid 45 s + 60 s Bank, PvP 30 s + 90 s Bank. Bindungs-Timing im Koop: Gast-Zeitstempel ± RTT/2, max. 150 ms. Replays = Seed + Startzustand + Befehle (PvP 30 Tage, Ranked 90 Tage).
+
+## §234 Sitzungen, Infrastruktur, Kapazität (LOCKED, K59 §6–§7 · `GF_Multiplayer/Session/AethrisSessionTypes.h`, `Data/Online/ServerRegions.csv`)
+
+- `EAethrisSessionState` (Offline … Returning), Offline immer erreichbar. Koop-Beitritt jederzeit außer Zwischensequenz/Boss/Entscheidung; Snapshot 40–80 KB; Gast-Protokoll (Items, Echos, EP, Kodex, Sol, Ruf; Story → K60) vom Host signiert, alle 60 s lokal gesichert; keine Host-Migration. Wiederverbindung Koop 120 s, Raid 90 s, PvP 60 s. Matchmaking Raid ≤ 60 s (Rang-Band ± 6), PvP frei ≤ 45 s (Glicko-2). 8 Regionen (EU-C Frankfurt, EU-W Dublin, NA-E Virginia, NA-W Oregon, SA-E São Paulo, AP-NE Tokio, AP-SE Singapur, AP-AU Sydney), Backend-Primär EU/NA/APAC. Modell: 150.000 Spitzen-CCU → 215 Dedicated-Kerne (+30 %). Protokollversion + Daten-Hash Pflicht; Balance nur per Patch.
+
+## §235 Backend, Sicherheit, Datenschutz (LOCKED, K59 §8–§12)
+
+- Dienste: Konto, Profil, Sitzung/Lobby, Matchmaking, Ranked, Tausch-Treuhand, Legalität, Soziales, Events/LiveConfig, Telemetrie, Moderation, Fotos. Legalitätsprüfung (Art/Stufe, Werte/Anlagen, Genom/Morph, Lernset, EP-Kurve, Ursprung) + Ed25519-Signatur in `FEchoOrigin`; abgewiesene Echos bleiben im Spielstand. Kein Kernel-Anti-Cheat (PC: Integritätsprüfung nur Ranked). DSGVO u. a.; Kinder: Plattform-Elternkontrollen, Freitext standardmäßig aus; 24 Schnellchat-Sätze + Gesten, Freitext opt-in (Gilde/Freunde), kein Sprachchat. Fehlerfälle ohne Spielunterbrechung; Testmatrix (Emulation, Bots, Last 2× CCU, Soak 72 h, Fuzzing, Determinismus x64/ARM, Chaos, Crossplay).

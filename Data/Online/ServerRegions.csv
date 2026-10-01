@@ -1,0 +1,10 @@
+# Server-Regionen für Dedicated Server (Raid, PvP) und Backend-Knoten (K59 §7). Share = erwarteter Spieleranteil in ‰. RttMs = Ziel-Latenz zum Großteil der Region.
+Name,DisplayName,Location,Covers,Share,RttMs,Backend
+EU-C,Europa Mitte,Frankfurt,"DACH, Benelux, Polen, Skandinavien, Osteuropa",240,35,ja (Primär EU)
+EU-W,Europa West,Dublin,"UK, Irland, Frankreich, Iberien",140,40,nein
+NA-E,Nordamerika Ost,Virginia,"USA Ost, Kanada Ost",170,40,ja (Primär NA)
+NA-W,Nordamerika West,Oregon,"USA West, Kanada West, Mexiko Nord",110,45,nein
+SA-E,Südamerika,São Paulo,"Brasilien, Argentinien, Chile",60,55,nein
+AP-NE,Asien Nordost,Tokio,"Japan, Korea",180,35,ja (Primär APAC)
+AP-SE,Asien Südost,Singapur,"Südostasien, Indien",50,60,nein
+AP-AU,Ozeanien,Sydney,"Australien, Neuseeland",50,40,nein

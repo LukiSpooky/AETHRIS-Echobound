@@ -1,0 +1,22 @@
+# Netzwerk-Nachrichten (K59 §4–§6). Rate = Hz (Zahl) oder Ereignis (E, mit erwarteter Häufigkeit je Minute in PerMin). Bytes = Nutzlast nach Quantisierung (ohne Header). Kind: State (muss zuverlässig ankommen) | Stream (Bewegung, darf verloren gehen) | Command (Client-Wunsch, Server prüft).
+Name,Mode,Direction,Kind,Channel,RateHz,PerMin,Bytes,Validation,Notes
+NM_PLAYER_MOVE,MODE_COOP,C→S,Stream,Iris Unreliable,20,0,18,Geschwindigkeit ≤ Traversal-Max (K40) + 10 %; Teleport nur über Rückklang/Stein,"Position 3×16 bit quantisiert (Zelle 128 m), Yaw 8 bit, Zustand 8 bit"
+NM_PLAYER_REPL,MODE_COOP,S→C,Stream,Iris Property,20,0,18,–,Andere Spieler an jeden Gast
+NM_COMPANION_REPL,MODE_COOP,S→C,Stream,Iris Property,10,0,16,–,Begleit-Echo je Spieler
+NM_ECHO_ACTOR_REPL,MODE_COOP,S→C,Stream,Iris Property,5,0,14,–,"Echo-Actors im Relevanzradius (≤ 40, Ø 18 sichtbar)"
+NM_NPC_REPL,MODE_COOP,S→C,Stream,Iris Property,2,0,10,–,"NPC-Actors (≤ 60, Ø 20 relevant); Tagesablauf deterministisch, nur Abweichungen"
+NM_WORLD_EVENT,MODE_COOP,S→C,State,Iris Reliable RPC,0,6,40,–,"Wetter-Override, Resonanzsturm, Story-Flag, Ruf-Änderung, Knoten geerntet"
+NM_INTERACT,MODE_COOP,C→S,Command,Iris Reliable RPC,0,8,12,"Distanz ≤ 3 m, Objekt existiert, Bedingungen (Quest/Werkzeug)","Ernten, Öffnen, Sprechen, Bindung starten"
+NM_COMBAT_START,ALL_COMBAT,S→C,State,Reliable,0,0.5,96,–,"Format, Teilnehmer, Kampf-Seed, Startzustand (Hash)"
+NM_COMBAT_COMMAND,ALL_COMBAT,C→S,Command,Reliable,0,6,8,"Echo am Zug gehört dem Absender, Fähigkeit im Kampfset, Ziel gültig, Zeitfenster offen",Tick 32 bit + Slot 3 + Aktion 3 + Fähigkeit 4 + Ziel 4 + Reserve 3 bit
+NM_COMBAT_RESULT,ALL_COMBAT,S→C,State,Reliable,0,6,48,–,"Aufgelöster Zug: Schaden, Status, Harmonie, Zeitleiste; Prüfsumme Zustand"
+NM_COMBAT_TIMER,MODE_PVP_RANKED,S→C,State,Reliable,1,0,6,–,Zugtimer 30 s + Reservebank 90 s (K02)
+NM_COMBAT_HASH,ALL_COMBAT,C→S,Command,Reliable,0,6,8,Abweichung → Neusynchronisation (Server-Zustand gewinnt),Client meldet Hash nach jedem Ergebnis
+NM_BOND_TIMING,MODE_COOP,C→S,Command,Reliable,0,1,10,"Zeitstempel innerhalb Fenster ± RTT/2 (max. 150 ms Toleranz), Fenster serverseitig berechnet",Anschlag beim Einstimmen (K36)
+NM_EMOTE,ALL_SOCIAL,C→S,Command,Reliable,0,2,4,Ratenlimit 1/s,"Geste, Schnellchat-Satz (ID)"
+NM_CHAT_TEXT,ALL_SOCIAL,C→S,Command,Backend WebSocket,0,1,120,"Opt-in, Plattformfilter, Ratenlimit",Freitext nur mit Altersfreigabe + Einstellung
+NM_TRADE_OFFER,MODE_TRADE,C→S,Command,HTTPS,0,0.5,900,"Legalität (Anlagen, Loci, Morph-Herkunft, Lernset), Signatur, Tauschsperren","Echo-Snapshot (FEchoInstance serialisiert, komprimiert)"
+NM_TRADE_CONFIRM,MODE_TRADE,C→S,Command,HTTPS,0,0.5,64,"Beide Bestätigungen (Halten 3 s, UX-06), Treuhand atomar",Zweiphasen-Abschluss
+NM_RAID_STATE,MODE_RAID,S→C,State,Reliable,0,8,64,–,"Boss-Phase, Mechanik-Ankündigung, gemeinsame Harmonie"
+NM_PRESENCE,ALL_SOCIAL,C→S,State,Backend WebSocket,0,0.2,48,–,"Online-Status, Region (grob), Modus; Sichtbarkeit einstellbar"
+NM_HEARTBEAT,ALL,C→S,Stream,Unreliable,1,0,4,Zeitüberschreitung 10 s → Wiederverbinden,"Verbindungsqualität, RTT"
