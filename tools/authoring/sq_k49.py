@@ -293,7 +293,7 @@ Q("SQ_036", "Die schweren Jahre", "NPC_R02_GERD|Gerd (Halle der Klans)", "SET_C_
    "OBJ_OBSERVE ECHO_034 1 @R02_Z01 | Den alten Cragar mit den Kriegsnarben beobachten",
    "OBJ_CHOICE DLG_SQ_036_01 1 @SET_C_KHARSHOLM | Was in die Chronik kommt"],
   "Lore „Klanchronik, Siegelkriege“; ITM_LURE_BELLCHIME", "Neue Tafel in der Halle der Klans; Barks über „die schweren Jahre“",
-  truth=8)
+  truth=0)
 Q("SQ_037", "Pass der Gratkins", "NPC_PASSWART_JORN|Passwart Jorn (Wildwacht)", "SET_O_PASSWACHTNORD", 3, 30,
   "Die Gratkin-Wanderung erreicht den Nordpass – und stockt. Ein Kraggoth hat sich auf die enge Stelle gelegt und lässt niemanden vorbei. Jorn will den Pass sprengen. Der Wärter findet heraus, was der Kraggoth bewacht.",
   ["OBJ_TALK NPC_PASSWART_JORN 1 @SET_O_PASSWACHTNORD | Jorn und der blockierte Pass",
@@ -536,7 +536,7 @@ Q("SQ_066", "Die Kapelle öffnet sich", "NPC_SCHWESTER_IVRA|Schwester Ivra", "SE
    "OBJ_INVESTIGATE - 3 @R03_Z03 | Drei alte Stillsteine im Moor finden, die der Orden gesetzt hat",
    "OBJ_CHOICE DLG_SQ_066_01 1 @SET_C_MORVENFURT | Ivra sagen, was mit den Steinen geschehen soll"],
   "ITM_EMAT_STILLSHARD ×2; Kodex-Fragment „Ordensgelübde“", "Kapelle bleibt offen; Ordensleute grüßen schweigend (Gesten-Barks)",
-  truth=8, solution="Steine zerstören (Ivra nickt) · der Akademie zur Untersuchung geben · im Moor versenken, wo sie niemandem schaden (Ivra schreibt: „Stille, die niemanden zwingt.“).")
+  truth=7, solution="Steine zerstören (Ivra nickt) · der Akademie zur Untersuchung geben · im Moor versenken, wo sie niemandem schaden (Ivra schreibt: „Stille, die niemanden zwingt.“).")
 Q("SQ_067", "Was Stille heilt", "NPC_SCHWESTER_IVRA|Schwester Ivra", "SET_C_MORVENFURT", 4, 40,
   "Ivra bringt den Wärter zu einem Undrath, das seit der Klangpest-ähnlichen Raserei eines Sturms nicht mehr schläft. Der Orden glaubt, nur Stille kann es heilen. Der Wärter versucht beides: ein Lied und eine Stille – und beobachtet, was hilft.",
   ["OBJ_GOTO R03_Z05 1 @R03_Z05 | Zum ruhelosen Undrath",
@@ -544,7 +544,7 @@ Q("SQ_067", "Was Stille heilt", "NPC_SCHWESTER_IVRA|Schwester Ivra", "SET_C_MORV
    "OBJ_CHOICE DLG_SQ_067_01 1 @R03_Z05 | Lied oder Stille anbieten",
    "OBJ_OBSERVE ECHO_064 1 @R03_Z05 | Die Wirkung beobachten"],
   "ITM_CON_CLEANSE ×3; Rezept RCP_058", "Das Undrath schläft; Ivras Notiz „Beides heilt – aber nicht dasselbe.“ im Kodex",
-  var="Time=Dusk", truth=8)
+  var="Time=Dusk", truth=7)
 
 # ───────────────────────────── R06 Saltrand (Teil 1) ─────────────────────────────
 Q("SQ_068", "Die Küste hat eigene Regeln", "NPC_GELEHRTE_OONA|Gelehrte Oona (Akademie)", "SET_C_SALTRANDHAFEN", 5, 50,

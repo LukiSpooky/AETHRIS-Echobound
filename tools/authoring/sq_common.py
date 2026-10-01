@@ -34,7 +34,8 @@ FLAGS = {r["Name"][5:] for r in rows("Data/Quests/StoryFlags.csv")}
 
 ACT_SOL = {"Akt I": 1.0, "Akt II": 1.8, "Akt III": 2.6, "Nachhall": 3.2}
 ACT_EP = {"Akt I": 1.0, "Akt II": 1.3, "Akt III": 1.6, "Nachhall": 1.8}
-ACT_TRUTH = {"Akt I": 3, "Akt II": 7, "Akt III": 8, "Nachhall": 9}   # höchste Wahrheit, die bei Verfügbarkeit sicher bekannt ist
+ACT_TRUTH = {"Akt I": 3, "Akt II": 7, "Akt III": 8, "Nachhall": 9}   # höchste Wahrheit, die im Akt erreichbar ist
+ACT_TRUTH_MIN = {"Akt I": 1, "Akt II": 4, "Akt III": 7, "Nachhall": 9}  # sicher bekannt bei Aktbeginn
 UNDERSTAND = {"OBJ_OBSERVE", "OBJ_INVESTIGATE", "OBJ_CHOICE", "OBJ_PHOTO", "OBJ_PUZZLE", "OBJ_HEALZONE"}
 QUESTS = {}
 
@@ -163,6 +164,8 @@ def validate(ids):
                 err.append(f"QS-10 {qid}: Item {it} unbekannt")
         if q["TruthLevel"] > ACT_TRUTH[s["Available"]]:
             err.append(f"QS-11 {qid}: TruthLevel {q['TruthLevel']} > {ACT_TRUTH[s['Available']]} (L-01)")
+        if q["TruthLevel"] > ACT_TRUTH_MIN[s["Available"]] and not re.search(r"Quest\.MQ_|Truth>=|Ending=", q["ExtraPre"]):
+            err.append(f"QS-11 {qid}: TruthLevel {q['TruthLevel']} braucht Voraussetzung (Quest.MQ_…/Truth>=)")
         if s["Category"] == "TRIAL" and not any(x["Objective"] == "OBJ_BATTLE" for x in st):
             err.append(f"QS-12 {qid}: Wärterprüfung ohne OBJ_BATTLE")
         if s["Category"] == "EVENT" and q["Variant"] == "–":

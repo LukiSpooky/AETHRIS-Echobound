@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K49
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K50
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -406,6 +406,9 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-187 | Kettengeber vergeben ganze Ketten; Grenze zählt Geschichten | K49 |
 | ADR-188 | Nebenquest-Belohnungen und Voraussetzungen aus Formeln/Gerüst | K49 |
 | ADR-189 | Nebenquest-Handlung in der eigenen Region | K49 |
+| ADR-190 | Akt-II-Nebenquests mit W5–W7-Bezug verlangen MQ_A2_07 | K50 |
+| ADR-191 | Nebenquest-Folgen dürfen Weltereignisse erzeugen | K50 |
+| ADR-192 | Gedenkquests ≤ Intensität 3, ohne Kampf | K50 |
 
 ## §11 Change Requests
 
@@ -1846,3 +1849,11 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §190 Hain-Dekor & Schlüsselgegenstände (LOCKED, K49 · `Data/Items/Decor.csv`, `KeyItems.csv`)
 
 - `ITM_DECO_*`: kosmetisch (DR-17), Stimmung +2 im Garten, nicht stapelnd; Quelle Quest oder Rufrang. `ITM_KEY_*`: nicht verkauf-/handelbar, verschwinden nach Questende (außer Andenken).
+
+## §191 Nebenquests SQ_071–SQ_140 (LOCKED, K50 · Quelle `tools/authoring/sq_k50.py`)
+
+- 70 Quests: R06 Saltrand 20 (SQ_071–090), R04 Sahrun-Weite 22, R05 Ignareth 19, R07 Hvitfell 9 (SQ_132–140); 287 Schritte. Akt-II-Quests mit W5–W7-Bezug verlangen `Quest.MQ_A2_07` (ADR-190). Gedenkquests ≤ Intensität 3, ohne Kampf (ADR-192). Neue NPCs u. a. Prokuristin Wiebke, Kapitänin Ragna, Leuchtwart Fokke, Grabungsleiterin Saphira Lund, Karawanenführerin Amara, Notar Basim, Wildwächterin Eila, Gletscherwartin Tora, Hirte Halvar.
+
+## §192 Weltereignisse aus Nebenquests (LOCKED, K50 §9)
+
+- `WE_GRATKIN_MIGRATION`, `WE_ANCESTORFIRE`, `WE_UNDERSTREET_FEST`, `WE_REGATTA`, `WE_MIRROR_NIGHT` (Vollmond), `WE_SALT_FEST`, `WE_ASH_NIGHT` (Ascheregen, Nachhall), `WE_AURORA_NIGHT` (Polarlicht), `WE_SOLVAR_RACE`; dauerhaft nach Questabschluss, nur kleine Belohnungen (DR-20/27) (ADR-191).
