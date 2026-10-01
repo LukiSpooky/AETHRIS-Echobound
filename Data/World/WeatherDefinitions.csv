@@ -1,0 +1,12 @@
+# Wetterzustände (K14). Dauer in Spielstunden. TimeGate: Any|Night|Day (Start erlaubt). Sicht in m (0 = unbegrenzt). Wind m/s (Gleiterwirkung). WetRock: nasser Fels nicht kletterbar.
+Name,Tag,MinHours,MaxHours,TimeGate,VisibilityM,WindMS,WetRock,ExposureTag,ExposureSeverity
+W01,Weather.Clear,4,10,Any,0,1,0,,
+W02,Weather.Rain,2,6,Any,350,3,1,,
+W03,Weather.Thunderstorm,1,3,Any,250,8,1,,
+W04,Weather.Fog,2,5,Any,60,0,0,Exposure.Miasma,Weak
+W05,Weather.Snow,3,8,Any,120,4,1,Exposure.Cold,Medium
+W06,Weather.Heatwave,4,8,Day,0,1,0,Exposure.Heat,Strong
+W07,Weather.Sandstorm,1,3,Any,40,12,0,Exposure.Heat,Medium
+W08,Weather.Aurora,2,4,Night,0,1,0,,
+W09,Weather.Ashfall,2,6,Any,80,2,0,Exposure.Ash,Medium
+W10,Weather.ResonanceStorm,1,2,Any,200,6,0,,

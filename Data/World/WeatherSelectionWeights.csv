@@ -1,0 +1,12 @@
+# Kalibrierte Auswahlgewichte (Promille) – erzeugt von tools/sim_weather.py, NICHT von Hand ändern (K14 §4).
+Name,Clear,Rain,Thunderstorm,Fog,Snow,Heatwave,Sandstorm,Aurora,Ashfall,ResonanceStorm
+R01,515,328,36,120,0,0,0,0,0,0
+R02,386,76,351,74,114,0,0,0,0,0
+R03,181,330,34,456,0,0,0,0,0,0
+R04,354,0,0,0,0,250,397,0,0,0
+R05,175,0,23,0,0,277,0,0,525,0
+R06,451,252,167,130,0,0,0,0,0,0
+R07,7,0,0,2,38,0,0,953,0,0
+R08,455,110,36,399,0,0,0,0,0,0
+R09,1000,0,0,0,0,0,0,0,0,0
+R10,269,52,230,54,0,0,0,396,0,0

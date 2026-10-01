@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K13
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K14
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -282,12 +282,16 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-063 | Siedlungszustände Bedroht/Stabil/Blühend ohne Rückfall | K13 |
 | ADR-064 | Wanderdorf Ashurim mit mitreisendem Resonanzstein | K13 |
 | ADR-065 | Aufträge ohne Exklusivbelohnungen (DR-31) | K13 |
+| ADR-066 | Deterministischer Wetterfahrplan statt replizierten Zufallswetters | K14 |
+| ADR-067 | Kalibrierte Auswahlgewichte als generierte Daten | K14 |
+| ADR-068 | Wetter-Typresonanz moderat (0,8–1,3), Ranked neutral | K14 |
+| ADR-069 | Resonanzsturm offline per Sturmstimmgabel | K14 |
 
 ## §11 Change Requests
 
 | CR | Datum | Betrifft | Änderung | Begründung | Genehmigt |
 |---|---|---|---|---|---|
-| – | – | – | – | – | – |
+| CR-001 | K14 | §17 „Zeit vorspulen … Wetter wird neu gewürfelt“ | Präzisiert: Zeit vorspulen springt im **deterministischen Wetterfahrplan** (§61) in einen späteren Block – neues Wetter, aber reproduzierbar; Laden eines Saves ändert das Wetter nicht | Determinismus, Koop-Synchronität, kein Save-Scumming (ADR-066) | Game Director, Tech Director |
 
 ## §12 Offene Punkte (PROVISIONAL-Tracker)
 
@@ -301,7 +305,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q6 | Split-Screen-Koop Machbarkeit | K65 |
 | Q7 | ~~Namen der 10 Ursprungsstimmen~~ ✅ K07: 10 Ursprungsstimmen benannt | K07/K27 |
 | Q8 | Bindungsstufen 0–1000 | K37 |
-| Q9 | Tagesphasen-Stundengrenzen | K15 |
+| Q9 | ~~Tagesphasen-Stundengrenzen~~ ✅ K14 §3 | K15 |
 | Q10 | ~~Hauptquartiere der Fraktionen~~ ✅ K07: Hauptsitze festgelegt | K47 |
 | Q11 | Bewegungs-/Ausdauer-/Gleiter-Tuning (Startwerte K02 §4.1) | K40 |
 | Q12 | Bindungs-Timingfenster (Startwerte K02 §4.2) | K36 |
@@ -389,7 +393,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 - **Klassen:** `UAethrisGameFlowSubsystem` (GameInstance-Subsystem, einziger Weg für Zustandswechsel, sendet `GameFlow.StateChanged`), `UGameFlowStateDefinition` (Data Asset je Zustand).
 - **Pausieren:** Solo-Menü/Dialog/Foto pausiert Weltzeit; Koop pausiert nie (60 s Schutz im Menü).
 - **DR-30:** ≤ 800 m Hauptpfad zwischen zwei Klangbrunnen.
-- **Zeit vorspulen:** Gasthaus/Zelt/Lager auf Morgendämmerung, Mittag, Abenddämmerung, Mitternacht; Wetter wird neu gewürfelt.
+- **Zeit vorspulen:** Gasthaus/Zelt/Lager auf Morgendämmerung, Mittag, Abenddämmerung, Mitternacht; Wetter folgt dem Fahrplan (CR-001).
 
 ## §18 Echo-Progression & Kampfset (K03 §4–§6)
 
@@ -816,3 +820,42 @@ R07 am Pass (≈ 3,3/1,1 km), Ordenssitz, ~120 Mitglieder, Schweigegelübde (Dia
 - Zustände **Bedroht (0) / Stabil (1) / Blühend (2)**, nur aufwärts (ADR-063). Bedroht: Sortiment −40 %, nur Aufträge Stufe 0. Blühend: +1 Händler (Sonderwaren), Aufträge Stufe 2, einmaliges Dorffest, EP-Bonus. Außenposten: 5 Aufträge → Blühend.
 - Data Layers `DL_SET_<Id>_State0/1/2`, Save-Fragment `Settlements`, Event `Event.World.SettlementStateChanged`, `USettlementSubsystem`.
 - Ereignisse: Echo-Besuch (1 pro 2 Spieltage je Dorf), Herde am Rand, Händlerkarawane (1/Woche je Region), Wetterschaden (20 % nach Unwetter), Alpha-Bedrohung, Dorffest (einmalig), verirrter Reisender.
+
+## §61 Wetterzustände & Planer (LOCKED, K14 §2–§5)
+
+- Daten: `WeatherDefinitions.csv` – Dauer (Spielstunden): Klar 4–10, Regen 2–6, Gewitter 1–3, Nebel 2–5, Schnee 3–8, Hitzewelle 4–8 (nur Tag), Sandsturm 1–3, Aurora 2–4 (nur Nacht), Asche 2–6, Resonanzsturm 1–2. Sicht: Regen 350, Gewitter 250, Nebel 60, Schnee 120, Sandsturm 40, Asche 80, Resonanzsturm 200 m. Nasser Fels nicht kletterbar bei Regen/Gewitter/Schnee.
+- **Fahrplan** je Region aus Weltseed Fork(1) × Region; Block = (Start, Wetter, Dauer). Auswahl ∝ Auswahlgewicht·24·2000 / (Fenster·(Min+Max)) (Ganzzahl), keine direkte Wiederholung; Überblendung 10–20 Spielminuten.
+- Auswahlgewichte **kalibriert** und generiert: `WeatherSelectionWeights.csv` via `tools/sim_weather.py` (Ganzzahl-identisch zum C++-Planer; Toleranz ≤ 3 pp, erreicht ≤ 1,8 pp).
+- Koop: Weltseed an Gäste, Spielzeit repliziert, Wetter lokal berechnet; nur Overrides (Story, Resonanzsturm) werden repliziert/gespeichert.
+- Mikroklima `ZoneWeatherRemap.csv` (R02 Schnee nur Z04/Z05, Gipfel-Regen→Schnee; R07_Z01 Schnee→Nebel; R09 alles→Klar außer Resonanzsturm; R10_Z01 Regen→Nebel); Grenz-Überblendung 150 m.
+- Klassen: `FWeatherScheduler` (rein, testbar), `UWeatherSubsystem`, `AWeatherPresentationManager`, `FWeatherOverride`; Event `Event.World.WeatherChanged` nur für Regionen mit Spieler-/Kampfpräsenz.
+
+## §62 Wetterwirkungen (LOCKED, K14 §6–§9 · `WeatherTypeResonance.csv`, `WeatherSpawnModifiers.csv`)
+
+| Wetter | Kampf (Fähigkeitstyp) | Sonderregel |
+|---|---|---|
+| Regen | Flut 1,2 · Blüte 1,1 · Glut 0,8 | – |
+| Gewitter | Sturm 1,2 · Flut 1,1 · Glut 0,9 | Blitzschlag alle 4 Züge: Metall 6 % Max-HP, Sturm +10 Harmonie |
+| Nebel | Geist 1,2 · Leere 1,1 · Licht 0,9 | Fernkampf auf Hinterreihe −1 PRÄ-Stufe |
+| Schnee | Frost 1,2 · Blüte/Glut 0,9 | Nicht-Frost −5 % GES |
+| Hitzewelle | Glut 1,2 · Licht 1,1 · Frost 0,8 · Flut 0,9 | – |
+| Sandsturm | Stein 1,2 · Schwerkraft 1,1 | Nicht Stein/Metall/Schwerkraft −4 % Max-HP pro Zug |
+| Aurora | Licht 1,2 · Klang 1,2 · Arkan 1,1 · Leere 0,8 | +5 Harmonie/Zug beide Seiten |
+| Aschefall | Leere 1,2 · Glut 1,1 · Blüte 0,8 | −1 PRÄ-Stufe außer Glut/Leere |
+| Resonanzsturm | alle 1,1 · Klang 1,3 | Harmonie ×2, Crescendo −25 % |
+
+Grenzen 0,8–1,3; kein Typ wirkungslos; **Ranked = Klar**; Fähigkeiten können Kampfwetter lokal für N Züge ändern. Spawns: Multiplikator je Wetter × Primärtyp. NPCs: Unterstände (Regen 60 %, Gewitter 85 %), Siesta 11–16 (Hitze), Tore zu (Sandsturm), alle draußen (Aurora), Sturmpreise +10 % (Resonanzsturm). Traversal: Resonanzsinn +50 % im Nebel, Schneespuren, Sandsturm kein Klettern/Gleiten, Reiten −30 %, Blitztreffer erzwingt Landung ohne Schaden.
+
+## §63 Resonanzsturm & Vorhersage (LOCKED, K14 §10–§11)
+
+- Resonanzsturm: Story (W6-Wende, Finale), Post-Game-Item **Sturmstimmgabel** (Abklingzeit 3 Spieltage), LiveOps-Events; 1–2 Spielstunden, global inkl. unter Tage; Wildechos Aggression +1; Aurelune nur Nacht + Resonanzsturm; alle Echo-Rufe tonal quantisiert.
+- Vorhersage: 0 Himmel lesen (10–20 Spielminuten vorher) · 1 Wetterhäuschen (nächster Block) · 2 Wetterkunde I (Karte, nächster Block aller besuchten Regionen) · 3 Wetterkunde II (2 Blöcke + seltene Bedingungen). Immer korrekt.
+
+## §64 Tagesphasen (LOCKED, K14 §3 – löst Q9)
+
+| Phase | Standard | Hvitfell | Nimbara |
+|---|---|---|---|
+| Morgendämmerung `TimeOfDay.Dawn` | 05–07 | 06–08 | 04–06 |
+| Tag `TimeOfDay.Day` | 07–19 | 08–18 | 06–20 |
+| Abenddämmerung `TimeOfDay.Dusk` | 19–21 | 18–20 | 20–22 |
+| Nacht `TimeOfDay.Night` | 21–05 | 20–06 | 22–04 |

@@ -1,0 +1,12 @@
+# Typ-Resonanz des Wetters im Kampf (K14 §6; Formel-Einbindung K32). Schadensfaktor des ANGREIFENDEN Typs in Promille (1000 = neutral). Nicht genannte Typen = 1000.
+Name,Boost1,Boost1Permille,Boost2,Boost2Permille,Boost3,Boost3Permille,Malus1,Malus1Permille,Malus2,Malus2Permille,SpecialRule
+W01,,1000,,1000,,1000,,1000,,1000,
+W02,Type.Tide,1200,Type.Bloom,1100,,1000,Type.Ember,800,,1000,
+W03,Type.Storm,1200,Type.Tide,1100,,1000,Type.Ember,900,,1000,Weather.Rule.LightningStrike
+W04,Type.Spirit,1200,Type.Void,1100,,1000,Type.Light,900,,1000,Weather.Rule.FogRangedPrecision
+W05,Type.Frost,1200,,1000,,1000,Type.Bloom,900,Type.Ember,900,Weather.Rule.SnowSlow
+W06,Type.Ember,1200,Type.Light,1100,,1000,Type.Frost,800,Type.Tide,900,
+W07,Type.Stone,1200,Type.Gravity,1100,,1000,,1000,,1000,Weather.Rule.SandChip
+W08,Type.Light,1200,Type.Sound,1200,Type.Arcane,1100,Type.Void,800,,1000,Weather.Rule.AuroraHarmony
+W09,Type.Void,1200,Type.Ember,1100,,1000,Type.Bloom,800,,1000,Weather.Rule.AshPrecision
+W10,Type.Sound,1300,,1000,,1000,,1000,,1000,Weather.Rule.ResonanceSurge

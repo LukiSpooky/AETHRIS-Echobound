@@ -1,0 +1,7 @@
+# Mikroklima: Zonen, in denen ein gezogenes Wetter ersetzt wird (K14 §5).
+Name,Zones,From,To
+REMAP_R02_LOWSNOW,R02_Z01|R02_Z02|R02_Z03,Weather.Snow,Weather.Rain
+REMAP_R02_HIGHRAIN,R02_Z05,Weather.Rain,Weather.Snow
+REMAP_R07_VALLEYSNOW,R07_Z01,Weather.Snow,Weather.Fog
+REMAP_R09_UNDERGROUND,R09_Z01|R09_Z02|R09_Z03|R09_Z04|R09_Z05,*,Weather.Clear
+REMAP_R10_CLOUDSEA,R10_Z01,Weather.Rain,Weather.Fog

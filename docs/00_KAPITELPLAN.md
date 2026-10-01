@@ -1,6 +1,6 @@
 # 00 · Kapitelplan – AETHRIS: Echobound
 
-**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K13 abgeschlossen
+**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K14 abgeschlossen
 
 Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel baut auf den vorherigen auf und darf nur Entscheidungen verwenden, die in [`CANON.md`](CANON.md) eingetragen sind (oder es trägt neue ein).
 
@@ -36,7 +36,7 @@ Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel bau
 | K11 | Städte I (5 Städte) | Level Designer, Narrative Writer | K09 | ✅ |
 | K12 | Städte II (5 Städte) | Level Designer, Narrative Writer | K10 | ✅ |
 | K13 | Dörfer & Außenposten | Level Designer, Quest Designer | K11, K12 | ✅ |
-| K14 | Wettersystem | Technical Artist, Gameplay Programmer | K06, K08 | ⬜ |
+| K14 | Wettersystem | Technical Artist, Gameplay Programmer | K06, K08 | ✅ |
 | K15 | Tageszyklus & Beleuchtung | Technical Artist | K14 | ⬜ |
 
 ## Teil III – Kreaturen
