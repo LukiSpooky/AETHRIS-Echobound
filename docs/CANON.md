@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K06
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K07
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -253,6 +253,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-034 | PCG32 als Projekt-RNG (FAethrisRandom) | K06 |
 | ADR-035 | Fragmentierte, explizit serialisierte Saves | K06 |
 | ADR-036 | CSV als Quelle der Wahrheit für Designdaten | K06 |
+| ADR-037 | Nur Menschen als intelligente Spezies | K07 |
+| ADR-038 | Arenen über den Schlafstätten der Ursprungsstimmen (Akkorde = Schlüssel) | K07 |
+| ADR-039 | Zwei Enden + 4 Epilog-Varianten, beide mit vollem Endgame | K07 |
+| ADR-040 | Keine Jahreszeiten in 1.0 | K07 |
+| ADR-041 | Keine Schusswaffen, keine Verbrennungsmotoren (Klangwerk-Technik) | K07 |
 
 ## §11 Change Requests
 
@@ -270,10 +275,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q4 | Koop: geteilter Story-Fortschritt? | K60 |
 | Q5 | Ranked-Level-Normalisierung | K61 |
 | Q6 | Split-Screen-Koop Machbarkeit | K65 |
-| Q7 | Namen der 10 Ursprungsstimmen | K07/K27 |
+| Q7 | ~~Namen der 10 Ursprungsstimmen~~ ✅ K07: 10 Ursprungsstimmen benannt | K07/K27 |
 | Q8 | Bindungsstufen 0–1000 | K37 |
 | Q9 | Tagesphasen-Stundengrenzen | K15 |
-| Q10 | Hauptquartiere der Fraktionen | K47 |
+| Q10 | ~~Hauptquartiere der Fraktionen~~ ✅ K07: Hauptsitze festgelegt | K47 |
 | Q11 | Bewegungs-/Ausdauer-/Gleiter-Tuning (Startwerte K02 §4.1) | K40 |
 | Q12 | Bindungs-Timingfenster (Startwerte K02 §4.2) | K36 |
 | Q13 | Arena-Stufentabelle (Startwerte K02 §9.2) | K63 |
@@ -510,3 +515,71 @@ Verboten im Spiel: „Monster“, Ball/Kapsel/Fangkugel/werfen (Bindung), „-de
 
 - Datei = `FAethrisSaveHeader` (Magic 'AETH', ContainerVersion, Build, Zeit, Vorschau, CRC) + Fragment-Verzeichnis + Fragmente (je Id + Version), Oodle-komprimiert.
 - SA-01 fragmentiert · SA-02 Migration pro Fragment · SA-03 fehlertolerant (Reset statt Absturz) · SA-04 unbekannte Fragmente mitschleppen · SA-05 atomar + 3 rotierende Autosaves · SA-06 explizite FArchive-Serialisierung.
+
+## §33 Kosmologie (LOCKED, K07 §2–§4)
+
+- Weltlied (Aethersang) = **10 Stimmen** (wo) × **15 Klangfarben** = Typen (wie) × **Pause** (Leere). Echos sind stabile Obertöne. Prinzipien: **Resonanz · Variation · Atem**.
+- Seit der Großen Stille entstehen keine neuen Arten (Ausnahmen: Regionalformen, Morphs, Mutationen). Evolution = Tonartwechsel.
+- Klangbrunnen (dorunisch) heilen nur Echos; Resonanzsteine teilen den Raum (nur aktivierte); Stillezonen: verstummte Echos grau, feindlich, nicht bindbar, erwachen bei Lösung; Resonanzsturm = globales Anschwellen.
+- Typ-Mechanik-Identitäten (Vorgabe K17/K28): Glut DoT/Glutboden · Flut Positionsverschiebung/Heilung über Zeit · Stein Schilde/Vorderreihe · Sturm Zeitleisten-Beschleunigung/Mehrfachtreffer · Blüte Heilung/Überwuchs · Frost Verlangsamung/Präzision · Leere Entzug von Harmonie/Buffs · Licht Enthüllen/Reinigen · Gift stapelnde Schwächung · Metall Rüstung/Konter · Geist Täuschung/Formation ignorieren · Kristall Reflexion/Laden · Klang Zeitleisten-Manipulation/Harmonie · Schwerkraft Ziehen/Stoßen/Reihentausch · Arkan Regelbruch.
+- Wärterlizenz (Bundesrecht seit 710 n.St.); der Spieler erhält sie im Prolog über Ysolde (Wildwacht).
+
+## §34 Ursprungsstimmen & Mythische (LOCKED, K07 §5–§6)
+
+| Kodex | Name | Region | Typen | Schlafort |
+|---|---|---|---|---|
+| #241 | Sylv'anor | R01 | Blüte/Klang | unter Arena Eichenhall |
+| #242 | Orh'gruun | R02 | Stein/Schwerkraft | unter Kharsholm |
+| #243 | Nhael'vesh | R03 | Gift/Geist | unter Morvenfurt |
+| #244 | Thal'assyr | R06 | Flut/Sturm | Tiefseegrotte vor Saltrand-Hafen |
+| #245 | Ash'kareth | R04 | Licht/Arkan | unter Qasr Sahrun |
+| #246 | Pyr'thagon | R05 | Glut/Metall | Kraterherz unter Schlackenwehr |
+| #247 | Isv'aldr | R07 | Frost/Licht | Gletscherdom unter Hvitmark |
+| #248 | Ka'thurel | R08 | Geist/Arkan | Thronsaal-Gewölbe unter Dorunsruh |
+| #249 | Prism'aion | R09 | Kristall/Klang | Resonanzkammer unter Prismara |
+| #250 | Aeth'rion | R10 | Klang/Licht | Sternenarena von Aerion (Leitstimme) |
+
+Keine Stimme trägt Leere. Bindbar nach Akkord + Regionalquest mit **Stimmsiegel** (10, nicht kaufbar); nicht Ranked-zulässig.
+
+| Kodex | Mythisch | Typen | Zugang |
+|---|---|---|---|
+| #251 | Velnox | Leere/Schwerkraft | Akt-III-Finale → bindbar im Post-Game „Nachhall“ |
+| #252 | Chronaire | Klang/Arkan | Zeitherausforderungen |
+| #253 | Mirrowisp | Kristall/Geist | Fotografie-Meisterschaft |
+| #254 | Ouroveth | Gift/Blüte | Zucht-Meisterschaft |
+| #255 | Zenthrax | Schwerkraft/Metall | RAID_06 + Solo DR_08 |
+| #256 | Aurelune | Licht/Leere | Resonanzsturm-Nacht (Event + storygebundener Solo-Sturm) |
+
+## §35 Chronik (LOCKED, K07 §8)
+
+Zeitrechnung v.St./n.St.; Gegenwart 1004 n.St. Eckdaten: Ael'Dorun ~-600 · Erstchor ~-300 · Nimbara gehoben ~-250 · Brunnen-/Steinnetz ~-200 · Resonanzkrone ab ~-120 (Archon Maedryn) · Missklang ~-20 · **Große Stille 0 (Ilen)** · Dunkle Jahre 1–300 · Brannoc (Wildwacht-Ursprung) 287 · Eichenhall 312 · Kharsholm 398 · Akademie 455 · Prismara 520 · Goldklang 610 · Siegelkriege 702–709 · **Aethrischer Bund 710** · Vael-Taxonomie 812 · **Weltakkord (Wendelin Aar) 880** · Klangpest/Eiðvik 948 · Orden der Stille 951 · Freie Stimmen 967 · Venn Rektor 981 · Ysolde Arenameisterin 989–996 · Stillezonen ab 990 · Verdanthain betroffen 1001.
+
+## §36 Gesellschaft, Kultur, Technik (LOCKED, K07 §9–§11)
+
+- **Aethrischer Bund**: 10 selbstverwaltete Städte, Bundesrat in Eichenhall (rotierender Vorsitz); Wildwacht = Bundesbehörde; keine Monarchien; Stadtgarden mit Echos.
+- Nur Menschen als intelligente Spezies (ADR-037). Keine Schusswaffen/Motoren; **Klangwerk**-Technik mit Resonanzkristallen (ADR-041). Keine Jahreszeiten (ADR-040).
+- Fraktionssitze: F01 Akademie – Dorunsruh (Rektor Aldric Venn) · F02 Goldklang – Saltrand-Hafen (Marieke Holm) · F03 Wildwacht – Eichenhall (Hralda Brakk) · F04 Freie Stimmen – Morvenfurt-Unterstadt (Tavesh Amaru) · F05 Orden – Kloster Schweigfels, Hvitfell (Sereth Vaun).
+- Glauben: Lauscherglaube, Gezeitenkult, Ahnenfelsen, Sonnenhöfe, Moorweisheit, Lehre der Stille, Rationalismus – keiner wird als falsch bloßgestellt.
+- Artefakte: Resonator, Siegel, Stimmsiegel, Akkord (dorunischer Schlüssel), Klangbrunnen, Resonanzsteine, **Stillsteine** (Orden), **Resonanzkrone** (10 Splitter), Klangschriften, Gleiter (nimbarisch).
+
+## §37 Schlüsselfiguren (LOCKED, K07 §12)
+
+Spieler (trägt Ilens **Nachklang**) · Ysolde Varn (Mentorin, kennt das Erbe) · Kael Duran (Rivale → Venns Protegé → Umkehr, stirbt nie) · **Aldric Venn** (Hauptantagonist, Motiv: Ordnung gegen Leid) · **Sereth Vaun** (Ordensoberhaupt, später Alternative „Sanfte Stille“) · Tavesh Amaru · Marieke Holm · Hralda Brakk · historisch: Ilen, Archon Maedryn, Wendelin Aar, Brannoc, Vael.
+
+## §38 Story-Rückgrat (LOCKED, K07 §13–§14)
+
+| Ebene | Wahrheit | Enthüllung |
+|---|---|---|
+| W1 | Stillezonen breiten sich aus | Prolog |
+| W2 | Orden verstärkt Zonen mit Stillsteinen | Akt I Mitte |
+| W3 | Ursache: Ilens Riegel um Velnox schwächelt | Akt I Ende |
+| W4 | Arenen über den Stimmen, Akkorde = Schlüssel | Akt II Beginn |
+| W5 | Spieler trägt Ilens Nachklang; Ysolde wusste es | Akt II Mitte |
+| W6 | Verrat: Venn steuert den Orden, sammelt Kronensplitter | Akt II Wende |
+| W7 | Große Stille war Ilens bewusste Tat gegen Maedryns Krone | Akt II Ende |
+| W8 | Venn will Krone in Nimbara aktivieren → Riegel bricht | Akt III |
+| W9 | Freies neues Lied nur durch Rückgabe des Nachklangs (Spieler verliert die Gabe) | Finale |
+
+- Enden: **„Neues Lied“** (kanonisch) / **„Sanfte Stille“**; 4 Epilog-Varianten (Freie Stimmen, Kael, Sereth); beide → Post-Game **„Nachhall“** mit identischem Endgame.
+- Lore-Kanäle: Kodex (256×3), **Klangfragmente (120)**, Wendelin-Tagebuch (20), Bücher (150), ~4.000 Barks. **L-01:** Keine Lore vor ihrer Wahrheitsebene; spätere Fragmente verzerrt bis zur Enthüllung.
+- `ULoreEntryDefinition` (Primary Asset Type `Lore`, IDs `LORE_<KAT>_###`, Quelle `Data/Lore/LoreEntries.csv`, Feld TruthLevel 0–9).
