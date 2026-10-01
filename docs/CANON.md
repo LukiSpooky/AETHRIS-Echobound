@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K64
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K65
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -17,7 +17,7 @@ Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapi
 | Genre | Open-World-Monster-Collecting-RPG, rundenbasierte Kämpfe | LOCKED | K01 |
 | Engine | Unreal Engine 5.6 | LOCKED | K01 ADR-003 |
 | Plattformen | PC, PS5, Xbox Series X\|S, Nintendo Switch 2 | LOCKED | K01 §11 |
-| FPS-Ziel | 60 auf allen Plattformen; Switch 2 Fallback 30 (Gate: VS-Review) | LOCKED | K01 §11 |
+| FPS-Ziel | 60 auf PS5, Xbox Series X\|S, PC; Switch 2: 30 fps gesperrt (Planungsziel, VS-Review bestätigt; CR-009) | LOCKED | K01 §11, K65 |
 | Altersfreigabe-Ziel | PEGI 7 / USK 6 / ESRB E10+ | LOCKED | K01 §10 |
 | Geschäftsmodell | Premium + Expansion-Pass (2 Erweiterungen) + rein kosmetischer Shop, keine Lootboxen, kein P2W | LOCKED | K01 §14 |
 | Release-Ziel | November 2030 | PROVISIONAL → K67 | K01 §16 |
@@ -489,6 +489,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-270 | Eiserner Wärter: ein Stand, Sofort-Speichern | K64 |
 | ADR-271 | Cross-Save opt-in, Konflikte nie automatisch | K64 |
 | ADR-272 | Saves enthalten nur Instanzzustand | K64 |
+| ADR-273 | Budgets als Daten mit 15 % Reserve und Prüfregel | K65 |
+| ADR-274 | Kampfring-Profil | K65 |
+| ADR-275 | Q6: Split-Screen 2 Spieler (30 fps) außer Switch 2, dort lokales Funk-Koop | K65 |
+| ADR-276 | Switch 2: 30 fps gesperrt als Planungsziel (CR-009) | K65 |
+| ADR-277 | Switch-2-Koop-Host max. 2 Spieler | K65 |
+| ADR-278 | Performance-Gates mit Tickets und Merge-Sperre | K65 |
 
 ## §11 Change Requests
 
@@ -502,6 +508,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | CR-006 | K57 | §31 „erste Spalte `Id`“ | Erste CSV-Spalte heißt `Name` (Primärschlüssel, unveränderlich); Importer akzeptiert `Id` als Alias; Bestand (> 100 Dateien) bleibt (ADR-228) | Massenumbenennung zu `Id` | Technical Director, Tools Programmer |
 | CR-007 | K58 | §26 Schicht Presentation = GF_UI, GF_Audio | Neues Modul GF_VFX (Presentation; Abhängigkeiten Core, GF_Monsters, GF_World, GF_Combat) für Budgets, Blitzbegrenzung, Vorlagenzuordnung (ADR-233) | VFX-Logik in GF_Combat/GF_UI | Technical Director, Technical Art Director |
 | CR-008 | K62 | §3 „Endgame-Dungeons 8“, „Raid-Bosse zum Launch 6“ | Angeglichen an §131 (K35): 10 Tiefenresonanzen, 8 Raids | §3-Werte behalten und K35 kürzen | Game Director, Lead Content Designer |
+| CR-009 | K65 | §2 „60 auf allen Plattformen; Switch 2 Fallback 30“; §221 „SSGI + Lightprobes“ | Switch 2 plant 30 fps gesperrt (Budgetrechnung: Game Thread 20,2 ms > 16,7 ms); VS-Review bestätigt mit Hardware. GI auf Switch 2 = TOD-Irradiance-Blending (ADR-070) + SSGI | 60 fps mit Inhaltskürzung | Technical Director, Lead Engine Programmer |
 
 ## §12 Offene Punkte (PROVISIONAL-Tracker)
 
@@ -512,7 +519,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q3 | ~~Genom: Allelanzahl, Morph-Wahrscheinlichkeiten~~ ✅ K38 §5–§6: 6 Loci (2–4 Allele, Mendel), Morph 1/1.024 mit Faktoren bis 24/1.024 | K38 |
 | Q4 | ~~Koop: geteilter Story-Fortschritt?~~ ✅ K60 §3: Story persönlich, Erinnerungen/EP/Beute/Kodex mitgenommen, Gleichklang bei gleichem Schritt (§237) | K60 |
 | Q5 | ~~Ranked-Level-Normalisierung~~ ✅ K61 §2: Normstufe 70, Anlagen/Schliff zählen (§240) | K61 |
-| Q6 | Split-Screen-Koop Machbarkeit | K65 |
+| Q6 | ~~Split-Screen-Koop Machbarkeit~~ ✅ K65 §6: Split-Screen 2 Spieler (30 fps) auf PS5/Xbox/PC, Switch 2 lokales Funk-Koop (§258) | K65 |
 | Q7 | ~~Namen der 10 Ursprungsstimmen~~ ✅ K07: 10 Ursprungsstimmen benannt | K07/K27 |
 | Q8 | ~~Bindungsstufen 0–1000~~ ✅ K37 §2: Stufen 0/150/350/550/750/900 | K37 |
 | Q9 | ~~Tagesphasen-Stundengrenzen~~ ✅ K14 §3 | K15 |
@@ -2193,3 +2200,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §255 Save-Leistung, UX, Tests (LOCKED, K64 §9–§11)
 
 - Game Thread ≤ 4 ms (PS5) / 6 ms (Switch 2), Worker ≤ 20/40 ms, Laden ≤ 300/600 ms; Dirty-Flags für Hain/Population. Speicher-Symbol (Klangmal), Slot-Vorschau, Konfliktansicht mit Halten 3 s. Tests: Golden-Save-Korpus G01–G20, Rundreise byte-identisch, Stromausfall 1.000×, Korruptions-Fuzzing, Migrationstests je `[SAVE-SCHEMA]`, Cross-Save-Paare, Speicher voll, Leistung nächtlich.
+
+## §256 Plattformprofile (LOCKED, K65 §2, §7, §8 · `Data/Perf/PlatformProfiles.csv`)
+
+- PS5/XSX 60 fps, 1440p dyn. (1152p–1620p) TSR → 4K; XSS 60 fps, 900p dyn. → 1440p; Switch 2 30 fps gesperrt, DLSS (TV intern 1080p → 1440p–4K, Handheld 720p → 1080p), TOD-Irradiance + SSGI, Cascaded Shadows, Nanite reduziert; PC Min (6C/12T, 16 GB, 6 GB VRAM, SSD) und Empf. (8C/16T, 32 GB, 12 GB VRAM) 60 fps mit TSR/FSR/DLSS/XeSS, PSO-Vorkompilierung. Installation ≈ 100 GB (Konsolen), ≈ 77 GB (XSS), ≈ 48 GB (Switch 2, 64-GB-Karte), ≈ 108 GB (PC). Ladezeiten-Ziele je Plattform (Spielstand ≤ 8/10/18/10 s, Schnellreise ≤ 4/5/10/5 s).
+
+## §257 Frame- & Speicherbudgets (LOCKED, K65 §3–§4 · `FrameBudgets.csv`, `MemoryBudgets.csv`, `tools/ref/aethris_perf.py`)
+
+- Summe je Thread (Game, Render, Audio, GPU) und Szenario (Erkundung, Kampf-Worst-Case mit Kampfring-Profil: Foliage 50 %, reduziertes Final Gather) ≤ 85 % der Bildzeit; PS5 Game 12,0 ms, GPU 13,8/14,0 ms; Switch 2 Game 20,2 ms, GPU 22,5/22,2 ms bei 33,3 ms. Speicher ≤ 90 % verfügbar (Annahmen PS5 12,5 GB, XSX 13,5, XSS 8, Switch 2 9, PC 12/20 GB), Einzelplatz 64–82 %. Spitzen: kein Bild > 2 × Zielbildzeit (GC ≤ 1 ms/Bild, Spawns verteilt, PSO-Ersatzmaterial).
+
+## §258 Q6 Split-Screen, Koop-Host, Streaming (LOCKED, K65 §5–§6; schließt Q6)
+
+- Split-Screen-Koop 2 Spieler mit 30 fps auf PS5, Xbox Series X|S, PC (Renderskalierung 70 %/Ansicht, Foliage 70 %, Lumen mittel; vertikal/horizontal; Kampf als gemeinsamer Vollbild-Kampf; zusätzlich Online-Gäste bis 4); Switch 2: kein Split-Screen, lokales Funk-Koop mit zwei Konsolen. Koop-Host max. 4 Spieler, Switch 2 max. 2 (Speicher). Streaming-Vorschub bis 200 m in Bewegungsrichtung; Zielzellen bei Schnellreise vorgeladen.
+
+## §259 Messung & Performance-Gates (LOCKED, K65 §9–§10)
+
+- Unreal Insights, LLM-Tags je Budgetposten, automatisierte Flüge (3 Kamerarouten + 2 Siedlungsrouten je Region), Kampf-Bench CB-01–CB-06 mit festen Seeds, Bildzeit-Telemetrie. Gates: VS (R01 PS5 im Budget, Switch-2-Messung), Alpha (PS5/XSX ≤ 100 %, Switch 2 ≤ 115 %), Beta (alle ≤ 100 %, P99 ≤ 1,25 × Ziel, 0 PSO-Ruckler), RC (+ Speicher ≤ 90 % im Koop-Host). Überschreitung → Ticket beim Owner, 3 Nächte → Merge-Sperre. Optimierungskatalog je Bereich.

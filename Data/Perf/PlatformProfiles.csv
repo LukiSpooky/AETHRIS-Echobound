@@ -1,0 +1,8 @@
+# Plattformprofile (K65 §2). AvailableMB = für das Spiel verfügbarer Speicher (Annahme; PC: RAM + VRAM abzüglich Betriebssystem, Min 16 GB + 6 GB, Empf. 32 GB + 12 GB). MainGridRange in m (CANON §43). EchoActors/NpcActors = Actor-Grenzen (K52/K53). SplitScreen = Q6. CoopHostMax = maximale Spielerzahl als Host (K59 §4.2).
+Name,DisplayName,TargetFps,InternalRes,OutputRes,Upscaler,AvailableMB,MainGridRange,EchoActors,NpcActors,SplitScreen,CoopHostMax,Rendering
+PS5,PlayStation 5,60,1440p (dyn. 1152p–1620p),4K,TSR,12500,768,40,60,"ja (30 fps, Qualitätsprofil Split)",4,"Lumen SW, Nanite, VSM"
+XSX,Xbox Series X,60,1440p (dyn. 1152p–1620p),4K,TSR,13500,768,40,60,"ja (30 fps, Qualitätsprofil Split)",4,"Lumen SW, Nanite, VSM"
+XSS,Xbox Series S,60,900p (dyn. 720p–1080p),1440p,TSR,8000,640,32,48,"ja (30 fps, Profil Split-S)",4,"Lumen SW (reduziert), Nanite, VSM"
+Switch2,Nintendo Switch 2,30,Docked 1080p / Handheld 720p (dyn.),Docked 1440p–4K / Handheld 1080p,DLSS,9000,512,16,24,nein (lokales Funk-Koop mit zwei Konsolen),2,"TOD-Irradiance + SSGI, Nanite reduziert, VSM aus (Cascades)"
+PCMin,PC Mindestanforderung,60,1080p Niedrig (Renderskalierung 50–67 %),1080p,TSR/FSR/DLSS/XeSS,12000,640,32,48,ja (30 fps),4,"Lumen SW niedrig, Nanite, VSM"
+PCRec,PC Empfohlen,60,1440p Hoch,1440p–4K,TSR/FSR/DLSS/XeSS,20000,768,40,60,ja (60 fps),4,"Lumen SW/HW (optional), Nanite, VSM"

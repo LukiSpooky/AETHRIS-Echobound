@@ -1,0 +1,13 @@
+# Speicher-Budgets in MB je Plattform (K65 §4). Summe ≤ 90 % des verfügbaren Spielspeichers (PlatformProfiles.csv, Annahmen; maßgeblich sind Devkit-Werte). PC: Summe aus RAM- und VRAM-relevanten Posten.
+Name,Component,PS5,XSX,XSS,Switch2,PCMin,PCRec
+MEM_TEXTURES,Textur-Streaming-Pool,2400,2600,1200,1700,1500,3500
+MEM_GEOMETRY,Nanite/Meshes/HLOD,1400,1500,800,1100,1000,2000
+MEM_WORLD,"Geladene Zellen, Actors, Level Instances",1400,1500,1000,1300,1300,1800
+MEM_ANIM,"Animation (Clips, Pose-Search-Datenbank, AnimToTexture)",500,500,350,400,450,600
+MEM_AUDIO,"Audio (Banken, Streaming-Puffer)",450,450,300,220,500,500
+MEM_VFX,"Niagara (Partikel, Puffer)",250,250,150,150,200,350
+MEM_ECOLOGY,"Mass-Fragmente, Population",200,200,150,150,200,250
+MEM_UI,"UI (Atlanten, Schriften inkl. CJK)",220,220,200,200,220,250
+MEM_GAMEPLAY,"Gameplay, Definitionen, Daten",600,600,550,550,650,700
+MEM_RT,"Render-Ziele, GBuffer, Lumen-/VSM-Caches",1400,1500,750,900,1000,2000
+MEM_ENGINE,"Engine, Code, Allokator-Reserve",800,800,650,700,900,900
