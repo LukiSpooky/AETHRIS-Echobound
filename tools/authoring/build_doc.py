@@ -25,6 +25,8 @@ def repl(m):
         return ga.render(parts[1], parts[2] if len(parts) > 2 else None)
     if parts[0] == "csv":
         return table_csv(parts[1], parts[2] if len(parts) > 2 else None)
+    if parts[0] == "overview_k30":
+        return gl.overview_k30()
     if parts[0] == "learnset":
         return gl.show(" ".join(parts[1:]))
     if parts[0] == "csvf":   # gefiltert: csvf PATH COLS FILTERCOL=WERT

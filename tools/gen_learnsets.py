@@ -385,3 +385,19 @@ if __name__ == "__main__":
         sys.exit(1 if e else 0)
     elif cmd == "show":
         print(show(sys.argv[2]))
+
+
+def overview_k30():
+    """Tabelle aller Arten: Typen, bevorzugtes Crescendo, weitere Optionen, Feldfähigkeit."""
+    D = Data()
+    ab = {a["Name"]: a for a in rows(ABIL)}
+    co, fo = rows(OUT_CO), rows(OUT_FO)
+    out = ["| # | Art | Typen | Crescendo ★ | weitere Crescendos | Feldfähigkeit |", "|---|---|---|---|---|---|"]
+    for s in D.sp:
+        c = [r for r in co if r["Species"] == s["Name"]]
+        star = next(ab[r["Ability"]]["DisplayName"] for r in c if r["Preferred"] == "1")
+        other = ", ".join(ab[r["Ability"]]["DisplayName"] for r in c if r["Preferred"] != "1")
+        f = next((ab[r["Ability"]]["DisplayName"] for r in fo if r["Species"] == s["Name"]), "–")
+        t = s["PrimaryType"].split(".")[1] + ("/" + s["SecondaryType"].split(".")[1] if s["SecondaryType"] else "")
+        out.append(f"| {int(s['KodexNumber']):03d} | {s['DisplayName']} | {t} | {star} | {other} | {f} |")
+    return "\n".join(out)

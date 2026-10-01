@@ -264,7 +264,268 @@ Spalte **Auslöser** enthält hier die **Bedingung** (Merkmal oder Größe).
 
 240 von 256 Arten besitzen eine Feldfähigkeit (LS-14: ≥ 75 %); jede Feldfähigkeit ist mindestens dreimal vergeben, die häufigsten bis zwölfmal. Arten ohne Feldfähigkeit sind vor allem kleine Erstformen, deren Endform sie erhält – das ist ein bewusster Evolutionsanreiz.
 
-Beispiele (vollständige Sets inkl. Crescendo und Feld):
+### 9.1 Übersicht aller Arten
+
+| # | Art | Typen | Crescendo ★ | weitere Crescendos | Feldfähigkeit |
+|---|---|---|---|---|---|
+| 001 | Fernlit | Bloom | Urwaldchor | Dornenmeer | Rankenbrücke |
+| 002 | Fernwyn | Bloom/Storm | Urwaldchor | Himmelszorn, Orkanschwinge, Dornenmeer | Rankenbrücke |
+| 003 | Verdrath | Bloom/Sound | Urwaldchor | Dornenmeer, Sinfonie der Welt, Großer Takt | Rankenbrücke |
+| 004 | Brokk | Stone | Ewiger Fels | Bergsturz | Erzspur |
+| 005 | Brokkar | Stone | Ewiger Fels | Bergsturz | Felsbrecher |
+| 006 | Torgrath | Stone/Gravity | Ewiger Fels | Bergsturz, Ereignishorizont, Schwerkraftsturz | Felsbrecher |
+| 007 | Wisplet | Storm | Himmelszorn | Orkanschwinge | Aufwind |
+| 008 | Galewix | Storm | Himmelszorn | Orkanschwinge | Aufwind |
+| 009 | Zephyrion | Storm/Light | Himmelszorn | Orkanschwinge, Zenitfeuer, Morgenweihe | Lichtsignal |
+| 010 | Chimkin | Sound | Großer Takt | Sinfonie der Welt | Lockruf |
+| 011 | Chimbal | Sound | Großer Takt | Sinfonie der Welt | Echolot |
+| 012 | Cantaroth | Sound/Bloom | Großer Takt | Urwaldchor, Dornenmeer, Sinfonie der Welt | Rankenbrücke |
+| 013 | Lorncant | Spirit/Sound | Seelenrückkehr | Geisterheer, Sinfonie der Welt, Großer Takt | Geistersicht |
+| 014 | Mossling | Bloom | Urwaldchor | Dornenmeer | Kräuterkunde |
+| 015 | Myrthorn | Bloom | Urwaldchor | Dornenmeer | Kräuterkunde |
+| 016 | Vernaune | Bloom/Light | Urwaldchor | Dornenmeer, Zenitfeuer, Morgenweihe | Leuchtfeuer |
+| 017 | Glyphaune | Arcane/Bloom | Umkehr der Welt | Urwaldchor, Dornenmeer, Formel des Ursprungs | Glyphenlesen |
+| 018 | Lumpip | Light | Zenitfeuer | Morgenweihe | Leuchtfeuer |
+| 019 | Lumow | Light/Spirit | Zenitfeuer | Morgenweihe, Geisterheer, Seelenrückkehr | Lichtsignal |
+| 020 | Phantalume | Spirit/Light | Geisterheer | Zenitfeuer, Morgenweihe, Seelenrückkehr | Seelenpfad |
+| 021 | Rillo | Tide | Weltflut | Gezeitenschoß | Quellsucher |
+| 022 | Rillward | Tide/Bloom | Weltflut | Gezeitenschoß, Urwaldchor, Dornenmeer | Wasserlauf |
+| 023 | Sporlet | Venom | Pestwolke | Säureflut | – |
+| 024 | Sporix | Venom/Spirit | Pestwolke | Säureflut, Geisterheer, Seelenrückkehr | Giftschneise |
+| 025 | Skirmote | Storm | Himmelszorn | Orkanschwinge | Aufwind |
+| 026 | Skirrow | Storm/Sound | Himmelszorn | Orkanschwinge, Sinfonie der Welt, Großer Takt | Aufwind |
+| 027 | Thornkin | Bloom | Dornenmeer | Urwaldchor | Rankenbrücke |
+| 028 | Thorncoil | Bloom/Venom | Dornenmeer | Urwaldchor, Pestwolke, Säureflut | Ködermischer |
+| 029 | Pebi | Stone | Ewiger Fels | Bergsturz | Erzspur |
+| 030 | Orbeloth | Gravity/Stone | Bergsturz | Ewiger Fels, Ereignishorizont, Schwerkraftsturz | Schwebelast |
+| 031 | Rivetkin | Metal | Eherne Phalanx | Schmiedehammer | Erzwitterung |
+| 032 | Cindrel | Ember | Sonnensturz | Phönixlied | Fackelschein |
+| 033 | Craglet | Stone | Ewiger Fels | Bergsturz | – |
+| 034 | Cragar | Stone | Ewiger Fels | Bergsturz | Felsbrecher |
+| 035 | Kraggoth | Stone/Metal | Ewiger Fels | Bergsturz, Schmiedehammer, Eherne Phalanx | Felsbrecher |
+| 036 | Anchrex | Gravity/Stone | Bergsturz | Ewiger Fels, Ereignishorizont, Schwerkraftsturz | Schwebelast |
+| 037 | Tetri | Gravity | Ereignishorizont | Schwerkraftsturz | Leichtschritt |
+| 038 | Tetrel | Gravity/Stone | Bergsturz | Ewiger Fels, Ereignishorizont, Schwerkraftsturz | Schwebelast |
+| 039 | Ponderath | Gravity | Ereignishorizont | Schwerkraftsturz | Schwebelast |
+| 040 | Ferrkin | Metal | Schmiedehammer | Eherne Phalanx | – |
+| 041 | Ferrow | Metal/Stone | Schmiedehammer | Bergsturz, Ewiger Fels, Eherne Phalanx | Erzspur |
+| 042 | Forgoth | Metal/Stone | Schmiedehammer | Bergsturz, Ewiger Fels, Eherne Phalanx | Erzspur |
+| 043 | Gratkin | Storm | Himmelszorn | Orkanschwinge | Wetterwitterung |
+| 044 | Gratwyn | Storm | Himmelszorn | Orkanschwinge | Wetterwitterung |
+| 045 | Gratrex | Storm/Metal | Himmelszorn | Orkanschwinge, Schmiedehammer, Eherne Phalanx | Wetterwitterung |
+| 046 | Kiesi | Stone | Ewiger Fels | Bergsturz | Erzspur |
+| 047 | Kiesward | Stone/Sound | Ewiger Fels | Bergsturz, Sinfonie der Welt, Großer Takt | Lockruf |
+| 048 | Lithi | Stone | Ewiger Fels | Bergsturz | – |
+| 049 | Lithshell | Stone/Tide | Ewiger Fels | Weltflut, Gezeitenschoß, Bergsturz | Wasserlauf |
+| 050 | Rimlet | Frost | Ewiger Winter | Eiszeit | Eisbrücke |
+| 051 | Rimpaw | Frost/Storm | Ewiger Winter | Himmelszorn, Orkanschwinge, Eiszeit | Eisbrücke |
+| 052 | Quarling | Crystal | Prismenkatarakt | Spiegelpalast | Lichtlenker |
+| 053 | Quarcoil | Crystal/Stone | Prismenkatarakt | Bergsturz, Ewiger Fels, Spiegelpalast | Kristallklang |
+| 054 | Emblit | Ember | Sonnensturz | Phönixlied | Fackelschein |
+| 055 | Dawnix | Light/Ember | Zenitfeuer | Sonnensturz, Phönixlied, Morgenweihe | Fackelschein |
+| 056 | Memoro | Spirit | Seelenrückkehr | Geisterheer | Geistersicht |
+| 057 | Resonix | Sound | Sinfonie der Welt | Großer Takt | Echolot |
+| 058 | Runkar | Arcane/Stone | Umkehr der Welt | Bergsturz, Ewiger Fels, Formel des Ursprungs | Siegelöffner |
+| 059 | Mirepip | Venom | Pestwolke | Säureflut | – |
+| 060 | Mirel | Venom/Tide | Weltflut | Gezeitenschoß, Pestwolke, Säureflut | Giftschneise |
+| 061 | Toxmire | Venom/Tide | Weltflut | Gezeitenschoß, Pestwolke, Säureflut | Giftschneise |
+| 062 | Undling | Tide | Gezeitenschoß | Weltflut | Quellsucher |
+| 063 | Undfin | Tide | Gezeitenschoß | Weltflut | Quellsucher |
+| 064 | Undrath | Tide/Spirit | Gezeitenschoß | Weltflut, Geisterheer, Seelenrückkehr | Geistersicht |
+| 065 | Irrlit | Spirit | Geisterheer | Seelenrückkehr | Seelenpfad |
+| 066 | Irrel | Spirit/Light | Geisterheer | Zenitfeuer, Morgenweihe, Seelenrückkehr | Leuchtfeuer |
+| 067 | Irraune | Spirit/Light | Geisterheer | Zenitfeuer, Morgenweihe, Seelenrückkehr | Seelenpfad |
+| 068 | Sigilaune | Arcane/Spirit | Umkehr der Welt | Geisterheer, Seelenrückkehr, Formel des Ursprungs | Glyphenlesen |
+| 069 | Blossi | Bloom | Dornenmeer | Urwaldchor | – |
+| 070 | Blossar | Bloom/Venom | Dornenmeer | Urwaldchor, Pestwolke, Säureflut | Ködermischer |
+| 071 | Blossmire | Bloom/Venom | Dornenmeer | Urwaldchor, Pestwolke, Säureflut | Giftschneise |
+| 072 | Virmote | Venom | Pestwolke | Säureflut | – |
+| 073 | Virwyn | Venom/Storm | Pestwolke | Himmelszorn, Orkanschwinge, Säureflut | Ködermischer |
+| 074 | Blightkin | Venom | Pestwolke | Säureflut | Ködermischer |
+| 075 | Blightar | Venom/Tide | Weltflut | Gezeitenschoß, Pestwolke, Säureflut | Wasserlauf |
+| 076 | Brinlet | Tide | Gezeitenschoß | Weltflut | Quellsucher |
+| 077 | Brinshell | Tide/Bloom | Gezeitenschoß | Weltflut, Urwaldchor, Dornenmeer | Wasserlauf |
+| 078 | Umbrling | Void | Weltlöscher | Große Leere | Stillesinn |
+| 079 | Umbracoil | Void/Tide | Weltlöscher | Weltflut, Gezeitenschoß, Große Leere | Schattenschritt |
+| 080 | Weidlit | Bloom | Urwaldchor | Dornenmeer | – |
+| 081 | Weiduna | Spirit/Bloom | Seelenrückkehr | Urwaldchor, Dornenmeer, Geisterheer | Geistersicht |
+| 082 | Morhaw | Storm/Tide | Himmelszorn | Weltflut, Gezeitenschoß, Orkanschwinge | Wetterwitterung |
+| 083 | Humbog | Sound/Venom | Großer Takt | Pestwolke, Säureflut, Sinfonie der Welt | Lockruf |
+| 084 | Torfgor | Stone/Bloom | Ewiger Fels | Bergsturz, Urwaldchor, Dornenmeer | Felsbrecher |
+| 085 | Marlit | Tide | Weltflut | Gezeitenschoß | Quellsucher |
+| 086 | Marwyn | Tide | Weltflut | Gezeitenschoß | Wasserlauf |
+| 087 | Maraune | Tide/Storm | Weltflut | Gezeitenschoß, Himmelszorn, Orkanschwinge | Quellsucher |
+| 088 | Tidling | Tide | Gezeitenschoß | Weltflut | – |
+| 089 | Tidel | Tide | Gezeitenschoß | Weltflut | Wasserlauf |
+| 090 | Tidrex | Tide/Arcane | Gezeitenschoß | Weltflut, Formel des Ursprungs, Umkehr der Welt | Glyphenlesen |
+| 091 | Brikin | Storm | Himmelszorn | Orkanschwinge | Aufwind |
+| 092 | Brisel | Storm/Tide | Himmelszorn | Weltflut, Gezeitenschoß, Orkanschwinge | Aufwind |
+| 093 | Brision | Storm/Tide | Himmelszorn | Weltflut, Gezeitenschoß, Orkanschwinge | Wasserlauf |
+| 094 | Aquapip | Tide | Weltflut | Gezeitenschoß | Quellsucher |
+| 095 | Aquafin | Tide/Light | Weltflut | Gezeitenschoß, Zenitfeuer, Morgenweihe | Leuchtfeuer |
+| 096 | Aquadral | Tide/Light | Weltflut | Gezeitenschoß, Zenitfeuer, Morgenweihe | Lichtsignal |
+| 097 | Mystdral | Arcane/Tide | Umkehr der Welt | Weltflut, Gezeitenschoß, Formel des Ursprungs | Siegelöffner |
+| 098 | Aerlet | Storm | Orkanschwinge | Himmelszorn | Wetterwitterung |
+| 099 | Aerluna | Storm/Light | Orkanschwinge | Himmelszorn, Zenitfeuer, Morgenweihe | Lichtsignal |
+| 100 | Stonlet | Stone | Ewiger Fels | Bergsturz | Erzspur |
+| 101 | Stonshell | Stone/Tide | Ewiger Fels | Weltflut, Gezeitenschoß, Bergsturz | Wasserlauf |
+| 102 | Glimkin | Light | Morgenweihe | Zenitfeuer | Lichtsignal |
+| 103 | Glimar | Light/Tide | Morgenweihe | Weltflut, Gezeitenschoß, Zenitfeuer | Quellsucher |
+| 104 | Ariette | Sound | Großer Takt | Sinfonie der Welt | Echolot |
+| 105 | Ariuna | Sound/Tide | Großer Takt | Weltflut, Gezeitenschoß, Sinfonie der Welt | Lockruf |
+| 106 | Tangi | Bloom | Urwaldchor | Dornenmeer | – |
+| 107 | Tangix | Venom/Bloom | Urwaldchor | Dornenmeer, Pestwolke, Säureflut | Rankenbrücke |
+| 108 | Brassel | Metal/Tide | Eherne Phalanx | Weltflut, Gezeitenschoß, Schmiedehammer | Mechanik |
+| 109 | Sheamast | Spirit/Tide | Geisterheer | Weltflut, Gezeitenschoß, Seelenrückkehr | Seelenpfad |
+| 110 | Opalisk | Crystal/Tide | Spiegelpalast | Weltflut, Gezeitenschoß, Prismenkatarakt | Lichtlenker |
+| 111 | Solkit | Light | Zenitfeuer | Morgenweihe | Lichtsignal |
+| 112 | Solvar | Light | Zenitfeuer | Morgenweihe | Lichtsignal |
+| 113 | Solaryx | Light/Ember | Zenitfeuer | Sonnensturz, Phönixlied, Morgenweihe | Glutschmelze |
+| 114 | Dunkalb | Stone | Ewiger Fels | Bergsturz | Felsbrecher |
+| 115 | Dunhorn | Stone | Ewiger Fels | Bergsturz | Felsbrecher |
+| 116 | Dunmarsch | Stone/Gravity | Ewiger Fels | Bergsturz, Ereignishorizont, Schwerkraftsturz | Leichtschritt |
+| 117 | Skarit | Gravity | Ereignishorizont | Schwerkraftsturz | Leichtschritt |
+| 118 | Skaral | Gravity/Stone | Bergsturz | Ewiger Fels, Ereignishorizont, Schwerkraftsturz | Leichtschritt |
+| 119 | Skarabon | Gravity/Light | Zenitfeuer | Morgenweihe, Ereignishorizont, Schwerkraftsturz | Leichtschritt |
+| 120 | Sengel | Ember | Sonnensturz | Phönixlied | Fackelschein |
+| 121 | Sengar | Ember/Stone | Sonnensturz | Phönixlied, Bergsturz, Ewiger Fels | Glutschmelze |
+| 122 | Sengrath | Ember/Stone | Sonnensturz | Phönixlied, Bergsturz, Ewiger Fels | Glutschmelze |
+| 123 | Stachik | Venom | Pestwolke | Säureflut | Ködermischer |
+| 124 | Stacharon | Venom/Stone | Pestwolke | Bergsturz, Ewiger Fels, Säureflut | Giftschneise |
+| 125 | Sirrkorn | Storm | Himmelszorn | Orkanschwinge | Wetterwitterung |
+| 126 | Sirrsturm | Storm/Stone | Himmelszorn | Bergsturz, Ewiger Fels, Orkanschwinge | Felsbrecher |
+| 127 | Mirasel | Arcane | Umkehr der Welt | Formel des Ursprungs | Glyphenlesen |
+| 128 | Mirazhar | Arcane/Light | Umkehr der Welt | Zenitfeuer, Morgenweihe, Formel des Ursprungs | Glyphenlesen |
+| 129 | Vitrel | Light | Morgenweihe | Zenitfeuer | Lichtsignal |
+| 130 | Vitrapha | Light/Crystal | Morgenweihe | Zenitfeuer, Prismenkatarakt, Spiegelpalast | Kristallklang |
+| 131 | Mesakil | Stone | Ewiger Fels | Bergsturz | Erzspur |
+| 132 | Mesakor | Stone/Ember | Ewiger Fels | Sonnensturz, Phönixlied, Bergsturz | Glutschmelze |
+| 133 | Qadrant | Metal/Gravity | Eherne Phalanx | Schmiedehammer, Ereignishorizont, Schwerkraftsturz | Schwebelast |
+| 134 | Mahrsil | Spirit/Storm | Geisterheer | Himmelszorn, Orkanschwinge, Seelenrückkehr | Seelenpfad |
+| 135 | Pyrolm | Ember | Sonnensturz | Phönixlied | Fackelschein |
+| 136 | Pyrolax | Ember | Sonnensturz | Phönixlied | Fackelschein |
+| 137 | Pyroluth | Ember/Stone | Sonnensturz | Phönixlied, Bergsturz, Ewiger Fels | Glutschmelze |
+| 138 | Ambolt | Metal | Eherne Phalanx | Schmiedehammer | Mechanik |
+| 139 | Ambrak | Metal/Ember | Eherne Phalanx | Sonnensturz, Phönixlied, Schmiedehammer | Erzwitterung |
+| 140 | Ambross | Metal/Ember | Eherne Phalanx | Sonnensturz, Phönixlied, Schmiedehammer | Mechanik |
+| 141 | Aschwel | Ember | Sonnensturz | Phönixlied | – |
+| 142 | Aschund | Ember | Sonnensturz | Phönixlied | – |
+| 143 | Aschgrim | Ember/Void | Sonnensturz | Phönixlied, Weltlöscher, Große Leere | Stillesinn |
+| 144 | Obsikin | Stone | Ewiger Fels | Bergsturz | Erzspur |
+| 145 | Obsidar | Stone/Crystal | Ewiger Fels | Bergsturz, Prismenkatarakt, Spiegelpalast | Lichtlenker |
+| 146 | Obsidrax | Stone/Crystal | Ewiger Fels | Bergsturz, Prismenkatarakt, Spiegelpalast | Kristallklang |
+| 147 | Ignavyr | Ember | Sonnensturz | Phönixlied | Glutschmelze |
+| 148 | Ignavor | Ember/Gravity | Sonnensturz | Phönixlied, Ereignishorizont, Schwerkraftsturz | Schwebelast |
+| 149 | Fumel | Void | Große Leere | Weltlöscher | Stillesinn |
+| 150 | Fumaroth | Void/Ember | Große Leere | Sonnensturz, Phönixlied, Weltlöscher | Stillesinn |
+| 151 | Drusil | Crystal | Spiegelpalast | Prismenkatarakt | Lichtlenker |
+| 152 | Drusaro | Crystal/Ember | Spiegelpalast | Sonnensturz, Phönixlied, Prismenkatarakt | Glutschmelze |
+| 153 | Volket | Storm | Himmelszorn | Orkanschwinge | Wetterwitterung |
+| 154 | Voltarn | Metal/Storm | Schmiedehammer | Himmelszorn, Orkanschwinge, Eherne Phalanx | Aufwind |
+| 155 | Bassalt | Sound/Stone | Großer Takt | Bergsturz, Ewiger Fels, Sinfonie der Welt | Echolot |
+| 156 | Nucleox | Gravity/Ember | Ereignishorizont | Sonnensturz, Phönixlied, Schwerkraftsturz | Glutschmelze |
+| 157 | Snevel | Frost | Ewiger Winter | Eiszeit | – |
+| 158 | Snevar | Frost | Ewiger Winter | Eiszeit | Frischhalter |
+| 159 | Snevrik | Frost/Light | Ewiger Winter | Eiszeit, Zenitfeuer, Morgenweihe | Frischhalter |
+| 160 | Kjalf | Frost | Eiszeit | Ewiger Winter | Eisbrücke |
+| 161 | Kjalmur | Frost/Stone | Eiszeit | Bergsturz, Ewiger Fels, Ewiger Winter | Eisbrücke |
+| 162 | Kjalgrund | Frost/Stone | Eiszeit | Bergsturz, Ewiger Fels, Ewiger Winter | Eisbrücke |
+| 163 | Uvlet | Frost | Ewiger Winter | Eiszeit | – |
+| 164 | Uvarn | Frost/Spirit | Ewiger Winter | Eiszeit, Geisterheer, Seelenrückkehr | Frischhalter |
+| 165 | Uvalis | Frost/Spirit | Ewiger Winter | Eiszeit, Geisterheer, Seelenrückkehr | Eisbrücke |
+| 166 | Uvasil | Void/Frost | Große Leere | Ewiger Winter, Eiszeit, Weltlöscher | Schattenschritt |
+| 167 | Lyskin | Light | Morgenweihe | Zenitfeuer | Leuchtfeuer |
+| 168 | Lysmara | Light/Frost | Morgenweihe | Ewiger Winter, Eiszeit, Zenitfeuer | Leuchtfeuer |
+| 169 | Lysthane | Light/Sound | Morgenweihe | Zenitfeuer, Sinfonie der Welt, Großer Takt | Echolot |
+| 170 | Vardlit | Stone | Ewiger Fels | Bergsturz | – |
+| 171 | Vardholm | Stone/Frost | Ewiger Fels | Bergsturz, Ewiger Winter, Eiszeit | Eisbrücke |
+| 172 | Eidrun | Spirit | Geisterheer | Seelenrückkehr | Seelenpfad |
+| 173 | Eidwacht | Spirit/Sound | Geisterheer | Seelenrückkehr, Sinfonie der Welt, Großer Takt | Geistersicht |
+| 174 | Hallkid | Sound | Sinfonie der Welt | Großer Takt | Lockruf |
+| 175 | Hallbrand | Sound/Stone | Sinfonie der Welt | Bergsturz, Ewiger Fels, Großer Takt | Echolot |
+| 176 | Glazil | Crystal | Spiegelpalast | Prismenkatarakt | Kristallklang |
+| 177 | Glazvind | Storm/Crystal | Orkanschwinge | Himmelszorn, Prismenkatarakt, Spiegelpalast | Aufwind |
+| 178 | Tysvorn | Void/Frost | Weltlöscher | Ewiger Winter, Eiszeit, Große Leere | Schattenschritt |
+| 179 | Skriv | Arcane | Formel des Ursprungs | Umkehr der Welt | Siegelöffner |
+| 180 | Skrivar | Arcane | Formel des Ursprungs | Umkehr der Welt | Siegelöffner |
+| 181 | Skriveth | Arcane/Light | Formel des Ursprungs | Zenitfeuer, Morgenweihe, Umkehr der Welt | Glyphenlesen |
+| 182 | Thaelit | Arcane | Umkehr der Welt | Formel des Ursprungs | Glyphenlesen |
+| 183 | Thaelon | Spirit/Arcane | Seelenrückkehr | Geisterheer, Formel des Ursprungs, Umkehr der Welt | Siegelöffner |
+| 184 | Thaelarch | Spirit/Metal | Seelenrückkehr | Schmiedehammer, Eherne Phalanx, Geisterheer | Geistersicht |
+| 185 | Tikkel | Metal | Eherne Phalanx | Schmiedehammer | Erzwitterung |
+| 186 | Tikkar | Metal/Arcane | Eherne Phalanx | Schmiedehammer, Formel des Ursprungs, Umkehr der Welt | Erzwitterung |
+| 187 | Tikkoran | Metal/Gravity | Eherne Phalanx | Schmiedehammer, Ereignishorizont, Schwerkraftsturz | Mechanik |
+| 188 | Sarkel | Spirit | Geisterheer | Seelenrückkehr | Geistersicht |
+| 189 | Sarkon | Spirit/Stone | Geisterheer | Bergsturz, Ewiger Fels, Seelenrückkehr | Geistersicht |
+| 190 | Sarkothar | Spirit/Arcane | Geisterheer | Seelenrückkehr, Formel des Ursprungs, Umkehr der Welt | Glyphenlesen |
+| 191 | Tilgel | Void | Große Leere | Weltlöscher | Schattenschritt |
+| 192 | Tilgrath | Void/Arcane | Große Leere | Weltlöscher, Formel des Ursprungs, Umkehr der Welt | Stillesinn |
+| 193 | Hymlit | Sound | Großer Takt | Sinfonie der Welt | Lockruf |
+| 194 | Hymnora | Sound/Spirit | Großer Takt | Geisterheer, Seelenrückkehr, Sinfonie der Welt | Lockruf |
+| 195 | Optil | Light | Zenitfeuer | Morgenweihe | Leuchtfeuer |
+| 196 | Optikor | Gravity/Light | Ereignishorizont | Zenitfeuer, Morgenweihe, Schwerkraftsturz | Leuchtfeuer |
+| 197 | Menhirok | Stone/Arcane | Ewiger Fels | Bergsturz, Formel des Ursprungs, Umkehr der Welt | Siegelöffner |
+| 198 | Kronvaal | Arcane/Metal | Formel des Ursprungs | Schmiedehammer, Eherne Phalanx, Umkehr der Welt | Siegelöffner |
+| 199 | Klirrit | Crystal | Prismenkatarakt | Spiegelpalast | Lichtlenker |
+| 200 | Klirrflug | Crystal/Sound | Prismenkatarakt | Spiegelpalast, Sinfonie der Welt, Großer Takt | Lockruf |
+| 201 | Klirrathan | Crystal/Sound | Prismenkatarakt | Spiegelpalast, Sinfonie der Welt, Großer Takt | Lichtlenker |
+| 202 | Klirrnox | Void/Crystal | Weltlöscher | Große Leere, Prismenkatarakt, Spiegelpalast | Stillesinn |
+| 203 | Spatling | Crystal | Spiegelpalast | Prismenkatarakt | Kristallklang |
+| 204 | Spatwurm | Crystal/Stone | Spiegelpalast | Bergsturz, Ewiger Fels, Prismenkatarakt | Lichtlenker |
+| 205 | Spathorn | Crystal/Gravity | Spiegelpalast | Prismenkatarakt, Ereignishorizont, Schwerkraftsturz | Schwebelast |
+| 206 | Ligrel | Gravity | Ereignishorizont | Schwerkraftsturz | Leichtschritt |
+| 207 | Ligrath | Gravity/Void | Weltlöscher | Große Leere, Ereignishorizont, Schwerkraftsturz | Leichtschritt |
+| 208 | Ligravor | Gravity/Crystal | Prismenkatarakt | Spiegelpalast, Ereignishorizont, Schwerkraftsturz | Leichtschritt |
+| 209 | Facetin | Crystal | Prismenkatarakt | Spiegelpalast | Kristallklang |
+| 210 | Facettor | Crystal/Light | Prismenkatarakt | Zenitfeuer, Morgenweihe, Spiegelpalast | Lichtlenker |
+| 211 | Mullit | Metal | Schmiedehammer | Eherne Phalanx | Erzwitterung |
+| 212 | Mullhorn | Metal/Stone | Schmiedehammer | Bergsturz, Ewiger Fels, Eherne Phalanx | Erzspur |
+| 213 | Misslit | Void | Weltlöscher | Große Leere | Stillesinn |
+| 214 | Missgrath | Void/Crystal | Weltlöscher | Große Leere, Prismenkatarakt, Spiegelpalast | Stillesinn |
+| 215 | Psionit | Arcane | Umkehr der Welt | Formel des Ursprungs | Glyphenlesen |
+| 216 | Psioneth | Arcane/Crystal | Umkehr der Welt | Prismenkatarakt, Spiegelpalast, Formel des Ursprungs | Kristallklang |
+| 217 | Miasmar | Venom/Void | Weltlöscher | Große Leere, Pestwolke, Säureflut | Ködermischer |
+| 218 | Stalakkord | Sound/Crystal | Großer Takt | Prismenkatarakt, Spiegelpalast, Sinfonie der Welt | Echolot |
+| 219 | Nimbel | Storm | Orkanschwinge | Himmelszorn | Aufwind |
+| 220 | Nimbor | Storm/Sound | Orkanschwinge | Himmelszorn, Sinfonie der Welt, Großer Takt | Wetterwitterung |
+| 221 | Nimbaroth | Storm/Gravity | Orkanschwinge | Himmelszorn, Ereignishorizont, Schwerkraftsturz | Schwebelast |
+| 222 | Cirrel | Storm | Himmelszorn | Orkanschwinge | Aufwind |
+| 223 | Cirrhawk | Storm/Light | Himmelszorn | Orkanschwinge, Zenitfeuer, Morgenweihe | Wetterwitterung |
+| 224 | Cirrhaven | Storm/Light | Himmelszorn | Orkanschwinge, Zenitfeuer, Morgenweihe | Lichtsignal |
+| 225 | Nubi | Light | Morgenweihe | Zenitfeuer | Lichtsignal |
+| 226 | Nubilo | Light/Storm | Morgenweihe | Himmelszorn, Orkanschwinge, Zenitfeuer | Leuchtfeuer |
+| 227 | Nubiluna | Light/Sound | Morgenweihe | Zenitfeuer, Sinfonie der Welt, Großer Takt | Echolot |
+| 228 | Nubisk | Void/Light | Große Leere | Weltlöscher, Zenitfeuer, Morgenweihe | Stillesinn |
+| 229 | Harfel | Sound | Großer Takt | Sinfonie der Welt | Lockruf |
+| 230 | Harfion | Sound/Storm | Großer Takt | Himmelszorn, Orkanschwinge, Sinfonie der Welt | Wetterwitterung |
+| 231 | Tintel | Sound | Sinfonie der Welt | Großer Takt | Echolot |
+| 232 | Tintabul | Sound/Light | Sinfonie der Welt | Zenitfeuer, Morgenweihe, Großer Takt | Lockruf |
+| 233 | Holmel | Gravity | Ereignishorizont | Schwerkraftsturz | Schwebelast |
+| 234 | Holmgard | Gravity/Stone | Bergsturz | Ewiger Fels, Ereignishorizont, Schwerkraftsturz | Schwebelast |
+| 235 | Levitel | Gravity | Ereignishorizont | Schwerkraftsturz | Leichtschritt |
+| 236 | Levithar | Arcane/Gravity | Umkehr der Welt | Ereignishorizont, Schwerkraftsturz, Formel des Ursprungs | Siegelöffner |
+| 237 | Graupel | Frost | Ewiger Winter | Eiszeit | – |
+| 238 | Graupix | Crystal/Storm | Prismenkatarakt | Himmelszorn, Orkanschwinge, Spiegelpalast | Lichtlenker |
+| 239 | Lumaskiff | Light/Storm | Morgenweihe | Himmelszorn, Orkanschwinge, Zenitfeuer | Aufwind |
+| 240 | Astraviel | Arcane/Light | Formel des Ursprungs | Zenitfeuer, Morgenweihe, Umkehr der Welt | Siegelöffner |
+| 241 | Sylv'anor | Bloom/Sound | Urwaldchor | Dornenmeer, Sinfonie der Welt, Großer Takt | Kräuterkunde |
+| 242 | Orh'gruun | Stone/Gravity | Ewiger Fels | Bergsturz, Ereignishorizont, Schwerkraftsturz | Felsbrecher |
+| 243 | Nhael'vesh | Venom/Spirit | Pestwolke | Säureflut, Geisterheer, Seelenrückkehr | Giftschneise |
+| 244 | Thal'assyr | Tide/Storm | Weltflut | Gezeitenschoß, Himmelszorn, Orkanschwinge | Aufwind |
+| 245 | Ash'kareth | Light/Arcane | Zenitfeuer | Morgenweihe, Formel des Ursprungs, Umkehr der Welt | Lichtsignal |
+| 246 | Pyr'thagon | Ember/Metal | Sonnensturz | Phönixlied, Schmiedehammer, Eherne Phalanx | Fackelschein |
+| 247 | Isv'aldr | Frost/Light | Eiszeit | Ewiger Winter, Zenitfeuer, Morgenweihe | Eisbrücke |
+| 248 | Ka'thurel | Spirit/Arcane | Seelenrückkehr | Geisterheer, Formel des Ursprungs, Umkehr der Welt | Siegelöffner |
+| 249 | Prism'aion | Crystal/Sound | Prismenkatarakt | Spiegelpalast, Sinfonie der Welt, Großer Takt | Kristallklang |
+| 250 | Aeth'rion | Sound/Light | Großer Takt | Zenitfeuer, Morgenweihe, Sinfonie der Welt | Lichtsignal |
+| 251 | Velnox | Void/Gravity | Große Leere | Weltlöscher, Ereignishorizont, Schwerkraftsturz | Schattenschritt |
+| 252 | Chronaire | Sound/Arcane | Sinfonie der Welt | Großer Takt, Formel des Ursprungs, Umkehr der Welt | Lockruf |
+| 253 | Mirrowisp | Crystal/Spirit | Spiegelpalast | Geisterheer, Seelenrückkehr, Prismenkatarakt | Kristallklang |
+| 254 | Ouroveth | Venom/Bloom | Urwaldchor | Dornenmeer, Pestwolke, Säureflut | Kräuterkunde |
+| 255 | Zenthrax | Gravity/Metal | Ereignishorizont | Schmiedehammer, Eherne Phalanx, Schwerkraftsturz | Leichtschritt |
+| 256 | Aurelune | Light/Void | Zenitfeuer | Weltlöscher, Große Leere, Morgenweihe | Leuchtfeuer |
+
+### 9.2 Beispiele (vollständige Sets inkl. Crescendo und Feld)
 
 **Fernlit** (ECHO_001)
 
