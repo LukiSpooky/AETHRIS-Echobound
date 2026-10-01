@@ -271,6 +271,8 @@ if __name__ == "__main__":
         e = validate()
         print("\n".join(e))
         print(f"NPC-Register: {len(rows('Data/World/Npcs.csv'))} NPCs, {len(e)} Verstöße.")
+        if e:
+            sys.exit(1)
     else:
         print(stats_table())
 

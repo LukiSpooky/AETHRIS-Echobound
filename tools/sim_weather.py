@@ -83,6 +83,7 @@ def main():
         f.write("# Kalibrierte Auswahlgewichte (Promille) – erzeugt von tools/sim_weather.py, NICHT von Hand ändern (K14 §4).\n")
         w = csv.writer(f); w.writerow(["Name"] + keys)
         for name, sel in out: w.writerow([name] + [sel[k] for k in keys])
+    print(f"Wetterfahrplan: {len(out)} Regionen, {bad} Verstöße.")
     return 1 if bad else 0
 
 if __name__ == "__main__":

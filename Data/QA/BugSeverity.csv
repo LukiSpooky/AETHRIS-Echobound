@@ -1,0 +1,6 @@
+# Fehlerschwere (K66 §6). Reaction = Reaktionszeit; Gate = Freigaberegel.
+Name,DisplayName,Definition,Reaction,Gate
+S1,Blocker,"Absturz, Datenverlust, Spielstand beschädigt, Fortschritt blockiert, Zertifizierungsverstoß, Sicherheitslücke, Kinderschutz",sofort (≤ 4 h Reaktion),Kein Build mit offenem S1 wird freigegeben
+S2,Kritisch,"Hauptfunktion falsch (Kampfergebnis, Bindung, Tausch), schwere Performance-Verletzung (> 120 % Budget), Barrierefreiheit verhindert Spielen",≤ 2 Arbeitstage,Release-Kandidat: 0 offene S2
+S3,Mittel,"Nebenfunktion falsch, sichtbare Fehler (Clipping, Text), Balance-Ausreißer",im laufenden Meilenstein,"Release: ≤ 50 offen, keine in Hauptpfad"
+S4,Gering,"Kosmetik, Wunsch, kleine Textfehler",nach Priorität,–

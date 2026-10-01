@@ -204,10 +204,12 @@ def pairs_report():
 
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "report"
-    if cmd == "build":
-        build()
+    if cmd in ("build", "validate"):
+        if cmd == "build":
+            build()
         e = check()
         print("\n".join(e))
         print(f"Typfarben: {len(e)} Verstöße.")
+        sys.exit(1 if e else 0)
     else:
         print(pairs_report())

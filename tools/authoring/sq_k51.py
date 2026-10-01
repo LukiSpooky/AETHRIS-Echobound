@@ -635,3 +635,4 @@ if __name__ == "__main__":
     print(f"K51: {len(IDS)} Nebenquests, {len(err)} Fehler. Gesamt beschrieben: {len(allids)}.")
     if cmd == "write" and not err:
         print("geschrieben:", write(IDS))
+    sys.exit(1 if err else 0)

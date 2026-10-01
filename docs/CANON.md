@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K65
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K66
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -495,6 +495,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-276 | Switch 2: 30 fps gesperrt als Planungsziel (CR-009) | K65 |
 | ADR-277 | Switch-2-Koop-Host max. 2 Spieler | K65 |
 | ADR-278 | Performance-Gates mit Tickets und Merge-Sperre | K65 |
+| ADR-279 | Ein Register und ein Runner für alle Datenprüfungen | K66 |
+| ADR-280 | C++-Tests gegen Python-Referenzvektoren | K66 |
+| ADR-281 | Quest-Bot prüft Erreichbarkeit aller Quests nächtlich | K66 |
+| ADR-282 | Flake-Quarantäne ≤ 5 Tage | K66 |
+| ADR-283 | Zertifizierungs-Testfälle ab Alpha | K66 |
+| ADR-284 | Qualitätstore mit harten S1/S2-Grenzen | K66 |
 
 ## §11 Change Requests
 
@@ -2216,3 +2222,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §259 Messung & Performance-Gates (LOCKED, K65 §9–§10)
 
 - Unreal Insights, LLM-Tags je Budgetposten, automatisierte Flüge (3 Kamerarouten + 2 Siedlungsrouten je Region), Kampf-Bench CB-01–CB-06 mit festen Seeds, Bildzeit-Telemetrie. Gates: VS (R01 PS5 im Budget, Switch-2-Messung), Alpha (PS5/XSX ≤ 100 %, Switch 2 ≤ 115 %), Beta (alle ≤ 100 %, P99 ≤ 1,25 × Ziel, 0 PSO-Ruckler), RC (+ Speicher ≤ 90 % im Koop-Host). Überschreitung → Ticket beim Owner, 3 Nächte → Merge-Sperre. Optimierungskatalog je Bereich.
+
+## §260 Teststrategie (LOCKED, K66 §1–§2)
+
+- Ziele QZ-1 früh finden (≥ 60 % vor Submit) · QZ-2 automatisieren (≥ 1.300 Tests) · QZ-3 Spielstände heilig · QZ-4 für alle spielbar (A11y, LQA) · QZ-5 Zertifizierung im ersten Anlauf · QZ-6 crashfrei ≥ 99,8 %. Pyramide: Datenprüfungen → Unit (Specs gegen Referenzvektoren) → Functional/Gauntlet (Bots, Flüge, Soak) → Plattform/Performance → Manuell (explorativ, LQA, A11y, Cert) → Playtests → Telemetrie. TS-1 Referenz zuerst · TS-2 Seeds überall · TS-3 kein Flake (Quarantäne ≤ 5 Tage) · TS-4 Daten sind Code · TS-5 Testbarkeit ist Anforderung.
+
+## §261 Datenprüfungen & Automatisierung (LOCKED, K66 §3–§4 · `Data/QA/Checks.csv`, `TestSuites.csv`, `tools/ref/aethris_qa.py`)
+
+- 22 registrierte Prüfer (Data-Lint, Layers, Katalog, Fähigkeiten, Lernsets, Items, Kombos, Quests, Nebenquests, NPCs, UI, Ökologie, Wetter, Palette, VFX, Netz, Soziales, PvP, Endgame, Balancing, Save, Performance); Erfolg = Exitcode 0 + „0 Verstöße/Fehler“; Regelkatalog aus den Werkzeugen. 16 Suiten (Unit Core/Combat/Breeding/Save/PvP/Quests/World, Functional Onboarding/Combat/Bond/Traversal/Quests/Save/Online/Accessibility, Soak), erste Specs `Aethris.Unit.Core.CombatNet`, `Aethris.Unit.Save.Container`, `Aethris.Unit.PvP.Glicko2`; Funktionale Testfälle FT-001–FT-090.
+
+## §262 Fehler-Workflow & Zertifizierung (LOCKED, K66 §6–§7 · `BugSeverity.csv`, `CertAreas.csv`)
+
+- S1 Blocker (≤ 4 h) · S2 Kritisch (≤ 2 Tage) · S3 Mittel · S4 Gering; tägliche Triage; Pflichtfelder (Build, Plattform, Modus, Schritte, Seed/Save, Regelbezug, Anhänge); Regression → Schwere +1; Absturz-Signaturen > 10/Tag → S1-Kandidat. 12 Zertifizierungsbereiche; Cert-Testfälle ab Alpha in jeder Regression, Pre-Cert in Beta, Einreichung RC mit 3 Wochen Puffer.
+
+## §263 Qualitätstore & Kennzahlen (LOCKED, K66 §8–§10)
+
+- VS (Daten grün, Prolog/R01 ohne S1/S2, Onboarding-Bot), Alpha (Quest-Bot alle Quests, Golden Saves G01–G12, S1 = 0), Beta (Platzhalter 0, LQA, A11y-Suite, Pre-Cert, Online-Beta), RC (S1 = S2 = 0, S3 ≤ 50 abseits Hauptpfad, crashfrei ≥ 99,8 % in 2 Wochen Soak). Organisation: Embedded QA je Team, zentrale QA 25, SDETs 6, Plattform-QA 5, A11y 2 + extern, LQA/Kompatibilität extern. Kennzahlen: Flake ≤ 1 %, Triage ≤ 1 Tag, Regression ≤ 8 %, Escape ≤ 5 %.

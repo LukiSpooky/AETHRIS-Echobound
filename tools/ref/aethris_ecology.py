@@ -349,6 +349,7 @@ if __name__ == "__main__":
         e = validate()
         print("\n".join(e))
         print(f"Ökologie: {len(WILD)} Wildarten, {len(e)} Verstöße.")
+        sys.exit(1 if e else 0)
     elif cmd == "build":
         print(build())
     elif cmd == "foodweb":

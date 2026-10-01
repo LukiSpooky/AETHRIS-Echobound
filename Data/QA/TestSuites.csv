@@ -1,0 +1,18 @@
+# Automatisierte Testsuiten (K66 §3). Tests = geplante Anzahl zum Launch; Duration = Laufzeit; Stage = Pipeline-Stufe (CANON §27).
+Name,Content,Tests,Duration,Stage
+Aethris.Unit.Core,"Core: Zufall, Festkomma, Statusformeln, Kampfnetz",140,< 1 min,PreSubmit
+Aethris.Unit.Combat,"Zeitleiste, Schaden, Status, Kombos, Dissonanzen",260,< 2 min,PreSubmit
+Aethris.Unit.Breeding,"Genetik, Morphs, Plausibilität",90,< 1 min,PreSubmit
+Aethris.Unit.Save,"Container, Migration, Fragmente",80,< 1 min,PreSubmit
+Aethris.Unit.PvP,"Glicko-2, Normalisierung, Regelsätze",60,< 1 min,PreSubmit
+Aethris.Unit.Quests,"Bedingungen, Zustände, StepId-Migration",150,< 1 min,PreSubmit
+Aethris.Unit.World,"Zonen, Wetterfahrplan, Siedlungen",110,< 1 min,PreSubmit
+Aethris.Functional.Onboarding,"Prolog vollständig (Bot), Erstresonanz, Gleiter",12,15 min,Nightly
+Aethris.Functional.Combat,"Kampf-Bench CB-01–CB-06, Formate, Boss-Mechaniken",40,25 min,Nightly
+Aethris.Functional.Bond,Bindungsszenarien K36 mit festen Seeds,30,10 min,Nightly
+Aethris.Functional.Traversal,"Gauntlet-Flüge je Region (Gleiten, Reiten, Klettern)",30,40 min,Nightly
+Aethris.Functional.Quests,"Hauptquest-Kette per Bot (Abkürzungsmodus), 210 Nebenquests Erreichbarkeit",250,90 min,Nightly
+Aethris.Functional.Save,"Golden Saves G01–G20, Stromausfall-Simulation",30,20 min,Nightly
+Aethris.Functional.Online,"Koop 2–4 Bots, Tausch, Raid, Ranked mit Netzemulation",25,45 min,Nightly
+Aethris.Functional.Accessibility,"Optionen K54 (Stummschalt-Durchlauf, Farbenblind-Screenshots, Timing)",35,30 min,Nightly
+Aethris.Soak,"72-h-Dauerlauf (Welt, Koop-Host), Speicherlecks",3,72 h,Wöchentlich

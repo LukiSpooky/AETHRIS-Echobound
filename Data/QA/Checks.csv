@@ -1,0 +1,24 @@
+# Register aller automatischen Datenprüfungen (K66 §4). Command relativ zum Repository; Erfolg = Exitcode 0. Stage: PreSubmit (< 20 min, CANON §27) oder Nightly.
+Name,DisplayName,Command,Chapter,Stage
+CHK_DATA_LINT,"Data-Lint (Spalten, IDs, Tags, Referenzen)",tools/data_lint.py,"K06, K54",PreSubmit
+CHK_LAYERS,Modul-Schichten,tools/check_layers.py,K05,PreSubmit
+CHK_CATALOG,Kreaturenkatalog (256 Arten),tools/gen_catalog.py validate,K16–K27,PreSubmit
+CHK_WEATHER,Wetterfahrplan-Kalibrierung (≤ 3 pp),tools/sim_weather.py,K14,Nightly
+CHK_COMBOS,Kombos und Akkorde,tools/gen_combat_data.py,K33,PreSubmit
+CHK_ITEMS,Items (336),tools/gen_items.py,K39–K42,PreSubmit
+CHK_LEARNSETS,Lernsets LS-01–LS-12,tools/gen_learnsets.py validate,K29,PreSubmit
+CHK_ABILITIES,"Fähigkeiten (330, Budget, Effekte)",tools/gen_abilities.py validate --final,K28–K30,PreSubmit
+CHK_QUESTS,Hauptquests und Schritte,tools/gen_quests.py,K48,PreSubmit
+CHK_SIDEQUESTS,Nebenquests QS-01–QS-15,tools/authoring/sq_k51.py validate,K49–K51,Nightly
+CHK_NPCS,NPC-Register,tools/gen_npcs.py,K53,PreSubmit
+CHK_UI,UI-Prüfer UI-01–UI-06,tools/gen_ui.py,K54,PreSubmit
+CHK_ECOLOGY,Ökologie,tools/ref/aethris_ecology.py validate,K52,Nightly
+CHK_PALETTE,Typfarben AR-01/AR-02,tools/ref/aethris_palette.py validate,K56,PreSubmit
+CHK_VFX,VFX-01–VFX-06,tools/ref/aethris_vfx.py validate,K58,PreSubmit
+CHK_NET,NET-01–NET-06,tools/ref/aethris_net.py validate,K59,PreSubmit
+CHK_SOCIAL,SO-01–SO-07,tools/ref/aethris_social.py validate,K60,Nightly
+CHK_PVP,PV-01–PV-06,tools/ref/aethris_pvp.py validate,K61,Nightly
+CHK_ENDGAME,EG-01–EG-06,tools/ref/aethris_endgame.py validate,K62,PreSubmit
+CHK_BALANCE,BL-01–BL-07,tools/ref/aethris_balance.py validate,K63,Nightly
+CHK_SAVE,SV-01–SV-06,tools/ref/aethris_save.py validate,K64,PreSubmit
+CHK_PERF,PF-01–PF-06,tools/ref/aethris_perf.py validate,K65,PreSubmit

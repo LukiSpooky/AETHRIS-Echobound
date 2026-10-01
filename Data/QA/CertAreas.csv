@@ -1,0 +1,14 @@
+# Zertifizierungsbereiche (K66 §7). Plattformrichtlinien (TRC, XR, Lotcheck, Steam/Epic) gruppiert; Details in den vertraulichen Plattformdokumenten.
+Name,Area,Platforms,Chapter
+CERT_SAVE,"Speichern/Laden, voller Speicher, beschädigte Daten",alle,K64
+CERT_SUSPEND,"Ruhemodus, Fortsetzen, Quick Resume, Benutzerwechsel",Konsolen,"K64, K65"
+CERT_ONLINE,"Netzwerkverlust, Plattformdienste nicht erreichbar, Fehlermeldungen",alle,K59
+CERT_PARENTAL,"Elternkontrollen, Kommunikationsbeschränkungen, Altersfreigabe",alle,"K59, K60"
+CERT_ACCOUNTS,"Konten, Profilwechsel, Gast-Konten (Split-Screen)",Konsolen,K65
+CERT_TROPHIES,"Erfolge/Trophäen (Anzahl, Bilder, Freischaltung offline)",alle,K62
+CERT_TEXT,"Lokalisierung, Systemsprache, Pflichttexte, Schriftgrößen",alle,K54
+CERT_CONTROLLER,"Controller trennen/verbinden, Belegung, Symbole je Plattform",alle,K54
+CERT_PERF,"Keine Hänger > Plattformgrenze beim Start/Laden, Speicherverbrauch",alle,K65
+CERT_STORE,"Shop-Integration (falls Erweiterungen), Rechte, Preise",alle,K68
+CERT_PRIVACY,"Datenschutzhinweise, Telemetrie-Einwilligung",alle,K59
+CERT_HANDHELD,"TV/Handheld-Wechsel, Akku, Bildschirmgröße",Switch 2,K65
