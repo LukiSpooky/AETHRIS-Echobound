@@ -72,6 +72,21 @@ Säule S4 „Erbe“ verspricht: *Jedes Echo trägt eine Geschichte, und ich kan
 | Botanica | A14 | Tangi × Hymlit |
 | Bipedia | A04, A18 | Skriv × Drusil |
 
+**Verzeichnis** (generiert aus `Species.csv` und `Archetypes.csv`; je Linie die Stufe-1-Form):
+
+| Resonanzgruppe | Anzahl Linien (Stufe-1-Formen) | Arten (Stufe 1 bzw. Einzelarten) |
+|---|---|---|
+| Aquatica | 10 | Aquapip, Blightkin, Emblit, Humbog, Mirepip, Pyrolm, Rillo, Tidling, Tilgel, Undling |
+| Articulata | 9 | Craglet, Glimkin, Ligrel, Lumpip, Rivetkin, Skarit, Stachik, Tikkel, Vitrel |
+| Bipedia | 9 | Astraviel, Brassel, Chimkin, Cindrel, Drusil, Hallkid, Kronvaal, Mirasel, Skriv |
+| Botanica | 5 | Blossi, Hymlit, Sporlet, Tangi, Weidlit |
+| Elementia | 12 | Ambolt, Bassalt, Levitel, Menhirok, Optil, Qadrant, Runkar, Stalakkord, Tetri, Thaelit, Torfgor, Vardlit |
+| Quadrupedia | 14 | Aschwel, Brokk, Dunkalb, Facetin, Fernlit, Ferrkin, Kiesi, Kjalf, Mossling, Mullit, Rimlet, Sarkel, Snevel, Solkit |
+| Serpentia | 6 | Quarling, Sengel, Spatling, Thornkin, Tysvorn, Umbrling |
+| Spectralia | 18 | Aerlet, Eidrun, Fumel, Glazil, Graupel, Irrlit, Mahrsil, Memoro, Miasmar, Misslit, Nubi, Nucleox, Psionit, Sheamast, Sirrkorn, Skirmote, Tintel, Virmote |
+| Testudinia | 8 | Brinlet, Holmel, Lithi, Mesakil, Obsikin, Opalisk, Pebi, Stonlet |
+| Volantia | 16 | Ariette, Brikin, Cirrel, Gratkin, Harfel, Ignavyr, Klirrit, Lumaskiff, Lyskin, Marlit, Morhaw, Nimbel, Resonix, Uvlet, Volket, Wisplet |
+
 Gruppenübergreifende Paarungen sind nicht möglich. Damit hat jede Art 5–40 mögliche Partnerarten – genug für Vielfalt, wenig genug, um Zuchtwissen wertvoll zu machen (Kodex Stufe 3 zeigt die Gruppe).
 
 ---
@@ -139,6 +154,118 @@ Nicht vererbt: Bindung (Start 120), Level (1), Schliff (0), Repertoire außer Ei
 ### 4.6 Ei-Fähigkeiten
 
 Kennt ein Elternteil eine Fähigkeit, die im Lernset der Schlüpflingsart als **Egg** geführt ist (`Learnsets.csv`, 321 Einträge), lernt der Schlüpfling sie beim Schlüpfen (max. 4). Damit werden Status-Fähigkeiten fremder Typen zu Zuchtzielen – ein Grund, Echos verschiedener Linien zu kombinieren.
+
+**Ei-Fähigkeiten aller Linien** (aus `Learnsets.csv`, Methode Egg – generiert in K29):
+
+| Linie | Stufe-1-Art | Ei-Fähigkeiten (Status fremder Typen) |
+|---|---|---|
+| L001 | Fernlit | Prismenpanzer, Steinhaut, Schwelbrand |
+| L002 | Brokk | Schallwand, Korrosion, Schwelbrand |
+| L003 | Wisplet | Spiegelwand, Schleichendes Gift, Heilschein |
+| L004 | Chimkin | Drusenfeld, Schwebe, Grundfeste |
+| L005 | Mossling | Regenruf, Schwebe, Doppelgänger |
+| L006 | Lumpip | Spiegelwand, Sturmlauf, Panzerplatten |
+| L007 | Rillo | Hitzeflimmern, Giftnebel, Rüstwerk |
+| L008 | Sporlet | Sturmlauf, Albdruck, Panzerplatten |
+| L009 | Skirmote | Entzugsfluch, Wiegenlied, Schwelbrand |
+| L010 | Thornkin | Gewitterruf, Steinhaut, Verschwinden |
+| L011 | Pebi | Läuterung, Schwerkraftfeld, Leerer Raum |
+| L012 | Rivetkin | Hitzeflimmern, Sonnentrunk, Läuterung |
+| L013 | Cindrel | Drusenfeld, Korrosion, Spiegelstahl |
+| L014 | Craglet | Heiltau, Leerer Raum, Läuterung |
+| L015 | Tetri | Mantra, Verschlingen, Konterhieb |
+| L016 | Ferrkin | Seelenband, Quellbad, Spiegelwand |
+| L017 | Gratkin | Resonanzkreis, Leerer Raum, Wandlungsglyphe |
+| L018 | Kiesi | Korrosion, Frostpanzer, Ebbe und Flut |
+| L019 | Lithi | Giftkleid, Seelenband, Rüstwerk |
+| L020 | Rimlet | Steinhaut, Spiegelstahl, Seelenband |
+| L021 | Quarling | Wuchern, Formelraub, Schneeruf |
+| L022 | Emblit | Weißer Atem, Albdruck, Felswall |
+| L023 | Memoro | Heilschein, Frostpanzer, Hitzeflimmern |
+| L024 | Resonix | Korrosion, Doppelgänger, Wuchern |
+| L025 | Runkar | Eisspiegel, Nebelschleier, Kampflied |
+| L026 | Mirepip | Grundfeste, Aufladen, Verschlingen |
+| L027 | Undling | Giftnebel, Resonanzkreis, Schwelbrand |
+| L028 | Irrlit | Böenchor, Wurzelgriff, Frostpanzer |
+| L029 | Blossi | Spiegelstahl, Kältestarre, Prismenpanzer |
+| L030 | Virmote | Wuchern, Böenchor, Ebbe und Flut |
+| L031 | Blightkin | Seelenband, Sonnenwehr, Nebelschleier |
+| L032 | Brinlet | Spiegelstahl, Albdruck, Spiegelwand |
+| L033 | Umbrling | Sonnenesse, Wiegenlied, Kältestarre |
+| L034 | Weidlit | Ebbe und Flut, Gewichtslast, Doppelgänger |
+| L035 | Morhaw | Hitzeflimmern, Aufladen, Glyphenkreis |
+| L036 | Humbog | Bergrücken, Spiegelwand, Böenchor |
+| L037 | Torfgor | Panzerplatten, Gewitterruf, Ahnenwacht |
+| L038 | Marlit | Verschlingen, Taktgeber, Prismenpanzer |
+| L039 | Tidling | Bergrücken, Hitzeflimmern, Ahnenwacht |
+| L040 | Brikin | Läuterung, Kältestarre, Panzerplatten |
+| L041 | Aquapip | Schleichendes Gift, Panzerplatten, Drusenfeld |
+| L042 | Aerlet | Nebelschleier, Korrosion, Prismenpanzer |
+| L043 | Stonlet | Schwelbrand, Konterhieb, Schneeruf |
+| L044 | Glimkin | Quellbad, Albdruck, Kampflied |
+| L045 | Ariette | Gewichtslast, Splitterfalle, Sonnenesse |
+| L046 | Tangi | Gewitterruf, Splitterfalle, Weißer Atem |
+| L047 | Brassel | Felswall, Seelenband, Schwelbrand |
+| L048 | Sheamast | Hitzeflimmern, Splitterfalle, Umkehrfeld |
+| L049 | Opalisk | Umkehrfeld, Sturmlauf, Entzugsfluch |
+| L050 | Solkit | Formelraub, Umkehrfeld, Aufladen |
+| L051 | Dunkalb | Albdruck, Kältestarre, Umkehrfeld |
+| L052 | Skarit | Schneeruf, Verschlingen, Sonnenwehr |
+| L053 | Sengel | Wandlungsglyphe, Spiegelwand, Keimsegen |
+| L054 | Stachik | Spiegelwand, Enthüllung, Schneeruf |
+| L055 | Sirrkorn | Ebbe und Flut, Giftnebel, Heiltau |
+| L056 | Mirasel | Ebbe und Flut, Doppelgänger, Hitzeflimmern |
+| L057 | Vitrel | Wiegenlied, Umkehrfeld, Nebelschleier |
+| L058 | Mesakil | Lichtschlucker, Formelraub, Gewitterruf |
+| L059 | Qadrant | Ebbe und Flut, Spiegelformel, Schwelbrand |
+| L060 | Mahrsil | Leerer Raum, Schaumwall, Sonnentrunk |
+| L061 | Pyrolm | Taktgeber, Giftkleid, Grundfeste |
+| L062 | Ambolt | Wiegenlied, Eisspiegel, Ebbe und Flut |
+| L063 | Aschwel | Wurzelgriff, Splitterfalle, Entzugsfluch |
+| L064 | Obsikin | Entzugsfluch, Giftnebel, Läuterung |
+| L065 | Ignavyr | Sturmlauf, Resonanzkreis, Betäubungspollen |
+| L066 | Fumel | Umkehrfeld, Heilschein, Heiltau |
+| L067 | Drusil | Wiegenlied, Spiegelformel, Weißer Atem |
+| L068 | Volket | Ahnenwacht, Taktgeber, Panzerplatten |
+| L069 | Bassalt | Eisspiegel, Schaumwall, Giftnebel |
+| L070 | Nucleox | Läuterung, Schallwand, Leerer Raum |
+| L071 | Snevel | Gewichtslast, Läuterung, Doppelgänger |
+| L072 | Kjalf | Wandlungsglyphe, Bergrücken, Aufladen |
+| L073 | Uvlet | Schallwand, Prismenpanzer, Grundfeste |
+| L074 | Lyskin | Schwelbrand, Korrosion, Eisspiegel |
+| L075 | Vardlit | Sturmlauf, Hitzeflimmern, Rüstwerk |
+| L076 | Eidrun | Umkehrfeld, Keimsegen, Kältestarre |
+| L077 | Hallkid | Fluchwort, Leerer Raum, Bergrücken |
+| L078 | Glazil | Ahnenwacht, Wiegenlied, Leerer Raum |
+| L079 | Tysvorn | Splitterfalle, Gewitterruf, Nebelschleier |
+| L080 | Skriv | Giftkleid, Leerer Raum, Grundfeste |
+| L081 | Thaelit | Regenruf, Läuterung, Hitzeflimmern |
+| L082 | Tikkel | Ahnenwacht, Drusenfeld, Sonnenesse |
+| L083 | Sarkel | Prismenpanzer, Verschlingen, Böenchor |
+| L084 | Tilgel | Läuterung, Ahnenwacht, Regenruf |
+| L085 | Hymlit | Umkehrfeld, Aufladen, Sonnenesse |
+| L086 | Optil | Gewitterruf, Mantra, Betäubungspollen |
+| L087 | Menhirok | Giftkleid, Schwelbrand, Schwerkraftfeld |
+| L088 | Kronvaal | Kampflied, Sonnentrunk, Gewitterruf |
+| L089 | Klirrit | Resonanzkreis, Albdruck, Quellbad |
+| L090 | Spatling | Bergrücken, Umkehrrune, Seelenband |
+| L091 | Ligrel | Sonnentrunk, Sonnenesse, Nebelschleier |
+| L092 | Facetin | Eisspiegel, Umkehrfeld, Leerer Raum |
+| L093 | Mullit | Spiegelwand, Quellbad, Gewichtslast |
+| L094 | Misslit | Heilschein, Panzerplatten, Schwelbrand |
+| L095 | Psionit | Grundfeste, Sturmlauf, Hitzeflimmern |
+| L096 | Miasmar | Fluchwort, Hitzeflimmern, Steinhaut |
+| L097 | Stalakkord | Glyphenkreis, Bergrücken, Sonnenesse |
+| L098 | Nimbel | Resonanzkreis, Verschwinden, Ebbe und Flut |
+| L099 | Cirrel | Regenruf, Drusenfeld, Schwebe |
+| L100 | Nubi | Panzerplatten, Betäubungspollen, Schaumwall |
+| L101 | Harfel | Wurzelgriff, Korrosion, Aufladen |
+| L102 | Tintel | Hitzeflimmern, Kältestarre, Gewichtslast |
+| L103 | Holmel | Leerer Raum, Schleichendes Gift, Drusenfeld |
+| L104 | Levitel | Giftkleid, Sonnenwehr, Quellbad |
+| L105 | Graupel | Seelenband, Panzerplatten, Korrosion |
+| L106 | Lumaskiff | Kampflied, Keimsegen, Quellbad |
+| L107 | Astraviel | Drusenfeld, Schaumwall, Wuchern |
 
 ---
 

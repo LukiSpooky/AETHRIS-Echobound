@@ -75,5 +75,38 @@ def dr18_table(n=300):
     return "\n".join(out)
 
 
+def _rows(p):
+    import csv
+    root = pathlib.Path(__file__).resolve().parents[2]
+    return list(csv.DictReader(l for l in open(root / p, encoding="utf-8") if not l.startswith("#")))
+
+
+def group_table():
+    arch = {r["Name"]: r["Phylum"] for r in _rows("Data/Echos/Archetypes.csv")}
+    sp = [s for s in _rows("Data/Echos/Species.csv") if s["LineKind"] not in ("Legendary", "Mythical")]
+    groups = {}
+    for s in sp:
+        if s["Stage"] == "1" or s["LineKind"] == "Single":
+            groups.setdefault(arch[s["Archetype"]], []).append(s["DisplayName"])
+    out = ["| Resonanzgruppe | Anzahl Linien (Stufe-1-Formen) | Arten (Stufe 1 bzw. Einzelarten) |", "|---|---|---|"]
+    for g in sorted(groups):
+        out.append(f"| {g} | {len(groups[g])} | {', '.join(sorted(groups[g]))} |")
+    return "\n".join(out)
+
+
+def egg_table():
+    ab = {a["Name"]: a["DisplayName"] for a in _rows("Data/Abilities/Abilities.csv")}
+    sp = {s["Name"]: s for s in _rows("Data/Echos/Species.csv")}
+    eggs = {}
+    for r in _rows("Data/Echos/Learnsets.csv"):
+        if r["Method"] == "Egg":
+            eggs.setdefault(r["Species"], []).append(ab[r["Ability"]])
+    out = ["| Linie | Stufe-1-Art | Ei-Fähigkeiten (Status fremder Typen) |", "|---|---|---|"]
+    for sid in sorted(eggs, key=lambda x: int(x[5:])):
+        s = sp[sid]
+        out.append(f"| {s['Line']} | {s['DisplayName']} | {', '.join(eggs[sid])} |")
+    return "\n".join(out)
+
+
 if __name__ == "__main__":
     print(dr18_table())
