@@ -1,0 +1,14 @@
+# Pfad-Tore (K30 §7, Ausgestaltung K40 §5). Lösungen: Feldfähigkeiten (ABL_F) und typunabhängige Alternativen (PT-1).
+Name,DisplayName,FieldAbilities,Alternative,RegionFocus
+Gate.Ice,Eis/Dorn,Glutschmelze|Giftschneise,Werkzeug Klinge III,R07|R01|R03
+Gate.Rubble,Geröll,Felsbrecher|Schwebelast,Werkzeug Hacke III,R02|R05
+Gate.Gap,Spalt,Rankenbrücke|Eisbrücke,Gleiter / Kletterreiten,R01|R08
+Gate.Water,Wasser,Wasserlauf|Eisbrücke,Schwimmreiten,R03|R06
+Gate.Thicket,Gestrüpp,Giftschneise|Glutschmelze,Werkzeug Sichel II,R03|R01
+Gate.Dark,Dunkel,Fackelschein|Leuchtfeuer,Laterne (Ausrüstung),R09|R05
+Gate.Mechanism,Mechanik,Mechanik|Schwebelast,Kontor-Schlüssel (Ruf 3),R08|R10
+Gate.Ancestor,Ahnen,Seelenpfad|Geistersicht,Kodex-Hinweis (Skill Forschung),R07|R08
+Gate.Prism,Prisma,Lichtlenker|Leuchtfeuer,Spiegelscherben-Rätsel (längerer Weg),R09|R04
+Gate.Glyph,Glyphe,Glyphenlesen,Kodex-Hinweis (Skill Forschung) / Akademie-Schlüssel,R08|R04
+Gate.Seal,Siegel,Siegelöffner,Fraktions-Schlüssel (K47),alle
+Gate.Weight,Last,Schwebelast|Felsbrecher,Gegengewicht-Rätsel (Umweg),R10|R02

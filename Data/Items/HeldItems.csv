@@ -1,0 +1,34 @@
+# Halteitems für Echos (K40 §6). 1 je Echo; Ranked: keine Duplikate je Team (K61). Effekte in Fähigkeits-DSL bzw. Passiv-Primitiva.
+Name,DisplayName,Effects,Description
+ITM_HELD_TONE_EMBER,Stimmstein (Glut),"TypePower(Ember,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_TIDE,Stimmstein (Flut),"TypePower(Tide,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_STONE,Stimmstein (Stein),"TypePower(Stone,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_STORM,Stimmstein (Sturm),"TypePower(Storm,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_BLOOM,Stimmstein (Blüte),"TypePower(Bloom,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_FROST,Stimmstein (Frost),"TypePower(Frost,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_VOID,Stimmstein (Leere),"TypePower(Void,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_LIGHT,Stimmstein (Licht),"TypePower(Light,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_VENOM,Stimmstein (Gift),"TypePower(Venom,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_METAL,Stimmstein (Metall),"TypePower(Metal,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_SPIRIT,Stimmstein (Geist),"TypePower(Spirit,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_CRYSTAL,Stimmstein (Kristall),"TypePower(Crystal,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_SOUND,Stimmstein (Klang),"TypePower(Sound,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_GRAVITY,Stimmstein (Schwerkraft),"TypePower(Gravity,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TONE_ARCANE,Stimmstein (Arkan),"TypePower(Arcane,1100)","Halteitem: {d}-Fähigkeiten ×1,1"
+ITM_HELD_TAKTRING,Taktring,TimeCost(-5),Zeitkosten aller Aktiven −5
+ITM_HELD_SHIELDBROOCH,Schildbrosche,"Shield(Self,10)",Schild 10 % beim Einwechseln
+ITM_HELD_FOCUSLENS,Fokuslinse,Crit(1),Volltrefferstufe +1
+ITM_HELD_LASTBREATH,Atemband,"Heal(Self,15)",Bei HP ≤ 33 %: heilt 15 % (einmal)
+ITM_HELD_MIRRORSCALE,Spiegelschuppe,Reflect(Special),Reflektiert den ersten speziellen Angriff (einmal)
+ITM_HELD_ROOTCHARM,Wurzelamulett,Immune(Rueckstoss),Immun gegen Rückstoß; kein Reihenwechsel durch Gegner
+ITM_HELD_FOGSCARF,Nebelschal,"Mod(Evasion,1100)","AUS ×1,1 bei Nebel/Nebelfeld"
+ITM_HELD_EMBERCORE,Glutkern,StatusChance(1200),"Status-Chancen ×1,2 (nur Brand)"
+ITM_HELD_CLEANSEBELL,Reinheitsglocke,Cleanse(Self),Entfernt den ersten Haupt-Status (einmal)
+ITM_HELD_SWIFTFEATHER,Sturmfeder,"Haste(Self,30)",Beim Einwechseln 30 Ticks Vorlauf
+ITM_HELD_HEAVYSTONE,Schwerstein,"Mod(Defense,1150);Mod(Speed,900)","VER ×1,15, GES ×0,9"
+ITM_HELD_HARMONYCHIME,Harmoniespiel,Harmony(10),Seite +10 Harmonie beim Einwechseln (einmal je Kampf)
+ITM_HELD_BONDRIBBON,Bindungsband,–,Bindungszuwachs +25 % (außerhalb des Kampfes; Ranked ohne Wirkung)
+ITM_HELD_LEARNCHARM,Lernamulett,–,EP +20 % für den Träger (Ranked ohne Wirkung)
+ITM_HELD_POLISHSTONE,Schliffstein,–,Schliff-Ertrag +1 je Kampf (Ranked ohne Wirkung)
+ITM_HELD_WESENSBAND,Wesensband,–,Zucht: Persönlichkeit sicher vererben (K38)
+ITM_HELD_STIMMBAND,Stimmband,–,Zucht: Temperament sicher vererben (K38)

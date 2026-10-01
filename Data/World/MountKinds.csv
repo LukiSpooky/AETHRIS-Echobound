@@ -1,0 +1,7 @@
+# Reitarten (K40 §4). Geschwindigkeit nach Größenklasse (L / XL / XXL; Schwimmen ab M). Freischaltung laut CANON §15.
+Name,DisplayName,SpeedM,SpeedL,SpeedXL,SpeedXXL,StaminaDrain,Unlock,Saddle,Notes
+Mount.Ground,Bodenreiten,–,14,15,13,"Galopp −6 AE/s",Nach Akkord 1,ITM_GEAR_SADDLE_GROUND,"Sprung 2,5 m; schwimmt nicht"
+Mount.Climb,Kletterreiten,–,9,8,–,"−5 AE/s an Wänden",Akt I (Kharsgrat-Quest),ITM_GEAR_SADDLE_CLIMB,"Wände bis 70°; auch an glatten Flächen außer Eis"
+Mount.Swim,Schwimmreiten,10,12,13,12,"−3 AE/s; Tauchen −6 AE/s",Akt I (Morvenmoor/Saltrand),ITM_GEAR_SADDLE_SWIM,"Tauchen bis 30 m mit Atemmaske"
+Mount.Dig,Grabreiten,–,10,11,12,"−6 AE/s unter der Oberfläche",Akt II (Sahrun-Weite),ITM_GEAR_SADDLE_DIG,"Durch Sand/Erde/Kristallsand; Sandsturm-sicher"
+Mount.Fly,Flugreiten,–,20,22,18,"−4 AE/s Steigflug, 0 Gleiten",Akt II nach 6 Akkorden,ITM_GEAR_SADDLE_FLY,"Flughöhe max. 400 m über Gelände; Gewitter: Blitzlandung (CANON §62)"

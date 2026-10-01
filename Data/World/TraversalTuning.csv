@@ -1,0 +1,20 @@
+# Bewegung & Ausdauer des Wärters (K40 §2, löst Q11). Einheiten: m/s, Ausdauer-Einheiten (AE), Sekunden.
+Name,Value,Unit,Notes
+WalkSpeed,1.8,m/s,Analog-Stufe 1
+JogSpeed,4.2,m/s,Analog-Stufe 2
+SprintSpeed,7.0,m/s,"−12 AE/s"
+StaminaBase,100,AE,"+10 je Stiefel-Stufe II–V, +20 Skill Überleben (K43); max. 160"
+StaminaRegen,25,AE/s,"nach 1,0 s ohne Verbrauch; im Regen 20"
+SprintDrain,12,AE/s,
+ClimbSpeed,1.6,m/s,"−8 AE/s; Sprungklettern 3 m für 15 AE"
+ClimbForbidden,–,–,"Eis, Kristall, nasser Fels bei Regen/Gewitter, Sandsturm (CANON §62)"
+SwimSpeed,1.5,m/s,"−4 AE/s; Tauchen nur mit Atemmaske (Ausrüstung)"
+SwimFastSpeed,3.0,m/s,"−10 AE/s"
+GliderSink,1.8,m/s,"Stufe I; −0,15 je Stufe (V: 1,2)"
+GliderForward,9.0,m/s,"Stufe I; +0,75 je Stufe (V: 12)"
+GliderDrain,6,AE/s,"Stufe I; −1 je Stufe (V: 2)"
+FallSafeHeight,12,m,"ohne Gleiter: darüber Abrollen (0,8 s Stillstand)"
+FallRescueHeight,30,m,"darüber: Resonanz-Fangnetz – Wärter landet sicher, 2 s Benommenheit, kein Schaden"
+JumpHeight,1.4,m,
+StealthCrouchNoise,0.5,Faktor,Geräuschradius beim Ducken
+WindStealthBonus,0.7,Faktor,Entdeckungsradius bei Gegenwind

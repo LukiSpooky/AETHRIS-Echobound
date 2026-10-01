@@ -1,0 +1,52 @@
+# Wärter-Ausrüstung (K40 §3, P8 Stufe I–V). Keine Kampfwerte; Bindungsboni nur über Fenster (DR-01: nie Schwelle).
+Name,Slot,DisplayName,Tier,Effect,Sources
+ITM_GEAR_RESONATOR_1,RESONATOR,Resonator I,1,"Bindungs-Fenster ×1,00 · Resonanzsinn 60 m",Start/Prolog
+ITM_GEAR_RESONATOR_2,RESONATOR,Resonator II,2,"Bindungs-Fenster ×1,03 · Resonanzsinn 75 m",Händler (Akkord 2) · Crafting
+ITM_GEAR_RESONATOR_3,RESONATOR,Resonator III,3,"Bindungs-Fenster ×1,06 · Resonanzsinn 90 m",Crafting (Akt I-Materialien) · Fraktion Ruf 2
+ITM_GEAR_RESONATOR_4,RESONATOR,Resonator IV,4,"Bindungs-Fenster ×1,09 · Resonanzsinn 105 m",Crafting (Akt II) · Fraktion Ruf 4
+ITM_GEAR_RESONATOR_5,RESONATOR,Resonator V,5,"Bindungs-Fenster ×1,12 · Resonanzsinn 120 m",Crafting (Endgame) · Fraktion Ruf 6
+ITM_GEAR_GLIDER_1,GLIDER,Gleiter I,1,"Sinkrate 1,80 m/s · Vorwärts 9,0 m/s · 6 AE/s",Start/Prolog
+ITM_GEAR_GLIDER_2,GLIDER,Gleiter II,2,"Sinkrate 1,65 m/s · Vorwärts 9,75 m/s · 5 AE/s",Händler (Akkord 2) · Crafting
+ITM_GEAR_GLIDER_3,GLIDER,Gleiter III,3,"Sinkrate 1,50 m/s · Vorwärts 10,5 m/s · 4 AE/s",Crafting (Akt I-Materialien) · Fraktion Ruf 2
+ITM_GEAR_GLIDER_4,GLIDER,Gleiter IV,4,"Sinkrate 1,35 m/s · Vorwärts 11,25 m/s · 3 AE/s",Crafting (Akt II) · Fraktion Ruf 4
+ITM_GEAR_GLIDER_5,GLIDER,Gleiter V,5,"Sinkrate 1,20 m/s · Vorwärts 12,0 m/s · 2 AE/s",Crafting (Endgame) · Fraktion Ruf 6
+ITM_GEAR_BOOTS_1,BOOTS,Wanderstiefel I,1,"Ausdauer +0 · Klettern 1,6 m/s",Start/Prolog
+ITM_GEAR_BOOTS_2,BOOTS,Wanderstiefel II,2,"Ausdauer +10 · Klettern 1,7 m/s",Händler (Akkord 2) · Crafting
+ITM_GEAR_BOOTS_3,BOOTS,Wanderstiefel III,3,"Ausdauer +20 · Klettern 1,8 m/s",Crafting (Akt I-Materialien) · Fraktion Ruf 2
+ITM_GEAR_BOOTS_4,BOOTS,Wanderstiefel IV,4,"Ausdauer +30 · Klettern 1,9 m/s",Crafting (Akt II) · Fraktion Ruf 4
+ITM_GEAR_BOOTS_5,BOOTS,Wanderstiefel V,5,"Ausdauer +40 · Klettern 2,0 m/s",Crafting (Endgame) · Fraktion Ruf 6
+ITM_GEAR_CLOAK_1,CLOAK,Wettermantel I,1,Wetterschutz – (Ausdauer-Regen-Malus/Sandsturm-Ritt −0 %),Start/Prolog
+ITM_GEAR_CLOAK_2,CLOAK,Wettermantel II,2,Wetterschutz Regen (Ausdauer-Regen-Malus/Sandsturm-Ritt −10 %),Händler (Akkord 2) · Crafting
+ITM_GEAR_CLOAK_3,CLOAK,Wettermantel III,3,"Wetterschutz Regen, Schnee (Ausdauer-Regen-Malus/Sandsturm-Ritt −20 %)",Crafting (Akt I-Materialien) · Fraktion Ruf 2
+ITM_GEAR_CLOAK_4,CLOAK,Wettermantel IV,4,"Wetterschutz Regen, Schnee, Sand (Ausdauer-Regen-Malus/Sandsturm-Ritt −25 %)",Crafting (Akt II) · Fraktion Ruf 4
+ITM_GEAR_CLOAK_5,CLOAK,Wettermantel V,5,Wetterschutz alle (Ausdauer-Regen-Malus/Sandsturm-Ritt −30 %),Crafting (Endgame) · Fraktion Ruf 6
+ITM_GEAR_BAG_1,BAG,Wärtertasche I,1,Taschenplätze je Kategorie 30,Start/Prolog
+ITM_GEAR_BAG_2,BAG,Wärtertasche II,2,Taschenplätze je Kategorie 40,Händler (Akkord 2) · Crafting
+ITM_GEAR_BAG_3,BAG,Wärtertasche III,3,Taschenplätze je Kategorie 50,Crafting (Akt I-Materialien) · Fraktion Ruf 2
+ITM_GEAR_BAG_4,BAG,Wärtertasche IV,4,Taschenplätze je Kategorie 60,Crafting (Akt II) · Fraktion Ruf 4
+ITM_GEAR_BAG_5,BAG,Wärtertasche V,5,Taschenplätze je Kategorie 80,Crafting (Endgame) · Fraktion Ruf 6
+ITM_GEAR_LENS_1,LENS,Kodex-Linse I,1,Zoom 8× · Standard,Start/Prolog
+ITM_GEAR_LENS_2,LENS,Kodex-Linse II,2,Zoom 8× · Makrolinse,Händler (Akkord 2) · Crafting
+ITM_GEAR_LENS_3,LENS,Kodex-Linse III,3,Zoom 10× · Nachtlinse,Crafting (Akt I-Materialien) · Fraktion Ruf 2
+ITM_GEAR_LENS_4,LENS,Kodex-Linse IV,4,Zoom 12× · Teleobjektiv,Crafting (Akt II) · Fraktion Ruf 4
+ITM_GEAR_LENS_5,LENS,Kodex-Linse V,5,Zoom 12× · Spiegellinse (Meisterschaft),Crafting (Endgame) · Fraktion Ruf 6
+ITM_GEAR_TOOL_1,TOOL,Wärterwerkzeug I,1,Klinge/Hacke/Sichel Stufe I · Ertrag +0 %,Start/Prolog
+ITM_GEAR_TOOL_2,TOOL,Wärterwerkzeug II,2,Klinge/Hacke/Sichel Stufe II · Ertrag +10 %,Händler (Akkord 2) · Crafting
+ITM_GEAR_TOOL_3,TOOL,Wärterwerkzeug III,3,Klinge/Hacke/Sichel Stufe III · Ertrag +20 %,Crafting (Akt I-Materialien) · Fraktion Ruf 2
+ITM_GEAR_TOOL_4,TOOL,Wärterwerkzeug IV,4,Klinge/Hacke/Sichel Stufe IV · Ertrag +30 %,Crafting (Akt II) · Fraktion Ruf 4
+ITM_GEAR_TOOL_5,TOOL,Wärterwerkzeug V,5,Klinge/Hacke/Sichel Stufe V · Ertrag +40 %,Crafting (Endgame) · Fraktion Ruf 6
+ITM_GEAR_LANTERN_1,LANTERN,Laterne I,1,Leuchtradius 8 m · Dunkel-Tor ab Stufe III,Start/Prolog
+ITM_GEAR_LANTERN_2,LANTERN,Laterne II,2,Leuchtradius 12 m · Dunkel-Tor ab Stufe III,Händler (Akkord 2) · Crafting
+ITM_GEAR_LANTERN_3,LANTERN,Laterne III,3,Leuchtradius 16 m · Dunkel-Tor ab Stufe III,Crafting (Akt I-Materialien) · Fraktion Ruf 2
+ITM_GEAR_LANTERN_4,LANTERN,Laterne IV,4,Leuchtradius 20 m · Dunkel-Tor ab Stufe III,Crafting (Akt II) · Fraktion Ruf 4
+ITM_GEAR_LANTERN_5,LANTERN,Laterne V,5,Leuchtradius 25 m · Dunkel-Tor ab Stufe III,Crafting (Endgame) · Fraktion Ruf 6
+ITM_GEAR_MASK_1,MASK,Atemmaske I,1,Tauchzeit 20 s · Tauchtiefe 5 m,Start/Prolog
+ITM_GEAR_MASK_2,MASK,Atemmaske II,2,Tauchzeit 40 s · Tauchtiefe 10 m,Händler (Akkord 2) · Crafting
+ITM_GEAR_MASK_3,MASK,Atemmaske III,3,Tauchzeit 60 s · Tauchtiefe 20 m,Crafting (Akt I-Materialien) · Fraktion Ruf 2
+ITM_GEAR_MASK_4,MASK,Atemmaske IV,4,Tauchzeit 90 s · Tauchtiefe 30 m,Crafting (Akt II) · Fraktion Ruf 4
+ITM_GEAR_MASK_5,MASK,Atemmaske V,5,Tauchzeit 120 s · Tauchtiefe 40 m,Crafting (Endgame) · Fraktion Ruf 6
+ITM_GEAR_SADDLE_GROUND,SADDLE,Bodensattel,1,Schaltet die Reitart frei (mit Traversal-Freischaltung CANON §15),Story/Wildwacht
+ITM_GEAR_SADDLE_CLIMB,SADDLE,Klettersattel,1,Schaltet die Reitart frei (mit Traversal-Freischaltung CANON §15),Story/Wildwacht
+ITM_GEAR_SADDLE_SWIM,SADDLE,Schwimmsattel,1,Schaltet die Reitart frei (mit Traversal-Freischaltung CANON §15),Story/Wildwacht
+ITM_GEAR_SADDLE_DIG,SADDLE,Grabsattel,1,Schaltet die Reitart frei (mit Traversal-Freischaltung CANON §15),Story/Wildwacht
+ITM_GEAR_SADDLE_FLY,SADDLE,Flugsattel,1,Schaltet die Reitart frei (mit Traversal-Freischaltung CANON §15),Story/Wildwacht

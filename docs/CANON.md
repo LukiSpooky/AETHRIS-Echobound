@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K39
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K40
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -363,6 +363,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-144 | Beobachtung als 3-s-Fokus während Verhaltensausführung | K39 |
 | ADR-145 | Klangfragmente als Regionen × Themen-Raster mit Wahrheitsebenen | K39 |
 | ADR-146 | Fotobewertung über Klassifizierungsmaske | K39 |
+| ADR-147 | Kein Fallschaden, Resonanz-Fangnetz | K40 |
+| ADR-148 | Ausrüstung ohne Kampfwerte | K40 |
+| ADR-149 | Reitarten an Echos, Sattel und Story-Freischaltung | K40 |
+| ADR-150 | Halteitems ohne Verbrauch, Kampfboni gedeckelt | K40 |
 
 ## §11 Change Requests
 
@@ -385,7 +389,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q8 | ~~Bindungsstufen 0–1000~~ ✅ K37 §2: Stufen 0/150/350/550/750/900 | K37 |
 | Q9 | ~~Tagesphasen-Stundengrenzen~~ ✅ K14 §3 | K15 |
 | Q10 | ~~Hauptquartiere der Fraktionen~~ ✅ K07: Hauptsitze festgelegt | K47 |
-| Q11 | Bewegungs-/Ausdauer-/Gleiter-Tuning (Startwerte K02 §4.1) | K40 |
+| Q11 | ~~Bewegungs-/Ausdauer-/Gleiter-Tuning (Startwerte K02 §4.1)~~ ✅ K40 §2: Bewegung/Ausdauer/Gleiter final (TraversalTuning.csv) | K40 |
 | Q12 | ~~Bindungs-Timingfenster (Startwerte K02 §4.2)~~ ✅ K36 §5: Gut 160–400 ms nach Resonanz × Temperament × Siegel, Perfekt 25 % (min. 60 ms) | K36 |
 | Q13 | Arena-Stufentabelle (Startwerte K02 §9.2) | K63 |
 | Q14 | Wärterrang-EP-Kurve (Startwerte K02 §13.2) | K43/K63 |
@@ -1640,3 +1644,23 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 - Meisterschaft: 100 Arten ★★★ + 20 Verhaltensfotos ★★★★ + 10 Regionen-Tagesphasen → Spiegellinse → Mirrowisp (Solo).
 - Wärter-EP: Kodex-Stufe 10/30/60/120, Fragment 80, erstes ★★★/★★★★ je Art 20/40; Meilensteine 10/25/50/75/100 %.
+
+## §151 Bewegung & Ausdauer (LOCKED, K40 §2 – löst Q11 · `Data/World/TraversalTuning.csv`)
+
+- Gehen/Joggen/Sprint 1,8/4,2/7,0 m/s; Ausdauer 100 (Stiefel/Skill bis 160), Sprint −12 AE/s, Regeneration +25 AE/s nach 1 s (Regen 20); Klettern 1,6 m/s −8 AE/s; Schwimmen 1,5 m/s −4 AE/s; Gleiter I Sinkrate 1,8 / vorwärts 9,0 / −6 AE/s → V 1,2 / 12 / −2. Kein Fallschaden: Abrollen ab 12 m, Resonanz-Fangnetz ab 30 m.
+
+## §152 Wärter-Ausrüstung (LOCKED, K40 §3 · `Data/Items/WardenGear.csv`)
+
+- 9 Plätze × Stufe I–V (Resonator, Gleiter, Stiefel, Wettermantel, Tasche, Kodex-Linse, Werkzeug, Laterne, Atemmaske) + 5 Sättel; keine Kampfwerte; Resonator: Bindungsfenster ×1,00–1,12 und Resonanzsinn 60–120 m; Transmog kostenlos.
+
+## §153 Reiten (LOCKED, K40 §4 · `Data/World/MountKinds.csv`)
+
+- Reitarten Boden/Klettern/Schwimmen/Graben/Flug mit Tempo nach Größe; Voraussetzung Mount-Art, Sattel, Echo im Chor, Bindungsstufe ≥ 1; Reit-Ausdauer 100 (+10 ab Bindungsstufe 4); Ruf in ≤ 2 s; Kampf beendet Reiten; Koop-Mitreiten auf XL/XXL; 50 Reittiere im Grundkatalog.
+
+## §154 Pfad-Tore final (LOCKED, K40 §5 · `Data/World/PathGates.csv`)
+
+- 12 Tor-Typen mit Feldfähigkeits- und typunabhängigen Lösungen; PT-1 ≥ 2 Lösungen, PT-2 nie Hauptpfad, PT-3 ≥ 6 Typen/Region und ≤ 8 Tore/Zone, PT-4 lohnender Inhalt dahinter, PT-5 Lösungssymbole im Resonanzsinn.
+
+## §155 Halteitems (LOCKED, K40 §6 · `Data/Items/HeldItems.csv`)
+
+- 32 Halteitems (15 Stimmsteine ×1,1, Utility, Komfort, Zucht); 1 je Echo; kein Verbrauch („einmal“ = je Kampf); Kampf-Boni ≤ ×1,15; Ranked ohne Duplikate, Komfort-Items wirkungslos.
