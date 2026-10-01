@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K20
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K21
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -1072,3 +1072,40 @@ Ruhig (Fenster ×1,2, 4 Anschläge, bleibt, Flucht 15 %) · Feurig (×0,9, 2, gr
 | 032 | Cindrel | Glut | L013/1 Single | – | Caster | – |
 
 Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-Werkzeuge: `tools/authoring/catalog_lib.py`, `build_catalog_chapter.py`; Linienplan `docs/kapitel/_Linienplan_K20-K27.md` (R01 6/5/2/2, R02 4/5/3/1, R03 4/5/3/1, R06 4/5/3/1, R04 4/5/2/0, R05 4/4/2/0, R07 4/4/1/1, R08 4/3/2/0, R09 3/4/2/1, R10 3/5/2/1 – 3er/2er/Einzel/Zweig).
+
+## §90 Arten #033–#064 (LOCKED, K21 · `Data/Echos/Species.csv`)
+
+| # | Name | Typen | Linie/Stufe | Evolution → | Rolle | Reiten |
+|---|---|---|---|---|---|---|
+| 033 | Craglet | Stein | L014/1 Three | Cragar [Level>=18] | Tank | – |
+| 034 | Cragar | Stein | L014/2 Three | Kraggoth [Level>=34]; Anchrex [Level>=34 & Zone=R02_Z02 & Moon=FullMoon] | Tank | Kletterreiten |
+| 035 | Kraggoth | Stein/Metall | L014/3 Three | – | Tank | Kletterreiten |
+| 036 | Anchrex | Schwerkraft/Stein | L014/3 Branch | – | Control | Kletterreiten |
+| 037 | Tetri | Schwerkraft | L015/1 Three | Tetrel [Level>=20] | Control | – |
+| 038 | Tetrel | Schwerkraft/Stein | L015/2 Three | Ponderath [Level>=36] | Control | – |
+| 039 | Ponderath | Schwerkraft | L015/3 Three | – | Control | – |
+| 040 | Ferrkin | Metall | L016/1 Three | Ferrow [Level>=20] | Striker | – |
+| 041 | Ferrow | Metall/Stein | L016/2 Three | Forgoth [Level>=34] | Striker | – |
+| 042 | Forgoth | Metall/Stein | L016/3 Three | – | Striker | Bodenreiten |
+| 043 | Gratkin | Sturm | L017/1 Three | Gratwyn [Level>=20] | Speed | – |
+| 044 | Gratwyn | Sturm | L017/2 Three | Gratrex [Level>=36 & Weather=Thunderstorm] | Speed | – |
+| 045 | Gratrex | Sturm/Metall | L017/3 Three | – | Striker | Flugreiten |
+| 046 | Kiesi | Stein | L018/1 Two | Kiesward [Level>=24] | AllRound | – |
+| 047 | Kiesward | Stein/Klang | L018/2 Two | – | AllRound | – |
+| 048 | Lithi | Stein | L019/1 Two | Lithshell [Level>=26] | Tank | – |
+| 049 | Lithshell | Stein/Flut | L019/2 Two | – | Tank | Bodenreiten |
+| 050 | Rimlet | Frost | L020/1 Two | Rimpaw [Level>=24 & Weather=Snow] | Speed | – |
+| 051 | Rimpaw | Frost/Sturm | L020/2 Two | – | Speed | – |
+| 052 | Quarling | Kristall | L021/1 Two | Quarcoil [Level>=26] | Caster | – |
+| 053 | Quarcoil | Kristall/Stein | L021/2 Two | – | Caster | – |
+| 054 | Emblit | Glut | L022/1 Two | Dawnix [Level>=26 & TimeOfDay=Dawn] | Caster | – |
+| 055 | Dawnix | Licht/Glut | L022/2 Two | – | Caster | – |
+| 056 | Memoro | Geist | L023/1 Single | – | Support | – |
+| 057 | Resonix | Klang | L024/1 Single | – | Speed | – |
+| 058 | Runkar | Arkan/Stein | L025/1 Single | – | Control | – |
+| 059 | Mirepip | Gift | L026/1 Three | Mirel [Level>=18] | Control | – |
+| 060 | Mirel | Gift/Flut | L026/2 Three | Toxmire [Level>=32] | Control | – |
+| 061 | Toxmire | Gift/Flut | L026/3 Three | – | Control | – |
+| 062 | Undling | Flut | L027/1 Three | Undfin [Level>=18] | Tank | – |
+| 063 | Undfin | Flut | L027/2 Three | Undrath [Level>=34 & Weather=Rain] | Tank | Schwimmreiten |
+| 064 | Undrath | Flut/Geist | L027/3 Three | – | Tank | Schwimmreiten |
