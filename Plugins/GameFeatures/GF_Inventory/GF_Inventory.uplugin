@@ -1,0 +1,31 @@
+{
+ "FileVersion": 3,
+ "Version": 1,
+ "VersionName": "0.1",
+ "FriendlyName": "GF_Inventory",
+ "Description": "Items, Ausr\u00fcstung, Inventar",
+ "Category": "Aethris|Domain",
+ "CreatedBy": "AETHRIS Team",
+ "CanContainContent": true,
+ "ExplicitlyLoaded": true,
+ "EnabledByDefault": false,
+ "BuiltInInitialFeatureState": "Active",
+ "Modules": [
+  {
+   "Name": "GF_Inventory",
+   "Type": "Runtime",
+   "LoadingPhase": "Default"
+  }
+ ],
+ "Plugins": [
+  {
+   "Name": "GameFeatures",
+   "Enabled": true
+  },
+  {
+   "Name": "ModularGameplay",
+   "Enabled": true
+  }
+ ],
+ "AethrisLayer": "Domain"
+}

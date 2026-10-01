@@ -1,0 +1,31 @@
+{
+ "FileVersion": 3,
+ "Version": 1,
+ "VersionName": "0.1",
+ "FriendlyName": "GF_Multiplayer",
+ "Description": "Sessions, Koop, Tausch, Gilden",
+ "Category": "Aethris|Feature",
+ "CreatedBy": "AETHRIS Team",
+ "CanContainContent": true,
+ "ExplicitlyLoaded": true,
+ "EnabledByDefault": false,
+ "BuiltInInitialFeatureState": "Active",
+ "Modules": [
+  {
+   "Name": "GF_Multiplayer",
+   "Type": "Runtime",
+   "LoadingPhase": "Default"
+  }
+ ],
+ "Plugins": [
+  {
+   "Name": "GameFeatures",
+   "Enabled": true
+  },
+  {
+   "Name": "ModularGameplay",
+   "Enabled": true
+  }
+ ],
+ "AethrisLayer": "Feature"
+}

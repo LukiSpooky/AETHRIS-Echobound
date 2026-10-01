@@ -1,6 +1,6 @@
 # 00 · Kapitelplan – AETHRIS: Echobound
 
-**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K04 abgeschlossen
+**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K05 abgeschlossen
 
 Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel baut auf den vorherigen auf und darf nur Entscheidungen verwenden, die in [`CANON.md`](CANON.md) eingetragen sind (oder es trägt neue ein).
 
@@ -22,7 +22,7 @@ Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel bau
 | K02 | GDD I – Design-Säulen, Spielerfantasie, Core Loops | Game Director, Creative Director | K01 | ✅ |
 | K03 | GDD II – Spielstruktur, Progression, Feature-Matrix | Game Director, RPG Systems Designer | K02 | ✅ |
 | K04 | Kanon, Glossar, Namens- & ID-Konventionen | Creative Director, Narrative Writer | K01–K03 | ✅ |
-| K05 | TDD I – Engine-Setup, Modul- & Projektstruktur, Coding Standards | Unreal Senior Dev, Lead Gameplay Programmer | K01, K03 | ⬜ |
+| K05 | TDD I – Engine-Setup, Modul- & Projektstruktur, Coding Standards | Unreal Senior Dev, Lead Gameplay Programmer | K01, K03 | ✅ |
 | K06 | TDD II – Core-Framework: Data-Driven, Event-Bus, State Machines, GAS, Save-Architektur | Lead Gameplay Programmer | K05 | ⬜ |
 
 ## Teil II – Welt

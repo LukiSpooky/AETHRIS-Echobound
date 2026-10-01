@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K04
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K05
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -242,6 +242,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-023 | Deutsch = Design-Quellsprache, Englisch = Übersetzungspivot (parallel gepflegt) | K04 |
 | ADR-024 | Zeitrechnung n.St., Gegenwart 1004 n.St. | K04 |
 | ADR-025 | Echos grammatisch Neutrum, Zucht geschlechtsunabhängig | K04 |
+| ADR-026 | Perforce für Produktion (ab P2), Git für Spezifikation | K05 |
+| ADR-027 | Ein Game-Feature-Plugin pro Großfunktion, Schicht im Deskriptor | K05 |
+| ADR-028 | C++20, Warnings-as-Errors | K05 |
+| ADR-029 | Determinismus-Zone mit Ganzzahl/Festkomma + eigenem RNG | K05 |
+| ADR-030 | Horde + BuildGraph + UGS | K05 |
+| ADR-031 | Definition-Basisklassen in AethrisCore, Erweiterung per Fragmente | K05 |
 
 ## §11 Change Requests
 
@@ -433,3 +439,43 @@ Verboten im Spiel: „Monster“, Ball/Kapsel/Fangkugel/werfen (Bindung), „-de
 - Echos: grammatisch Neutrum. Typnamen als Eigennamen („Glut-Echo“). Sol: „250 ◎“.
 - Sprachen: Text 12 (DE, EN, FR, ES-EU, ES-LatAm, IT, PT-BR, PL, JA, KO, ZH-Hans, ZH-Hant), Vertonung 5 (DE, EN, JA, FR, ES).
 - String-Keys: `<Domäne>.<Id>.<Feld>`; Fähigkeits-/Itemnamen werden übersetzt, Echo-Namen nicht.
+
+## §25 Engine & Repository (LOCKED, K05 §2–§3)
+
+- UE 5.6 Source-Build, Fork `Aethris-Engine`; Engine-Änderungen nur mit `[ENGINE-MOD]` + Tech-Director-Review (Ziel < 40).
+- Max. 1 Minor-Upgrade/Jahr; **Engine-Lock ab Alpha (Feb 2030)**.
+- P1: dieses Git-Repo trägt Code-Gerüst/Daten/Tools. Ab P2 (Juli 2027): Perforce `//Aethris/Main` + `Dev-Combat|Echos|World|Story|Online` + `Release-1.0`; `docs/` bleibt in Git.
+- Commit-Marker: `[ENGINE-MOD]`, `[DATA]`, `[SAVE-SCHEMA]`.
+
+## §26 Module & Schichten (LOCKED, K05 §4 · Prüfer `tools/check_layers.py`)
+
+| Schicht | Module | darf abhängen von |
+|---|---|---|
+| Core | AethrisCore | Engine |
+| Game | AethrisGame | Core |
+| Domain | GF_Monsters, GF_World, GF_Inventory | Core |
+| Feature | GF_Combat, GF_Capture, GF_Companion, GF_Breeding, GF_Research, GF_Economy (inkl. Crafting), GF_Quests, GF_AI, GF_Save, GF_Multiplayer, GF_PvP | Core, Domain |
+| Presentation | GF_UI, GF_Audio | Core, Domain, Feature |
+| Editor | AethrisEditor | alle |
+
+- Schicht steht im `.uplugin`-Feld `"AethrisLayer"`. Features kennen sich nie: nur **Event-Bus** (`UAethrisEventBus`), **Core-Interfaces** über `UAethrisServiceLocator`, **Domain-Daten**.
+- Definition-Basisklassen in AethrisCore: `UEchoSpeciesDefinition`, `UAbilityDefinition`, `UItemDefinition`, `UQuestDefinition`; Erweiterung durch `UDefinitionFragment` (Instanced).
+- Primary Asset Types: `EchoSpecies` (/GF_Monsters/Echos), `Ability` (/GF_Combat/Abilities), `Item` (/GF_Inventory/Items), `Quest` (/GF_Quests/Quests).
+- Plugin-Off-Matrix nightly (außer GF_Combat, GF_Save).
+
+## §27 Build & CI (LOCKED, K05 §6–§7)
+
+- Targets: `Aethris` (Game, inkl. Listen-Server), `AethrisEditor`, `AethrisServer` (Linux, Dedicated).
+- Horde + BuildGraph + UGS + UBA; Zen-Server-DDC.
+- Pre-Submit (< 20 min): check_layers, nameguard, Data-Lint, Editor-Compile, `Aethris.Unit.*`, Data Validation.
+- Continuous (2 h): alle Plattformen Development + Server + Smoke-Test (Lindwiesen-Bot, Kampf, Save/Load).
+- Nightly (< 6 h): Cook, `Aethris.Functional.*`, Gauntlet-Traversal/Soak, Balancing-Simulator, Plugin-Off-Matrix, Non-Unity, Static Analysis, Pseudo-Loc.
+
+## §28 Coding Standards & Tests (LOCKED, K05 §8–§10)
+
+- Epic-Standard + CS-01–CS-19, CR-01–CR-03, BP-01–BP-07 (siehe K05).
+- **Determinismus-Zone (CS-14):** `GF_Combat/Timeline`, `GF_Combat/Damage`, `GF_Breeding/Genetics`, Replay-Code → nur Ganzzahl / `FAethrisFixed` (Q16.16), RNG `FAethrisRandom`.
+- Kein Tick per Default; keine synchronen Loads im Spielbetrieb; Instrumentierung jeder Systemfunktion.
+- Kommentare Deutsch, Bezeichner Englisch; `TODO(AET-####)` Pflicht.
+- Tests: `Aethris.Unit.<Plugin>.<Thema>` (Automation Spec), `Aethris.Functional.*`; Coverage Domain 80 %, Feature 60 %.
+- Log-Kategorien `LogAethris<Bereich>` aus `AethrisCore/AethrisLog.h`.
