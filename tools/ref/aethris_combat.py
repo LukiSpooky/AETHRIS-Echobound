@@ -275,6 +275,23 @@ def example_table():
     return "\n".join(out)
 
 
+def power_table():
+    """% der HP eines Referenz-Echos (Basis 75 überall, Anlage 7) je Stärke und Faktor, Lv. 50 (K32 §3.1)."""
+    L = 50
+    hp_ = st.hp(75, L, 7)
+    a = d = st.core(75, L, 7)
+    cols = [("neutral", 1000, 1000), ("+Eigenklang", 1250, 1000), ("sehr eff.", 1000, 1600), ("Eigenkl.+sehr eff.", 1250, 1600),
+            ("Eigenkl.+×2,56", 1250, 2560), ("resistiert", 1000, 625), ("gedämpft", 1000, 400)]
+    out = ["| Stärke | " + " | ".join(c[0] for c in cols) + " |", "|---|" + "---|" * len(cols)]
+    for p in (40, 55, 70, 85, 100, 120, 150, 180):
+        cells = []
+        for _, e, t in cols:
+            v = damage(p, a, d, L, (e, t))
+            cells.append(f"{v} ({v * 100 // hp_} %)")
+        out.append(f"| {p} | " + " | ".join(cells) + " |")
+    return "\n".join(out) + f"\n\nReferenz-Echo Lv. 50: HP {hp_}, Kernwerte {a}."
+
+
 def sample_log():
     """Durchgerechnetes Duo-Beispiel (K31 §13.2): Wisplet & Brokkar gegen Uvlet & Kharsgrat-Spinne (Ligrel)."""
     rng = AethrisRandom(0xC31, 0x7)

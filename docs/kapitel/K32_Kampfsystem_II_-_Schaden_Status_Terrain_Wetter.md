@@ -125,6 +125,27 @@ Alle Werte mit Anlage 7, ohne Schliff, Persönlichkeit neutral; erzeugt aus den 
 | Tilgrath → Thaelarch (55) | Hohlklang (60, Spec.) | 22 | → 27 | 1000‰ → 27 | 1100‰ → 29 | → 29 | 1000‰ → 29 | → 29 | **29** | 11 % |
 | Pyroluth → Nubiluna (40) | Feueratem (95, Spec.) | 33 | → 41 | 1000‰ → 41 | 800‰ → 32 | → 32 | 1000‰ → 32 | → 25 | **25** | 13 % |
 
+### 3.1 Referenztabelle Stärke × Faktor
+
+Schaden gegen ein durchschnittliches Echo gleicher Stufe (alle Basiswerte 75, Anlage 7, Lv. 50) – die Faustregel für Designer und für die Fähigkeits-Tooltips im Erklärmodus:
+
+| Stärke | neutral | +Eigenklang | sehr eff. | Eigenkl.+sehr eff. | Eigenkl.+×2,56 | resistiert | gedämpft |
+|---|---|---|---|---|---|---|---|
+| 40 | 15 (8 %) | 18 (9 %) | 24 (13 %) | 28 (15 %) | 46 (25 %) | 9 (4 %) | 6 (3 %) |
+| 55 | 20 (10 %) | 25 (13 %) | 32 (17 %) | 40 (21 %) | 64 (35 %) | 12 (6 %) | 8 (4 %) |
+| 70 | 25 (13 %) | 31 (17 %) | 40 (21 %) | 49 (26 %) | 79 (43 %) | 15 (8 %) | 10 (5 %) |
+| 85 | 30 (16 %) | 37 (20 %) | 48 (26 %) | 59 (32 %) | 94 (51 %) | 18 (9 %) | 12 (6 %) |
+| 100 | 35 (19 %) | 43 (23 %) | 56 (30 %) | 68 (37 %) | 110 (60 %) | 21 (11 %) | 14 (7 %) |
+| 120 | 42 (23 %) | 52 (28 %) | 67 (36 %) | 83 (45 %) | 133 (73 %) | 26 (14 %) | 16 (8 %) |
+| 150 | 52 (28 %) | 65 (35 %) | 83 (45 %) | 104 (57 %) | 166 (91 %) | 32 (17 %) | 20 (10 %) |
+| 180 | 62 (34 %) | 77 (42 %) | 99 (54 %) | 123 (67 %) | 197 (108 %) | 38 (20 %) | 24 (13 %) |
+
+Referenz-Echo Lv. 50: HP 182, Kernwerte 87.
+
+Faustregeln: Eine 70er-Fähigkeit mit Eigenklang nimmt einem gleichwertigen Gegner etwa ein Fünftel seiner HP; ein sehr effektiver Treffer mit Eigenklang etwa ein Drittel; erst der Vierfach-Schwachpunkt (×2,56) mit schweren Fähigkeiten erlaubt Ein-Treffer-Ergebnisse.
+
+### 3.2 Lesehilfe zu den Beispielen
+
 **Lesehilfe:**
 - *Fernwyn → Brokkar:* Blüte gegen Stein ist sehr effektiv; trotzdem kostet ein Treffer nur 19 % – auf Lv. 20 entscheidet ein Typvorteil keinen Kampf in einem Zug.
 - *Sengrath → Kjalmur:* Glut gegen Frost/Stein ergibt 1600 × 625 = 1000 ‰ – Doppeltypen neutralisieren sich. Die Hitzewelle (×1,2) macht den Unterschied.
@@ -193,6 +214,24 @@ K28 hat die 15 Status mit Startwerten eingeführt; hier werden sie mit Zahlen fe
 | Furcht | ANG/SAN −1 (×0,8) für 2 Züge + Zeitkosten-Strafe | 45 | angemessen |
 | Verstummt | Status/Sound/Crescendo gesperrt für 2 Züge | 45 | stark gegen Support/Klang |
 
+### 5.3 Status-Wechselwirkungen
+
+| Kombination | Ergebnis |
+|---|---|
+| Brand + Flut-Treffer | Brand endet sofort (vor Schaden des Flut-Treffers) |
+| Starre + Glut-Treffer | Starre endet sofort, Schaden normal; 2 Züge Starre-Immunität beginnen |
+| Verlangsamt → Starre | Starre ersetzt Verlangsamt (Frost-Steigerung) |
+| Gebrochen + Schild-Fähigkeit | Schild entsteht nicht, solange Gebrochen wirkt |
+| Welke + Regen/Überwuchs | Überwuchs-Terrain beendet Welke; Regen-Effekte bleiben wirkungslos, bis Welke endet |
+| Verstummt + Ankündigung (Sound) | Ankündigung bricht ab; bei Crescendo 50 % Harmonie zurück |
+| Schwebend + Erdgrollen/Bergsturz (Ground) | verfehlt automatisch |
+| Schwebend + Schwerefeld | Schwebend endet beim Feldbeginn |
+| Furcht + Angriff auf Verursacher | +30 Zeitkosten; Angriffe auf andere Ziele ohne Strafe |
+| Vergiftet + Fäulniskreis (Passive) | neue Stapel springen auf den nächsten Gegner |
+| Geblendet + Reveal des Gegners | heben sich nicht auf: Reveal senkt Ausweichen des Ziels, Geblendet die eigene Präzision |
+| Entzug + Kombo | Kombos dieses Echos zählen, erzeugen aber keine Harmonie |
+| Verflucht + Heilung | Heilung halbiert (vor HealPower) |
+
 ---
 
 ## 6. Terrain
@@ -227,6 +266,25 @@ Ein Terrain belegt das **ganze Kampffeld**. Es entsteht durch Fähigkeiten (`Ter
 | Runden-Effekte | zu Beginn jeder globalen Runde (Tick-Vielfache von 100), in Zeitleisten-Reihenfolge |
 | Arena-Terrains | dauerhaft (Arenen-Mechanik), können durch Fähigkeiten für deren Dauer überlagert werden; danach kehrt das Arena-Terrain zurück |
 | Darstellung | Bodentextur-Overlay (Niagara-Decal, K58), Rand-Symbol, eigener Ambient-Layer (K55) |
+
+### 6.2 Terrain und Wetter
+
+| Wetter | Terrain | Wechselwirkung |
+|---|---|---|
+| Regen | Glutboden, Glutsand | Terrain endet bei Wetterbeginn bzw. kann nicht gelegt werden |
+| Regen | Flutfeld | Flutfeld-Dauer +1 Runde |
+| Hitzewelle | Eisfläche, Sumpf | Terrain endet bei Wetterbeginn |
+| Hitzewelle | Glutboden | Runden-Schaden 4 % statt 3 % |
+| Schnee | Eisfläche | Eisfläche kann von Glutboden nicht neutralisiert werden, solange es schneit |
+| Gewitter | Sturmfeld | Blitzschlag alle 3 statt 4 Runden |
+| Nebel | Nebelfeld | Hinterreihe AUS +2 statt +1 |
+| Nebel | Lichtfeld | Lichtfeld-Dauer −1 Runde |
+| Aurora | Klangfeld | Harmonie +8 statt +3 je Runde |
+| Aschefall | Stillefeld | Stillefeld unbeendbar durch Klangfeld |
+| Resonanzsturm | jedes Terrain | Terrain-Boost 1300 statt 1200 ‰ |
+| Sandsturm | Glutsand | Runden-Schaden der beiden Effekte addiert (max. 7 %) |
+
+Diese Wechselwirkungen sind in `Terrains.csv`/`WeatherTypeResonance.csv` nicht als Freitext, sondern als benannte Regel-Primitiva hinterlegt (`Terrain.Rule.*`, `Weather.Rule.*`), damit sie testbar bleiben.
 
 ---
 
