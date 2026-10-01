@@ -1,0 +1,20 @@
+# Körperbau-Archetypen (K16 §4.1). Sizes = erlaubte Größenklassen. MountKinds = mögliche Reitarten.
+Name,DisplayName,Skeleton,Locomotion,Sizes,MountKinds,Phylum
+A01,Vierbeiner leicht,SKEL_Arch_QuadLight,Lauf|Sprung|Klettern,XS|S|M,,Quadrupedia
+A02,Vierbeiner schwer,SKEL_Arch_QuadHeavy,Lauf|Stampfen,M|L|XL,Mount.Ground,Quadrupedia
+A03,Huftier,SKEL_Arch_Ungulate,Lauf|Galopp,M|L|XL,Mount.Ground,Quadrupedia
+A04,Zweibeiner,SKEL_Arch_Biped,Gehen|Laufen|Greifen,S|M|L,,Bipedia
+A05,Vogel,SKEL_Arch_Avian,Flug|Hüpfen,XS|S|M|L,Mount.Fly,Volantia
+A06,Gleitschwimmer,SKEL_Arch_Glider,Gleiten (Luft/Wasser),M|L|XL|XXL,Mount.Fly|Mount.Swim,Volantia
+A07,Schlange/Wurm,SKEL_Arch_Serpent,Schlängeln|Graben,S|M|L|XL|XXL,Mount.Dig,Serpentia
+A08,Fisch,SKEL_Arch_Fish,Schwimmen|Springen,XS|S|M|L,Mount.Swim,Aquatica
+A09,Amphib,SKEL_Arch_Amphib,Hüpfen|Schwimmen,XS|S|M,,Aquatica
+A10,Gliederfüßer,SKEL_Arch_Arthropod,Krabbeln|Wandklettern,XS|S|M|L,Mount.Climb,Articulata
+A11,Panzerträger,SKEL_Arch_Shell,Langsam|Einigeln,S|M|L|XL|XXL,Mount.Ground,Testudinia
+A12,Schwebend amorph,SKEL_Arch_Floater,Schweben,XS|S|M|L,,Spectralia
+A13,Konstrukt/Elementar,SKEL_Arch_Construct,Gehen|Schwebende Teile,S|M|L|XL,,Elementia
+A14,Pflanzenwesen,SKEL_Arch_Plant,Wurzeln|Langsam gehen,XS|S|M|L,,Botanica
+A15,Drache,SKEL_Arch_Dragon,Lauf|Flug,L|XL|XXL,Mount.Fly,Volantia
+A16,Schwarm,SKEL_Arch_Swarm,Schwärmen,XS|S|M,,Spectralia
+A17,Kopffüßer/Tentakel,SKEL_Arch_Tentacle,Kriechen|Schwimmen,S|M|L|XL,Mount.Swim,Aquatica
+A18,Kletterer/Primat,SKEL_Arch_Climber,Klettern|Schwingen,S|M|L,Mount.Climb,Bipedia

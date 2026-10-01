@@ -1,0 +1,42 @@
+# Kontrolliertes Vokabular beobachtbarer Verhaltensmerkmale (K16, DR-02). Aktivitätsmuster separat (CANON §67).
+Name,DisplayName,Observation
+Behavior.Shy,Scheu,Flieht bei Annäherung über 15 m
+Behavior.Curious,Neugierig,Nähert sich dem Wärter bei ruhigem Verhalten
+Behavior.Aggressive,Angriffslustig,Greift bei Sichtkontakt an
+Behavior.Territorial,Revierverteidigend,Verteidigt einen markierten Bereich
+Behavior.Herd,Herde,Lebt in Herden mit Alpha
+Behavior.Pack,Rudel,Jagt im Rudel
+Behavior.Swarm,Schwarm,Bewegt sich im Schwarm
+Behavior.FamilyGroup,Familienverband,Kleine Gruppen von 2–4 Tieren
+Behavior.Solitary,Einzelgänger,Lebt allein außer zur Paarung
+Behavior.Singer,Sänger,Gibt hörbare Rufe/Klänge in festem Rhythmus
+Behavior.Mimic,Nachahmer,Ahmt Geräusche oder Gestalten nach
+Behavior.Burrower,Gräber,Gräbt Baue oder taucht in den Boden
+Behavior.Climber,Kletterer,Hält sich an Wänden/Bäumen auf
+Behavior.Flier,Flieger,Verbringt die meiste Zeit in der Luft
+Behavior.Swimmer,Schwimmer,Lebt überwiegend im Wasser
+Behavior.Nester,Nestbauer,Baut sichtbare Nester
+Behavior.Hoarder,Sammler,Hortet glänzende Dinge oder Nahrung
+Behavior.Grazer,Weidegänger,Frisst Pflanzen auf Freiflächen
+Behavior.Hunter,Jäger,Verfolgt Beute aktiv
+Behavior.Ambusher,Lauerjäger,Wartet getarnt auf Beute
+Behavior.Scavenger,Aasfresser,Frisst Reste und Abfälle
+Behavior.Pollinator,Bestäuber,Besucht Blüten
+Behavior.Filterer,Filtrierer,Filtert Nahrung aus Wasser oder Luft
+Behavior.Lithophage,Gesteinsfresser,Frisst Erz oder Kristall
+Behavior.Migratory,Wanderer,Folgt Routen zwischen Gebieten
+Behavior.Sunbather,Sonnenbader,Ruht in Sonne oder Wärme
+Behavior.Playful,Verspielt,Spielt mit Artgenossen und Gegenständen
+Behavior.Guardian,Hüter,Bewacht Nest, Jungtiere oder Orte
+Behavior.Camouflaged,Getarnt,Verschmilzt mit der Umgebung
+Behavior.Glowing,Leuchtend,Leuchtet sichtbar (über das Klangmal hinaus)
+Behavior.Mudbather,Schlammbader,Suhlt sich in Schlamm/Asche
+Behavior.Echolocator,Klangorter,Orientiert sich über Klang (reagiert auf Geräusche)
+Behavior.Symbiont,Symbiont,Lebt in Gemeinschaft mit einer anderen Art
+Behavior.Drifter,Treiber,Lässt sich von Wind oder Strömung treiben
+Behavior.Dancer,Tänzer,Führt Balz- oder Gruppentänze auf
+Behavior.ToolUser,Werkzeugnutzer,Benutzt Steine, Stöcke oder Kristalle
+Behavior.Collector,Muster-Sammler,Ordnet Gegenstände zu Mustern
+Behavior.Sleepy,Schläfer,Schläft überdurchschnittlich lange
+Behavior.Thermal,Wärmesucher,Sucht Lava, Quellen oder Feuer
+Behavior.Stargazer,Sternschauer,Ist nachts bei klarem Himmel besonders aktiv

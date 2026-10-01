@@ -1,6 +1,6 @@
 # 00 · Kapitelplan – AETHRIS: Echobound
 
-**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K15 abgeschlossen
+**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K16 abgeschlossen
 
 Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel baut auf den vorherigen auf und darf nur Entscheidungen verwenden, die in [`CANON.md`](CANON.md) eingetragen sind (oder es trägt neue ein).
 
@@ -43,7 +43,7 @@ Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel bau
 
 | # | Kapitel | Hauptverantwortung | Abhängigkeiten | Status |
 |---|---|---|---|---|
-| K16 | Monster Bible I – Designregeln, Taxonomie, Datenschema | Creative Director, RPG Systems Designer | K06, K07 | ⬜ |
+| K16 | Monster Bible I – Designregeln, Taxonomie, Datenschema | Creative Director, RPG Systems Designer | K06, K07 | ✅ |
 | K17 | Typensystem & Effektivitätstabelle | Combat Designer | K16 | ⬜ |
 | K18 | Statuswerte, Persönlichkeit, Temperament, Wachstumsraten | RPG Systems Designer | K17 | ⬜ |
 | K19 | Evolutionssystem | RPG Systems Designer | K18, K14, K15 | ⬜ |

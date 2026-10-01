@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K15
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K16
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -290,6 +290,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-071 | Eine globale Spieluhr, regionale Sonnenkurven | K15 |
 | ADR-072 | Mondzyklus 16 Spieltage (8 Phasen × 2) | K15 |
 | ADR-073 | 7-Tage-Woche mit Stilltag | K15 |
+| ADR-074 | 18 Archetypen als Rig-/Animationsgrundlage | K16 |
+| ADR-075 | Kreaturenkatalog aus Daten generiert und validiert (`tools/gen_catalog.py`) | K16 |
+| ADR-076 | Klangmal als universelles Gestaltungselement | K16 |
+| ADR-077 | Nicht gewählte Starter solo erhältlich (Uralthain nach Akt I + Zucht) | K16 |
+| ADR-078 | Präzision/Ausweichen als Sekundärwerte außerhalb der Kernsumme | K16 |
 
 ## §11 Change Requests
 
@@ -886,3 +891,35 @@ Ein Mond („Lunar“, volkstümlich „der Schweigende“). 8 Phasen × 2 Spiel
 - Nachtlesbarkeit L-N1 (Mittelgrau ≥ 18 %), L-N2 (Laternen alle 60–80 m), L-N3 (Interaktions-Emissive nachts), L-N4 (Biolumineszenz je Biom), L-N5 (mechanische Dunkelheit nur in Höhlen/Gewölben). Laternen 19:30–05:30; Fensterlicht 18–23 Uhr deterministisch je Haus-ID.
 - Regionale Licht-Profile `DA_LightProfile_R##`; Modulationsreihenfolge Basiskurve → Region → Wetter → Story (`MPC_Silence`); Grenzüberblendung 300 m.
 - Current-Gen: Sonne + Mond als Directional Lights, Sky Atmosphere, Volumetric Clouds, SkyLight Real-Time Capture, Lumen, VSM. **Switch 2:** TOD-Irradiance-Blending (4 Schlüsselzeiten je Region, ~45 MB, Zustandsvarianten für R05/R08), SkyLight-Capture alle 10 s, DFAO, SSGI (½), CSM 3 Kaskaden; Innenräume zusätzlich Lightmaps.
+
+## §69 Kreaturendesign-Regeln (LOCKED, K16 §2)
+
+CD-01 Silhouetten-Ähnlichkeit ≥ 0,80 (Formvektor, 3 Ansichten) → Redesign · CD-02 kein „Tier + Elementfarbe“, ≥ 2 Gestaltungsachsen (Ort/Klang/Leben) sichtbar · CD-03 keine Genre-Signaturen · CD-04 Palette ≤ 3 Farben + Klangmal-Akzent, Typfarben aus K56 · CD-05 Art/Typ auf 30 m erkennbar · CD-06 Typ-Leitmerkmal je Typ sichtbar · CD-07 Linien teilen Formmotiv, Stufe 3 ≥ 2× Stufe 1 · CD-08 Emotionsträger für 6 Emotionen · CD-09 Ökologie vollständig · CD-10 Bewegung folgt Körperbau (Schweben nur Schwerkraft/Geist/Leere/Sturm) · CD-11 Dichte 0,1–4 kg/dm³ (Ausnahmen Geist/Kristall/Metall/Schwerkraft/Sturm/Leere) · CD-12 Lebensraum passt · CD-13 Nische · CD-14 ≥ 3 Merkmale inkl. 1 Aktivität · CD-15 Unruhe-Profil + Vorliebe · CD-16 Kampfrolle · CD-17 Reiten ab L (Schwimmen ab M), Sitzbereich · CD-18 kein Blut/Wunden · CD-19 unheimlich ja, grausam nein · CD-20 Mix niedlich/majestätisch/fremd 40/35/25 %.
+
+## §70 Taxonomie (LOCKED, K16 §4 · `Data/Echos/Archetypes.csv`, `BehaviorTraits.csv`)
+
+- Archetypen A01 Vierbeiner leicht · A02 Vierbeiner schwer · A03 Huftier · A04 Zweibeiner · A05 Vogel · A06 Gleitschwimmer · A07 Schlange/Wurm · A08 Fisch · A09 Amphib · A10 Gliederfüßer · A11 Panzerträger · A12 Schwebend amorph · A13 Konstrukt/Elementar · A14 Pflanzenwesen · A15 Drache · A16 Schwarm · A17 Kopffüßer/Tentakel · A18 Kletterer/Primat; Anteil je Archetyp 2–12 %; Skelette `SKEL_Arch_*`.
+- Größenklassen XS < 0,3 · S 0,3–0,8 · M 0,8–1,6 · L 1,6–3 · XL 3–8 · XXL > 8 m.
+- Kategorie = „‹Bild›-Echo“. Reich *Resonantia*; Stämme Quadrupedia, Bipedia, Volantia, Serpentia, Aquatica, Articulata, Testudinia, Spectralia, Elementia, Botanica; Familien je Primärtyp: Ignidae, Undidae, Lithidae, Procellidae, Floridae, Glacidae, Vacuidae, Lucidae, Venenidae, Ferridae, Animidae, Crystallidae, Sonidae, Gravidae, Arcanidae; Gattung je Linie.
+- Verhaltensvokabular: 40 `Behavior.*`-Merkmale (`BehaviorTraits.csv`).
+
+## §71 Seltenheit & Basiswerte (LOCKED, K16 §5–§6)
+
+- Spawngewicht Common 1000 · Uncommon 400 · Rare 120 (≥ 1 Bedingung) · VeryRare 30 (≥ 2 Bedingungen) ‰; `Spawn.None` zulässig; Zielanteile 40/28/18/8 %.
+- Kernsumme (6 Werte): 3er-Linie 280–340 / 400–460 / 500–560 · 2er-Linie 320–380 / 470–530 · ohne Evolution 430–520 · Ursprungsstimmen 640–680 · Mythische 600–660. PRÄ/AUS je 80–120, Summe 190–210.
+
+## §72 Datenschema & Katalogpipeline (LOCKED, K16 §7–§10)
+
+- `Data/Echos/Species.csv` (Spalten: Name, KodexNumber, DisplayName, ScientificName, Category, Line, Stage, LineKind {Three, Two, Single, Branch, Legendary, Mythical}, Archetype, SizeClass, HeightM, WeightKg, PrimaryType, SecondaryType, Region, Habitat, Zones, Rarity, SpawnConditions, Activity, Traits, Niches, Role {Tank, Striker, Caster, Speed, Support, Control, AllRound}, Mount, GrowthRate, 6 Basiswerte, Precision, Evasion, EvolvesTo, EvoCondition, BondRate, BondLure, SignatureConcept, SoundMark).
+- `Data/Echos/SpeciesLore.csv`: LoreOrigin, LoreBehavior, LoreMyth, LoreHumans, KodexL4 (je ≤ 320 Zeichen).
+- `tools/gen_catalog.py validate|render|stats` prüft: Kodex lückenlos, Regionsbereiche, exakte Typverteilung je vollständiger Region, Kernsummen, PRÄ/AUS, Größe/Dichte, DR-02/05/15, Linien (Stufen, Gattung, Zählung 40/45/22/8), NameGuard, Archetyp-Anteile, Lore-Vollständigkeit. Kataloge K20–K27 werden generiert.
+- `UEchoSpeciesDefinition` + Category, LineId, Stage, LineKind, Archetype, SizeClass, HeightM, WeightKg, Activity, Role, Mount.
+
+## §73 Klangmal (LOCKED, K16 §3)
+
+Jedes Echo trägt ein leuchtendes **Klangmal** (Grundfrequenz sichtbar): Timing-Signal der Bindung (hellster Puls = Einklang), Emotionsanzeige, Treffer-Flackern statt Blut, Erlöschen bei Erschöpfung/Verstummung, erblich über `GEN_SOUNDMARK_PATTERN`/`GEN_SOUNDMARK_COLOR`. Technik: Maske `T_Echo_###_SoundMark` (R Muster, G Phasen-Offset, B Intensität), Parameter `SoundMarkPulse` (BPM je Art/Stimmung).
+
+## §74 Starter-Verfügbarkeit & #001 (LOCKED, K16 §11)
+
+- #001 **Fernlit**: *Pteridolis cantans*, Farnkitz-Echo, L001 Stufe 1, A01, S 0,45 m 6,2 kg, Blüte, Dämmerungsaktiv, Scheu/Sänger/Familienverband, Kampf+Feld, Support, Werte 48/42/50/55/58/47 = 300, PRÄ 100, AUS 105, Wachstum Steady, → Fernwyn ab Lv. 16, Bindungsrate 45, Vorliebe Lindblüten-Honig, Klangmal Lindgold-Spirale 52 BPM.
+- Nicht gewählte Starter wild im Uralthain (R01_Z06) nach Akt I (VeryRare): Fernlit Regen + Morgendämmerung, Brokk Klar + Mittag an Felsen, Wisplet Gewitter; zusätzlich Zucht.
