@@ -1,0 +1,6 @@
+# Rollen in Klangzirkeln (K60 §5). Max = Anzahl je Zirkel.
+Name,DisplayName,Max,Rights
+ROLE_LEAD,Zirkelleitung,1,"Alles inkl. Auflösen, Leitung übergeben"
+ROLE_VOICE,Stimmführung,5,"Einladen, Entfernen (außer Leitung/Stimmführung), Chronik-Ziele wählen, Wappen ändern"
+ROLE_MEMBER,Mitglied,44,"Teilnehmen, Zirkel-Tausch, Raid-Gruppensuche, Chat (wenn erlaubt)"
+ROLE_GUEST,Gast,10,Zeitlich begrenzt (7 Tage) für Raid-Gruppen; kein Tausch

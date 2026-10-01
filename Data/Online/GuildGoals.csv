@@ -1,0 +1,14 @@
+# Zirkel-Chronik: wöchentliche Gemeinschaftsziele (K60 §5.3). Belohnung nur kosmetisch (DR-20). Target für 50 Mitglieder, skaliert linear mit aktiven Mitgliedern (min. 10).
+Name,DisplayName,Measure,Target,Reward
+ZC_01,Gemeinsam beobachten,Echos im Kodex beobachten,2000,Banner-Muster „Lauschende Linde“
+ZC_02,Fotowoche,Fotos mit ★★★ (K39),300,Fotorahmen „Zirkel“
+ZC_03,Wildwacht-Hilfe,Stillezonen-Aufträge (CT_SILENCE),150,Zelt-Stil „Wacht“
+ZC_04,Klangfeste,Feste in Siedlungen besuchen,200,Geste „Reigen“
+ZC_05,Saat und Ernte,Ressourcen sammeln,25000,Hain-Deko „Erntekranz“
+ZC_06,Bindungsklang,Echos binden (perfekter Anschlag),500,Resonator-Muster „Gleichklang“
+ZC_07,Raidchor,Raids abschließen (beliebig),120,Banner-Farbe „Raidgold“
+ZC_08,Arena-Gruß,Arena-Halle (frei) Kämpfe mit Gruß beendet,400,Geste „Verbeugung“
+ZC_09,Brutnischen,Echos schlüpfen lassen,600,Hain-Deko „Nestglocke“
+ZC_10,Wanderchor,Resonanzsteine bereisen (Schnellreise zählt nicht),800,Gleiter-Muster „Zugvögel“
+ZC_11,Kochkunst,Gerichte kochen,1500,Lager-Stil „Festtafel“
+ZC_12,Tiefenklang,Tiefenresonanzen abschließen,200,Titel „Tiefenstimme“ (Zirkel)

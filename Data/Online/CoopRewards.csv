@@ -1,0 +1,13 @@
+# Was Gäste aus einer Koop-Reise in ihre eigene Welt mitnehmen (K60 §3, entscheidet Q4). Ledger = Eintragsart im Gast-Protokoll (K59 §6.4).
+Name,Kind,GuestGets,Limit,Ledger,Rationale
+CR_EXP,"Erfahrung (Echos, Wärter-EP)",voll für eigene Echos und Rang,–,Experience,DR-20: Zeitersparnis erlaubt
+CR_SOL,Sol aus Kämpfen und Kisten,voll (eigene Beute),–,Sol,"Beute je Spieler, keine Konkurrenz"
+CR_LOOT,"Gegenstände, Ressourcen","voll (eigene Knoten, eigene Beute)",–,Item,K41: eigene Knoten je Spieler
+CR_BOND,Gebundene Wildechos,"ja, mit Ursprung „Koop-Welt“ + Partner im Ursprung (DR-16)","nicht: Ursprungsstimmen, Mythische, Stille-Echos",Echo,Bindung ist eigene Leistung; Story-Legendäre gehören zur eigenen Geschichte
+CR_KODEX,"Kodex-Forschung (Beobachten, Kämpfen, Foto)",voll,–,KodexEntry,Sammeln zusammen macht Spaß
+CR_SIDEQUEST,Nebenquests der Host-Welt,"Mithilfe: 50 % EP/Sol des Abschlusses, kein Questfortschritt in der eigenen Welt",Quest-Belohnungsgegenstände nur für Host,Experience|Sol,Eigene Welt behält eigene Geschichten (Q4)
+CR_MAINQUEST,Hauptquest-Schritte und Story-Flags,kein Fortschritt; Tagebuch-Erinnerung „Gemeinsam erlebt“,–,–,Q4: Entscheidungen bleiben persönlich (Finale K46)
+CR_REPUTATION,Fraktionsruf,"nur aus Fraktionsquests, die der Gast in der eigenen Welt aktiv hat (gleicher Schritt) – dann Abschluss in beiden Welten",max. 1 Kettenschritt je Sitzung,Reputation,Keine Abkürzung durch fremde Ruf-Stände
+CR_MEMORY,Tagebuch-Erinnerung „Gemeinsam erlebt“,"Name des Host, Ort, Moment (Zwischensequenz, Boss, Fest)",–,Memory,Erinnerung statt Fortschritt
+CR_PHOTO,Fotos,"voll, mit Mitspielenden im Bild (Zustimmung über Profil-Einstellung)",–,Photo,K39 Fotomodus
+CR_TIME,Weltzeit der eigenen Welt,"steht still, solange der Gast in fremder Welt ist",–,–,Zucht/Crafting laufen in Spielzeit der eigenen Welt (K02 §13)

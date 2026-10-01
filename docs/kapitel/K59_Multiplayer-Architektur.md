@@ -297,7 +297,7 @@ Ein Gast schreibt während der Sitzung ein **Gast-Protokoll** (`FAethrisGuestLed
 | Erfahrung, Kodex | voll |
 | Ruf | nur bei Fraktionsquests, die der Gast selbst freigeschaltet hat |
 | Sol | voll |
-| Story-Flags | laut K60 |
+| Story-Flags | keine; Tagebuch-Erinnerung „Gemeinsam erlebt“ (K60, Q4) |
 
 ### 6.5 Verbindungsverlust
 
@@ -413,7 +413,7 @@ AETHRIS verzichtet auf Anti-Cheat-Software mit Kernelzugriff. Der rundenbasierte
 | Prüfung | Quelle | Beispiel-Abweisung |
 |---|---|---|
 | Art existiert, Stufe erreichbar | `Species.csv`, Evolutionsbedingungen | Stufe-3-Art auf Level 5 |
-| Basiswerte/Anlagen/Schliff im erlaubten Bereich | K18, K39 | Anlage 33 bei Maximum 31 |
+| Basiswerte/Anlagen/Schliff im erlaubten Bereich | K18, K38 | Anlage 16 bei Bereich 0–15 |
 | Genom (Loci, Allele, Morph-Herkunft) | K38 (CANON Zucht) | Morph ohne Zucht-/Wildherkunft |
 | Lernset-Erreichbarkeit | Lernsets, Tutoren (K29) | Fähigkeit nicht lernbar |
 | Level/EP passend zur Wachstumskurve | K18 | EP über Level-Grenze |

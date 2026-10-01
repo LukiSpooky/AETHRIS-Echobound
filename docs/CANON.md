@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K59
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K60
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -459,6 +459,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-240 | Crossplay standardmäßig in allen Modi | K59 |
 | ADR-241 | Kein Kernel-Anti-Cheat | K59 |
 | ADR-242 | Schnellchat-Standard, Freitext opt-in, kein Sprachchat | K59 |
+| ADR-243 | Q4: Story im Koop persönlich, Gleichklang bei gleichem Schritt | K60 |
+| ADR-244 | Koop-Wildgegner +700 ‰ HP je Spieler, volle Belohnung | K60 |
+| ADR-245 | Optionaler Einklang-Modus | K60 |
+| ADR-246 | Klangbörse ohne Preise mit 2er-/3er-Ringen | K60 |
+| ADR-247 | Klangzirkel ohne Machtvorteile, Chronik kosmetisch | K60 |
+| ADR-248 | Asynchrone Hain-Besuche und Grußgaben | K60 |
 
 ## §11 Change Requests
 
@@ -479,7 +485,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q1 | ~~Zeitleisten-Formel, Tick-Größe~~ ✅ K31 §3: Verzögerung = ⌊Kosten×300/(GES+200)⌋, 100 Ticks = Standardzug | K31 |
 | Q2 | ~~Effektivitätsmultiplikatoren~~ ✅ K17 §2 | K17 |
 | Q3 | ~~Genom: Allelanzahl, Morph-Wahrscheinlichkeiten~~ ✅ K38 §5–§6: 6 Loci (2–4 Allele, Mendel), Morph 1/1.024 mit Faktoren bis 24/1.024 | K38 |
-| Q4 | Koop: geteilter Story-Fortschritt? | K60 |
+| Q4 | ~~Koop: geteilter Story-Fortschritt?~~ ✅ K60 §3: Story persönlich, Erinnerungen/EP/Beute/Kodex mitgenommen, Gleichklang bei gleichem Schritt (§237) | K60 |
 | Q5 | Ranked-Level-Normalisierung | K61 |
 | Q6 | Split-Screen-Koop Machbarkeit | K65 |
 | Q7 | ~~Namen der 10 Ursprungsstimmen~~ ✅ K07: 10 Ursprungsstimmen benannt | K07/K27 |
@@ -2082,3 +2088,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §235 Backend, Sicherheit, Datenschutz (LOCKED, K59 §8–§12)
 
 - Dienste: Konto, Profil, Sitzung/Lobby, Matchmaking, Ranked, Tausch-Treuhand, Legalität, Soziales, Events/LiveConfig, Telemetrie, Moderation, Fotos. Legalitätsprüfung (Art/Stufe, Werte/Anlagen, Genom/Morph, Lernset, EP-Kurve, Ursprung) + Ed25519-Signatur in `FEchoOrigin`; abgewiesene Echos bleiben im Spielstand. Kein Kernel-Anti-Cheat (PC: Integritätsprüfung nur Ranked). DSGVO u. a.; Kinder: Plattform-Elternkontrollen, Freitext standardmäßig aus; 24 Schnellchat-Sätze + Gesten, Freitext opt-in (Gilde/Freunde), kein Sprachchat. Fehlerfälle ohne Spielunterbrechung; Testmatrix (Emulation, Bots, Last 2× CCU, Soak 72 h, Fuzzing, Determinismus x64/ARM, Chaos, Crossplay).
+
+## §236 Koop-Reise (LOCKED, K60 §2)
+
+- Start am Resonanzstein („Chor öffnen“), ab Prolog-Ende. Format nach Spielerzahl: 2 Duo, 3 Trio, 4 Quartett (Raid-Formation, je 1 aktiv); Wild-/Alpha-/Boss-HP ×(1 + 0,7 × (n − 1)); volle EP/Sol je Spieler; Beitritt zum Kampf in 25 m während Runde 1; Zugtimer 30 s (Option 60 s). Optionaler Einklang-Modus: Gäste-Echos auf Zonenband + 5 gedeckelt. Gäste binden keine Ursprungsstimmen, Mythischen, Stille-Echos. Gemeinsames Lager (Gerichte wirken für alle), Mitreiten XL/XXL, eigene Knoten, Geschenke 50/Tag. Szenen-Abstimmung ≤ 30 s, Ablehnende warten mit Zusammenfassung.
+
+## §237 Story im Koop – Q4 (LOCKED, K60 §3 · `Data/Online/CoopRewards.csv`)
+
+- Story-Fortschritt ist persönlich (Option C): keine Hauptquest-Schritte/Story-Flags aus fremden Welten; Gäste nehmen EP, Sol, Beute, Bindungen, Kodex, Fotos, Tagebuch-Erinnerung „Gemeinsam erlebt“ mit; Nebenquests als Mithilfe (50 % EP/Sol, kein Fortschritt); Ruf nur bei gleichem aktiven Kettenschritt. Gleichklang: gleicher `StepId` bei Host und Gast → Schritt in beiden Welten, Entscheidungen je Person (nicht Finale/Story-Bosse). Spoiler-Schutz (Standard: warten). Eigene Weltzeit steht still, solange man Gast ist.
+
+## §238 Tausch & Klangbörse (LOCKED, K60 §4 · `Data/Online/TradeRules.csv`, `GF_Multiplayer/Trade/AethrisTradeTypes.h`)
+
+- Echo gegen Echo (1–3 je Seite) + ≤ 20 Gegenstände aus der Tauschliste (48 Ressourcen, 12 Gerichte, 24 Lockmittel/Futter = 84); Sol nie. Gesperrt: Ursprungsstimmen, Mythische, Leih-Echos (240 Arten tauschbar). Legalität + Signatur, Treuhand (Draft → Validating → AwaitingPartner → Review → Escrow → Completed), Halten 3 s, Sperre 24 h nach Tausch, Direkttausch 30/Tag (Freunde, Zirkel, Koop, Tauschcode), Klangbörse 3 Angebote/5 Abschlüsse pro Tag, Laufzeit 72 h, Wunschliste ≤ 3 Arten, Abgleich alle 5 min mit 2er-Tauschen und 3er-Ringen, Bestätigung 24 h, Konto-Alter ≥ 7 Tage. Nach Tausch: Bindung 0, Gehorsamsregel, Ursprung bleibt, Fernklang ×3 (≥ 3 Regionen), Abschiedsmoment ab Seelenklang. Deltas mit Transaktions-ID; „unterwegs“-Sperre gegen Duplizierung.
+
+## §239 Klangzirkel, Freunde, Kommunikation (LOCKED, K60 §5–§8 · `GuildRoles.csv`, `GuildGoals.csv`, `QuickChat.csv`)
+
+- Klangzirkel: 50 Mitglieder (Leitung 1, Stimmführung 5, Mitglieder 44) + 10 Gäste (7 Tage); 1 Zirkel je Konto; Wappen-Baukasten; Launch: Liste, Rollen, Chat, Raid-Gruppensuche, Zirkel-Tausch; ab Saison 1: Zirkel-Chronik (12 Wochenziele, 3 je Woche, Ziel skaliert mit aktiven Mitgliedern, min. 10; nur kosmetisch), Banner, Fotowand. Freunde 200 (plattformübergreifend), Präsenz abschaltbar, Grußgabe 1/Tag/Freund (≤ 10 Ressourcen oder 1 Gericht), asynchrone Hain-Besuche, 24 Schnellchat-Sätze, 24 Gesten (12 frei + 12 freischaltbar), Freitext nur Freunde/Zirkel opt-in; Fremde nur strukturiert (Börse, Matchmaking). Save-Fragmente `Player.Social`, `Player.TradeDeltas`, `Player.CoopLedger`, `Player.Memories`.

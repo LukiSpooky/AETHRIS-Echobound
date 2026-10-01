@@ -1,0 +1,26 @@
+# Schnellchat-Sätze (K59 §10, K60 §6). Text = Deutsch; alle Sprachen über String Tables (QC_##), automatisch in der Sprache der Empfangenden angezeigt.
+Name,Group,Text
+QC_01,Gruß,Guter Klang!
+QC_02,Gruß,"Schön, dich zu hören."
+QC_03,Gruß,Bis zum nächsten Stein!
+QC_04,Dank,Danke!
+QC_05,Dank,Danke für den Kampf.
+QC_06,Dank,Danke für den Tausch.
+QC_07,Treffen,Ich warte am Resonanzstein.
+QC_08,Treffen,Komm zu mir.
+QC_09,Treffen,Ich bin gleich zurück.
+QC_10,Treffen,Lass uns zum Lager.
+QC_11,Kampf,Ich übernehme die Vorderreihe.
+QC_12,Kampf,Harmonie fast voll!
+QC_13,Kampf,Kombo vorbereiten?
+QC_14,Kampf,Crescendo kommt.
+QC_15,Kampf,Ich heile.
+QC_16,Bindung,Hilfe bei der Bindung?
+QC_17,Bindung,Ich lege einen Köder.
+QC_18,Bindung,Leise – nicht verscheuchen!
+QC_19,Welt,"Vorsicht, Stille!"
+QC_20,Welt,Hier gibt es etwas Seltenes.
+QC_21,Welt,Schau mal hierher!
+QC_22,Welt,Resonanzsturm zieht auf.
+QC_23,Antwort,Ja.
+QC_24,Antwort,"Nein, danke."

@@ -33,7 +33,7 @@ struct GF_MULTIPLAYER_API FAethrisGuestLedgerEntry
 {
 	GENERATED_BODY()
 
-	UPROPERTY() FName Kind;              ///< Item | Echo | Experience | KodexEntry | Sol | Reputation
+	UPROPERTY() FName Kind;              ///< Item | Echo | Experience | KodexEntry | Sol | Reputation | Memory | Photo (K60 CoopRewards.csv)
 	UPROPERTY() FName Id;                ///< ItemId / SpeciesId / FactionId …
 	UPROPERTY() int32 Amount = 0;
 	UPROPERTY() FGuid InstanceId;        ///< bei Echos: Instanz (mit Ursprung „Koop-Welt des Hosts“)

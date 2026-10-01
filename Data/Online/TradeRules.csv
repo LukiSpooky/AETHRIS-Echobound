@@ -1,0 +1,17 @@
+# Tauschregeln (K60 §4). Value = Grenzwert. Gilt für Direkttausch (DIRECT) und Klangbörse (BOARD).
+Name,Scope,Rule,Value,Source
+TR-01,DIRECT|BOARD,Getauscht werden Echos gegen Echos (1–3 je Seite) und Gegenstände aus der Tauschliste; Sol ist nie tauschbar,"1–3 Echos, ≤ 20 Gegenstände je Tausch","K42 §10, ADR-156"
+TR-02,DIRECT|BOARD,"Nicht tauschbar: Ursprungsstimmen, Mythische, Leih-Echos, Echos im aktiven Chor eines laufenden Kampfes",16 Arten gesperrt,"CANON §34, §8.5"
+TR-03,DIRECT|BOARD,Legalitätsprüfung + Signatur vor jedem Tausch (K59 §9.3),100 %,"K38 §10, K59"
+TR-04,DIRECT|BOARD,"Treuhand: beide Seiten bestätigen nach Ansicht (Halten 3 s); Abschluss atomar, sonst Rückgabe",Zweiphasen,"UX-06, K59 §8"
+TR-05,DIRECT|BOARD,Frisch getauschte Echos sind 24 h (Echtzeit) nicht erneut tauschbar,24 h,Bot-/Kettenschutz
+TR-06,DIRECT,"Direkttausch nur mit Freunden, Zirkelmitgliedern, aktuellen Koop-Partnern oder per Tauschcode (Begegnung in der Tauschhalle)",30 Tausche/Tag,Kein Kontakt zu Fremden ohne Absicht
+TR-07,BOARD,"Klangbörse: Angebot (Echo) + Wunsch (Art, optional Mindestlevel/Geschlecht-unabhängig/Morph); Server sucht passende Gegenangebote","3 aktive Angebote, 5 Abschlüsse/Tag, Laufzeit 72 h","Kein Markt, kein Preis"
+TR-08,DIRECT|BOARD,"Neue Wärterin/neuer Wärter: Bindung startet bei 0 (Vorsichtig), Gehorsamsregel gilt (+40 % Zeitkosten über Grenze)",Bindung 0,"CANON §18, ADR-019"
+TR-09,DIRECT|BOARD,"Ursprung bleibt (Erstwärter, Ort, Zeit); Herkunftstitel nur für Erstwärter",–,DR-16
+TR-10,DIRECT|BOARD,Fernklang: Herkunftsregion ≥ 3 Regionen vom Heimatgarten des Empfängers → Morph-Faktor ×3 in der Zucht,×3,K38 §10
+TR-11,DIRECT|BOARD,Keine Tauschevolutionen; Tausch verändert kein Echo,–,CANON Evolution
+TR-12,DIRECT|BOARD,Kodex: getauschte Art erhält Forschungsstufen wie bei eigener Bindung außer dem Merkmal „selbst gebunden“,–,K39
+TR-13,DIRECT|BOARD,Abschied: Bei Bindungsstufe ≥ Seelenklang (750) zeigt das Spiel einen Abschiedsmoment; Erinnerung bleibt im Kodex,–,Würde (K37)
+TR-14,BOARD,"Altersgerechte Einstellungen: Klangbörse nur, wenn Online-Interaktion mit Fremden erlaubt (Plattform-Elternkontrolle)",–,K59 §10
+TR-15,DIRECT|BOARD,Online-Funktionen nutzen nur den aktuell geladenen Weltstand (keine weltübergreifende Duplikation),–,K03 §2
