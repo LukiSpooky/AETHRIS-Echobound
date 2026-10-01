@@ -267,6 +267,27 @@ def explain():
     return "\n".join(out)
 
 
+def kit_learnset(D, sp, level):
+    known = [a for lv, a in sorted(D.ls.get(sp["Name"], [])) if lv <= level]
+    return [D.ab[a] for a in known[-4:]]
+
+
+def kit_table():
+    D = Data()
+    sp = {s["DisplayName"]: s for s in D.sp}
+    cases = [("Fernwyn", 20), ("Torgrath", 40), ("Zephyrion", 40), ("Cragar", 25), ("Undrath", 38), ("Irraune", 40),
+             ("Maraune", 45), ("Solaryx", 45), ("Pyroluth", 48), ("Ambross", 50), ("Kjalgrund", 55), ("Uvasil", 55),
+             ("Skriveth", 58), ("Ligravor", 60), ("Klirrathan", 62), ("Nimbaroth", 66)]
+    out = ["| Art (Lv.) | Learnset (letzte 4) | Best (K34 §6.1) |", "|---|---|---|"]
+    for n, lv in cases:
+        if n not in sp:
+            continue
+        a = ", ".join(x["DisplayName"] for x in kit_learnset(D, sp[n], lv))
+        b = ", ".join(x["DisplayName"] for x in kit(D, sp[n], lv))
+        out.append(f"| {n} ({lv}) | {a} | {b} |")
+    return "\n".join(out)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "matrix"
     if cmd == "matrix":
