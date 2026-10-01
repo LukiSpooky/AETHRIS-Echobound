@@ -1,0 +1,27 @@
+# Verbrauchsgüter und Gerichte (K41 §4–§5). Ranked: keine Items (K61).
+Name,DisplayName,Effect,Kind
+ITM_CON_HEAL_1,Heilkraut-Tinktur,Heilt ein Echo um 30 % Max-HP (Kampf: Zeitkosten 60),Consumable
+ITM_CON_HEAL_2,Starke Tinktur,Heilt ein Echo um 60 % Max-HP,Consumable
+ITM_CON_HEAL_3,Quellwasser-Elixier,Heilt ein Echo vollständig,Consumable
+ITM_CON_HEAL_ALL,Chorbalsam,Heilt alle Chor-Echos um 40 % (außerhalb des Kampfes),Consumable
+ITM_CON_REVIVE,Weckklang,Belebt ein verklungenes Echo mit 40 % HP (Kampf: 1× je Echo),Consumable
+ITM_CON_CLEANSE,Läuterwasser,Entfernt Haupt-Status und Gift,Consumable
+ITM_CON_STAMINA,Bergtee,Wärter-Ausdauer +20 für 1 Spielstunde,Consumable
+ITM_CON_WARM,Glühwurzel-Sud,Kälte-/Hitzeschutz 1 Spielstunde (ersetzt Wettermantel-Stufe),Consumable
+ITM_CON_SENSE,Lauschöl,Resonanzsinn-Reichweite +30 m für 30 Spielminuten,Consumable
+ITM_CON_REPEL,Ruhrauch,Wildechos meiden den Wärter 10 Spielminuten (keine Kämpfe),Consumable
+ITM_CON_WANDELKLANG,Wandelklang,Wechselt die Passive eines Echos (CANON §102),Consumable
+ITM_CON_KLANGSALZ,Klangsalz,Setzt den Schliff eines Echos zurück (CANON §80),Consumable
+ITM_CON_WESENSKLANG,Wesensklang,"Ändert die Persönlichkeit eines Echos (Endgame, CANON §81)",Consumable
+ITM_FOODC_STEW,Lindwald-Eintopf,Stimmung des Chors +15; Bindungszuwachs +10 % für 1 Spieltag,Meal
+ITM_FOODC_FISHPIE,Fischpastete,EP +10 % für 1 Spieltag,Meal
+ITM_FOODC_HONEYCAKE,Honigkuchen,Lieblingsfutter-Bonus für alle Echos (1 Mahlzeit),Meal
+ITM_FOODC_SPICEBREAD,Würzbrot,Ausdauer-Regeneration +20 % für 1 Spieltag,Meal
+ITM_FOODC_ICEJELLY,Eisgelee,Hitzewelle ohne Malus für 1 Spieltag,Meal
+ITM_FOODC_EMBERSOUP,Glutsuppe,Schnee/Kälte ohne Malus für 1 Spieltag,Meal
+ITM_FOODC_MOSSBUN,Moosbrötchen,Kodex-Beobachtung 2 s statt 3 s für 1 Spieltag,Meal
+ITM_FOODC_DATEROLL,Dattelrolle,"Annäherung leiser (Entdeckungsradius ×0,9) für 1 Spieltag",Meal
+ITM_FOODC_KELPWRAP,Tangrolle,Schwimm-Ausdauer +30 % für 1 Spieltag,Meal
+ITM_FOODC_CHEESEPLATE,Bergkäseplatte,Reit-Ausdauer +15 % für 1 Spieltag,Meal
+ITM_FOODC_CLOUDTART,Wolkentarte,Gleiter-Auftrieb +10 % für 1 Spieltag,Meal
+ITM_FOODC_FEAST,Chorfestmahl,"Alle Wirkungen der Grundgerichte (Stimmung, Bindung, EP) für 1 Spieltag",Meal

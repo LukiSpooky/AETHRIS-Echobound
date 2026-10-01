@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K40
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K41
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -367,6 +367,9 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-148 | Ausrüstung ohne Kampfwerte | K40 |
 | ADR-149 | Reitarten an Echos, Sattel und Story-Freischaltung | K40 |
 | ADR-150 | Halteitems ohne Verbrauch, Kampfboni gedeckelt | K40 |
+| ADR-151 | Echo-Materialien nur abgeworfen/geschenkt/gesammelt | K41 |
+| ADR-152 | Sofortige Herstellung, regionale Meisterwerkstätten | K41 |
+| ADR-153 | Rezepte aus Item-Tabellen generiert und validiert | K41 |
 
 ## §11 Change Requests
 
@@ -1664,3 +1667,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §155 Halteitems (LOCKED, K40 §6 · `Data/Items/HeldItems.csv`)
 
 - 32 Halteitems (15 Stimmsteine ×1,1, Utility, Komfort, Zucht); 1 je Echo; kein Verbrauch („einmal“ = je Kampf); Kampf-Boni ≤ ×1,15; Ranked ohne Duplikate, Komfort-Items wirkungslos.
+
+## §156 Ressourcen & Sammeln (LOCKED, K41 §2, §4 · `Data/Items/Resources.csv`)
+
+- 48 Ressourcen (Holz/Erz/Kristall/Kraut, Stufe I–V, 4–5 je Region). Knoten: Ressourcenstufe ≤ Werkzeugstufe + 1; Ertrag 1–3 (+10 % je Werkzeugstufe); Nachwachsen 1 Spieltag (selten 3); Koop: eigene Knoten je Spieler; Feldfähigkeiten +1 Ertrag.
+
+## §157 Echo-Materialien (LOCKED, K41 §3 · `Data/Items/EchoMaterials.csv`)
+
+- 20 Echo-Materialien, nie durch Verletzen: 15 Klangsplitter (1 je Wildsieg, 2 je Bindung, 3 je Alpha; Begleiter-/Hain-Funde) + Daune, Schuppe, Panzerstaub, Echowolle, Stillstein-Splitter.
+
+## §158 Werkstätten & Rezepte (LOCKED, K41 §5–§6 · `Data/Items/Recipes.csv`, `tools/gen_items.py`)
+
+- Stationen: Lagerfeuer, Werkbank (jede Siedlung), Hain-Werkstatt, Akademie-Labor (Dorunsruh; Außenstelle Eichenhall I–III), Schmiede (Schlackenwehr), Glasbläserei (Qasr Sahrun), Werft (Saltrand-Hafen). 125 Rezepte, Herstellung sofort; Freischaltung über Vorstufe, Akkorde, Kodex-Stufe 2 (Fallen), Rezeptbücher, Endgame.
+
+## §159 Verbrauchsgüter & Gerichte (LOCKED, K41 §7–§8 · `Data/Items/Consumables.csv`)
+
+- 13 Verbrauchsgüter (Heilung, Weckklang 1× je Echo/Kampf, Läuterwasser, Bergtee, Ruhrauch, Wandelklang, Klangsalz, Wesensklang …) und 12 Gerichte (Wirkung für den Chor 1 Spieltag, ein Gericht gleichzeitig). Kampf-Items Zeitkosten 60; Ranked ohne Items; Klangbrunnen heilen kostenlos.

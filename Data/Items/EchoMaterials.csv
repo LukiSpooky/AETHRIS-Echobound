@@ -1,0 +1,22 @@
+# Echo-Materialien (K41 §2): nie durch Verletzen gewonnen – abgeworfen, geschenkt, im Hain gesammelt (ADR-007).
+Name,DisplayName,Type,Sources
+ITM_EMAT_EMBER,Klangsplitter (Glut),Ember,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_TIDE,Klangsplitter (Flut),Tide,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_STONE,Klangsplitter (Stein),Stone,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_STORM,Klangsplitter (Sturm),Storm,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_BLOOM,Klangsplitter (Blüte),Bloom,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_FROST,Klangsplitter (Frost),Frost,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_VOID,Klangsplitter (Leere),Void,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_LIGHT,Klangsplitter (Licht),Light,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_VENOM,Klangsplitter (Gift),Venom,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_METAL,Klangsplitter (Metall),Metal,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_SPIRIT,Klangsplitter (Geist),Spirit,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_CRYSTAL,Klangsplitter (Kristall),Crystal,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_SOUND,Klangsplitter (Klang),Sound,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_GRAVITY,Klangsplitter (Schwerkraft),Gravity,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_ARCANE,Klangsplitter (Arkan),Arcane,"Kampf (Sieg/Bindung gegen Art des Typs), Hain-Ertrag, Begleiter-Fund"
+ITM_EMAT_FEATHER,Gefiederte Daune,–,Volantia-Echos im Hain (Mauser)
+ITM_EMAT_SCALE,Abgestreifte Schuppe,–,Serpentia/Aquatica-Echos im Hain (Häutung)
+ITM_EMAT_SHELLDUST,Panzerstaub,–,Testudinia/Articulata-Echos im Hain
+ITM_EMAT_ECHOWOOL,Echowolle,–,"Schur von Wolle tragenden Echos (Kjalf, Nubi …)"
+ITM_EMAT_STILLSHARD,Stillstein-Splitter,Void,Story: zerstörte Stillsteine (K44–K45)
