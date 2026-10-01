@@ -503,20 +503,20 @@ Ennis Rook bittet den Wärter, eine Kiste Äpfel durch die Kontrolle am Linnfurt
 
 *Fraktion · Freie Stimmen · Kette **Die Kurierin** (2/4) · Akt I · Auftrag: Ennis Rook (Kurierin) (Moosgrund) · Intensität 4 · ~35 min*
 
-Woher kam das Brokkar? Ennis führt den Wärter zum Steinbruch hinter Moosgrund, wo Brokks in Schichten arbeiten – gut gefüttert, aber angekettet. Der Besitzer ist kein Unmensch, nur arm. Die Freien Stimmen wollen die Echos befreien; der Wärter sucht einen Weg, der auch den Besitzer nicht ruiniert.
+Woher kam das Brokkar? Ennis führt den Wärter zum Steinbruch hinter Moosgrund, wo Brokks in Schichten arbeiten – gut gefüttert, aber angekettet. Der Besitzer ist kein Unmensch, nur arm. Die Freien Stimmen wollen die Echos befreien; der Wärter sucht einen Weg, der auch den Besitzer Arnulf nicht ruiniert.
 
-**Lösungen:** Befreien (Freie Stimmen jubeln, Jost verarmt – Bark) · Jost mit Kontor-Kredit Maschinen ermöglichen (Ossian-Bark) · Brokks frei lassen und Jost zeigen, wie man mit Erzkrümeln freiwillige Hilfe gewinnt (dritte Lösung).
+**Lösungen:** Befreien (Freie Stimmen jubeln, Arnulf verarmt – Bark) · Arnulf mit Kontor-Kredit Maschinen ermöglichen (Ossian-Bark) · Brokks frei lassen und Arnulf zeigen, wie man mit Erzkrümeln freiwillige Hilfe gewinnt (dritte Lösung).
 
 | # | Ziel | Was ich tun soll |
 |---|---|---|
 | 1 | Gehen | Zum Steinbruch |
 | 2 | Beobachten | Die Arbeits-Brokks beobachten |
-| 3 | Sprechen | Steinbrecher Jost zuhören |
-| 4 | Entscheidung | Lösung für Brokks und Jost |
+| 3 | Sprechen | Steinbrecher Arnulf zuhören |
+| 4 | Entscheidung | Lösung für Brokks und Arnulf |
 
 **Voraussetzung:** `Quest.MQ_A1_04 & Quest.SQ_022`
 **Belohnung:** 550 ◎ · 1.700 Wärter-EP · Ruf F04 +150 · ITM_TRAP_HOARD; ITM_MAT_COPPERORE ×5
-**Folge:** Steinbruch arbeitet mit freiwilligen Brokks (Lohn: Erzkrümel) oder steht still
+**Folge:** Arnulfs Steinbruch arbeitet mit freiwilligen Brokks (Lohn: Erzkrümel) oder steht still
 
 #### SQ_024 · Die Nachtfähre
 
@@ -552,10 +552,10 @@ Im Kharsgrat wiegt das Wort mehr als die Münze. Klanschwüre, Klanchronik, Ahne
 | SQ_030 | Die Tür ohne Griff | Rätsel & Ruinen | – | Akt II | 4 | 35 | – |
 | SQ_031 | Das Gewicht der Bücher | Fraktion | F02 · FQ_F02_02 | Akt I | 3 | 30 | Time=Night |
 | SQ_032 | Die Linn-Quelle | Rätsel & Ruinen | – | Akt I | 3 | 30 | Weather=Rain |
-| SQ_033 | Ehre unter Tage | Fraktion | F02 · FQ_F02_02 | Akt I | 4 | 40 | – |
+| SQ_033 | Verschüttet | Fraktion | F02 · FQ_F02_02 | Akt I | 4 | 40 | – |
 | SQ_034 | Ein Hammer für Hralda | Menschen | – | Akt I | 2 | 25 | – |
 | SQ_035 | Die zweite Waage | Fraktion | F02 · FQ_F02_02 | Akt I | 4 | 35 | Time=Night |
-| SQ_036 | Die schweren Jahre | Menschen | – | Akt III | 3 | 30 | – |
+| SQ_036 | Die Schuld der Lastzüge | Menschen | – | Akt III | 3 | 30 | – |
 | SQ_037 | Pass der Gratkins | Fraktion | F03 · FQ_F03_02 | Akt I | 3 | 30 | Time=Day |
 | SQ_038 | Kristalle, die nachts wachsen | Forschung | – | Akt I | 3 | 30 | Time=Night |
 | SQ_039 | Lawinenhunde | Fraktion | F03 · FQ_F03_02 | Akt I | 4 | 35 | Weather=Snow |
@@ -711,7 +711,7 @@ Die Linn entspringt im Kharsgrat und fließt bis Lindwiesen. Seit Wochen ist ihr
 **Belohnung:** 500 ◎ · 1.500 Wärter-EP · ITM_MAT_KHARSIRON ×3; Klangfragment (TruthLevel 0)
 **Folge:** Linn klärt sich nach 2 Spieltagen; Mühlbach in Lindwiesen sichtbar klarer
 
-#### SQ_033 · Ehre unter Tage
+#### SQ_033 · Verschüttet
 
 *Fraktion · Goldklang-Kontor · Kette **Erz und Ehre** (2/4) · Akt I · Auftrag: Tova (Erzkontor) (Kharsholm) · Intensität 4 · ~40 min*
 
@@ -724,7 +724,7 @@ Ein Stollen der Erzgrat-Minen ist eingestürzt; drei Bergleute und ihre Ferrows 
 | 1 | Gehen | Zur Erzgrat-Hütte |
 | 2 | Untersuchen | Den Stollen mit Resonanzsinn abhören |
 | 3 | Traversal | Über den Lüftungsschacht hinab |
-| 4 | Begleiten | Die Eingeschlossenen hinausführen |
+| 4 | Begleiten | Ulf Brakk und die Eingeschlossenen hinausführen |
 | 5 | Entscheidung | Wer zahlt die Stützbalken? |
 
 **Voraussetzung:** `Quest.MQ_A1_05 & Rank.F02>=2 & Quest.SQ_031`
@@ -764,7 +764,7 @@ Tova hat einen Vertrag mit Saltrand in Aussicht: Kharsk-Eisen für Schiffsbeschl
 **Belohnung:** 550 ◎ · 1.700 Wärter-EP · Ruf F02 +150 · ITM_HELD_TONE_METAL; Rezept RCP_051
 **Folge:** Vertrag geschlossen; Kharsk-Eisen in Saltrand-Händlern (K50)
 
-#### SQ_036 · Die schweren Jahre
+#### SQ_036 · Die Schuld der Lastzüge
 
 *Menschen · Akt III · Auftrag: Gerd (Halle der Klans) (Kharsholm) · Intensität 3 · ~30 min*
 
@@ -971,12 +971,12 @@ Das Moor ist nachts am lebendigsten. Hier sitzt die Unterstadt der Freien Stimme
 |---|---|---|---|---|---|---|---|
 | SQ_047 | Moorformen | Fraktion | F01 · FQ_F01_02 | Akt I | 3 | 35 | Weather=Fog |
 | SQ_048 | Der Humbog-Chor | Echo-Geschichte | – | Akt I | 2 | 25 | Time=Night |
-| SQ_049 | Das falsche Irrlicht | Fraktion | F01 · FQ_F01_02 | Akt I | 4 | 35 | Time=Night |
+| SQ_049 | Irrlichtjagd | Fraktion | F01 · FQ_F01_02 | Akt I | 4 | 35 | Time=Night |
 | SQ_050 | Wenn das Moor steigt | Weltereignis | – | Akt I | 4 | 30 | Weather=Rain |
 | SQ_051 | Eine Nacht im Moor | Fraktion | F03 · FQ_F03_03 | Akt I | 6 | 55 | Time=Night & Weather=Fog |
 | SQ_052 | Der Stein mit zwei Seiten | Rätsel & Ruinen | – | Akt II | 4 | 35 | – |
 | SQ_053 | Graue Ränder | Fraktion | F03 · FQ_F03_04 | Akt I | 4 | 40 | Weather=Rain |
-| SQ_054 | Die Turmglocke | Rätsel & Ruinen | – | Akt I | 3 | 30 | – |
+| SQ_054 | Das Turmgeheimnis der Fährmeisterin | Rätsel & Ruinen | – | Akt I | 3 | 30 | – |
 | SQ_055 | Schulden in der Unterstadt | Fraktion | F04 · FQ_F04_02 | Akt I | 3 | 30 | Time=Night |
 | SQ_056 | Fennhavens Brücke | Menschen | – | Akt I | 2 | 25 | – |
 | SQ_057 | Die Liederschuld | Fraktion | F04 · FQ_F04_02 | Akt I | 4 | 35 | Time=Night |
@@ -1027,11 +1027,11 @@ Der Nachtmarkt von Morvenfurt beginnt traditionell mit dem ersten Humbog-Ruf. Se
 **Belohnung:** 450 ◎ · 1.300 Wärter-EP · ITM_LURE_LANTERN; Hain-Dekor ITM_DECO_MARKETLANTERN
 **Folge:** Nachtmarkt öffnet wieder; Händlerangebot nachts +2 Waren
 
-#### SQ_049 · Das falsche Irrlicht
+#### SQ_049 · Irrlichtjagd
 
 *Fraktion · Akademie der Resonanz · Kette **Vaels Lücken** (3/4) · Akt I · Auftrag: Gelehrte Oona (Akademie) (Morvenfurt) · Intensität 4 · ~35 min*
 
-In der Taxonomie gibt es ein „Irrel-Weißling“ – eine Form, die nie bestätigt wurde. Moorleute schwören, es gibt sie. Der Wärter findet heraus, dass das „Weißling“ ein Irrel ist, das sich in einem Kalkbecken weiß gefärbt hat – oder doch nicht?
+Seit Generationen jagen Moorleute bei Nacht dem „Irrel-Weißling“ hinterher – einer Form, die Vael nie bestätigte. Oona will die Jagd beenden, mit einer Antwort. Der Wärter findet heraus, dass das „Weißling“ ein Irrel ist, das sich in einem Kalkbecken weiß gefärbt hat – oder doch nicht?
 
 | # | Ziel | Was ich tun soll |
 |---|---|---|
@@ -1113,15 +1113,15 @@ Rang 4 der Wildwacht: Jorn wird an die Riedwacht versetzt, um die Nachwirkungen 
 **Belohnung:** 650 ◎ · 1.900 Wärter-EP · Ruf F03 +150 · ITM_EMAT_STILLSHARD; ITM_GEAR_RESONATOR_2
 **Folge:** Graue Ränder verschwinden; Blossis kehren zurück
 
-#### SQ_054 · Die Turmglocke
+#### SQ_054 · Das Turmgeheimnis der Fährmeisterin
 
-*Rätsel & Ruinen · Akt I · Auftrag: Duva (Fischhalle) (Morvenfurt) · Intensität 3 · ~30 min*
+*Rätsel & Ruinen · Akt I · Auftrag: Fährmeisterin Ailsa Duvreth (Morvenfurt) · Intensität 3 · ~30 min*
 
-Bei Ebbe im Morve-Delta hört man eine Glocke unter Wasser – Duvas Großvater nannte sie „die Glocke des versunkenen Turms“. Seit MQ_A1_08 läutet sie öfter. Der Wärter taucht und findet eine Glocke mit dorunischen Zeichen, aber nicht vom Turm.
+Bei Ebbe im Morve-Delta hört man eine Glocke unter Wasser – Ailsas Großvater, auch er Fährmeister, nannte sie „die Glocke des versunkenen Turms“. Seit MQ_A1_08 läutet sie öfter. Der Wärter taucht und findet eine Glocke mit dorunischen Zeichen, aber nicht vom Turm.
 
 | # | Ziel | Was ich tun soll |
 |---|---|---|
-| 1 | Sprechen | Duva und die Glocke |
+| 1 | Sprechen | Ailsa an der Fähre |
 | 2 | Traversal | Zum Delta schwimmen |
 | 3 | Untersuchen | Die Glocke und ihre Inschrift untersuchen |
 | 4 | Rätsel | Den Glockenton mit dem Resonator spiegeln |
@@ -1457,6 +1457,7 @@ Je NPC höchstens drei Geschichten; eine Fraktionskette zählt als eine Geschich
 
 | NPC-ID | Name | Quests |
 |---|---|---|
+| NPC_AILSA | Fährmeisterin Ailsa Duvreth | SQ_054 |
 | NPC_ANSELM | Schnitzer Anselm | SQ_008 |
 | NPC_BRANDA | Bergführerin Branda | SQ_028, SQ_032 |
 | NPC_BRUECKENWART_ELWYN | Brückenwart Elwyn | SQ_056 |
@@ -1481,7 +1482,6 @@ Je NPC höchstens drei Geschichten; eine Fraktionskette zählt als eine Geschich
 | NPC_R02_TOVA | Tova (Erzkontor) | SQ_029, SQ_031, SQ_033, SQ_035 |
 | NPC_R02_YRSA | Ahnenstein-Tutorin Yrsa | SQ_030, SQ_040 |
 | NPC_R03_CORRACH | Moorweise Corrach | SQ_052, SQ_058 |
-| NPC_R03_DUVA | Duva (Fischhalle) | SQ_054 |
 | NPC_R03_FINN | Bootsbauer Finn | SQ_050 |
 | NPC_R03_NIALLA | Nialla (Laternensteg) | SQ_048 |
 | NPC_R03_SHADE | Der Schatten | SQ_055, SQ_057, SQ_059, SQ_063, SQ_065 |

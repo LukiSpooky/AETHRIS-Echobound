@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K50
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K51
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -409,6 +409,9 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-190 | Akt-II-Nebenquests mit W5–W7-Bezug verlangen MQ_A2_07 | K50 |
 | ADR-191 | Nebenquest-Folgen dürfen Weltereignisse erzeugen | K50 |
 | ADR-192 | Gedenkquests ≤ Intensität 3, ohne Kampf | K50 |
+| ADR-193 | Ordenskette „Hüter der Pause“ als Pilgerweg, Einstieg Velnox-Questreihe | K51 |
+| ADR-194 | „Letzte Bitten“ als Atemzug vor dem Finale | K51 |
+| ADR-195 | Nachhall-Quests mit gleichem Ablauf je Ende | K51 |
 
 ## §11 Change Requests
 
@@ -418,6 +421,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | CR-002 | K36 | §29/K06 §5 `IBondingService::PreviewBondChancePermille` | Ersetzt durch `PreviewBond` → `FBondPreview` (Resonanz, Schwelle, Fenster, Versuche) | Resonanzbindung ist deterministisch (kein Prozentwurf, DR-03/DR-07) | Game Director, Tech Director |
 | CR-003 | K43 | K02 §5 „Wärterrang-Aufstieg 45–90 min (Story-Phase)“ | Präzisiert: 45–90 min in Prolog/Akt I, ≤ 150 min in Akt II/III | 40 Ränge über ~90 h; Meilenstein-Charakter der Ränge, gefühlter Fortschritt über Echo-Level/Bindung/Kodex | Game Director |
 | CR-004 | K46 | §46 Story-Platzierung (K09): „W2 in der ersten freien Akt-I-Region“, „Sereth-Erstauftritt in erster Akt-II-Region“ | W2 in der zweiten Region (ADR-161); Sereth erscheint kurz in MQ_A1_06, ausführlich in Eiðvik (MQ_A2_04) | Erste Region bleibt ein ungestörter Einstieg; Sereth muss vor dem Verrat (W6) als Person bekannt sein | Narrative Director, Game Director |
+| CR-005 | K51 | K11/K12 „Nebenquest-Haken“ je Stadt, K13 Dorf-Haken (§57) | Haken sind Vorgaben, keine Quest-IDs; Umsetzung laut K51 §9 (eigene SQ mit Hakentitel, Teil einer SQ, Sammelreihe oder Weltereignis); Titel/NPCs in K49/K50 angeglichen (u. a. Steinbrecher Arnulf, Ulf Brakk, Fährmeisterin Ailsa Duvreth) | Gerüstverteilung K48 verbindlich | Lead Quest Designer, Narrative Director |
 
 ## §12 Offene Punkte (PROVISIONAL-Tracker)
 
@@ -1828,7 +1832,7 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 ## §185 Questarten & Quest-Bibel (LOCKED, K48 §1–§3)
 
-- Hauptquest `MQ_*` (32) · Nebenquest `SQ_###` (210) · Fraktionskette `FQ_F##_##` (18 Container) · Auftrag `CT_R##_##` · Kodex-Aufgabe · Weltereignis `WE_*` · Echo-Bitte `EB_*`. Tagebuch trennt Quests von Aufgaben (ADR-182). Regeln QR-01–QR-12 (u. a. jede Quest erzählt, Verstehen-Schritt, kein reines Sammeln, dritte Lösung, sichtbare Folgen, keine Zeitnot, ≥ 25 % mit Tageszeit/Wetter/Mond, Belohnungsmischung, L-01). Nebenquests 15–45 min (Ø 30), Intensität ≤ 6 (Kettenabschluss bis 7).
+- Hauptquest `MQ_*` (32) · Nebenquest `SQ_###` (210) · Fraktionskette `FQ_F##_##` (18 Container) · Auftrag `CT_R##_##` · Kodex-Aufgabe · Weltereignis `WE_*` · Echo-Bitte `EB_*`. Tagebuch trennt Quests von Aufgaben (ADR-182). Regeln QR-01–QR-12 (u. a. jede Quest erzählt, Verstehen-Schritt, kein reines Sammeln, dritte Lösung, sichtbare Folgen, keine Zeitnot, ≥ 25 % mit Tageszeit/Wetter/Mond, Belohnungsmischung, L-01). Nebenquests 15–45 min (Ø 35), Intensität ≤ 6 (Kettenabschluss bis 7).
 
 ## §186 Questdaten, Zieltypen, Bedingungen, EP (LOCKED, K48 §5–§8 · `ObjectiveTypes.csv`, `MainQuestSteps.csv`, `Data/World/StoryPOIs.csv`)
 
@@ -1857,3 +1861,15 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §192 Weltereignisse aus Nebenquests (LOCKED, K50 §9)
 
 - `WE_GRATKIN_MIGRATION`, `WE_ANCESTORFIRE`, `WE_UNDERSTREET_FEST`, `WE_REGATTA`, `WE_MIRROR_NIGHT` (Vollmond), `WE_SALT_FEST`, `WE_ASH_NIGHT` (Ascheregen, Nachhall), `WE_AURORA_NIGHT` (Polarlicht), `WE_SOLVAR_RACE`; dauerhaft nach Questabschluss, nur kleine Belohnungen (DR-20/27) (ADR-191).
+
+## §193 Nebenquests SQ_141–SQ_210 (LOCKED, K51 · Quelle `tools/authoring/sq_k51.py`)
+
+- R07 Hvitfell 11 (SQ_141–151), R08 Ael'Dorun 21, R09 Prismtiefen 18, R10 Nimbara 20. SQ_202 „Letzte Bitten“ (Ysolde) zwischen MQ_A3_05 und MQ_A3_07 (ADR-194; Gerüst-Ausnahme SQ_202/SQ_204). Nachhall-Quests: gleicher Ablauf, Text/Material je Ende (ADR-195). Spuren: Chronaire (SQ_159), Mirrowisp (SQ_178), Aurelune (SQ_196), Velnox (SQ_210). Neue NPCs u. a. Sprecherin Astrid Eiðsen (Thing), Gunnhild, Uhrmacher Odil, Studentin Helke, Laborleiterin Sanne, Archivar der Baumeister, Sternwärter Elun, Windseglerin Ria, Wildwächter Boaz.
+
+## §194 Nebenquests gesamt (LOCKED, K49–K51)
+
+- 210 Quests, 849 Schritte, Ø 36 min (~126 h), 120 Fraktionsquests in 18 Ketten, 53 später verfügbar, 52 % mit Tageszeit/Wetter/Mond/Bedingung. Σ ~389.000 Wärter-EP (über Rang 40 ohne mechanische Wirkung). Haken aus K11–K13 laut K51 §9 umgesetzt (CR-005). Prüfregeln QS-01–QS-15 über alle 210 Quests: 0 Fehler.
+
+## §195 Orte der Pause (LOCKED, K51 §7)
+
+- FQ_F05_02 „Hüter der Pause“ (Nachhall): Gletscherspalte (SQ_151), Kapelle Archontenviertel (SQ_170), Säulenlücken Thae'Luun (SQ_171), Thronsaal (SQ_172), Resonanzkammer (SQ_190), Kronenwerft (SQ_210) – Rückkehrorte mit getakteter Stille; SQ_210 startet „Die Pause hören“ (Velnox-Bindung, K62). Titel doppelt erreichbar (Kette + Ordensrang 6) → goldene Abzeichen-Variante.

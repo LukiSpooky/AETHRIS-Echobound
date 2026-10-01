@@ -159,7 +159,7 @@ Gameplay: Flug-Traversal mit Windböen (K40), drei Ordensposten (gewaltfrei umge
 
 **Oruma Siyel**, Arenameisterin von Aerion, hat die Sterne seit Wochen beobachtet: Über Nimbara fehlen Sterne – nicht verdeckt, sondern *still*. Sie lässt den Spieler antreten (fest Stufe 10, Sternfall-Regel), weil „ein zehnter Akkord in deiner Hand besser ist als in seiner“.
 
-Aerion ist seit der Großen Stille isoliert; in der Halle der Baumeister steht die **Wand der Zehn** – zehn Reliefs des Erstchors, nur ein Gesicht ist erhalten: **Ilens**. Der Spieler erkennt die Frau aus den Visionen; Ysolde berührt das Relief und sagt nichts. (Die Nebenquest „Ein Stein für Eichenhall“ – erloschener Resonanzstein – wird hier angeboten, K49–K51.)
+Aerion ist seit der Großen Stille isoliert; in der Halle der Baumeister steht die **Wand der Zehn** – zehn Reliefs des Erstchors, nur ein Gesicht ist erhalten: **Ilens**. Der Spieler erkennt die Frau aus den Visionen; Ysolde berührt das Relief und sagt nichts. (Die Nebenquest „Wendelins letzter Stein“ (SQ_198, K51) – erloschener Resonanzstein, K12 – wird hier angeboten.)
 
 Mit dem **zehnten Akkord** erwachen **alle zehn Stimmen** gleichzeitig: Über ganz Aethris steigen Licht- und Klangsäulen auf (globale Sequenz, alle Regionen sichtbar). **Aeth'rion**, die Leitstimme, erhebt sich über der Arena – und hält inne. Von der Kronenwerft antworten **neun Splitter** dem zehnten im Gepäck des Spielers. Ein **Resonanzsturm** bricht über ganz Aethris los (CANON §63, Finale-Auslöser) und hält bis zum Ende von MQ_A3_08 an.
 

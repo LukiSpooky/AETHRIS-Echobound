@@ -28,6 +28,7 @@ FACTION_TARGET = {"F01": 27, "F02": 27, "F03": 28, "F04": 26, "F05": 12}
 CATS = ["ECHO", "PEOPLE", "RESEARCH", "MYSTERY", "TRIAL", "EVENT"]   # Nicht-Fraktions-Kategorien
 CAT_NAME = {"FACTION": "Fraktion", "ECHO": "Echo-Geschichte", "PEOPLE": "Menschen", "RESEARCH": "Forschung",
             "MYSTERY": "Rätsel & Ruinen", "TRIAL": "Wärterprüfung", "EVENT": "Weltereignis"}
+OVERRIDES = {"SQ_202": {"Available": "Akt III"}, "SQ_204": {"Available": "Nachhall"}}
 CHAPTER = lambda n: "K49" if n <= 70 else ("K50" if n <= 140 else "K51")
 
 
@@ -110,6 +111,9 @@ def plan():
             if j % 3 == 0:
                 q["Available"] = LATER[act][(j // 3 - 1) % len(LATER[act])]
         del q["_i"]
+    # Handgesetzte Ausnahmen (K51: „Letzte Bitten“ muss vor dem Finale spielbar sein, K12 §5)
+    for q in out:
+        q.update(OVERRIDES.get(q["Name"], {}))
     return out
 
 

@@ -1,3 +1,7 @@
 # Quest-Schlüsselgegenstände (K48/K49–K51). Nicht verkaufbar, nicht handelbar; verschwinden nach Questende, sofern nicht als Andenken markiert.
 Name,DisplayName,Quest,Keepsake,Notes
 ITM_KEY_HRALDAHAMMER,Hraldas Hammer,SQ_034,nein,Geschmiedet vom Grollschmied; hängt danach in der Wildwacht-Kammer
+ITM_KEY_LEIFLETTER,Leifs Brief,SQ_144,nein,An Gunnhild im Kloster
+ITM_KEY_STARCATALOG,Abschrift des Sternkatalogs,SQ_191,nein,Für das Archiv der Baumeister
+ITM_KEY_YSOLDELETTER,Ysoldes Brief an die Baumeister,SQ_199,nein,Erste Luftfracht
+ITM_KEY_LASTLETTER,Brief einer letzten Bitte,SQ_202,ja,Andenken nach Übergabe (Abschrift)

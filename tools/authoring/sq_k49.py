@@ -180,13 +180,13 @@ Q("SQ_022", "Eine Kiste Äpfel", "NPC_ENNIS|Ennis Rook (Kurierin)", "SET_V_MOOSG
   "ITM_FOOD_BERRYMIX ×3; Kodex-Beobachtung Brokkar", "Ennis vertraut dem Wärter (Bark), Brokkar lebt in der Farnschlucht",
   solution="Mitspielen · Ennis überreden, die Kiste offen vorzuzeigen (die Wildwacht lässt es durch – Hralda-Bark) · Wildwacht vorab informieren (Ennis enttäuscht, Ruf trotzdem).")
 Q("SQ_023", "Der Steinbruch von Moosgrund", "NPC_ENNIS|Ennis Rook (Kurierin)", "SET_V_MOOSGRUND", 4, 35,
-  "Woher kam das Brokkar? Ennis führt den Wärter zum Steinbruch hinter Moosgrund, wo Brokks in Schichten arbeiten – gut gefüttert, aber angekettet. Der Besitzer ist kein Unmensch, nur arm. Die Freien Stimmen wollen die Echos befreien; der Wärter sucht einen Weg, der auch den Besitzer nicht ruiniert.",
+  "Woher kam das Brokkar? Ennis führt den Wärter zum Steinbruch hinter Moosgrund, wo Brokks in Schichten arbeiten – gut gefüttert, aber angekettet. Der Besitzer ist kein Unmensch, nur arm. Die Freien Stimmen wollen die Echos befreien; der Wärter sucht einen Weg, der auch den Besitzer Arnulf nicht ruiniert.",
   ["OBJ_GOTO R01_Z04 1 @R01_Z04 | Zum Steinbruch",
    "OBJ_OBSERVE ECHO_004 2 @R01_Z04 | Die Arbeits-Brokks beobachten",
-   "OBJ_TALK NPC_STEINBRECHER_JOST 1 @R01_Z04 | Steinbrecher Jost zuhören",
-   "OBJ_CHOICE DLG_SQ_023_01 1 @R01_Z04 | Lösung für Brokks und Jost"],
-  "ITM_TRAP_HOARD; ITM_MAT_COPPERORE ×5", "Steinbruch arbeitet mit freiwilligen Brokks (Lohn: Erzkrümel) oder steht still",
-  solution="Befreien (Freie Stimmen jubeln, Jost verarmt – Bark) · Jost mit Kontor-Kredit Maschinen ermöglichen (Ossian-Bark) · Brokks frei lassen und Jost zeigen, wie man mit Erzkrümeln freiwillige Hilfe gewinnt (dritte Lösung).")
+   "OBJ_TALK NPC_STEINBRECHER_ARNULF 1 @R01_Z04 | Steinbrecher Arnulf zuhören",
+   "OBJ_CHOICE DLG_SQ_023_01 1 @R01_Z04 | Lösung für Brokks und Arnulf"],
+  "ITM_TRAP_HOARD; ITM_MAT_COPPERORE ×5", "Arnulfs Steinbruch arbeitet mit freiwilligen Brokks (Lohn: Erzkrümel) oder steht still",
+  solution="Befreien (Freie Stimmen jubeln, Arnulf verarmt – Bark) · Arnulf mit Kontor-Kredit Maschinen ermöglichen (Ossian-Bark) · Brokks frei lassen und Arnulf zeigen, wie man mit Erzkrümeln freiwillige Hilfe gewinnt (dritte Lösung).")
 Q("SQ_024", "Die Nachtfähre", "NPC_ENNIS|Ennis Rook (Kurierin)", "SET_V_MOOSGRUND", 4, 30,
   "Ennis muss sieben befreite Echos über den Linnfluss bringen, nachts, ohne Laterne. Ein Rillward-Paar kennt die Furt. Der Wärter muss die Echos ruhig halten – ein einziger Ruf, und die Kontrolle am Posten wird aufmerksam.",
   ["OBJ_CONDITION Time=Night 1 @R01_Z02 | Nacht abwarten",
@@ -263,12 +263,12 @@ Q("SQ_032", "Die Linn-Quelle", "NPC_BRANDA|Bergführerin Branda", "SET_O_GROLLHO
    "OBJ_PUZZLE PZ_SQ032_GLYPH 1 @R02_Z04 | Die Warnglyphe deuten"],
   "ITM_MAT_KHARSIRON ×3; Klangfragment (TruthLevel 0)", "Linn klärt sich nach 2 Spieltagen; Mühlbach in Lindwiesen sichtbar klarer",
   var="Weather=Rain")
-Q("SQ_033", "Ehre unter Tage", "NPC_R02_TOVA|Tova (Erzkontor)", "SET_C_KHARSHOLM", 4, 40,
+Q("SQ_033", "Verschüttet", "NPC_R02_TOVA|Tova (Erzkontor)", "SET_C_KHARSHOLM", 4, 40,
   "Ein Stollen der Erzgrat-Minen ist eingestürzt; drei Bergleute und ihre Ferrows sitzen fest. Der Klan will graben, das Kontor will die Kosten nicht tragen. Der Wärter rettet zuerst – und verhandelt danach.",
   ["OBJ_GOTO SET_O_ERZGRATHUETTE 1 @SET_O_ERZGRATHUETTE | Zur Erzgrat-Hütte",
    "OBJ_INVESTIGATE - 3 @R02_Z04 | Den Stollen mit Resonanzsinn abhören",
    "OBJ_TRAVERSE Mount.Climb 1 @R02_Z04 | Über den Lüftungsschacht hinab",
-   "OBJ_ESCORT NPC_BERGMANN_ULF 1 @R02_Z04 | Die Eingeschlossenen hinausführen",
+   "OBJ_ESCORT NPC_ULF_BRAKK 1 @R02_Z04 | Ulf Brakk und die Eingeschlossenen hinausführen",
    "OBJ_CHOICE DLG_SQ_033_01 1 @SET_C_KHARSHOLM | Wer zahlt die Stützbalken?"],
   "ITM_GEAR_TOOL_2; ITM_CON_STAMINA ×3", "Stollen mit neuen Balken (Data Layer); Bergleute-Barks",
   solution="Kontor zahlt (Tova setzt es durch) · Klan zahlt (Ehre) · beide teilen und die Ferrows erhalten Ruhetage (dritte Lösung).")
@@ -286,7 +286,7 @@ Q("SQ_035", "Die zweite Waage", "NPC_R02_TOVA|Tova (Erzkontor)", "SET_C_KHARSHOL
    "OBJ_BATTLE NPC_KLANPRUEFER_ASKE 1 @SET_C_KHARSHOLM | Probe gegen den Klanprüfer (Metall-Regel)"],
   "ITM_HELD_TONE_METAL; Rezept RCP_051", "Vertrag geschlossen; Kharsk-Eisen in Saltrand-Händlern (K50)",
   var="Time=Night")
-Q("SQ_036", "Die schweren Jahre", "NPC_R02_GERD|Gerd (Halle der Klans)", "SET_C_KHARSHOLM", 3, 30,
+Q("SQ_036", "Die Schuld der Lastzüge", "NPC_R02_GERD|Gerd (Halle der Klans)", "SET_C_KHARSHOLM", 3, 30,
   "Nach Akt III will Gerd die Klanchronik um die Wahrheit über die Siegelkriege ergänzen – auch um die Rolle der Kharsk-Klans, die Echos als Lastträger in den Krieg schickten. Der Wärter sammelt Erinnerungen der Ältesten und eines alten Cragar, der dabei war.",
   ["OBJ_TALK NPC_R02_GERD 1 @SET_C_KHARSHOLM | Gerds Vorhaben",
    "OBJ_TALK NPC_AELTESTE_INGRID 1 @SET_V_BRAKKFELS | Die Älteste Ingrid",
@@ -395,8 +395,8 @@ Q("SQ_048", "Der Humbog-Chor", "NPC_R03_NIALLA|Nialla (Laternensteg)", "SET_C_MO
    "OBJ_CHOICE DLG_SQ_048_01 1 @SET_C_MORVENFURT | Markt verlegen oder Teich ausbaggern?"],
   "ITM_LURE_LANTERN; Hain-Dekor ITM_DECO_MARKETLANTERN", "Nachtmarkt öffnet wieder; Händlerangebot nachts +2 Waren",
   var="Time=Night", solution="Teich ausbaggern (Kontor zahlt) · Markt an die Senke verlegen (neuer Markt-Ort) · Humbog-Rufe mit einem Ruf-Horn ersetzen (Nialla lehnt traurig ab – dritte Lösung nur als Gesprächsoption).")
-Q("SQ_049", "Das falsche Irrlicht", "NPC_GELEHRTE_OONA|Gelehrte Oona (Akademie)", "SET_C_MORVENFURT", 4, 35,
-  "In der Taxonomie gibt es ein „Irrel-Weißling“ – eine Form, die nie bestätigt wurde. Moorleute schwören, es gibt sie. Der Wärter findet heraus, dass das „Weißling“ ein Irrel ist, das sich in einem Kalkbecken weiß gefärbt hat – oder doch nicht?",
+Q("SQ_049", "Irrlichtjagd", "NPC_GELEHRTE_OONA|Gelehrte Oona (Akademie)", "SET_C_MORVENFURT", 4, 35,
+  "Seit Generationen jagen Moorleute bei Nacht dem „Irrel-Weißling“ hinterher – einer Form, die Vael nie bestätigte. Oona will die Jagd beenden, mit einer Antwort. Der Wärter findet heraus, dass das „Weißling“ ein Irrel ist, das sich in einem Kalkbecken weiß gefärbt hat – oder doch nicht?",
   ["OBJ_GOTO R03_Z04 1 @R03_Z04 | In den Nebelwald Corrach",
    "OBJ_OBSERVE ECHO_066 2 @R03_Z04 | Irrels bei Nacht beobachten",
    "OBJ_INVESTIGATE - 3 @R03_Z04 | Das Kalkbecken untersuchen",
@@ -436,9 +436,9 @@ Q("SQ_053", "Graue Ränder", "NPC_PASSWART_JORN|Passwart Jorn (Wildwacht)", "SET
    "OBJ_INVESTIGATE - 1 @R03_Z05 | Den Splitter im Schlamm finden"],
   "ITM_EMAT_STILLSHARD; ITM_GEAR_RESONATOR_2", "Graue Ränder verschwinden; Blossis kehren zurück",
   var="Weather=Rain")
-Q("SQ_054", "Die Turmglocke", "NPC_R03_DUVA|Duva (Fischhalle)", "SET_C_MORVENFURT", 3, 30,
-  "Bei Ebbe im Morve-Delta hört man eine Glocke unter Wasser – Duvas Großvater nannte sie „die Glocke des versunkenen Turms“. Seit MQ_A1_08 läutet sie öfter. Der Wärter taucht und findet eine Glocke mit dorunischen Zeichen, aber nicht vom Turm.",
-  ["OBJ_TALK NPC_R03_DUVA 1 @SET_C_MORVENFURT | Duva und die Glocke",
+Q("SQ_054", "Das Turmgeheimnis der Fährmeisterin", "NPC_AILSA|Fährmeisterin Ailsa Duvreth", "SET_C_MORVENFURT", 3, 30,
+  "Bei Ebbe im Morve-Delta hört man eine Glocke unter Wasser – Ailsas Großvater, auch er Fährmeister, nannte sie „die Glocke des versunkenen Turms“. Seit MQ_A1_08 läutet sie öfter. Der Wärter taucht und findet eine Glocke mit dorunischen Zeichen, aber nicht vom Turm.",
+  ["OBJ_TALK NPC_AILSA 1 @SET_C_MORVENFURT | Ailsa an der Fähre",
    "OBJ_TRAVERSE Mount.Swim 1 @R03_Z05 | Zum Delta schwimmen",
    "OBJ_INVESTIGATE - 3 @R03_Z05 | Die Glocke und ihre Inschrift untersuchen",
    "OBJ_PUZZLE PZ_SQ054_BELL 1 @R03_Z05 | Den Glockenton mit dem Resonator spiegeln"],

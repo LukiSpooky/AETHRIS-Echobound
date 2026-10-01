@@ -24,3 +24,19 @@ ITM_DECO_FREEHOUSE,Modell „Haus in Kaldra“,SQ_127,beliebig,Freie-Stimmen-Far
 ITM_DECO_KALDRASONG,Liedtafel Kaldra,SQ_130,beliebig,Spielbar am Lagerfeuer
 ITM_DECO_NAMESTONE,Namensstein,SQ_135,beliebig,Ein Name aus Eiðvik
 ITM_DECO_AURORALANTERN,Polarlichtlaterne,SQ_137,beliebig,Farbwechsel bei Nacht
+ITM_DECO_EIDVIKBEAM,Balken aus Eiðvik,SQ_143,beliebig,Mit eingeritzten Namen
+ITM_DECO_AURORAPRINT,Polarlicht-Abzug,SQ_147,beliebig,Signes Foto
+ITM_DECO_VEILEDWELL,Verhüllter Brunnen,SQ_150,beliebig,Wie in Schweigfels; heilt trotzdem (Lore-Ironie)
+ITM_DECO_STRIKEBANNER,Streikbanner der Studierenden,SQ_156,beliebig,„Hören heißt fragen“
+ITM_DECO_WORDBOX,Odvars Wortkästchen,SQ_163,beliebig,Ein vergessenes Wort pro Spieltag
+ITM_DECO_CHOIRSTONE,Chorstein,SQ_168,beliebig,Hymnoras singen in der Dämmerung
+ITM_DECO_PULSECRYSTAL,Pulskristall,SQ_176,beliebig,Pulsiert im Gegentakt
+ITM_DECO_MISSLITLAMP,Misslit-Lampe,SQ_184,beliebig,Hell (Neues Lied) oder still (Sanfte Stille)
+ITM_DECO_GLASSHARP,Kleine Glasharfe,SQ_185,beliebig,Echos spielen darauf
+ITM_DECO_STORMHARP,Sturmharfe,SQ_194,GARDEN_10|GARDEN_06,Klingt bei Gewitter
+ITM_DECO_WALLOFTEN,Relief der Zehn,SQ_200,beliebig,Schattenrelief des Erstchors
+ITM_DECO_LASTREQUEST,Laterne der letzten Bitte,SQ_202,beliebig,Brennt einmal im Monat von selbst
+ITM_DECO_STARCHART,Sternkarte,SQ_204,beliebig,Zeigt das neue Sternbild
+ITM_DECO_RACEPENNANT,Rennwimpel,SQ_206,beliebig,Flattert im Wind
+ITM_DECO_SKYTABLE,Himmelstafel,SQ_207,beliebig,Tisch für Boden- und Himmelsleute
+ITM_DECO_PAUSEBELL,Glocke der Pause,SQ_210,beliebig,Läutet nie; man hört sie trotzdem

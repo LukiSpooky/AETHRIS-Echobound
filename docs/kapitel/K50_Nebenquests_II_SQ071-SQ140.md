@@ -93,7 +93,7 @@ Saltrand ist das Herz des Kontors. Die Kette *Hafenbücher* zeigt Marieke Holm a
 | SQ_082 | Sturm vor Sahrun | Fraktion | F02 · FQ_F02_04 | Akt I | 5 | 50 | Weather=Thunderstorm |
 | SQ_083 | Die Perlen der Aquadrals | Forschung | – | Akt I | 3 | 30 | Time=Night |
 | SQ_084 | Salz auf grauem Sand | Fraktion | F03 · FQ_F03_04 | Akt I | 4 | 40 | – |
-| SQ_085 | Die Probe der Gezeiten | Wärterprüfung | – | Nachhall | 6 | 40 | Moon=Full |
+| SQ_085 | Bekes Wetten | Wärterprüfung | – | Nachhall | 6 | 40 | Moon=Full |
 | SQ_086 | Der Leuchtturm schweigt | Fraktion | F03 · FQ_F03_04 | Akt I | 5 | 45 | Time=Day |
 | SQ_087 | Die Regatta | Wärterprüfung | – | Akt I | 4 | 30 | Time=Day |
 | SQ_088 | Die Perlenwerkstatt | Fraktion | F04 · FQ_F04_03 | Akt I | 5 | 45 | Time=Night |
@@ -342,11 +342,11 @@ Die stillen Ränder in Saltrand: An der Dünenküste bleiben nach der Heilung gr
 **Belohnung:** 650 ◎ · 1.900 Wärter-EP · Ruf F03 +150 · ITM_EMAT_STILLSHARD; ITM_CON_CLEANSE ×2
 **Folge:** Flecken verschwinden; Tangis wachsen nach
 
-#### SQ_085 · Die Probe der Gezeiten
+#### SQ_085 · Bekes Wetten
 
 *Wärterprüfung · Nachhall · Auftrag: Beke Tamsen (Saltrand-Hafen) · Intensität 6 · ~40 min*
 
-Im Nachhall bietet Beke Tamsen eine Gezeitenprobe: drei Kämpfe, deren Arena sich mit jeder Runde hebt und senkt. Die Probe findet nur bei Vollmond statt, wenn die Flut am höchsten steht.
+Im Nachhall wettet Beke Tamsen mit jedem, der sich traut – um eine Gezeitenprobe: drei Kämpfe, deren Arena sich mit jeder Runde hebt und senkt. Die Probe findet nur bei Vollmond statt, wenn die Flut am höchsten steht.
 
 | # | Ziel | Was ich tun soll |
 |---|---|---|
@@ -466,9 +466,9 @@ Die Weite ist die Region der Gelehrten und Händler. Hier liegt die Glasebene mi
 | SQ_095 | Wer die Sonne zu laut sang | Fraktion | F01 · FQ_F01_03 | Akt II | 5 | 45 | – |
 | SQ_096 | Die Nacht der Spiegel | Weltereignis | – | Akt III | 4 | 35 | Moon=Full |
 | SQ_097 | Der Reif bleibt im Sand | Fraktion | F01 · FQ_F01_03 | Akt II | 6 | 55 | – |
-| SQ_098 | Sandsturm-Lotsen | Weltereignis | – | Akt II | 4 | 35 | Weather=Sandstorm |
+| SQ_098 | Die verirrte Karawane | Weltereignis | – | Akt II | 4 | 35 | Weather=Sandstorm |
 | SQ_099 | Geschwärzte Zeilen | Fraktion | F01 · FQ_F01_04 | Akt II | 5 | 45 | – |
-| SQ_100 | Das vergrabene Observatorium | Rätsel & Ruinen | – | Akt II | 4 | 40 | Time=Night |
+| SQ_100 | Harun und der Neumond | Rätsel & Ruinen | – | Akt II | 4 | 40 | Moon=New |
 | SQ_101 | Glas ab Harrâd | Fraktion | F02 · FQ_F02_04 | Akt II | 4 | 40 | – |
 | SQ_102 | Die alte Brunnenköchin | Menschen | – | Nachhall | 2 | 25 | – |
 | SQ_103 | Die gläserne Route | Fraktion | F02 · FQ_F02_04 | Akt II | 5 | 55 | Weather=Heatwave |
@@ -603,11 +603,11 @@ Im Saal liegt ein Reif aus Glas – kein Kronensplitter, aber nach demselben Pri
 **Belohnung:** 1.450 ◎ · 2.000 Wärter-EP · Ruf F01 +400 · Titel „Glaslauscher“; ITM_HELD_MIRRORSCALE
 **Folge:** Reif in der Akademie (Ausstellung, Nachhall) · zerstört · wieder versiegelt (dritte Lösung)
 
-#### SQ_098 · Sandsturm-Lotsen
+#### SQ_098 · Die verirrte Karawane
 
 *Weltereignis · Akt II · Auftrag: Amara (Karawanserei) (Qasr Sahrun) · Intensität 4 · ~35 min*
 
-Bei Sandsturm stehen die Karawanen still – außer man folgt den Sirrkorns, die im Sturm Bahnen fliegen. Amara will eine Karawane mit Arzneien nach Harrâd bringen, die nicht warten kann. Der Wärter navigiert per Resonanzsinn.
+Eine Karawane mit Arzneien für Harrâd hat sich im Sandsturm verirrt. Amara weiß: Wer den Sirrkorns folgt, die im Sturm Bahnen fliegen, findet den Weg. Der Wärter sucht die Karawane per Resonanzsinn und führt sie hinaus.
 
 | # | Ziel | Was ich tun soll |
 |---|---|---|
@@ -637,11 +637,11 @@ Nach dem Verrat öffnet Aevrin Venns Akten. Eine Spur führt zur Grabung am Sonn
 **Belohnung:** 1.250 ◎ · 2.000 Wärter-EP · Ruf F01 +150 · Lore „Fundliste Sonnenhof“ (TruthLevel 6); ITM_CON_SENSE ×2
 **Folge:** Aevrins Akte wächst (K51: SQ_132, SQ_152)
 
-#### SQ_100 · Das vergrabene Observatorium
+#### SQ_100 · Harun und der Neumond
 
 *Rätsel & Ruinen · Akt II · Auftrag: Sterndeuter Harun (Qasr Sahrun) · Intensität 4 · ~40 min*
 
-Harun hat eine Sternkarte der Hochkultur gefunden. Sie zeigt ein Observatorium unter dem Sonnenhof-Plateau, dessen Linsen „die Sonne stimmten“. Der Wärter gräbt sich hinein und richtet die Linsen neu aus – auf die Sterne statt auf die Sonne.
+Harun hat eine Sternkarte der Hochkultur gefunden, die nur bei Neumond lesbar ist. Sie zeigt ein Observatorium unter dem Sonnenhof-Plateau, dessen Linsen „die Sonne stimmten“. Der Wärter gräbt sich hinein und richtet die Linsen neu aus – auf die Sterne statt auf die Sonne.
 
 | # | Ziel | Was ich tun soll |
 |---|---|---|
@@ -650,7 +650,7 @@ Harun hat eine Sternkarte der Hochkultur gefunden. Sie zeigt ein Observatorium u
 | 3 | Rätsel | Die Linsen ausrichten |
 | 4 | Beobachten | Vitraphas im Sternenlicht beobachten |
 
-**Voraussetzung:** `Act>=Akt II` · **Variante/Bedingung:** `Time=Night`
+**Voraussetzung:** `Act>=Akt II` · **Variante/Bedingung:** `Moon=New`
 **Belohnung:** 1.150 ◎ · 2.000 Wärter-EP · ITM_LURE_STARCHIME; Klangfragment (TruthLevel 4)
 **Folge:** Observatorium als Aussichtspunkt (Wärter-EP Entdeckung)
 
@@ -883,8 +883,8 @@ Ignareth trägt Schuld: Hier stand das Lager (MQ_A2_03). Die Nebenquests erzähl
 | SQ_116 | Glockenguss | Echo-Geschichte | – | Akt II | 3 | 30 | – |
 | SQ_117 | Das Konsortium | Fraktion | F02 | Akt II | 5 | 45 | – |
 | SQ_118 | Die Aschenacht | Weltereignis | – | Nachhall | 4 | 35 | Weather=Ashfall |
-| SQ_119 | Die Zunft und das Kontor | Fraktion | F02 | Akt II | 4 | 35 | – |
-| SQ_120 | Ausbruch | Weltereignis | – | Akt II | 5 | 35 | Weather=Heatwave |
+| SQ_119 | Das Gelübde der Zunft | Fraktion | F02 | Akt II | 4 | 35 | – |
+| SQ_120 | Lavawächter in Not | Weltereignis | – | Akt II | 5 | 35 | Weather=Heatwave |
 | SQ_121 | Die Kisten von gestern | Fraktion | F02 | Akt III | 4 | 40 | – |
 | SQ_122 | Das Kraterherz träumt | Rätsel & Ruinen | – | Akt II | 4 | 40 | – |
 | SQ_123 | Rauchzeichen | Fraktion | F03 | Akt II | 3 | 30 | Weather=Ashfall |
@@ -1002,7 +1002,7 @@ Im Nachhall fällt bei Ascheregen ein feines Leuchten über Ignareth: Aschgrims 
 **Belohnung:** 1.800 ◎ · 2.000 Wärter-EP · Hain-Dekor ITM_DECO_ASHLANTERN; ITM_CON_WARM ×3
 **Folge:** Aschenacht-Führungen (Weltereignis bei Ascheregen)
 
-#### SQ_119 · Die Zunft und das Kontor
+#### SQ_119 · Das Gelübde der Zunft
 
 *Fraktion · Goldklang-Kontor · Akt II · Auftrag: Zunftsprecherin Helka (Schlackenwehr) · Intensität 4 · ~35 min*
 
@@ -1019,7 +1019,7 @@ Die Schmiedezunft hat ein Gelübde gegen Waffen (seit den Siegelkriegen). Ein Ko
 **Belohnung:** 1.050 ◎ · 2.000 Wärter-EP · Ruf F02 +150 · ITM_HELD_TONE_METAL; Rezept RCP_066
 **Folge:** Zunft lehnt ab oder liefert harmlose Werkzeuge (Bark)
 
-#### SQ_120 · Ausbruch
+#### SQ_120 · Lavawächter in Not
 
 *Weltereignis · Akt II · Auftrag: Kraterwart Osk (Kraterrand-Posten) · Intensität 5 · ~35 min*
 
@@ -1237,7 +1237,7 @@ Die ersten neun Hvitfell-Quests drehen sich um Erinnerung (Runa, das Namensbuch,
 | SQ_132 | Die Briefe aus Hvitmark | Fraktion | F01 · FQ_F01_04 | Akt II | 5 | 45 | – |
 | SQ_133 | Snevel im Spiegelsee | Echo-Geschichte | – | Akt II | 2 | 25 | Time=Dusk |
 | SQ_134 | Lawinenwinter | Fraktion | F03 | Akt II | 4 | 40 | Weather=Snow |
-| SQ_135 | Der Name im Eis | Echo-Geschichte | – | Akt III | 3 | 30 | Weather=Aurora |
+| SQ_135 | Namen auf dem Stein | Echo-Geschichte | – | Akt III | 3 | 30 | Weather=Aurora |
 | SQ_136 | Spuren am Pass | Fraktion | F03 | Akt II | 3 | 30 | Weather=Snow |
 | SQ_137 | Die Polarlichtnacht | Weltereignis | – | Akt II | 3 | 30 | Weather=Aurora |
 | SQ_138 | Die Wacht am Isvaldtind | Fraktion | F03 | Nachhall | 5 | 45 | Time=Night |
@@ -1295,7 +1295,7 @@ Ein schwerer Schneefall droht die Gletscherzunge abbrechen zu lassen. Darunter l
 **Belohnung:** 1.150 ◎ · 2.000 Wärter-EP · Ruf F03 +150 · ITM_GEAR_CLOAK_3; ITM_CON_WARM ×3
 **Folge:** Hallkid-Warnkette (Ruf bei Gefahr, Ambient)
 
-#### SQ_135 · Der Name im Eis
+#### SQ_135 · Namen auf dem Stein
 
 *Echo-Geschichte · Akt III · Auftrag: Runa die Erinnernde (Hvitmark) · Intensität 3 · ~30 min*
 
