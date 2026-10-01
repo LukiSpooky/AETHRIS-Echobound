@@ -183,6 +183,28 @@ Die zehn Story-Bosse folgen dem Story-Rückgrat (CANON §38). Jeder prüft eine 
 | Aldric Venn mit der Resonanzkrone (Kronvaal) | Akt III, Nimbara | alles: Zähler, Panzer, Taktraub, Resonanzflut | W8: Venn aktiviert die Krone |
 | Velnox – die Große Pause | Finale | Stille selbst: Zähler, Puls, Schwerebrunnen | W9: Rückgabe des Nachklangs entscheidet das Ende (K46) |
 
+### 6.1 Phasen-Skripte der Story-Bosse
+
+**Verstummter Wächter (Prolog, Duell, Lv. 6).** *Phase 1 (100–50 %):* Lorncant handelt langsam (Basis-GES halbiert, „verstummt“); jede zweite Runde sinkt der Stillezähler (Start 6). Der Spieler lernt, dass der Zähler nur bei Boss-Zügen fällt. *Phase 2 (< 50 %):* Nachklang-Heilung als Ankündigung (15 %); Tutorial-Hinweis: „Greif an, bevor der Marker erreicht ist.“ *Ende:* Das Grau weicht, Lorncant singt; Ysolde erklärt die Stille (W1). Niederlage: Wiederholung ohne Strafe (DR-09).
+
+**Stillkern von Lindwald (Akt I, Duo, Lv. 14).** *Phase 1:* Vernaune ist von Stillsteinen umgeben (2 Begleiter „Stillstein-Splitter“ mit eigener Spur, je 20 % der Boss-HP); solange beide stehen, sinkt der Zähler doppelt. *Phase 2 (< 60 %):* Stillepuls jede 3. Runde. *Phase 3 (< 25 %):* Zähler-Reset auf 4, letzte Chance. Lehre: Begleiter zuerst, Schild vor dem Puls.
+
+**Ordenskommandant am Kharsgrat (Akt I Mitte, Duo, Lv. 24).** Ein Ordensmitglied führt Kraggoth. *Phase 1:* Feldwechsel Sandsturm-artig zwischen Sumpf → Stillefeld → Schwerefeld (je 3 Runden). *Phase 2 (< 50 %):* Der Kommandant ruft Verstärkung (2 Ordens-Echos). Dialog enthüllt Stillsteine (W2). Lehre: Gegen-Terrain legen (Klangfeld neutralisiert Stillefeld).
+
+**Stillkern im Morvenmoor (Akt I Ende, Trio, Lv. 28).** *Phase 1:* Umbracoil in einem versunkenen Becken; Nachklang-Heilung (Charge) jede 4. Runde. *Phase 2 (< 60 %):* Begleiter (Moorechos) setzen Anklänge, um gegen den Spieler zu kombinieren. *Phase 3 (< 25 %):* Zähler + Heilung gleichzeitig – der Spieler muss Starre/Verstummt oder Verzögerung einsetzen. Abschluss: Vision Ilens (W3).
+
+**Glaskoloss der Weite (Akt II, Trio, Lv. 42).** Dunmarsch, mit Glas überzogen. *Phase 1:* Spiegelung (erste Fähigkeit je Kategorie pro Runde reflektiert). *Phase 2 (< 70 %):* Großwelle auf die vollere Reihe. *Phase 3 (< 40 %):* Anschwellen setzt früh ein (Runde 12). Lehre: Status-Fähigkeit zuerst, Reveal beendet Spiegelung, Formation verteilen.
+
+**Venns Schatten (Akt II, Hvitfell, Trio, Lv. 50).** Tysvorn im Eis, gelenkt durch eine Stimme aus der Ferne. *Phase 1:* Taktraub gegen das schnellste Echo. *Phase 2 (< 60 %):* Stillezähler und Stillepuls im Wechsel. *Phase 3 (< 30 %):* Die Stimme spricht – Venns Silhouette erscheint in der Aurora (W6-Vorahnung). Lehre: Verzögern vor dem Raub (Vorgriff-Nutzung).
+
+**Kronensplitter-Wächter (Akt II, Ael'Dorun, Trio, Lv. 55).** Thaelarch hütet einen Splitter der Resonanzkrone. *Phase 1:* Klangpanzer rotiert (Arkan → Metall → Geist). *Phase 2 (< 70 %):* Schwachstelle am Helm (×1,6, 2 Runden). *Phase 3 (< 40 %):* Begleiter-Glyphen. *< 15 %:* Thaelarch kniet; Vision Maedryns (W7). Lehre: Chor-Vielfalt, Fokus-Feuer.
+
+**Missklang-Hydra (Akt III, Prismtiefen, Trio, Lv. 62).** Missgrath spaltet sich. *Phase 1:* Lastenklang stapelt GES-Malus. *Phase 2 (< 70 %):* Stimmspaltung – zwei Hälften müssen binnen 2 Runden fallen, sonst heilen sie sich zusammen. *Phase 3 (< 40 %):* Stillepuls jede 2. Runde. Lehre: Reinigen (Gruppe), Schadensverteilung, Flächen.
+
+**Aldric Venn mit der Resonanzkrone (Akt III, Nimbara, Trio, Lv. 68).** Venn führt Kronvaal, die Krone verstärkt beide. *Phase 1:* Klangpanzer + Taktraub. *Phase 2 (< 70 %):* Stillezähler; Venns Dialog zur „Ordnung gegen Leid“ (CANON §37). *Phase 3 (< 40 %):* Resonanzflut – beide Seiten Harmonie ×2: ein Crescendo-Duell. *< 15 %:* Kael greift ein (Story: Umkehr, K46). Lehre: alle Schichten.
+
+**Velnox – die Große Pause (Finale, Trio, Lv. 70).** *Phase 1 (100–75 %):* Stillepuls und Schwerebrunnen – die Welt verstummt. *Phase 2 (< 75 %):* Die zehn Ursprungsstimmen antworten: Resonanzflut je Runde einer anderen Klangfarbe (die Stimmen helfen dem Spieler). *Phase 3 (< 50 %):* Stillezähler 3 – erreicht er 0, setzt Velnox „Große Pause“ (Harmonie 0, Stillefeld). *Phase 4 (< 25 %):* Kampf endet nicht durch HP, sondern durch die **Entscheidung** des Spielers (Nachklang zurückgeben → „Neues Lied“; Velnox wieder binden → „Sanfte Stille“, K46). Der Kampf ist nicht verlierbar, sobald Phase 4 erreicht ist (Erzählhoheit, DR-09).
+
 **DR-09:** Story-Bosse sind auf „Wärter“ ohne Kombos/Formation schaffbar – Mechaniken sind über Grundwerkzeuge konterbar (Schild, Verzögern, Reihe räumen). Auf „Entspannt“ dauern Ankündigungen eine Runde länger.
 
 **Stille-Echos heilen:** Wie im Prolog etabliert, werden Stille-Echos durch einen Sieg geheilt, nicht gebunden; Lorncant, Vernaune und Umbracoil kehren danach als **normale Wildechos** in ihre Zonen zurück (Weltreaktion, DR-13).
