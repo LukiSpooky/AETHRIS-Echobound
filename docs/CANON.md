@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K14
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K15
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -286,6 +286,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-067 | Kalibrierte Auswahlgewichte als generierte Daten | K14 |
 | ADR-068 | Wetter-Typresonanz moderat (0,8–1,3), Ranked neutral | K14 |
 | ADR-069 | Resonanzsturm offline per Sturmstimmgabel | K14 |
+| ADR-070 | Switch 2: TOD-Irradiance-Blending statt Lumen | K15 |
+| ADR-071 | Eine globale Spieluhr, regionale Sonnenkurven | K15 |
+| ADR-072 | Mondzyklus 16 Spieltage (8 Phasen × 2) | K15 |
+| ADR-073 | 7-Tage-Woche mit Stilltag | K15 |
 
 ## §11 Change Requests
 
@@ -349,6 +353,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | DR-29 | Atemzug-Regel: ≥20 min Ruhe nach Intensität ≥7 | quer |
 | DR-30 | ≤ 800 m Hauptpfad zwischen zwei Klangbrunnen | S1 |
 | DR-31 | Aufträge nie einzige Quelle einer Belohnung | quer |
+| DR-32 | Jede Region in jeder Tagesphase ≥ 1 exklusive Aktivität | S1 |
 
 ## §14 Onboarding & Starter (K02 §8)
 
@@ -636,7 +641,7 @@ Spieler (trägt Ilens **Nachklang**) · Ysolde Varn (Mentorin, kennt das Erbe) �
 | Kharsholm | R02 | 4,2/2,2 | Felsstadt |
 | Morvenfurt | R03 | 5,4/4,8 | Kanalstadt, Freie Stimmen |
 | Qasr Sahrun | R04 | 4,1/5,9 | Fuß des Sonnenhof-Plateaus |
-| Q15 | Mondphasen (für seltene Spawns, z. B. Neumond in Sahrun) | K15 |
+| Q15 | ~~Mondphasen (für seltene Spawns, z. B. Neumond in Sahrun)~~ ✅ K15 §3.2 | K15 |
 | Schlackenwehr | R05 | 6,7/3,5 | Festungsstadt an der Lavawehr |
 | Hvitmark | R07 | 4,1/0,7 | Gletschertal; Kloster Schweigfels ≈ 3,3/1,1 |
 | Dorunsruh | R08 | 4,8/3,3 | Akademie-HQ |
@@ -859,3 +864,25 @@ Grenzen 0,8–1,3; kein Typ wirkungslos; **Ranked = Klar**; Fähigkeiten können
 | Tag `TimeOfDay.Day` | 07–19 | 08–18 | 06–20 |
 | Abenddämmerung `TimeOfDay.Dusk` | 19–21 | 18–20 | 20–22 |
 | Nacht `TimeOfDay.Night` | 21–05 | 20–06 | 22–04 |
+
+## §65 Spieluhr & Kalender (LOCKED, K15 §2–§3)
+
+- `UAethrisGameClock`: `int64 GameMinute`, 3 s Echtzeit je Spielminute, Start **Tag 1, 06:30**, nur vorwärts, Host-autoritativ (Replikation 1 Hz). Zeit vorspulen auf 05/12/19/00 Uhr. Uhr-UI optional (Kompass zeigt Sonne/Mond + Phase).
+- Woche = 7 Spieltage: Wurzeltag, Blatttag, Wassertag, Steintag, Windtag, Lichttag, **Stilltag** (General-Händler öffnen 2 h später). Keine Monate/Jahreszeiten.
+
+## §66 Mondphasen (LOCKED, K15 §3.2 · `Data/World/MoonPhases.csv` – löst Q15)
+
+Ein Mond („Lunar“, volkstümlich „der Schweigende“). 8 Phasen × 2 Spieltage = 16 Spieltage. Phasenindex = ((Spieltag − 1)/2 + 1) mod 8 (0 = Neumond); Tag 1 = Zunehmende Sichel, Vollmond Tag 7–8. Nachtlicht +0…0,25 lx; nachtaktive Spawns ×0,8 (Neumond) … ×1,2 (Vollmond).
+
+## §67 Aktivitätsmuster (LOCKED, K15 §5 · `Data/World/ActivityCurves.csv`)
+
+- Genau ein Muster je Art (zählt für DR-02): `Behavior.Activity.Diurnal` (Nacht 100/Dämm. 500/Tag 950 ‰), `Nocturnal` (950/500/100), `Crepuscular` (150/1000/150–400), `Cathemeral` (650 konstant), `Midday` (80/80–450/450–1000).
+- Spawn-Gewicht × Aktivität (Minimum 80 ‰); < 300 ‰ → Ruhe/Schlaf an Habitaten: Wahrnehmung −50 %, Einstimmen +1 Ruhestufe, Wecken je nach Temperament.
+- **DR-32:** Jede Region bietet in jeder Tagesphase ≥ 1 exklusive Aktivität.
+
+## §68 Beleuchtung (LOCKED, K15 §6–§9 · `Data/World/TimeOfDayCurves.csv`)
+
+- Sonne astronomisch 06:00 auf / 20:00 unter (Mitte der Dämmerungen), Max. 55° um 13:00 (Hvitfell Max. 30°, Bogen 07–19; Nimbara 05–21). Goldene Stunde = Dämmerungen.
+- Nachtlesbarkeit L-N1 (Mittelgrau ≥ 18 %), L-N2 (Laternen alle 60–80 m), L-N3 (Interaktions-Emissive nachts), L-N4 (Biolumineszenz je Biom), L-N5 (mechanische Dunkelheit nur in Höhlen/Gewölben). Laternen 19:30–05:30; Fensterlicht 18–23 Uhr deterministisch je Haus-ID.
+- Regionale Licht-Profile `DA_LightProfile_R##`; Modulationsreihenfolge Basiskurve → Region → Wetter → Story (`MPC_Silence`); Grenzüberblendung 300 m.
+- Current-Gen: Sonne + Mond als Directional Lights, Sky Atmosphere, Volumetric Clouds, SkyLight Real-Time Capture, Lumen, VSM. **Switch 2:** TOD-Irradiance-Blending (4 Schlüsselzeiten je Region, ~45 MB, Zustandsvarianten für R05/R08), SkyLight-Capture alle 10 s, DFAO, SSGI (½), CSM 3 Kaskaden; Innenräume zusätzlich Lightmaps.

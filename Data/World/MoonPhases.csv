@@ -1,0 +1,9 @@
+Name,Tag,DisplayName,IlluminationPercent,NightLuxAdd,NocturnalSpawnPermille
+M1,Moon.NewMoon,Neumond,0,0.0,800
+M2,Moon.WaxingCrescent,Zunehmende Sichel,25,0.062,900
+M3,Moon.FirstQuarter,Erstes Viertel,50,0.125,1000
+M4,Moon.WaxingGibbous,Zunehmender Mond,75,0.188,1100
+M5,Moon.FullMoon,Vollmond,100,0.25,1200
+M6,Moon.WaningGibbous,Abnehmender Mond,75,0.188,1100
+M7,Moon.LastQuarter,Letztes Viertel,50,0.125,1000
+M8,Moon.WaningCrescent,Abnehmende Sichel,25,0.062,900
