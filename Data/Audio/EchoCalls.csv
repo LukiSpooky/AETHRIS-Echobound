@@ -1,0 +1,258 @@
+# Rufprofile je Art (K55 §5, generiert von tools/ref/aethris_music.py). Tonhöhe aus Primärtyp (Skalenstufe) und Größe (Oktave); Tempo aus dem Klangmal (BPM) oder Größe.
+Name,Pitch,BPM,Rhythm,Timbre
+ECHO_001,G5,52,Rufreihe im festen Takt,Flöte + Blätterrascheln
+ECHO_002,G4,56,Rufreihe im festen Takt,Flöte + Blätterrascheln + Oberton Pfeifen
+ECHO_003,G3,44,Rufreihe im festen Takt,Flöte + Blätterrascheln + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_004,D5,60,Einzelruf,Tiefe Trommel + Brummen
+ECHO_005,D4,90,Einzelruf,Tiefe Trommel + Brummen
+ECHO_006,D2,40,Einzelruf,Tiefe Trommel + Brummen + Oberton Subbass
+ECHO_007,E6,96,Rufreihe im festen Takt,Pfeifen + Flatterzunge
+ECHO_008,E5,104,Einzelruf,Pfeifen + Flatterzunge
+ECHO_009,E3,88,Einzelruf,Pfeifen + Flatterzunge + Oberton Celesta
+ECHO_010,D5,76,Einzelruf,Reines Sinus-Ensemble (Oktaven)
+ECHO_011,D4,56,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven)
+ECHO_012,D3,44,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven) + Oberton Flöte
+ECHO_013,E3,44,Rufreihe im festen Takt,Stimme ohne Worte (hauchig) + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_014,G5,58,Einzelruf,Flöte + Blätterrascheln
+ECHO_015,G3,54,Einzelruf,Flöte + Blätterrascheln
+ECHO_016,G2,36,Einzelruf,Flöte + Blätterrascheln + Oberton Celesta
+ECHO_017,G2,36,Einzelruf,Harfe + rückwärts gespielte Töne + Oberton Flöte
+ECHO_018,C7,96,Einzelruf,Celesta + Obertöne
+ECHO_019,C6,72,Einzelruf,Celesta + Obertöne + Oberton Stimme ohne Worte (hauchig)
+ECHO_020,E4,56,Einzelruf,Stimme ohne Worte (hauchig) + Oberton Celesta
+ECHO_021,F6,96,Rufreihe im festen Takt,Wassergläser + Bogen
+ECHO_022,F4,56,Rufreihe im festen Takt,Wassergläser + Bogen + Oberton Flöte
+ECHO_023,F6,96,Einzelruf,Klarinette (gedämpft) + Blubbern
+ECHO_024,F5,72,Einzelruf,Klarinette (gedämpft) + Blubbern + Oberton Stimme ohne Worte (hauchig)
+ECHO_025,E6,96,Schwarmchor (gestaffelt),Pfeifen + Flatterzunge
+ECHO_026,E5,72,Rufreihe im festen Takt,Pfeifen + Flatterzunge + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_027,G5,72,Einzelruf,Flöte + Blätterrascheln
+ECHO_028,G4,56,Einzelruf,Flöte + Blätterrascheln + Oberton Klarinette (gedämpft)
+ECHO_029,D5,72,Einzelruf,Tiefe Trommel + Brummen
+ECHO_030,D4,56,Einzelruf,Subbass + Zug + Oberton Tiefe Trommel
+ECHO_031,H5,72,Einzelruf,Amboss + Saitenzupfen
+ECHO_032,A5,72,Einzelruf,Glimmen + Holzbläser-Atem
+ECHO_033,D6,96,Einzelruf,Tiefe Trommel + Brummen
+ECHO_034,D3,62,Einzelruf,Tiefe Trommel + Brummen
+ECHO_035,D3,44,Einzelruf,Tiefe Trommel + Brummen + Oberton Amboss
+ECHO_036,D3,44,Einzelruf,Subbass + Zug + Oberton Tiefe Trommel
+ECHO_037,D5,72,Einzelruf,Subbass + Zug
+ECHO_038,D4,56,Einzelruf,Subbass + Zug + Oberton Tiefe Trommel
+ECHO_039,D3,44,Einzelruf,Subbass + Zug
+ECHO_040,H5,72,Einzelruf,Amboss + Saitenzupfen
+ECHO_041,H4,56,Einzelruf,Amboss + Saitenzupfen + Oberton Tiefe Trommel
+ECHO_042,H3,44,Einzelruf,Amboss + Saitenzupfen + Oberton Tiefe Trommel
+ECHO_043,E6,96,Einzelruf,Pfeifen + Flatterzunge
+ECHO_044,E4,56,Einzelruf,Pfeifen + Flatterzunge
+ECHO_045,E3,44,Einzelruf,Pfeifen + Flatterzunge + Oberton Amboss
+ECHO_046,D5,72,Rufreihe im festen Takt,Tiefe Trommel + Brummen
+ECHO_047,D4,56,Rufreihe im festen Takt,Tiefe Trommel + Brummen + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_048,D5,72,Einzelruf,Tiefe Trommel + Brummen
+ECHO_049,D3,44,Einzelruf,Tiefe Trommel + Brummen + Oberton Wassergläser
+ECHO_050,H5,72,Einzelruf,Glockenspiel + Reibglas
+ECHO_051,H4,56,Einzelruf,Glockenspiel + Reibglas + Oberton Pfeifen
+ECHO_052,A5,72,Einzelruf,Klangschalen
+ECHO_053,A4,56,Einzelruf,Klangschalen + Oberton Tiefe Trommel
+ECHO_054,A6,96,Einzelruf,Glimmen + Holzbläser-Atem
+ECHO_055,C5,56,Einzelruf,Celesta + Obertöne + Oberton Glimmen
+ECHO_056,E4,56,Nachahmung fremder Rufe,Stimme ohne Worte (hauchig)
+ECHO_057,D5,72,Klickfolge (Ortung),Reines Sinus-Ensemble (Oktaven)
+ECHO_058,G4,56,Einzelruf,Harfe + rückwärts gespielte Töne + Oberton Tiefe Trommel
+ECHO_059,F6,96,Rufreihe im festen Takt,Klarinette (gedämpft) + Blubbern
+ECHO_060,F5,72,Einzelruf,Klarinette (gedämpft) + Blubbern + Oberton Wassergläser
+ECHO_061,F4,56,Einzelruf,Klarinette (gedämpft) + Blubbern + Oberton Wassergläser
+ECHO_062,F6,96,Einzelruf,Wassergläser + Bogen
+ECHO_063,F4,56,Einzelruf,Wassergläser + Bogen
+ECHO_064,F3,44,Einzelruf,Wassergläser + Bogen + Oberton Stimme ohne Worte (hauchig)
+ECHO_065,E6,96,Einzelruf,Stimme ohne Worte (hauchig)
+ECHO_066,E5,72,Nachahmung fremder Rufe,Stimme ohne Worte (hauchig) + Oberton Celesta
+ECHO_067,E4,56,Einzelruf,Stimme ohne Worte (hauchig) + Oberton Celesta
+ECHO_068,G4,56,Einzelruf,Harfe + rückwärts gespielte Töne + Oberton Stimme ohne Worte (hauchig)
+ECHO_069,G6,96,Einzelruf,Flöte + Blätterrascheln
+ECHO_070,G5,72,Einzelruf,Flöte + Blätterrascheln + Oberton Klarinette (gedämpft)
+ECHO_071,G3,44,Einzelruf,Flöte + Blätterrascheln + Oberton Klarinette (gedämpft)
+ECHO_072,F6,96,Rufreihe im festen Takt,Klarinette (gedämpft) + Blubbern
+ECHO_073,F5,72,Schwarmchor (gestaffelt),Klarinette (gedämpft) + Blubbern + Oberton Pfeifen
+ECHO_074,F5,72,Einzelruf,Klarinette (gedämpft) + Blubbern
+ECHO_075,F4,56,Einzelruf,Klarinette (gedämpft) + Blubbern + Oberton Wassergläser
+ECHO_076,F5,72,Einzelruf,Wassergläser + Bogen
+ECHO_077,F3,44,Einzelruf,Wassergläser + Bogen + Oberton Flöte
+ECHO_078,Pause (Rauschen),72,Einzelruf,Gefiltertes Rauschen (Pause)
+ECHO_079,Pause (Rauschen),56,Einzelruf,Gefiltertes Rauschen (Pause) + Oberton Wassergläser
+ECHO_080,G6,96,Einzelruf,Flöte + Blätterrascheln
+ECHO_081,E4,56,Rufreihe im festen Takt,Stimme ohne Worte (hauchig) + Oberton Flöte
+ECHO_082,E3,44,Einzelruf,Pfeifen + Flatterzunge + Oberton Wassergläser
+ECHO_083,D4,56,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven) + Oberton Klarinette (gedämpft)
+ECHO_084,D3,44,Einzelruf,Tiefe Trommel + Brummen + Oberton Flöte
+ECHO_085,F4,56,Einzelruf,Wassergläser + Bogen
+ECHO_086,F4,56,Einzelruf,Wassergläser + Bogen
+ECHO_087,F2,36,Einzelruf,Wassergläser + Bogen + Oberton Pfeifen
+ECHO_088,F5,72,Einzelruf,Wassergläser + Bogen
+ECHO_089,F4,56,Einzelruf,Wassergläser + Bogen
+ECHO_090,F3,44,Einzelruf,Wassergläser + Bogen + Oberton Harfe
+ECHO_091,E6,96,Einzelruf,Pfeifen + Flatterzunge
+ECHO_092,E5,72,Einzelruf,Pfeifen + Flatterzunge + Oberton Wassergläser
+ECHO_093,E3,44,Einzelruf,Pfeifen + Flatterzunge + Oberton Wassergläser
+ECHO_094,F6,96,Schwarmchor (gestaffelt),Wassergläser + Bogen
+ECHO_095,F5,72,Einzelruf,Wassergläser + Bogen + Oberton Celesta
+ECHO_096,F3,44,Einzelruf,Wassergläser + Bogen + Oberton Celesta
+ECHO_097,G3,44,Einzelruf,Harfe + rückwärts gespielte Töne + Oberton Wassergläser
+ECHO_098,E6,96,Einzelruf,Pfeifen + Flatterzunge
+ECHO_099,E5,72,Einzelruf,Pfeifen + Flatterzunge + Oberton Celesta
+ECHO_100,D5,72,Einzelruf,Tiefe Trommel + Brummen
+ECHO_101,D3,44,Einzelruf,Tiefe Trommel + Brummen + Oberton Wassergläser
+ECHO_102,C7,96,Schwarmchor (gestaffelt),Celesta + Obertöne
+ECHO_103,C6,72,Einzelruf,Celesta + Obertöne + Oberton Wassergläser
+ECHO_104,D4,56,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven)
+ECHO_105,D2,36,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven) + Oberton Wassergläser
+ECHO_106,G6,96,Einzelruf,Flöte + Blätterrascheln
+ECHO_107,F4,56,Einzelruf,Klarinette (gedämpft) + Blubbern + Oberton Flöte
+ECHO_108,H5,72,Einzelruf,Amboss + Saitenzupfen + Oberton Wassergläser
+ECHO_109,E4,56,Nachahmung fremder Rufe,Stimme ohne Worte (hauchig) + Oberton Wassergläser
+ECHO_110,A5,72,Einzelruf,Klangschalen + Oberton Wassergläser
+ECHO_111,C7,96,Einzelruf,Celesta + Obertöne
+ECHO_112,C6,72,Einzelruf,Celesta + Obertöne
+ECHO_113,C5,56,Einzelruf,Celesta + Obertöne + Oberton Glimmen
+ECHO_114,D4,56,Einzelruf,Tiefe Trommel + Brummen
+ECHO_115,D3,44,Einzelruf,Tiefe Trommel + Brummen
+ECHO_116,D2,36,Einzelruf,Tiefe Trommel + Brummen + Oberton Subbass
+ECHO_117,D6,96,Einzelruf,Subbass + Zug
+ECHO_118,D5,72,Einzelruf,Subbass + Zug + Oberton Tiefe Trommel
+ECHO_119,D4,56,Einzelruf,Subbass + Zug + Oberton Celesta
+ECHO_120,A5,72,Einzelruf,Glimmen + Holzbläser-Atem
+ECHO_121,A3,44,Einzelruf,Glimmen + Holzbläser-Atem + Oberton Tiefe Trommel
+ECHO_122,A1,28,Einzelruf,Glimmen + Holzbläser-Atem + Oberton Tiefe Trommel
+ECHO_123,F6,96,Einzelruf,Klarinette (gedämpft) + Blubbern
+ECHO_124,F4,56,Einzelruf,Klarinette (gedämpft) + Blubbern + Oberton Tiefe Trommel
+ECHO_125,E6,96,Schwarmchor (gestaffelt),Pfeifen + Flatterzunge
+ECHO_126,E4,56,Schwarmchor (gestaffelt),Pfeifen + Flatterzunge + Oberton Tiefe Trommel
+ECHO_127,G5,72,Nachahmung fremder Rufe,Harfe + rückwärts gespielte Töne
+ECHO_128,G4,56,Nachahmung fremder Rufe,Harfe + rückwärts gespielte Töne + Oberton Celesta
+ECHO_129,C7,96,Schwarmchor (gestaffelt),Celesta + Obertöne
+ECHO_130,C6,72,Einzelruf,Celesta + Obertöne + Oberton Klangschalen
+ECHO_131,D5,72,Einzelruf,Tiefe Trommel + Brummen
+ECHO_132,D3,44,Einzelruf,Tiefe Trommel + Brummen + Oberton Glimmen
+ECHO_133,H4,56,Einzelruf,Amboss + Saitenzupfen + Oberton Subbass
+ECHO_134,E4,56,Rufreihe im festen Takt,Stimme ohne Worte (hauchig) + Oberton Pfeifen
+ECHO_135,A6,96,Einzelruf,Glimmen + Holzbläser-Atem
+ECHO_136,A5,72,Einzelruf,Glimmen + Holzbläser-Atem
+ECHO_137,A4,56,Einzelruf,Glimmen + Holzbläser-Atem + Oberton Tiefe Trommel
+ECHO_138,H5,72,Einzelruf,Amboss + Saitenzupfen
+ECHO_139,H4,56,Einzelruf,Amboss + Saitenzupfen + Oberton Glimmen
+ECHO_140,H3,44,Einzelruf,Amboss + Saitenzupfen + Oberton Glimmen
+ECHO_141,A6,96,Einzelruf,Glimmen + Holzbläser-Atem
+ECHO_142,A5,72,Einzelruf,Glimmen + Holzbläser-Atem
+ECHO_143,A4,56,Einzelruf,Glimmen + Holzbläser-Atem + Oberton Gefiltertes Rauschen (Pause)
+ECHO_144,D5,72,Einzelruf,Tiefe Trommel + Brummen
+ECHO_145,D4,56,Einzelruf,Tiefe Trommel + Brummen + Oberton Klangschalen
+ECHO_146,D3,44,Einzelruf,Tiefe Trommel + Brummen + Oberton Klangschalen
+ECHO_147,A3,44,Einzelruf,Glimmen + Holzbläser-Atem
+ECHO_148,A2,36,Einzelruf,Glimmen + Holzbläser-Atem + Oberton Subbass
+ECHO_149,Pause (Rauschen),72,Einzelruf,Gefiltertes Rauschen (Pause)
+ECHO_150,Pause (Rauschen),56,Einzelruf,Gefiltertes Rauschen (Pause) + Oberton Glimmen
+ECHO_151,A5,72,Einzelruf,Klangschalen
+ECHO_152,A4,56,Einzelruf,Klangschalen + Oberton Glimmen
+ECHO_153,E5,72,Einzelruf,Pfeifen + Flatterzunge
+ECHO_154,H3,44,Einzelruf,Amboss + Saitenzupfen + Oberton Pfeifen
+ECHO_155,D3,44,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven) + Oberton Tiefe Trommel
+ECHO_156,D4,56,Einzelruf,Subbass + Zug + Oberton Glimmen
+ECHO_157,H6,96,Einzelruf,Glockenspiel + Reibglas
+ECHO_158,H5,72,Einzelruf,Glockenspiel + Reibglas
+ECHO_159,H4,56,Einzelruf,Glockenspiel + Reibglas + Oberton Celesta
+ECHO_160,H4,56,Einzelruf,Glockenspiel + Reibglas
+ECHO_161,H3,44,Einzelruf,Glockenspiel + Reibglas + Oberton Tiefe Trommel
+ECHO_162,H2,36,Einzelruf,Glockenspiel + Reibglas + Oberton Tiefe Trommel
+ECHO_163,H6,96,Einzelruf,Glockenspiel + Reibglas
+ECHO_164,H5,72,Einzelruf,Glockenspiel + Reibglas + Oberton Stimme ohne Worte (hauchig)
+ECHO_165,H3,44,Einzelruf,Glockenspiel + Reibglas + Oberton Stimme ohne Worte (hauchig)
+ECHO_166,Pause (Rauschen),44,Einzelruf,Gefiltertes Rauschen (Pause) + Oberton Glockenspiel
+ECHO_167,C5,56,Einzelruf,Celesta + Obertöne
+ECHO_168,C4,44,Einzelruf,Celesta + Obertöne + Oberton Glockenspiel
+ECHO_169,C3,36,Rufreihe im festen Takt,Celesta + Obertöne + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_170,D5,72,Einzelruf,Tiefe Trommel + Brummen
+ECHO_171,D3,44,Einzelruf,Tiefe Trommel + Brummen + Oberton Glockenspiel
+ECHO_172,E5,72,Rufreihe im festen Takt,Stimme ohne Worte (hauchig)
+ECHO_173,E4,56,Rufreihe im festen Takt,Stimme ohne Worte (hauchig) + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_174,D5,72,Klickfolge (Ortung),Reines Sinus-Ensemble (Oktaven)
+ECHO_175,D3,44,Klickfolge (Ortung),Reines Sinus-Ensemble (Oktaven) + Oberton Tiefe Trommel
+ECHO_176,A6,96,Schwarmchor (gestaffelt),Klangschalen
+ECHO_177,E4,56,Schwarmchor (gestaffelt),Pfeifen + Flatterzunge + Oberton Klangschalen
+ECHO_178,Pause (Rauschen),36,Einzelruf,Gefiltertes Rauschen (Pause) + Oberton Glockenspiel
+ECHO_179,G5,72,Einzelruf,Harfe + rückwärts gespielte Töne
+ECHO_180,G4,56,Einzelruf,Harfe + rückwärts gespielte Töne
+ECHO_181,G3,44,Einzelruf,Harfe + rückwärts gespielte Töne + Oberton Celesta
+ECHO_182,G5,72,Einzelruf,Harfe + rückwärts gespielte Töne
+ECHO_183,E4,56,Einzelruf,Stimme ohne Worte (hauchig) + Oberton Harfe
+ECHO_184,E3,44,Einzelruf,Stimme ohne Worte (hauchig) + Oberton Amboss
+ECHO_185,H6,96,Einzelruf,Amboss + Saitenzupfen
+ECHO_186,H5,72,Einzelruf,Amboss + Saitenzupfen + Oberton Harfe
+ECHO_187,H4,56,Einzelruf,Amboss + Saitenzupfen + Oberton Subbass
+ECHO_188,E4,56,Einzelruf,Stimme ohne Worte (hauchig)
+ECHO_189,E3,44,Einzelruf,Stimme ohne Worte (hauchig) + Oberton Tiefe Trommel
+ECHO_190,E2,36,Einzelruf,Stimme ohne Worte (hauchig) + Oberton Harfe
+ECHO_191,Pause (Rauschen),72,Einzelruf,Gefiltertes Rauschen (Pause)
+ECHO_192,Pause (Rauschen),56,Einzelruf,Gefiltertes Rauschen (Pause) + Oberton Harfe
+ECHO_193,D6,96,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven)
+ECHO_194,D5,72,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven) + Oberton Stimme ohne Worte (hauchig)
+ECHO_195,C6,72,Einzelruf,Celesta + Obertöne
+ECHO_196,D4,56,Einzelruf,Subbass + Zug + Oberton Celesta
+ECHO_197,D3,44,Einzelruf,Tiefe Trommel + Brummen + Oberton Harfe
+ECHO_198,G3,44,Rufreihe im festen Takt,Harfe + rückwärts gespielte Töne + Oberton Amboss
+ECHO_199,A6,96,Klickfolge (Ortung),Klangschalen
+ECHO_200,A5,72,Klickfolge (Ortung),Klangschalen + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_201,A3,44,Klickfolge (Ortung),Klangschalen + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_202,Pause (Rauschen),44,Klickfolge (Ortung),Gefiltertes Rauschen (Pause) + Oberton Klangschalen
+ECHO_203,A5,72,Einzelruf,Klangschalen
+ECHO_204,A3,44,Einzelruf,Klangschalen + Oberton Tiefe Trommel
+ECHO_205,A2,36,Einzelruf,Klangschalen + Oberton Subbass
+ECHO_206,D5,72,Einzelruf,Subbass + Zug
+ECHO_207,D4,56,Einzelruf,Subbass + Zug + Oberton Gefiltertes Rauschen (Pause)
+ECHO_208,D3,44,Einzelruf,Subbass + Zug + Oberton Klangschalen
+ECHO_209,A6,96,Einzelruf,Klangschalen
+ECHO_210,A5,72,Einzelruf,Klangschalen + Oberton Celesta
+ECHO_211,H5,72,Einzelruf,Amboss + Saitenzupfen
+ECHO_212,H4,56,Einzelruf,Amboss + Saitenzupfen + Oberton Tiefe Trommel
+ECHO_213,Pause (Rauschen),72,Einzelruf,Gefiltertes Rauschen (Pause)
+ECHO_214,Pause (Rauschen),56,Einzelruf,Gefiltertes Rauschen (Pause) + Oberton Klangschalen
+ECHO_215,G6,96,Einzelruf,Harfe + rückwärts gespielte Töne
+ECHO_216,G4,56,Einzelruf,Harfe + rückwärts gespielte Töne + Oberton Klangschalen
+ECHO_217,F4,56,Einzelruf,Klarinette (gedämpft) + Blubbern + Oberton Gefiltertes Rauschen (Pause)
+ECHO_218,D3,44,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven) + Oberton Klangschalen
+ECHO_219,E4,56,Einzelruf,Pfeifen + Flatterzunge
+ECHO_220,E2,36,Rufreihe im festen Takt,Pfeifen + Flatterzunge + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_221,E1,28,Einzelruf,Pfeifen + Flatterzunge + Oberton Subbass
+ECHO_222,E6,96,Schwarmchor (gestaffelt),Pfeifen + Flatterzunge
+ECHO_223,E5,72,Einzelruf,Pfeifen + Flatterzunge + Oberton Celesta
+ECHO_224,E3,44,Einzelruf,Pfeifen + Flatterzunge + Oberton Celesta
+ECHO_225,C7,96,Einzelruf,Celesta + Obertöne
+ECHO_226,C6,72,Einzelruf,Celesta + Obertöne + Oberton Pfeifen
+ECHO_227,C5,56,Rufreihe im festen Takt,Celesta + Obertöne + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_228,Pause (Rauschen),56,Einzelruf,Gefiltertes Rauschen (Pause) + Oberton Celesta
+ECHO_229,D6,96,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven)
+ECHO_230,D4,56,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven) + Oberton Pfeifen
+ECHO_231,D6,96,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven)
+ECHO_232,D4,56,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven) + Oberton Celesta
+ECHO_233,D4,56,Einzelruf,Subbass + Zug
+ECHO_234,D2,36,Einzelruf,Subbass + Zug + Oberton Tiefe Trommel
+ECHO_235,D5,72,Einzelruf,Subbass + Zug
+ECHO_236,G4,56,Einzelruf,Harfe + rückwärts gespielte Töne + Oberton Subbass
+ECHO_237,H6,96,Schwarmchor (gestaffelt),Glockenspiel + Reibglas
+ECHO_238,A4,56,Schwarmchor (gestaffelt),Klangschalen + Oberton Pfeifen
+ECHO_239,C3,36,Einzelruf,Celesta + Obertöne + Oberton Pfeifen
+ECHO_240,G3,44,Einzelruf,Harfe + rückwärts gespielte Töne + Oberton Celesta
+ECHO_241,G2,36,Rufreihe im festen Takt,Flöte + Blätterrascheln + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_242,D1,28,Einzelruf,Tiefe Trommel + Brummen + Oberton Subbass
+ECHO_243,F3,44,Einzelruf,Klarinette (gedämpft) + Blubbern + Oberton Stimme ohne Worte (hauchig)
+ECHO_244,F1,28,Einzelruf,Wassergläser + Bogen + Oberton Pfeifen
+ECHO_245,C3,36,Einzelruf,Celesta + Obertöne + Oberton Harfe
+ECHO_246,A1,28,Einzelruf,Glimmen + Holzbläser-Atem + Oberton Amboss
+ECHO_247,H1,28,Rufreihe im festen Takt,Glockenspiel + Reibglas + Oberton Celesta
+ECHO_248,E2,36,Einzelruf,Stimme ohne Worte (hauchig) + Oberton Harfe
+ECHO_249,A1,28,Klickfolge (Ortung),Klangschalen + Oberton Reines Sinus-Ensemble (Oktaven)
+ECHO_250,D3,44,Rufreihe im festen Takt,Reines Sinus-Ensemble (Oktaven) + Oberton Celesta
+ECHO_251,Pause (Rauschen),44,Einzelruf,Gefiltertes Rauschen (Pause) + Oberton Subbass
+ECHO_252,D4,56,Einzelruf,Reines Sinus-Ensemble (Oktaven) + Oberton Harfe
+ECHO_253,A5,72,Nachahmung fremder Rufe,Klangschalen + Oberton Stimme ohne Worte (hauchig)
+ECHO_254,F1,28,Einzelruf,Klarinette (gedämpft) + Blubbern + Oberton Flöte
+ECHO_255,D1,28,Einzelruf,Subbass + Zug + Oberton Amboss
+ECHO_256,C3,36,Einzelruf,Celesta + Obertöne + Oberton Gefiltertes Rauschen (Pause)

@@ -1,0 +1,14 @@
+# Leitmotive (K55 §3; Szenen K44–K46). Form = musikalische Gestalt; Source = Ableitung aus dem Weltlied-Motiv.
+Name,DisplayName,Form,Instrumentation,Source,FirstHeard,Notes
+LM_WELTLIED,Weltlied,7-Ton-Motiv D–A–G–F–E–C–D (§2),Volles Orchester + 10 Stimmgruppen,Original,MQ_P01 Kalte Eröffnung (Abbruch),Erst im Finale („Neues Lied“) vollständig und zehnstimmig frei
+LM_STILLE,Stille,Pausen im Takt; gedämpfte Streicher; Motivtöne mit Lücken,Gedämpfte Streicher + Atem,Weltlied mit Pausen statt Tönen 2/4/6,MQ_P01 Stillezone,Velnox Phase 4: ein gehaltener Ton
+LM_ILEN,Ilen,Weltlied-Töne 1–3–5–7 als Summen (Moll-Färbung),Frauenstimme summend + Harfe,Arpeggio 1/3/5/7,MQ_A1_08 Vision (fragmentiert),Ysoldes Summen ist Ilens Motiv; im Brief in Dur aufgelöst
+LM_KRONE,Krone,Zehn Töne unisono (D in allen Oktaven),Blech + Orgel,Weltlied auf Ton 1 eingefroren,MQ_A2_07 Gewölbe,Erklingt nach MQ_A3_07 nie wieder
+LM_WAERTER,Wärter-Thema,Weltlied 1–4 + eigene Antwortphrase,Gitarre/Laute + Streicher,Weltlied Kopf,MQ_P01 Erstresonanz,Lagerfeuer-Fassungen
+LM_ORDEN,Orden der Stille,Glocken; nach jedem Schlag 2 Takte Stille,Glocken + Kontrabass,Stille-Motiv,MQ_A1_06,Nach W6 gebrochen (Glocke verstimmt)
+LM_AKADEMIE,Akademie,Streicher-Kanon über Weltlied 1–2,Streichquartett,Weltlied Kopf als Kanon,MQ_A1_07 Venns Rede,Kippt in Moll im Gewölbe (W6)
+LM_FREIE,Freie Stimmen,Trommeln und Rufe; Weltlied 5–7 synkopiert,Trommeln + Chor,Weltlied Schluss,MQ_A1_04,Unterstadt-Fest
+LM_KONTOR,Goldklang-Kontor,Walzer-Takt; Glocke auf Zählzeit 1,Akkordeon + Glocke,Weltlied 4–5,MQ_A1_05,Glockenflut-Fest
+LM_KAEL,Kael,Wärter-Thema rückwärts (Krebs),Klavier + Violine,Wärter-Thema Krebs,MQ_P01,In Akademie-Instrumentierung nach W6; zurückgewonnen bei Kaels Eingriff
+LM_WENDELIN,Wendelin,Spieluhr; Weltlied 1–7 in Spieldose-Register,Spieluhr,Weltlied (hoch),MQ_A2_01 Archiv,
+LM_ECHO_FIRST,Erstresonanz,Ruf des Starters + Wärter-Thema,Starter-Timbre + Gitarre,Typ-Ton des Starters,MQ_P01,

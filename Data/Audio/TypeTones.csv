@@ -1,0 +1,17 @@
+# Typ-Klänge (K55 §5). Alle Rufe liegen in der Aethrischen Skala (D-Dorisch: D E F G A H C). Degree 1–7 (D=1); Leere = Pause (kein Ton, gefiltertes Rauschen). Timbre = Klangfarbe der Synthese (MetaSounds-Patch).
+Name,Degree,Timbre,Family,Character
+Ember,5,Glimmen + Holzbläser-Atem,Bläser,"Warm, knisternd, steigt"
+Tide,3,Wassergläser + Bogen,Glas/Streicher,"Wellend, Legato"
+Stone,1,Tiefe Trommel + Brummen,Perkussion,"Dumpf, tragend"
+Storm,2,Pfeifen + Flatterzunge,Bläser,"Schnell, Triller"
+Bloom,4,Flöte + Blätterrascheln,Holzbläser,"Weich, atmend"
+Frost,6,Glockenspiel + Reibglas,Idiophone,"Klar, kühl, kurz"
+Void,0,Gefiltertes Rauschen (Pause),Stille,Abwesenheit; erklingt als Lücke
+Light,7,Celesta + Obertöne,Idiophone,"Hell, schwebend"
+Venom,3,Klarinette (gedämpft) + Blubbern,Holzbläser,Schräg-gleitend (Portamento innerhalb der Skala)
+Metal,6,Amboss + Saitenzupfen,Metall,"Hart, präzise"
+Spirit,2,Stimme ohne Worte (hauchig),Chor,"Fern, hallend"
+Crystal,5,Klangschalen,Idiophone,Langer Nachklang
+Sound,1,Reines Sinus-Ensemble (Oktaven),Synthese,"Vollkommen, sammelnd"
+Gravity,1,Subbass + Zug,Tiefbass,"Sehr tief, langsam"
+Arcane,4,Harfe + rückwärts gespielte Töne,Saiten,"Rätselhaft, Kanon"

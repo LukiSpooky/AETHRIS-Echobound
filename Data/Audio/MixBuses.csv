@@ -1,0 +1,11 @@
+# Mix-Busse (K55 §11). Priority für Voice-Stealing (1 = nie stehlen). Duck = senkt diese Busse um dB, wenn aktiv.
+Name,Parent,Priority,DefaultDb,MaxVoicesPS5,MaxVoicesSwitch2,Duck,Notes
+BUS_MASTER,–,1,0,192,96,–,
+BUS_DIALOG,BUS_MASTER,1,0,8,6,BUS_MUSIC:-6|BUS_AMBIENT:-4|BUS_ECHO:-3,Untertitel immer synchron
+BUS_MUSIC,BUS_MASTER,2,-4,24,16,–,Stems über Quartz
+BUS_ECHO,BUS_MASTER,2,-2,48,24,–,Rufe der Echos (MetaSounds)
+BUS_COMBAT,BUS_MASTER,2,-1,40,20,BUS_AMBIENT:-6,"Fähigkeiten, Treffer"
+BUS_SENSE,BUS_MASTER,1,0,8,6,BUS_AMBIENT:-6|BUS_ECHO:-3,"Resonanzsinn, Frequenzwelle – Gameplay-Signale haben Vorrang"
+BUS_AMBIENT,BUS_MASTER,3,-6,48,24,–,"Biom, Wetter, Stadt"
+BUS_UI,BUS_MASTER,2,-6,8,6,–,Weltlied-Skala
+BUS_BARK,BUS_DIALOG,3,-2,4,2,–,Barks (globaler Cooldown K53)

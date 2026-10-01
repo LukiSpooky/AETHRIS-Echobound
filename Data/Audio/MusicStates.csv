@@ -1,0 +1,16 @@
+# Adaptive Musikzustände (K55 §4). Priority 1 (höchste). Layers = Stems, die in diesem Zustand spielen. Transition = Quartz-Quantisierung.
+Name,Priority,Trigger,Layers,Transition,Intensity,Notes
+MS_STORY,1,Zwischensequenz/Szene,Partitur der Szene,Szenenschnitt,–,Sequencer steuert
+MS_DECISION,1,Finale Phase 4 / SCR_DECISION,Gehaltener Ton,sofort,–,Keine Zeitgrenze (K46)
+MS_BOSS,2,Bosskampf,Boss-Thema + Phasen-Stems,Taktgrenze,Phase 1–4,Phasenwechsel auf nächster Taktgrenze
+MS_ARENA,2,Arenakampf,Arena-Fanfare (Region) + Kampf-Stems,Taktgrenze,Harmonie 0–100 → 3 Stufen,Typ-Variation des Arenameisters
+MS_COMBAT_TRAINER,3,Wärterkampf,Kampf-Thema Region,2 Schläge,Harmonie → 3 Stufen,
+MS_COMBAT_WILD,3,Wildkampf,Kurzes Kampf-Motiv + Ambient,1 Schlag,1 Stufe,Kurze Kämpfe (DR-11) – kein langer Aufbau
+MS_BOND,3,Anschlag-Phase,Weltlied-Ton der Art + Frequenzwelle,sofort,–,Ton der Art im Takt des Klangmals (K36)
+MS_SILENCE,3,In Stillezone,Stille-Motiv + Hochpass,Taktgrenze,–,Echos ohne Rufe
+MS_STORM,3,Resonanzsturm,Alle Region-Stems gleichzeitig + quantisierte Rufe,Taktgrenze,–,CANON §63
+MS_TOWN,4,In Siedlung,Stadt-/Dorfthema (Weltlied-Fragment),4 Takte,Tag/Nacht,CANON §56
+MS_EXPLORE_DAY,5,Oberwelt Tag,Region-Thema (sparsam),4 Takte,Erkundung → Entdeckung,Lange Pausen (Atem)
+MS_EXPLORE_NIGHT,5,Oberwelt Nacht,Region-Thema Nachtfassung,4 Takte,–,
+MS_CAMP,5,Lager-Moment,Wärter-Thema Lagerfeuer,Taktgrenze,–,K44 §2
+MS_PAUSE,6,Ort der Pause,1 s völlige Stille im festen Takt,sofort,–,K51 §7

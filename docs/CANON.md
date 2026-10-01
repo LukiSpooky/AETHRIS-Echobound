@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K54
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K55
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -427,6 +427,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-208 | Bindungs-UI ohne Erfolgsprozent | K54 |
 | ADR-209 | Menüs pausieren offline, Koop nie | K54 |
 | ADR-210 | UI-Konfiguration als Daten mit Prüfer | K54 |
+| ADR-211 | Weltlied-Motiv in D-Dorisch als Kern aller Musik und Rufe | K55 |
+| ADR-212 | Echo-Rufe aus Typ/Größe/Klangmal generiert, veredelt | K55 |
+| ADR-213 | Gameplay-Signale mit Mix-Vorrang vor Dialog | K55 |
+| ADR-214 | Absolute Stille nur gestaltet, ≤ 4 s, untertitelt | K55 |
+| ADR-215 | Nur Verwirrung verlässt die Skala | K55 |
 
 ## §11 Change Requests
 
@@ -1952,3 +1957,23 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §211 UI-Technik (LOCKED, K54 §13)
 
 - CommonUI + UMG + MVVM, Widgets ohne Spiellogik, GF_UI liest über ViewModels/Events. Budgets UI-Gamethread PS5 0,8 / Switch 2 1,2 / PC 1,0 ms; Rendering 0,6/1,0/0,8 ms; Menü öffnen ≤ 100–150 ms. Prüfer `tools/gen_ui.py` (UI-01–UI-06); `data_lint.py` DL-COL (gleiche Spaltenzahl in allen Datentabellen). Menüs pausieren offline (ADR-209); UI-Konfiguration als Daten (ADR-210).
+
+## §212 Weltlied-Motiv & Skala (LOCKED, K55 §2 · `tools/ref/aethris_music.py`)
+
+- Motiv (7 Töne): D4 (2) – A4 (1) – G4 (1) – F4 (1,5) – E4 (0,5) – C5 (2) – D5 (3) Viertel. Aethrische Skala = D-Dorisch (D E F G A H C) für Musik, Rufe, UI, Glocken, Rätsel; Ausnahmen: Krone (unisono D), Leere (Pause), Verwirrung (verstimmt). Ableitungen: Umkehrung um D4 (Hvitmark), Krebs (Dorunsruh, Kael), Arpeggio 1/3/5/7 (Prismara, Ilen), Stille (Töne 2/4/6 → Pausen), Krone. Finale „Neues Lied“: zehn Stimmgruppen je eine Linie; „Sanfte Stille“: Wiegenlied aus Eiðvik auf Tönen 1/3/5 (ADR-211).
+
+## §213 Leitmotive (LOCKED, K55 §3 · `Data/Audio/Leitmotifs.csv`)
+
+- Weltlied, Stille, Ilen, Krone, Wärter, Orden, Akademie, Freie Stimmen, Kontor, Kael, Wendelin, Erstresonanz; zehn Regionsthemen (Tag/Nacht) mit Pflicht, das Stadtfragment (CANON §56) mindestens einmal je Durchlauf zu enthalten.
+
+## §214 Adaptive Musik (LOCKED, K55 §4 · `MusicStates.csv`)
+
+- 14 Zustände nach Priorität (Story/Entscheidung > Boss/Arena > Kampf/Bindung/Stille/Sturm > Stadt > Erkundung/Lager > Ort der Pause); Übergänge über Quartz auf Schlag/Takt/4 Takte; Erkundung 2–4 min Musik, 1–3 min Pause; Kampf-Stems in 3 Harmonie-Stufen, Crescendo-Fanfare bei 100; Musikzustand lokal je Spieler. `EAethrisMusicState` (GF_Audio).
+
+## §215 Echo-Rufe (LOCKED, K55 §5 · `TypeTones.csv`, `EchoCalls.csv`)
+
+- Typ → Skalenstufe + Klangfarbe (Leere = Pause), Größe → Oktave (XS +2 … XXL −3 zu M), Tempo aus Klangmal-BPM sonst Größe (XS 96 … XXL 28); Sekundärtyp als Oberton; Emotion skaliert Tempo. 256 generierte Profile, von Sound Design veredelt (ADR-212); Ursprungsstimmen/Mythische komponiert. Resonanzsturm: Quantisierung auf D-Dorisch (`Aethris::Audio::QuantizeToScaleCents`).
+
+## §216 Stille, Mix, Technik (LOCKED, K55 §8, §11–§12 · `MixBuses.csv`)
+
+- Stillezone: Hochpass 400 Hz, keine Rufe; Orte der Pause: alle 8 s 1 s Stille; absolute Stille ≤ 4 s, mit Untertitel „[Stille]“ (ADR-214). Mix: −16 LUFS (Handheld −14), ≤ −1 dBTP; Vorrang Gameplay-Signale > Dialog > Kampf > Rufe > Musik > Ambient (ADR-213). MetaSounds (Patch je Typ), Quartz, Audio Modulation; Budgets Audio-CPU PS5 1,5 / Switch 2 2,5 / PC 2,0 ms, Stimmen 192/96/160, Speicher 450/220/500 MB.
