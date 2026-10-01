@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K24
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K25
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -1220,3 +1220,40 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 | 158 | Snevar | Frost | L071/2 Three | Snevrik [Level>=36] | Speed | – |
 | 159 | Snevrik | Frost/Licht | L071/3 Three | – | Speed | – |
 | 160 | Kjalf | Frost | L072/1 Three | Kjalmur [Level>=22] | Tank | – |
+
+## §94 Arten #161–#192 (LOCKED, K25 · `Data/Echos/Species.csv`)
+
+| # | Name | Typen | Linie/Stufe | Evolution → | Rolle | Reiten |
+|---|---|---|---|---|---|---|
+| 161 | Kjalmur | Frost/Stein | L072/2 Three | Kjalgrund [Level>=40 & Weather=Snow] | Tank | Bodenreiten |
+| 162 | Kjalgrund | Frost/Stein | L072/3 Three | – | Tank | Bodenreiten |
+| 163 | Uvlet | Frost | L073/1 Three | Uvarn [Level>=18] | Caster | – |
+| 164 | Uvarn | Frost/Geist | L073/2 Three | Uvalis [Level>=36]; Uvasil [Level>=36 & Zone=R07_Z03 & TimeOfDay=Night] | Caster | – |
+| 165 | Uvalis | Frost/Geist | L073/3 Three | – | Caster | Flugreiten |
+| 166 | Uvasil | Leere/Frost | L073/3 Branch | – | Control | – |
+| 167 | Lyskin | Licht | L074/1 Three | Lysmara [Level>=20 & Weather=Clear] | Support | – |
+| 168 | Lysmara | Licht/Frost | L074/2 Three | Lysthane [Level>=38] | Support | Flugreiten |
+| 169 | Lysthane | Licht/Klang | L074/3 Three | – | Support | Flugreiten |
+| 170 | Vardlit | Stein | L075/1 Two | Vardholm [Level>=28] | Tank | – |
+| 171 | Vardholm | Stein/Frost | L075/2 Two | – | Tank | – |
+| 172 | Eidrun | Geist | L076/1 Two | Eidwacht [Level>=30 & Moon=FullMoon] | Caster | – |
+| 173 | Eidwacht | Geist/Klang | L076/2 Two | – | Caster | – |
+| 174 | Hallkid | Klang | L077/1 Two | Hallbrand [Level>=30] | Speed | – |
+| 175 | Hallbrand | Klang/Stein | L077/2 Two | – | Speed | Kletterreiten |
+| 176 | Glazil | Kristall | L078/1 Two | Glazvind [Level>=28 & Weather=Snow] | Control | – |
+| 177 | Glazvind | Sturm/Kristall | L078/2 Two | – | Control | – |
+| 178 | Tysvorn | Leere/Frost | L079/1 Single | – | Striker | – |
+| 179 | Skriv | Arkan | L080/1 Three | Skrivar [Level>=20] | Caster | – |
+| 180 | Skrivar | Arkan | L080/2 Three | Skriveth [Level>=38] | Caster | – |
+| 181 | Skriveth | Arkan/Licht | L080/3 Three | – | Caster | – |
+| 182 | Thaelit | Arkan | L081/1 Three | Thaelon [Level>=20] | Tank | – |
+| 183 | Thaelon | Geist/Arkan | L081/2 Three | Thaelarch [Level>=40] | Tank | – |
+| 184 | Thaelarch | Geist/Metall | L081/3 Three | – | Tank | – |
+| 185 | Tikkel | Metall | L082/1 Three | Tikkar [Level>=18] | Control | – |
+| 186 | Tikkar | Metall/Arkan | L082/2 Three | Tikkoran [Level>=36] | Control | – |
+| 187 | Tikkoran | Metall/Schwerkraft | L082/3 Three | – | Control | – |
+| 188 | Sarkel | Geist | L083/1 Three | Sarkon [Level>=24] | Striker | – |
+| 189 | Sarkon | Geist/Stein | L083/2 Three | Sarkothar [Level>=42 & Moon=NewMoon] | Striker | Bodenreiten |
+| 190 | Sarkothar | Geist/Arkan | L083/3 Three | – | Striker | Bodenreiten |
+| 191 | Tilgel | Leere | L084/1 Two | Tilgrath [Level>=30] | Control | – |
+| 192 | Tilgrath | Leere/Arkan | L084/2 Two | – | Control | – |
