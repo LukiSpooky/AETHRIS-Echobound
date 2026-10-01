@@ -176,7 +176,7 @@ Vier Äste mit je zwölf Fähigkeiten in vier Stufen (Tier 0/5/10/15 = benötigt
 |---|---|---|---|---|---|---|
 | Bindung | Leiser Schritt | 0 | 1 |  | Entdeckungsradius wilder Echos −10 % | – |
 | Bindung | Köderkunde | 0 | 1 |  | Lieblingsköder einer Art schon ab Kodex-Stufe 1 sichtbar | – |
-| Bindung | Ruhige Hand | 0 | 2 |  | Bindungs-Gut-Fenster ×1 | 05 |
+| Bindung | Ruhige Hand | 0 | 2 |  | Bindungs-Gut-Fenster ×1,05 | – |
 | Bindung | Einfühlung | 5 | 1 |  | Bindungswert und Stimmung als Zahl sichtbar | ja |
 | Bindung | Fallenbau | 5 | 2 | SK_BND_01 | Fallen wirken 20 statt 10 Spielminuten; 2 Fallen je Bindung erlaubt (nur eine wirkt auf R) | – |
 | Bindung | Siegelpflege | 5 | 2 |  | Jedes 5. Siegel wird beim Anschlag nicht verbraucht (Zähler sichtbar) | – |
@@ -193,7 +193,7 @@ Vier Äste mit je zwölf Fähigkeiten in vier Stufen (Tier 0/5/10/15 = benötigt
 | Überleben | Kletterprofi | 5 | 2 | SK_SUR_01 | Klettern verbraucht 25 % weniger Ausdauer | – |
 | Überleben | Reitkunst | 5 | 2 |  | Reit-Ausdauer +20 % | – |
 | Überleben | Ausdauer II | 10 | 2 | SK_SUR_05 | Wärter-Ausdauer +10 | – |
-| Überleben | Gleitkunst | 10 | 2 |  | Gleiter-Sinkrate −0 | 15 m/s (wirkt wie halbe Stufe) |
+| Überleben | Gleitkunst | 10 | 2 |  | Gleiter-Sinkrate −0,15 m/s (wirkt wie halbe Stufe) | – |
 | Überleben | Wetterkunde II | 10 | 2 | SK_SUR_04 | Vorhersage: 2 Blöcke + seltene Bedingungen (CANON §63 Stufe 3) | ja |
 | Überleben | Handwerk | 15 | 2 | SK_SUR_02 | Rezepte −10 % Zutaten (abgerundet; mindestens 1) | – |
 | Überleben | Wegfinder | 15 | 2 |  | Schnellreise auch von jedem Klangbrunnen aus | – |

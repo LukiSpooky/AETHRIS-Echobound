@@ -1,10 +1,10 @@
 # Fallen (K36 §5): platzierbare Weltobjekte. ResonanceBonus addiert sich zum Resonanzwert, wenn die Bedingung erfüllt ist. Pro Bindung max. 1 Falle.
 Name,DisplayName,Condition,ResonanceBonus,Effect,Sources,Description
-ITM_TRAP_REST,Ruhenest,Trait:Sleepy|Trait:Nester,150,"Echo legt sich hinein; Unruhe −30 %",Crafting (Holz/Kräuter),Weiches Nest aus Moos und Federn
-ITM_TRAP_SCENT,Duftfalle,Trait:Grazer|Trait:Pollinator|Trait:Scavenger,150,"Lockt aus 40 m an; Annäherung leiser",Crafting (Kräuter),Duftsäckchen mit Blütenöl
-ITM_TRAP_CHIME,Klangfalle,Trait:Singer|Trait:Echolocator,150,"Spielt die Grundfrequenz der Art; Timing-Hilfe (Ton-Countdown)",Crafting (Kristall),Stimmplatte auf Dreibein
-ITM_TRAP_SHADE,Schattenzelt,Trait:Shy|Trait:Camouflaged,200,"Wärter unsichtbar bis zum Anschlag",Crafting (Stoff),Tarnzelt aus Laub
-ITM_TRAP_NET,Ruhenetz,Size:M+,100,"Hält Fluchtversuch einmal auf (kein Schaden)",Crafting (Fasern),Weiches Netz – hält, verletzt nicht
-ITM_TRAP_HOARD,Schatzkiste,Trait:Collector|Trait:Hoarder,150,"Echo untersucht die Kiste 10 s (Anschlag ohne Bewegung)",Crafting (Erz/Kristall),Glitzernde Köderkiste
-ITM_TRAP_WARM,Wärmestein,Trait:Sunbather|Trait:Thermal,150,"Echo sonnt sich; Unruhe −20 %",Crafting (Erz/Glut),Gespeicherte Wärme
-ITM_TRAP_POOL,Quellbecken,Trait:Swimmer|Trait:Mudbather|Trait:Filterer,150,"Echo badet; Wasser dämpft Schritte",Crafting (Holz/Kristall),Tragbares Becken
+ITM_TRAP_REST,Ruhenest,Trait:Sleepy|Trait:Nester,150,Echo legt sich hinein; Unruhe −30 %,Crafting (Holz/Kräuter),Weiches Nest aus Moos und Federn
+ITM_TRAP_SCENT,Duftfalle,Trait:Grazer|Trait:Pollinator|Trait:Scavenger,150,Lockt aus 40 m an; Annäherung leiser,Crafting (Kräuter),Duftsäckchen mit Blütenöl
+ITM_TRAP_CHIME,Klangfalle,Trait:Singer|Trait:Echolocator,150,Spielt die Grundfrequenz der Art; Timing-Hilfe (Ton-Countdown),Crafting (Kristall),Stimmplatte auf Dreibein
+ITM_TRAP_SHADE,Schattenzelt,Trait:Shy|Trait:Camouflaged,200,Wärter unsichtbar bis zum Anschlag,Crafting (Stoff),Tarnzelt aus Laub
+ITM_TRAP_NET,Ruhenetz,Size:M+,100,Hält Fluchtversuch einmal auf (kein Schaden),Crafting (Fasern),"Weiches Netz – hält, verletzt nicht"
+ITM_TRAP_HOARD,Schatzkiste,Trait:Collector|Trait:Hoarder,150,Echo untersucht die Kiste 10 s (Anschlag ohne Bewegung),Crafting (Erz/Kristall),Glitzernde Köderkiste
+ITM_TRAP_WARM,Wärmestein,Trait:Sunbather|Trait:Thermal,150,Echo sonnt sich; Unruhe −20 %,Crafting (Erz/Glut),Gespeicherte Wärme
+ITM_TRAP_POOL,Quellbecken,Trait:Swimmer|Trait:Mudbather|Trait:Filterer,150,Echo badet; Wasser dämpft Schritte,Crafting (Holz/Kristall),Tragbares Becken

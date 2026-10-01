@@ -355,6 +355,8 @@ Einstiegs-, Mittel- und Status-Fähigkeiten auf Lv. 1, Spät- und Schwer-Fähigk
 
 Passiv: Photosynth, Wurzelkraft, Lichtbrecher (versteckt)
 
+Crescendo: Urwaldchor ★, Dornenmeer · Feld: Rankenbrücke
+
 **Fernwyn** (ECHO_002)
 
 | Weg | Lv. | Fähigkeit | Typ | Kat. | Zeit |
@@ -373,6 +375,8 @@ Passiv: Photosynth, Wurzelkraft, Lichtbrecher (versteckt)
 | Evolution | – | Blitzbogen | Storm | Special | 110 |
 
 Passiv: Windläufer, Photosynth, Wurzelkraft, Lichtbrecher (versteckt)
+
+Crescendo: Himmelszorn, Orkanschwinge, Urwaldchor ★, Dornenmeer · Feld: Rankenbrücke
 
 **Verdrath** (ECHO_003)
 
@@ -395,6 +399,8 @@ Passiv: Windläufer, Photosynth, Wurzelkraft, Lichtbrecher (versteckt)
 
 Passiv: Photosynth, Wurzelkraft, Taktgefühl, Lichtbrecher (versteckt)
 
+Crescendo: Urwaldchor ★, Dornenmeer, Sinfonie der Welt, Großer Takt · Feld: Rankenbrücke
+
 ### 7.2 Starter-Linie Stein
 
 **Brokk** (ECHO_004)
@@ -415,6 +421,8 @@ Passiv: Photosynth, Wurzelkraft, Taktgefühl, Lichtbrecher (versteckt)
 | Egg | – | Schwelbrand | Ember | Status | 60 |
 
 Passiv: Bergruhe, Morgenwache (versteckt)
+
+Crescendo: Bergsturz, Ewiger Fels ★ · Feld: Erzspur
 
 **Torgrath** (ECHO_006)
 
@@ -437,6 +445,8 @@ Passiv: Bergruhe, Morgenwache (versteckt)
 
 Passiv: Anziehung, Massenträgheit, Morgenwache (versteckt)
 
+Crescendo: Bergsturz, Ewiger Fels ★, Ereignishorizont, Schwerkraftsturz · Feld: Felsbrecher
+
 ### 7.3 Starter-Linie Sturm
 
 **Wisplet** (ECHO_007)
@@ -458,6 +468,8 @@ Passiv: Anziehung, Massenträgheit, Morgenwache (versteckt)
 
 Passiv: Kettenfunke, Formelgeist (versteckt)
 
+Crescendo: Himmelszorn ★, Orkanschwinge · Feld: Aufwind
+
 **Zephyrion** (ECHO_009)
 
 | Weg | Lv. | Fähigkeit | Typ | Kat. | Zeit |
@@ -478,6 +490,8 @@ Passiv: Kettenfunke, Formelgeist (versteckt)
 | Evolution | – | Prismenstrahl | Light | Special | 110 |
 
 Passiv: Kettenfunke, Rückenwindgeist, Formelgeist (versteckt)
+
+Crescendo: Himmelszorn ★, Orkanschwinge, Zenitfeuer, Morgenweihe · Feld: Lichtsignal
 
 ### 7.4 Weitere Beispiele
 
@@ -502,6 +516,8 @@ Passiv: Kettenfunke, Rückenwindgeist, Formelgeist (versteckt)
 
 Passiv: Glutherz, Standfest, Sturmauge (versteckt)
 
+Crescendo: Sonnensturz ★, Phönixlied, Bergsturz, Ewiger Fels · Feld: Glutschmelze
+
 **Uvasil** (ECHO_166)
 
 | Weg | Lv. | Fähigkeit | Typ | Kat. | Zeit |
@@ -523,6 +539,8 @@ Passiv: Glutherz, Standfest, Sturmauge (versteckt)
 
 Passiv: Leerer Blick, Präzisionsfrost, Seelenhunger, Pollenwolke (versteckt)
 
+Crescendo: Ewiger Winter, Eiszeit, Weltlöscher, Große Leere ★ · Feld: Schattenschritt
+
 **Aeth'rion** (ECHO_250)
 
 | Weg | Lv. | Fähigkeit | Typ | Kat. | Zeit |
@@ -542,6 +560,8 @@ Passiv: Leerer Blick, Präzisionsfrost, Seelenhunger, Pollenwolke (versteckt)
 | Level | 69 | Donnerhall | Sound | Special | 130 |
 
 Passiv: Einklang
+
+Crescendo: Zenitfeuer, Morgenweihe, Sinfonie der Welt, Großer Takt ★ · Feld: Lichtsignal
 
 ---
 

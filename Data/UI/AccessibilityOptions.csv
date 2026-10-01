@@ -1,0 +1,25 @@
+# Barrierefreiheit (K02 §11.3, vollständig K54 §10). Area: Motorik | Sehen | Hören | Kognition | Tempo | Allgemein. Default = Standardwert.
+Name,Area,DisplayName,Values,Default,Notes
+ACC_REMAP,Motorik,Vollständiges Remapping,alle Aktionen,an,InputActions.csv „Remappable“
+ACC_ONEHAND,Motorik,Ein-Hand-Profil,links/rechts,aus,Kombiniert Bewegen und Aktionen auf einer Gamepad-Hälfte
+ACC_HOLD_TOGGLE,Motorik,Halten → Umschalten,an/aus je Aktion,aus,"Resonanzsinn, Ducken, Fokus"
+ACC_TIMING,Motorik,Großzügiges Timing,"1,0×/1,25×/1,5×/2,0×","1,0×",Bindungsfenster (K36) und Kombo-Fenster (K33)
+ACC_AUTO_BOND,Motorik,Auto-Einklang,an/aus,aus,Anschlag erfolgt im Gut-Fenster automatisch; Perfekt-Bonus entfällt
+ACC_NO_MASH,Motorik,Halten statt Hämmern,an/aus,an,Keine Tastenhämmer-Mechaniken im Spiel; Option betrifft Minispiele
+ACC_COLORBLIND,Sehen,Farbenblind-Modus,Aus/Protan/Deutan/Tritan,Aus,Paletten verschoben; Typen immer Symbol + Name (K17)
+ACC_TEXTSIZE,Sehen,Textgröße,S/M/L/XL,M,"Min. 28 px bei 1080p (TV), 22 px Handheld"
+ACC_CONTRAST,Sehen,Hochkontrast-UI,an/aus,aus,"Hintergründe abdunkeln, Konturen"
+ACC_SENSE_CONTRAST,Sehen,Hochkontrast-Resonanzsinn,an/aus,aus,"Wellen kräftiger, Formen statt Farben"
+ACC_MOTION,Sehen,Bewegungsreduktion,an/aus,aus,"Kamerawackeln, Bildschirmblitze, Bewegungsunschärfe aus"
+ACC_SUBTITLES,Hören,Untertitel,aus/Dialog/Dialog+Klänge,Dialog,"Sprecherfarbe + Name, Richtungspfeil"
+ACC_VISUAL_SOUND,Hören,Visuelle Klangsignale,an (fest),an,Jede Frequenz-Mechanik mit Wellenmuster (DR-24) – nicht abschaltbar
+ACC_SOUND_RADAR,Hören,Klangradar,an/aus,aus,HUD_SOUND_RADAR
+ACC_MONO,Hören,Mono-Audio,an/aus,aus,
+ACC_REMINDER,Kognition,Questziel-Erinnerung,an/aus,an,Nach 10 min ohne Fortschritt dezenter Hinweis
+ACC_COMBAT_HINTS,Kognition,Kampf-Empfehlungen,an/aus,aus,Schlägt eine sinnvolle Aktion vor (nie automatisch)
+ACC_TIMELINE_EXPLAIN,Kognition,Zeitleisten-Erklärmodus,an/aus,aus,Erklärt Zeitkosten jeder Aktion
+ACC_HINT_LEVEL,Kognition,Hinweisstufe,Lauschend/Geführt/Markiert,Geführt,K48 §9.1
+ACC_ANIM_SPEED,Tempo,Kampfanimation,"1×/1,5×/2×/Überspringen",1×,K02 §4
+ACC_DIALOG_AUTOPLAY,Tempo,Dialog-Autoplay,an/aus,aus,
+ACC_DIFFICULTY,Allgemein,Schwierigkeit,Erzählung/Standard/Meister,Standard,K02 §11 (Ranked unabhängig)
+ACC_SCREENREADER,Allgemein,Menü-Vorlesen,an/aus,aus,Plattform-TTS für Menüs und Untertitel

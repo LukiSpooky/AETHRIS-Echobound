@@ -316,19 +316,19 @@ Reaktionen überschreiben den Plan kurzzeitig. Sie sind als Daten geführt; Chan
 | Weather=Heatwave & Hour 11–16 | * | 1000 | Siesta | 0 | Siesta (CANON §62) |
 | Weather=Sandstorm | * | 1000 | GoHome | 0 | Tore zu (CANON §62) |
 | Weather=Ashfall | * | 800 | SeekShelter | 0 | Masken auf (Animation) |
-| Weather=Snow | Tagwerk|Hirte|Kind | 400 | Play/Shovel | 20 | Kinder spielen |
-| Weather=ResonanceStorm | * | 700 | WatchSky | 10 | Zeigen zum Himmel |
+| Weather=Snow | Tagwerk|Hirte|Kind | 400 | Play/Shovel | 20 | Kinder spielen, Erwachsene räumen |
+| Weather=ResonanceStorm | * | 700 | WatchSky | 10 | Zeigen zum Himmel, Barks BARK_STORM |
 | Kampf < 40 m | * | 700 | Watch | 0 | Zuschauen; Kinder werden weggezogen |
 | Kampf < 15 m | * | 900 | Flee | 0 | Rückzug hinter Deckung |
 | Aggressives Wildecho < 25 m | * | 1000 | Flee | 0 | Wachen greifen ein (Wache-Muster) |
 | Spieler läuft durch Gruppe | * | 500 | StepAside | 0 | Ausweichen + Blick |
-| Spieler reitet XL-Echo < 10 m | * | 600 | StepBack | 0 | Staunen |
+| Spieler reitet XL-Echo < 10 m | * | 600 | StepBack | 0 | Staunen, Kinder winken |
 | Begleiter-Echo frei < 6 m | Kind|Tagwerk | 500 | Pet | 1 | Streicheln (wenn Echo Temperament ≠ Scheu) |
-| Spieler gibt Item (Interaktion) | * | 1000 | Thank | 0 | Dank-Animation |
-| Fest (Siedlungszustand/Kalender) | * | 900 | Celebrate | 60 | Musik |
-| Stillezone < 200 m | * | 600 | Worry | 0 | Gedämpfte Barks |
+| Spieler gibt Item (Interaktion) | * | 1000 | Thank | 0 | Dank-Animation, Ruf-Einfluss nur über Quests |
+| Fest (Siedlungszustand/Kalender) | * | 900 | Celebrate | 60 | Musik, Tanz, Stände |
+| Stillezone < 200 m | * | 600 | Worry | 0 | Gedämpfte Barks, Blick in Richtung Zone |
 | Story-Flag FLAG_W6_DONE | Gelehrt | 500 | Gossip | 10 | Akademie-Gespräche in Gruppen |
-| Hour 19–21 | Nachtvolk|Fischer | 1000 | LightLanterns | 15 | Laternen anzünden (Morvenfurt |
+| Hour 19–21 | Nachtvolk|Fischer | 1000 | LightLanterns | 15 | Laternen anzünden (Morvenfurt, Häfen) |
 
 ### 6.1 Prioritäten
 
@@ -361,18 +361,18 @@ Barks sind kurze Zeilen im Vorbeigehen. CANON §38 plant ~4.000 Barks; K48/K49�
 
 | Name | Trigger | Priority | CooldownMin | GlobalCooldownS | RangeM | Example |
 |---|---|---|---|---|---|---|
-| BARK_GREET | Spieler nähert sich (erstes Mal am Spieltag) | 4 | 240 | 6 | 6 | „Morgen |
+| BARK_GREET | Spieler nähert sich (erstes Mal am Spieltag) | 4 | 240 | 6 | 6 | „Morgen, Wärter.“ |
 | BARK_STORY_STATE | Story-Zustand geändert (Wahrheit/Akt/Ende) | 1 | 1440 | 4 | 10 | „Hast du gehört? Die Akademie…“ (nach W6) |
 | BARK_QUEST_AFTER | Nebenquest abgeschlossen (Quest.<ID>.After) | 2 | 720 | 5 | 10 | „Seit der Wärter die Brücke gebaut hat…“ |
-| BARK_REP_HIGH | Rufrang ≥ 4 der NPC-Fraktion (K47 §9.3) | 3 | 480 | 6 | 8 | „Für dich immer |
-| BARK_REP_STANCE | Story-Haltung zur Fraktion (Flag) | 3 | 480 | 6 | 8 | „Du hilfst uns mehr |
+| BARK_REP_HIGH | Rufrang ≥ 4 der NPC-Fraktion (K47 §9.3) | 3 | 480 | 6 | 8 | „Für dich immer, Freund der Wildwacht.“ |
+| BARK_REP_STANCE | Story-Haltung zur Fraktion (Flag) | 3 | 480 | 6 | 8 | „Du hilfst uns mehr, als du zugibst.“ |
 | BARK_WEATHER | Wetterwechsel | 3 | 120 | 8 | 12 | „Regen. Gut für die Rillos.“ |
 | BARK_ECHO_COMMENT | Begleiter-Echo des Spielers sichtbar | 4 | 180 | 8 | 6 | „Was für ein schönes Chimbal!“ |
-| BARK_COMBAT_NEARBY | Kampf in < 40 m | 2 | 30 | 4 | 40 | „Pass auf |
+| BARK_COMBAT_NEARBY | Kampf in < 40 m | 2 | 30 | 4 | 40 | „Pass auf, das Alpha ist gereizt!“ |
 | BARK_STORM | Resonanzsturm beginnt | 1 | 1440 | 3 | 30 | „Die Echos singen alle zugleich… hörst du das?“ |
 | BARK_SETTLEMENT_STATE | Siedlungszustand steigt (K13 §5) | 2 | 1440 | 5 | 15 | „Endlich wieder ein Fest!“ |
 | BARK_RUMOR | Gerücht über Nebenquest der Region (K48 §9.2) | 3 | 360 | 10 | 8 | „Im Moor soll ein Irrlicht weiß leuchten…“ |
-| BARK_SCHEDULE | Tätigkeitswechsel (Mittag |  Feierabend) | 5 | 0 | 12 | 5 |
+| BARK_SCHEDULE | Tätigkeitswechsel (Mittag |  Feierabend) | 5 | 0 | 12 | 5,„Mittag! Ab in den Wurzelkrug.“ |
 | BARK_SILENCE_ZONE | Stillezone in < 200 m | 1 | 720 | 6 | 15 | „Da drüben… alles grau.“ |
 | BARK_ENDING | Nachhall-Variante je Ende | 2 | 1440 | 5 | 10 | „Seit dem neuen Lied klingen die Glocken anders.“ |
 

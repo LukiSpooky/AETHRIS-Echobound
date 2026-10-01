@@ -1,6 +1,6 @@
 # 00 · Kapitelplan – AETHRIS: Echobound
 
-**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K53 abgeschlossen
+**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K54 abgeschlossen
 
 Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel baut auf den vorherigen auf und darf nur Entscheidungen verwenden, die in [`CANON.md`](CANON.md) eingetragen sind (oder es trägt neue ein).
 
@@ -111,7 +111,7 @@ Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel bau
 
 | # | Kapitel | Hauptverantwortung | Abhängigkeiten | Status |
 |---|---|---|---|---|
-| K54 | UI/UX | UI/UX Designer | alle Systemkapitel | ⬜ |
+| K54 | UI/UX | UI/UX Designer | alle Systemkapitel | ✅ |
 | K55 | Audio Bible | Sound Designer | K07–K15 | ⬜ |
 | K56 | Art Bible | Creative Director, Technical Artist | K07–K27 | ⬜ |
 | K57 | Asset Pipeline, Animation & Technical Art | Technical Artist | K56 | ⬜ |

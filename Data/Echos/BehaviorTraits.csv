@@ -27,7 +27,7 @@ Behavior.Lithophage,Gesteinsfresser,Frisst Erz oder Kristall
 Behavior.Migratory,Wanderer,Folgt Routen zwischen Gebieten
 Behavior.Sunbather,Sonnenbader,Ruht in Sonne oder Wärme
 Behavior.Playful,Verspielt,Spielt mit Artgenossen und Gegenständen
-Behavior.Guardian,Hüter,Bewacht Nest, Jungtiere oder Orte
+Behavior.Guardian,Hüter,"Bewacht Nest, Jungtiere oder Orte"
 Behavior.Camouflaged,Getarnt,Verschmilzt mit der Umgebung
 Behavior.Glowing,Leuchtend,Leuchtet sichtbar (über das Klangmal hinaus)
 Behavior.Mudbather,Schlammbader,Suhlt sich in Schlamm/Asche
@@ -35,8 +35,8 @@ Behavior.Echolocator,Klangorter,Orientiert sich über Klang (reagiert auf Geräu
 Behavior.Symbiont,Symbiont,Lebt in Gemeinschaft mit einer anderen Art
 Behavior.Drifter,Treiber,Lässt sich von Wind oder Strömung treiben
 Behavior.Dancer,Tänzer,Führt Balz- oder Gruppentänze auf
-Behavior.ToolUser,Werkzeugnutzer,Benutzt Steine, Stöcke oder Kristalle
+Behavior.ToolUser,Werkzeugnutzer,"Benutzt Steine, Stöcke oder Kristalle"
 Behavior.Collector,Muster-Sammler,Ordnet Gegenstände zu Mustern
 Behavior.Sleepy,Schläfer,Schläft überdurchschnittlich lange
-Behavior.Thermal,Wärmesucher,Sucht Lava, Quellen oder Feuer
+Behavior.Thermal,Wärmesucher,"Sucht Lava, Quellen oder Feuer"
 Behavior.Stargazer,Sternschauer,Ist nachts bei klarem Himmel besonders aktiv

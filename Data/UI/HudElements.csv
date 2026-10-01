@@ -1,0 +1,15 @@
+# HUD-Elemente (K54 §5). Default: Standard-Sichtbarkeit (Always | Context | Off). Hideable: im Einstellungsmenü abschaltbar. Diegetic: im Spiel verankert (Ja/Teilweise/Nein).
+Name,DisplayName,Default,Hideable,Diegetic,Position,Notes
+HUD_COMPASS,Kompass mit Sonne/Mond,Always,ja,Teilweise,Oben Mitte,"Questrichtung nach Hinweisstufe (K48 §9), Phase (CANON §65)"
+HUD_RESONANCE,Resonanzsinn-Pulse,Context,nein,Ja,Weltraum,Visuelle Wellen + Audio (DR-24); Hochkontrast-Option
+HUD_CHORUS,Chor-Leiste (HP/Status),Context,ja,Nein,Unten links,Nur bei Schaden/Status oder auf Tastendruck
+HUD_STAMINA,Ausdauer (Wärter/Reiten),Context,ja,Teilweise,Am Charakter,"Ring, nur bei Verbrauch"
+HUD_QUEST,Questziel (verfolgt),Context,ja,Nein,Rechts,"Einblendung bei Schrittwechsel, sonst ausgeblendet"
+HUD_INTERACT,Interaktions-Hinweis,Context,ja,Nein,Am Objekt,Glyphe + Verb
+HUD_NOTIFY,Benachrichtigungen,Context,ja,Nein,Rechts oben,Warteschlange (§9)
+HUD_TIME,Uhr,Off,ja,Nein,Oben rechts,Optional (CANON §65)
+HUD_WEATHER,Wetter-Vorhersage,Off,ja,Nein,Oben rechts,Optional; Karte zeigt immer
+HUD_SUBTITLES,Untertitel,Context,ja,Nein,Unten Mitte,"Sprecher, Richtung, Klangbeschreibung"
+HUD_MINIMAP,Minikarte,Off,ja,Nein,Unten rechts,Barrierefreiheit (Orientierung)
+HUD_DAMAGE_NUMBERS,Schadenszahlen,Context,ja,Nein,Kampf,Nur im Kampf
+HUD_SOUND_RADAR,Klangradar,Off,ja,Nein,Unten Mitte,Barrierefreiheit Hören: Richtung wichtiger Geräusche

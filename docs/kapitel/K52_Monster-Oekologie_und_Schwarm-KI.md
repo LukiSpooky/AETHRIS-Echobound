@@ -435,15 +435,15 @@ Zustände sind sichtbar (Animation, Laut, Klangmal-Helligkeit) – Grundlage fü
 |---|---|---|---|---|---|---|---|
 | Default | 25 | 15 | 0 | 0 | 0 | 120 | Standard |
 | Behavior.Shy | 30 | 20 | 15 | 0 | 0 | 140 | Flieht ab 15 m (BehaviorTraits) |
-| Behavior.Curious | 25 | 15 | 0 | 8 | 0 | 120 | Nähert sich bis 8 m bei ruhigem Verhalten (kein Laufen |
-| Behavior.Aggressive | 30 | 15 | 0 | 0 | 20 | 120 | Greift ab 20 m an (sichtbare Begegnung |
+| Behavior.Curious | 25 | 15 | 0 | 8 | 0 | 120 | Nähert sich bis 8 m bei ruhigem Verhalten (kein Laufen, kein Ruf) |
+| Behavior.Aggressive | 30 | 15 | 0 | 0 | 20 | 120 | Greift ab 20 m an (sichtbare Begegnung, DR-14) |
 | Behavior.Territorial | 25 | 20 | 0 | 0 | 12 | 160 | Nur innerhalb des Reviers (Radius 25 m um Heimpunkt) |
 | Behavior.Ambusher | 10 | 25 | 0 | 0 | 6 | 90 | Getarnt bis 6 m; Resonanzsinn enthüllt (DR-14 angekündigt) |
 | Behavior.Echolocator | 5 | 40 | 0 | 0 | 0 | 360 | Reagiert auf Geräusch statt Sicht: Schleichen halbiert Hörradius |
 | Behavior.Guardian | 25 | 15 | 0 | 0 | 10 | 180 | Verteidigt Nest/Jungtiere; sonst neutral |
 | Behavior.Sleepy | 10 | 8 | 0 | 0 | 0 | 90 | Ruht oft; Einstimmen +1 Ruhestufe (CANON §67) |
 | Behavior.Stargazer | 35 | 15 | 0 | 0 | 0 | 120 | Nachts bei klarem Himmel Sicht +10 m |
-| Behavior.Camouflaged | 15 | 15 | 0 | 0 | 0 | 120 | Spieler muss Resonanzsinn nutzen |
+| Behavior.Camouflaged | 15 | 15 | 0 | 0 | 0 | 120 | Spieler muss Resonanzsinn nutzen, um es zu sehen |
 | Behavior.Flier | 40 | 15 | 0 | 0 | 0 | 180 | Hohe Sicht; flieht nach oben |
 | Behavior.Swimmer | 15 | 20 | 0 | 0 | 0 | 120 | Wahrnehmung unter Wasser; über Wasser halbiert |
 

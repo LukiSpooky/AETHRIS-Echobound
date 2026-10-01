@@ -5,16 +5,16 @@ RX_THUNDER,Weather=Thunderstorm,*,850,SeekShelter,0,Gewitter 85 %
 RX_HEAT_SIESTA,Weather=Heatwave & Hour 11–16,*,1000,Siesta,0,Siesta (CANON §62)
 RX_SANDSTORM,Weather=Sandstorm,*,1000,GoHome,0,Tore zu (CANON §62)
 RX_ASHFALL,Weather=Ashfall,*,800,SeekShelter,0,Masken auf (Animation)
-RX_SNOW,Weather=Snow,Tagwerk|Hirte|Kind,400,Play/Shovel,20,Kinder spielen, Erwachsene räumen
-RX_STORM_RESONANCE,Weather=ResonanceStorm,*,700,WatchSky,10,Zeigen zum Himmel, Barks BARK_STORM
+RX_SNOW,Weather=Snow,Tagwerk|Hirte|Kind,400,Play/Shovel,20,"Kinder spielen, Erwachsene räumen"
+RX_STORM_RESONANCE,Weather=ResonanceStorm,*,700,WatchSky,10,"Zeigen zum Himmel, Barks BARK_STORM"
 RX_COMBAT_NEAR,Kampf < 40 m,*,700,Watch,0,Zuschauen; Kinder werden weggezogen
 RX_COMBAT_CLOSE,Kampf < 15 m,*,900,Flee,0,Rückzug hinter Deckung
 RX_ECHO_WILD_AGGRO,Aggressives Wildecho < 25 m,*,1000,Flee,0,Wachen greifen ein (Wache-Muster)
 RX_PLAYER_RUN,Spieler läuft durch Gruppe,*,500,StepAside,0,Ausweichen + Blick
-RX_PLAYER_MOUNT,Spieler reitet XL-Echo < 10 m,*,600,StepBack,0,Staunen, Kinder winken
+RX_PLAYER_MOUNT,Spieler reitet XL-Echo < 10 m,*,600,StepBack,0,"Staunen, Kinder winken"
 RX_PLAYER_CHORUS,Begleiter-Echo frei < 6 m,Kind|Tagwerk,500,Pet,1,Streicheln (wenn Echo Temperament ≠ Scheu)
-RX_PLAYER_GIFT,Spieler gibt Item (Interaktion),*,1000,Thank,0,Dank-Animation, Ruf-Einfluss nur über Quests
-RX_FESTIVAL,Fest (Siedlungszustand/Kalender),*,900,Celebrate,60,Musik, Tanz, Stände
-RX_SILENCE_NEAR,Stillezone < 200 m,*,600,Worry,0,Gedämpfte Barks, Blick in Richtung Zone
+RX_PLAYER_GIFT,Spieler gibt Item (Interaktion),*,1000,Thank,0,"Dank-Animation, Ruf-Einfluss nur über Quests"
+RX_FESTIVAL,Fest (Siedlungszustand/Kalender),*,900,Celebrate,60,"Musik, Tanz, Stände"
+RX_SILENCE_NEAR,Stillezone < 200 m,*,600,Worry,0,"Gedämpfte Barks, Blick in Richtung Zone"
 RX_STORY_W6,Story-Flag FLAG_W6_DONE,Gelehrt,500,Gossip,10,Akademie-Gespräche in Gruppen
-RX_NIGHT_LANTERN,Hour 19–21,Nachtvolk|Fischer,1000,LightLanterns,15,Laternen anzünden (Morvenfurt, Häfen)
+RX_NIGHT_LANTERN,Hour 19–21,Nachtvolk|Fischer,1000,LightLanterns,15,"Laternen anzünden (Morvenfurt, Häfen)"

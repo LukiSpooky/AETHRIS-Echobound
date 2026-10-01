@@ -403,7 +403,7 @@ Alle 32 Hauptquests sind in `MainQuestSteps.csv` in Schritte zerlegt. Schritte m
 | STEP_A3_07_02 | MQ_A3_07 | OBJ_BOSS | BOSS_A3_02 | POI_R10_9001 | 1 | Aldric Venn mit der Resonanzkrone |
 | STEP_A3_08_01 | MQ_A3_08 | OBJ_BOSS | BOSS_A3_03 | R10 | 1 | Velnox – Phasen 1–3 |
 | STEP_A3_08_02 | MQ_A3_08 | OBJ_DECIDE_ENDING | FLAG_ENDING | R10 | 1 | Die Entscheidung (W9) |
-| STEP_A3_09_01 | MQ_A3_09 | OBJ_CINEMATIC | SEQ_A3_EPILOG | R01 | 0 | Epilog (Endsequenz |
+| STEP_A3_09_01 | MQ_A3_09 | OBJ_CINEMATIC | SEQ_A3_EPILOG | R01 | 0 | Epilog (Endsequenz, Vignetten, Schlussbild, Brief) |
 | STEP_A3_09_02 | MQ_A3_09 | OBJ_GOTO | SET_V_LINDWIESEN | R01 | 1 | Nachhall: Erwachen in Lindwiesen |
 
 ---

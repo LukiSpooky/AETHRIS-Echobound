@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K53
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K54
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -422,6 +422,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-203 | NPC-Reaktionen deterministisch je (NPC, Tag, Reiz) | K53 |
 | ADR-204 | NPC-Zustandswechsel nur außerhalb der Sicht | K53 |
 | ADR-205 | Keine Gewalt-/Diebstahlsysteme gegen NPCs | K53 |
+| ADR-206 | Minimaler Kontext-HUD, alles abschaltbar außer Resonanzsinn | K54 |
+| ADR-207 | Radial-Hub und Tab-Leiste gleichwertig | K54 |
+| ADR-208 | Bindungs-UI ohne Erfolgsprozent | K54 |
+| ADR-209 | Menüs pausieren offline, Koop nie | K54 |
+| ADR-210 | UI-Konfiguration als Daten mit Prüfer | K54 |
 
 ## §11 Change Requests
 
@@ -1923,3 +1928,27 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §205 NPC-Technik (LOCKED, K53 §11)
 
 - `UNpcScheduleSubsystem`, StateTree „NPC“, `UNpcCrowdSubsystem` (Mass + Zone Graph), `UBarkSubsystem`. LOD: Voll < 25 m, Nah 25–80 m, Fern 80–250 m, Aus. Budget PS5 ≤ 1,2 ms, Switch 2 ≤ 1,8 ms. Save `World.Npcs` nur Abweichungen.
+
+## §206 UX-Prinzipien (LOCKED, K54 §1)
+
+- UX-01 Welt vor Interface · UX-02 Hören heißt sehen (DR-24) · UX-03 Vorher wissen (DR-06, F-4) · UX-04 Menüs pausieren offline, Koop nie · UX-05 ≤ 3 Eingaben für häufige Aufgaben · UX-06 Unumkehrbares halten (3 s) · UX-07 Symbol + Wort · UX-08 ruhige, gesammelte Belohnungen · UX-09 einheitliche Navigation · UX-10 +40 % Textreserve · UX-11 Diegese, wo sie trägt · UX-12 Zugänglich ab Start.
+
+## §207 Eingabe (LOCKED, K54 §3 · `Data/UI/InputActions.csv`)
+
+- 45 Enhanced-Input-Aktionen in 7 Kontexten (World, Combat, Bond, Menu, Photo, Glide, Mount), Gamepad + Maus/Tastatur, vollständig umbelegbar; Glyphen folgen dem zuletzt genutzten Gerät; Interagieren > Springen bei Ziel in Reichweite.
+
+## §208 Bildschirme & HUD (LOCKED, K54 §4–§5 · `Screens.csv`, `HudElements.csv`)
+
+- CommonUI-Ebenen Game / GameMenu / Menu / Modal; 28 Bildschirme. Radial-Hub (Gamepad) und Tab-Leiste (Maus/Tastatur) gleichwertig (ADR-207). HUD minimal, Kontext-Sichtbarkeit, alles abschaltbar außer Resonanzsinn (ADR-206).
+
+## §209 Kampf- & Bindungs-UI (LOCKED, K54 §6–§7)
+
+- Zeitleiste ≥ 8 Züge (10 auf großen Bildschirmen) mit Live-Vorschau; Zeitkosten inkl. Gehorsam vor Bestätigung; Effektivität mit Wort; Gegnerinfo nur nach Kodex-Stufe; Tempo 1×/1,5×/2×/Skip. Bindungs-UI: Resonanz gegen Schwelle, Fenster in ms, Welle + Haptik, **kein Prozent** (ADR-208).
+
+## §210 Barrierefreiheit & Lokalisierung (LOCKED, K54 §10–§11 · `AccessibilityOptions.csv`)
+
+- 23 Optionen (Motorik, Sehen, Hören, Kognition, Tempo, Allgemein); Ersteinrichtung mit Live-Vorschau; visuelle Klangsignale nicht abschaltbar; Stummschalt-Durchlauf in QA. Text +40 % Reserve, CJK +2 px, Gender-Tokens, Pseudo-Lokalisierung in CI.
+
+## §211 UI-Technik (LOCKED, K54 §13)
+
+- CommonUI + UMG + MVVM, Widgets ohne Spiellogik, GF_UI liest über ViewModels/Events. Budgets UI-Gamethread PS5 0,8 / Switch 2 1,2 / PC 1,0 ms; Rendering 0,6/1,0/0,8 ms; Menü öffnen ≤ 100–150 ms. Prüfer `tools/gen_ui.py` (UI-01–UI-06); `data_lint.py` DL-COL (gleiche Spaltenzahl in allen Datentabellen). Menüs pausieren offline (ADR-209); UI-Konfiguration als Daten (ADR-210).

@@ -1,0 +1,47 @@
+# Eingabeaktionen (K54 §3, Enhanced Input, Tag-Wurzel Input.*). Context: World | Combat | Bond | Menu | Photo | Glide | Mount. Gamepad in Xbox-Notation (PS-Glyphen werden automatisch gesetzt). Hold = Halten erforderlich (ms).
+Name,Context,DisplayName,Gamepad,KeyboardMouse,Hold,Remappable,Notes
+Input.World.Move,World,Bewegen,LS,WASD,0,ja,
+Input.World.Camera,World,Kamera,RS,Maus,0,ja,Invertieren je Achse
+Input.World.Interact,World,Interagieren / Springen,A,E / Leertaste,0,ja,Kontextabhängig: Interagieren hat Vorrang in Reichweite
+Input.World.Crouch,World,Ducken / Schleichen,B,Strg,0,ja,Umschalten oder Halten (Option)
+Input.World.EchoCommand,World,Echo-Befehl,X,F,0,ja,Gehe dorthin / Sammle / Feldfähigkeit
+Input.World.CallMount,World,Reittier rufen,Y,R,0,ja,
+Input.World.ToolsRadial,World,Werkzeuge (Radial),LB,1–8 / Mausrad,0,ja,
+Input.World.ChorusRadial,World,Chor (Radial),RB,Tab,0,ja,
+Input.World.ResonanceSense,World,Resonanzsinn,LT,Q (halten),300,ja,Option: Umschalten statt Halten (Barrierefreiheit)
+Input.World.Resonator,World,Resonator / Kodex-Linse,RT,Rechte Maustaste,0,ja,
+Input.World.QuickItem,World,Schnellzugriff Items,D-Pad,Z / X / C / V,0,ja,
+Input.World.Pause,World,Pausemenü (Radial-Hub),Menu,Esc,0,nein,
+Input.World.Map,World,Karte,View,M,0,ja,
+Input.World.Journal,World,Tagebuch,View (halten),J,500,ja,
+Input.Combat.Navigate,Combat,Menü-Navigation,LS / D-Pad,Pfeile / Maus,0,ja,
+Input.Combat.Confirm,Combat,Bestätigen,A,Linke Maustaste / Enter,0,ja,
+Input.Combat.Back,Combat,Zurück,B,Rechte Maustaste / Rücktaste,0,ja,
+Input.Combat.Formation,Combat,Formation,X,F,0,ja,
+Input.Combat.TargetDetail,Combat,Detailansicht Ziel,Y,R,0,ja,
+Input.Combat.TimelinePreview,Combat,Zeitleiste vorschauen,LB,Umschalt,0,ja,Zeigt Auswirkung der gewählten Aktion auf ≥ 8 Züge (DR-06)
+Input.Combat.SwitchEcho,Combat,Echo wechseln,RB,Tab,0,ja,
+Input.Combat.Analyze,Combat,Analyse (Kodex-Overlay),LT,Q,0,ja,
+Input.Combat.Crescendo,Combat,Crescendo,RT,Leertaste,0,ja,Nur bei Harmonie 100
+Input.Combat.Speed,Combat,Animationstempo,View,T,0,ja,"1× / 1,5× / 2× / Überspringen (K02 §4)"
+Input.Bond.Strike,Bond,Anschlag,A,Leertaste / Linke Maustaste,0,ja,Timing-Fenster K36; Option Auto-Einklang
+Input.Bond.Cancel,Bond,Abbrechen,B,Esc,0,ja,
+Input.Bond.Lure,Bond,Lockmittel wechseln,Y,R,0,ja,
+Input.Bond.Focus,Bond,Fokus,LT,Q (halten),0,ja,"Verlangsamt Frequenzwelle, kostet Ausdauer"
+Input.Bond.Seal,Bond,Siegel wählen,RT,1–8,0,ja,
+Input.Menu.Navigate,Menu,Navigieren,LS / D-Pad,Pfeile / Maus,0,ja,
+Input.Menu.Confirm,Menu,Bestätigen,A,Enter / Linke Maustaste,0,ja,
+Input.Menu.Back,Menu,Zurück,B,Esc / Rechte Maustaste,0,ja,
+Input.Menu.TabLeft,Menu,Reiter links,LB,Q,0,ja,
+Input.Menu.TabRight,Menu,Reiter rechts,RB,E,0,ja,
+Input.Menu.Detail,Menu,Details,Y,R,0,ja,
+Input.Menu.Sort,Menu,Sortieren / Filtern,X,F,0,ja,
+Input.Menu.HoldConfirm,Menu,Halten zum Bestätigen,A (halten),Enter (halten),3000,nein,"Unumkehrbare Entscheidungen (Finale K46, Freilassen, Neustimmung)"
+Input.Photo.Shoot,Photo,Auslösen,RT,Linke Maustaste,0,ja,
+Input.Photo.Zoom,Photo,Zoom,LT / RS,Mausrad,0,ja,
+Input.Photo.Exit,Photo,Fotomodus verlassen,B,Esc,0,ja,
+Input.Glide.Deploy,Glide,Gleiter öffnen,A (in der Luft),Leertaste (in der Luft),0,ja,
+Input.Glide.Dive,Glide,Sturzflug,B,Strg,0,ja,
+Input.Mount.Dismount,Mount,Absteigen,B,Strg,0,ja,
+Input.Mount.Sprint,Mount,Sprinten,LS (drücken),Umschalt,0,ja,Kostet Reit-Ausdauer
+Input.Mount.Ability,Mount,Reitfähigkeit,X,F,0,ja,Graben / Klettern / Steigen je Reitart

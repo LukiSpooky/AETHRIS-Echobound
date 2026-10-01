@@ -209,7 +209,7 @@ Damit 256 Arten mit 18 Rigs (ADR-074) glaubwürdig folgen, definiert jeder Arche
 | A12 | 3 | Schwebt auf Augenhöhe | – | Leuchtet heller über dem Fund | Durch die Hand gleiten |
 | A13 | 3 | Geht/schwebt mit kreisenden Teilen | – | Teile richten sich auf den Fund aus | Klopfen auf den Kern |
 | A14 | 2 | Wurzelt kurz an Halten; folgt in Schüben | – | Blüte dreht sich zum Fund | Blätter streicheln |
-| A15 | 6 | Fliegt hoch |  landet bei Halten | Nacken (Drachensattel) | Brüllt leise und deutet mit dem Kopf |
+| A15 | 6 | Fliegt hoch, landet bei Halten | Nacken (Drachensattel) | Brüllt leise und deutet mit dem Kopf | Stirn an Stirn |
 | A16 | 2 | Schwarm umkreist den Wärter | – | Schwarm formt einen Pfeil | Schwarm um die Hand |
 | A17 | 3 | Kriecht/schwimmt; an Land langsam | Mantel (Schwimmsattel) | Tentakel zeigt auf den Fund | Tentakel um den Arm |
 | A18 | 2 | Klettert neben/über dem Wärter | Rücken (Klettersattel) | Klettert hoch und zeigt | Auf den Schultern sitzen |

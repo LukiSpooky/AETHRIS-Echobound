@@ -64,6 +64,18 @@ def check_zones():
         elif int(z["MinLevel"]) > int(z["MaxLevel"]):
             err(f"Zone {z['Name']}: Min > Max")
 
+def check_column_counts():
+    """DL-COL (K54): jede Zeile hat so viele Spalten wie die Kopfzeile – Kommas in Werten müssen in Anführungszeichen stehen."""
+    for f in sorted(DATA.rglob("*.csv")):
+        lines = [l for l in open(f, encoding="utf-8") if not l.startswith("#") and l.strip()]
+        rs = list(csv.reader(lines))
+        if not rs:
+            continue
+        n = len(rs[0])
+        for r in rs[1:]:
+            if len(r) != n:
+                err(f"{f.relative_to(DATA)}: Zeile {r[0]} hat {len(r)} statt {n} Spalten")
+
 def main():
     for name, fn in list(globals().items()):
         if name.startswith("check_") and callable(fn):

@@ -1,0 +1,30 @@
+# Bildschirme (K54 §4, CommonUI-Ebenen). Layer: Game (HUD) | GameMenu (Radial, Overlays) | Menu (Vollbild) | Modal. Source = Fachkapitel. Pauses = hält die Spieluhr an (nur offline; Koop nie).
+Name,DisplayName,Layer,Source,Pauses,Opens,Notes
+SCR_HUD,HUD,Game,K54,nein,–,Minimal; Elemente in HudElements.csv
+SCR_COMBAT,Kampf,Game,K31–K33,nein,SCR_ECHO_DETAIL|SCR_KODEX_OVERLAY,Zeitleiste ≥ 8 Züge (DR-06)
+SCR_BOND,Resonanzbindung,Game,K36,nein,–,"Frequenzwelle, Fenster, Resonanz"
+SCR_PAUSE_HUB,Radial-Hub,GameMenu,K03 §9,ja,SCR_CHORUS|SCR_KODEX|SCR_INVENTORY|SCR_MAP|SCR_CRAFTING|SCR_JOURNAL|SCR_WARDEN,Gamepad Radial / Maus Tab-Leiste
+SCR_WARDEN,Wärter (Zentrum),Menu,K43,ja,SCR_SKILLTREE|SCR_FACTIONS,"Rang, Sol, Akkorde, Ausrüstung"
+SCR_SKILLTREE,Skilltree,Menu,K43,ja,–,4 Äste
+SCR_FACTIONS,Fraktionen,Menu,K47,ja,–,"Ruf, Ränge, Rüstmeister"
+SCR_CHORUS,Chor,Menu,K18/K37,ja,SCR_ECHO_DETAIL|SCR_SANCTUARY,6 Plätze + Reserve
+SCR_ECHO_DETAIL,Echo-Detail,Menu,K18/K29/K37/K38,ja,–,"Werte, Fähigkeiten, Bindungsstufe, Genetik"
+SCR_SANCTUARY,Resonanzhain,Menu,K37,ja,SCR_BREEDING,10 Gärten
+SCR_BREEDING,Zucht,Menu,K38,ja,–,"Erbklang, Keime"
+SCR_KODEX,Kodex,Menu,K39,ja,SCR_PHOTO_ALBUM,"256 Arten × 4 Stufen, Fragmente, Lore"
+SCR_KODEX_OVERLAY,Kodex-Overlay (Analyse),GameMenu,K39,nein,–,Im Kampf und in der Welt
+SCR_PHOTO,Fotomodus,Game,K39,nein,–,Kodex-Linse First-Person
+SCR_PHOTO_ALBUM,Fotoalbum,Menu,K39,ja,–,"Sterne, Verhaltensfotos"
+SCR_INVENTORY,Inventar,Menu,K40/K41,ja,–,Taschen je Kategorie
+SCR_CRAFTING,Crafting,Menu,K41,ja,–,"Rezepte, fehlende Zutaten markieren"
+SCR_SHOP,Händler,Menu,K42,ja,–,"Kauf/Verkauf, Rabatt (K47)"
+SCR_MAP,Karte,Menu,K08/K48,ja,–,"Hinweisstufen, Wetter-Vorhersage, Resonanzsteine"
+SCR_JOURNAL,Tagebuch,Menu,K48,ja,–,Quests / Aufgaben / Erledigt
+SCR_DIALOGUE,Dialog,GameMenu,K44/K48,nein,–,Drei Haltungen; Schiefertafel (Orden)
+SCR_DECISION,Entscheidung (Finale),Modal,K46,ja,–,"Halten 3 s, keine Zeitgrenze, zufällige Reihenfolge"
+SCR_REWARD,Belohnung / Rangaufstieg,Modal,K43/K47,nein,–,"Kurz (2 s), Warteschlange"
+SCR_SETTINGS,Einstellungen,Menu,K54,ja,–,Inkl. Barrierefreiheit
+SCR_SAVE,Speichern/Laden,Menu,K64,ja,–,Finale-Speicherpunkt eigener Slot
+SCR_ONLINE,Online,Menu,K59–K61,nein,–,"Koop, Tausch, Ranked"
+SCR_CHARACTER,Charakter-Editor,Menu,K01/K54,ja,–,"Körper, Gesicht, Stimme, Pronomen"
+SCR_TITLE,Titel,Menu,K03,–,SCR_CHARACTER|SCR_SAVE|SCR_SETTINGS,
