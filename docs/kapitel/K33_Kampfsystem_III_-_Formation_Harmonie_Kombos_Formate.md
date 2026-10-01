@@ -213,7 +213,29 @@ Die Zeitleiste macht Kombos **planbar**: Der Spieler sieht, ob der zweite Verbü
 
 **Typ-Beteiligung** (Validator: jeder Typ ≥ 4): Flut 7 · Klang 6 · Glut, Frost, Stein, Sturm, Licht, Schwerkraft, Kristall je 5 · Blüte, Gift, Leere, Geist, Arkan, Metall je 4.
 
-### 6.1 Kombo-Familien
+### 6.1 Kombo-Matrix
+
+Zeile = Typ der ersten Fähigkeit, Spalte = Typ der zweiten. Die Matrix ist bewusst **dünn besetzt** (36 von 225 Feldern): Kombos sollen Entdeckungen sein, kein Dauerzustand. Die Kodex-Forschung (K39) und Arenen (Feldregeln) lehren sie nach und nach; im Kampf zeigt die Vorschau eine Kombo erst, nachdem sie einmal ausgelöst oder im Kodex entdeckt wurde.
+
+| zuerst ↓ / dann → | Glut | Flut | Stei | Stur | Blüt | Fros | Leer | Lich | Gift | Meta | Geis | Kris | Klan | Schw | Arka |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Glut** | · | Nebelschwaden | · | · | · | · | · | · | · | Weißglut | · | · | · | · | · |
+| **Flut** | Dampfstoß | · | · | · | Bewässerung | Vereisung | · | · | · | · | · | · | · | · | · |
+| **Stein** | · | · | · | · | · | · | · | · | · | Ambossstoß | · | · | · | Erdsog | · |
+| **Sturm** | Feuersturm | Sturmflut | · | · | · | · | · | · | · | · | · | · | · | · | · |
+| **Blüte** | · | · | Wurzelsprengung | · | · | Raureifblüte | · | · | Giftblüte | · | · | · | · | · | · |
+| **Frost** | · | · | Frostbruch | Schneesturm | · | · | · | · | · | · | · | Eisprisma | · | · | · |
+| **Leere** | · | · | · | · | · | · | · | · | · | · | Seelenleere | · | Stilleschlag | · | · |
+| **Licht** | · | · | · | · | · | · | Finsternisriss | · | · | · | · | · | · | Sternenfall | · |
+| **Gift** | Faulgasexplosion | Giftflut | · | · | · | · | · | Ätzlicht | · | · | · | · | · | · | · |
+| **Metall** | · | · | · | Leiterblitz | · | · | · | · | · | · | · | · | · | · | · |
+| **Geist** | · | · | · | · | · | · | · | Erlösung | · | · | · | · | · | · | Geisterformel |
+| **Kristall** | · | · | · | · | · | · | · | Prismenbündel | · | Spiegelklinge | · | · | · | · | · |
+| **Klang** | · | · | · | · | · | · | · | · | · | · | Totenchor | Resonanzbruch | Kanon | · | · |
+| **Schwerkraft** | · | Gezeitensog | Meteorschlag | Sturz | · | · | · | · | · | · | · | · | · | · | · |
+| **Arkan** | · | · | · | · | · | · | Bannbruch | · | · | · | · | Glyphenprisma | Runengesang | · | · |
+
+### 6.2 Kombo-Familien
 
 | Familie | Beispiele | Idee |
 |---|---|---|
@@ -250,6 +272,26 @@ Ein **Chor-Akkord** wirkt, wenn der Chor (6 Echos, inkl. Reserve) bei Kampfbegin
 | Glyphenakkord | Arcane | Crystal | Bloom | 10 | 1050 | Lebende Schrift |
 | Leerenfrostakkord | Void | Frost | Metal | 10 | 1050 | Kälte ohne Klang |
 
+**Beispiel-Chöre** – automatisch aus dem Katalog gezogen; zeigt, dass jeder Akkord bereits mit Erstformen früher Regionen erreichbar ist:
+
+| Akkord | Beispiel-Chor (je Typ zwei Arten der Stufe 1, frühe Regionen bevorzugt) |
+|---|---|
+| Sonnenakkord | Glut: Cindrel (R01), Emblit (R02) · Licht: Glimkin (R06), Lumpip (R01) · Sturm: Gratkin (R02), Morhaw (R03) |
+| Gezeitenakkord | Flut: Marlit (R06), Undling (R03) · Sturm: Wisplet (R01), Gratkin (R02) · Schwerkraft: Tetri (R02), Levitel (R10) |
+| Bergakkord | Stein: Lithi (R02), Craglet (R02) · Metall: Rivetkin (R01), Brassel (R06) · Kristall: Opalisk (R06), Quarling (R02) |
+| Waldakkord | Blüte: Blossi (R03), Mossling (R01) · Flut: Sheamast (R06), Opalisk (R06) · Geist: Sheamast (R06), Memoro (R02) |
+| Winterakkord | Frost: Rimlet (R02), Snevel (R07) · Licht: Lumpip (R01), Glimkin (R06) · Klang: Resonix (R02), Ariette (R06) |
+| Stilleakkord | Leere: Umbrling (R03), Tysvorn (R07) · Geist: Irrlit (R03), Sheamast (R06) · Arkan: Runkar (R02), Psionit (R09) |
+| Moorakkord | Gift: Blightkin (R03), Virmote (R03) · Blüte: Torfgor (R03), Thornkin (R01) · Leere: Umbrling (R03), Misslit (R09) |
+| Schmiedeakkord | Glut: Cindrel (R01), Emblit (R02) · Metall: Ferrkin (R02), Rivetkin (R01) · Stein: Runkar (R02), Stonlet (R06) |
+| Sternenakkord | Licht: Glimkin (R06), Lumpip (R01) · Schwerkraft: Tetri (R02), Holmel (R10) · Arkan: Runkar (R02), Astraviel (R10) |
+| Tiefenakkord | Kristall: Quarling (R02), Opalisk (R06) · Klang: Chimkin (R01), Ariette (R06) · Schwerkraft: Tetri (R02), Nucleox (R05) |
+| Ahnenakkord | Geist: Memoro (R02), Sheamast (R06) · Frost: Rimlet (R02), Snevel (R07) · Stein: Runkar (R02), Brokk (R01) |
+| Sturmakkord | Sturm: Aerlet (R06), Morhaw (R03) · Klang: Resonix (R02), Chimkin (R01) · Gift: Blightkin (R03), Virmote (R03) |
+| Glutmoorakkord | Gift: Blightkin (R03), Mirepip (R03) · Glut: Emblit (R02), Cindrel (R01) · Flut: Brassel (R06), Morhaw (R03) |
+| Glyphenakkord | Arkan: Runkar (R02), Thaelit (R08) · Kristall: Quarling (R02), Opalisk (R06) · Blüte: Torfgor (R03), Mossling (R01) |
+| Leerenfrostakkord | Leere: Umbrling (R03), Misslit (R09) · Frost: Rimlet (R02), Uvlet (R07) · Metall: Rivetkin (R01), Ferrkin (R02) |
+
 Wirkung: **+10 Start-Harmonie** und Fähigkeiten der drei Typen **×1,05**. Bewusst klein: Akkorde belohnen vielfältige Chöre (S2 Sammeln) und lehren Typbeziehungen, sind aber kein Pflicht-Meta. Im Ranked zählen nur die drei aktiven + drei Reserve-Echos des Kampfteams (6 von 6).
 
 ### 7.2 Bindungs-Duett
@@ -267,6 +309,29 @@ Zwei Echos derselben Evolutionslinie im Chor: +5 Start-Harmonie (einmal je Kampf
 | Start-Harmonie aus Synergien | max. 30 |
 | Typ-Boni aus Akkorden | max. ×1,05 je Typ (nicht stapelnd) |
 | Koop | Akkorde je Spieler-Chor getrennt; Koop-Boni nie Machtvorteile (DR-20) |
+
+### 7.5 Durchgespielt: Trio in der Meisterrunde von Eichenhall (Post-Game)
+
+Aufstellung: **Brokkar** (Stein, vorn), **Wisplet** (Sturm, vorn), **Fernwyn** (Blüte, hinten). Reserve: Undfin (Flut), Uvlet (Frost), Glimar (Licht). Der Chor-Bildschirm zeigt: Kein Akkord ist geschlossen – dem *Waldakkord* fehlt Geist, dem *Sonnenakkord* fehlt Glut. Der Spieler tauscht vor dem Kampf Glimar gegen ein Glut-Echo (Aschwel) und erhält den **Sonnenakkord** (+10 Start-Harmonie). Das ist die beabsichtigte Wirkung: Der Chor-Bildschirm zeigt, welcher Tausch einen Akkord schließt.
+
+1. **Runde 1:** Die Arena-Feldregel *Überwuchs* (ARN_01) heilt alle bodennahen Echos – Maelis Wendts Blüte-Team profitiert stärker. Wisplet (schnellster) setzt *Böenchor*: Brokkar und Fernwyn rücken 50 Ticks vor.
+2. **Runde 2:** Brokkar bekommt Spott durch *Bergrücken* und einen Schild; Wendts Kontakt-Angreifer müssen Brokkar treffen. Fernwyn (hinten) nutzt *Keimsegen* (×1,1 aus der Hinterreihe).
+3. **Runde 3:** Undfin wird für Wisplet eingewechselt (Zeitkosten 60). Undfins *Brandungsschlag* (Flut) trifft Wendts Vorderreihen-Echo; innerhalb von 60 Ticks folgt Aschwels *Glutfunke* auf dasselbe Ziel → **Kombo Dampfstoß**: ×1,3, Ausgetrocknet (halbe Heilung trotz Überwuchs), +15 Harmonie.
+4. **Runde 4–5:** Harmonie 70. Wendt kündigt ein Crescendo an (*Urwaldchor*, goldener Marker). Ohne aktives Frost- oder Klang-Echo kann der Spieler den Marker nicht verschieben; er entscheidet, das gegnerische Heil-Crescendo hinzunehmen und seine Harmonie für den Gegenschlag aufzusparen – eine typische Abwägung zwischen Stören und Kontern.
+5. **Runde 6:** Eigenes Crescendo (*Sonnensturz*, Aschwel, Harmonie 80) auf alle Gegner, Glutboden neutralisiert *Überwuchs* für 3 Runden (Gegen-Terrain, K32 §6.1).
+
+Die Szene zeigt alle Schichten aus §1: Formation (Spott, Hinterreihen-Heilung), Zeitleiste (Böenchor), Kombo (Dampfstoß), Harmonie (Crescendo-Timing), Terrain-Konter und eine Synergie-Entscheidung vor dem Kampf.
+
+### 7.6 Formations-Szenarien
+
+| Situation | Empfohlene Formation | Begründung |
+|---|---|---|
+| Gegner mit vielen Kontakt-Angreifern | Tank + Unterstützer vorn, Fernkämpfer hinten | Kontakt erreicht die Hinterreihe nicht |
+| Gegner mit Geist-Team | Formation zählt wenig – lieber Spott und Schilde | Geist ignoriert Formation |
+| Gegner mit Flut/Schwerkraft | Bind/Wurzelgriff auf Schlüssel-Echo, Stein vorn | Push/Pull und Reihentausch zerstören Aufstellungen |
+| Eigener Kombo-Plan | Kombo-Partner nicht beide hinten | Hinterreihe darf keine Kontakt-Fähigkeiten nutzen |
+| Gegnerische Flächen-Crescendos | VVH statt VVV | Hinterreihe nimmt 750 ‰ auch von Flächen |
+| Eigenes Heil-Crescendo | Heiler hinten | ×1,1 Heilung aus der Hinterreihe |
 
 ---
 
