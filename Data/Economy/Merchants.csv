@@ -54,3 +54,4 @@ MER_AERI_02,SET_C_AERION,NPC_R10_SIYEL_ARCHIVE,Archiv der Baumeister,Scripts,8,2
 MER_AERI_03,SET_C_AERION,NPC_R10_LUMEN,Sternenküche,Food,18,6,Sternenfrucht (Kälteschutz)
 MER_AERI_04,SET_C_AERION,NPC_R10_ORUMA_TUTOR,Hüterin Oruma,Tutor,6,8,Klang/Licht-Tutor (Morgenzeremonie)
 MER_AERI_05,SET_C_AERION,NPC_R10_BRISK,Federschneiderei Brisk,Gear,8,18,Kleidung V (Kälte/Wind)
+MER_SCHW_01,LOC_KLOSTER_SCHWEIGFELS,NPC_R07_IVRA,Ordensladen Schweigfels (Schwester Ivra),General,6,18,"Ruhenetze, Schweigetee; ab Akt III bei Ordensruf ≥ 2 (K47); Schweigegelübde: Handel per Schiefertafel"

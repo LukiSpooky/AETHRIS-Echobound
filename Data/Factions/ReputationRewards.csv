@@ -1,0 +1,28 @@
+# Rufbelohnungen (K47 §5). Kind: Discount | Blueprint | Tutor | Cosmetic | Mount | Sanctuary | Quest | Title | Service.
+Name,Faction,Rank,Kind,Reward,Ref
+RW_F01_2,F01,2,Blueprint,"Resonator III, Kodex-Linse III",K40
+RW_F01_3,F01,3,Tutor,"Tutoren F01 Stufe 1 (3 Fähigkeiten, 2.000 ◎)",K29
+RW_F01_3B,F01,3,Service,"Labor: Fragment-Analyse 1×/Spieltag (zeigt eine Wortlücke)",K39
+RW_F01_4,F01,4,Blueprint,"Resonator IV, Kodex-Linse IV; Tutoren Stufe 2 (3.500 ◎)",K40/K29
+RW_F01_5,F01,5,Cosmetic,"Gelehrtenmantel, Hain-Dekor „Glyphentafel“",K37
+RW_F01_6,F01,6,Quest,"Resonator V, Kodex-Linse V; Questreihe „Der Blick hinter das Glas“ (Mirrowisp)",K39/K62
+RW_F02_2,F02,2,Blueprint,"Wärtertasche III, Wärterwerkzeug III",K40
+RW_F02_3,F02,3,Tutor,"Tutoren F02 Stufe 1; Kontor-Schlüssel (Mechanik-Tore)",K29/K40
+RW_F02_4,F02,4,Blueprint,"Wärtertasche IV, Wärterwerkzeug IV; Tutoren Stufe 2; Lagerhaus +50 Plätze",K40
+RW_F02_5,F02,5,Mount,"Lastsattel-Zubehör (Packtaschen), Händlerwimpel",K40
+RW_F02_6,F02,6,Blueprint,"Wärtertasche V, Wärterwerkzeug V; Titel „Goldene Stimme“",K40
+RW_F03_2,F03,2,Blueprint,"Gleiter III, Wanderstiefel III, Wettermantel III",K40
+RW_F03_3,F03,3,Tutor,"Tutoren F03 Stufe 1; Späher-Netz (Alpha-Positionen auf Karte)",K29
+RW_F03_4,F03,4,Blueprint,"Gleiter IV, Wanderstiefel IV, Wettermantel IV; Tutoren Stufe 2",K40
+RW_F03_5,F03,5,Sanctuary,"Hain: eine Garten-Ausbaustufe nach Wahl ohne Materialkosten (1×), Dekor „Wildwacht-Hochstand“",K37
+RW_F03_6,F03,6,Blueprint,"Gleiter V, Wanderstiefel V, Wettermantel V; Titel „Ehrenwächter“",K40
+RW_F04_2,F04,2,Blueprint,"Laterne III, Atemmaske III; Schwarzmarkt-Zugang (MER_MORV_04)",K40/K11
+RW_F04_3,F04,3,Tutor,"Tutoren F04 Stufe 1; Zellen-Unterschlupf als Schnellreisepunkt (3)",K29
+RW_F04_4,F04,4,Blueprint,"Laterne IV, Atemmaske IV; Tutoren Stufe 2",K40
+RW_F04_5,F04,5,Cosmetic,"Echo-Halstuch (Befreiungsabzeichen), Hain-Dekor „Freiheitsglocke“",K37
+RW_F04_6,F04,6,Blueprint,"Laterne V, Atemmaske V; Titel „Freie Stimme“",K40
+RW_F05_2,F05,2,Service,"Ordensladen Schweigfels (Ruhenetze, Schweigetee)",K12
+RW_F05_3,F05,3,Tutor,"Tutoren F05 Stufe 1 (Leere/Geist/Frost-Schwer-Fähigkeiten)",K29
+RW_F05_4,F05,4,Tutor,"Tutoren F05 Stufe 2; Stille-Stunde-Bonus (+1 Erholung im Hain)",K29/K37
+RW_F05_5,F05,5,Cosmetic,"Schweigegewand (kosmetisch), Hain-Dekor „Verhüllter Brunnen“",K37
+RW_F05_6,F05,6,Quest,"Titel „Hüter der Pause“; Questreihe „Die Pause hören“ Teil 2 (Velnox-Variante)",K62

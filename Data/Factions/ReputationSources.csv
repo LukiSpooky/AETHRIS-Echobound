@@ -1,0 +1,17 @@
+# Rufquellen (K47 §4). Amount = Rufpunkte je Ereignis; DailyCap = Obergrenze je Spieltag (0 = keine); Phase = ab wann verfügbar.
+Name,Faction,Event,Amount,DailyCap,Phase,Notes
+REP_CONTRACT,auto,Auftrag abgeschlossen (ContractTemplates.Faction),BaseSol/5,0,Prolog,"Cooldown je Vorlage (K13 §4); Tier-Skalierung über RewardScale"
+REP_SQ_SMALL,auto,Nebenquest klein (Fraktionsquest),150,0,Akt I,"Fraktion aus Quest-Daten (K49–K51)"
+REP_SQ_CHAIN,auto,Nebenquest-Kettenabschluss,400,0,Akt I,"4 Ketten je Fraktion (Rang 2/3/4/5)"
+REP_MQ,auto,Hauptquest mit Fraktionsbezug,100–300,0,Prolog,"Tabelle K47 §4.2"
+REP_RELEASE,F03,Echo freilassen (statt binden oder nach Bindung),5,50,Akt I,"K36 Mitgefühl-Option; K18 Freilassen"
+REP_RESCUE_SILENCE,F03,Stillezone-Nachwirkung gelöst,25,100,Akt I,"CT_SILENCE und freie Funde"
+REP_KODEX,F01,Kodex-Stufe 3 einer Art erreicht,10,0,Akt I,"Forschung (K39)"
+REP_FRAGMENT,F01,Klangfragment entschlüsselt,15,0,Akt I,"120 Fragmente (K39)"
+REP_TRADE,F02,"Handelsvolumen mit Kontor-Händlern (je 1.000 ◎ Kauf+Verkauf)",20,200,Prolog,"Anti-Exploit: Rückkauf binnen 1 Spieltag zählt nicht (K42 §10)"
+REP_DELIVERY,F02,Kontor-Lieferung pünktlich,30,90,Akt I,"CT_DELIVER innerhalb der Frist"
+REP_LIBERATE,F04,Echo aus Arbeitslager oder Hehlerei befreit,40,160,Akt I,"Nebenquests und Lagerereignisse (K13 §5)"
+REP_BLACKMARKET,F04,"Handelsvolumen Schwarzmarkt (je 1.000 ◎)",15,150,Akt I,"MER_MORV_04 und Zellen-Händler"
+REP_STILLHOUR,F05,Stille Stunde in Schweigfels (Meditation),25,25,Akt III,"1× je Spieltag; keine Kampfhandlung 1 Spielstunde"
+REP_HOSPICE,F05,Hospiz-Dienst (verstörtes Echo beruhigt),40,120,Nachhall,"Nur bei Sereth versöhnt; sonst Splittergruppen-Variante (gleiche Werte)"
+REP_SHELTER,auto,Unterschlupf nach dem Verrat (FLAG_SHELTER),200,0,Akt II,"F04 bei FS, sonst F03"

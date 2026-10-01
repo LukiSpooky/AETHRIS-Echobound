@@ -277,7 +277,7 @@ Der **Atemzug** nach dem Verrat. Der Unterschlupf hängt von `FLAG_FS_STANCE` ab
 
 In beiden Fällen: **Lager-Moment** mit dem ganzen Chor (Starter-Szene, K44 §2), ein Gespräch mit Ysolde (Ton nach `YSOLDE_BOND`), eine Nachricht von Marieke (Ton nach `KONTOR_CRATES`), und Sereth bittet um ein Gespräch unter vier Augen. Sie erzählt, was sie über Venns Pläne weiß: Er braucht **alle zehn Splitter** und einen Ort, an dem die Krone schon einmal klang – **Nimbara**. Er braucht außerdem einen Ton, der den Riegel lösen kann. Sereth sieht den Spieler lange an, sagt aber nicht, welchen.
 
-Freischaltung: **Hain-Erweiterung** (Lagerplatz-Echos aus dem Unterschlupf ziehen in den Resonanzhain, K37), Ordensgegner in Ael'Dorun sind ab jetzt gemischt (Venn-treu: feindlich; Sereth-treu: neutral, handelbar).
+Freischaltung: **Hain-Erweiterung** (Lagerplatz-Echos aus dem Unterschlupf ziehen in den Resonanzhain, K37), Ordensgegner in Ael'Dorun sind ab jetzt gemischt (Venn-treu: feindlich; Sereth-treu: neutral, ansprechbar; Handel mit dem Orden erst ab Akt III, K42 §9).
 
 ---
 

@@ -1,0 +1,7 @@
+# Fraktionen (K07 §9.2, K47 §2). Tag = Gameplay-Tag (Contracts: Faction.*). Quartermaster = Rüstmeister-NPC (Blaupausen, Rufwaren).
+Name,DisplayName,Tag,Archetype,Seat,SeatRegion,Leader,Credo,Quartermaster,QuartermasterSeat,Color,GearSlots,RepStart
+F01,Akademie der Resonanz,Faction.Academy,Forscher,SET_C_DORUNSRUH,R08,Aldric Venn (ab Nachhall kommissarisch Aevrin Thal),Verstehen heißt ordnen.,Archivarin Pell,SET_C_EICHENHALL|SET_C_DORUNSRUH,#3D5A99,RESONATOR|LENS,MQ_A1_07
+F02,Goldklang-Kontor,Faction.Goldklang,Händler,SET_C_SALTRANDHAFEN,R06,Marieke Holm,Ein guter Handel klingt für beide richtig.,Kontorschreiber Ossian,alle Städte (Kontor),#C9A227,BAG|TOOL,MQ_A1_05
+F03,Wildwacht,Faction.Wildwatch,Ranger,SET_C_EICHENHALL,R01,Hralda Brakk,"Wir schützen das Wilde, nicht vor dem Wilden.",Zeugmeisterin Fenja,SET_C_EICHENHALL|WW-Außenposten,#4F7A3A,GLIDER|BOOTS|CLOAK,MQ_P03
+F04,Freie Stimmen,Faction.FreeVoices,Rebellen,SET_C_MORVENFURT (Unterstadt),R03,Tavesh Amaru,Kein Echo gehört jemandem.,Der Schatten,SET_C_MORVENFURT (Unterstadt)|Zellen R04/R05/R06,#A0442E,LANTERN|MASK,MQ_A1_04
+F05,Orden der Stille,Faction.Order,Antagonisten → Verbündete auf Zeit,Kloster Schweigfels,R07,Sereth Vaun (Hohe Schweigerin),Ohne Lied kein Leid.,Schwester Ivra,Kloster Schweigfels,#8A8F99,–,MQ_A2_07

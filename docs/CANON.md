@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K46
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K47
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -393,6 +393,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-174 | Sanfte Stille: Silber statt Grün, gleiche Spawns | K46 |
 | ADR-175 | Epilog = Endsequenz + 3 Vignetten + 4 Schlussbilder | K46 |
 | ADR-176 | Finale-Speicherpunkt als gesonderter Slot | K46 |
+| ADR-177 | Kein Rangverlust beim Ruf | K47 |
+| ADR-178 | Ruf (Taten) getrennt von Story-Haltung (Flags) | K47 |
+| ADR-179 | Keine automatische Rufkopplung zwischen Fraktionen | K47 |
+| ADR-180 | Ordensruf ab dem Verrat, Handel ab Akt III | K47 |
+| ADR-181 | Tageskappen je Rufquelle über die Spieluhr | K47 |
 
 ## §11 Change Requests
 
@@ -886,7 +891,7 @@ Wahrzeichen/Arenen: Wurzelarena unter der Riesenlinde · Schlundring über dem G
 | Prismara | 3.800 | Stimmergilde (Seren Quarz) | Prismenhalle – Ilyx Brannoc, fest 9 | Kristallpuls-Nacht | Lift ab Akt I außer Betrieb; Energiekrise ab Akt II (`DL_Story_EnergyCrisis`, Lichter flackern weltweit); Ilyx hört schwach Grundfrequenzen |
 | Aerion | ~800 | Rat der Baumeister (Hüterin Oruma Siyel) | Sternenarena – Oruma Siyel, fest 10 (= Finalschauplatz) | Sternenlesen (Neumond) | Isoliert seit der Stille; Wand der Zehn (Ilens Gesicht erhalten); erloschener Resonanzstein → Nebenquest verbindet mit Eichenhall |
 
-Händler gesamt: 54 (`Data/Economy/Merchants.csv`).
+Händler gesamt: 55 inkl. Ordensladen Schweigfels (K47) (`Data/Economy/Merchants.csv`).
 
 ## §55 Kloster Schweigfels (LOCKED, K12 §6)
 
@@ -1724,7 +1729,7 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 ## §163 Händler (LOCKED, K42 §7–§10 · `Data/Economy/Merchants.csv`)
 
-- 54 Händler, Kategorien General/Heal/Material/Food/Gear/Rare/Faction/Tutor/Scripts mit Freischaltungen; Tagespreise ±10 % (Fork(4) + Spieltag), Heimat ×0,9 / fremd ×1,15, Ereignisse (Resonanzsturm +10 %); Fraktionsrabatte 5/10/15 % (höchster gilt); kein Spielermarkt, Sol nicht tauschbar, Geschenke ≤ 50 Ressourcen/Tag.
+- 55 Händler (inkl. Ordensladen, K47), Kategorien General/Heal/Material/Food/Gear/Rare/Faction/Tutor/Scripts mit Freischaltungen; Tagespreise ±10 % (Fork(4) + Spieltag), Heimat ×0,9 / fremd ×1,15, Ereignisse (Resonanzsturm +10 %); Fraktionsrabatte 5/10/15 % (höchster gilt); kein Spielermarkt, Sol nicht tauschbar, Geschenke ≤ 50 Ressourcen/Tag.
 
 ## §164 Wärterrang & EP-Kurve (LOCKED, K43 §2–§3 – löst Q14 · `Data/Progression/WardenRank.csv`)
 
@@ -1793,3 +1798,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §180 Hauptstory gesamt (LOCKED, K44–K46)
 
 - 32 Hauptquests (Prolog 3, Akt I 9, Akt II 11, Akt III 9), Σ DurationMin ~51 h typisch / ~41 h Story-Fokus (K01 §7.4), 10 Akkorde, 10 Story-Bosse, W1–W9 je an genau einer Quest (P01, A1_06, A1_08, A2_01, A2_05, A2_07, A2_10, A3_02, A3_08). Vier Leitmotive: Weltlied, Stille, Ilen, Krone.
+
+## §181 Fraktionsprofile (LOCKED, K47 §2 · `Data/Factions/Factions.csv`)
+
+- F01 Akademie (Rüstmeisterin Archivarin Pell; Resonator, Kodex-Linse; Rufstart MQ_A1_07) · F02 Kontor (Kontorschreiber Ossian; Tasche, Werkzeug; MQ_A1_05) · F03 Wildwacht (Zeugmeisterin Fenja; Gleiter, Stiefel, Mantel; MQ_P03) · F04 Freie Stimmen (Der Schatten; Laterne, Atemmaske; MQ_A1_04) · F05 Orden (Schwester Ivra; keine Ausrüstung; MQ_A2_07). Tags `Faction.Academy|Goldklang|Wildwatch|FreeVoices|Order`. Je 6 Rangtitel, geschlechtsneutral wählbar.
+
+## §182 Rufränge & Quellen (LOCKED, K47 §3–§4 · `ReputationRanks.csv`, `ReputationSources.csv`, `tools/ref/aethris_reputation.py`)
+
+- Ränge 1–6: Fremd 0 · Bekannt 300 · Geachtet 900 · Vertraut 2.000 · Verbündet 4.000 · Getragen 7.000. Kein Rangverlust (ADR-177). Ruf ≠ Story-Haltung (ADR-178), keine Rufkopplung (ADR-179). Aufträge geben BaseSol/5; Nebenquest 150, Kettenabschluss 400; Tageskappen je Quelle über die Spieluhr (ADR-181). Ziel: F01–F04 Rang 2 Ende Akt I (FS bis Mitte Akt II), Rang 4 Ende Akt II; Orden Rang 3 Ende Akt III; Rang 6 nur im Endgame. `IReputationService` (AethrisCore/Services), Save-Fragment `Player.Reputation`.
+
+## §183 Rufbelohnungen (LOCKED, K47 §5 · `ReputationRewards.csv`)
+
+- Blaupausen Stufe III/IV/V auf Rang 2/4/6 der Platz-Fraktion (löst „Fraktion Ruf N“, K40); Tutoren 6 je Fraktion (3× Rang 3, 3× Rang 4); Rabatte unverändert K42 §9; Rang 5 Kosmetik/Hain/Reittier-Zubehör; Rang 6 Titel bzw. Mythosquest (F01 Mirrowisp-Reihe, F05 Velnox-Variante). Ordensladen Schweigfels `MER_SCHW_01` ab Akt III bei Ordensruf ≥ 2.
+
+## §184 Fraktionen über die Story (LOCKED, K47 §9)
+
+- Zustände je Akt und im Nachhall (Akademie kommissarisch Aevrin Thal; Kontor-Satzung „Klangtreue“; Wildwacht pflegt Stillezonen; Freie Stimmen verbündet/Untergrund; Orden Hospiz/Splittergruppen). Dialoge werten Rang (≥ 4 / ≤ 3) × Haltung (Flag) getrennt aus; Dilemmata geben Ruf, nehmen keinen, und bieten eine dritte Lösung.

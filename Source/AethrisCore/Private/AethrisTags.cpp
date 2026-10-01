@@ -30,4 +30,12 @@ namespace AethrisTags
 	UE_DEFINE_GAMEPLAY_TAG(Event_World_Zone_BandFixed,   "Event.World.Zone.BandFixed");
 	UE_DEFINE_GAMEPLAY_TAG(Event_Quest_StepCompleted,    "Event.Quest.StepCompleted");
 	UE_DEFINE_GAMEPLAY_TAG(Event_Save_Requested,         "Event.Save.Requested");
+	UE_DEFINE_GAMEPLAY_TAG(Event_Reputation_Changed,     "Event.Reputation.Changed");
+	UE_DEFINE_GAMEPLAY_TAG(Event_Reputation_RankUp,      "Event.Reputation.RankUp");
+
+	UE_DEFINE_GAMEPLAY_TAG(Faction_Academy,              "Faction.Academy");
+	UE_DEFINE_GAMEPLAY_TAG(Faction_Goldklang,            "Faction.Goldklang");
+	UE_DEFINE_GAMEPLAY_TAG(Faction_Wildwatch,            "Faction.Wildwatch");
+	UE_DEFINE_GAMEPLAY_TAG(Faction_FreeVoices,           "Faction.FreeVoices");
+	UE_DEFINE_GAMEPLAY_TAG(Faction_Order,                "Faction.Order");
 }
