@@ -132,6 +132,13 @@ class Validator:
             pass
         elif r["Mount"] and r["SizeClass"] == "M":
             self.err(sid, "CD-17: nur Schwimmreiten ab M, sonst ab L")
+        if not r.get("ExpYield", "").isdigit():
+            self.err(sid, "ExpYield fehlt (K18 §6.2)")
+        py = r.get("PolishYield", "")
+        if not re.fullmatch(r"(HP|Attack|Defense|SpAttack|SpDefense|Speed):[1-3]", py or ""):
+            self.err(sid, f"PolishYield '{py}' ungültig (Format Stat:1-3, K18 §8)")
+        if r["GrowthRate"] not in ("Swift", "Steady", "Late", "Wave"):
+            self.err(sid, f"Wachstumsrate {r['GrowthRate']} unbekannt (K18 §6)")
         if not r["Category"].endswith("-Echo"):
             self.err(sid, "Kategorie muss auf „-Echo“ enden")
         if sid not in self.lore:
@@ -252,7 +259,7 @@ def render(lo, hi):
 | Seltenheit · Bedingungen · Zonen | {RARITY_DE[r['Rarity']]} · {conds} · {', '.join(lst(r['Zones'])) or '–'} |
 | Aktivität · Merkmale | {ACT_DE[r['Activity'].split('.')[-1]]} · {tr} |
 | Nischen · Rolle · Reiten | {ni} · {r['Role']} · {mount} |
-| Basiswerte | HP {r['HP']} · ANG {r['Attack']} · VER {r['Defense']} · SAN {r['SpAttack']} · SVE {r['SpDefense']} · GES {r['Speed']} = **{core}** · PRÄ {r['Precision']} · AUS {r['Evasion']} · Wachstum {r['GrowthRate']} |
+| Basiswerte | HP {r['HP']} · ANG {r['Attack']} · VER {r['Defense']} · SAN {r['SpAttack']} · SVE {r['SpDefense']} · GES {r['Speed']} = **{core}** · PRÄ {r['Precision']} · AUS {r['Evasion']} · Wachstum {r['GrowthRate']} · EP-Ertrag {r['ExpYield']} · Schliff {r['PolishYield']} |
 | Evolution | {evo} |
 | Bindung | Rate {r['BondRate']} · Vorliebe `{r['BondLure']}` |
 | Signatur (Konzept) | {r['SignatureConcept']} |

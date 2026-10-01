@@ -1,0 +1,7 @@
+# Temperamente (K18 §5): Wildverhalten, Bindungsreaktion, Harmonie, KI. Werte in Promille bzw. absolut.
+Name,DisplayName,BondWindowPermille,MaxStrikeAttempts,OnFailedStrike,DetectRadiusPermille,HarmonyGainPermille,FleeHpPermille,Description
+Temperament.Calm,Ruhig,1200,4,Stays,900,1000,150,Geduldig; bleibt nach Fehlversuchen meist
+Temperament.Fiery,Feurig,900,2,Attacks,1000,1100,0,Greift bei Fehlversuch an; mehr Harmonie beim Angreifen
+Temperament.Wary,Wachsam,1000,2,Flees,1300,1000,350,Bemerkt früh; flieht nach zwei Fehlversuchen
+Temperament.Curious,Neugierig,1100,3,Approaches,800,1000,100,Nähert sich; reagiert stark auf Lockmittel
+Temperament.Stoic,Stoisch,1000,3,Stays,1000,950,0,Unbeeindruckt; Furcht-Effekte halbiert

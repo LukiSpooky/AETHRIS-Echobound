@@ -1,0 +1,18 @@
+# Persönlichkeiten (K18 §4): +10 % auf einen Kernwert bzw. +5 PRÄ/AUS; keine Abzüge. Lieblingsinteraktion = stärkster Bindungsgewinn (K37). Idle = Begleiter-Verhalten.
+Name,DisplayName,BoostedStat,FavoriteInteraction,CompanionIdle,CombatAIHint
+Personality.Brave,Mutig,Attack,Training,Läuft voraus und schaut zurück,Bevorzugt direkte Angriffe
+Personality.Wild,Wild,Attack,Play,Jagt Schmetterlinge und Blätter,Greift das schwächste Ziel an
+Personality.Steadfast,Standhaft,Defense,Training,Bleibt dicht beim Wärter,Schützt Verbündete
+Personality.Serene,Gelassen,Defense,Petting,Setzt sich hin und beobachtet,Wartet auf Konter
+Personality.Clever,Klug,SpAttack,Praise,Untersucht Gegenstände,Nutzt Typvorteile konsequent
+Personality.Dreamy,Träumerisch,SpAttack,Petting,Schaut in den Himmel,Spart Harmonie für Crescendo
+Personality.Gentle,Sanft,SpDefense,Feeding,Schmiegt sich an,Heilt früh
+Personality.Patient,Geduldig,SpDefense,Feeding,Liegt im Schatten,Spielt auf Zeit (Zeitleiste)
+Personality.Nimble,Flink,Speed,Play,Rennt im Kreis,Handelt schnell und häufig
+Personality.Restless,Rastlos,Speed,Training,Springt auf Erhöhungen,Wechselt gern die Position
+Personality.Tough,Zäh,HP,Feeding,Wälzt sich im Gras,Bleibt in der Vorderreihe
+Personality.Kind,Gutmütig,HP,Petting,Folgt in Schrittgeschwindigkeit,Stärkt Verbündete
+Personality.Keen,Scharfsichtig,Precision,Praise,Späht Ressourcen aus,Zielt auf Ausweichende
+Personality.Diligent,Gewissenhaft,Precision,Training,Sortiert Steinchen,Nutzt sichere Fähigkeiten
+Personality.Playful,Verspielt,Evasion,Play,Versteckt sich hinter dem Wärter,Weicht aus und neckt
+Personality.Sly,Listig,Evasion,Praise,Schleicht und beobachtet NPCs,Nutzt Statuseffekte

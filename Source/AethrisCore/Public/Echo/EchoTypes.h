@@ -109,7 +109,8 @@ struct AETHRISCORE_API FEchoInstance
 	UPROPERTY(SaveGame, BlueprintReadOnly) FGameplayTag Personality;         // Personality.*
 	UPROPERTY(SaveGame, BlueprintReadOnly) FGameplayTag Temperament;         // Temperament.*
 	UPROPERTY(SaveGame, BlueprintReadOnly) FEchoGenome Genome;
-	UPROPERTY(SaveGame, BlueprintReadOnly) FEchoStats Polish;                // Schliff (K18)
+	UPROPERTY(SaveGame, BlueprintReadOnly) FEchoStats Polish;                // Schliff (K18 §8): 0–80 je Kernwert, Σ ≤ 240
+	UPROPERTY(SaveGame, BlueprintReadOnly) FGameplayTagContainer PolishLocks; // gesperrte Werte (Stat.*), K18 §8
 	UPROPERTY(SaveGame, BlueprintReadOnly) int32 CurrentHP = 0;
 	UPROPERTY(SaveGame, BlueprintReadOnly) FGameplayTagContainer PersistentStatus;
 	UPROPERTY(SaveGame, BlueprintReadOnly) TArray<FPrimaryAssetId> Repertoire;   // alle gelernten Aktiven

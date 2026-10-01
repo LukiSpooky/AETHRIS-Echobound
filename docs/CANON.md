@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K17
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K18
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -300,6 +300,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-081 | Gift schlägt Metall (Korrosion) | K17 |
 | ADR-082 | Licht und Leere gegenseitig sehr effektiv | K17 |
 | ADR-083 | Effektivitätsvorschau ab Kodex-Stufe 2 (Entspannt immer) | K17 |
+| ADR-084 | Persönlichkeiten nur mit Boni, ohne Abzüge (16) | K18 |
+| ADR-085 | Anlage multiplikativ (bis +15 %), Schliff additiv | K18 |
+| ADR-086 | Trefferchance gedeckelt auf 50–100 % | K18 |
+| ADR-087 | Bindung gibt mehr EP als Erschöpfen (×1,2) | K18 |
 
 ## §11 Change Requests
 
@@ -970,3 +974,31 @@ Balance: jeder Typ 3× sehr effektiv; Offensiv-EV 0,980 (Klang) – 1,070 (Metal
 - Je Typ genau eine Status-Immunität (Arbeitsnamen: Brand, Ausgetrocknet, Rückstoß, Verlangsamt, Welke, Starre, Entzug, Geblendet, Vergiftet, Erschüttert, Furcht, Gebrochen, Verstummt, Schwebend, Verflucht) – final in K32.
 - Typfarben (Arbeitsstand, final K56): Glut #E8562A · Flut #2E8BC0 · Stein #8C7B65 · Sturm #7FD1E8 · Blüte #5DAA4C · Frost #BFE6F5 · Leere #2B2240 · Licht #F6D86B · Gift #8E4FB0 · Metall #9AA3AD · Geist #B7A4E0 · Kristall #E28FC6 · Klang #F2A93B · Schwerkraft #4B5BA6 · Arkan #3FB8A8; jeder Typ mit eigener Symbolform; immer Symbol + Name.
 - Effektivitätsvorschau im Kampf ab Kodex-Stufe 2 der Zielart (Entspannt: immer).
+
+## §79 Statusformeln & Stufen (LOCKED, K18 §2–§3 · `EchoStatCalculator.h`, `tools/ref/aethris_stats.py`)
+
+- HP = ⌊B·(L+10)·(1000+10·A)/40000⌋ + L + 12 + S
+- Kernwert = ⌊⌊B·(L+10)·(1000+10·A)/55000⌋·P/1000⌋ + ⌊S/2⌋ (P = 1100 für Persönlichkeits-Wert); HP-Persönlichkeit: Ergebnis ×1,1
+- PRÄ/AUS = B + ⌊A/3⌋ (+5 bei Persönlichkeit), levelunabhängig
+- Stufen −4…+4 (`Data/Combat/StatStages.csv`): Kern 500/571/667/800/1000/1250/1500/1750/2000 ‰; PRÄ/AUS 700/775/850/925/1000/1075/1150/1225/1300 ‰; Reservewechsel setzt zurück.
+- Treffer (‰) = clamp(Genauigkeit × PRÄ_eff / AUS_eff, 500, 1000).
+- Grenzwerte: Kern max. 394, HP max. 698.
+
+## §80 Anlagen & Schliff (LOCKED, K18 §7–§8)
+
+- **Anlagen** 0–15 je Wert (8 Werte), +1 %/Punkt (HP/Kern) bzw. +1 je 3 (PRÄ/AUS); wild gleichverteilt, Rare/VeryRare garantieren 2/3 Werte mit 15; Anzeige 4 Klassen (schwach 0–4, solide 5–9, stark 10–13, vollendet 14–15) bzw. exakt per Skill; **Klangstimmung** (Endgame) setzt einen Wert auf 15.
+- **Schliff** 0–80 je Kernwert, Σ ≤ 240; Kampf über `PolishYield` (Stat:1–3) der Gegnerart; Training 4–8 Punkte, 1 Spieltag Abklingzeit je Echo; `PolishLocks` sperren Werte; Reset über **Klangbad** (Thermen Seraphe) / Item Klangsalz.
+
+## §81 Persönlichkeiten (LOCKED, K18 §4 · `Data/Echos/Personalities.csv`)
+
+16: Mutig, Wild (ANG) · Standhaft, Gelassen (VER) · Klug, Träumerisch (SAN) · Sanft, Geduldig (SVE) · Flink, Rastlos (GES) · Zäh, Gutmütig (HP) · Scharfsichtig, Gewissenhaft (PRÄ +5) · Verspielt, Listig (AUS +5). Nur Boni (+10 %), keine Abzüge; je Lieblingsinteraktion (Training/Spielen/Streicheln/Loben/Füttern), Begleiter-Idle, KI-Neigung. Änderung per **Wesensklang** (Endgame-Crafting).
+
+## §82 Temperamente (LOCKED, K18 §5 · `Data/Echos/Temperaments.csv`)
+
+Ruhig (Fenster ×1,2, 4 Anschläge, bleibt, Flucht 15 %) · Feurig (×0,9, 2, greift an, Harmonie ×1,1 beim Angreifen, flieht nie) · Wachsam (×1,0, 2, flieht, Wahrnehmung ×1,3, Flucht 35 %) · Neugierig (×1,1, 3, nähert sich, Wahrnehmung ×0,8) · Stoisch (×1,0, 3, bleibt, Furcht halbiert, Harmonie ×0,95). Standardverteilung 30/15/20/20/15 %, sichtbar ab Kodex-Stufe 2 (Farbton der Frequenzwelle).
+
+## §83 Wachstum & EP (LOCKED, K18 §6 · `Data/Echos/GrowthRates.csv`)
+
+- Swift 0,6·L³ (L100 600.000) · Steady 0,8·L³ (800.000) · Late L³·(0,45+0,65·L/100) (1.100.000) · Wave L³·(0,8+0,08·sin(L/6)) (734.524); Legendäre/Mythische Late.
+- EP = ⌊Ertrag × Ld × (2·Ld+10) / ((Ld+Lp+10)·6)⌋ × Quelle (Kampf 1,0 · Bindung 1,2 · Trainer 1,3) × Bonus (Reserve 0,5, Entspannt 1,25, Items ≤ 1,2). Ertrag Stufe 1 ≈ 60 · Stufe 2 ≈ 140 · Stufe 3/Einzel ≈ 210 · Legendär 320 (Tuning K63).
+- `Species.csv` + Spalten `ExpYield`, `PolishYield`; `FEchoInstance` + `PolishLocks`.
