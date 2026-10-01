@@ -484,6 +484,34 @@ Die Art Bible (K56) legt Farbwerte und Schriften fest; K54 legt Regeln und Token
 
 **Aufgabenmatrix (UX-05):** Für 20 häufige Aufgaben ist die Eingabezahl dokumentiert und wird bei jeder Menüänderung neu gemessen (automatisierter UI-Test).
 
+### 14.1 Aufgabenmatrix
+
+| # | Aufgabe | Gamepad | Maus/Tastatur | Eingaben | Ziel UX-05 |
+|---|---|---|---|---|---|
+| 1 | Echo im Kampf wechseln | RB → Echo → A | Tab → Klick | 3 | ✓ |
+| 2 | Heilmittel im Kampf nutzen | Steuerkreuz → Ziel → A | Z → Klick | 3 | ✓ |
+| 3 | Fähigkeit wählen und bestätigen | Stick → A | Klick | 2 | ✓ |
+| 4 | Zeitleisten-Vorschau ansehen | LB halten | Umschalt halten | 1 | ✓ |
+| 5 | Crescendo auslösen | RT | Leertaste | 1 | ✓ |
+| 6 | Quest verfolgen | Menu → Tagebuch → A | J → Klick | 3 | ✓ |
+| 7 | Kodex-Eintrag eines sichtbaren Echos öffnen | LT (Analyse) → Y | Q → R | 2 | ✓ |
+| 8 | Schnellreise | View → Stein → A | M → Klick | 3 | ✓ |
+| 9 | Echo zum Reiten rufen | Y | R | 1 | ✓ |
+| 10 | Item zum Schnellzugriff legen | Menu → Inventar → X | Esc → Inventar → Rechtsklick | 3 | ✓ |
+| 11 | Lockmittel bei der Bindung wechseln | Y | R | 1 | ✓ |
+| 12 | Echo freilassen (unumkehrbar) | Detail → X → A halten 3 s | Klick → Enter halten | 3 | ✓ |
+| 13 | Ausrüstung wechseln | Menu → Wärter → A | Tab-Leiste → Klick | 3 | ✓ |
+| 14 | Foto machen | RT (Linse) → RT | Rechtsklick → Linksklick | 2 | ✓ |
+| 15 | Fehlende Zutaten markieren | Crafting → Rezept → Y | Klick → R | 3 | ✓ |
+| 16 | Hinweis anfordern | Tagebuch → Quest → X | Klick → F | 3 | ✓ |
+| 17 | Kampftempo ändern | View | T | 1 | ✓ |
+| 18 | Untertitel umschalten | Menu → Einstellungen → … | Esc → … | 4 | ✗ (Ausnahme: Einstellungen, Ersteinrichtung deckt ab) |
+| 19 | Formation ändern | X → Stick → A | F → Klick | 3 | ✓ |
+| 20 | Echo im Chor tauschen | Menu → Chor → A, A | Tab-Leiste → Ziehen | 3 | ✓ |
+
+Die einzige Überschreitung (Einstellungen) ist bewusst: Einstellungen sind selten und werden in der Ersteinrichtung abgefragt. Jede Menüänderung muss diese Matrix im automatisierten UI-Test bestehen (K66).
+
+
 ---
 
 ## 15. Anforderungen an andere Abteilungen
