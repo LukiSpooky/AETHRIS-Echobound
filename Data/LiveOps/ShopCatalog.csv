@@ -1,0 +1,7 @@
+# Kosmetik-Shop (K68 §5, K01 §14). Feste Preise in Landeswährung (keine Zwischenwährung), kein Zufall, keine Echos/Morphs/Siegel/Werte (DR-17). Category muss eine der drei erlaubten Kategorien aus K01 sein. AlsoEarnable = vergleichbare Inhalte auch spielerisch erreichbar.
+Name,DisplayName,Category,Content,TypicalPriceEUR,PriceRangeEUR,AlsoEarnable
+SHOP_OUTFIT,Wärter-Kleidung,Wärter-Kleidung,Kleidungssets je Kultur und Fest (je 6–8 Teile),"9,99","4,99–14,99","ja (Deluxe-Set, Feste, Fraktionsränge)"
+SHOP_GLIDER,Gleiter-Muster,Gleiter-Skins,Muster und Stoffe für den Gleiter,"4,99","2,99–6,99","ja (Taktproben, Sternfest, Ranked)"
+SHOP_GROVE,Hain-Deko,Hain-Deko,"Möbel, Brunnen, Lichter, Pflanzen für den Resonanzhain","4,99","1,99–9,99","ja (Zirkel-Chronik, Endgame, Feste)"
+SHOP_CAMP,Lager-Stile,Wärter-Kleidung,"Zelte, Lagerfeuer-Stile, Kochgeschirr","4,99","2,99–6,99",ja (Zirkel-Chronik)
+SHOP_PHOTO,Fotorahmen und Filter,Hain-Deko,"Rahmen, Filter, Sticker für den Fotomodus","2,99","1,99–4,99",ja (Fotowettbewerbe)

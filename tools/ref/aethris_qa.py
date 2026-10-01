@@ -85,6 +85,21 @@ def rule_table():
     return "\n".join(lines)
 
 
+def chapters_table():
+    """Übersicht aller Kapitel aus dem Kapitelplan mit Wortzahl der erzeugten Dokumente."""
+    plan = (ROOT / "docs/00_KAPITELPLAN.md").read_text(encoding="utf-8")
+    docs = {p.name[:3]: p for p in (ROOT / "docs/kapitel").glob("K[0-9][0-9]_*.md")}
+    lines = ["| Kapitel | Titel | Owner | Wörter |", "|---|---|---|---|"]
+    total = 0
+    for m in re.finditer(r"^\| (K\d\d) \| ([^|]+) \| ([^|]+) \| [^|]* \| [^|]* \|$", plan, re.M):
+        k = m.group(1)
+        n = len(docs[k].read_text(encoding="utf-8").split()) if k in docs else 0
+        total += n
+        lines.append(f"| {k} | {m.group(2).strip()} | {m.group(3).strip()} | {f'{n:,}'.replace(',', '.')} |")
+    lines.append(f"| **Σ** | **{len(lines) - 2} Kapitel** | | **{f'{total:,}'.replace(',', '.')}** |")
+    return "\n".join(lines)
+
+
 def suites_table():
     lines = ["| Suite | Inhalt | Tests (Launch) | Laufzeit | Stufe |", "|---|---|---|---|---|"]
     for t in rows("Data/QA/TestSuites.csv"):

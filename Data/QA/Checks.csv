@@ -23,3 +23,4 @@ CHK_BALANCE,BL-01–BL-07,tools/ref/aethris_balance.py validate,K63,Nightly
 CHK_SAVE,SV-01–SV-06,tools/ref/aethris_save.py validate,K64,PreSubmit
 CHK_PERF,PF-01–PF-06,tools/ref/aethris_perf.py validate,K65,PreSubmit
 CHK_ROADMAP,Produktionsplan RM-01–RM-07,tools/ref/aethris_roadmap.py validate,K67,PreSubmit
+CHK_LIVEOPS,LiveOps LO-01–LO-07,tools/ref/aethris_liveops.py validate,K68,PreSubmit

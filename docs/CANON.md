@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K67
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K68
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -507,6 +507,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-288 | Text-Freeze April 2030 | K67 |
 | ADR-289 | Kein geplanter Crunch | K67 |
 | ADR-290 | Gleichzeitiger Release aller Plattformen mit Crossplay | K67 |
+| ADR-291 | Events wiederkehrend, Offline-Wege, nur kosmetische Belohnungen | K68 |
+| ADR-292 | Kein bezahlter Saison-Pass | K68 |
+| ADR-293 | Shop ohne Zwischenwährung, feste Preise, Vorschau | K68 |
+| ADR-294 | Erweiterungen R11 Thalgrund / R12 Wurzelgrund, Grundspiel-Kodex bleibt 256 | K68 |
+| ADR-295 | Kennzahlen-Alarme führen nie zu Druckmechaniken | K68 |
+| ADR-296 | Offline-Plan für das Ende der Online-Dienste ab Launch | K68 |
 
 ## §11 Change Requests
 
@@ -2235,7 +2241,7 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 ## §261 Datenprüfungen & Automatisierung (LOCKED, K66 §3–§4 · `Data/QA/Checks.csv`, `TestSuites.csv`, `tools/ref/aethris_qa.py`)
 
-- 23 registrierte Prüfer (Data-Lint, Layers, Katalog, Fähigkeiten, Lernsets, Items, Kombos, Quests, Nebenquests, NPCs, UI, Ökologie, Wetter, Palette, VFX, Netz, Soziales, PvP, Endgame, Balancing, Save, Performance, Roadmap); Erfolg = Exitcode 0 + „0 Verstöße/Fehler“; Regelkatalog aus den Werkzeugen. 16 Suiten (Unit Core/Combat/Breeding/Save/PvP/Quests/World, Functional Onboarding/Combat/Bond/Traversal/Quests/Save/Online/Accessibility, Soak), erste Specs `Aethris.Unit.Core.CombatNet`, `Aethris.Unit.Save.Container`, `Aethris.Unit.PvP.Glicko2`; Funktionale Testfälle FT-001–FT-090.
+- 24 registrierte Prüfer (Data-Lint, Layers, Katalog, Fähigkeiten, Lernsets, Items, Kombos, Quests, Nebenquests, NPCs, UI, Ökologie, Wetter, Palette, VFX, Netz, Soziales, PvP, Endgame, Balancing, Save, Performance, Roadmap, LiveOps); Erfolg = Exitcode 0 + „0 Verstöße/Fehler“; Regelkatalog aus den Werkzeugen. 16 Suiten (Unit Core/Combat/Breeding/Save/PvP/Quests/World, Functional Onboarding/Combat/Bond/Traversal/Quests/Save/Online/Accessibility, Soak), erste Specs `Aethris.Unit.Core.CombatNet`, `Aethris.Unit.Save.Container`, `Aethris.Unit.PvP.Glicko2`; Funktionale Testfälle FT-001–FT-090.
 
 ## §262 Fehler-Workflow & Zertifizierung (LOCKED, K66 §6–§7 · `BugSeverity.csv`, `CertAreas.csv`)
 
@@ -2260,3 +2266,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §267 Prozesse, Risiken, Release (LOCKED, K67 §7–§10)
 
 - Sprints 2 Wochen, Quartalsplanung, Definition of Done (spielbar, Prüfer grün, Tests, Daten, Kapitel, A11y, Budget), Kapitel-Gates und CR-Prozess, kein geplanter Crunch (Umfangsprüfung bei > 2 Wochen über 45 h). Gremien: Leadership Council, Pod-Leads, Kanon-Rat, Balance-Rat, Qualitätsrat, Publisher-Review. Outsourcing (≈ 140 Arten Modell/Textur, Umgebungs-Varianten, Performance Capture, externe QA, PC-Labor). Risikoregister R-01–R-15 mit neuen Scores. Release: Einreichung Anfang Sep 2030, Gold Ende Sep, Day-One-Patch, Launch Nov 2030, 30 Tage Launch-Raum, Übergabe an K68.
+
+## §268 Live-Säulen & Fahrplan (LOCKED, K68 §1–§2 · `Data/LiveOps/ReleasePlan.csv`, `tools/ref/aethris_liveops.py`)
+
+- L-1 Respekt vor Zeit (keine Dailies, Login-Boni, Energie) · L-2 vollständig offline (DR-19) · L-3 fair (kein P2W, kein Zufall gegen Geld, keine Echos im Shop) · L-4 transparent · L-5 gemeinsam · L-6 nachhaltig. Fahrplan 24 Monate: 1.0.1 Day-One, 1.1 (M1), 1.2 Saison 1 (M3), 1.3 RAID_09 (M5), 1.4 Saison 2 (M7), 2.0 Erweiterung 1 (M10), 2.1 Saison 3 + RAID_10 (M12), 2.2 (M15), 2.3 (M18), 3.0 Erweiterung 2 (M21), 3.1 (M24); Update/Saison mindestens alle 3 Monate im Jahr 1.
+
+## §269 Events & Saisons (LOCKED, K68 §3 · `Data/LiveOps/Events.csv`)
+
+- 10 wiederkehrende Events (Resonanzsturm-Nacht alle 6 Wochen/48 h, Lindenfest der Welt, Sternfest von Nimbara, Raid-Woche monatlich, Fotowettbewerb monatlich, Große Wanderung 2×/Jahr, Saisonregel-Woche, Zirkel-Chronik wöchentlich, Echo der Stille vierteljährlich, Jahrestag von AETHRIS); max. 3 gleichzeitig; Ankündigung ≥ 14 Tage; Offline-Wege; Belohnungen nur Kosmetik/Titel/Gesten/Kodex-Fotos, wiederkehrend. Saisons 12 + 1 Wochen mit Weltthema, kein bezahlter Saison-Pass.
+
+## §270 Erweiterungen & Monetarisierung (LOCKED, K68 §4–§5 · `Data/LiveOps/ShopCatalog.csv`)
+
+- Erweiterung 1 „Was die Tiefe singt“: R11 Thalgrund (Tiefsee vor Saltrand, Tauchen), 36 Echos #257–#292, Siedlung Perlhall. Erweiterung 2 „Wo die Wurzeln hören“: R12 Wurzelgrund (unter dem Uralthain, Graben), 34 Echos #293–#326, Siedlung Wurzelrast. Je ≈ 12 h Story, 25 Nebenquests, 1 Tiefenresonanz, 1 Raid; beide Enden kompatibel; keine neuen Typen; Erweiterungsarten nach einer Saison Ranked-zulässig; Grundspiel-Kodex bleibt 256. Editionen Standard/Deluxe/Pass. Shop: Wärter-Kleidung, Gleiter-Skins, Hain-Deko (inkl. Lager-Stile, Fotorahmen), feste Preise in Landeswährung (keine Zwischenwährung), Vorschau, kein Zufall, keine Countdown-Angebote, auch erspielbar.
+
+## §271 Live-Betrieb, Gemeinschaft, Lebensende (LOCKED, K68 §6–§9 · `Data/LiveOps/LiveKPIs.csv`)
+
+- 24/7 Follow-the-Sun, Vorfallstufen V1 ≤ 15 min / V2 ≤ 1 h, Hotfix-Build ≤ 24 h mit Datenprüfungen und Golden Saves, Live-Konfiguration ohne Kampf-/Wirtschaftswerte, automatisierter Saisonwechsel. Live-Team ≈ 45 + Erweiterungsteam ≈ 80. Kommunikation: öffentlicher Quartalsfahrplan, Patch-Notizen mit Begründung, Entwicklungs-Tagebuch, Fotowettbewerbe, Turniere, Barrierefreiheits-Rat. 10 Live-Kennzahlen mit Alarm/Handlung, nie Druckmechaniken. Ende der Online-Dienste: ≥ 12 Monate Vorankündigung, alles Wesentliche offline (Raids solo, Geister-Teams, lokale Koops, Event-Kosmetik freigeschaltet, Cross-Save-Export als Datei).

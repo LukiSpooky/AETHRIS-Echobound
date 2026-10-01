@@ -1,0 +1,12 @@
+# Kennzahlen des Live-Betriebs (K68 §7). Alarm = Schwelle für Handlung; Action = was geschieht (nie: Druckmechaniken einführen).
+Name,DisplayName,Target,Alarm,Action
+KPI_CRASH,Absturzrate je Sitzung,"< 0,2 %","> 0,5 % an einem Tag","Hotfix-Bewertung innerhalb 24 h, Signatur-Triage"
+KPI_SERVER,Verfügbarkeit Online-Dienste,"≥ 99,5 % je Monat",< 99 % in einer Woche,"Ursachenanalyse, Kapazität prüfen"
+KPI_MATCH,Ranked-Wartezeit Median,≤ 45 s,> 90 s in einer Region,"Wertungsfenster, Nachbarregion, Saisonregel"
+KPI_DAU_WAU,"Aktive je Woche (Anteil an Käufern, Monat 3)",≥ 25 %,< 15 %,"Inhaltsplan prüfen, nicht Druck erhöhen"
+KPI_STORY,Story-Abschlussrate (12 Monate),≥ 45 %,< 35 %,Schwierigkeit/Onboarding prüfen (K63)
+KPI_ONLINE30,Online-Funktion in 30 Tagen genutzt,≥ 35 %,< 25 %,"Sichtbarkeit Koop/Tausch, Fehler prüfen"
+KPI_REPORTS,Meldungen je 1.000 Sitzungen,≤ 2,> 5,"Moderation, Schnellchat-Sätze prüfen"
+KPI_SENTIMENT,Nutzerbewertungen (gleitend 30 Tage),≥ 85 % positiv,< 75 %,"Themen clustern, Patch-Plan anpassen"
+KPI_ATTACH,Expansion-Pass-Anteil (12 Monate),≥ 25 %,–,"Erweiterungsinhalte, keine Druckmechanik"
+KPI_REFUNDS,Rückerstattungen Shop,< 1 %,> 3 %,Darstellung der Shop-Inhalte prüfen

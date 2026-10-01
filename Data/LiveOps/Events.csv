@@ -1,0 +1,12 @@
+# Wiederkehrende Live-Events (K68 §3). Echtzeit-Kalender (Ausnahme zu Spielzeit, K02 §13). OfflinePath = Weg zum gleichen Spielinhalt ohne Event (DR-19); Belohnungen nur kosmetisch und wiederkehrend.
+Name,DisplayName,Kind,Cadence,Duration,Content,Rewards,OfflinePath
+EV_STORMNIGHT,Resonanzsturm-Nacht,Welt,alle 6 Wochen,48 h,"Globaler Resonanzsturm (alle Spielenden gleichzeitig), Aurelune-Begegnung möglich, quantisierte Rufe","Kodex-Fotos, Sturm-Geste","Sturmstimmgabel (Abklingzeit 3 Spieltage, K62)"
+EV_LINDENFEST,Lindenfest der Welt,Fest,jährlich (Frühling),7 Tage,"Feste in allen Siedlungen gleichzeitig, Tanz-Gesten, Festmusik","Festkleidung (Kosmetik), Hain-Deko „Lindenkranz“",Lindenfest in Eichenhall jeden 7. Spieltag (K13)
+EV_STARFEST,Sternfest von Nimbara,Fest,jährlich (Herbst),7 Tage,"Sternschauer-Nächte, Sternwärter-Aufgaben, Foto-Wettbewerb Nachthimmel","Gleiter-Muster „Sternbahn“, Fotorahmen",Sternschauer-Nächte im Spielkalender (K15)
+EV_RAIDWEEK,Raid-Woche,Kampf,monatlich,7 Tage,"Ein Raid im Fokus mit Zusatz-Mechanik-Variante, Gruppensuche hervorgehoben",Raid-Banner-Variante,Solo-Variante jederzeit (CANON §129)
+EV_PHOTOCONTEST,Fotowettbewerb,Gemeinschaft,monatlich,14 Tage,"Thema (z. B. „Echos im Regen“), Abstimmung der Gemeinschaft, moderiert","Fotorahmen, Titel des Monats",Fotomodus und Kodex-Fotos immer verfügbar
+EV_MIGRATION,Große Wanderung,Welt,zweimal jährlich,10 Tage,"Seltene Wanderherden ziehen durch drei Regionen (deterministischer Plan, K52)",Kodex-Verhaltensfotos,Wanderungen im Spiel nach Spielkalender (seltener)
+EV_SEASONRULE,Saisonregel-Woche,PvP,je Saison,7 Tage,Sonderregelsatz in der Arena-Halle (z. B. „Kleine Stimmen“),"Gesten, Titel",Freundeskampf mit allen Regeln jederzeit
+EV_CHRONICLE,Zirkel-Chronik,Gemeinschaft,wöchentlich ab Saison 1,7 Tage,Drei Gemeinschaftsziele je Zirkel (K60),kosmetisch (GuildGoals.csv),–
+EV_SILENCEECHO,Echo der Stille,Welt,vierteljährlich,5 Tage,Kurze Stillezonen kehren an wechselnden Orten zurück und werden gemeinsam geheilt (Zählstand global),Hain-Deko „Geheilter Stein“,Wildwacht-Aufträge CT_SILENCE (K13)
+EV_ANNIVERSARY,Jahrestag von AETHRIS,Fest,jährlich (Launch-Monat),14 Tage,"Rückblick, Dank, Konzert-Event in Aerion (Musik K55), Entwickelnden-Kommentare","Titel „Erstes Jahr“, Konzert-Geste",Konzert bleibt als Aufnahme im Hain-Musikspieler; Geste danach über Feste erreichbar

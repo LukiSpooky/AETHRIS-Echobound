@@ -1,0 +1,13 @@
+# Post-Launch-Fahrplan (K68 §2). Month = Monate nach Launch. Updates und Saisons kostenlos; Erweiterungen im Expansion-Pass (K01 §14).
+Name,Month,Kind,Content
+1.0.1,0,Day-One-Patch,"Restfehler S3, Performance-Feinschliff, Server-Skalierung"
+1.1,1,Update,"Stabilität, Komfort (Hain-Sortierung, Kodex-Filter), Barrierefreiheits-Wünsche"
+1.2,3,Saison 1,"Zirkel-Chronik, Saisonregel „Kleine Stimmen“, erste Raid-Woche, Ranked S1"
+1.3,5,Update,"RAID_09 (kostenlos), neue Dissonanzen, Fotomodus-Erweiterung"
+1.4,7,Saison 2,"Ranked-Duell-Nebenliste, Gleichklang-Freundeskampf-Turniere, Hain-Themen"
+2.0,10,Erweiterung 1,"Region R11 „Thalgrund“ (Tiefsee unter Saltrand), 36 Echos #257–#292, Story-Kapitel im Nachhall, Tauchen"
+2.1,12,Saison 3,"Jahrestag, Weltakkord-Ranglisten, RAID_10 (kostenlos)"
+2.2,15,Update,"Neue Taktproben, Zucht-Komfort, Zirkel-Fotowand"
+2.3,18,Saison 5,"Saisonregeln rotieren, PvP-Turniere durch Zirkel"
+3.0,21,Erweiterung 2,"Region R12 „Wurzelgrund“ (Höhlen unter dem Uralthain), 34 Echos #293–#326, Story-Kapitel, Graben-Erkundung"
+3.1,24,Saison 7,"Zweiter Jahrestag, Abschluss der Erweiterungsgeschichte"
