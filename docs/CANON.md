@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K56
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K57
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -437,6 +437,14 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-218 | Typfarbe an Echos nur als Akzent | K56 |
 | ADR-219 | Exklusive Signaturfarbe je Region | K56 |
 | ADR-220 | Klangmale als Lichtquellen der Nacht | K56 |
+| ADR-221 | Geteilte Clips je Archetyp, Signaturen nur für Crescendo-Arten (1.035 Clips) | K57 |
+| ADR-222 | `ABP_Echo_Base` mit Linked Anim Layers, Emotionen additiv | K57 |
+| ADR-223 | Animation-to-Texture für MassNear, Impostor für XL/XXL | K57 |
+| ADR-224 | Motion Matching nur für die Spielerfigur | K57 |
+| ADR-225 | Zwischensequenzen in Echtzeit mit Laufzeit-Bindung | K57 |
+| ADR-226 | Neun Master-Materialien, ≤ 250 Permutationen | K57 |
+| ADR-227 | PCG im Editor gebacken | K57 |
+| ADR-228 | Erste CSV-Spalte `Name` (CR-006) | K57 |
 
 ## §11 Change Requests
 
@@ -447,6 +455,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | CR-003 | K43 | K02 §5 „Wärterrang-Aufstieg 45–90 min (Story-Phase)“ | Präzisiert: 45–90 min in Prolog/Akt I, ≤ 150 min in Akt II/III | 40 Ränge über ~90 h; Meilenstein-Charakter der Ränge, gefühlter Fortschritt über Echo-Level/Bindung/Kodex | Game Director |
 | CR-004 | K46 | §46 Story-Platzierung (K09): „W2 in der ersten freien Akt-I-Region“, „Sereth-Erstauftritt in erster Akt-II-Region“ | W2 in der zweiten Region (ADR-161); Sereth erscheint kurz in MQ_A1_06, ausführlich in Eiðvik (MQ_A2_04) | Erste Region bleibt ein ungestörter Einstieg; Sereth muss vor dem Verrat (W6) als Person bekannt sein | Narrative Director, Game Director |
 | CR-005 | K51 | K11/K12 „Nebenquest-Haken“ je Stadt, K13 Dorf-Haken (§57) | Haken sind Vorgaben, keine Quest-IDs; Umsetzung laut K51 §9 (eigene SQ mit Hakentitel, Teil einer SQ, Sammelreihe oder Weltereignis); Titel/NPCs in K49/K50 angeglichen (u. a. Steinbrecher Arnulf, Ulf Brakk, Fährmeisterin Ailsa Duvreth) | Gerüstverteilung K48 verbindlich | Lead Quest Designer, Narrative Director |
+| CR-006 | K57 | §31 „erste Spalte `Id`“ | Erste CSV-Spalte heißt `Name` (Primärschlüssel, unveränderlich); Importer akzeptiert `Id` als Alias; Bestand (> 100 Dateien) bleibt (ADR-228) | Massenumbenennung zu `Id` | Technical Director, Tools Programmer |
 
 ## §12 Offene Punkte (PROVISIONAL-Tracker)
 
@@ -2002,3 +2011,23 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §221 Asset-Regeln (LOCKED, K56 §10–§12 · `AssetBudgets.csv`)
 
 - Budgets je Asset-Klasse (Echo S1 18k / S3 45k / Stimmen 90k Tris; NPC 60k; Mass-NPC 12k; Nanite für statische Geometrie und Foliage). Texeldichte 10,24 px/cm (Hero/Echos 20,48). Master-Materialien + Instanzen; Präfixe §23. Switch-2-Profil (SSGI + Lightprobes, ≤ 400k Foliage). Clean-Room: Ähnlichkeitstest + Erklärung je Konzept; Review-Pipeline Brief → Silhouetten → Farbskizze → In-Engine-Test (30 m, Nacht, Nebel, Farbenblind).
+
+## §222 Asset-Pipeline (LOCKED, K57 §1–§4)
+
+- Grundsätze TA-01–TA-07 (Daten zuerst, Wiederverwendung, ein Importweg, Prüfen vor Submit, Lesbarkeit je LOD, Plattformprofil ab Import, reproduzierbar). Austausch FBX (Skeletal/Anim), USD (Layout/Set-Dressing), Alembic nur Ausnahmeliste. Inhalt unter `/Game/Aethris/{Core,Echos,Characters,World,VFX,Audio,UI,Cinematics,Data}`, DCC-Quellen in `Art/Source/<gleicher Pfad>`. Muster: `SK_ECHO_###_<Name>`, `AS_Arch_<Archetyp>_<Kat>_<Clip>`, `AS_ECHO_###_<Kat>_<Clip>`, `MF_`, `LI_`, `LS_SC_###_<Name>`. Commit-Marker `[ART-BULK]` (> 200 Assets). Fehlendes Mesh → Archetyp-Proxy in Größe `HeightM` (Platzhalter-Kurve). Klangmal-Tempo aus `SoundMark` = Materialparameter `KlangmalBPM`.
+
+## §223 Kreatur-Rigs & -Animation (LOCKED, K57 §5–§6 · `Data/Anim/AnimCategories.csv`, `tools/ref/aethris_anim.py`)
+
+- 18 `SKEL_Arch_*`, ≤ 12 Zusatzknochen je Art (`extra_00–11`), Retarget-Profile statt neuer Skelette, kein Ragdoll. 12 Clip-Kategorien, 1.035 Kreatur-Clips (geteilt je Archetyp + Signaturen nur bei Crescendo-Arten). `ABP_Echo_Base` mit Linked Layers (Locomotion, Action, Ecology, Emotion additiv, Ride) + Control Rig (Atmung, Klangmal-Puls, IK); Ruf/Klangmal über Quartz synchron. LOD: Skeletal < 150 m (LOD0–3: 15/40/80/150 m), Animation-to-Texture 150–500 m (4 Clips), Impostor XL/XXL > 500 m. A16 Schwarm = Niagara + Schwarmkern-Actor. Evolution: synchroner Verwandlungsclip beider Formen + Dither `EvoBlend`.
+
+## §224 Menschliche Animation & Zwischensequenzen (LOCKED, K57 §7 · `Data/Anim/HumanAnimSets.csv`)
+
+- Motion Matching nur Spieler (`PSD_Player_*`, ≤ 0,25 ms PS5 / 0,45 ms Switch 2); `SKEL_Human` für alle Menschen, 8 NPC-Grundkörper, 3 Spielerkörper; NPC-Stufen < 25 / 60 / 150 m / Mass-Crowd. Lippensynchronisierung audio-gesteuert je Sprache, Orden ohne (24 Gesten). ≈ 70 Zwischensequenzen in Echtzeit (Performance Capture), Spielerfigur und Begleit-Echo zur Laufzeit gebunden.
+
+## §225 Technical Art & Welt (LOCKED, K57 §8–§9)
+
+- Neun Masters (`M_Echo/EchoFX/Env/Foliage/Arch/Char/Water/UI/Decal_Master`), Permutationen ≤ 250 je Plattform, Substrate (Switch 2 Simple). Functions `MF_Klangmal`, `MF_Silence`, `MF_Healing`, `MF_WeatherSurface`, `MF_TypeAccent`, `MF_Shiny`, `MF_Glyph`, `MF_DitherFade`. MPCs Silence, Weather, TimeOfDay, Resonance, Player; ≤ 2 MPCs je Material. Heilungswelle verdeckt Data-Layer-Wechsel Silence → Healed (Vorladen 30 s). PCG 7 Layer, im Editor gebacken (Laufzeit nur Lava-Layer, Wetter-Streudetails). Siedlungen = Packed Level Instance + interaktive Level Instance; HLOD0 Instanzen / HLOD1 Merged / HLOD2 Approx., Landmarken immer. Regionsbudgets: Zellen ≤ 140/70, Draw Calls ≤ 2.500/1.200, Welttexturen ≤ 2,2 GB/900 MB.
+
+## §226 Validierung & Abnahme (LOCKED, K57 §10–§12)
+
+- Validatoren: Namen (`UAethrisAssetNamingValidator`, im Repo), Echo, Textur, Material, Animation, Blueprint, Welt; Pre-Submit: data_lint + Generatoren, Data Validation, check_layers, `[ART-BULK]`-Regel. Nächtliche Berichte: Platzhalter-Kurve, Budgets, Shader, Cook-Größe, Animation-Abdeckung. Aufwand Kreaturen ≈ 7.110 PT (≈ 32 Personenjahre); Ziele VS 25 Arten, Alpha 160, Beta 256/0 Platzhalter. Externe Lieferungen: Konzept/Rigs/geteilte Clips intern; Abnahme automatisch → Art-Review → In-Engine.

@@ -1,0 +1,14 @@
+# Animationskategorien je Echo-Archetyp (K57 §4). Count: fix N | Locomotion (4 je Fortbewegungsart) | MountKinds (5 je Reitart) | Archetyp 1 + Signaturen.
+Name,DisplayName,Content,Count,Source
+ANIM_LOCO,Fortbewegung,"je Fortbewegungsart des Archetyps: Start, Loop, Stopp, Drehen (4)",Locomotion,K16 §4
+ANIM_IDLE,Ruhe,3 Idle-Varianten + 1 Umschau,fix 4,K52 §8
+ANIM_EMOTION,Emotionen,"Freude, Neugier, Angst, Wut, Trauer, Ruhe (additiv)",fix 6,K56 §5.3
+ANIM_ECO,Ökologie,"Nahrung, Schlafen (Ein/Loop/Aus), Sozial, Flucht, Jagd (Räuber) oder Wachsam",fix 7,K52 §8
+ANIM_CALL,Ruf,"Grundruf, Fluchtruf, Antwort (Klangmal-synchron)",fix 3,K55 §5
+ANIM_COMBAT,Kampf,"Phys-/Spez-/Status-Wirken, Treffer leicht/schwer, Ausweichen, Erschöpft, Sieg",fix 8,K31–K33
+ANIM_CRESCENDO,Crescendo,"1 Signatur je Art mit Crescendo-Signatur, sonst Archetyp-Standard",Archetyp 1 + Signaturen,K30
+ANIM_BOND,Bindung,"Beruhigen, Einstimmen, Anschlag-Reaktion gut/perfekt/daneben, Freilassen",fix 6,K36
+ANIM_RIDE,Reiten,"je Reitart: Aufsitzen, Loop, Sprint, Fähigkeit, Absitzen (5)",MountKinds,K40
+ANIM_COMPANION,Begleiter,"Folgen, Feldfähigkeit, Streicheln (Stirn an Stirn …), Initiative-Geste",fix 4,K37
+ANIM_EVOLUTION,Evolution,"Ahnung (Puls), Verwandlung (geteilt mit Zielform)",fix 2,K19
+ANIM_SILENCE,Verstummt,"Erstarren, Verstummt-Loop, Erwachen",fix 3,"K07, K52"

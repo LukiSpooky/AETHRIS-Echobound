@@ -1,0 +1,12 @@
+# Menschliche Animationssätze (K57 §5). Clips = Zielanzahl (Rohschätzung für Planung K67).
+Name,Who,Content,Clips,Source
+HUM_PLAYER_LOCO,Spieler,"Gehen, Laufen, Schleichen, Springen, Landen, Ducken (Motion Matching, ~180 Clips)",180,K02 §5
+HUM_PLAYER_TRAVERSAL,Spieler,"Klettern (Wand, Kante, Überhang), Gleiten (Start, Loop, Kurven, Sturz, Landung), Schwimmen, Tauchen, Graben (auf Reittier)",140,K40
+HUM_PLAYER_TOOLS,Spieler,"Resonator (ziehen, Resonanzsinn, Anschlag), Kodex-Linse, Werkzeug (Klinge/Hacke/Sichel), Lockmittel werfen, Falle stellen",70,"K36, K39, K40"
+HUM_PLAYER_SOCIAL,Spieler,"Gesten (12), Streicheln je Archetyp-Größe (6), Lager (Sitzen, Kochen, Schlafen)",40,"K37, K44"
+HUM_PLAYER_COMBAT,Spieler,"Befehle an den Chor (8), Siegel werfen, Item nutzen, Crescendo-Ruf, Sieg/Niederlage",30,K31
+HUM_NPC_ACTIVITY,NPC,"Je Aktivitätscode (K53 §4): Arbeit je Beruf (12 Berufe), Essen, Gasthaus, Markt, Streife, Vorlesung, Labor, Lesen, Stille Stunde, Fischen, Hüten, Unterricht, Spielen, Reise, Rast",220,K53
+HUM_NPC_REACTION,NPC,"Schutz suchen, Siesta, Zuschauen, Fliehen, Ausweichen, Staunen, Streicheln, Danken, Feiern, Sorge, Laternen anzünden, Himmel zeigen",60,K53 §6
+HUM_NPC_GESTURE,NPC (Orden),"Schweigegesten-Set (24 Gesten), Schiefertafel schreiben/zeigen",30,"K53, CANON §55"
+HUM_DIALOGUE,alle,"Dialog-Idles (Haltung je Persönlichkeit, 8), Zuhören, Reaktionen (Freude, Zweifel, Schreck, Trauer), Lip-Sync prozedural",90,K48 §10.6
+HUM_CINEMATIC,Story,Motion Capture für 70 Zwischensequenzen (K44–K46),≈ 95 min,K44–K46
