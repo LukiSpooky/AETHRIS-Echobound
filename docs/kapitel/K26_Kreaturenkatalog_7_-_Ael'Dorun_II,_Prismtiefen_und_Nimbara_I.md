@@ -29,7 +29,6 @@ Dieses Kapitel schließt **Ael'Dorun** ab (#193–#198), enthält **alle 20 Arte
 | Arena 9 (Ilyx Brannoc) | Klirrathan, Spathorn, Ligravor, Stalakkord |
 | Himmel = Endspiel-Mobilität | Größtes Reittier (Nimbaroth XXL), schnellster Flieger (Cirrhaven) |
 
-
 ## Übersicht
 
 | Kodex | Name | Typen | Linie · Stufe | Archetyp | Größe | Seltenheit | Rolle |
@@ -115,7 +114,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R08_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Sänger, Bestäuber, Sonnenbader |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Support · – |
-| Basiswerte | HP 63 · ANG 46 · VER 60 · SAN 58 · SVE 66 · GES 52 = **345** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 75 · Schliff SpDefense:1 |
+| Basiswerte | HP 63 · ANG 46 · VER 60 · SAN 58 · SVE 63 · GES 55 = **345** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 75 · Schliff SpDefense:1 |
 | Evolution | → Hymnora (#194) · Bedingung: `Level>=26 & BondTier>=3` |
 | Bindung | Rate 60 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Morgenhymne: Verbündete erhalten Harmonie +5 und heilen leicht |
@@ -139,7 +138,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R08_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Sänger, Bestäuber, Hüter |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Support · – |
-| Basiswerte | HP 91 · ANG 66 · VER 87 · SAN 82 · SVE 95 · GES 74 = **495** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 190 · Schliff SpDefense:2 |
+| Basiswerte | HP 91 · ANG 66 · VER 87 · SAN 82 · SVE 92 · GES 77 = **495** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 190 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 45 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Chorblüte: heilt alle Verbündeten, entfernt einen negativen Status |
@@ -163,7 +162,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R08_Z01 |
 | Aktivität · Merkmale | Nachtaktiv · Sternschauer, Neugierig, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 80 · SVE 60 · GES 69 = **345** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 85 · SVE 60 · GES 64 = **345** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Optikor (#196) · Bedingung: `Level>=32 & TimeOfDay=Night` |
 | Bindung | Rate 50 · Vorliebe `ITM_LURE_STARCHIME` |
 | Signatur (Konzept) | Brennglas: Licht-Angriff, kritisch bei Sonnenwetter |
@@ -187,7 +186,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Selten · `TimeOfDay.Night` · R08_Z04 |
 | Aktivität · Merkmale | Nachtaktiv · Sternschauer, Einzelgänger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 74 · ANG 50 · VER 70 · SAN 115 · SVE 87 · GES 99 = **495** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 190 · Schliff SpAttack:2 |
+| Basiswerte | HP 77 · ANG 50 · VER 70 · SAN 112 · SVE 87 · GES 99 = **495** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 190 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 35 · Vorliebe `ITM_LURE_STARCHIME` |
 | Signatur (Konzept) | Lichtbeugung: lenkt den nächsten Licht- oder Schwerkraft-Angriff auf ein beliebiges Ziel |
@@ -211,7 +210,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Selten · `Moon.FullMoon` · R08_Z01, R08_Z02 |
 | Aktivität · Merkmale | Nachtaktiv · Hüter, Schläfer, Sternschauer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Tank · – |
-| Basiswerte | HP 98 · ANG 74 · VER 106 · SAN 57 · SVE 90 · GES 65 = **490** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 180 · Schliff Defense:2 |
+| Basiswerte | HP 96 · ANG 74 · VER 108 · SAN 57 · SVE 90 · GES 65 = **490** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 180 · Schliff Defense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Steinkreis: Verbündete in Formation erhalten +1 VER und SVE |
@@ -235,7 +234,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `Moon.NewMoon`, `TimeOfDay.Night` · R08_Z04 |
 | Aktivität · Merkmale | Nachtaktiv · Hüter, Einzelgänger, Sänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 117 · SVE 87 · GES 100 = **500** · PRÄ 104 · AUS 100 · Wachstum Late · EP-Ertrag 180 · Schliff SpAttack:2 |
+| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 121 · SVE 87 · GES 96 = **500** · PRÄ 104 · AUS 100 · Wachstum Late · EP-Ertrag 180 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 20 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Königsdekret: Gegner können 1 Zug lang nur angreifen, nicht unterstützen |
@@ -259,7 +258,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R09_Z01, R09_Z02 |
 | Aktivität · Merkmale | Nachtaktiv · Flieger, Klangorter, Schwarm |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Speed · – |
-| Basiswerte | HP 43 · ANG 56 · VER 41 · SAN 51 · SVE 43 · GES 71 = **305** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 60 · Schliff Speed:1 |
+| Basiswerte | HP 43 · ANG 56 · VER 41 · SAN 51 · SVE 47 · GES 67 = **305** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 60 · Schliff Speed:1 |
 | Evolution | → Klirrflug (#200) · Bedingung: `Level>=20` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Klirrschrei: Kristall-Angriff, der Ausweichen des Ziels senkt |
@@ -283,7 +282,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R09_Z02, R09_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Flieger, Klangorter, Jäger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Speed · – |
-| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 72 · SVE 61 · GES 100 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
+| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 72 · SVE 67 · GES 94 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
 | Evolution | → Klirrathan (#201), Klirrnox (#202) · Bedingung: `(Level>=38) | (Level>=38 & Zone=R09_Z04)` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Resonanzflug: trifft zweimal, der zweite Treffer gegen Kristall-Echos verdoppelt |
@@ -307,7 +306,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Flieger, Klangorter, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Speed · Flugreiten |
-| Basiswerte | HP 75 · ANG 97 · VER 71 · SAN 88 · SVE 75 · GES 124 = **530** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 210 · Schliff Speed:3 |
+| Basiswerte | HP 75 · ANG 97 · VER 71 · SAN 88 · SVE 81 · GES 118 = **530** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 210 · Schliff Speed:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Prismenschrei: Crescendo – Klang-Kristall-Welle, alle Gegner −1 Präzision und Ausweichen |
@@ -331,7 +330,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Flieger, Klangorter, Angriffslustig |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Striker · – |
-| Basiswerte | HP 83 · ANG 118 · VER 79 · SAN 61 · SVE 75 · GES 109 = **525** · PRÄ 106 · AUS 96 · Wachstum Swift · EP-Ertrag 210 · Schliff Attack:3 |
+| Basiswerte | HP 83 · ANG 116 · VER 79 · SAN 63 · SVE 75 · GES 109 = **525** · PRÄ 106 · AUS 96 · Wachstum Swift · EP-Ertrag 210 · Schliff Attack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 20 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Missklangschrei: Gegner verlieren Harmonie; Klang-Fähigkeiten 2 Züge gesperrt |
@@ -355,7 +354,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R09_Z02 |
 | Aktivität · Merkmale | Nachtaktiv · Gräber, Gesteinsfresser, Scheu |
 | Nischen · Rolle · Reiten | Kampf, Feld · Tank · – |
-| Basiswerte | HP 62 · ANG 47 · VER 67 · SAN 36 · SVE 57 · GES 41 = **310** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff Defense:1 |
+| Basiswerte | HP 62 · ANG 47 · VER 62 · SAN 36 · SVE 62 · GES 41 = **310** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff Defense:1 |
 | Evolution | → Spatwurm (#204) · Bedingung: `Level>=22` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Spatpanzer: VER +1, bei Treffern durch Kristall-Angriffe heilt er stattdessen |
@@ -379,7 +378,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R09_Z01, R09_Z02 |
 | Aktivität · Merkmale | Nachtaktiv · Gräber, Gesteinsfresser, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Grabreiten |
-| Basiswerte | HP 88 · ANG 66 · VER 95 · SAN 51 · SVE 81 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff Defense:2 |
+| Basiswerte | HP 88 · ANG 66 · VER 89 · SAN 51 · SVE 87 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff Defense:2 |
 | Evolution | → Spathorn (#205) · Bedingung: `Level>=40` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Kristallbohrer: Angriff, der Barrieren durchbricht |
@@ -403,7 +402,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Gräber, Hüter, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Grabreiten |
-| Basiswerte | HP 108 · ANG 81 · VER 117 · SAN 63 · SVE 99 · GES 72 = **540** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 210 · Schliff Defense:3 |
+| Basiswerte | HP 108 · ANG 81 · VER 113 · SAN 63 · SVE 103 · GES 72 = **540** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 210 · Schliff Defense:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Geodenkern: Crescendo – hüllt die eigene Reihe in eine Geode (Schild, VER/SVE +1) |
@@ -427,7 +426,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R09_Z01, R09_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Kletterer, Lauerjäger, Getarnt |
 | Nischen · Rolle · Reiten | Kampf, Feld · Control · – |
-| Basiswerte | HP 51 · ANG 41 · VER 51 · SAN 58 · SVE 53 · GES 51 = **305** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff Speed:1 |
+| Basiswerte | HP 56 · ANG 41 · VER 51 · SAN 53 · SVE 53 · GES 51 = **305** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff Speed:1 |
 | Evolution | → Ligrath (#207) · Bedingung: `Level>=20` |
 | Bindung | Rate 50 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Schwerfaden: bindet das Ziel – es kann 1 Zug nicht die Reihe wechseln |
@@ -451,7 +450,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R09_Z03, R09_Z04 |
 | Aktivität · Merkmale | Nachtaktiv · Kletterer, Jäger, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Feld · Control · – |
-| Basiswerte | HP 72 · ANG 57 · VER 72 · SAN 82 · SVE 75 · GES 72 = **430** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff Speed:2 |
+| Basiswerte | HP 77 · ANG 57 · VER 72 · SAN 77 · SVE 75 · GES 72 = **430** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff Speed:2 |
 | Evolution | → Ligravor (#208) · Bedingung: `Level>=38` |
 | Bindung | Rate 40 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Fallnetz: legt eine Falle; der nächste Gegner, der die Reihe wechselt, wird festgehalten |
@@ -475,7 +474,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Kletterer, Hüter, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Control · Kletterreiten |
-| Basiswerte | HP 88 · ANG 70 · VER 87 · SAN 101 · SVE 92 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff Speed:3 |
+| Basiswerte | HP 94 · ANG 70 · VER 87 · SAN 95 · SVE 92 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff Speed:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Schwerenetz: Crescendo – alle Gegner gebunden, ihre Geschwindigkeit sinkt um 2 Stufen |
@@ -499,7 +498,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R09_Z03 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Neugierig, Verspielt, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 80 · SVE 60 · GES 69 = **345** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 74 · SVE 66 · GES 69 = **345** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Facettor (#210) · Bedingung: `Level>=28 & BondTier>=3` |
 | Bindung | Rate 60 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Facettenblick: Kristall-Angriff, der Licht bricht und Präzision senkt |
@@ -523,7 +522,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R09_Z03, R09_Z05 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Jäger, Leuchtend, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 74 · ANG 50 · VER 70 · SAN 115 · SVE 87 · GES 99 = **495** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 190 · Schliff SpAttack:2 |
+| Basiswerte | HP 74 · ANG 50 · VER 70 · SAN 111 · SVE 91 · GES 99 = **495** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 190 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Prismastrahl: teilt einen Licht-Angriff auf bis zu 3 Ziele |
@@ -547,7 +546,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R09_Z01 |
 | Aktivität · Merkmale | Nachtaktiv · Gräber, Muster-Sammler, Sammler |
 | Nischen · Rolle · Reiten | Kampf, Feld · Striker · – |
-| Basiswerte | HP 54 · ANG 78 · VER 52 · SAN 40 · SVE 49 · GES 72 = **345** · PRÄ 106 · AUS 96 · Wachstum Steady · EP-Ertrag 75 · Schliff Attack:1 |
+| Basiswerte | HP 54 · ANG 80 · VER 52 · SAN 40 · SVE 49 · GES 70 = **345** · PRÄ 106 · AUS 96 · Wachstum Steady · EP-Ertrag 75 · Schliff Attack:1 |
 | Evolution | → Mullhorn (#212) · Bedingung: `Level>=30` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Erzkralle: Metall-Angriff, Volltreffer bei Stein-Echos |
@@ -571,7 +570,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R09_Z01, R09_Z02 |
 | Aktivität · Merkmale | Nachtaktiv · Gräber, Sammler, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Feld · Striker · – |
-| Basiswerte | HP 79 · ANG 111 · VER 74 · SAN 58 · SVE 70 · GES 103 = **495** · PRÄ 106 · AUS 96 · Wachstum Steady · EP-Ertrag 190 · Schliff Attack:2 |
+| Basiswerte | HP 79 · ANG 113 · VER 74 · SAN 58 · SVE 70 · GES 101 = **495** · PRÄ 106 · AUS 96 · Wachstum Steady · EP-Ertrag 190 · Schliff Attack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 40 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Bohrhorn: durchdringender Angriff, ignoriert VER-Erhöhungen |
@@ -595,7 +594,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R09_Z04 |
 | Aktivität · Merkmale | Nachtaktiv · Treiber, Angriffslustig, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 80 · SVE 60 · GES 69 = **345** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 87 · SVE 60 · GES 62 = **345** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Missgrath (#214) · Bedingung: `Level>=32` |
 | Bindung | Rate 40 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Schiefton: Leere-Angriff, Verwirrung gegen Klang-Echos |
@@ -619,7 +618,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Selten · `TimeOfDay.Night` · R09_Z04, R09_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Treiber, Angriffslustig, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 117 · SVE 87 · GES 100 = **500** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
+| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 122 · SVE 87 · GES 95 = **500** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 25 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Weltriss: ändert das Feld zu Missklang-Terrain (Harmonie-Gewinn halbiert, 3 Züge) |
@@ -643,7 +642,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R09_Z02, R09_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Treiber, Neugierig, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 58 · ANG 46 · VER 58 · SAN 66 · SVE 60 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 58 · ANG 46 · VER 58 · SAN 71 · SVE 55 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Psioneth (#216) · Bedingung: `Level>=30 & Moon=FullMoon` |
 | Bindung | Rate 45 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Gedankenstoß: Arkan-Angriff, kann das Ziel auf der Zeitleiste zurücksetzen |
@@ -667,7 +666,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Selten · `Moon.FullMoon` · R09_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Treiber, Einzelgänger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 83 · ANG 67 · VER 83 · SAN 96 · SVE 88 · GES 83 = **500** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
+| Basiswerte | HP 83 · ANG 67 · VER 83 · SAN 99 · SVE 85 · GES 83 = **500** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Gedankenspiegel: kopiert die letzte Fähigkeit des Gegners |
@@ -691,7 +690,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Selten · `TimeOfDay.Night` · R09_Z01, R09_Z04 |
 | Aktivität · Merkmale | Nachtaktiv · Treiber, Lauerjäger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 80 · ANG 64 · VER 80 · SAN 92 · SVE 84 · GES 80 = **480** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 180 · Schliff SpDefense:2 |
+| Basiswerte | HP 80 · ANG 64 · VER 82 · SAN 90 · SVE 84 · GES 80 = **480** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 180 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 25 · Vorliebe `ITM_LURE_LANTERN` |
 | Signatur (Konzept) | Schlagwetter: Gift auf alle Gegner; Glut-Angriffe lösen eine Explosion aus |
@@ -739,7 +738,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R10_Z01, R10_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Treiber, Familienverband, Verspielt |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · – |
-| Basiswerte | HP 63 · ANG 47 · VER 68 · SAN 37 · SVE 58 · GES 42 = **315** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff HP:1 |
+| Basiswerte | HP 63 · ANG 47 · VER 64 · SAN 37 · SVE 58 · GES 46 = **315** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff HP:1 |
 | Evolution | → Nimbor (#220) · Bedingung: `Level>=26` |
 | Bindung | Rate 60 · Vorliebe `ITM_FOOD_CLOUDFRUIT` |
 | Signatur (Konzept) | Wolkenpolster: verringert den nächsten erlittenen Schaden stark |
@@ -763,7 +762,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R10_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Treiber, Sänger, Wanderer |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Flugreiten |
-| Basiswerte | HP 88 · ANG 66 · VER 95 · SAN 51 · SVE 81 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff HP:2 |
+| Basiswerte | HP 88 · ANG 66 · VER 88 · SAN 51 · SVE 81 · GES 66 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff HP:2 |
 | Evolution | → Nimbaroth (#221) · Bedingung: `Level>=44` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_CLOUDFRUIT` |
 | Signatur (Konzept) | Walgesang: Verbündete erhalten Harmonie und Schutz vor Verwirrung |
@@ -787,7 +786,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Tagaktiv · Treiber, Hüter, Wanderer |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Flugreiten |
-| Basiswerte | HP 108 · ANG 81 · VER 117 · SAN 63 · SVE 99 · GES 72 = **540** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 210 · Schliff HP:3 |
+| Basiswerte | HP 108 · ANG 81 · VER 112 · SAN 63 · SVE 99 · GES 77 = **540** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 210 · Schliff HP:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_CLOUDFRUIT` |
 | Signatur (Konzept) | Himmelslast: Crescendo – senkt die Schwerkraft des Feldes, Verbündete +2 GES |
@@ -811,7 +810,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R10_Z01 |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Schwarm, Wanderer |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 43 · ANG 56 · VER 41 · SAN 51 · SVE 43 · GES 71 = **305** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 60 · Schliff Speed:1 |
+| Basiswerte | HP 43 · ANG 51 · VER 41 · SAN 51 · SVE 43 · GES 76 = **305** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 60 · Schliff Speed:1 |
 | Evolution | → Cirrhawk (#223) · Bedingung: `Level>=20` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_CLOUDFRUIT` |
 | Signatur (Konzept) | Böenstoß: Sturm-Angriff, Priorität +1 bei Wind |
@@ -835,7 +834,7 @@ L099  Cirrel ──[Level>=20]──► Cirrhawk ──[Level>=38]──► Cirr
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R10_Z01, R10_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Jäger, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 72 · SVE 61 · GES 100 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
+| Basiswerte | HP 61 · ANG 72 · VER 57 · SAN 72 · SVE 61 · GES 107 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
 | Evolution | → Cirrhaven (#224) · Bedingung: `Level>=38` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_CLOUDFRUIT` |
 | Signatur (Konzept) | Blitzsturz: Sturzflug-Angriff, trifft die Hinterreihe |

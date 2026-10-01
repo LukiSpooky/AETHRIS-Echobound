@@ -29,7 +29,6 @@ Dieses Kapitel schließt die **Sahrun-Weite** ab (#129–#134), enthält **ganz 
 | Arena 5 (Kaldrex Vorn) | Pyroluth, Ambross, Ignavor, Bassalt |
 | Stille-Spur | Fumel/Fumaroth (Leere), Aschgrim (Glut/Leere) |
 
-
 ## Übersicht
 
 | Kodex | Name | Typen | Linie · Stufe | Archetyp | Größe | Seltenheit | Rolle |
@@ -115,7 +114,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R04_Z01, R04_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Leuchtend, Bestäuber, Schwarm |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Support · – |
-| Basiswerte | HP 62 · ANG 45 · VER 60 · SAN 57 · SVE 65 · GES 51 = **340** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 75 · Schliff SpDefense:1 |
+| Basiswerte | HP 62 · ANG 45 · VER 60 · SAN 59 · SVE 63 · GES 51 = **340** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 75 · Schliff SpDefense:1 |
 | Evolution | → Vitrapha (#130) · Bedingung: `Level>=24 & TimeOfDay=Night` |
 | Bindung | Rate 60 · Vorliebe `ITM_LURE_LANTERN` |
 | Signatur (Konzept) | Glasstaub: heilt einen Verbündeten und entfernt Blendung |
@@ -139,7 +138,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Selten · `TimeOfDay.Night` · R04_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Leuchtend, Bestäuber, Tänzer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Support · – |
-| Basiswerte | HP 89 · ANG 64 · VER 85 · SAN 81 · SVE 93 · GES 73 = **485** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 190 · Schliff SpDefense:2 |
+| Basiswerte | HP 89 · ANG 64 · VER 85 · SAN 83 · SVE 91 · GES 73 = **485** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 190 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 40 · Vorliebe `ITM_LURE_LANTERN` |
 | Signatur (Konzept) | Prismaflug: verteilt Heilung auf alle Verbündeten; bei Mondlicht doppelt |
@@ -187,7 +186,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Selten · `Weather.Heatwave` · R04_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Sonnenbader, Hüter, Gesteinsfresser |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Bodenreiten |
-| Basiswerte | HP 100 · ANG 75 · VER 108 · SAN 58 · SVE 92 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 190 · Schliff Defense:2 |
+| Basiswerte | HP 95 · ANG 75 · VER 113 · SAN 58 · SVE 92 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 190 · Schliff Defense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 35 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Glutplateau: Rückstoß-Schaden gegen Nahkampfangreifer, bei Hitze erhöht |
@@ -211,7 +210,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Selten · `TimeOfDay.Night` · R04_Z04, R04_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Sternschauer, Hüter, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 82 · ANG 65 · VER 82 · SAN 94 · SVE 86 · GES 81 = **490** · PRÄ 102 · AUS 100 · Wachstum Late · EP-Ertrag 180 · Schliff SpDefense:2 |
+| Basiswerte | HP 82 · ANG 69 · VER 82 · SAN 90 · SVE 86 · GES 81 = **490** · PRÄ 102 · AUS 100 · Wachstum Late · EP-Ertrag 180 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_STARCHIME` |
 | Signatur (Konzept) | Sternvermessung: sagt den nächsten gegnerischen Zug voraus und verlangsamt ihn |
@@ -331,7 +330,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R05_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Werkzeugnutzer, Muster-Sammler, Neugierig |
 | Nischen · Rolle · Reiten | Kampf, Feld · Tank · – |
-| Basiswerte | HP 62 · ANG 47 · VER 67 · SAN 36 · SVE 57 · GES 41 = **310** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff Defense:1 |
+| Basiswerte | HP 62 · ANG 49 · VER 65 · SAN 36 · SVE 57 · GES 41 = **310** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff Defense:1 |
 | Evolution | → Ambrak (#139) · Bedingung: `Level>=20` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Hammerschlag: Metall-Angriff, der VER des Ziels senkt |
@@ -355,7 +354,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R05_Z02, R05_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Werkzeugnutzer, Hüter, Wärmesucher |
 | Nischen · Rolle · Reiten | Kampf, Feld · Tank · – |
-| Basiswerte | HP 88 · ANG 66 · VER 95 · SAN 51 · SVE 81 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff Defense:2 |
+| Basiswerte | HP 88 · ANG 68 · VER 93 · SAN 51 · SVE 81 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff Defense:2 |
 | Evolution | → Ambross (#140) · Bedingung: `Level>=38` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Glühnieten: verstärkt die Rüstung eines Verbündeten (VER +1, 3 Züge) |
@@ -403,7 +402,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R05_Z01 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Rudel, Verspielt, Aasfresser |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 43 · ANG 56 · VER 41 · SAN 51 · SVE 43 · GES 71 = **305** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 60 · Schliff Speed:1 |
+| Basiswerte | HP 43 · ANG 56 · VER 41 · SAN 53 · SVE 43 · GES 69 = **305** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 60 · Schliff Speed:1 |
 | Evolution | → Aschund (#142) · Bedingung: `Level>=16` |
 | Bindung | Rate 60 · Vorliebe `ITM_FOOD_CHARCOAL` |
 | Signatur (Konzept) | Aschesprung: schneller Angriff, hinterlässt Aschewolke (Präzision −1) |
@@ -427,7 +426,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R05_Z01, R05_Z02 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Rudel, Jäger, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 72 · SVE 61 · GES 100 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
+| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 76 · SVE 61 · GES 96 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
 | Evolution | → Aschgrim (#143) · Bedingung: `Level>=34` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_CHARCOAL` |
 | Signatur (Konzept) | Rudelhatz: stärker, je mehr Verbündete bereits handelten |
@@ -451,7 +450,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Rudel, Jäger, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 75 · ANG 97 · VER 71 · SAN 88 · SVE 75 · GES 124 = **530** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 210 · Schliff Speed:3 |
+| Basiswerte | HP 75 · ANG 97 · VER 71 · SAN 92 · SVE 75 · GES 120 = **530** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 210 · Schliff Speed:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_CHARCOAL` |
 | Signatur (Konzept) | Schattenglut: Crescendo – verschwindet in Rauch und trifft alle Gegner nacheinander |
@@ -475,7 +474,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R05_Z04 |
 | Aktivität · Merkmale | Nachtaktiv · Gesteinsfresser, Scheu, Getarnt |
 | Nischen · Rolle · Reiten | Kampf, Feld · Tank · – |
-| Basiswerte | HP 62 · ANG 47 · VER 67 · SAN 36 · SVE 57 · GES 41 = **310** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff Defense:1 |
+| Basiswerte | HP 59 · ANG 47 · VER 70 · SAN 36 · SVE 57 · GES 41 = **310** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff Defense:1 |
 | Evolution | → Obsidar (#145) · Bedingung: `Level>=22` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Glaspanzer: verringert physischen Schaden; bei Krit zersplittert er (VER −1) |
@@ -499,7 +498,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R05_Z04, R05_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Gesteinsfresser, Revierverteidigend, Getarnt |
 | Nischen · Rolle · Reiten | Kampf, Feld · Tank · – |
-| Basiswerte | HP 88 · ANG 66 · VER 95 · SAN 51 · SVE 81 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff Defense:2 |
+| Basiswerte | HP 85 · ANG 66 · VER 98 · SAN 51 · SVE 81 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff Defense:2 |
 | Evolution | → Obsidrax (#146) · Bedingung: `Level>=40` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Splitterschere: Angriff, der Splitter-Fallen auf die gegnerische Reihe legt |
@@ -595,7 +594,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R05_Z01, R05_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Treiber, Scheu, Getarnt |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 58 · ANG 46 · VER 58 · SAN 66 · SVE 60 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 58 · ANG 46 · VER 58 · SAN 68 · SVE 58 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Fumaroth (#150) · Bedingung: `Level>=28 & TimeOfDay=Night` |
 | Bindung | Rate 45 · Vorliebe `ITM_LURE_LANTERN` |
 | Signatur (Konzept) | Rußhauch: Leere-Angriff, löscht positive Werteveränderungen des Ziels |
@@ -643,7 +642,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R05_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Kletterer, Muster-Sammler, Verspielt |
 | Nischen · Rolle · Reiten | Kampf, Feld · Support · – |
-| Basiswerte | HP 63 · ANG 46 · VER 60 · SAN 58 · SVE 66 · GES 52 = **345** · PRÄ 100 · AUS 102 · Wachstum Steady · EP-Ertrag 75 · Schliff SpDefense:1 |
+| Basiswerte | HP 61 · ANG 46 · VER 60 · SAN 58 · SVE 68 · GES 52 = **345** · PRÄ 100 · AUS 102 · Wachstum Steady · EP-Ertrag 75 · Schliff SpDefense:1 |
 | Evolution | → Drusaro (#152) · Bedingung: `Level>=28` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Drusenwurf: wirft eine Kristalldruse, heilt Verbündeten oder trifft Gegner |
@@ -667,7 +666,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Selten · `Zone.R05_Z04` · R05_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Kletterer, Hüter, Werkzeugnutzer |
 | Nischen · Rolle · Reiten | Kampf, Feld · Support · – |
-| Basiswerte | HP 91 · ANG 66 · VER 87 · SAN 82 · SVE 95 · GES 74 = **495** · PRÄ 100 · AUS 102 · Wachstum Steady · EP-Ertrag 190 · Schliff SpDefense:2 |
+| Basiswerte | HP 89 · ANG 66 · VER 87 · SAN 82 · SVE 97 · GES 74 = **495** · PRÄ 100 · AUS 102 · Wachstum Steady · EP-Ertrag 190 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 40 · Vorliebe `ITM_FOOD_CRYSTALSALT` |
 | Signatur (Konzept) | Glutkristall: legt eine heilende Kristallfläche, die Glutangriffe abschwächt |
@@ -691,7 +690,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R05_Z02, R05_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Aasfresser, Muster-Sammler |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 49 · ANG 63 · VER 46 · SAN 58 · SVE 49 · GES 80 = **345** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 75 · Schliff Speed:1 |
+| Basiswerte | HP 49 · ANG 61 · VER 46 · SAN 58 · SVE 49 · GES 82 = **345** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 75 · Schliff Speed:1 |
 | Evolution | → Voltarn (#154) · Bedingung: `Level>=30` |
 | Bindung | Rate 50 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Funkenhieb: Sturm-Angriff, der gegen Metall-Echos stärker wirkt |
@@ -715,7 +714,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Selten · `Weather.Thunderstorm` · R05_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Aasfresser, Jäger |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Speed · Flugreiten |
-| Basiswerte | HP 71 · ANG 92 · VER 67 · SAN 83 · SVE 71 · GES 116 = **500** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 190 · Schliff Speed:2 |
+| Basiswerte | HP 71 · ANG 94 · VER 67 · SAN 83 · SVE 71 · GES 114 = **500** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 190 · Schliff Speed:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 35 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Blitzableiter: zieht Sturm-Angriffe auf sich und lädt sich damit auf |
@@ -763,7 +762,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `Weather.Heatwave`, `TimeOfDay.Night` · R05_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Wärmesucher, Einzelgänger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 117 · SVE 87 · GES 100 = **500** · PRÄ 104 · AUS 100 · Wachstum Late · EP-Ertrag 180 · Schliff SpAttack:2 |
+| Basiswerte | HP 77 · ANG 50 · VER 71 · SAN 115 · SVE 87 · GES 100 = **500** · PRÄ 104 · AUS 100 · Wachstum Late · EP-Ertrag 180 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 20 · Vorliebe `ITM_FOOD_SULFURCANDY` |
 | Signatur (Konzept) | Kernschwere: zieht alle Gegner in die Vorderreihe, Schaden steigt mit ihrem Gewicht |
@@ -787,7 +786,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R07_Z01, R07_Z02 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Verspielt, Getarnt, Neugierig |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 43 · ANG 56 · VER 41 · SAN 51 · SVE 43 · GES 71 = **305** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 60 · Schliff Speed:1 |
+| Basiswerte | HP 43 · ANG 56 · VER 41 · SAN 51 · SVE 46 · GES 68 = **305** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 60 · Schliff Speed:1 |
 | Evolution | → Snevar (#158) · Bedingung: `Level>=18` |
 | Bindung | Rate 60 · Vorliebe `ITM_FOOD_ICEFISH` |
 | Signatur (Konzept) | Pulversprung: Frost-Angriff aus dem Schnee, Priorität +1 bei Schneefall |
@@ -811,7 +810,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R07_Z02, R07_Z03 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Jäger, Getarnt, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 72 · SVE 61 · GES 100 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
+| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 72 · SVE 66 · GES 95 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
 | Evolution | → Snevrik (#159) · Bedingung: `Level>=36` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_ICEFISH` |
 | Signatur (Konzept) | Weißer Schatten: erhöht Ausweichen, bei Schneefall unsichtbar für 1 Zug |
@@ -835,7 +834,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Jäger, Einzelgänger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 75 · ANG 97 · VER 71 · SAN 88 · SVE 75 · GES 124 = **530** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 210 · Schliff Speed:3 |
+| Basiswerte | HP 75 · ANG 97 · VER 71 · SAN 88 · SVE 80 · GES 119 = **530** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 210 · Schliff Speed:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_ICEFISH` |
 | Signatur (Konzept) | Polarlichtsprung: Crescendo – springt durch Lichtschleier und trifft jeden Gegner einmal |
@@ -859,7 +858,7 @@ L072  Kjalf
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R07_Z01 |
 | Aktivität · Merkmale | Tagaktiv · Herde, Weidegänger, Familienverband |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · – |
-| Basiswerte | HP 63 · ANG 47 · VER 68 · SAN 37 · SVE 58 · GES 42 = **315** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff HP:1 |
+| Basiswerte | HP 63 · ANG 47 · VER 65 · SAN 37 · SVE 61 · GES 42 = **315** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff HP:1 |
 | Evolution | → Kjalmur (#161) · Bedingung: `Level>=22` |
 | Bindung | Rate 60 · Vorliebe `ITM_FOOD_ALPINECHEESE` |
 | Signatur (Konzept) | Wollpanzer: verringert Frost- und Sturmschaden |

@@ -27,7 +27,6 @@ Dieses Kapitel schließt **Hvitfell** ab (#161–#178, insgesamt 22 Arten) und e
 | Arena 7 (Sigrun Fjall) | Snevrik, Kjalgrund, Hallbrand, Glazvind |
 | Ael'Dorun = Archiv | Forschungsnischen bei allen Arten, Glyphen-Köder |
 
-
 ## Übersicht
 
 | Kodex | Name | Typen | Linie · Stufe | Archetyp | Größe | Seltenheit | Rolle |
@@ -111,7 +110,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R07_Z03, R07_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Herde, Weidegänger, Hüter |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Bodenreiten |
-| Basiswerte | HP 88 · ANG 66 · VER 95 · SAN 51 · SVE 81 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff HP:2 |
+| Basiswerte | HP 88 · ANG 66 · VER 91 · SAN 51 · SVE 85 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff HP:2 |
 | Evolution | → Kjalgrund (#162) · Bedingung: `Level>=40 & Weather=Snow` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_ALPINECHEESE` |
 | Signatur (Konzept) | Schneepflug: Angriff auf die Vorderreihe, räumt Fallen |
@@ -135,7 +134,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Tagaktiv · Herde, Hüter, Schläfer |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Bodenreiten |
-| Basiswerte | HP 108 · ANG 81 · VER 117 · SAN 63 · SVE 99 · GES 72 = **540** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 210 · Schliff HP:3 |
+| Basiswerte | HP 108 · ANG 81 · VER 115 · SAN 63 · SVE 101 · GES 72 = **540** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 210 · Schliff HP:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_ALPINECHEESE` |
 | Signatur (Konzept) | Gletscherschritt: Crescendo – Eiswall vor der eigenen Reihe, Gegner rutschen nach hinten |
@@ -159,7 +158,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R07_Z02 |
 | Aktivität · Merkmale | Nachtaktiv · Flieger, Neugierig, Nestbauer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 45 · ANG 30 · VER 43 · SAN 70 · SVE 52 · GES 60 = **300** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff SpAttack:1 |
+| Basiswerte | HP 45 · ANG 30 · VER 43 · SAN 66 · SVE 56 · GES 60 = **300** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff SpAttack:1 |
 | Evolution | → Uvarn (#164) · Bedingung: `Level>=18` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_ICEFISH` |
 | Signatur (Konzept) | Raureifblick: Frost-Angriff, Chance auf Erstarren |
@@ -183,7 +182,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R07_Z02, R07_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Flieger, Jäger, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 65 · ANG 43 · VER 61 · SAN 100 · SVE 75 · GES 86 = **430** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff SpAttack:2 |
+| Basiswerte | HP 65 · ANG 43 · VER 61 · SAN 98 · SVE 77 · GES 86 = **430** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff SpAttack:2 |
 | Evolution | → Uvalis (#165), Uvasil (#166) · Bedingung: `(Level>=36) | (Level>=36 & Zone=R07_Z03 & TimeOfDay=Night)` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_ICEFISH` |
 | Signatur (Konzept) | Lautloser Flug: erster Angriff jedes Kampfes kann nicht ausgewichen werden |
@@ -207,7 +206,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Flieger, Hüter, Sternschauer |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Caster · Flugreiten |
-| Basiswerte | HP 79 · ANG 53 · VER 74 · SAN 122 · SVE 92 · GES 105 = **525** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpAttack:3 |
+| Basiswerte | HP 79 · ANG 53 · VER 74 · SAN 120 · SVE 94 · GES 105 = **525** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpAttack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_ICEFISH` |
 | Signatur (Konzept) | Ahnenruf: Crescendo – ruft die Stimme eines besiegten Verbündeten zurück (Wiederbelebung 30 %) |
@@ -231,7 +230,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Flieger, Einzelgänger, Getarnt |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 88 · ANG 70 · VER 87 · SAN 101 · SVE 92 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpAttack:3 |
+| Basiswerte | HP 88 · ANG 70 · VER 87 · SAN 105 · SVE 88 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpAttack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 20 · Vorliebe `ITM_LURE_BELLCHIME` |
 | Signatur (Konzept) | Schweigeschwinge: Gegner verlieren 1 Zug lang ihren Eigenklang-Bonus |
@@ -327,7 +326,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R07_Z03, R07_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Hüter, Schläfer, Muster-Sammler |
 | Nischen · Rolle · Reiten | Kampf, Feld · Tank · – |
-| Basiswerte | HP 69 · ANG 52 · VER 75 · SAN 40 · SVE 63 · GES 46 = **345** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 75 · Schliff Defense:1 |
+| Basiswerte | HP 67 · ANG 52 · VER 77 · SAN 40 · SVE 63 · GES 46 = **345** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 75 · Schliff Defense:1 |
 | Evolution | → Vardholm (#171) · Bedingung: `Level>=28` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Wegzeichen: Verbündete können 1 Zug nicht verschoben werden |
@@ -351,7 +350,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R07_Z03, R07_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Hüter, Schläfer, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Feld · Tank · – |
-| Basiswerte | HP 100 · ANG 75 · VER 108 · SAN 58 · SVE 92 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 190 · Schliff Defense:2 |
+| Basiswerte | HP 94 · ANG 75 · VER 114 · SAN 58 · SVE 92 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 190 · Schliff Defense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 40 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Lawinenschild: schützt die Hinterreihe vor dem nächsten Flächenangriff |
@@ -375,7 +374,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · `TimeOfDay.Night` · R07_Z02 |
 | Aktivität · Merkmale | Nachtaktiv · Treiber, Sänger, Scheu |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 80 · SVE 60 · GES 69 = **345** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 76 · SVE 60 · GES 73 = **345** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Eidwacht (#173) · Bedingung: `Level>=30 & Moon=FullMoon` |
 | Bindung | Rate 45 · Vorliebe `ITM_LURE_BELLCHIME` |
 | Signatur (Konzept) | Ahnenflüstern: Geist-Angriff, erhöht nächsten Verbündetenangriff |
@@ -399,7 +398,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Selten · `Moon.FullMoon` · R07_Z02 |
 | Aktivität · Merkmale | Nachtaktiv · Sänger, Hüter, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 117 · SVE 87 · GES 100 = **500** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
+| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 114 · SVE 87 · GES 103 = **500** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_BELLCHIME` |
 | Signatur (Konzept) | Totenchor: Klang-Angriff, stärker je mehr Verbündete besiegt wurden |
@@ -423,7 +422,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R07_Z01, R07_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Kletterer, Verspielt, Klangorter |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 49 · ANG 63 · VER 46 · SAN 58 · SVE 49 · GES 80 = **345** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 75 · Schliff Speed:1 |
+| Basiswerte | HP 49 · ANG 60 · VER 46 · SAN 58 · SVE 49 · GES 83 = **345** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 75 · Schliff Speed:1 |
 | Evolution | → Hallbrand (#175) · Bedingung: `Level>=30` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_ALPINECHEESE` |
 | Signatur (Konzept) | Echoruf: Klang-Angriff, der im Gebirge doppelt widerhallt (zweiter Treffer 50 %) |
@@ -447,7 +446,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R07_Z03, R07_Z05 |
 | Aktivität · Merkmale | Tagaktiv · Kletterer, Revierverteidigend, Klangorter |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Speed · Kletterreiten |
-| Basiswerte | HP 70 · ANG 91 · VER 66 · SAN 83 · SVE 70 · GES 115 = **495** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 190 · Schliff Speed:2 |
+| Basiswerte | HP 70 · ANG 89 · VER 66 · SAN 83 · SVE 70 · GES 117 = **495** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 190 · Schliff Speed:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 40 · Vorliebe `ITM_FOOD_ALPINECHEESE` |
 | Signatur (Konzept) | Bergdonner: Klang-Stoß, der Gegner eine Reihe zurückstößt |
@@ -471,7 +470,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Häufig · `Weather.Snow` · R07_Z04, R07_Z05 |
 | Aktivität · Merkmale | Tagaktiv · Schwarm, Treiber, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 58 · ANG 46 · VER 58 · SAN 66 · SVE 60 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 75 · Schliff SpDefense:1 |
+| Basiswerte | HP 58 · ANG 46 · VER 58 · SAN 63 · SVE 63 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 75 · Schliff SpDefense:1 |
 | Evolution | → Glazvind (#177) · Bedingung: `Level>=28 & Weather=Snow` |
 | Bindung | Rate 50 · Vorliebe `ITM_LURE_WINDCHIME` |
 | Signatur (Konzept) | Flockenwirbel: Kristall-Angriff, senkt Ausweichen |
@@ -495,7 +494,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Selten · `Weather.Snow` · R07_Z05 |
 | Aktivität · Merkmale | Tagaktiv · Schwarm, Treiber, Angriffslustig |
 | Nischen · Rolle · Reiten | Kampf · Control · – |
-| Basiswerte | HP 83 · ANG 66 · VER 82 · SAN 95 · SVE 87 · GES 82 = **495** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 190 · Schliff SpDefense:2 |
+| Basiswerte | HP 83 · ANG 66 · VER 82 · SAN 93 · SVE 87 · GES 84 = **495** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 190 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 35 · Vorliebe `ITM_LURE_WINDCHIME` |
 | Signatur (Konzept) | Weißer Sturm: ruft Schneefall herbei; Gegner verlieren jede Runde HP |
@@ -519,7 +518,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `Weather.Snow`, `TimeOfDay.Night` · R07_Z04 |
 | Aktivität · Merkmale | Nachtaktiv · Gräber, Einzelgänger, Lauerjäger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Striker · – |
-| Basiswerte | HP 79 · ANG 113 · VER 75 · SAN 58 · SVE 71 · GES 104 = **500** · PRÄ 106 · AUS 96 · Wachstum Late · EP-Ertrag 180 · Schliff Attack:2 |
+| Basiswerte | HP 79 · ANG 111 · VER 75 · SAN 60 · SVE 71 · GES 104 = **500** · PRÄ 106 · AUS 96 · Wachstum Late · EP-Ertrag 180 · Schliff Attack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 20 · Vorliebe `ITM_FOOD_ICEFISH` |
 | Signatur (Konzept) | Gletscherschlund: Leere-Angriff, der Schilde und Barrieren ignoriert |
@@ -543,7 +542,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R08_Z01, R08_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Muster-Sammler, Neugierig, Werkzeugnutzer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 46 · ANG 31 · VER 43 · SAN 71 · SVE 53 · GES 61 = **305** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff SpAttack:1 |
+| Basiswerte | HP 46 · ANG 31 · VER 43 · SAN 73 · SVE 53 · GES 59 = **305** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff SpAttack:1 |
 | Evolution | → Skrivar (#180) · Bedingung: `Level>=20` |
 | Bindung | Rate 55 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Glyphenkritzel: Arkan-Angriff, der eine zufällige Schwäche des Ziels enthüllt |
@@ -567,7 +566,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R08_Z02, R08_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Muster-Sammler, Werkzeugnutzer, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 65 · ANG 43 · VER 61 · SAN 100 · SVE 75 · GES 86 = **430** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff SpAttack:2 |
+| Basiswerte | HP 65 · ANG 43 · VER 61 · SAN 103 · SVE 75 · GES 83 = **430** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff SpAttack:2 |
 | Evolution | → Skriveth (#181) · Bedingung: `Level>=38` |
 | Bindung | Rate 45 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Bannschrift: schreibt ein Zeichen auf das Ziel, das dessen nächste Fähigkeit verzögert |
@@ -591,7 +590,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Muster-Sammler, Hüter, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 79 · ANG 53 · VER 74 · SAN 122 · SVE 92 · GES 105 = **525** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpAttack:3 |
+| Basiswerte | HP 79 · ANG 53 · VER 74 · SAN 125 · SVE 92 · GES 102 = **525** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpAttack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Weltschrift: Crescendo – schreibt ein Feldzeichen: Arkan-Fähigkeiten aller Verbündeten +1 Stufe |
@@ -615,7 +614,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R08_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Hüter, Leuchtend, Schläfer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Tank · – |
-| Basiswerte | HP 62 · ANG 47 · VER 67 · SAN 36 · SVE 57 · GES 41 = **310** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff SpDefense:1 |
+| Basiswerte | HP 62 · ANG 47 · VER 63 · SAN 40 · SVE 57 · GES 41 = **310** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 60 · Schliff SpDefense:1 |
 | Evolution | → Thaelon (#183) · Bedingung: `Level>=20` |
 | Bindung | Rate 55 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Säulenschein: Barriere, die einen Arkan-Angriff absorbiert |
@@ -639,7 +638,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R08_Z02, R08_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Hüter, Leuchtend, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Tank · – |
-| Basiswerte | HP 88 · ANG 66 · VER 95 · SAN 51 · SVE 81 · GES 59 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff SpDefense:2 |
+| Basiswerte | HP 88 · ANG 66 · VER 90 · SAN 51 · SVE 81 · GES 64 = **440** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 140 · Schliff SpDefense:2 |
 | Evolution | → Thaelarch (#184) · Bedingung: `Level>=40` |
 | Bindung | Rate 45 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Wächterpflicht: fängt Angriffe gegen Verbündete der Hinterreihe ab |
@@ -663,7 +662,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Tagaktiv · Hüter, Einzelgänger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Tank · – |
-| Basiswerte | HP 108 · ANG 81 · VER 117 · SAN 63 · SVE 99 · GES 72 = **540** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 210 · Schliff SpDefense:3 |
+| Basiswerte | HP 108 · ANG 81 · VER 114 · SAN 63 · SVE 99 · GES 75 = **540** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 210 · Schliff SpDefense:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Archontenwall: Crescendo – die eigene Reihe ist 1 Zug unverwundbar gegen Geist und Arkan |
@@ -687,7 +686,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R08_Z01 |
 | Aktivität · Merkmale | Tagaktiv · Muster-Sammler, Werkzeugnutzer, Neugierig |
 | Nischen · Rolle · Reiten | Kampf, Feld · Control · – |
-| Basiswerte | HP 51 · ANG 41 · VER 51 · SAN 58 · SVE 53 · GES 51 = **305** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff Speed:1 |
+| Basiswerte | HP 51 · ANG 45 · VER 51 · SAN 54 · SVE 53 · GES 51 = **305** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff Speed:1 |
 | Evolution | → Tikkar (#186) · Bedingung: `Level>=18` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Taktschlag: verschiebt das Ziel auf der Zeitleiste um 50 nach hinten |
@@ -711,7 +710,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R08_Z01, R08_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Werkzeugnutzer, Muster-Sammler, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Feld · Control · – |
-| Basiswerte | HP 72 · ANG 57 · VER 72 · SAN 82 · SVE 75 · GES 72 = **430** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff Speed:2 |
+| Basiswerte | HP 72 · ANG 61 · VER 72 · SAN 78 · SVE 75 · GES 72 = **430** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff Speed:2 |
 | Evolution | → Tikkoran (#187) · Bedingung: `Level>=36` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Aufziehen: eigener nächster Zug kommt sofort |
@@ -735,7 +734,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Tagaktiv · Werkzeugnutzer, Hüter, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 88 · ANG 70 · VER 87 · SAN 101 · SVE 92 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff Speed:3 |
+| Basiswerte | HP 88 · ANG 75 · VER 87 · SAN 96 · SVE 92 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff Speed:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Zeitbremse: Crescendo – alle Gegner rücken auf der Zeitleiste um 300 nach hinten |
@@ -759,7 +758,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R08_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Hüter, Scheu, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Striker · – |
-| Basiswerte | HP 49 · ANG 70 · VER 46 · SAN 36 · SVE 44 · GES 65 = **310** · PRÄ 106 · AUS 96 · Wachstum Late · EP-Ertrag 60 · Schliff Attack:1 |
+| Basiswerte | HP 49 · ANG 67 · VER 46 · SAN 36 · SVE 44 · GES 68 = **310** · PRÄ 106 · AUS 96 · Wachstum Late · EP-Ertrag 60 · Schliff Attack:1 |
 | Evolution | → Sarkon (#189) · Bedingung: `Level>=24` |
 | Bindung | Rate 50 · Vorliebe `ITM_LURE_LANTERN` |
 | Signatur (Konzept) | Grabesbiss: Geist-Angriff, heilt den Anwender um 25 % des Schadens |
@@ -831,7 +830,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R08_Z01, R08_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Aasfresser, Getarnt, Scheu |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 58 · ANG 46 · VER 58 · SAN 66 · SVE 60 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 58 · ANG 46 · VER 58 · SAN 70 · SVE 56 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Tilgrath (#192) · Bedingung: `Level>=30` |
 | Bindung | Rate 45 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Tilgung: löscht eine erlernte Fähigkeit des Ziels für 2 Züge |
@@ -855,7 +854,7 @@ L084  Tilgel ──[Level>=30]──► Tilgrath
 | Seltenheit · Bedingungen · Zonen | Selten · `TimeOfDay.Night` · R08_Z04 |
 | Aktivität · Merkmale | Nachtaktiv · Aasfresser, Einzelgänger, Getarnt |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 83 · ANG 67 · VER 83 · SAN 96 · SVE 88 · GES 83 = **500** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
+| Basiswerte | HP 83 · ANG 67 · VER 83 · SAN 98 · SVE 86 · GES 83 = **500** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Großes Vergessen: alle Gegner verlieren ihre Werteveränderungen |

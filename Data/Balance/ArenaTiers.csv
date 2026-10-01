@@ -1,0 +1,12 @@
+# Arena-Stufentabelle final (K63 §4, schließt Q13; generiert von tools/ref/aethris_balance.py). AceLevel = Level des stärksten Echos; übrige Echos AceLevel − 2. Ratio = Stärkeverhältnis Arena/Spieler (‰).
+Name,AceLevel,TeamLevel,ChoirSize,Format,ExpectedPlayerLevel,ExpectedWardenRank,RatioPermille
+ARENA_TIER_01,14,12,3,Duell,13,7,1062
+ARENA_TIER_02,19,17,4,Duell,18,11,1037
+ARENA_TIER_03,24,22,4,Duo,23,14,1031
+ARENA_TIER_04,29,27,5,Duell,28,16,1022
+ARENA_TIER_05,36,34,5,Duo,34,19,1066
+ARENA_TIER_06,43,41,5,Trio,41,21,1057
+ARENA_TIER_07,50,48,6,Duell,48,23,1047
+ARENA_TIER_08,56,54,6,Duo,54,24,1043
+ARENA_TIER_09,63,61,6,Trio,61,27,1038
+ARENA_TIER_10,70,68,6,Trio,68,29,1035

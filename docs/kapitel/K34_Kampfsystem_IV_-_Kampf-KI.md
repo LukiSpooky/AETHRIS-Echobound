@@ -343,10 +343,10 @@ Die drei Grade (CANON §16) skalieren mehrere Hebel gleichzeitig – nicht nur W
 
 | Profil ↓ gegen → | Zufall | Gierig | Taktiker | Meister |
 |---|---|---|---|---|
-| **Zufall** | 47 % | 38 % | 36 % | 37 % |
-| **Gierig** | 64 % | 49 % | 49 % | 47 % |
-| **Taktiker** | 62 % | 52 % | 48 % | 49 % |
-| **Meister** | 59 % | 50 % | 50 % | 48 % |
+| **Zufall** | 49 % | 39 % | 39 % | 39 % |
+| **Gierig** | 59 % | 48 % | 47 % | 48 % |
+| **Taktiker** | 66 % | 51 % | 50 % | 47 % |
+| **Meister** | 60 % | 49 % | 49 % | 50 % |
 
 **Interpretation:**
 - Gegenüber zufälliger Aktionswahl gewinnt jede bewertende KI etwa 60–65 % – **gute Entscheidungen zählen**, aber sie entscheiden ein 1v1 nicht allein (Typen und Arten wiegen mehr).

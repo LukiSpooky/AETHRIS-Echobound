@@ -157,7 +157,7 @@ Alle 28 Bosse mit berechneten HP-Werten (Anlage 15 der Basisart, Faktor, Spieler
 | Gratschlund | Ponderath (74) | 298 | ×8 | 2384 | – | – | 60/25 % | GravityWell, AnnounceWave |
 | Versunkener Turmgeist | Irraune (76) | 280 | ×8 | 2240 | – | – | 60/25 % | Mirror, SilencePulse |
 | Glutsandkönig | Sengrath (78) | 307 | ×9 | 2763 | – | – | 60/25 % | TerrainCycle, AnnounceWave |
-| Kraterherz | Nucleox (80) | 286 | ×9 | 2574 | – | – | 60/25 % | PhaseHeal, GravityWell |
+| Kraterherz | Nucleox (80) | 291 | ×9 | 2619 | – | – | 60/25 % | PhaseHeal, GravityWell |
 | Tiefseegrotten-Echo | Aquadral (82) | 300 | ×9 | 2700 | – | – | 60/25 % | RowSwap, TypeShield |
 | Gletscherdom-Wache | Kjalgrund (84) | 387 | ×10 | 3870 | – | – | 60/25 % | Countdown, Stack |
 | Zenthrax (Solo) | Zenthrax (88) | 393 | ×12 | 4716 | – | – | 75/50/25 % | GravityWell, AnnounceWave, BindWindow |

@@ -23,7 +23,6 @@ Verdanthain ist der Ort der ersten Schritte: freundliche, lesbare Echos mit klar
 - **Geheimnisse:** Zwei Zweigformen (Lorncant bei Nebel + Nacht, Glyphaune bei Vollmond im Uralthain) belohnen Beobachtung (DR-15, ADR-092).
 - **Nicht gewählte Starter** erscheinen nach Akt I im Uralthain (CANON §74).
 
-
 ## Übersicht
 
 | Kodex | Name | Typen | Linie · Stufe | Archetyp | Größe | Seltenheit | Rolle |
@@ -492,7 +491,7 @@ L013  Cindrel
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Einzelgänger, Leuchtend, Sternschauer |
 | Nischen · Rolle · Reiten | Kampf, Reittier, Forschung · Control · Bodenreiten |
-| Basiswerte | HP 87 · ANG 69 · VER 87 · SAN 100 · SVE 91 · GES 86 = **520** · PRÄ 102 · AUS 100 · Wachstum Late · EP-Ertrag 210 · Schliff SpAttack:3 |
+| Basiswerte | HP 87 · ANG 69 · VER 87 · SAN 102 · SVE 89 · GES 86 = **520** · PRÄ 102 · AUS 100 · Wachstum Late · EP-Ertrag 210 · Schliff SpAttack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_BELLCHIME` |
 | Signatur (Konzept) | Mondglyphe: kehrt für den nächsten Zug die Typtabelle für ein Ziel um |

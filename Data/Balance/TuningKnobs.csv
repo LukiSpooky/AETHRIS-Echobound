@@ -1,0 +1,20 @@
+# Tuning-Knöpfe (K63 §9): zentrale Stellschrauben mit Quelle, Standard und sicherem Bereich. Änderungen nur per Patch (Daten-Hash, K59 §7.3).
+Name,DisplayName,Source,Default,Min,Max,Effect,Owner
+TK_EXP_YIELD,EP-Ertrag Stufe 1/2/3,Data/Echos/Species.csv:ExpYield,140,60,320,Levelgeschwindigkeit,RPG Systems Designer
+TK_TIMELINE,Verzögerungsformel-Faktor,CANON §117 (300),300,260,340,"Zugfrequenz, Tempo-Wert von GES",Lead Combat Designer
+TK_TYPE_STRONG,Typ-Effektivität „sehr effektiv“ (‰),Data/Combat/TypeChart.csv,1600,1400,1800,Gewicht der Typwahl,Lead Combat Designer
+TK_TYPE_WEAK,Typ-Effektivität „wenig effektiv“ (‰),Data/Combat/TypeChart.csv,625,550,750,Gewicht der Typwahl,Lead Combat Designer
+TK_CRIT,Volltreffer-Chance Stufe 0 (‰),tools/ref/aethris_combat.py CRIT_PERMILLE,42,30,80,Varianz,Lead Combat Designer
+TK_HARMONY_HIT,Harmonie je Treffer,K30 §2 (Harmonie-Ökonomie),5,3,8,Crescendo-Häufigkeit,Lead Combat Designer
+TK_STATUS_ANTILOCK,Status-Immunität nach 2× gleichem Status (Runden),CANON §128,3,2,5,Kontroll-Teams,Lead Combat Designer
+TK_BOSS_ENRAGE,Weiches Anschwellen je Runde (‰),CANON §128,1100,1050,1150,Bosskampf-Dauer,Lead Combat Designer
+TK_RAID_SCALE,Raid-Skalierung je Spieler (‰),Data/Combat/Bosses.csv PlayerScale,700,550,850,Raid-Schwierigkeit nach Spielerzahl,Lead Combat Designer
+TK_BOND_WINDOW,"Bindungsfenster Gut (ms, Standard)",K36 §5,280,160,400,Bindungsgefühl,Lead Systems Designer
+TK_SOL_TRAINER,Sol je Trainerkampf (× Ass-Lv.),CANON Wirtschaft (25),25,18,32,Sol-Einkommen,Economy Designer
+TK_PRICE_SELL,Verkaufsquote (‰ des Werts),CANON Wirtschaft (35 %),350,250,450,Inflation,Economy Designer
+TK_WARDEN_XP,Wärter-EP je Spielstunde (Akt II),tools/ref/aethris_progression.py,2000,1600,2600,Rangtempo,Systems Designer
+TK_NORM_LEVEL,Ranked-Normstufe,Data/PvP/Rulesets.csv,70,70,70,"Ranked (LOCKED, Q5)",Lead Combat Designer
+TK_DEPTH_HP,Tiefe V HP-Faktor (‰),Data/Endgame/DepthTiers.csv,1500,1300,1700,Endgame-Schwierigkeit,Lead Content Designer
+TK_ECOLOGY_DENSITY,Ökologie-Dichte (‰),Data/Ecology/PopulationTuning.csv,1000,700,1300,Begegnungsrate in der Welt,Lead Ecology Designer
+TK_ARENA_ACE,Arena-Ass-Versatz Akt II/III (Level),tools/ref/aethris_balance.py ACE_OFFSET,2,0,3,Arena-Herausforderung,Lead Combat Designer
+TK_COOP_HP,Koop-Wildgegner HP je Spieler (‰),K60 §2.2,700,550,850,Koop-Schwierigkeit,Lead Online Designer

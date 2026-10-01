@@ -39,7 +39,6 @@ Dieses Kapitel schließt **Nimbara** ab (#225–#240) und enthält die **10 Ursp
 
 > **Hinweis für K28–K30:** Die Signaturkonzepte aller 256 Arten sind die Grundlage für die Fähigkeits-IDs. K28–K30 erzeugen `Data/Abilities/*.csv` und tragen die Lernsets (Level-, Lehr-, Zucht-Fähigkeiten) in die Arten ein.
 
-
 ## Übersicht
 
 | Kodex | Name | Typen | Linie · Stufe | Archetyp | Größe | Seltenheit | Rolle |
@@ -134,7 +133,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R10_Z02, R10_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Treiber, Verspielt, Sonnenbader |
 | Nischen · Rolle · Reiten | Kampf, Zucht · Support · – |
-| Basiswerte | HP 56 · ANG 41 · VER 53 · SAN 51 · SVE 58 · GES 46 = **305** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 60 · Schliff SpDefense:1 |
+| Basiswerte | HP 56 · ANG 41 · VER 53 · SAN 53 · SVE 56 · GES 46 = **305** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 60 · Schliff SpDefense:1 |
 | Evolution | → Nubilo (#226) · Bedingung: `Level>=18` |
 | Bindung | Rate 65 · Vorliebe `ITM_FOOD_CLOUDFRUIT` |
 | Signatur (Konzept) | Sonnenflaum: heilt Verbündete in Sonnenwetter jede Runde |
@@ -158,7 +157,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R10_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Treiber, Herde, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Zucht · Support · – |
-| Basiswerte | HP 79 · ANG 57 · VER 75 · SAN 72 · SVE 82 · GES 65 = **430** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 140 · Schliff SpDefense:2 |
+| Basiswerte | HP 79 · ANG 57 · VER 75 · SAN 74 · SVE 80 · GES 65 = **430** · PRÄ 100 · AUS 102 · Wachstum Swift · EP-Ertrag 140 · Schliff SpDefense:2 |
 | Evolution | → Nubiluna (#227), Nubisk (#228) · Bedingung: `(Level>=34) | (Level>=34 & Moon=NewMoon & Zone=R10_Z02)` |
 | Bindung | Rate 50 · Vorliebe `ITM_FOOD_CLOUDFRUIT` |
 | Signatur (Konzept) | Regenbogenwolle: Verbündete erhalten Schutz gegen den nächsten Status |
@@ -206,7 +205,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Treiber, Einzelgänger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 88 · ANG 70 · VER 87 · SAN 101 · SVE 92 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 210 · Schliff SpAttack:3 |
+| Basiswerte | HP 88 · ANG 70 · VER 87 · SAN 108 · SVE 85 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 210 · Schliff SpAttack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 25 · Vorliebe `ITM_LURE_STARCHIME` |
 | Signatur (Konzept) | Dunkelwolle: hüllt das Feld in Dunkelheit – Licht-Angriffe 2 Züge geschwächt |
@@ -230,7 +229,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R10_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Sänger, Nestbauer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Support · – |
-| Basiswerte | HP 63 · ANG 46 · VER 60 · SAN 58 · SVE 66 · GES 52 = **345** · PRÄ 100 · AUS 102 · Wachstum Steady · EP-Ertrag 75 · Schliff SpDefense:1 |
+| Basiswerte | HP 63 · ANG 46 · VER 60 · SAN 58 · SVE 62 · GES 56 = **345** · PRÄ 100 · AUS 102 · Wachstum Steady · EP-Ertrag 75 · Schliff SpDefense:1 |
 | Evolution | → Harfion (#230) · Bedingung: `Level>=28` |
 | Bindung | Rate 60 · Vorliebe `ITM_LURE_WINDCHIME` |
 | Signatur (Konzept) | Saitenlied: Verbündete erhalten +1 GES für 2 Züge |
@@ -254,7 +253,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R10_Z01, R10_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Sänger, Wanderer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Support · – |
-| Basiswerte | HP 91 · ANG 66 · VER 87 · SAN 82 · SVE 95 · GES 74 = **495** · PRÄ 100 · AUS 102 · Wachstum Steady · EP-Ertrag 190 · Schliff SpDefense:2 |
+| Basiswerte | HP 91 · ANG 66 · VER 87 · SAN 82 · SVE 91 · GES 78 = **495** · PRÄ 100 · AUS 102 · Wachstum Steady · EP-Ertrag 190 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 45 · Vorliebe `ITM_LURE_WINDCHIME` |
 | Signatur (Konzept) | Äolsakkord: Verbündete erhalten Harmonie +10, Gegner −1 Präzision |
@@ -278,7 +277,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R10_Z02, R10_Z04 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Treiber, Sänger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 80 · SVE 60 · GES 69 = **345** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 72 · SVE 60 · GES 77 = **345** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Tintabul (#232) · Bedingung: `Level>=30 & TimeOfDay=Dusk` |
 | Bindung | Rate 55 · Vorliebe `ITM_LURE_BELLCHIME` |
 | Signatur (Konzept) | Klingelton: Klang-Angriff, der bei Treffer einen Echo-Zweittreffer erzeugt |
@@ -302,7 +301,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Selten · `TimeOfDay.Dusk` · R10_Z04 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Treiber, Sänger, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 117 · SVE 87 · GES 100 = **500** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
+| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 111 · SVE 87 · GES 106 = **500** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 35 · Vorliebe `ITM_LURE_BELLCHIME` |
 | Signatur (Konzept) | Großes Geläut: Klang-Angriff auf alle Gegner, erweckt schlafende Verbündete |
@@ -326,7 +325,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R10_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Schläfer, Weidegänger, Sonnenbader |
 | Nischen · Rolle · Reiten | Kampf, Zucht · Tank · – |
-| Basiswerte | HP 70 · ANG 52 · VER 76 · SAN 41 · SVE 64 · GES 47 = **350** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 75 · Schliff Defense:1 |
+| Basiswerte | HP 72 · ANG 52 · VER 74 · SAN 41 · SVE 64 · GES 47 = **350** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 75 · Schliff Defense:1 |
 | Evolution | → Holmgard (#234) · Bedingung: `Level>=34` |
 | Bindung | Rate 50 · Vorliebe `ITM_FOOD_CLOUDFRUIT` |
 | Signatur (Konzept) | Schwebepanzer: kann nicht verschoben werden; Boden-Angriffe verfehlen |
@@ -374,7 +373,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R10_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Neugierig, Muster-Sammler, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf, Feld · Control · – |
-| Basiswerte | HP 58 · ANG 46 · VER 58 · SAN 66 · SVE 60 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 75 · Schliff SpDefense:1 |
+| Basiswerte | HP 64 · ANG 46 · VER 58 · SAN 60 · SVE 60 · GES 57 = **345** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 75 · Schliff SpDefense:1 |
 | Evolution | → Levithar (#236) · Bedingung: `Level>=32` |
 | Bindung | Rate 55 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Hebung: hebt das Ziel an – es verliert 1 Zug lang seinen Reihenvorteil |
@@ -398,7 +397,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R10_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Hüter, Leuchtend, Werkzeugnutzer |
 | Nischen · Rolle · Reiten | Kampf, Feld · Control · – |
-| Basiswerte | HP 83 · ANG 67 · VER 83 · SAN 96 · SVE 88 · GES 83 = **500** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 190 · Schliff SpDefense:2 |
+| Basiswerte | HP 83 · ANG 67 · VER 83 · SAN 100 · SVE 84 · GES 83 = **500** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 190 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 40 · Vorliebe `ITM_LURE_TUNINGFORK` |
 | Signatur (Konzept) | Schwebefeld: Verbündete schweben 2 Züge (Boden-Angriffe verfehlen, GES +1) |
@@ -422,7 +421,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Häufig · `Weather.Snow` · R10_Z01 |
 | Aktivität · Merkmale | Tagaktiv · Schwarm, Treiber, Angriffslustig |
 | Nischen · Rolle · Reiten | Kampf · Striker · – |
-| Basiswerte | HP 54 · ANG 78 · VER 52 · SAN 40 · SVE 49 · GES 72 = **345** · PRÄ 106 · AUS 96 · Wachstum Swift · EP-Ertrag 75 · Schliff Attack:1 |
+| Basiswerte | HP 54 · ANG 75 · VER 52 · SAN 40 · SVE 52 · GES 72 = **345** · PRÄ 106 · AUS 96 · Wachstum Swift · EP-Ertrag 75 · Schliff Attack:1 |
 | Evolution | → Graupix (#238) · Bedingung: `Level>=30 & Weather=Thunderstorm` |
 | Bindung | Rate 50 · Vorliebe `ITM_LURE_WINDCHIME` |
 | Signatur (Konzept) | Graupelschauer: mehrere kleine Treffer (2–4) |
@@ -446,7 +445,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Selten · `Weather.Thunderstorm` · R10_Z01, R10_Z05 |
 | Aktivität · Merkmale | Tagaktiv · Schwarm, Treiber, Angriffslustig |
 | Nischen · Rolle · Reiten | Kampf · Striker · – |
-| Basiswerte | HP 79 · ANG 113 · VER 75 · SAN 58 · SVE 71 · GES 104 = **500** · PRÄ 106 · AUS 96 · Wachstum Swift · EP-Ertrag 190 · Schliff Attack:2 |
+| Basiswerte | HP 79 · ANG 110 · VER 75 · SAN 58 · SVE 74 · GES 104 = **500** · PRÄ 106 · AUS 96 · Wachstum Swift · EP-Ertrag 190 · Schliff Attack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_WINDCHIME` |
 | Signatur (Konzept) | Hagelschlag: Kristall-Angriff auf alle Gegner, bei Gewitter doppelt |
@@ -494,7 +493,7 @@ L123  Aurelune
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `TimeOfDay.Night`, `Weather.Clear` · R10_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Sternschauer, Hüter, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 117 · SVE 87 · GES 100 = **500** · PRÄ 104 · AUS 100 · Wachstum Late · EP-Ertrag 180 · Schliff SpAttack:2 |
+| Basiswerte | HP 75 · ANG 50 · VER 71 · SAN 124 · SVE 87 · GES 93 = **500** · PRÄ 104 · AUS 100 · Wachstum Late · EP-Ertrag 180 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 20 · Vorliebe `ITM_LURE_STARCHIME` |
 | Signatur (Konzept) | Sternurteil: Arkan-Angriff, Schaden steigt mit der Zahl der Werteveränderungen auf dem Feld |

@@ -320,13 +320,13 @@ In Koop-Kämpfen steuert jeder Spieler seine eigenen Echos; die Zeitleiste zeigt
 
 | Level | Ø Züge gesamt (1v1) | Median | P90 | Ø Ticks | Ø Dauer bei 7 s/Zug |
 |---|---|---|---|---|---|
-| 5 | 7,7 | 7 | 13 | 554 | 54 s |
-| 10 | 7,6 | 7 | 12 | 527 | 53 s |
-| 20 | 7,9 | 7 | 13 | 512 | 55 s |
-| 35 | 8,2 | 7 | 13 | 481 | 57 s |
-| 50 | 8,2 | 7 | 13 | 446 | 57 s |
-| 70 | 8,5 | 8 | 14 | 420 | 60 s |
-| 100 | 8,4 | 8 | 14 | 364 | 59 s |
+| 5 | 7,8 | 7 | 13 | 555 | 54 s |
+| 10 | 7,8 | 7 | 12 | 536 | 54 s |
+| 20 | 8,0 | 7 | 13 | 519 | 56 s |
+| 35 | 8,7 | 7 | 15 | 512 | 61 s |
+| 50 | 8,5 | 7 | 14 | 461 | 60 s |
+| 70 | 8,6 | 8 | 13 | 423 | 60 s |
+| 100 | 8,3 | 8 | 14 | 361 | 58 s |
 
 **Bewertung gegen DR-11** (Wildkampf 60–120 s): Ein reiner Schlagabtausch gleichstufiger Echos dauert ~8 Züge ≈ 1 min. Reale Wildkämpfe enthalten zusätzlich Bindungsversuche, Status- und Positionszüge (+3–6 Züge), Wildechos liegen im Schnitt 1–3 Level unter dem Spieler-Chor → **Zielband 60–120 s erreicht**. Trainer- (Duo, 3–6 min) und Arenakämpfe (Trio mit 6 Echos je Seite, 8–15 min) skalieren über Anzahl der Echos; K63 kalibriert mit vollständigen Fähigkeitssets.
 

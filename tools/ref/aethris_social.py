@@ -88,7 +88,7 @@ def board_sim(n_offers=600, seed=60, wants=3):
     offers = []
     for i in range(n_offers):
         have = pick(lambda s: RARITY_W[s["Rarity"]])
-        wl = {pick(lambda s: 11 - RARITY_W[s["Rarity"]]) for _ in range(wants)} - {have}
+        wl = [w for w in dict.fromkeys(pick(lambda s: 11 - RARITY_W[s["Rarity"]]) for _ in range(wants)) if w != have]
         if wl:
             offers.append((i, have, wl))
     by_have = {}

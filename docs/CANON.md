@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K62
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K63
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -477,6 +477,12 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-258 | Eigener Weg je Mythischem mit Solo-Zugang; Velnox über Pausen | K62 |
 | ADR-259 | Endgame-Rhythmus an Spieltagen, keine Dailies | K62 |
 | ADR-260 | „Weltakkord vollendet“ = 10 offline Meisterschaften | K62 |
+| ADR-261 | Identitätsakzente gegen Basiswert-Dubletten | K63 |
+| ADR-262 | Q13: Arena-Ass = Erwartung + 1/+2, Zielverhältnis 1,00–1,12 | K63 |
+| ADR-263 | Fähigkeits-Budget je 100 Zeitkosten, Ausreißer nur mit Effekt | K63 |
+| ADR-264 | Tuning-Knöpfe zentral, Änderungen nur per Patch | K63 |
+| ADR-265 | Balance-Rat, Ranked-Änderungen zum Saisonwechsel, öffentliche Begründung | K63 |
+| ADR-266 | Katalogkapitel automatisch neu erzeugt | K63 |
 
 ## §11 Change Requests
 
@@ -507,7 +513,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q10 | ~~Hauptquartiere der Fraktionen~~ ✅ K07: Hauptsitze festgelegt | K47 |
 | Q11 | ~~Bewegungs-/Ausdauer-/Gleiter-Tuning (Startwerte K02 §4.1)~~ ✅ K40 §2: Bewegung/Ausdauer/Gleiter final (TraversalTuning.csv) | K40 |
 | Q12 | ~~Bindungs-Timingfenster (Startwerte K02 §4.2)~~ ✅ K36 §5: Gut 160–400 ms nach Resonanz × Temperament × Siegel, Perfekt 25 % (min. 60 ms) | K36 |
-| Q13 | Arena-Stufentabelle (Startwerte K02 §9.2) | K63 |
+| Q13 | ~~Arena-Stufentabelle (Startwerte K02 §9.2)~~ ✅ K63 §4: Arena-Stufen final (§250, ArenaTiers.csv) | K63 |
 | Q14 | ~~Wärterrang-EP-Kurve (Startwerte K02 §13.2)~~ ✅ K43 §3: EP-Kurve max(300(R−1), 154(R−1)^1,94) | K43/K63 |
 
 ---
@@ -2149,3 +2155,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §247 Meisterschaften, Rhythmus, Umfang (LOCKED, K62 §4, §6–§10 · `Data/Endgame/Masteries.csv`)
 
 - „Weltakkord vollendet“ = 10 offline erreichbare Meisterschaften (Kodex, Zucht, Foto, Takt, Tiefen V, Raids inkl. Solo, Hain V, Ruf 6, Wärterrang 40, Mythische); Zusätze Eisern, Arena. Raids im Nachhall alle offen, RAID_08 zuletzt (Titel „Letzter Ton“), Erstabschluss je Spieltag ×2 Material. Keine Dailies, keine Login-Boni, keine Energie. Umfang ≈ 100 h nach dem Finale, Komplettlauf ≈ 200 h. Neuer Zieltyp `OBJ_TIMETRIAL`; Save-Fragmente `Player.Endgame`, `Player.Mythics`, `Player.TimeTrials`. Seed-Hierarchie: Fork(6) Endgame.
+
+## §248 Balancing-Methode (LOCKED, K63 §1–§2 · `tools/ref/aethris_balance.py`)
+
+- Ziele BZ-1 lesbare Stärke · BZ-2 Identität · BZ-3 Fortschrittsgefühl · BZ-4 Vielfalt · BZ-5 kein Grind-Zwang · BZ-6 Fairness. Kette: Daten → Referenzmodelle (stats, combat, ai, bond, genetics, economy, progression, ecology, pvp, endgame, balance) → Prüfregeln (CI) → Simulation → Playtests → Telemetrie → Tuning-Knöpfe (nur per Patch).
+
+## §249 Identitätsakzente (LOCKED, K63 §3 · `Data/Balance/StatAccents.csv`)
+
+- 54 Gruppen identischer Basiswerte (131 Arten) aufgelöst: Leitwert des Primärtyps +Δ, höchster übriger Kernwert −Δ (Δ 2–8, Kernsumme/PRÄ/AUS unverändert). Leitwerte: SAN Glut/Leere/Licht/Arkan · SVE Flut/Frost/Kristall · VER Stein/Gift · GES Sturm/Geist/Klang · HP Blüte/Schwerkraft · ANG Metall. Idempotent angewendet (Tool + `catalog_lib.write`); K20–K27 neu erzeugt (`regen_catalog.py`). BL-01: keine Basiswert-Dubletten.
+
+## §250 Arena-Stufen – Q13 (LOCKED, K63 §4 · `Data/Balance/ArenaTiers.csv`; ersetzt K02 §9.2 vorläufig)
+
+- Stufe 1–10: Ass 14/19/24/29/36/43/50/56/63/70 · übrige Echos Ass − 2 · Chor 3/4/4/5/5/5/6/6/6/6 · Format Duell/Duell/Duo/Duell/Duo/Trio/Duell/Duo/Trio/Trio · erwartetes Spielerlevel 13/18/23/28/34/41/48/54/61/68 · Stärkeverhältnis 1,02–1,07 (Ziel 1,00–1,12). Grad Meister: Ass + 2.
+
+## §251 Tuning, Grade, Live-Balancing, Playtests (LOCKED, K63 §7–§10 · `Data/Balance/TuningKnobs.csv`)
+
+- 18 Tuning-Knöpfe mit Quelle, Standard, sicherem Bereich, Owner; Änderungen nur per Patch, Ranked nur zum Saisonwechsel. Grade: Entspannt (EP ×1,25, Vorschau immer, KI −1 Stufe, Bindungsfenster +20 %), Wärter, Meister (KI +1, Arena-Ass +2, −10 % Sol max. 5.000), Eiserner Wärter. Live-Signale (Arena-Erstniederlage > 55 %, Zeit bis Akkord > 130 %, Bindungsabbruch > 40 %, Sol < 20 % Bedarf, Raid/Tiefe < 25 % nach 10 Versuchen); Balance-Rat wöchentlich, PvE-Datenpatch monatlich, Patch-Notizen mit Begründung. Playtests intern, VS (30), Alpha (200), Beta (~5.000), Barrierefreiheit (15), Familien (20).

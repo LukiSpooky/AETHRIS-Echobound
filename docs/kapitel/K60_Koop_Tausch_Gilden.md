@@ -179,9 +179,9 @@ Ein reiner 1:1-Abgleich findet für seltene Wünsche oft keinen Partner: Wer ein
 
 | Angebote | 2er-Tausche | erfüllt (nur 2er) | + 3er-Ringe | erfüllt (2er + 3er) |
 |---|---|---|---|---|
-| 1000 | 28 | 56 (6 %) | 68 | 260 (26 %) |
-| 5000 | 601 | 1202 (24 %) | 410 | 2432 (49 %) |
-| 20000 | 4273 | 8546 (43 %) | 827 | 11027 (55 %) |
+| 1000 | 28 | 56 (6 %) | 69 | 263 (26 %) |
+| 5000 | 598 | 1196 (24 %) | 408 | 2420 (48 %) |
+| 20000 | 4272 | 8544 (43 %) | 830 | 11034 (55 %) |
 
 Ring-Tausche verdoppeln die Erfolgsquote bei mittlerem Angebot. Bei großem Angebot tragen 2er-Tausche den Großteil; die Ringe helfen vor allem in den ersten Tagen nach dem Launch und in kleineren Regionen. Größere Ringe (≥ 4) bringen kaum zusätzliche Treffer, erhöhen aber das Abbruchrisiko (jede Person muss bestätigen) – deshalb ist die Grenze 3.
 

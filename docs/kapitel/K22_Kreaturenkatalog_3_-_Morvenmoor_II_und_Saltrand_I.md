@@ -27,7 +27,6 @@ Dieses Kapitel schließt **Morvenmoor** ab (#065–#084, insgesamt 26 Arten der 
 | Küste = Mobilität | 3 Schwimm- und 2 Flugreittiere in #085–#096 |
 | Wetterbindung | Marwyn→Maraune (Gewitter), Aquafin-Zweig (Neumond) |
 
-
 ## Übersicht
 
 | Kodex | Name | Typen | Linie · Stufe | Archetyp | Größe | Seltenheit | Rolle |
@@ -112,7 +111,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R03_Z01, R03_Z04 |
 | Aktivität · Merkmale | Nachtaktiv · Leuchtend, Treiber, Verspielt |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 45 · ANG 30 · VER 43 · SAN 70 · SVE 52 · GES 60 = **300** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 60 · Schliff SpAttack:1 |
+| Basiswerte | HP 45 · ANG 30 · VER 43 · SAN 68 · SVE 52 · GES 62 = **300** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 60 · Schliff SpAttack:1 |
 | Evolution | → Irrel (#066) · Bedingung: `Level>=16 & TimeOfDay=Night` |
 | Bindung | Rate 55 · Vorliebe `ITM_LURE_LANTERN` |
 | Signatur (Konzept) | Irrführung: Geist-Angriff, Ziel greift 1 Zug lang zufällig an |
@@ -184,7 +183,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Leuchtend, Muster-Sammler, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 87 · ANG 69 · VER 87 · SAN 100 · SVE 91 · GES 86 = **520** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 210 · Schliff SpAttack:3 |
+| Basiswerte | HP 87 · ANG 69 · VER 87 · SAN 103 · SVE 88 · GES 86 = **520** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 210 · Schliff SpAttack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 25 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Siegelreigen: kehrt die Typtabelle für 1 Zug gegen ein Ziel um, versiegelt dessen Crescendo |
@@ -280,7 +279,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R03_Z01, R03_Z02, R03_Z03 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Schwarm, Flieger, Sänger |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 48 · ANG 63 · VER 45 · SAN 57 · SVE 48 · GES 79 = **340** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 75 · Schliff Speed:1 |
+| Basiswerte | HP 48 · ANG 63 · VER 48 · SAN 57 · SVE 48 · GES 76 = **340** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 75 · Schliff Speed:1 |
 | Evolution | → Virwyn (#073) · Bedingung: `Level>=24` |
 | Bindung | Rate 60 · Vorliebe `ITM_FOOD_MOORBERRY` |
 | Signatur (Konzept) | Stichschwarm: drei kleine Gift-Treffer |
@@ -400,7 +399,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R03_Z02, R03_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Sonnenbader, Schwimmer, Hüter |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Bodenreiten |
-| Basiswerte | HP 100 · ANG 75 · VER 108 · SAN 58 · SVE 92 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 190 · Schliff Defense:2 |
+| Basiswerte | HP 100 · ANG 75 · VER 106 · SAN 58 · SVE 94 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 190 · Schliff Defense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Gartenpanzer: Schild für die Reihe, Überwuchs auf der eigenen Reihe |
@@ -424,7 +423,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R03_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Lauerjäger, Schwimmer, Scheu |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 80 · SVE 60 · GES 69 = **345** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 83 · SVE 60 · GES 66 = **345** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Umbracoil (#079) · Bedingung: `Level>=28 & TimeOfDay=Night` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_SMOKEDFISH` |
 | Signatur (Konzept) | Schattensog: Leere-Angriff, entzieht dem Ziel einen Buff |
@@ -448,7 +447,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Selten · `TimeOfDay.Night`, `Weather.Fog` · R03_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Lauerjäger, Einzelgänger, Schwimmer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 74 · ANG 50 · VER 70 · SAN 115 · SVE 87 · GES 99 = **495** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
+| Basiswerte | HP 74 · ANG 50 · VER 70 · SAN 117 · SVE 87 · GES 97 = **495** · PRÄ 104 · AUS 100 · Wachstum Wave · EP-Ertrag 190 · Schliff SpAttack:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_SMOKEDFISH` |
 | Signatur (Konzept) | Stillstrom: entzieht dem Gegner 15 Harmonie und verlangsamt |
@@ -544,7 +543,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R03_Z02, R03_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Sänger, Schläfer, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Feld · Support · – |
-| Basiswerte | HP 86 · ANG 63 · VER 82 · SAN 78 · SVE 90 · GES 71 = **470** · PRÄ 100 · AUS 102 · Wachstum Wave · EP-Ertrag 180 · Schliff HP:2 |
+| Basiswerte | HP 86 · ANG 63 · VER 82 · SAN 78 · SVE 88 · GES 73 = **470** · PRÄ 100 · AUS 102 · Wachstum Wave · EP-Ertrag 180 · Schliff HP:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_MOORBERRY` |
 | Signatur (Konzept) | Unkenruf: Klang-Angriff, gibt allen Verbündeten Harmonie |
@@ -568,7 +567,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Selten · `Weather.Rain` · R03_Z01, R03_Z03 |
 | Aktivität · Merkmale | Unstet · Schläfer, Hüter, Getarnt |
 | Nischen · Rolle · Reiten | Kampf, Feld · Tank · – |
-| Basiswerte | HP 100 · ANG 75 · VER 108 · SAN 58 · SVE 92 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 180 · Schliff Defense:2 |
+| Basiswerte | HP 97 · ANG 75 · VER 111 · SAN 58 · SVE 92 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 180 · Schliff Defense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 35 · Vorliebe `ITM_FOOD_MOSSCAKE` |
 | Signatur (Konzept) | Torfwand: Schild für die ganze Seite, kostet viel Zeit |
@@ -592,7 +591,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R06_Z02, R06_Z05 |
 | Aktivität · Merkmale | Tagaktiv · Schwimmer, Verspielt, Filtrierer |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Speed · – |
-| Basiswerte | HP 44 · ANG 57 · VER 41 · SAN 52 · SVE 44 · GES 72 = **310** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 60 · Schliff Speed:1 |
+| Basiswerte | HP 44 · ANG 57 · VER 41 · SAN 52 · SVE 46 · GES 70 = **310** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 60 · Schliff Speed:1 |
 | Evolution | → Marwyn (#086) · Bedingung: `Level>=20` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Wellenschlag: Flut-Angriff, eigene nächste Aktion schneller |
@@ -616,7 +615,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R06_Z05 |
 | Aktivität · Merkmale | Tagaktiv · Schwimmer, Wanderer, Verspielt |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Speed · Schwimmreiten |
-| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 72 · SVE 61 · GES 100 = **430** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 140 · Schliff Speed:2 |
+| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 72 · SVE 63 · GES 98 = **430** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 140 · Schliff Speed:2 |
 | Evolution | → Maraune (#087) · Bedingung: `Level>=36 & Weather=Thunderstorm` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Gischtsprung: Angriff aus dem Sprung, ignoriert Formation |
@@ -640,7 +639,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Schwimmer, Wanderer |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Speed · Flugreiten |
-| Basiswerte | HP 75 · ANG 97 · VER 71 · SAN 88 · SVE 75 · GES 124 = **530** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 210 · Schliff Speed:3 |
+| Basiswerte | HP 75 · ANG 97 · VER 71 · SAN 88 · SVE 77 · GES 122 = **530** · PRÄ 96 · AUS 110 · Wachstum Steady · EP-Ertrag 210 · Schliff Speed:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Sturmflut: Crescendo – trifft alle Gegner und spült die Hinterreihe nach vorn |
@@ -664,7 +663,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R06_Z01, R06_Z02 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Neugierig, Werkzeugnutzer, Getarnt |
 | Nischen · Rolle · Reiten | Kampf, Feld · Control · – |
-| Basiswerte | HP 51 · ANG 41 · VER 51 · SAN 58 · SVE 53 · GES 51 = **305** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff SpDefense:1 |
+| Basiswerte | HP 51 · ANG 41 · VER 51 · SAN 56 · SVE 55 · GES 51 = **305** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff SpDefense:1 |
 | Evolution | → Tidel (#089) · Bedingung: `Level>=18` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_SHELLMEAT` |
 | Signatur (Konzept) | Tintenstoß: Flut-Angriff, Präzision des Ziels −1 |
@@ -688,7 +687,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R06_Z05 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Werkzeugnutzer, Muster-Sammler, Getarnt |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Control · Schwimmreiten |
-| Basiswerte | HP 72 · ANG 57 · VER 72 · SAN 82 · SVE 75 · GES 72 = **430** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff SpDefense:2 |
+| Basiswerte | HP 72 · ANG 57 · VER 72 · SAN 80 · SVE 77 · GES 72 = **430** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff SpDefense:2 |
 | Evolution | → Tidrex (#090) · Bedingung: `Level>=34` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_SHELLMEAT` |
 | Signatur (Konzept) | Riffgriff: hält ein Ziel fest und spült es in die andere Reihe |
@@ -712,7 +711,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Werkzeugnutzer, Einzelgänger, Hüter |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Control · Schwimmreiten |
-| Basiswerte | HP 88 · ANG 70 · VER 87 · SAN 101 · SVE 92 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpAttack:3 |
+| Basiswerte | HP 88 · ANG 70 · VER 87 · SAN 99 · SVE 94 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpAttack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_SHELLMEAT` |
 | Signatur (Konzept) | Tiefsog: Crescendo – zieht alle Gegner in die Vorderreihe und verlangsamt sie |
@@ -760,7 +759,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R06_Z03, R06_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Wanderer, Jäger |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 61 · ANG 79 · VER 57 · SAN 72 · SVE 61 · GES 100 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
+| Basiswerte | HP 61 · ANG 76 · VER 57 · SAN 72 · SVE 61 · GES 103 = **430** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 140 · Schliff Speed:2 |
 | Evolution | → Brision (#093) · Bedingung: `Level>=36` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_SMOKEDFISH` |
 | Signatur (Konzept) | Gischtpfeil: Mehrfachtreffer bei Regen und Gewitter stärker |
@@ -784,7 +783,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Wanderer, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Speed · Flugreiten |
-| Basiswerte | HP 75 · ANG 97 · VER 71 · SAN 88 · SVE 75 · GES 124 = **530** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 210 · Schliff Speed:3 |
+| Basiswerte | HP 75 · ANG 94 · VER 71 · SAN 88 · SVE 75 · GES 127 = **530** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 210 · Schliff Speed:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_SMOKEDFISH` |
 | Signatur (Konzept) | Weltumsegler: Crescendo – alle Verbündeten handeln sofort hintereinander (Zeitleiste) |
@@ -808,7 +807,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R06_Z02, R06_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Schwarm, Leuchtend, Schwimmer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 45 · ANG 30 · VER 43 · SAN 70 · SVE 52 · GES 60 = **300** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 60 · Schliff SpAttack:1 |
+| Basiswerte | HP 45 · ANG 30 · VER 43 · SAN 67 · SVE 55 · GES 60 = **300** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 60 · Schliff SpAttack:1 |
 | Evolution | → Aquafin (#095) · Bedingung: `Level>=16` |
 | Bindung | Rate 60 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Leuchtschwarm: Flut-Angriff, blendet |
@@ -832,7 +831,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R06_Z05 |
 | Aktivität · Merkmale | Nachtaktiv · Leuchtend, Lauerjäger, Schwimmer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Caster · – |
-| Basiswerte | HP 64 · ANG 43 · VER 60 · SAN 99 · SVE 74 · GES 85 = **425** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 140 · Schliff SpAttack:2 |
+| Basiswerte | HP 64 · ANG 43 · VER 60 · SAN 97 · SVE 76 · GES 85 = **425** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 140 · Schliff SpAttack:2 |
 | Evolution | → Aquadral (#096), Mystdral (#097) · Bedingung: `(Level>=32) | (Level>=32 & Moon=NewMoon & Zone=R06_Z05)` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Köderlicht: lockt einen Gegner in die Vorderreihe |
@@ -856,7 +855,7 @@ L041  Aquapip ──[Level>=16]──► Aquafin ──[Level>=32]──► Aqua
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Leuchtend, Einzelgänger, Lauerjäger |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Caster · Schwimmreiten |
-| Basiswerte | HP 78 · ANG 52 · VER 74 · SAN 121 · SVE 91 · GES 104 = **520** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 210 · Schliff SpAttack:3 |
+| Basiswerte | HP 78 · ANG 52 · VER 74 · SAN 119 · SVE 93 · GES 104 = **520** · PRÄ 104 · AUS 100 · Wachstum Swift · EP-Ertrag 210 · Schliff SpAttack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Tiefenleuchten: Crescendo – trifft alle Gegner, enthüllt sie (Ausweichen ignoriert) 2 Züge |

@@ -20,7 +20,6 @@ Dieses Kapitel enthält alle **26 Arten Kharsgrats** (#033–#058) und die **ers
 
 **Morvenmoor** (Beginn): Kreislauf und Geheimnis. Die Krötenlinie (Mirepip → Toxmire) zeigt Gift-Stapel und Sumpf-Terrain; die Welslinie (Undling → Undrath) liefert das **erste Schwimmreittier** (Undfin, Lv. 18) – passend zur Traversal-Roadmap (CANON §15: Schwimmreiten in Akt I).
 
-
 ## Übersicht
 
 | Kodex | Name | Typen | Linie · Stufe | Archetyp | Größe | Seltenheit | Rolle |
@@ -129,7 +128,7 @@ L027  Undling ──[Level>=18]──► Undfin ──[Level>=34 & Weather=Rain]
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R02_Z03, R02_Z04 |
 | Aktivität · Merkmale | Unstet · Kletterer, Revierverteidigend, Hüter |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Kletterreiten |
-| Basiswerte | HP 86 · ANG 65 · VER 93 · SAN 50 · SVE 79 · GES 57 = **430** · PRÄ 100 · AUS 92 · Wachstum Steady · EP-Ertrag 140 · Schliff Defense:2 |
+| Basiswerte | HP 84 · ANG 65 · VER 95 · SAN 50 · SVE 79 · GES 57 = **430** · PRÄ 100 · AUS 92 · Wachstum Steady · EP-Ertrag 140 · Schliff Defense:2 |
 | Evolution | → Kraggoth (#035), Anchrex (#036) · Bedingung: `(Level>=34) | (Level>=34 & Zone=R02_Z02 & Moon=FullMoon)` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Klammergriff: hält ein Ziel fest (Zeitleiste +) und erhält Verteidigung +1 |
@@ -201,7 +200,7 @@ L027  Undling ──[Level>=18]──► Undfin ──[Level>=34 & Weather=Rain]
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R02_Z02 |
 | Aktivität · Merkmale | Unstet · Treiber, Muster-Sammler, Schläfer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 52 · ANG 41 · VER 52 · SAN 59 · SVE 54 · GES 52 = **310** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 60 · Schliff SpDefense:1 |
+| Basiswerte | HP 54 · ANG 41 · VER 52 · SAN 57 · SVE 54 · GES 52 = **310** · PRÄ 102 · AUS 100 · Wachstum Wave · EP-Ertrag 60 · Schliff SpDefense:1 |
 | Evolution | → Tetrel (#038) · Bedingung: `Level>=20` |
 | Bindung | Rate 50 · Vorliebe `ITM_LURE_BELLCHIME` |
 | Signatur (Konzept) | Schwerepuls: zieht ein Ziel eine Reihe nach vorn |
@@ -393,7 +392,7 @@ L027  Undling ──[Level>=18]──► Undfin ──[Level>=34 & Weather=Rain]
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Tagaktiv · Flieger, Jäger, Einzelgänger |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Striker · Flugreiten |
-| Basiswerte | HP 85 · ANG 120 · VER 80 · SAN 62 · SVE 76 · GES 112 = **535** · PRÄ 106 · AUS 96 · Wachstum Steady · EP-Ertrag 210 · Schliff Attack:3 |
+| Basiswerte | HP 85 · ANG 118 · VER 80 · SAN 62 · SVE 76 · GES 114 = **535** · PRÄ 106 · AUS 96 · Wachstum Steady · EP-Ertrag 210 · Schliff Attack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_LURE_WHISTLE` |
 | Signatur (Konzept) | Donnersturz: Crescendo – trifft alle Gegner, Metall-Ziele erleiden Blitzschlag-Bonus |
@@ -513,7 +512,7 @@ L027  Undling ──[Level>=18]──► Undfin ──[Level>=34 & Weather=Rain]
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R02_Z05 |
 | Aktivität · Merkmale | Dämmerungsaktiv · Scheu, Getarnt, Familienverband |
 | Nischen · Rolle · Reiten | Kampf · Speed · – |
-| Basiswerte | HP 48 · ANG 63 · VER 45 · SAN 57 · SVE 48 · GES 79 = **340** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 75 · Schliff Speed:1 |
+| Basiswerte | HP 48 · ANG 63 · VER 45 · SAN 57 · SVE 50 · GES 77 = **340** · PRÄ 96 · AUS 110 · Wachstum Swift · EP-Ertrag 75 · Schliff Speed:1 |
 | Evolution | → Rimpaw (#051) · Bedingung: `Level>=24 & Weather=Snow` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_ALPINECHEESE` |
 | Signatur (Konzept) | Reifsprung: Frost-Angriff, Ziel wird verlangsamt (Zeitkosten +) |
@@ -609,7 +608,7 @@ L027  Undling ──[Level>=18]──► Undfin ──[Level>=34 & Weather=Rain]
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R02_Z02 |
 | Aktivität · Merkmale | Mittagsaktiv · Wärmesucher, Sonnenbader, Neugierig |
 | Nischen · Rolle · Reiten | Kampf, Feld · Caster · – |
-| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 80 · SVE 60 · GES 69 = **345** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 75 · Schliff SpAttack:1 |
+| Basiswerte | HP 52 · ANG 35 · VER 49 · SAN 82 · SVE 60 · GES 67 = **345** · PRÄ 104 · AUS 100 · Wachstum Steady · EP-Ertrag 75 · Schliff SpAttack:1 |
 | Evolution | → Dawnix (#055) · Bedingung: `Level>=26 & TimeOfDay=Dawn` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_CHARCOAL` |
 | Signatur (Konzept) | Glutfunke: Glut-Angriff mit Brand-Chance |
@@ -753,7 +752,7 @@ L027  Undling ──[Level>=18]──► Undfin ──[Level>=34 & Weather=Rain]
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R03_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Schlammbader, Lauerjäger, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Zucht · Control · – |
-| Basiswerte | HP 71 · ANG 57 · VER 71 · SAN 81 · SVE 74 · GES 71 = **425** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff SpDefense:2 |
+| Basiswerte | HP 71 · ANG 57 · VER 73 · SAN 79 · SVE 74 · GES 71 = **425** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff SpDefense:2 |
 | Evolution | → Toxmire (#061) · Bedingung: `Level>=32` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_MOORBERRY` |
 | Signatur (Konzept) | Sumpfblase: Gift-Angriff auf eine Reihe, legt Terrain Sumpf |
@@ -825,7 +824,7 @@ L027  Undling ──[Level>=18]──► Undfin ──[Level>=34 & Weather=Rain]
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R03_Z02, R03_Z03 |
 | Aktivität · Merkmale | Nachtaktiv · Schwimmer, Hüter, Schläfer |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Schwimmreiten |
-| Basiswerte | HP 86 · ANG 65 · VER 93 · SAN 50 · SVE 79 · GES 57 = **430** · PRÄ 100 · AUS 92 · Wachstum Steady · EP-Ertrag 140 · Schliff HP:2 |
+| Basiswerte | HP 86 · ANG 65 · VER 90 · SAN 50 · SVE 82 · GES 57 = **430** · PRÄ 100 · AUS 92 · Wachstum Steady · EP-Ertrag 140 · Schliff HP:2 |
 | Evolution | → Undrath (#064) · Bedingung: `Level>=34 & Weather=Rain` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_SMOKEDFISH` |
 | Signatur (Konzept) | Strömungsschild: Schild für die Reihe, heilt bei Regen über Zeit |
@@ -849,7 +848,7 @@ L027  Undling ──[Level>=18]──► Undfin ──[Level>=34 & Weather=Rain]
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Schwimmer, Einzelgänger, Hüter |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Schwimmreiten |
-| Basiswerte | HP 105 · ANG 79 · VER 114 · SAN 61 · SVE 96 · GES 70 = **525** · PRÄ 100 · AUS 92 · Wachstum Steady · EP-Ertrag 210 · Schliff HP:3 |
+| Basiswerte | HP 105 · ANG 79 · VER 112 · SAN 61 · SVE 98 · GES 70 = **525** · PRÄ 100 · AUS 92 · Wachstum Steady · EP-Ertrag 210 · Schliff HP:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 35 · Vorliebe `ITM_FOOD_SMOKEDFISH` |
 | Signatur (Konzept) | Deltaflut: Crescendo – alle Gegner werden in die Hinterreihe gespült, eigene Seite heilt |

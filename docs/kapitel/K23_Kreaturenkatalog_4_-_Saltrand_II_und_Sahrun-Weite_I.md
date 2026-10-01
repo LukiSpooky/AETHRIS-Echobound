@@ -27,7 +27,6 @@ Dieses Kapitel schließt **Saltrand** ab (#097–#110, insgesamt 26 Arten) und e
 | Arena 4 (Schirah Harrâd) | Solaryx, Stacharon, Sengrath, Mirazhar |
 | Wettergebundene Formen | 5 Arten mit Sandsturm-/Hitzewellen-Bindung |
 
-
 ## Übersicht
 
 | Kodex | Name | Typen | Linie · Stufe | Archetyp | Größe | Seltenheit | Rolle |
@@ -114,7 +113,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Sehr selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Nachtaktiv · Leuchtend, Einzelgänger, Muster-Sammler |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 87 · ANG 69 · VER 87 · SAN 100 · SVE 91 · GES 86 = **520** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 210 · Schliff SpAttack:3 |
+| Basiswerte | HP 87 · ANG 69 · VER 87 · SAN 104 · SVE 87 · GES 86 = **520** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 210 · Schliff SpAttack:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 25 · Vorliebe `ITM_LURE_GLYPHTOKEN` |
 | Signatur (Konzept) | Glyphenlicht: ändert den Typ eines Gegners für 2 Züge in Flut |
@@ -138,7 +137,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R06_Z01, R06_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Treiber, Flieger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf · Control · – |
-| Basiswerte | HP 57 · ANG 45 · VER 57 · SAN 65 · SVE 59 · GES 57 = **340** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 75 · Schliff SpDefense:1 |
+| Basiswerte | HP 57 · ANG 45 · VER 57 · SAN 63 · SVE 59 · GES 59 = **340** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 75 · Schliff SpDefense:1 |
 | Evolution | → Aerluna (#099) · Bedingung: `Level>=24` |
 | Bindung | Rate 55 · Vorliebe `ITM_LURE_WINDCHIME` |
 | Signatur (Konzept) | Nesselwind: Sturm-Angriff mit Chance auf Verlangsamung |
@@ -162,7 +161,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Selten · `Weather.Thunderstorm` · R06_Z03, R06_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Treiber, Flieger, Leuchtend |
 | Nischen · Rolle · Reiten | Kampf · Control · – |
-| Basiswerte | HP 82 · ANG 65 · VER 82 · SAN 94 · SVE 86 · GES 81 = **490** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 190 · Schliff SpDefense:2 |
+| Basiswerte | HP 82 · ANG 65 · VER 82 · SAN 92 · SVE 86 · GES 83 = **490** · PRÄ 102 · AUS 100 · Wachstum Swift · EP-Ertrag 190 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 40 · Vorliebe `ITM_LURE_WINDCHIME` |
 | Signatur (Konzept) | Blitzschirm: lädt sich im Gewitter auf, entlädt auf alle Gegner |
@@ -186,7 +185,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R06_Z01 |
 | Aktivität · Merkmale | Tagaktiv · Gräber, Sonnenbader, Wanderer |
 | Nischen · Rolle · Reiten | Kampf, Zucht · Tank · – |
-| Basiswerte | HP 68 · ANG 51 · VER 74 · SAN 40 · SVE 62 · GES 45 = **340** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 75 · Schliff Defense:1 |
+| Basiswerte | HP 66 · ANG 51 · VER 76 · SAN 40 · SVE 62 · GES 45 = **340** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 75 · Schliff Defense:1 |
 | Evolution | → Stonshell (#101) · Bedingung: `Level>=26` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Sandgrube: gräbt sich ein (Verteidigung +2, nächster Angriff stärker) |
@@ -210,7 +209,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R06_Z01, R06_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Wanderer, Sonnenbader, Hüter |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · Bodenreiten |
-| Basiswerte | HP 100 · ANG 75 · VER 108 · SAN 58 · SVE 92 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 190 · Schliff Defense:2 |
+| Basiswerte | HP 96 · ANG 75 · VER 112 · SAN 58 · SVE 92 · GES 67 = **500** · PRÄ 100 · AUS 92 · Wachstum Late · EP-Ertrag 190 · Schliff Defense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Wattpanzer: Schild für die Reihe, Flut-Schaden halbiert |
@@ -354,7 +353,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R06_Z02, R06_Z05 |
 | Aktivität · Merkmale | Tagaktiv · Lauerjäger, Getarnt, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Zucht · Control · – |
-| Basiswerte | HP 82 · ANG 65 · VER 82 · SAN 94 · SVE 86 · GES 81 = **490** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 190 · Schliff SpDefense:2 |
+| Basiswerte | HP 82 · ANG 65 · VER 85 · SAN 91 · SVE 86 · GES 81 = **490** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 190 · Schliff SpDefense:2 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 40 · Vorliebe `ITM_FOOD_KELPSNACK` |
 | Signatur (Konzept) | Nesselwald: Gift-Stapel auf alle Gegner, Terrain Sumpf |
@@ -474,7 +473,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R04_Z02, R04_Z04 |
 | Aktivität · Merkmale | Tagaktiv · Jäger, Sonnenbader, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Feld · Striker · – |
-| Basiswerte | HP 68 · ANG 97 · VER 64 · SAN 50 · SVE 61 · GES 90 = **430** · PRÄ 106 · AUS 96 · Wachstum Swift · EP-Ertrag 140 · Schliff Attack:2 |
+| Basiswerte | HP 68 · ANG 95 · VER 64 · SAN 52 · SVE 61 · GES 90 = **430** · PRÄ 106 · AUS 96 · Wachstum Swift · EP-Ertrag 140 · Schliff Attack:2 |
 | Evolution | → Solaryx (#113) · Bedingung: `Level>=36` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_DATES` |
 | Signatur (Konzept) | Spiegelsprung: springt durch einen Lichtreflex hinter das Ziel (Positionswechsel) |
@@ -522,7 +521,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R04_Z01, R04_Z02 |
 | Aktivität · Merkmale | Tagaktiv · Herde, Weidegänger, Scheu |
 | Nischen · Rolle · Reiten | Kampf, Reittier · Tank · – |
-| Basiswerte | HP 63 · ANG 47 · VER 68 · SAN 37 · SVE 58 · GES 42 = **315** · PRÄ 100 · AUS 92 · Wachstum Steady · EP-Ertrag 60 · Schliff HP:1 |
+| Basiswerte | HP 61 · ANG 47 · VER 70 · SAN 37 · SVE 58 · GES 42 = **315** · PRÄ 100 · AUS 92 · Wachstum Steady · EP-Ertrag 60 · Schliff HP:1 |
 | Evolution | → Dunhorn (#115) · Bedingung: `Level>=20` |
 | Bindung | Rate 60 · Vorliebe `ITM_FOOD_DATES` |
 | Signatur (Konzept) | Sandpanzer: erhöht eigene VER, bei Sandsturm doppelt |
@@ -594,7 +593,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R04_Z02, R04_Z03 |
 | Aktivität · Merkmale | Tagaktiv · Muster-Sammler, Gräber, Sammler |
 | Nischen · Rolle · Reiten | Kampf, Feld · Control · – |
-| Basiswerte | HP 51 · ANG 41 · VER 51 · SAN 58 · SVE 53 · GES 51 = **305** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff Defense:1 |
+| Basiswerte | HP 54 · ANG 41 · VER 51 · SAN 55 · SVE 53 · GES 51 = **305** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 60 · Schliff Defense:1 |
 | Evolution | → Skaral (#118) · Bedingung: `Level>=18` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Kugelstoß: rollt eine Sandkugel, verschiebt das Ziel eine Reihe nach hinten |
@@ -618,7 +617,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Ungewöhnlich · – · R04_Z03, R04_Z05 |
 | Aktivität · Merkmale | Tagaktiv · Muster-Sammler, Gräber, Revierverteidigend |
 | Nischen · Rolle · Reiten | Kampf, Feld · Control · – |
-| Basiswerte | HP 72 · ANG 57 · VER 72 · SAN 82 · SVE 75 · GES 72 = **430** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff Defense:2 |
+| Basiswerte | HP 75 · ANG 57 · VER 72 · SAN 79 · SVE 75 · GES 72 = **430** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 140 · Schliff Defense:2 |
 | Evolution | → Skarabon (#119) · Bedingung: `Level>=34` |
 | Bindung | Rate 45 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Schwerkugel: Schwerkraft-Angriff, Ziel kann 1 Zug nicht die Reihe wechseln |
@@ -642,7 +641,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Selten · `Spawn.None` · – |
 | Aktivität · Merkmale | Tagaktiv · Hüter, Muster-Sammler, Sternschauer |
 | Nischen · Rolle · Reiten | Kampf, Forschung · Control · – |
-| Basiswerte | HP 88 · ANG 70 · VER 87 · SAN 101 · SVE 92 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpDefense:3 |
+| Basiswerte | HP 91 · ANG 70 · VER 87 · SAN 98 · SVE 92 · GES 87 = **525** · PRÄ 102 · AUS 100 · Wachstum Steady · EP-Ertrag 210 · Schliff SpDefense:3 |
 | Evolution | keine weitere Entwicklung |
 | Bindung | Rate 30 · Vorliebe `ITM_FOOD_ORECRUMBS` |
 | Signatur (Konzept) | Sonnenkugel: Crescendo – erzeugt eine schwebende Lichtkugel, die 3 Züge lang Gegner trifft |
@@ -666,7 +665,7 @@ L056  Mirasel ──[Level>=28 & Weather=Heatwave]──► Mirazhar
 | Seltenheit · Bedingungen · Zonen | Häufig · – · R04_Z02, R04_Z05 |
 | Aktivität · Merkmale | Tagaktiv · Gräber, Wärmesucher, Lauerjäger |
 | Nischen · Rolle · Reiten | Kampf · Striker · – |
-| Basiswerte | HP 49 · ANG 70 · VER 46 · SAN 36 · SVE 44 · GES 65 = **310** · PRÄ 106 · AUS 96 · Wachstum Late · EP-Ertrag 60 · Schliff Attack:1 |
+| Basiswerte | HP 49 · ANG 68 · VER 46 · SAN 38 · SVE 44 · GES 65 = **310** · PRÄ 106 · AUS 96 · Wachstum Late · EP-Ertrag 60 · Schliff Attack:1 |
 | Evolution | → Sengar (#121) · Bedingung: `Level>=22` |
 | Bindung | Rate 55 · Vorliebe `ITM_FOOD_CHARCOAL` |
 | Signatur (Konzept) | Glutstich: schießt aus dem Sand, trifft zuerst (Priorität +1) |

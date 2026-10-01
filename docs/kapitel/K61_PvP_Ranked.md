@@ -73,9 +73,9 @@ Beispiele (Anlage 10, Schliff 0, Werte aus `Species.csv`):
 |---|---|---|---|---|---|---|---|---|---|
 | Verdrath | 52 | 227 | 91 | 114 | 93 | 293 | 118 | 147 | 120 |
 | Anchrex | 61 | 244 | 99 | 143 | 123 | 275 | 112 | 161 | 139 |
-| Maraune | 70 | 247 | 155 | 140 | 198 | 247 | 155 | 140 | 198 |
+| Maraune | 70 | 247 | 155 | 140 | 195 | 247 | 155 | 140 | 195 |
 | Pyroluth | 78 | 281 | 93 | 214 | 184 | 255 | 84 | 195 | 168 |
-| Skriveth | 88 | 312 | 103 | 239 | 205 | 255 | 84 | 195 | 168 |
+| Skriveth | 88 | 312 | 103 | 245 | 199 | 255 | 84 | 200 | 163 |
 | Cirrhaven | 100 | 341 | 215 | 195 | 275 | 249 | 156 | 142 | 200 |
 
 **Was Investition bewirkt:** Anlagen und Schliff zählen auch im Ranked – sie sind erreichbar ohne Geld (Zucht K38, Training/Kämpfe K18, Klangstimmung im Endgame) und belohnen Pflege. Ihre Wirkung bei Norm 70 am Beispiel eines Kernwerts mit Basis 100:
@@ -440,7 +440,7 @@ Server: Kampfende (Ranked)
 
 **Ergebnis:** Prüfregeln PV-01–PV-06: **0 Verstöße**. Ranked-zulässig: 240 Arten; Normstufe 70; Simulation 2000 Personen × 60 Kämpfe: Spearman nach 40 Kämpfen 0,977, höchste Stufe 1,0 %.
 
-**Hinweis an K63:** Die Normalisierungs-Tabelle in §2.2 zeigt, dass zwei Arten (Pyroluth #137 und Skriveth #181) identische Basiswerte haben. Das ist keine Regelverletzung, schwächt aber die Identität im Ranked; K63 prüft Basiswert-Dubletten im Balancing.
+**Hinweis an K63 (erledigt):** Die erste Fassung dieses Kapitels zeigte, dass zwei Arten (Pyroluth #137 und Skriveth #181) identische Basiswerte hatten. K63 hat alle 54 solcher Gruppen über Identitätsakzente aufgelöst (`Data/Balance/StatAccents.csv`, Prüfregel BL-01); die Tabelle in §2.2 zeigt bereits die neuen Werte.
 
 ---
 
@@ -448,7 +448,7 @@ Server: Kampfende (Ranked)
 
 | Abteilung | Anforderung | Kapitel |
 |---|---|---|
-| Balancing | Stufengrenzen nach S0 nachjustieren; Meta-Signale §7; Basiswert-Dubletten | K63 |
+| Balancing | Stufengrenzen nach S0 nachjustieren; Meta-Signale §7; Basiswert-Dubletten (in K63 behoben) | K63 |
 | Kampf-KI | Profil Veteran mit fester Aufstellung für Geister-Teams | K34 |
 | UI | Arena-Halle, Teamvorschau, Norm-Hinweis, Replay-Ansicht, Ranglisten | K54 |
 | Backend | Ranked-Dienst, Saison-Reset, Ranglisten, Geister-Team-Export | K59 |
@@ -492,7 +492,7 @@ Server: Kampfende (Ranked)
 - [x] Ranked: Ablauf, Zeit, Tiebreak, Glicko-2, Stufen, Simulation, Matchmaking, Saisons, Belohnungen
 - [x] Freie Arena, Freundeskampf, Geister-Teams, Zuschauen, Replays, Turniere
 - [x] Meta-Pflege, Fair Play, UX, Technik (C++ Glicko-2), Telemetrie
-- [x] Prüfregeln PV-01–PV-06 (0 Verstöße), Hinweis an K63
+- [x] Prüfregeln PV-01–PV-06 (0 Verstöße), Hinweis an K63 (erledigt)
 - [x] Anforderungen, ADR-249 – ADR-254, CANON §240–§243
 
 ➡️ **Nächstes Kapitel: K62 – Endgame.**

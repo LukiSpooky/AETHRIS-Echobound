@@ -118,11 +118,11 @@ Alle Werte mit Anlage 7, ohne Schliff, Persönlichkeit neutral; erzeugt aus den 
 |---|---|---|---|---|---|---|---|---|---|---|
 | Fernwyn → Brokkar (20) | Saugwurzel (60, Spec.) | 11 | → 13 | 1600‰ → 20 | 1000‰ → 20 | → 20 | 1000‰ → 20 | → 20 | **20** | 19 % |
 | Torgrath → Zephyrion (36) | Felsrammen (60, Phys.) | 20 | → 25 | 1600‰ → 40 | 1000‰ → 40 | → 40 | 1000‰ → 40 | → 40 | **40** | 28 % |
-| Sengrath → Kjalmur (50) | Esseneruption (100, Spec.) | 28 | → 35 | 1000‰ → 35 | 1200‰ → 42 | → 42 | 1000‰ → 42 | → 42 | **42** | 20 % |
-| Klirrathan → Uvasil (60) | Prismenfächer (65, Spec.) | 26 | → 32 | 1600‰ → 51 | 1000‰ → 51 | → 76 | 1000‰ → 76 | → 76 | **76** | 32 % |
+| Sengrath → Kjalmur (50) | Esseneruption (100, Spec.) | 26 | → 32 | 1000‰ → 32 | 1200‰ → 38 | → 38 | 1000‰ → 38 | → 38 | **38** | 18 % |
+| Klirrathan → Uvasil (60) | Prismenfächer (65, Spec.) | 27 | → 33 | 1600‰ → 52 | 1000‰ → 52 | → 78 | 1000‰ → 78 | → 78 | **78** | 33 % |
 | Nimbaroth → Ignavor (70) | Himmelszorn (75, Spec.) | 30 | → 37 | 1000‰ → 37 | 1200‰ → 44 | → 44 | 1000‰ → 44 | → 44 | **44** | 17 % |
 | Snevrik → Solaryx (45) | Frostbiss (60, Phys.) | 24 | → 30 | 625‰ → 18 | 1200‰ → 21 | → 21 | 750‰ → 15 | → 15 | **15** | 8 % |
-| Tilgrath → Thaelarch (55) | Hohlklang (60, Spec.) | 22 | → 27 | 1000‰ → 27 | 1100‰ → 29 | → 29 | 1000‰ → 29 | → 29 | **29** | 11 % |
+| Tilgrath → Thaelarch (55) | Hohlklang (60, Spec.) | 23 | → 28 | 1000‰ → 28 | 1100‰ → 30 | → 30 | 1000‰ → 30 | → 30 | **30** | 11 % |
 | Pyroluth → Nubiluna (40) | Feueratem (95, Spec.) | 33 | → 41 | 1000‰ → 41 | 800‰ → 32 | → 32 | 1000‰ → 32 | → 25 | **25** | 13 % |
 
 ### 3.1 Referenztabelle Stärke × Faktor

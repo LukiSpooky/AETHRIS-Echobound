@@ -8,7 +8,7 @@ Jede Regionsdatei (k20_r01.py …) beschreibt Linien kompakt; diese Bibliothek
  - schreibt die Zeilen idempotent in Data/Echos/Species.csv und SpeciesLore.csv (ersetzt den Kodexbereich).
 """
 from __future__ import annotations
-import csv, pathlib
+import csv, sys, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 SPECIES = ROOT / "Data/Echos/Species.csv"
@@ -116,6 +116,10 @@ class Catalog:
         rows = [r for r in rows if r["Name"] not in new_ids] + self.rows
         lore = [r for r in lore if r["Name"] not in new_ids] + self.lore
         rows.sort(key=lambda r: int(r["KodexNumber"]))
+        # Identitätsakzente (K63 §3) idempotent erneut anwenden, damit ein Neuschreiben sie nicht verliert.
+        sys.path.insert(0, str(ROOT / "tools" / "ref"))
+        from aethris_balance import apply_accents
+        apply_accents(rows)
         lore.sort(key=lambda r: int(r["Name"][5:]))
         with open(SPECIES, "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=FIELDS); w.writeheader(); w.writerows(rows)
