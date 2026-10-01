@@ -1,0 +1,17 @@
+# Terrains im Kampf (K32 §6). Dauer in Runden (100 Ticks, CANON §109). Ein Terrain gleichzeitig; neues ersetzt altes. "Bodennah" = nicht Schwebend, nicht Flier-Merkmal.
+Name,DisplayName,Type,BoostType,BoostPermille,MalusType,MalusPermille,RoundEffect,SpecialRule,EndedBy
+Glutboden,Glutboden,Ember,Ember,1200,,1000,"Nicht-Glut-Echos der Vorderreihe −3 % Max-HP je Runde","Brand-Chancen +100 ‰ (absolut)","Regen, Flutfeld"
+Glutsand,Glutsand,Ember,Ember,1200,Frost,900,"Nicht-Glut/Stein-Echos bodennah −3 % Max-HP je Runde","Grabende Echos (Burrower) AUS +1 Stufe","Regen, Flutfeld"
+Ueberwuchs,Überwuchs,Bloom,Bloom,1200,,1000,"Bodennahe Echos heilen 4 % Max-HP je Runde","Welke wirkungslos; Bind-Dauer +1","Glutboden, Glutsand"
+Sumpf,Sumpf,Venom,Venom,1200,,1000,"–","Bodennahe Nicht-Gift/Flut-Echos GES −1 Stufe; Gift-Treffer +1 Stapel","Überwuchs, Sonne (Hitzewelle)"
+Flutfeld,Flutfeld,Tide,Tide,1200,Ember,800,"Brand endet bei Feldbeginn","Reihenwechsel −20 Zeitkosten; Push/Pull-Fähigkeiten verfehlen nie","Glutboden (verdampft beides)"
+Eisflaeche,Eisfläche,Frost,Frost,1200,,1000,"–","Kontakt-Fähigkeiten PRÄ −1 Stufe (rutschig); Push stößt 1 Reihe weiter","Glutboden, Glutsand, Hitzewelle"
+Sturmfeld,Sturmfeld,Storm,Storm,1200,,1000,"–","Haste-Effekte +20 Ticks; Schwebend-Dauer +1","Schwerefeld"
+Kristallfeld,Kristallfeld,Crystal,Crystal,1200,Light,900,"–","Reflect-Effekte wirken zweimal; Charged-Bonus ×1,25 statt ×1,5 gegen Kristall-Ziele","Schwerefeld, Missklang"
+Klangfeld,Klangfeld,Sound,Sound,1200,,1000,"Harmonie +3 je Runde für beide Seiten","Harmonie-Gewinn ×1,5","Stillefeld, Missklang"
+Schwerefeld,Schwerefeld,Gravity,Gravity,1200,,1000,"–","Schwebend unmöglich (endet); Flier verlieren AUS-Bonus; Reihenwechsel +20 Zeitkosten","Sturmfeld"
+Glyphenfeld,Glyphenfeld,Arcane,Arcane,1200,,1000,"–","In der letzten Runde des Feldes ist die Typtabelle umgekehrt (angekündigt, CANON §77)","Stillefeld"
+Stillefeld,Stillefeld,Void,Void,1100,Sound,800,"–","Kein Harmonie-Gewinn; Feldklänge ruhen; Crescendo-Ankündigungen nicht möglich","Klangfeld, Lichtfeld"
+Lichtfeld,Lichtfeld,Light,Light,1200,Spirit,900,"–","Positive AUS-Stufen wirkungslos; Decoy/Trugbilder enden","Nebelfeld, Stillefeld"
+Nebelfeld,Nebelfeld,Spirit,Spirit,1200,Light,900,"–","Hinterreihe AUS +1 Stufe; Fernkampf auf Hinterreihe PRÄ −1 Stufe","Lichtfeld, Sturmfeld"
+Missklang,Missklang-Terrain,Void,Void,1100,Crystal,900,"–","Harmonie-Gewinn halbiert; Klang-Fähigkeiten +20 Zeitkosten","Klangfeld"

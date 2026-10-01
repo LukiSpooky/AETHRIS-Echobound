@@ -1,17 +1,17 @@
-# Status-Effekte (K28 §4, Startwerte; Mechanik-Feinschliff und Formeln final in K32). Je Typ genau eine Immunität (CANON §78).
-Name,DisplayName,ImmuneType,MainSources,Duration,Stacking,StartEffect,CounterPlay
-Brand,Brand,Ember,Ember,3 Runden,nein,"6 % max. HP Schaden je eigener Runde; ANG ×0,75","Flut-Treffer oder Regen löschen; Reinigen"
-Ausgetrocknet,Ausgetrocknet,Tide,Ember|Storm|Light,3 Runden,nein,"erhaltene Heilung −50 %; Flut-Fähigkeiten +20 Zeitkosten","Regen hebt auf; Flutfeld"
-Rueckstoss,Rückstoß,Stone,Gravity|Tide|Storm,sofort,nein,"Ziel wird in die Hinterreihe gestoßen; nächster Reihenwechsel +30 Zeitkosten","Bind/Wurzeln verhindern; Stein immun"
-Verlangsamt,Verlangsamt,Storm,Frost|Tide|Gravity,3 Runden,nein,"Zeitkosten aller Aktionen ×1,3","Haste-Effekte heben auf"
-Welke,Welke,Bloom,Venom|Void|Ember,3 Runden,nein,"Regeneration/Heilung über Zeit wirkungslos; VER −1 bei Anwendung","Überwuchs-Terrain heilt Welke"
-Starre,Starre,Frost,Frost,1 Aktion,nein,"nächste Aktion entfällt; Glut-Treffer löst sofort; danach 2 Runden immun","Glut-Treffer; Reinigen"
-Entzug,Entzug,Void,Void,3 Runden,nein,"keine Harmonie-Erzeugung; positive Stufen können nicht steigen","Licht-Reinigen; Klang-Harmonie"
-Geblendet,Geblendet,Light,Light|Crystal,3 Runden,nein,"PRÄ −2 Stufen (wirksam)","Leere-/Nebelfeld hebt auf; Reinigen"
-Vergiftet,Vergiftet,Venom,Venom,bis Kampfende/Reinigung,1–5 Stapel,"3 % max. HP je Stapel und Runde","Reinigen; Wechsel in Reserve halbiert Stapel"
-Erschuettert,Erschüttert,Metal,Stone|Storm|Sound|Metal,sofort,nein,"nächste Aktion +50 Ticks verzögert","Stein-Schild verhindert"
-Furcht,Furcht,Spirit,Spirit|Void,2 Runden,nein,"25 % Chance, die Aktion zu verlieren; ANG/SAN −1","Klang-Harmonie +20 beendet"
-Gebrochen,Gebrochen,Crystal,Metal|Crystal|Stone,3 Runden,nein,"VER/SVE −2 Stufen; aktive Schilde zerbrechen","Schild erneut aufbauen"
-Verstummt,Verstummt,Sound,Sound|Void,2 Runden,nein,"keine Fähigkeiten mit Tag Sound, keine Status-Fähigkeiten, kein Crescendo","Reinigen; Ablauf"
-Schwebend,Schwebend,Gravity,Storm|Gravity,2 Runden,nein,"kein Reihenwechsel; Boden-Angriffe (Erdgrollen u. a.) verfehlen; AUS +1, PRÄ −1","Schwerefeld beendet"
-Verflucht,Verflucht,Arcane,Arcane|Spirit,3 Runden,nein,"Zeitkosten +20; positive Effekte auf das Ziel halbiert","Licht-Reinigen; Arkan immun"
+# Status-Effekte (K28 §5, finalisiert K32 §5). DurationTurns = eigene Züge des Betroffenen (CANON §109). Promille-Werte ganzzahlig.
+Name,DisplayName,ImmuneType,MainSources,DurationTurns,Stacking,TickDamagePermilleMaxHP,StatMod,TimeCostMod,ExtraRule,CounterPlay
+Brand,Brand,Ember,Ember,3,nein,60,Attack×750 (nur physisch),,"Flut-Treffer löscht",Reinigen; Regen; Flutfeld
+Ausgetrocknet,Ausgetrocknet,Tide,Ember|Storm|Light,3,nein,0,,Flut-Fähigkeiten +20,"erhaltene Heilung ×500",Regen; Flutfeld; Reinigen
+Rueckstoss,Rückstoß,Stone,Gravity|Tide|Storm,0,nein,0,,,"Sofort: in die Hinterreihe; nächster Reihenwechsel +30 Zeitkosten",Bind/Wurzelgriff; Stein immun
+Verlangsamt,Verlangsamt,Storm,Frost|Tide|Gravity,3,nein,0,,×1300,"–",Haste hebt auf; Reinigen
+Welke,Welke,Bloom,Venom|Void|Ember,3,nein,0,Defense −1 Stufe bei Anwendung,,"Regen/Heilung über Zeit wirkungslos",Überwuchs; Reinigen
+Starre,Starre,Frost,Frost,1,nein,0,,,"Nächster Zug entfällt (+100 Ticks); Glut-Treffer löst sofort; danach 2 Züge immun",Glut-Treffer; Reinigen
+Entzug,Entzug,Void,Void,3,nein,0,,,"Keine Harmonie-Erzeugung durch dieses Echo; positive Stufen steigen nicht",Licht-Reinigen
+Geblendet,Geblendet,Light,Light|Crystal,3,nein,0,Precision −2 Stufen,,"–",Nebel-/Stillefeld; Reinigen
+Vergiftet,Vergiftet,Venom,Venom,0,1–5 Stapel,30 je Stapel,,,"Dauer bis Kampfende oder Reinigung; Reservewechsel halbiert Stapel (abgerundet)",Reinigen; Wechsel
+Erschuettert,Erschüttert,Metal,Stone|Storm|Sound|Metal,0,nein,0,,,"Sofort: +50 Ticks (zählt in Fremdverzögerungs-Deckel)",Schild verhindert
+Furcht,Furcht,Spirit,Spirit|Void,2,nein,0,Attack/SpAttack −1 Stufe,,"Aktion gegen den Verursacher kostet +30 Zeitkosten",Klang-Harmonie ≥ +20 beendet; Reinigen
+Gebrochen,Gebrochen,Crystal,Metal|Crystal|Stone,3,nein,0,Defense/SpDefense −2 Stufen,,"Aktive Schilde zerbrechen sofort",Neuer Schild nach Ablauf; Reinigen
+Verstummt,Verstummt,Sound,Sound|Void,2,nein,0,,,"Keine Sound-Fähigkeiten, keine Status-Fähigkeiten, kein Crescendo; Sound-Ankündigungen brechen ab",Reinigen; Ablauf
+Schwebend,Schwebend,Gravity,Storm|Gravity,2,nein,0,Evasion +1 / Precision −1,,"Kein Reihenwechsel; Ground-Fähigkeiten verfehlen",Schwerefeld; Ablauf
+Verflucht,Verflucht,Arcane,Arcane|Spirit,3,nein,0,,+20,"Positive Effekte auf das Ziel (Heilung, Stufen, Schilde) halbiert",Licht-Reinigen

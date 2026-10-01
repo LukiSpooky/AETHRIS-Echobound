@@ -217,23 +217,23 @@ TypeChange(Target,Arcane,2)
 
 Die 15 Status-Effekte tragen die Arbeitsnamen aus K17 (CANON §78). Jeder Typ ist gegen **genau einen** Status immun. Hier werden Quellen, Dauer und Startwerte festgelegt; die exakte Formelintegration (Runden- vs. Tick-Basis, Interaktionen) folgt in **K32**.
 
-| DisplayName | ImmuneType | MainSources | Duration | Stacking | StartEffect | CounterPlay |
-|---|---|---|---|---|---|---|
-| Brand | Ember | Ember | 3 Runden | nein | 6 % max. HP Schaden je eigener Runde; ANG ×0,75 | Flut-Treffer oder Regen löschen; Reinigen |
-| Ausgetrocknet | Tide | Ember|Storm|Light | 3 Runden | nein | erhaltene Heilung −50 %; Flut-Fähigkeiten +20 Zeitkosten | Regen hebt auf; Flutfeld |
-| Rückstoß | Stone | Gravity|Tide|Storm | sofort | nein | Ziel wird in die Hinterreihe gestoßen; nächster Reihenwechsel +30 Zeitkosten | Bind/Wurzeln verhindern; Stein immun |
-| Verlangsamt | Storm | Frost|Tide|Gravity | 3 Runden | nein | Zeitkosten aller Aktionen ×1,3 | Haste-Effekte heben auf |
-| Welke | Bloom | Venom|Void|Ember | 3 Runden | nein | Regeneration/Heilung über Zeit wirkungslos; VER −1 bei Anwendung | Überwuchs-Terrain heilt Welke |
-| Starre | Frost | Frost | 1 Aktion | nein | nächste Aktion entfällt; Glut-Treffer löst sofort; danach 2 Runden immun | Glut-Treffer; Reinigen |
-| Entzug | Void | Void | 3 Runden | nein | keine Harmonie-Erzeugung; positive Stufen können nicht steigen | Licht-Reinigen; Klang-Harmonie |
-| Geblendet | Light | Light|Crystal | 3 Runden | nein | PRÄ −2 Stufen (wirksam) | Leere-/Nebelfeld hebt auf; Reinigen |
-| Vergiftet | Venom | Venom | bis Kampfende/Reinigung | 1–5 Stapel | 3 % max. HP je Stapel und Runde | Reinigen; Wechsel in Reserve halbiert Stapel |
-| Erschüttert | Metal | Stone|Storm|Sound|Metal | sofort | nein | nächste Aktion +50 Ticks verzögert | Stein-Schild verhindert |
-| Furcht | Spirit | Spirit|Void | 2 Runden | nein | 25 % Chance, die Aktion zu verlieren; ANG/SAN −1 | Klang-Harmonie +20 beendet |
-| Gebrochen | Crystal | Metal|Crystal|Stone | 3 Runden | nein | VER/SVE −2 Stufen; aktive Schilde zerbrechen | Schild erneut aufbauen |
-| Verstummt | Sound | Sound|Void | 2 Runden | nein | keine Fähigkeiten mit Tag Sound, keine Status-Fähigkeiten, kein Crescendo | Reinigen; Ablauf |
-| Schwebend | Gravity | Storm|Gravity | 2 Runden | nein | kein Reihenwechsel; Boden-Angriffe (Erdgrollen u. a.) verfehlen; AUS +1, PRÄ −1 | Schwerefeld beendet |
-| Verflucht | Arcane | Arcane|Spirit | 3 Runden | nein | Zeitkosten +20; positive Effekte auf das Ziel halbiert | Licht-Reinigen; Arkan immun |
+| DisplayName | ImmuneType | MainSources | DurationTurns | Stacking | TickDamagePermilleMaxHP | StatMod | TimeCostMod | ExtraRule | CounterPlay |
+|---|---|---|---|---|---|---|---|---|---|
+| Brand | Ember | Ember | 3 | nein | 60 | Attack×750 (nur physisch) |  | Flut-Treffer löscht | Reinigen; Regen; Flutfeld |
+| Ausgetrocknet | Tide | Ember|Storm|Light | 3 | nein | 0 |  | Flut-Fähigkeiten +20 | erhaltene Heilung ×500 | Regen; Flutfeld; Reinigen |
+| Rückstoß | Stone | Gravity|Tide|Storm | 0 | nein | 0 |  |  | Sofort: in die Hinterreihe; nächster Reihenwechsel +30 Zeitkosten | Bind/Wurzelgriff; Stein immun |
+| Verlangsamt | Storm | Frost|Tide|Gravity | 3 | nein | 0 |  | ×1300 | – | Haste hebt auf; Reinigen |
+| Welke | Bloom | Venom|Void|Ember | 3 | nein | 0 | Defense −1 Stufe bei Anwendung |  | Regen/Heilung über Zeit wirkungslos | Überwuchs; Reinigen |
+| Starre | Frost | Frost | 1 | nein | 0 |  |  | Nächster Zug entfällt (+100 Ticks); Glut-Treffer löst sofort; danach 2 Züge immun | Glut-Treffer; Reinigen |
+| Entzug | Void | Void | 3 | nein | 0 |  |  | Keine Harmonie-Erzeugung durch dieses Echo; positive Stufen steigen nicht | Licht-Reinigen |
+| Geblendet | Light | Light|Crystal | 3 | nein | 0 | Precision −2 Stufen |  | – | Nebel-/Stillefeld; Reinigen |
+| Vergiftet | Venom | Venom | 0 | 1–5 Stapel | 30 je Stapel |  |  | Dauer bis Kampfende oder Reinigung; Reservewechsel halbiert Stapel (abgerundet) | Reinigen; Wechsel |
+| Erschüttert | Metal | Stone|Storm|Sound|Metal | 0 | nein | 0 |  |  | Sofort: +50 Ticks (zählt in Fremdverzögerungs-Deckel) | Schild verhindert |
+| Furcht | Spirit | Spirit|Void | 2 | nein | 0 | Attack/SpAttack −1 Stufe |  | Aktion gegen den Verursacher kostet +30 Zeitkosten | Klang-Harmonie ≥ +20 beendet; Reinigen |
+| Gebrochen | Crystal | Metal|Crystal|Stone | 3 | nein | 0 | Defense/SpDefense −2 Stufen |  | Aktive Schilde zerbrechen sofort | Neuer Schild nach Ablauf; Reinigen |
+| Verstummt | Sound | Sound|Void | 2 | nein | 0 |  |  | Keine Sound-Fähigkeiten, keine Status-Fähigkeiten, kein Crescendo; Sound-Ankündigungen brechen ab | Reinigen; Ablauf |
+| Schwebend | Gravity | Storm|Gravity | 2 | nein | 0 | Evasion +1 / Precision −1 |  | Kein Reihenwechsel; Ground-Fähigkeiten verfehlen | Schwerefeld; Ablauf |
+| Verflucht | Arcane | Arcane|Spirit | 3 | nein | 0 |  | +20 | Positive Effekte auf das Ziel (Heilung, Stufen, Schilde) halbiert | Licht-Reinigen |
 
 **Regeln (LOCKED):**
 - Ein Echo trägt höchstens **einen Haupt-Status** (Brand, Ausgetrocknet, Verlangsamt, Welke, Starre, Entzug, Geblendet, Furcht, Gebrochen, Verstummt, Schwebend, Verflucht) und zusätzlich **Vergiftet** (stapelbar) – Gift ist bewusst parallel, weil es die Typ-Identität „stapelnde Schwächung“ trägt.
@@ -356,15 +356,15 @@ Sturm ist **Tempo**: Priorität, Mehrfachtreffer, Rückenwind für das Team. Bö
 | ABL_A037 | **Böenhieb** | Phys. | 40 | 100 % | Single | 80 | 55 | Physischer Schaden, Stärke 40, gegen einen Gegner; Priorität +1. |
 | ABL_A038 | **Klingenwind** | Spez. | 45 | 100 % | Single | 80 | 55 | Spezieller Schaden, Stärke 45, gegen einen Gegner; Volltrefferstufe +1. |
 | ABL_A039 | **Flatterschlag** | Phys. | 20 | 95 % | Single | 90 | 66 | Physischer Schaden, Stärke 20, gegen einen Gegner; trifft 2–5-mal. |
-| ABL_A040 | **Rückenwindschlag** | Phys. | 60 | 100 % | Single | 100 | 76 | Physischer Schaden, Stärke 60, gegen einen Gegner; sich selbst rückt 40 Ticks auf der Zeitleiste vor. |
+| ABL_A040 | **Rückenwindschlag** | Phys. | 60 | 100 % | Single | 100 | 76 | Physischer Schaden, Stärke 60, gegen einen Gegner; der Anwender rückt 40 Ticks auf der Zeitleiste vor. |
 | ABL_A041 | **Blitzbogen** | Spez. | 90 | 90 % | Single | 110 | 88 | Spezieller Schaden, Stärke 90, gegen einen Gegner; 20 % Chance auf Erschüttert. |
 | ABL_A042 | **Donnerkeil** | Spez. | 115 | 80 % | Single | 120 | 102 | Spezieller Schaden, Stärke 115, gegen einen Gegner; Stärke ×1,5 bei Gewitter. |
 | ABL_A043 | **Wirbelsturm** | Spez. | 60 | 90 % | Enemies | 120 | 102 | Spezieller Schaden, Stärke 60, gegen alle Gegner; 20 % Chance auf Schwebend. |
-| ABL_A044 | **Böenchor** | Stat. | – | – | Allies | 50 | 32 | Wirkt auf alle Verbündeten; alle Verbündeten rückt 50 Ticks auf der Zeitleiste vor. |
+| ABL_A044 | **Böenchor** | Stat. | – | – | Allies | 50 | 32 | Wirkt auf alle Verbündeten; alle Verbündeten rücken 50 Ticks auf der Zeitleiste vor. |
 | ABL_A045 | **Sturmlauf** | Stat. | – | – | Self | 60 | 40 | GES +2 für sich selbst. |
 | ABL_A046 | **Gewitterruf** | Stat. | – | – | Field | 50 | 30 | Ruft Gewitter für 5 Runden herbei. |
 | ABL_A047 | **Kettenblitz** | Spez. | 30 | 90 % | Row | 110 | 92 | Spezieller Schaden, Stärke 30, gegen eine gegnerische Reihe; trifft 2–3-mal. |
-| ABL_A048 | **Zyklonsprung** | Phys. | 75 | 100 % | Single | 120 | 97 | Physischer Schaden, Stärke 75, gegen einen Gegner; sich selbst rückt 30 Ticks auf der Zeitleiste vor; Anwender wechselt die Reihe ohne Zeitkosten. |
+| ABL_A048 | **Zyklonsprung** | Phys. | 75 | 100 % | Single | 120 | 97 | Physischer Schaden, Stärke 75, gegen einen Gegner; der Anwender rückt 30 Ticks auf der Zeitleiste vor; Anwender wechselt die Reihe ohne Zeitkosten. |
 
 ### 8.5 Blüte (ABL_A049–A060)
 Blüte ist **Wachstum**: Einzel- und Gruppenheilung, Überwuchs-Terrain und Lebensentzug. Dornenranke bindet Gegner an ihre Reihe – Blüte hält Gegner fest, während sie sich selbst erholt.
@@ -400,7 +400,7 @@ Frost **verlangsamt**. Verzögerung auf der Zeitleiste (Raureifhauch, Gletscherd
 | ABL_A069 | **Schneeruf** | Stat. | – | – | Field | 50 | 30 | Ruft Schneefall für 5 Runden herbei. |
 | ABL_A070 | **Eisspiegel** | Stat. | – | – | Field | 50 | 32 | Erzeugt Eisfläche für 4 Runden. |
 | ABL_A071 | **Frostpanzer** | Stat. | – | – | Self | 60 | 40 | Schild für sich selbst (20 % der max. HP); SVE +1 für sich selbst. |
-| ABL_A072 | **Winterstille** | Spez. | 50 | 90 % | Enemies | 120 | 95 | Spezieller Schaden, Stärke 50, gegen alle Gegner; alle Gegner rückt 30 Ticks auf der Zeitleiste zurück. |
+| ABL_A072 | **Winterstille** | Spez. | 50 | 90 % | Enemies | 120 | 95 | Spezieller Schaden, Stärke 50, gegen alle Gegner; alle Gegner rücken 30 Ticks auf der Zeitleiste zurück. |
 
 ### 8.7 Leere (ABL_A073–A084)
 Leere **nimmt**: Harmonie, Stufen, Schilde. Nullpunkt gehört mit 120 Stärke zu den drei stärksten Einzeltreffern unter den Aktiven – auf Kosten von zwei SAN-Stufen. Leerer Raum erzeugt ein Stillefeld (K32: Harmonie-Gewinn blockiert).
@@ -523,7 +523,7 @@ Klang **dirigiert den Takt**: Gegner zurück (Taktbruch, Wiegenlied), Verbündet
 | ABL_A150 | **Schallwand** | Stat. | – | – | AllyRow | 50 | 29 | Wirkt auf eigene Reihe; Schild für die eigene Reihe (15 % der max. HP); Harmonie +10. |
 | ABL_A151 | **Donnerhall** | Spez. | 100 | 85 % | Enemies | 130 | 114 | Spezieller Schaden, Stärke 100, gegen alle Gegner; Anwender muss danach eine Runde aussetzen. |
 | ABL_A152 | **Kampflied** | Stat. | – | – | Allies | 60 | 42 | Wirkt auf alle Verbündeten; ANG +1 für alle Verbündeten; Harmonie +10. |
-| ABL_A153 | **Taktgeber** | Stat. | – | – | Ally | 50 | 24 | Wirkt auf einen Verbündeten; einen Verbündeten rückt 60 Ticks auf der Zeitleiste vor. |
+| ABL_A153 | **Taktgeber** | Stat. | – | – | Ally | 50 | 24 | Wirkt auf einen Verbündeten; ein Verbündeter rückt 60 Ticks auf der Zeitleiste vor. |
 | ABL_A154 | **Wiegenlied** | Stat. | – | 85 % | Single | 60 | 44 | Wirkt auf einen Gegner; das Ziel rückt 80 Ticks auf der Zeitleiste zurück; GES −1 für das Ziel. |
 | ABL_A155 | **Resonanzkreis** | Stat. | – | – | Field | 50 | 32 | Erzeugt Klangfeld für 4 Runden. |
 | ABL_A156 | **Fortissimo** | Spez. | 90 | 95 % | Single | 120 | 95 | Spezieller Schaden, Stärke 90, gegen einen Gegner; Harmonie +10. |

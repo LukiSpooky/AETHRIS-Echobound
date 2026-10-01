@@ -189,6 +189,92 @@ def report_matrix():
     return "\n".join(out)
 
 
+# ── K32: vollständige Schadenskette ─────────────────────────────────────────────
+STAGE_CORE = [500, 571, 667, 800, 1000, 1250, 1500, 1750, 2000]
+
+
+def stage(v, st_):
+    return v * STAGE_CORE[max(-4, min(4, st_)) + 4] // 1000
+
+
+def load_weather():
+    rows = [r for r in csv.DictReader(l for l in open(ROOT / "Data/World/WeatherTypeResonance.csv", encoding="utf-8") if not l.startswith("#"))]
+    out = {}
+    for r in rows:
+        m = {}
+        for k in ("Boost1", "Boost2", "Boost3", "Malus1", "Malus2"):
+            if r[k]:
+                m[r[k].split(".")[1]] = int(r[k + "Permille"])
+        out[r["Name"]] = m
+    return out
+
+
+WEATHER_ID = {"Clear": "W01", "Rain": "W02", "Thunderstorm": "W03", "Fog": "W04", "Snow": "W05", "Heatwave": "W06",
+              "Sandstorm": "W07", "Aurora": "W08", "Ashfall": "W09", "ResonanceStorm": "W10"}
+
+
+def damage_chain(power, category, ab_type, user, target, level, chart, weather=None, crit=False, a_stage=0, d_stage=0,
+                 burned=False, formation=1000, other=(), eigenklang=EIGENKLANG):
+    """Gibt (Endschaden, Schritte) zurück. Reihenfolge CANON §77: Basis × Eigenklang × Typ × Wetter × Krit × Formation × Sonstige."""
+    if category == "Physical":
+        a, d = user["atk"], target["def"]
+    else:
+        a, d = user["sat"], target["sdf"]
+    if crit:                       # Volltreffer ignoriert ungünstige Stufen
+        a_stage, d_stage = max(0, a_stage), min(0, d_stage)
+    a, d = stage(a, a_stage), stage(d, d_stage)
+    if burned and category == "Physical":
+        a = a * 750 // 1000
+    base = power * a * (level + 10) // (max(1, d) * DMG_DIV) + 2
+    steps = [("Basis", base)]
+    v = base
+    if ab_type in user["types"]:
+        v = v * eigenklang // 1000
+    steps.append(("Eigenklang", v))
+    tf = 1000
+    for t in target["types"]:
+        tf = tf * chart[ab_type][t] // 1000
+    v = v * tf // 1000
+    steps.append((f"Typ {tf}‰", v))
+    wf = 1000
+    if weather:
+        wf = load_weather()[WEATHER_ID[weather]].get(ab_type, 1000)
+    v = v * wf // 1000
+    steps.append((f"Wetter {wf}‰", v))
+    v = v * (CRIT_MULT if crit else 1000) // 1000
+    steps.append(("Krit" if crit else "kein Krit", v))
+    v = v * formation // 1000
+    steps.append((f"Formation {formation}‰", v))
+    for o in other:
+        v = v * o // 1000
+    steps.append(("Sonstige", v))
+    return max(1, v), steps
+
+
+def example_table():
+    sp = {r["DisplayName"]: r for r in load_species()}
+    ab = {r["DisplayName"]: r for r in csv.DictReader(open(ROOT / "Data/Abilities/Abilities.csv", encoding="utf-8"))}
+    chart = load_chart()
+    cases = [("Fernwyn", "Saugwurzel", "Brokkar", 20, None, False, 1000, ()),
+             ("Torgrath", "Felsrammen", "Zephyrion", 36, None, False, 1000, ()),
+             ("Sengrath", "Esseneruption", "Kjalmur", 50, "Heatwave", False, 1000, ()),
+             ("Klirrathan", "Prismenfächer", "Uvasil", 60, None, True, 1000, ()),
+             ("Nimbaroth", "Himmelszorn", "Ignavor", 70, "Thunderstorm", False, 1000, ()),
+             ("Snevrik", "Frostbiss", "Solaryx", 45, "Snow", False, 750, ()),
+             ("Tilgrath", "Hohlklang", "Thaelarch", 55, "Fog", False, 1000, ()),
+             ("Pyroluth", "Feueratem", "Nubiluna", 40, "Rain", False, 1000, (800,))]
+    out = ["| Angreifer → Ziel (Lv.) | Fähigkeit (Stärke, Kat.) | Basis | ×Eigenklang | ×Typ | ×Wetter | ×Krit | ×Formation | ×Sonstige | Schaden | % Ziel-HP |",
+           "|---|---|---|---|---|---|---|---|---|---|---|"]
+    for (u, a, t, lv, w, cr, form, oth) in cases:
+        U, T, A = build(sp[u], lv), build(sp[t], lv), ab[a]
+        dmg, steps = damage_chain(int(A["Power"]), A["Category"], A["Type"], U, T, lv, chart, w, cr, formation=form, other=oth)
+        sv = [str(x[1]) for x in steps]
+        out.append(f"| {u} → {t} ({lv}) | {a} ({A['Power']}, {A['Category'][:4]}.) | " + " | ".join(sv[:1]) + " | " +
+                   " | ".join(f"{steps[i][0].split()[-1] if '‰' in steps[i][0] else ''} → {sv[i]}".strip() for i in range(1, 7)) +
+                   f" | **{dmg}** | {dmg * 100 // T['hp']} % |")
+    return "\n".join(out)
+
+
 def sample_log():
     """Durchgerechnetes Duo-Beispiel (K31 §13.2): Wisplet & Brokkar gegen Uvlet & Kharsgrat-Spinne (Ligrel)."""
     rng = AethrisRandom(0xC31, 0x7)

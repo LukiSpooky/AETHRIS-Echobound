@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K31
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K32
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -328,6 +328,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-109 | Priorität als Vorgriff auf der Zeitleiste | K31 |
 | ADR-110 | Status-Dauern in eigenen Zügen, Feld-Dauern in Runden | K31 |
 | ADR-111 | Flucht ohne Zufall über Rückzugsmarker | K31 |
+| ADR-112 | Keine Schadensstreuung, exakte Vorschau | K32 |
+| ADR-113 | Schadensdivisor 180 aus Simulation | K32 |
+| ADR-114 | Volltreffer ×1,5 ignoriert ungünstige Stufen | K32 |
+| ADR-115 | Ein Haupt-Status ohne Überschreiben | K32 |
+| ADR-116 | Gegen-Terrains neutralisieren | K32 |
 
 ## §11 Change Requests
 
@@ -1441,3 +1446,24 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 - Wechsel: Zeitkosten 60, Eingang bei Jetzt + Verzögerung(60); Ersatz nach Verklingen bei 500 ‰ der Startverzögerung; Stufen/Status des ausgehenden Echos zurückgesetzt.
 - Flucht per Rückzugsmarker (Verzögerung 100 des schnellsten eigenen Echos), nicht gegen Arena/Boss/PvP; kein Zufall.
 - Formate: Duell 1+5, Duo 2+4, Trio 3+3, Raid (K35); Duell: Flächenschaden ×0,8 (K32).
+
+## §114 Schadensformel (LOCKED, K32 §2 · `DamageCalculator.h`, `aethris_combat.damage_chain`)
+
+- Basis = ⌊Stärke × A_eff × (L+10) / (V_eff × 180)⌋ + 2; Kette (je ⌊⌋, Promille): Eigenklang 1250 (Boni ≤ 1400) × Typ × Wetter × Volltreffer 1500 × Formation × Sonstige; Mindestschaden 1.
+- **Keine Schadensstreuung** (ADR-112); Volltreffer-Stufen 42/125/250/500 ‰, ignoriert ungünstige Stufen; Brand ANG ×0,75 (physisch); Duell-Flächenfähigkeiten ×0,8; fester Schaden (Status, Terrain, Wetter, Meteore) in ‰ Max-HP.
+
+## §115 Auflösungsreihenfolge (LOCKED, K32 §1)
+
+- Zielbestimmung → Reflexion → Trefferwurf (Fehlschlag +5 Harmonie) → Volltreffer → Schaden → Schild → HP → Effekte → Anwender-Folgen (Drain/Recoil/Exhaust) → Reaktionen (Konter, Passive) → Harmonie/Kombo. Mehrfachtreffer je Treffer, Reaktionen einmal; Flächen in Zeitleisten-Reihenfolge.
+
+## §116 Status final (LOCKED, K32 §5 · `Data/Abilities/StatusEffects.csv`)
+
+- Dauern in eigenen Zügen; Brand 60 ‰ Max-HP/Zug, Gift 30 ‰ je Stapel (1–5); ein Haupt-Status ohne Überschreiben (Ausnahme Starre über Verlangsamt); Reinigen entfernt Haupt-Status + Gift; Reservewechsel beendet Furcht/Schwebend, halbiert Gift; Status enden mit Kampfende (Eiserner Wärter: bis Klangbrunnen).
+
+## §117 Terrain (LOCKED, K32 §6 · `Data/Combat/Terrains.csv`)
+
+- 15 Terrains, Boost 1200 ‰ (Stille/Missklang 1100), ein Terrain gleichzeitig; Gegen-Terrain (Spalte EndedBy) neutralisiert ohne zu legen; Runden-Effekte bei Tick-Vielfachen von 100; Arena-Terrains dauerhaft, kehren nach Überlagerung zurück.
+
+## §118 Kampfwetter (LOCKED, K32 §7)
+
+- Kampf übernimmt Weltwetter der Zone; `Weather(X,n)` überschreibt n Runden; Sonderregeln je Runde (Blitz alle 4 Runden, Sand −4 %, Aurora +5 Harmonie …); Ranked Klar; unter Tage nur Resonanzsturm und Fähigkeitswetter; Schilde addieren bis 50 % Max-HP; Revive 1× je Echo/Kampf.

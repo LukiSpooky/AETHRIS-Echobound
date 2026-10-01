@@ -28,7 +28,7 @@ def repl(m):
     if parts[0] == "csv":
         return table_csv(parts[1], parts[2] if len(parts) > 2 else None)
     if parts[0] == "file":
-        return {"combat_report_speed": ac.report_speed, "combat_report_levels": ac.report_levels, "combat_sample_log": ac.sample_log, "combat_matrix": ac.report_matrix}[parts[1]]()
+        return {"combat_report_speed": ac.report_speed, "combat_report_levels": ac.report_levels, "combat_sample_log": ac.sample_log, "combat_matrix": ac.report_matrix, "combat_examples": ac.example_table}[parts[1]]()
     if parts[0] == "py":   # py MODUL FUNKTION [ARGS]
         import importlib
         return str(getattr(importlib.import_module(parts[1]), parts[2])(*parts[3:]))
