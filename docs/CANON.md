@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K11
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K12
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -274,6 +274,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-055 | Arena-Feldregeln als Kampfsystem-Lektionen | K11 |
 | ADR-056 | Lore-Einwohner ≠ dargestellte NPCs (Mass Crowds) | K11 |
 | ADR-057 | Umgekehrte Stadtzeiten (Morvenfurt, Qasr Sahrun) | K11 |
+| ADR-058 | Aerion isoliert; Wendelin Aar 880 n.St. einzige Verbindung (10. Arena) | K12 |
+| ADR-059 | Schweigegelübde als Präsentationsform (Tafel-/Gestendialoge) | K12 |
+| ADR-060 | Weltlied-Fragmente in allen Stadtthemen | K12 |
+| ADR-061 | Energiekrise als Weltzustand ab Akt II | K12 |
 
 ## §11 Change Requests
 
@@ -749,3 +753,25 @@ Wahrzeichen/Arenen: Wurzelarena unter der Riesenlinde · Schlundring über dem G
 - Budgets (benannt / Mass / sichtbar PS5 / Switch 2): Eichenhall 48/220/140/70 · Kharsholm 40/180/120/60 · Morvenfurt 42/160/110/55 · Qasr Sahrun 44/200/130/65 · Saltrand-Hafen 52/260/160/80. Mass-NPCs werden < 25 m zu leichten Actors.
 - Tagesablauf-Muster: **Tagwerk**, **Schicht A/B/C** (6/14/22 Uhr), **Nachtvolk**, **Wache**, **Gelehrt**.
 - `Settlements.csv`: 62 Siedlungen (10 City, 22 Village, 30 Outpost), IDs `SET_C|V|O_<NAME>`.
+
+## §54 Städte II (LOCKED, K12 §1–§5)
+
+| Stadt | Einw. | Regierung | Arena (Meister, Stufe) | Fest | Story-Rolle |
+|---|---|---|---|---|---|
+| Schlackenwehr | 5.500 | Zunftrat der Schmiede | Große Esse – Kaldrex Vorn, 5–8 (Schmiedeprobe vorab, +1 VER-Stufe 3 Züge, optional) | Glockenguss (jeder 12.) | Kraterherz erkaltet; Zunft-Gelübde gegen Waffen (seit Siegelkriegen) |
+| Hvitmark | 4.200 | Thing (alle 10 Spieltage), Sprecherin Astrid Eiðsen | Spiegelsee – Sigrun Fjall, 5–8 | Tag der Stimmen (jährlich, Echtzeit, Schweigeminute) | Klangpest-Mahnmal; Tor zum Kloster |
+| Dorunsruh | 6.000 (~1.400 Akademie) | Stadtkuratorium (Venn mit Sitz) | Glyphenhof – Aevrin Thal, 5–8 | Tag des Kodex (jeder 15.) | Rektorat Venn (vor W6 begegenbar, Gelehrt-Muster), W6/W7; Aevrin öffnet nach W6 Venns Aufzeichnungen; Kael bis W6 im Labor |
+| Prismara | 3.800 | Stimmergilde (Seren Quarz) | Prismenhalle – Ilyx Brannoc, fest 9 | Kristallpuls-Nacht | Lift ab Akt I außer Betrieb; Energiekrise ab Akt II (`DL_Story_EnergyCrisis`, Lichter flackern weltweit); Ilyx hört schwach Grundfrequenzen |
+| Aerion | ~800 | Rat der Baumeister (Hüterin Oruma Siyel) | Sternenarena – Oruma Siyel, fest 10 (= Finalschauplatz) | Sternenlesen (Neumond) | Isoliert seit der Stille; Wand der Zehn (Ilens Gesicht erhalten); erloschener Resonanzstein → Nebenquest verbindet mit Eichenhall |
+
+Händler gesamt: 54 (`Data/Economy/Merchants.csv`).
+
+## §55 Kloster Schweigfels (LOCKED, K12 §6)
+
+R07 am Pass (≈ 3,3/1,1 km), Ordenssitz, ~120 Mitglieder, Schweigegelübde (Dialoge als Schiefertafel/Geste, ≤ 80 Zeichen), keine Musik/Glocken (nur Raumklang; ein tiefer Ton bei Sereths Auftritt), verhüllter (funktionierender) Klangbrunnen, Stillstein-Werkstatt, verstummte Echos schlafend in Ruhezellen, nur Ordensladen (Ruf F05).
+
+## §56 Städte gesamt & Musik-Leitmotiv (LOCKED, K12 §7–§8)
+
+- Gesamtbevölkerung der 10 Städte ≈ 59.300.
+- **Weltlied-Leitmotiv** (7 Töne, Komposition K55 vor den Stadtthemen): Eichenhall Töne 1–2 · Kharsholm 2–3 · Morvenfurt 3–4 · Saltrand 4–5 · Qasr Sahrun 5–6 · Schlackenwehr 6–7 · Hvitmark Umkehrung · Dorunsruh Krebs, fragmentiert · Prismara arpeggiert 1/3/5/7 · Aerion vollständig; Finale verschmilzt alle Fragmente.
+- Dialog-Präsentation `EDialoguePresentation` {Voiced, Barked, SlateWritten, Gesture}, `FDialogueLineSpec`.

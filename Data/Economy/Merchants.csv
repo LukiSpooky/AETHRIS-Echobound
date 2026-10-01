@@ -28,3 +28,29 @@ MER_SALT_03,SET_C_SALTRANDHAFEN,NPC_R06_HAUKE,Taucherbedarf Hauke,Gear,6,18,Tauc
 MER_SALT_04,SET_C_SALTRANDHAFEN,NPC_R06_BEKE_FISH,Fischmarkt,Food,4,11,Nur bei Ebbe geöffnet + Morgen
 MER_SALT_05,SET_C_SALTRANDHAFEN,NPC_R06_ODALIS,Kuriositäten Odalis,Rare,10,22,Wechselnde Importware (seltene Waren)
 MER_SALT_06,SET_C_SALTRANDHAFEN,NPC_R06_KLAAS,Werftmeister Klaas,Material,6,17,Treibholz; Perlmutt
+MER_SCHL_01,SET_C_SCHLACKENWEHR,NPC_R05_ITHREN,Wehrmarkt Ithren,General,6,20,Hitzeschutz-Salben
+MER_SCHL_02,SET_C_SCHLACKENWEHR,NPC_R05_KALDREX_GUILD,Zunfthalle der Schmiede,Gear,0,24,Ausrüstung III-IV; Schmiedeprüfungen
+MER_SCHL_03,SET_C_SCHLACKENWEHR,NPC_R05_SERAPHE,Thermen Seraphe,Food,8,24,Thermalbad (Belastung Asche zurücksetzen)
+MER_SCHL_04,SET_C_SCHLACKENWEHR,NPC_R05_VOLK,Erzwaage Volk,Material,6,18,Schlackenstahl; Obsidian
+MER_SCHL_05,SET_C_SCHLACKENWEHR,NPC_R05_ASHA,Glutnarben-Tutorin Asha,Tutor,10,18,Glut/Metall-Tutor
+MER_HVIT_01,SET_C_HVITMARK,NPC_R07_HALDOR,Langhaus-Handel Haldor,General,7,19,Kälteschutz
+MER_HVIT_02,SET_C_HVITMARK,NPC_R07_YLVA,Wollstube Ylva,Gear,8,18,Kleidung III-IV (Kälte)
+MER_HVIT_03,SET_C_HVITMARK,NPC_R07_ASKEL,Eisfischer Askel,Food,4,10,Eisfisch-Eintopf (Kälteschutz)
+MER_HVIT_04,SET_C_HVITMARK,NPC_R07_RUNA,Runa die Erinnernde,Rare,18,2,Erinnerungseis-Splitter (Lore); seltene Lockmittel
+MER_HVIT_05,SET_C_HVITMARK,NPC_R07_EIRIK,Silberschmied Eirik,Material,7,17,Silbererz; Gletscherquarz
+MER_DORU_01,SET_C_DORUNSRUH,NPC_R08_PELL,Akademie-Buchhandlung Pell,Scripts,8,20,Klangschriften (Akademie-Ruf)
+MER_DORU_02,SET_C_DORUNSRUH,NPC_R08_MIRA,Grabungsbedarf Mira,General,6,18,Laternen; Grabwerkzeug
+MER_DORU_03,SET_C_DORUNSRUH,NPC_R08_ACADEMY_STORE,Akademie-Kammer,Faction,8,18,Akademie-Rufwaren; Kodex-Linse II
+MER_DORU_04,SET_C_DORUNSRUH,NPC_R08_GRAVE,Hehler Grave,Rare,21,3,Grabungsfunde (moralisch grau)
+MER_DORU_05,SET_C_DORUNSRUH,NPC_R08_MENSA,Mensa der Akademie,Food,7,21,Studentenfutter (Ausdauer)
+MER_DORU_06,SET_C_DORUNSRUH,NPC_R08_AEVRIN_TUTOR,Professor Thal (Sprechstunde),Tutor,14,16,Arkan-Tutor
+MER_PRIS_01,SET_C_PRISMARA,NPC_R09_SEREN,Kristallmarkt Seren,General,0,24,Lichtkristall-Zyklus; Grubenlampen
+MER_PRIS_02,SET_C_PRISMARA,NPC_R09_BRANNOC_SR,Stimmwerkstatt Brannoc,Gear,6,22,Ausrüstung V; Laternen V
+MER_PRIS_03,SET_C_PRISMARA,NPC_R09_QUILL,Glasbläserin Quill,Material,8,20,Resonanzkristall (rotierend)
+MER_PRIS_04,SET_C_PRISMARA,NPC_R09_DELVE,Pilzküche Delve,Food,6,24,Höhlenpilz-Gerichte (Dunkelsicht)
+MER_PRIS_05,SET_C_PRISMARA,NPC_R09_ILYX_TUTOR,Kristall-Tutorin,Tutor,10,18,Kristall/Klang-Tutor
+MER_AERI_01,SET_C_AERION,NPC_R10_AELIA,Windhandel Aelia,General,5,21,Gleiter V
+MER_AERI_02,SET_C_AERION,NPC_R10_SIYEL_ARCHIVE,Archiv der Baumeister,Scripts,8,20,Seltene Klangschriften; Erstchor-Lore
+MER_AERI_03,SET_C_AERION,NPC_R10_LUMEN,Sternenküche,Food,18,6,Sternenfrucht (Kälteschutz)
+MER_AERI_04,SET_C_AERION,NPC_R10_ORUMA_TUTOR,Hüterin Oruma,Tutor,6,8,Klang/Licht-Tutor (Morgenzeremonie)
+MER_AERI_05,SET_C_AERION,NPC_R10_BRISK,Federschneiderei Brisk,Gear,8,18,Kleidung V (Kälte/Wind)
