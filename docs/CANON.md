@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K26
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K27
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -1294,3 +1294,40 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 | 222 | Cirrel | Sturm | L099/1 Three | Cirrhawk [Level>=20] | Speed | – |
 | 223 | Cirrhawk | Sturm/Licht | L099/2 Three | Cirrhaven [Level>=38] | Speed | – |
 | 224 | Cirrhaven | Sturm/Licht | L099/3 Three | – | Speed | Flugreiten |
+
+## §96 Arten #225–#256 (LOCKED, K27 · `Data/Echos/Species.csv`)
+
+| # | Name | Typen | Linie/Stufe | Evolution → | Rolle | Reiten |
+|---|---|---|---|---|---|---|
+| 225 | Nubi | Licht | L100/1 Three | Nubilo [Level>=18] | Support | – |
+| 226 | Nubilo | Licht/Sturm | L100/2 Three | Nubiluna [Level>=34]; Nubisk [Level>=34 & Moon=NewMoon & Zone=R10_Z02] | Support | – |
+| 227 | Nubiluna | Licht/Klang | L100/3 Three | – | Support | – |
+| 228 | Nubisk | Leere/Licht | L100/3 Branch | – | Control | – |
+| 229 | Harfel | Klang | L101/1 Two | Harfion [Level>=28] | Support | – |
+| 230 | Harfion | Klang/Sturm | L101/2 Two | – | Support | – |
+| 231 | Tintel | Klang | L102/1 Two | Tintabul [Level>=30 & TimeOfDay=Dusk] | Caster | – |
+| 232 | Tintabul | Klang/Licht | L102/2 Two | – | Caster | – |
+| 233 | Holmel | Schwerkraft | L103/1 Two | Holmgard [Level>=34] | Tank | – |
+| 234 | Holmgard | Schwerkraft/Stein | L103/2 Two | – | Tank | Bodenreiten |
+| 235 | Levitel | Schwerkraft | L104/1 Two | Levithar [Level>=32] | Control | – |
+| 236 | Levithar | Arkan/Schwerkraft | L104/2 Two | – | Control | – |
+| 237 | Graupel | Frost | L105/1 Two | Graupix [Level>=30 & Weather=Thunderstorm] | Striker | – |
+| 238 | Graupix | Kristall/Sturm | L105/2 Two | – | Striker | – |
+| 239 | Lumaskiff | Licht/Sturm | L106/1 Single | – | AllRound | Flugreiten |
+| 240 | Astraviel | Arkan/Licht | L107/1 Single | – | Caster | – |
+| 241 | Sylv'anor | Blüte/Klang | L108/1 Legendary | – | Support | – |
+| 242 | Orh'gruun | Stein/Schwerkraft | L109/1 Legendary | – | Tank | – |
+| 243 | Nhael'vesh | Gift/Geist | L110/1 Legendary | – | Control | – |
+| 244 | Thal'assyr | Flut/Sturm | L111/1 Legendary | – | Speed | – |
+| 245 | Ash'kareth | Licht/Arkan | L112/1 Legendary | – | Caster | – |
+| 246 | Pyr'thagon | Glut/Metall | L113/1 Legendary | – | Striker | – |
+| 247 | Isv'aldr | Frost/Licht | L114/1 Legendary | – | Support | – |
+| 248 | Ka'thurel | Geist/Arkan | L115/1 Legendary | – | Control | – |
+| 249 | Prism'aion | Kristall/Klang | L116/1 Legendary | – | Caster | – |
+| 250 | Aeth'rion | Klang/Licht | L117/1 Legendary | – | AllRound | – |
+| 251 | Velnox | Leere/Schwerkraft | L118/1 Mythical | – | Control | – |
+| 252 | Chronaire | Klang/Arkan | L119/1 Mythical | – | Speed | – |
+| 253 | Mirrowisp | Kristall/Geist | L120/1 Mythical | – | Control | – |
+| 254 | Ouroveth | Gift/Blüte | L121/1 Mythical | – | Tank | – |
+| 255 | Zenthrax | Schwerkraft/Metall | L122/1 Mythical | – | Striker | – |
+| 256 | Aurelune | Licht/Leere | L123/1 Mythical | – | Caster | – |

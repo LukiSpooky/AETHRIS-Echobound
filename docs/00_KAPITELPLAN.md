@@ -1,6 +1,6 @@
 # 00 · Kapitelplan – AETHRIS: Echobound
 
-**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K26 abgeschlossen
+**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K27 abgeschlossen
 
 Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel baut auf den vorherigen auf und darf nur Entscheidungen verwenden, die in [`CANON.md`](CANON.md) eingetragen sind (oder es trägt neue ein).
 
@@ -54,7 +54,7 @@ Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel bau
 | K24 | Kreaturenkatalog 5 (#129–#160) | Creature Team | K23 | ✅ |
 | K25 | Kreaturenkatalog 6 (#161–#192) | Creature Team | K24 | ✅ |
 | K26 | Kreaturenkatalog 7 (#193–#224) | Creature Team | K25 | ✅ |
-| K27 | Kreaturenkatalog 8 (#225–#256, inkl. Legendäre) | Creature Team | K26 | ⬜ |
+| K27 | Kreaturenkatalog 8 (#225–#256, inkl. Legendäre) | Creature Team | K26 | ✅ |
 | K28 | Fähigkeiten I – System, Datenschema, Passive | Combat Designer | K17, K18 | ⬜ |
 | K29 | Fähigkeiten II – Aktive Fähigkeiten | Combat Designer | K28 | ⬜ |
 | K30 | Fähigkeiten III – Ultimates & Feldfähigkeiten | Combat Designer | K29 | ⬜ |
