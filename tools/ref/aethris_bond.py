@@ -67,6 +67,36 @@ def scenarios():
     return "\n".join(out)
 
 
+def bond_sheet():
+    import csv, pathlib
+    root = pathlib.Path(__file__).resolve().parents[2]
+    rows = lambda p: list(csv.DictReader(l for l in open(root / p, encoding="utf-8") if not l.startswith("#")))
+    sp = list(csv.DictReader(open(root / "Data/Echos/Species.csv", encoding="utf-8")))
+    lures = {r["Name"]: r["DisplayName"] for r in rows("Data/Items/Lures.csv")}
+    traps = rows("Data/Items/Traps.csv")
+    sizes = ["XS", "S", "M", "L", "XL", "XXL"]
+    act = {"Diurnal": "Nacht", "Nocturnal": "Mittag", "Crepuscular": "Mittag/Nacht", "Cathemeral": "–"}
+    rar = {"Common": "Häufig", "Uncommon": "Ungew.", "Rare": "Selten", "VeryRare": "Sehr selten", "Legendary": "Stimme", "Mythical": "Mythisch"}
+
+    def ok(s, cond):
+        for c in cond.split("|"):
+            k, v = c.split(":")
+            if k == "Trait" and f"Behavior.{v}" in s["Traits"].split("|"):
+                return True
+            if k == "Size" and sizes.index(s["SizeClass"]) >= sizes.index(v.rstrip("+")):
+                return True
+        return False
+    out = ["| # | Art | Seltenheit | Schwelle | Lieblingsköder | passende Fallen | Ruhephase (+50) |", "|---|---|---|---|---|---|---|"]
+    for s in sp:
+        if "Spawn.None" in s["SpawnConditions"] and s["LineKind"] not in ("Legendary", "Mythical"):
+            continue   # nur durch Evolution/Zucht – keine Wildbindung
+        t = ", ".join(r["DisplayName"] for r in traps if ok(s, r["Condition"])) or "–"
+        th = RARITY_THRESHOLD.get(s["Rarity"], 0)
+        out.append(f"| {int(s['KodexNumber']):03d} | {s['DisplayName']} | {rar.get(s['Rarity'], s['Rarity'])} | {th} | "
+                   f"{lures.get(s['BondLure'], s['BondLure'])} | {t} | {act.get(s['Activity'].split('.')[-1], '–')} |")
+    return "\n".join(out)
+
+
 if __name__ == "__main__":
     assert window_ms(0) == (160, 60) and window_ms(1000) == (400, 100)
     assert outcome(150, "Common", 0, "good") == "Bindung"

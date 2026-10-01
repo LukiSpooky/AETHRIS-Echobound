@@ -220,6 +220,216 @@ Aus `aethris_bond.scenarios()` – Resonanz, Schwelle (nach Siegel) und das Erge
 
 **Lesart:** Ein seltenes Echo ist allein über Kampf und das beste Siegel nicht im ersten Anschlag bindbar (R 200 < 320) – aber über zwei **Annäherungen** (+100 je Versuch) im dritten. Mit Kodex 3 und dem Lieblingsköder gelingt es im ersten Versuch. Wissen spart Zeit, Items helfen – genau das verlangt DR-01.
 
+### 8.1 Bindungs-Steckbrief aller wild bindbaren Arten
+
+Generiert aus `Species.csv`, `Lures.csv` und `Traps.csv` (Arten, die nur durch Evolution oder Zucht entstehen, fehlen). Diese Tabelle ist zugleich die Datengrundlage der Kodex-Seiten „Bindung“ (Stufe 2: Köder, Stufe 3: Fallen und Ruhephase, K39):
+
+| # | Art | Seltenheit | Schwelle | Lieblingsköder | passende Fallen | Ruhephase (+50) |
+|---|---|---|---|---|---|---|
+| 001 | Fernlit | Sehr selten | 550 | Lindblüten-Honig | Klangfalle, Schattenzelt | Mittag/Nacht |
+| 004 | Brokk | Sehr selten | 550 | Erzkrümel | – | – |
+| 007 | Wisplet | Sehr selten | 550 | Pfeifholz | Klangfalle | Nacht |
+| 010 | Chimkin | Häufig | 150 | Glockenspiel | Schatzkiste | Nacht |
+| 011 | Chimbal | Ungew. | 250 | Glockenspiel | Klangfalle, Ruhenetz | Nacht |
+| 012 | Cantaroth | Selten | 400 | Glockenspiel | Klangfalle, Ruhenetz | Mittag/Nacht |
+| 014 | Mossling | Häufig | 150 | Moosküchlein | Duftfalle, Schattenzelt | Nacht |
+| 015 | Myrthorn | Ungew. | 250 | Moosküchlein | Duftfalle, Ruhenetz | Nacht |
+| 018 | Lumpip | Häufig | 150 | Lindblüten-Honig | Ruhenest, Duftfalle | Mittag |
+| 019 | Lumow | Ungew. | 250 | Irrlicht-Laterne | Duftfalle | Mittag |
+| 020 | Phantalume | Selten | 400 | Irrlicht-Laterne | Ruhenetz | Mittag |
+| 021 | Rillo | Häufig | 150 | Waldbeeren | Klangfalle, Quellbecken | Mittag/Nacht |
+| 022 | Rillward | Ungew. | 250 | Waldbeeren | Klangfalle, Ruhenetz, Quellbecken | Mittag/Nacht |
+| 023 | Sporlet | Häufig | 150 | Moosküchlein | Ruhenest, Schattenzelt | Mittag |
+| 024 | Sporix | Selten | 400 | Moosküchlein | Schattenzelt | Mittag |
+| 025 | Skirmote | Häufig | 150 | Pfeifholz | – | Nacht |
+| 026 | Skirrow | Ungew. | 250 | Pfeifholz | Klangfalle | Nacht |
+| 027 | Thornkin | Ungew. | 250 | Waldbeeren | Schattenzelt | Nacht |
+| 028 | Thorncoil | Selten | 400 | Waldbeeren | Schattenzelt, Ruhenetz | Nacht |
+| 029 | Pebi | Häufig | 150 | Erzkrümel | Ruhenest, Schattenzelt | – |
+| 031 | Rivetkin | Ungew. | 250 | Erzkrümel | Schatzkiste | – |
+| 032 | Cindrel | Selten | 400 | Glutkohle | Wärmestein | Mittag |
+| 033 | Craglet | Häufig | 150 | Erzkrümel | Schattenzelt, Schatzkiste | – |
+| 034 | Cragar | Ungew. | 250 | Erzkrümel | Ruhenetz | – |
+| 037 | Tetri | Ungew. | 250 | Glockenspiel | Ruhenest, Schatzkiste | – |
+| 038 | Tetrel | Selten | 400 | Glockenspiel | Ruhenetz, Schatzkiste | Mittag |
+| 040 | Ferrkin | Häufig | 150 | Erzkrümel | – | Mittag |
+| 041 | Ferrow | Ungew. | 250 | Erzkrümel | Ruhenetz | Mittag |
+| 043 | Gratkin | Häufig | 150 | Pfeifholz | Ruhenest | Nacht |
+| 044 | Gratwyn | Ungew. | 250 | Pfeifholz | Ruhenetz | Nacht |
+| 046 | Kiesi | Häufig | 150 | Bergkäse | Klangfalle | Nacht |
+| 047 | Kiesward | Ungew. | 250 | Bergkäse | Klangfalle, Ruhenetz | Nacht |
+| 048 | Lithi | Ungew. | 250 | Erzkrümel | Ruhenest, Schatzkiste, Quellbecken | Mittag/Nacht |
+| 049 | Lithshell | Selten | 400 | Erzkrümel | Ruhenest, Ruhenetz, Quellbecken | Mittag/Nacht |
+| 050 | Rimlet | Häufig | 150 | Bergkäse | Schattenzelt | Mittag/Nacht |
+| 051 | Rimpaw | Selten | 400 | Bergkäse | Schattenzelt, Ruhenetz | Mittag/Nacht |
+| 052 | Quarling | Ungew. | 250 | Kristallsalz | – | Mittag |
+| 053 | Quarcoil | Selten | 400 | Kristallsalz | Ruhenetz | Mittag |
+| 054 | Emblit | Ungew. | 250 | Glutkohle | Wärmestein | – |
+| 055 | Dawnix | Selten | 400 | Glutkohle | Ruhenetz, Wärmestein | Nacht |
+| 056 | Memoro | Selten | 400 | Irrlicht-Laterne | Ruhenetz | Mittag |
+| 057 | Resonix | Ungew. | 250 | Glockenspiel | Klangfalle | Mittag |
+| 058 | Runkar | Selten | 400 | Glockenspiel | Ruhenetz | Mittag |
+| 059 | Mirepip | Häufig | 150 | Moorbeeren | Klangfalle, Quellbecken | Mittag |
+| 060 | Mirel | Ungew. | 250 | Moorbeeren | Quellbecken | Mittag |
+| 062 | Undling | Häufig | 150 | Räucherfisch | Duftfalle, Quellbecken | Mittag |
+| 063 | Undfin | Ungew. | 250 | Räucherfisch | Ruhenest, Ruhenetz, Quellbecken | Mittag |
+| 065 | Irrlit | Häufig | 150 | Irrlicht-Laterne | – | Mittag |
+| 066 | Irrel | Ungew. | 250 | Irrlicht-Laterne | – | Mittag |
+| 069 | Blossi | Häufig | 150 | Moorbeeren | Schattenzelt, Wärmestein | Nacht |
+| 070 | Blossar | Ungew. | 250 | Moorbeeren | Schattenzelt | Nacht |
+| 072 | Virmote | Häufig | 150 | Moorbeeren | Klangfalle | Mittag/Nacht |
+| 073 | Virwyn | Ungew. | 250 | Moorbeeren | – | Mittag/Nacht |
+| 074 | Blightkin | Ungew. | 250 | Räucherfisch | Schattenzelt | Mittag |
+| 075 | Blightar | Selten | 400 | Räucherfisch | Ruhenetz | Mittag |
+| 076 | Brinlet | Häufig | 150 | Tangkeks | Ruhenest, Wärmestein, Quellbecken | Nacht |
+| 077 | Brinshell | Ungew. | 250 | Tangkeks | Ruhenetz, Wärmestein, Quellbecken | Nacht |
+| 078 | Umbrling | Ungew. | 250 | Räucherfisch | Schattenzelt, Quellbecken | Mittag |
+| 079 | Umbracoil | Selten | 400 | Räucherfisch | Ruhenetz, Quellbecken | Mittag |
+| 080 | Weidlit | Ungew. | 250 | Moorbeeren | Ruhenest, Schattenzelt | Mittag/Nacht |
+| 082 | Morhaw | Ungew. | 250 | Räucherfisch | Ruhenetz | Mittag/Nacht |
+| 083 | Humbog | Ungew. | 250 | Moorbeeren | Ruhenest, Klangfalle, Ruhenetz | Mittag |
+| 084 | Torfgor | Selten | 400 | Moosküchlein | Ruhenest, Schattenzelt, Ruhenetz | – |
+| 085 | Marlit | Häufig | 150 | Tangkeks | Ruhenetz, Quellbecken | Nacht |
+| 086 | Marwyn | Ungew. | 250 | Tangkeks | Ruhenetz, Quellbecken | Nacht |
+| 088 | Tidling | Häufig | 150 | Muschelfleisch | Schattenzelt | Mittag/Nacht |
+| 089 | Tidel | Ungew. | 250 | Muschelfleisch | Schattenzelt, Ruhenetz, Schatzkiste | Mittag/Nacht |
+| 091 | Brikin | Häufig | 150 | Räucherfisch | Duftfalle | Nacht |
+| 092 | Brisel | Ungew. | 250 | Räucherfisch | – | Nacht |
+| 094 | Aquapip | Häufig | 150 | Tangkeks | Quellbecken | Mittag |
+| 095 | Aquafin | Ungew. | 250 | Tangkeks | Quellbecken | Mittag |
+| 098 | Aerlet | Häufig | 150 | Windspiel | – | Nacht |
+| 099 | Aerluna | Selten | 400 | Windspiel | – | Nacht |
+| 100 | Stonlet | Häufig | 150 | Tangkeks | Wärmestein | Nacht |
+| 101 | Stonshell | Ungew. | 250 | Tangkeks | Ruhenetz, Wärmestein | Nacht |
+| 102 | Glimkin | Häufig | 150 | Tangkeks | Quellbecken | Mittag |
+| 103 | Glimar | Ungew. | 250 | Tangkeks | Quellbecken | Mittag |
+| 104 | Ariette | Ungew. | 250 | Windspiel | Klangfalle, Ruhenetz, Quellbecken | Mittag/Nacht |
+| 106 | Tangi | Häufig | 150 | Tangkeks | Schattenzelt | Nacht |
+| 107 | Tangix | Ungew. | 250 | Tangkeks | Schattenzelt, Ruhenetz | Nacht |
+| 108 | Brassel | Ungew. | 250 | Muschelfleisch | Schatzkiste | Nacht |
+| 109 | Sheamast | Selten | 400 | Irrlicht-Laterne | Ruhenetz | Mittag |
+| 110 | Opalisk | Selten | 400 | Muschelfleisch | Ruhenest, Schatzkiste | Mittag |
+| 111 | Solkit | Häufig | 150 | Datteln | Wärmestein | Mittag/Nacht |
+| 112 | Solvar | Ungew. | 250 | Datteln | Wärmestein | Nacht |
+| 114 | Dunkalb | Häufig | 150 | Datteln | Duftfalle, Schattenzelt, Ruhenetz | Nacht |
+| 115 | Dunhorn | Ungew. | 250 | Datteln | Duftfalle, Ruhenetz | Nacht |
+| 117 | Skarit | Häufig | 150 | Erzkrümel | Schatzkiste | Nacht |
+| 118 | Skaral | Ungew. | 250 | Erzkrümel | Schatzkiste | Nacht |
+| 120 | Sengel | Häufig | 150 | Glutkohle | Wärmestein | Nacht |
+| 121 | Sengar | Ungew. | 250 | Glutkohle | Ruhenetz, Wärmestein | Nacht |
+| 123 | Stachik | Häufig | 150 | Erzkrümel | Schattenzelt | Mittag |
+| 124 | Stacharon | Selten | 400 | Erzkrümel | Ruhenetz | Mittag |
+| 125 | Sirrkorn | Häufig | 150 | Windspiel | – | Nacht |
+| 126 | Sirrsturm | Selten | 400 | Windspiel | Ruhenetz | Nacht |
+| 127 | Mirasel | Ungew. | 250 | Spiegelscherbe | Schattenzelt | Nacht |
+| 128 | Mirazhar | Sehr selten | 550 | Spiegelscherbe | Ruhenetz | Nacht |
+| 129 | Vitrel | Häufig | 150 | Irrlicht-Laterne | Duftfalle | Mittag |
+| 130 | Vitrapha | Selten | 400 | Irrlicht-Laterne | Duftfalle | Mittag |
+| 131 | Mesakil | Ungew. | 250 | Erzkrümel | Ruhenest, Wärmestein | Nacht |
+| 132 | Mesakor | Selten | 400 | Erzkrümel | Ruhenetz, Wärmestein | Nacht |
+| 133 | Qadrant | Selten | 400 | Sternenglocke | Ruhenetz | Mittag |
+| 134 | Mahrsil | Sehr selten | 550 | Glockenspiel | Klangfalle, Ruhenetz | Mittag |
+| 135 | Pyrolm | Häufig | 150 | Schwefelzucker | Wärmestein, Quellbecken | Nacht |
+| 136 | Pyrolax | Ungew. | 250 | Schwefelzucker | Wärmestein, Quellbecken | Nacht |
+| 138 | Ambolt | Häufig | 150 | Erzkrümel | Schatzkiste | Nacht |
+| 139 | Ambrak | Ungew. | 250 | Erzkrümel | Ruhenetz, Wärmestein | Nacht |
+| 141 | Aschwel | Häufig | 150 | Glutkohle | Duftfalle | Mittag/Nacht |
+| 142 | Aschund | Ungew. | 250 | Glutkohle | – | Mittag/Nacht |
+| 144 | Obsikin | Häufig | 150 | Erzkrümel | Schattenzelt | Mittag |
+| 145 | Obsidar | Ungew. | 250 | Erzkrümel | Schattenzelt, Ruhenetz | Mittag |
+| 147 | Ignavyr | Selten | 400 | Schwefelzucker | Ruhenetz, Wärmestein | Nacht |
+| 149 | Fumel | Ungew. | 250 | Irrlicht-Laterne | Schattenzelt | Mittag |
+| 150 | Fumaroth | Selten | 400 | Irrlicht-Laterne | Ruhenetz | Mittag |
+| 151 | Drusil | Ungew. | 250 | Kristallsalz | Schatzkiste | Nacht |
+| 152 | Drusaro | Selten | 400 | Kristallsalz | Ruhenetz | Nacht |
+| 153 | Volket | Häufig | 150 | Erzkrümel | Duftfalle, Schatzkiste | Nacht |
+| 154 | Voltarn | Selten | 400 | Erzkrümel | Duftfalle, Ruhenetz | Nacht |
+| 155 | Bassalt | Selten | 400 | Lockstimmgabel | Ruhenest, Klangfalle, Ruhenetz | Nacht |
+| 156 | Nucleox | Sehr selten | 550 | Schwefelzucker | Ruhenetz, Wärmestein | Mittag |
+| 157 | Snevel | Häufig | 150 | Eisfisch | Schattenzelt | Mittag/Nacht |
+| 158 | Snevar | Ungew. | 250 | Eisfisch | Schattenzelt | Mittag/Nacht |
+| 160 | Kjalf | Häufig | 150 | Bergkäse | Duftfalle, Ruhenetz | Nacht |
+| 161 | Kjalmur | Ungew. | 250 | Bergkäse | Duftfalle, Ruhenetz | Nacht |
+| 163 | Uvlet | Häufig | 150 | Eisfisch | Ruhenest | Mittag |
+| 164 | Uvarn | Ungew. | 250 | Eisfisch | – | Mittag |
+| 167 | Lyskin | Ungew. | 250 | Auroraglas | Ruhenetz | Mittag |
+| 168 | Lysmara | Selten | 400 | Auroraglas | Ruhenetz | Mittag |
+| 170 | Vardlit | Häufig | 150 | Erzkrümel | Ruhenest, Schatzkiste | Nacht |
+| 171 | Vardholm | Ungew. | 250 | Erzkrümel | Ruhenest, Ruhenetz | Nacht |
+| 172 | Eidrun | Ungew. | 250 | Glockenspiel | Klangfalle, Schattenzelt | Mittag |
+| 173 | Eidwacht | Selten | 400 | Glockenspiel | Klangfalle, Ruhenetz | Mittag |
+| 174 | Hallkid | Häufig | 150 | Bergkäse | Klangfalle | Nacht |
+| 175 | Hallbrand | Ungew. | 250 | Bergkäse | Klangfalle, Ruhenetz | Nacht |
+| 176 | Glazil | Häufig | 150 | Windspiel | – | Nacht |
+| 177 | Glazvind | Selten | 400 | Windspiel | Ruhenetz | Nacht |
+| 178 | Tysvorn | Sehr selten | 550 | Eisfisch | Ruhenetz | Mittag |
+| 179 | Skriv | Häufig | 150 | Glyphenmünze | Schatzkiste | Mittag |
+| 180 | Skrivar | Ungew. | 250 | Glyphenmünze | Ruhenetz, Schatzkiste | Mittag |
+| 182 | Thaelit | Häufig | 150 | Lockstimmgabel | Ruhenest | Nacht |
+| 183 | Thaelon | Ungew. | 250 | Lockstimmgabel | Ruhenetz | Nacht |
+| 185 | Tikkel | Häufig | 150 | Erzkrümel | Schatzkiste | Nacht |
+| 186 | Tikkar | Ungew. | 250 | Erzkrümel | Schatzkiste | Nacht |
+| 188 | Sarkel | Ungew. | 250 | Irrlicht-Laterne | Schattenzelt, Ruhenetz | Mittag |
+| 189 | Sarkon | Selten | 400 | Irrlicht-Laterne | Ruhenetz | Mittag |
+| 191 | Tilgel | Ungew. | 250 | Glyphenmünze | Duftfalle, Schattenzelt | Mittag |
+| 192 | Tilgrath | Selten | 400 | Glyphenmünze | Duftfalle, Schattenzelt, Ruhenetz | Mittag |
+| 193 | Hymlit | Häufig | 150 | Lockstimmgabel | Duftfalle, Klangfalle, Wärmestein | Nacht |
+| 194 | Hymnora | Ungew. | 250 | Lockstimmgabel | Duftfalle, Klangfalle | Nacht |
+| 195 | Optil | Ungew. | 250 | Sternenglocke | – | Mittag |
+| 196 | Optikor | Selten | 400 | Sternenglocke | Ruhenetz | Mittag |
+| 197 | Menhirok | Selten | 400 | Lockstimmgabel | Ruhenest, Ruhenetz | Mittag |
+| 198 | Kronvaal | Sehr selten | 550 | Glyphenmünze | Klangfalle, Ruhenetz | Mittag |
+| 199 | Klirrit | Häufig | 150 | Kristallsalz | Klangfalle | Mittag |
+| 200 | Klirrflug | Ungew. | 250 | Kristallsalz | Klangfalle | Mittag |
+| 203 | Spatling | Häufig | 150 | Kristallsalz | Schattenzelt | Mittag |
+| 204 | Spatwurm | Ungew. | 250 | Kristallsalz | Ruhenetz | Mittag |
+| 206 | Ligrel | Häufig | 150 | Kristallsalz | Schattenzelt | Mittag |
+| 207 | Ligrath | Ungew. | 250 | Kristallsalz | Ruhenetz | Mittag |
+| 209 | Facetin | Häufig | 150 | Kristallsalz | – | Mittag/Nacht |
+| 210 | Facettor | Ungew. | 250 | Kristallsalz | – | Mittag/Nacht |
+| 211 | Mullit | Häufig | 150 | Erzkrümel | Schatzkiste | Mittag |
+| 212 | Mullhorn | Ungew. | 250 | Erzkrümel | Ruhenetz, Schatzkiste | Mittag |
+| 213 | Misslit | Ungew. | 250 | Lockstimmgabel | – | Mittag |
+| 214 | Missgrath | Selten | 400 | Lockstimmgabel | Ruhenetz | Mittag |
+| 215 | Psionit | Ungew. | 250 | Glyphenmünze | – | Mittag |
+| 216 | Psioneth | Selten | 400 | Glyphenmünze | Ruhenetz | Mittag |
+| 217 | Miasmar | Selten | 400 | Irrlicht-Laterne | Ruhenetz | Mittag |
+| 218 | Stalakkord | Selten | 400 | Lockstimmgabel | Ruhenest, Klangfalle, Ruhenetz | Mittag |
+| 219 | Nimbel | Häufig | 150 | Wolkenfrucht | Ruhenetz | Nacht |
+| 220 | Nimbor | Ungew. | 250 | Wolkenfrucht | Klangfalle, Ruhenetz | Nacht |
+| 222 | Cirrel | Häufig | 150 | Wolkenfrucht | – | Nacht |
+| 223 | Cirrhawk | Ungew. | 250 | Wolkenfrucht | – | Nacht |
+| 225 | Nubi | Häufig | 150 | Wolkenfrucht | Wärmestein | Nacht |
+| 226 | Nubilo | Ungew. | 250 | Wolkenfrucht | – | Nacht |
+| 229 | Harfel | Häufig | 150 | Windspiel | Ruhenest, Klangfalle | Nacht |
+| 230 | Harfion | Ungew. | 250 | Windspiel | Klangfalle, Ruhenetz | Nacht |
+| 231 | Tintel | Häufig | 150 | Glockenspiel | Klangfalle | Mittag/Nacht |
+| 232 | Tintabul | Selten | 400 | Glockenspiel | Klangfalle, Ruhenetz | Mittag/Nacht |
+| 233 | Holmel | Ungew. | 250 | Wolkenfrucht | Ruhenest, Duftfalle, Ruhenetz, Wärmestein | Nacht |
+| 234 | Holmgard | Selten | 400 | Wolkenfrucht | Ruhenest, Ruhenetz | Nacht |
+| 235 | Levitel | Häufig | 150 | Lockstimmgabel | Schatzkiste | Nacht |
+| 236 | Levithar | Ungew. | 250 | Lockstimmgabel | Ruhenetz | Nacht |
+| 237 | Graupel | Häufig | 150 | Windspiel | – | Nacht |
+| 238 | Graupix | Selten | 400 | Windspiel | Ruhenetz | Nacht |
+| 239 | Lumaskiff | Selten | 400 | Wolkenfrucht | Ruhenetz | Nacht |
+| 240 | Astraviel | Sehr selten | 550 | Sternenglocke | Ruhenetz | Mittag |
+| 241 | Sylv'anor | Stimme | 750 | Glockenspiel | Duftfalle, Klangfalle, Ruhenetz | Nacht |
+| 242 | Orh'gruun | Stimme | 750 | Lockstimmgabel | Ruhenest, Ruhenetz | Nacht |
+| 243 | Nhael'vesh | Stimme | 750 | Irrlicht-Laterne | Schattenzelt, Ruhenetz | Mittag/Nacht |
+| 244 | Thal'assyr | Stimme | 750 | Windspiel | Ruhenetz, Quellbecken | Nacht |
+| 245 | Ash'kareth | Stimme | 750 | Spiegelscherbe | Ruhenetz, Wärmestein | Nacht |
+| 246 | Pyr'thagon | Stimme | 750 | Schwefelzucker | Ruhenetz, Wärmestein | Nacht |
+| 247 | Isv'aldr | Stimme | 750 | Auroraglas | Klangfalle, Ruhenetz | Mittag |
+| 248 | Ka'thurel | Stimme | 750 | Glyphenmünze | Ruhenetz, Schatzkiste | Mittag |
+| 249 | Prism'aion | Stimme | 750 | Kristallsalz | Klangfalle, Ruhenetz | Mittag |
+| 250 | Aeth'rion | Stimme | 750 | Sternenglocke | Klangfalle, Ruhenetz | Nacht |
+| 251 | Velnox | Mythisch | 750 | Glockenspiel | Schattenzelt, Ruhenetz | Mittag |
+| 252 | Chronaire | Mythisch | 750 | Lockstimmgabel | Ruhenetz | Nacht |
+| 253 | Mirrowisp | Mythisch | 750 | Spiegelscherbe | Schattenzelt | Mittag/Nacht |
+| 254 | Ouroveth | Mythisch | 750 | Moorbeeren | Duftfalle, Schattenzelt, Ruhenetz | Mittag/Nacht |
+| 255 | Zenthrax | Mythisch | 750 | Sternenglocke | Ruhenetz | Mittag |
+| 256 | Aurelune | Mythisch | 750 | Auroraglas | Ruhenetz | Mittag |
+
 ---
 
 ## 9. Bindung im Kampf
