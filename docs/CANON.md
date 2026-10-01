@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K48
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K49
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -403,6 +403,9 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-184 | Quests schenken Begegnungen, keine gebundenen Echos | K48 |
 | ADR-185 | Genau ein aktueller Schritt je Quest | K48 |
 | ADR-186 | Nebenquest-Gerüst generiert und vor dem Schreiben festgelegt | K48 |
+| ADR-187 | Kettengeber vergeben ganze Ketten; Grenze zählt Geschichten | K49 |
+| ADR-188 | Nebenquest-Belohnungen und Voraussetzungen aus Formeln/Gerüst | K49 |
+| ADR-189 | Nebenquest-Handlung in der eigenen Region | K49 |
 
 ## §11 Change Requests
 
@@ -1822,7 +1825,7 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 ## §185 Questarten & Quest-Bibel (LOCKED, K48 §1–§3)
 
-- Hauptquest `MQ_*` (32) · Nebenquest `SQ_###` (210) · Fraktionskette `FQ_F##_##` (18 Container) · Auftrag `CT_R##_##` · Kodex-Aufgabe · Weltereignis `WE_*` · Echo-Bitte `EB_*`. Tagebuch trennt Quests von Aufgaben (ADR-182). Regeln QR-01–QR-12 (u. a. jede Quest erzählt, Verstehen-Schritt, kein reines Sammeln, dritte Lösung, sichtbare Folgen, keine Zeitnot, ≥ 25 % mit Tageszeit/Wetter/Mond, Belohnungsmischung, L-01). Nebenquests 15–45 min, Intensität ≤ 6 (Kettenabschluss bis 7).
+- Hauptquest `MQ_*` (32) · Nebenquest `SQ_###` (210) · Fraktionskette `FQ_F##_##` (18 Container) · Auftrag `CT_R##_##` · Kodex-Aufgabe · Weltereignis `WE_*` · Echo-Bitte `EB_*`. Tagebuch trennt Quests von Aufgaben (ADR-182). Regeln QR-01–QR-12 (u. a. jede Quest erzählt, Verstehen-Schritt, kein reines Sammeln, dritte Lösung, sichtbare Folgen, keine Zeitnot, ≥ 25 % mit Tageszeit/Wetter/Mond, Belohnungsmischung, L-01). Nebenquests 15–45 min (Ø 30), Intensität ≤ 6 (Kettenabschluss bis 7).
 
 ## §186 Questdaten, Zieltypen, Bedingungen, EP (LOCKED, K48 §5–§8 · `ObjectiveTypes.csv`, `MainQuestSteps.csv`, `Data/World/StoryPOIs.csv`)
 
@@ -1830,8 +1833,16 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 
 ## §187 Nebenquest-Gerüst (LOCKED, K48 §4 · `Data/Quests/SideQuests.csv`, `tools/authoring/sq_plan.py`)
 
-- Nummerierung nach Akt-Reihenfolge: R01 SQ_001–024 · R02 025–046 · R03 047–067 · R06 068–090 · R04 091–112 · R05 113–131 · R07 132–151 · R08 152–172 · R09 173–190 · R10 191–210. 120 Fraktionsquests (F01 27, F02 27, F03 28, F04 26, F05 12), 90 in 6 Kategorien (Echo-Geschichte, Menschen, Forschung, Rätsel & Ruinen, Wärterprüfung, Weltereignis). Ketten: je 4 à 4 Quests (Orden 2 à 6). ~20 % öffnen später (Akt II/III/Nachhall); Orden ab Akt III. Kapitel: K49 SQ_001–070, K50 071–140, K51 141–210.
+- Nummerierung nach Akt-Reihenfolge: R01 SQ_001–024 · R02 025–046 · R03 047–067 · R06 068–090 · R04 091–112 · R05 113–131 · R07 132–151 · R08 152–172 · R09 173–190 · R10 191–210. 120 Fraktionsquests (F01 27, F02 27, F03 28, F04 26, F05 12), 90 in 6 Kategorien (Echo-Geschichte, Menschen, Forschung, Rätsel & Ruinen, Wärterprüfung, Weltereignis). Ketten: je 4 à 4 Quests (Orden 2 à 6; Kettenquests bleiben im Akt ihrer Region). ~25 % öffnen später (jede 3. ungekettete Quest + Orden); Orden-Kette 1 ab Akt III, Kette 2 im Nachhall. Kapitel: K49 SQ_001–070, K50 071–140, K51 141–210.
 
 ## §188 Questsystem-Technik (LOCKED, K48 §10–§11 · `QuestDefinition.h`, `Services/QuestService.h`, `tools/gen_quests.py`)
 
 - Zustände Hidden → Available → Active (↔ Deferred) → Completed; genau ein aktueller Schritt (ADR-185); ObjectiveRouter + Bedingungs-Index (kein Polling, ≤ 0,2 ms/Ereignis). Save-Fragmente `Player.Quests` (mit StepId-Migration), `Player.StoryFlags`, `World.QuestConsequences`. Koop host-autoritativ, Belohnungen je Welt. Hinweisstufen Lauschend/Geführt (Standard)/Markiert; Untersuchungsziele nie exakt markiert. Validator QV-01–QV-10 in CI.
+
+## §189 Nebenquests SQ_001–SQ_070 (LOCKED, K49 · `SideQuestDetails.csv`, `SideQuestSteps.csv`, Quelle `tools/authoring/sq_k49.py`)
+
+- 70 Quests in R01 (24), R02 (22), R03 (21), R06 (3); 288 Schritte, Ø 34 min. Sol/EP/Ruf und Voraussetzungen aus Formeln und Gerüst (ADR-188). Prüfregeln QS-01–QS-15 (`sq_common.py`), 0 Fehler. Auftraggeber: ≤ 3 Geschichten je NPC, eine Kette = eine Geschichte (ADR-187). Handlung in der eigenen Region, Lieferungen/Gespräche auch außerhalb (ADR-189). Neue NPCs u. a. Archivarin Pell, Kontorschreiber Ossian, Zeugmeisterin Fenja, Kurierin Ennis Rook, Messmeister Hakon, Passwart Jorn, Gelehrte Oona, Schwester Ivra, Moorkönig Orrin. Fraktionsketten: `FactionChains.csv` (18 Titel/Themen).
+
+## §190 Hain-Dekor & Schlüsselgegenstände (LOCKED, K49 · `Data/Items/Decor.csv`, `KeyItems.csv`)
+
+- `ITM_DECO_*`: kosmetisch (DR-17), Stimmung +2 im Garten, nicht stapelnd; Quelle Quest oder Rufrang. `ITM_KEY_*`: nicht verkauf-/handelbar, verschwinden nach Questende (außer Andenken).

@@ -84,14 +84,8 @@ def plan():
             if ot: inter.append(ot.pop(0))
         for i, (cat, fac) in enumerate(inter):
             n += 1
-            avail = act
-            if fac == "F05":
-                avail = "Akt III" if act != "Akt III" else act
-                if i % 3 == 2: avail = "Nachhall"
-            elif i % 5 == 4:                       # ~20 % öffnen später
-                avail = LATER[act][(i // 5) % len(LATER[act])]
-            out.append({"Name": f"SQ_{n:03d}", "RegionId": r, "Category": cat, "Faction": fac, "Available": avail,
-                        "Chain": "", "Chapter": CHAPTER(n)})
+            out.append({"Name": f"SQ_{n:03d}", "RegionId": r, "Category": cat, "Faction": fac, "Available": act,
+                        "Chain": "", "Chapter": CHAPTER(n), "_i": i})
     # Fraktionsketten FQ_F##_01..04: je Fraktion die ersten 16 Quests (in ID-Reihenfolge) in 4 Ketten à 4
     byf = defaultdict(list)
     for q in out:
@@ -103,6 +97,19 @@ def plan():
         for c in range(k):
             for q in qs[c * size:(c + 1) * size]:
                 q["Chain"] = f"FQ_{f}_{c + 1:02d}"
+    # Verfügbarkeit: Kettenquests bleiben im Akt ihrer Region (Orden: Kette 1 Akt III, Kette 2 Nachhall);
+    # jede 4. ungekettete Quest einer Region öffnet später (~20 % gesamt)
+    later_idx = defaultdict(int)
+    for q in out:
+        act = REGION_ACT[q["RegionId"]]
+        if q["Faction"] == "F05":
+            q["Available"] = "Nachhall" if q["Chain"] == "FQ_F05_02" else "Akt III"
+        elif not q["Chain"]:
+            later_idx[q["RegionId"]] += 1
+            j = later_idx[q["RegionId"]]
+            if j % 3 == 0:
+                q["Available"] = LATER[act][(j // 3 - 1) % len(LATER[act])]
+        del q["_i"]
     return out
 
 

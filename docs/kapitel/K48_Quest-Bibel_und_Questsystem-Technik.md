@@ -67,7 +67,7 @@
 | **QR-11 Allein spielbar** | Jede Quest ist allein lösbar; Koop ändert Schwierigkeit, nicht den Zugang | DR-19 |
 | **QR-12 L-01** | Keine Lore über der Wahrheitsebene des Spielstands; Nebenquests mit Story-Bezug haben `TruthLevel` und warten oder verzerren | CANON §38 |
 
-**Länge:** Nebenquests 15–45 min (Ziel Ø 25 min), 3–6 Schritte; Kettenquests bis 60 min. Hauptquests 40–200 min (K44–K46).
+**Länge:** Nebenquests 15–45 min (Ziel Ø 30 min), 3–6 Schritte; Kettenquests bis 60 min. Hauptquests 40–200 min (K44–K46).
 
 **Intensität:** Nebenquests haben Intensität 1–6; ≥ 7 nur für Kettenabschlüsse, dann mit Atemzug danach (DR-29).
 
@@ -78,7 +78,7 @@
 | Bereich | Regel |
 |---|---|
 | **Titel** | 2–5 Wörter, bildhaft, kein Spoiler („Die Glocke von Kaldra“, nicht „Rette den Glockengießer“) |
-| **Auftraggeber** | Jede Nebenquest hat einen benannten NPC oder ein Echo als Auslöser; maximal 3 Quests je NPC (außer Fraktionsoberhäupter) |
+| **Auftraggeber** | Jede Nebenquest hat einen benannten NPC oder ein Echo als Auslöser; je NPC höchstens 3 Geschichten – eine Fraktionskette zählt als eine Geschichte (außer Fraktionsoberhäupter) |
 | **Tagebuchtext** | Ich-Perspektive des Wärters, 1–2 Sätze je Schritt, Präsens („Ich soll herausfinden, warum …“) |
 | **Dialog** | Zeilen ≤ 160 Zeichen; Auswahlantworten in drei Haltungen (ADR-162) bei jeder Entscheidung; Schweigegelübde des Ordens: Schiefertafel ≤ 80 Zeichen (CANON §55) |
 | **Barks** | Jede Nebenquest liefert 3–6 Barks für die Zeit danach (QR-05), Tag `Quest.<ID>.After` |
@@ -129,25 +129,25 @@ Die 210 Nebenquests sind nach Regionsbudget (`RegionBudget.csv`, CANON §19) und
 | F04 | 26 | R01 3, R02 1, R03 6, R06 3, R04 4, R05 4, R07 1, R08 2, R10 2 | FQ_F04_01, FQ_F04_02, FQ_F04_03, FQ_F04_04 |
 | F05 | 12 | R03 2, R07 5, R08 3, R09 1, R10 1 | FQ_F05_01, FQ_F05_02 |
 
-Jede Kette `FQ_F##_##` umfasst 4 Quests (Orden: 2 Ketten à 6 – FQ_F05_01 ab Akt III, FQ_F05_02 bis in den Nachhall), beginnt beim Rufrang ihres Index + 1 (Kette 1 ab Rang 2 … Kette 4 ab Rang 5, K47) und endet mit einem Kettenabschluss (+400 Ruf). Fraktionsquests außerhalb von Ketten sind frei zugänglich und tragen den Ruf bis Rang 2.
+Jede Kette `FQ_F##_##` umfasst 4 Quests (Orden: 2 Ketten à 6 – FQ_F05_01 ab Akt III, FQ_F05_02 bis in den Nachhall), beginnt beim Rufrang ihres Index (Kette 1 ab Rang 1 … Kette 4 ab Rang 4, K47) und endet mit einem Kettenabschluss (+400 Ruf). Fraktionsquests außerhalb von Ketten sind frei zugänglich.
 
 ### 4.3 Verfügbarkeit
 
 | Region | Akt I | Akt II | Akt III | Nachhall |
 |---|---|---|---|---|
-| R01 | 20 | 2 | 1 | 1 |
-| R02 | 18 | 2 | 1 | 1 |
-| R03 | 16 | 1 | 2 | 2 |
-| R06 | 19 | 2 | 1 | 1 |
-| R04 | 0 | 18 | 2 | 2 |
-| R05 | 0 | 16 | 2 | 1 |
-| R07 | 0 | 13 | 5 | 2 |
-| R08 | 0 | 15 | 4 | 2 |
-| R09 | 0 | 0 | 14 | 4 |
-| R10 | 0 | 0 | 17 | 3 |
-| **Σ** | 73 | 69 | 49 | 19 |
+| R01 | 21 | 1 | 1 | 1 |
+| R02 | 19 | 1 | 1 | 1 |
+| R03 | 16 | 1 | 3 | 1 |
+| R06 | 20 | 1 | 1 | 1 |
+| R04 | 0 | 19 | 2 | 1 |
+| R05 | 0 | 13 | 3 | 3 |
+| R07 | 0 | 11 | 6 | 3 |
+| R08 | 0 | 13 | 3 | 5 |
+| R09 | 0 | 0 | 12 | 6 |
+| R10 | 0 | 0 | 13 | 7 |
+| **Σ** | 76 | 60 | 45 | 29 |
 
-**Regel:** ~20 % der Nebenquests einer Region öffnen erst in einem späteren Akt oder im Nachhall. So lohnt die Rückkehr in alte Regionen (CANON §42: ≥ 3 Rückkehr-POIs je Region), und Spätquests können auf spätere Wahrheiten eingehen (QR-12). Ordensquests (F05) öffnen frühestens in Akt III (ADR-180).
+**Regel:** Jede dritte ungekettete Nebenquest einer Region (zusammen mit den Ordensquests ~25 %) öffnet erst in einem späteren Akt oder im Nachhall; Kettenquests bleiben im Akt ihrer Region. So lohnt die Rückkehr in alte Regionen (CANON §42: ≥ 3 Rückkehr-POIs je Region), und Spätquests können auf spätere Wahrheiten eingehen (QR-12). Ordensquests (F05) öffnen frühestens in Akt III (ADR-180).
 
 ### 4.4 Datenfelder
 
@@ -157,22 +157,22 @@ Jede Kette `FQ_F##_##` umfasst 4 Quests (Orden: 2 Ketten à 6 – FQ_F05_01 ab A
 | SQ_002 | R01 | ECHO | – | Akt I |  | K49 |
 | SQ_003 | R01 | FACTION | F01 | Akt I | FQ_F01_01 | K49 |
 | SQ_004 | R01 | ECHO | – | Akt I |  | K49 |
-| SQ_005 | R01 | FACTION | F01 | Akt II | FQ_F01_01 | K49 |
-| SQ_006 | R01 | EVENT | – | Akt I |  | K49 |
+| SQ_005 | R01 | FACTION | F01 | Akt I | FQ_F01_01 | K49 |
+| SQ_006 | R01 | EVENT | – | Akt II |  | K49 |
 | SQ_007 | R01 | FACTION | F02 | Akt I | FQ_F02_01 | K49 |
 | SQ_008 | R01 | MYSTERY | – | Akt I |  | K49 |
 | SQ_009 | R01 | FACTION | F02 | Akt I | FQ_F02_01 | K49 |
-| SQ_010 | R01 | MYSTERY | – | Akt III |  | K49 |
+| SQ_010 | R01 | MYSTERY | – | Akt I |  | K49 |
 | SQ_011 | R01 | FACTION | F02 | Akt I | FQ_F02_01 | K49 |
-| SQ_012 | R01 | PEOPLE | – | Akt I |  | K49 |
+| SQ_012 | R01 | PEOPLE | – | Akt III |  | K49 |
 | SQ_013 | R01 | FACTION | F03 | Akt I | FQ_F03_01 | K49 |
 | SQ_014 | R01 | PEOPLE | – | Akt I |  | K49 |
-| SQ_015 | R01 | FACTION | F03 | Nachhall | FQ_F03_01 | K49 |
+| SQ_015 | R01 | FACTION | F03 | Akt I | FQ_F03_01 | K49 |
 | SQ_016 | R01 | RESEARCH | – | Akt I |  | K49 |
 | SQ_017 | R01 | FACTION | F03 | Akt I | FQ_F03_01 | K49 |
-| SQ_018 | R01 | RESEARCH | – | Akt I |  | K49 |
+| SQ_018 | R01 | RESEARCH | – | Nachhall |  | K49 |
 | SQ_019 | R01 | FACTION | F03 | Akt I | FQ_F03_01 | K49 |
-| SQ_020 | R01 | TRIAL | – | Akt II |  | K49 |
+| SQ_020 | R01 | TRIAL | – | Akt I |  | K49 |
 | SQ_021 | R01 | FACTION | F03 | Akt I | FQ_F03_02 | K49 |
 | SQ_022 | R01 | FACTION | F04 | Akt I | FQ_F04_01 | K49 |
 | SQ_023 | R01 | FACTION | F04 | Akt I | FQ_F04_01 | K49 |
@@ -267,7 +267,7 @@ Und        := Nicht ( "&" Nicht )*
 Nicht      := "!" Nicht | Vergleich | "(" Ausdruck ")"
 Vergleich  := Wert ( ">=" | "<=" | "==" | "!=" | ">" | "<" ) Zahl | Prädikat
 Wert       := "Akkorde" | "AktIIAkkorde" | "Rang" | "Rank." Fraktion | "Flag." Name | "Bond." EchoArt | "Kodex." Art
-Prädikat   := "Quest." Id | "Act=" Akt | "Time=" Tagesphase | "Weather=" Wetter | "Moon=" Phase
+Prädikat   := "Quest." Id | "Act=" Akt | "Act>=" Akt | "Time=" Tagesphase | "Weather=" Wetter | "Moon=" Phase
               | "Region=" R## | "Ending=" (NewSong|SoftSilence) | "Truth>=" W#
 ```
 
@@ -431,7 +431,7 @@ K43 legt die Spannen fest (Hauptquest-Schritt 300–1.500, Nebenquest 400–2.00
 
 Der Prolog liegt bewusst über dem Zielanteil: Er ist ein Tutorial und besteht fast nur aus Hauptquest (K02 §8); seine 2.400 EP fallen in der Gesamtrechnung nicht ins Gewicht. Die drei Akte liegen im Band 25 % ± 5 (QV-10).
 
-**Nebenquest-Kontrolle:** Mit Ø 25 min ergibt die Formel 1.300 / 1.700 / 2.000 EP (Akt I/II/III, Akt III gedeckelt). Der Zielanteil „Neben 25 %“ entspricht in der Story-Phase (~102.400 Wärter-EP bis Ende Akt III, K43 §3.1) rund **25.600 EP** – also ~16–18 Nebenquests, etwa 7 h der ~50 h Story. Das deckt sich mit dem Story-Fokus-Profil (K01 §7.4); die übrigen ~190 Nebenquests tragen das Completionist-Profil (80–110 h) im Nachhall. Feinabstimmung im Balancing (K63).
+**Nebenquest-Kontrolle:** Mit Ø 30 min ergibt die Formel 1.500 / 1.950 / 2.000 EP (Akt I/II/III, Akt III gedeckelt). Der Zielanteil „Neben 25 %“ entspricht in der Story-Phase (~102.400 Wärter-EP bis Ende Akt III, K43 §3.1) rund **25.600 EP** – also ~15 Nebenquests, etwa 7,5 h der ~50 h Story. Das deckt sich mit dem Story-Fokus-Profil (K01 §7.4); die übrigen ~190 Nebenquests tragen das Completionist-Profil (80–110 h) im Nachhall. Feinabstimmung im Balancing (K63).
 
 ### 8.2 Hauptquest-EP je Quest
 
@@ -677,7 +677,7 @@ Hauptquests: ~25 Personentage je Quest (inkl. Cinematics) → 32 × 25 = 800 PT.
 
 | Abteilung | Anforderung | Kapitel |
 |---|---|---|
-| Quest Design | 210 Nebenquests auf dem Gerüst (`SideQuests.csv`) mit Titeln, Givern, Schritten, Folgen | K49–K51 |
+| Quest Design | 210 Nebenquests (Ø 30 min) auf dem Gerüst (`SideQuests.csv`) mit Titeln, Givern, Schritten, Folgen | K49–K51 |
 | Programmierung | GF_Quests: `IQuestService`, ObjectiveRouter, Bedingungsparser + Index, Save-Fragmente, Debug-Befehle | K05/K06 |
 | Tools | Dialog-Editor, Quest-Daten-Import, Validator in CI | K05 §7 |
 | Level Design | Story-POIs aus `StoryPOIs.csv` platzieren; Angebote nach §9.2 | K57 |
@@ -705,7 +705,7 @@ Hauptquests: ~25 Personentage je Quest (inkl. Cinematics) → 32 × 25 = 800 PT.
 |---|---|---|
 | §185 | Questarten (Haupt, Neben, Fraktionskette, Auftrag, Kodex-Aufgabe, Weltereignis, Echo-Bitte), Quest-Bibel QR-01–QR-12, Längen | LOCKED |
 | §186 | Questdaten: `ObjectiveTypes.csv` (21 Zieltypen), `MainQuestSteps.csv` (98 Schritte), `StoryPOIs.csv`; Bedingungssprache; EP-Formeln | LOCKED |
-| §187 | Nebenquest-Gerüst `SideQuests.csv`: Nummerierung nach Akt-Reihenfolge R01, R02, R03, R06, R04, R05, R07, R08, R09, R10; 120 Fraktionsquests, 18 Ketten; ~20 % später verfügbar | LOCKED |
+| §187 | Nebenquest-Gerüst `SideQuests.csv`: Nummerierung nach Akt-Reihenfolge R01, R02, R03, R06, R04, R05, R07, R08, R09, R10; 120 Fraktionsquests, 18 Ketten; ~25 % später verfügbar (Ketten nie verschoben) | LOCKED |
 | §188 | Questsystem-Technik: Zustände, ein Schritt je Quest, ereignisgetriebene Auswertung, Save-Fragmente, Koop, Validator QV-01–QV-10 | LOCKED |
 | §10 | ADR-182 – ADR-186 | LOCKED |
 

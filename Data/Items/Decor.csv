@@ -1,0 +1,14 @@
+# Hain-Dekor (K37 Resonanzhain; Quellen K47/K49–K51). Rein kosmetisch (DR-17); Stimmung +2 im Garten des Aufstellorts, nicht stapelnd.
+Name,DisplayName,Source,Garden,Notes
+ITM_DECO_WEATHERBELL,Wetterglocke,SQ_006,beliebig,Läutet bei Gewitter; Wisplets tanzen darum
+ITM_DECO_LETTERBOX,Marens Briefkasten,SQ_012,beliebig,Enthält Marens letzten Brief (lesbar)
+ITM_DECO_MEASURESTAFF,Pells Messlatte,SQ_018,beliebig,Zeigt den Nachklang des Gartens
+ITM_DECO_LISTENERSTONE,Lauscherstein,SQ_019,beliebig,Echos setzen sich gern daneben
+ITM_DECO_FERRYLANTERN,Fährlaterne,SQ_024,GARDEN_01|GARDEN_03|GARDEN_06,Nur Nachtlicht
+ITM_DECO_SUMMITFLAG,Gipfelfahne,SQ_028,GARDEN_02|GARDEN_07,Flattert bei Schnee
+ITM_DECO_ANVIL,Hraldas Amboss,SQ_034,beliebig,Klingt bei Berührung
+ITM_DECO_GRATKINBANNER,Wanderbanner,SQ_041,beliebig,Gratkins im Hain folgen ihm
+ITM_DECO_ANCESTORFIRE,Ahnenfeuerschale,SQ_045,beliebig,Brennt nachts
+ITM_DECO_MARKETLANTERN,Marktlaterne,SQ_048,beliebig,Humbog-Ruf bei Dämmerung
+ITM_DECO_SONGSHEET,Liederbogen der Unterstadt,SQ_057,beliebig,Spielbar am Lagerfeuer
+ITM_DECO_UNDERSTREETFLAG,Unterstadt-Wimpel,SQ_061,beliebig,Freie-Stimmen-Farben

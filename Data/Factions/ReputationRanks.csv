@@ -1,8 +1,8 @@
 # Rufränge (K03 P9: 6 Ränge je Fraktion; K47 §3). Threshold = kumulierte Rufpunkte. Ruf sinkt nie unter die Schwelle des erreichten Rangs (ADR-177).
 Rank,Name,Threshold,Discount,Meaning
-1,Fremd,0,0,"Grunddienste, Aufträge"
-2,Bekannt,300,5,"Rabatt 5 %, Blaupausen Stufe III, Fraktions-Nebenquests Kette 1"
-3,Geachtet,900,5,"Tutoren Stufe 1 (2.000 ◎), Fraktionsausrüstung kosmetisch, Kette 2"
-4,Vertraut,2000,10,"Rabatt 10 %, Blaupausen Stufe IV, Tutoren Stufe 2 (3.500 ◎), Kette 3"
-5,Verbündet,4000,10,"Fraktions-Reittier-Zubehör, Hain-Dekor, Kette 4, Ehrentitel"
+1,Fremd,0,0,"Grunddienste, Aufträge, Fraktionskette 1"
+2,Bekannt,300,5,"Rabatt 5 %, Blaupausen Stufe III, Kette 2"
+3,Geachtet,900,5,"Tutoren Stufe 1 (2.000 ◎), Fraktionsausrüstung kosmetisch, Kette 3"
+4,Vertraut,2000,10,"Rabatt 10 %, Blaupausen Stufe IV, Tutoren Stufe 2 (3.500 ◎), Kette 4"
+5,Verbündet,4000,10,"Fraktions-Reittier-Zubehör, Hain-Dekor, Ehrentitel"
 6,Getragen,7000,15,"Rabatt Höchststufe (F02/F04 15 %, F01/F03 10 %), Blaupausen Stufe V, Fraktions-Mythosquest"

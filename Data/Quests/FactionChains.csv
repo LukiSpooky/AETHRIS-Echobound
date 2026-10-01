@@ -1,0 +1,20 @@
+# Fraktionsketten (K47 §4, K48 §4). EntryRank = Rufrang zum Start der ersten Kettenquest. Mitglieder: Data/Quests/SideQuests.csv (Spalte Chain).
+Name,Faction,EntryRank,Title,Theme,Chapters
+FQ_F01_01,F01,1,Die Außenstelle,"Archivarin Pell baut die Akademie-Außenstelle in Eichenhall auf; Messreihen an den Rändern der Stillezonen, endet am Basalt von Kharsholm",K49
+FQ_F01_02,F01,2,Vaels Lücken,"Vaels Taxonomie von 812 hat Lücken: Regionalformen in Kharsgrat, Morvenmoor und Saltrand werden neu beschrieben",K49
+FQ_F01_03,F01,3,Glas der Hochkultur,"Grabung auf der Glasebene: Wer sang die Sonne zu laut? (vor W6 mit Venns Team, danach mit Shirah)",K50
+FQ_F01_04,F01,4,Aevrins Akten,"Nach W6 öffnet Aevrin Thal geschwärzte Akten; die Spur führt über Hvitfell nach Dorunsruh",K50/K51
+FQ_F02_01,F02,1,Lindenhonig,"Ein kleiner Handelsweg von Eichenhall nach Kharsholm – und wer ihn sabotiert",K49
+FQ_F02_02,F02,2,Erz und Ehre,"Das Erzkontor in Kharsholm, Klanehre gegen Kontorbücher; Lieferung nach Saltrand",K49
+FQ_F02_03,F02,3,Hafenbücher,"Unstimmigkeiten in den Büchern von Saltrand-Hafen; Marieke will Wahrheit, nicht Schuldige",K50
+FQ_F02_04,F02,4,Die gläserne Route,"Glas aus Sahrun für Saltrands Leuchtfeuer; eine neue Route durch die Weite",K50
+FQ_F03_01,F03,1,Die Spur der Lauscherin,"Auf Brannocs Spuren von 287: drei Orte, an denen sie zuhörte, und ein Echo, das sich erinnert",K49
+FQ_F03_02,F03,2,Grenzgänger,"Eine Gratkin-Wanderung über die Pässe zwischen Verdanthain und Kharsgrat schützen",K49
+FQ_F03_03,F03,3,Pässe im Schnee,"Rettungsdienst der Wildwacht im Kharsgrat; endet mit einer Nacht im Morvenmoor",K49
+FQ_F03_04,F03,4,Die stillen Ränder,"Nachwirkungen geheilter Stillezonen in Morvenmoor, Saltrand und der Weite",K49/K50
+FQ_F04_01,F04,1,Die Kurierin,"Eine Kurierin der Freien Stimmen bringt befreite Echos durch Verdanthain in die Berge",K49
+FQ_F04_02,F04,2,Unterstadt,"Leben in Morvenfurts verborgener Unterstadt: Schulden, Lieder, ein Verrat, der keiner war",K49
+FQ_F04_03,F04,3,Netze im Nebel,"Illegale Fangnetze im Moor und an der Küste; wer sie knüpft und warum",K49/K50
+FQ_F04_04,F04,4,Salz und Freiheit,"Salzsieder in Saltrand und Sahrun halten Echos in Schuldknechtschaft",K50
+FQ_F05_01,F05,1,Das Schweigen lernen,"Nach W6: die Kapellen im Morvenmoor öffnen sich; der Weg nach Schweigfels als Gast der Stille",K49/K50
+FQ_F05_02,F05,2,Hüter der Pause,"Nachhall: Orte, an denen die Pause zu hören ist; endet mit der Velnox-Variante (K47 Rang 6)",K50/K51

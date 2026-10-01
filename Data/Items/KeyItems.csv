@@ -1,0 +1,3 @@
+# Quest-Schlüsselgegenstände (K48/K49–K51). Nicht verkaufbar, nicht handelbar; verschwinden nach Questende, sofern nicht als Andenken markiert.
+Name,DisplayName,Quest,Keepsake,Notes
+ITM_KEY_HRALDAHAMMER,Hraldas Hammer,SQ_034,nein,Geschmiedet vom Grollschmied; hängt danach in der Wildwacht-Kammer

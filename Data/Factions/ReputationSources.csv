@@ -2,7 +2,7 @@
 Name,Faction,Event,Amount,DailyCap,Phase,Notes
 REP_CONTRACT,auto,Auftrag abgeschlossen (ContractTemplates.Faction),BaseSol/5,0,Prolog,"Cooldown je Vorlage (K13 §4); Tier-Skalierung über RewardScale"
 REP_SQ_SMALL,auto,Nebenquest klein (Fraktionsquest),150,0,Akt I,"Fraktion aus Quest-Daten (K49–K51)"
-REP_SQ_CHAIN,auto,Nebenquest-Kettenabschluss,400,0,Akt I,"4 Ketten je Fraktion (Rang 2/3/4/5)"
+REP_SQ_CHAIN,auto,Nebenquest-Kettenabschluss,400,0,Akt I,"4 Ketten je Fraktion, Einstieg Rang 1/2/3/4 (Orden 2 Ketten, Rang 1/2)"
 REP_MQ,auto,Hauptquest mit Fraktionsbezug,100–300,0,Prolog,"Tabelle K47 §4.2"
 REP_RELEASE,F03,Echo freilassen (statt binden oder nach Bindung),5,50,Akt I,"K36 Mitgefühl-Option; K18 Freilassen"
 REP_RESCUE_SILENCE,F03,Stillezone-Nachwirkung gelöst,25,100,Akt I,"CT_SILENCE und freie Funde"

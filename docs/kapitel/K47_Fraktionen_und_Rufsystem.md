@@ -142,11 +142,11 @@ Rangtitel sind **geschlechtsneutral wählbar** (Schweigender/Schweigende, Bruder
 
 | Rank | Name | Threshold | Discount | Meaning |
 |---|---|---|---|---|
-| 1 | Fremd | 0 | 0 | Grunddienste, Aufträge |
-| 2 | Bekannt | 300 | 5 | Rabatt 5 %, Blaupausen Stufe III, Fraktions-Nebenquests Kette 1 |
-| 3 | Geachtet | 900 | 5 | Tutoren Stufe 1 (2.000 ◎), Fraktionsausrüstung kosmetisch, Kette 2 |
-| 4 | Vertraut | 2000 | 10 | Rabatt 10 %, Blaupausen Stufe IV, Tutoren Stufe 2 (3.500 ◎), Kette 3 |
-| 5 | Verbündet | 4000 | 10 | Fraktions-Reittier-Zubehör, Hain-Dekor, Kette 4, Ehrentitel |
+| 1 | Fremd | 0 | 0 | Grunddienste, Aufträge, Fraktionskette 1 |
+| 2 | Bekannt | 300 | 5 | Rabatt 5 %, Blaupausen Stufe III, Kette 2 |
+| 3 | Geachtet | 900 | 5 | Tutoren Stufe 1 (2.000 ◎), Fraktionsausrüstung kosmetisch, Kette 3 |
+| 4 | Vertraut | 2000 | 10 | Rabatt 10 %, Blaupausen Stufe IV, Tutoren Stufe 2 (3.500 ◎), Kette 4 |
+| 5 | Verbündet | 4000 | 10 | Fraktions-Reittier-Zubehör, Hain-Dekor, Ehrentitel |
 | 6 | Getragen | 7000 | 15 | Rabatt Höchststufe (F02/F04 15 %, F01/F03 10 %), Blaupausen Stufe V, Fraktions-Mythosquest |
 
 ```
@@ -191,7 +191,7 @@ Rufpunkte  0      300        900          2.000              4.000              
 
 **Aufträge:** Ruf = `BaseSol / 5` der Auftragsvorlage (K13 §4): CT_OBSERVE 16, CT_PHOTO 18, CT_BOND 28, CT_GATHER 14, CT_DELIVER 22, CT_ESCORT 32, CT_CALM 40, CT_RESCUE 24, CT_SILENCE 48, CT_SURVEY 26. Die Fraktion steht in der Spalte `Faction` der Vorlage. Abklingzeiten der Vorlagen (1–3 Spieltage) begrenzen die Rate natürlich.
 
-**Nebenquests (K49–K51):** Von den 210 Nebenquests gehören **~120** einer Fraktion (je ~24–28; Orden 12, ab Akt III). Jede Fraktion hat **vier Questketten** (Rang 2/3/4/5 als Einstieg; Orden: zwei – FQ_F05_01 ab Akt III, FQ_F05_02 im Nachhall, K48 §4), die mit 400 Ruf abschließen; einzelne Quests geben 150.
+**Nebenquests (K49–K51):** Von den 210 Nebenquests gehören **~120** einer Fraktion (je ~24–28; Orden 12, ab Akt III). Jede Fraktion hat **vier Questketten** (Einstieg ab Rang 1/2/3/4; Orden: zwei – FQ_F05_01 ab Akt III, FQ_F05_02 im Nachhall, Rang 1/2; K48 §4), die mit 400 Ruf abschließen; einzelne Quests geben 150.
 
 ### 4.2 Hauptquests mit Rufbezug
 
@@ -462,7 +462,7 @@ Fragment-Name `Player.Reputation`, Version 1 (K64). Ränge werden beim Laden aus
 │  Rabatt 10 %  ·  Rüstmeisterin Fenja (Eichenhall, WW-Außenposten)        │
 │                                                                          │
 │  Nächster Rang (Verbündet):  Hain-Ausbau ohne Materialkosten, Hochstand  │
-│  Offene Kette: „Die Spur der Lauscherin“ (3/5)                           │
+│  Offene Kette: „Die Spur der Lauscherin“ (3/4)                           │
 │  Heute: Freilassen 35/50 · Stillezonen 25/100                            │
 │                                                                          │
 │  Was die Wildwacht über dich sagt:  „Ein Wärter, der zuhört.“            │
@@ -492,7 +492,7 @@ Fragment-Name `Player.Reputation`, Version 1 (K64). Ränge werden beim Laden aus
 
 | Abteilung | Anforderung | Kapitel |
 |---|---|---|
-| Quest Design | ~120 Fraktions-Nebenquests, 4 Ketten je Fraktion (Orden: 2 Ketten + Nachhall-Ketten), Dilemmata mit dritter Lösung | K49–K51 |
+| Quest Design | ~120 Fraktions-Nebenquests, 4 Ketten je Fraktion (Einstieg Rang 1–4; Orden: 2 Ketten, FQ_F05_02 im Nachhall), Dilemmata mit dritter Lösung | K49–K51 |
 | Narrative | Rangtitel (neutral wählbar), ~1.500 Fraktions-Barks (Rang × Haltung) | K53/K55 |
 | Economy | Blaupausenpreise, Rabatte (unverändert K42 §9) | K42/K63 |
 | Programmierung | `IReputationService` in GF_Quests, Save-Fragment `Player.Reputation`, Validator REP-01–06 | K48/K64 |
