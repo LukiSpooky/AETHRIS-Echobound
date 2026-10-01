@@ -166,7 +166,79 @@ Ein Echo des aktiven Chors läuft als **Begleiter** sichtbar mit (Begleiter-Slot
 
 `Steuerkreuz ↓` öffnet das Rad: Streicheln · Füttern · Loben · Feldfähigkeit · Reiten (wenn Reittier) · Begleiter wechseln · Foto mit Begleiter. Alle Aktionen < 2 Eingaben (DR-23).
 
-### 6.4 Folge-KI
+### 6.4 Persönlichkeiten im Alltag
+
+Die Persönlichkeit (CANON §81) bestimmt die Lieblingsinteraktion (Bindungsbonus), das Begleiter-Leerlaufverhalten und eine KI-Neigung im Kampf:
+
+| DisplayName | BoostedStat | FavoriteInteraction | CompanionIdle | CombatAIHint |
+|---|---|---|---|---|
+| Mutig | Attack | Training | Läuft voraus und schaut zurück | Bevorzugt direkte Angriffe |
+| Wild | Attack | Play | Jagt Schmetterlinge und Blätter | Greift das schwächste Ziel an |
+| Standhaft | Defense | Training | Bleibt dicht beim Wärter | Schützt Verbündete |
+| Gelassen | Defense | Petting | Setzt sich hin und beobachtet | Wartet auf Konter |
+| Klug | SpAttack | Praise | Untersucht Gegenstände | Nutzt Typvorteile konsequent |
+| Träumerisch | SpAttack | Petting | Schaut in den Himmel | Spart Harmonie für Crescendo |
+| Sanft | SpDefense | Feeding | Schmiegt sich an | Heilt früh |
+| Geduldig | SpDefense | Feeding | Liegt im Schatten | Spielt auf Zeit (Zeitleiste) |
+| Flink | Speed | Play | Rennt im Kreis | Handelt schnell und häufig |
+| Rastlos | Speed | Training | Springt auf Erhöhungen | Wechselt gern die Position |
+| Zäh | HP | Feeding | Wälzt sich im Gras | Bleibt in der Vorderreihe |
+| Gutmütig | HP | Petting | Folgt in Schrittgeschwindigkeit | Stärkt Verbündete |
+| Scharfsichtig | Precision | Praise | Späht Ressourcen aus | Zielt auf Ausweichende |
+| Gewissenhaft | Precision | Training | Sortiert Steinchen | Nutzt sichere Fähigkeiten |
+| Verspielt | Evasion | Play | Versteckt sich hinter dem Wärter | Weicht aus und neckt |
+| Listig | Evasion | Praise | Schleicht und beobachtet NPCs | Nutzt Statuseffekte |
+
+### 6.5 Begleiter-Verhalten je Archetyp
+
+Damit 256 Arten mit 18 Rigs (ADR-074) glaubwürdig folgen, definiert jeder Archetyp Abstand, Fortbewegung, Reitposition und Gesten:
+
+| Name | FollowDistanceM | FollowMode | RidePosition | InitiativeGesture | PetAnimation |
+|---|---|---|---|---|---|
+| A01 | 2 | Läuft neben dem Wärter | – | Schnüffeln und Pfote heben | Kopf an Hand reiben |
+| A02 | 4 | Schweres Trotten seitlich versetzt | Rücken (Sattel) | Stampfen und Kopf senken | Schnauze in die Hand |
+| A03 | 4 | Traben hinter dem Wärter | Rücken (Sattel) | Ohren aufstellen und Huf scharren | Hals neigen lassen |
+| A04 | 2 | Geht neben dem Wärter (Schulterhöhe) | – | Zeigen mit der Hand/Kralle | Abklatschen |
+| A05 | 3 | Fliegt kreisend über dem Wärter | Rücken zwischen den Flügeln | Kreist über dem Fund | Auf den Arm setzen |
+| A06 | 5 | Gleitet in Bodennähe/Wasser parallel | Rücken (Gleitsattel) | Schwebt über dem Fund und leuchtet | Flosse/Flügel anlehnen |
+| A07 | 3 | Schlängelt seitlich (gräbt bei Hindernissen) | Nacken (Grabsattel) | Taucht unter und kommt am Fund hoch | Um den Arm winden |
+| A08 | 4 | Schwimmt in Wasser parallel; an Land in Wasserblase/Behälter | Rücken (Schwimmsattel) | Springt aus dem Wasser | Stupsen an der Wasserkante |
+| A09 | 2 | Hüpft neben dem Wärter | – | Quakt/ruft und hüpft zum Fund | Auf die Schulter springen |
+| A10 | 2 | Krabbelt; klettert an Wänden mit | Rücken (Klettersattel) | Klopft mit Fühlern auf den Fund | Fühler an die Hand |
+| A11 | 4 | Langsam; wird auf Wunsch getragen (S/M) | Panzer (Sattel) | Zieht sich halb ein und zeigt mit dem Kopf | Panzer klopfen |
+| A12 | 3 | Schwebt auf Augenhöhe | – | Leuchtet heller über dem Fund | Durch die Hand gleiten |
+| A13 | 3 | Geht/schwebt mit kreisenden Teilen | – | Teile richten sich auf den Fund aus | Klopfen auf den Kern |
+| A14 | 2 | Wurzelt kurz an Halten; folgt in Schüben | – | Blüte dreht sich zum Fund | Blätter streicheln |
+| A15 | 6 | Fliegt hoch |  landet bei Halten | Nacken (Drachensattel) | Brüllt leise und deutet mit dem Kopf |
+| A16 | 2 | Schwarm umkreist den Wärter | – | Schwarm formt einen Pfeil | Schwarm um die Hand |
+| A17 | 3 | Kriecht/schwimmt; an Land langsam | Mantel (Schwimmsattel) | Tentakel zeigt auf den Fund | Tentakel um den Arm |
+| A18 | 2 | Klettert neben/über dem Wärter | Rücken (Klettersattel) | Klettert hoch und zeigt | Auf den Schultern sitzen |
+
+### 6.6 Klangfarben und Stimmung
+
+Wetter wirkt über die Typ-Resonanz (CANON §62) auf die Stimmung: Ein Echo mag das Wetter, das seine Klangfarbe stärkt.
+
+| Klangfarbe | Lieblingswetter (+2/h) | Ungünstiges Wetter (−2/h) | Heimatbiome (+1/h) |
+|---|---|---|---|
+| Glut | Hitzewelle | Regen | Ignareth, Sahrun-Weite |
+| Flut | Regen | Hitzewelle | Saltrand, Morvenmoor |
+| Stein | Sandsturm | – | Kharsgrat, Sahrun-Weite |
+| Sturm | Gewitter | – | Nimbara, Saltrand |
+| Blüte | Regen | Aschefall | Verdanthain, Morvenmoor |
+| Frost | Schnee | Hitzewelle | Hvitfell |
+| Leere | Aschefall | Aurora | Prismtiefen, Ignareth |
+| Licht | Aurora | Nebel | Sahrun-Weite, Nimbara |
+| Gift | – | – | Morvenmoor |
+| Metall | – | Gewitter (Blitzschlag) | Ignareth, Kharsgrat |
+| Geist | Nebel | – | Ael'Dorun, Hvitfell |
+| Kristall | – | – | Prismtiefen |
+| Klang | Aurora, Resonanzsturm | – | Nimbara, Ael'Dorun |
+| Schwerkraft | Sandsturm | – | Kharsgrat, Prismtiefen |
+| Arkan | Aurora | – | Ael'Dorun |
+
+Doppeltyp-Echos summieren beide Einflüsse (gedeckelt ±3/h).
+
+### 6.7 Folge-KI
 
 StateTree `ST_Companion`: Folgen (Abstand nach Größe 2–8 m) → Erkunden (Radius 12 m, wenn Spieler steht > 5 s) → Initiative (§6.1) → Reaktion → Rückkehr. Pfadfindung mit Navmesh je Größenklasse (K53); Teleport-Rückkehr außerhalb der Sicht bei > 40 m Abstand.
 
@@ -218,6 +290,29 @@ Der **Resonanzhain** ersetzt das klassische Boxsystem (CANON §6): ein begehbare
 | Zucht | findet in Brutnischen der Gärten statt (K38) |
 | Koop | Mitspieler können den Hain besuchen (nur Ansicht/Interaktion, keine Entnahme) |
 | Überlauf | > 600 Echos: „Freilassen“ (Echo kehrt an seinen Fundort zurück; Herkunft bleibt im Kodex) oder Tausch (K60) |
+
+### 8.1 Ausbau
+
+| Stufe | Plätze je Garten | Material (je Garten) | Sol | Sichtbare Veränderung |
+|---|---|---|---|---|
+| 1 | 20 | – (Freischaltung) | – | Lichtung, Klangbrunnen-Ableger |
+| 2 | 30 | 20 Holz, 10 Erz, 5 Garten-Ertrag | 2.000 | Pfade, Futterstellen |
+| 3 | 40 | 40 Holz, 20 Erz, 10 Kristall, 15 Ertrag | 6.000 | Wasserlauf, Brutnische (Zucht) |
+| 4 | 50 | 60 Holz, 40 Erz, 20 Kristall, 30 Ertrag | 15.000 | Spielplatz (Lager-Minispiele im Hain), Aussichtspunkt (Foto) |
+| 5 | 60 | 80 Holz, 60 Erz, 40 Kristall, 50 Ertrag + 1 Resonanzstein-Splitter | 30.000 | Biom-Wahrzeichen (z. B. Wolkenterrasse: schwebende Insel), Hain-Chor-Bühne |
+
+Vollausbau aller Gärten: 530.000 Sol + Material – ein Langzeitziel im Endgame (P12, CANON §18), ohne Einfluss auf Kampfkraft.
+
+### 8.2 Hain-Aktivitäten
+
+| Aktivität | Ab Ausbau | Wirkung |
+|---|---|---|
+| Spaziergang | 1 | Bindung +2 je Echo (Deckel 6), Kodex-Verhaltensbeobachtungen |
+| Futterstellen | 2 | einmal befüllen → alle Garten-Echos +Stimmung für einen Spieltag |
+| Brutnische | 3 | Zucht (K38) |
+| Spielplatz | 4 | Minispiele mit mehreren Echos gleichzeitig |
+| Aussichtspunkt | 4 | Fotomodus-Kulisse (K39) |
+| Hain-Chor | 5 + Bindungsstufe 6 | Echo mit Einklang leitet ein Konzert: Stimmung aller Hain-Echos +20, Fotomoment, Musik-Arrangement aus den Typen der Anwesenden (K55) |
 
 ```
                  ┌───────── RESONANZHAIN ─────────┐
