@@ -177,6 +177,18 @@ def price_sample():
     return "\n".join(out)
 
 
+def price_full():
+    p = rows("Data/Economy/ItemPrices.csv")
+    names = {}
+    for t in ["Resources", "EchoMaterials", "Consumables", "Lures", "Seals", "WardenGear", "HeldItems", "EvolutionItems", "Traps", "BreedingItems", "Klangschriften"]:
+        for r in rows(f"Data/Items/{t}.csv"):
+            names.setdefault(r["Name"], r["DisplayName"])
+    out = ["| ID | Gegenstand | Wert | Kauf | Verkauf | Händler |", "|---|---|---|---|---|---|"]
+    for r in p:
+        out.append(f"| {r['Name']} | {names.get(r['Name'], r['Name'])} | {int(r['Value']):,} | {('–' if r['BuyPrice'] == '0' else format(int(r['BuyPrice']), ','))} | {int(r['SellPrice']):,} | {r['ShopCategory']} |".replace(",", "."))
+    return "\n".join(out)
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         build()

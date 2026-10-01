@@ -246,6 +246,346 @@ Rabatte stapeln nicht (der höchste gilt). Details zum Ruf: K47.
 | Kreisläufe | Kauf → Verkauf verliert 65 %; herstellen → verkaufen verliert 72 % gegenüber Zutatenkauf |
 | Duplizierung | Server-autoritative Inventare im Online-Modus (K59), Transaktions-IDs; Offline-Saves signiert beim Online-Gehen |
 
+## Anhang A – Vollständige Preisliste
+
+Generiert aus `ItemPrices.csv` (Wertmodell §3). „–“ = nicht käuflich.
+
+| ID | Gegenstand | Wert | Kauf | Verkauf | Händler |
+|---|---|---|---|---|---|
+| ITM_BREED_ERBKLANG | Erbklang | 1.012 | 1.015 | 354 | Faction |
+| ITM_BREED_KEIMWAERME | Keimwärmer | 167 | 170 | 58 | Faction |
+| ITM_BREED_KLANGSTIMMUNG | Klangstimmung | 2.812 | – | 984 | – |
+| ITM_CON_CLEANSE | Läuterwasser | 76 | 80 | 26 | Heal |
+| ITM_CON_HEAL_1 | Heilkraut-Tinktur | 45 | 45 | 15 | Heal |
+| ITM_CON_HEAL_2 | Starke Tinktur | 123 | 125 | 43 | Heal |
+| ITM_CON_HEAL_3 | Quellwasser-Elixier | 575 | 575 | 201 | Heal |
+| ITM_CON_HEAL_ALL | Chorbalsam | 391 | 395 | 136 | Heal |
+| ITM_CON_KLANGSALZ | Klangsalz | 108 | 110 | 37 | General |
+| ITM_CON_REPEL | Ruhrauch | 61 | 65 | 21 | General |
+| ITM_CON_REVIVE | Weckklang | 302 | 305 | 105 | Heal |
+| ITM_CON_SENSE | Lauschöl | 133 | 135 | 46 | General |
+| ITM_CON_STAMINA | Bergtee | 77 | 80 | 26 | General |
+| ITM_CON_WANDELKLANG | Wandelklang | 262 | 265 | 91 | General |
+| ITM_CON_WARM | Glühwurzel-Sud | 140 | 140 | 49 | General |
+| ITM_CON_WESENSKLANG | Wesensklang | 1.325 | – | 463 | – |
+| ITM_EMAT_ARCANE | Klangsplitter (Arkan) | 30 | 30 | 10 | Material |
+| ITM_EMAT_BLOOM | Klangsplitter (Blüte) | 30 | 30 | 10 | Material |
+| ITM_EMAT_CRYSTAL | Klangsplitter (Kristall) | 30 | 30 | 10 | Material |
+| ITM_EMAT_ECHOWOOL | Echowolle | 60 | 60 | 21 | Material |
+| ITM_EMAT_EMBER | Klangsplitter (Glut) | 30 | 30 | 10 | Material |
+| ITM_EMAT_FEATHER | Gefiederte Daune | 60 | 60 | 21 | Material |
+| ITM_EMAT_FROST | Klangsplitter (Frost) | 30 | 30 | 10 | Material |
+| ITM_EMAT_GRAVITY | Klangsplitter (Schwerkraft) | 30 | 30 | 10 | Material |
+| ITM_EMAT_LIGHT | Klangsplitter (Licht) | 30 | 30 | 10 | Material |
+| ITM_EMAT_METAL | Klangsplitter (Metall) | 30 | 30 | 10 | Material |
+| ITM_EMAT_SCALE | Abgestreifte Schuppe | 60 | 60 | 21 | Material |
+| ITM_EMAT_SHELLDUST | Panzerstaub | 60 | 60 | 21 | Material |
+| ITM_EMAT_SOUND | Klangsplitter (Klang) | 30 | 30 | 10 | Material |
+| ITM_EMAT_SPIRIT | Klangsplitter (Geist) | 30 | 30 | 10 | Material |
+| ITM_EMAT_STILLSHARD | Stillstein-Splitter | 250 | – | 87 | – |
+| ITM_EMAT_STONE | Klangsplitter (Stein) | 30 | 30 | 10 | Material |
+| ITM_EMAT_STORM | Klangsplitter (Sturm) | 30 | 30 | 10 | Material |
+| ITM_EMAT_TIDE | Klangsplitter (Flut) | 30 | 30 | 10 | Material |
+| ITM_EMAT_VENOM | Klangsplitter (Gift) | 30 | 30 | 10 | Material |
+| ITM_EMAT_VOID | Klangsplitter (Leere) | 30 | 30 | 10 | Material |
+| ITM_EVO_ARCANE | Obertonkristall (Arkan) | 300 | 300 | 105 | Rare |
+| ITM_EVO_ASHFEATHER | Aschefeder | 900 | 900 | 315 | Rare |
+| ITM_EVO_AURORATHREAD | Aurorafaden | 900 | 900 | 315 | Rare |
+| ITM_EVO_BLOOM | Obertonkristall (Blüte) | 355 | 355 | 124 | Rare |
+| ITM_EVO_CRYSTAL | Obertonkristall (Kristall) | 355 | 355 | 124 | Rare |
+| ITM_EVO_ECHOSHELL | Klangmuschel | 900 | 900 | 315 | Rare |
+| ITM_EVO_EMBER | Obertonkristall (Glut) | 355 | 355 | 124 | Rare |
+| ITM_EVO_EMBERCORE | Glutkern | 900 | 900 | 315 | Rare |
+| ITM_EVO_FROST | Obertonkristall (Frost) | 300 | 300 | 105 | Rare |
+| ITM_EVO_GLYPHSHARD | Glyphensplitter | 900 | 900 | 315 | Rare |
+| ITM_EVO_GRAVITY | Obertonkristall (Schwerkraft) | 355 | 355 | 124 | Rare |
+| ITM_EVO_LIGHT | Obertonkristall (Licht) | 355 | 355 | 124 | Rare |
+| ITM_EVO_METAL | Obertonkristall (Metall) | 300 | 300 | 105 | Rare |
+| ITM_EVO_MISTVEIL | Nebelschleier | 900 | 900 | 315 | Rare |
+| ITM_EVO_MOONDEW | Mondtau | 900 | 900 | 315 | Rare |
+| ITM_EVO_ROOTHEART | Wurzelherz | 900 | 900 | 315 | Rare |
+| ITM_EVO_SOUND | Obertonkristall (Klang) | 355 | 355 | 124 | Rare |
+| ITM_EVO_SPIRIT | Obertonkristall (Geist) | 300 | 300 | 105 | Rare |
+| ITM_EVO_STARDUST | Sternenstaub | 900 | 900 | 315 | Rare |
+| ITM_EVO_STONE | Obertonkristall (Stein) | 300 | 300 | 105 | Rare |
+| ITM_EVO_STORM | Obertonkristall (Sturm) | 300 | 300 | 105 | Rare |
+| ITM_EVO_TIDE | Obertonkristall (Flut) | 300 | 300 | 105 | Rare |
+| ITM_EVO_TIDEPEARL | Gezeitenperle | 900 | 900 | 315 | Rare |
+| ITM_EVO_VENOM | Obertonkristall (Gift) | 355 | 355 | 124 | Rare |
+| ITM_EVO_VOID | Obertonkristall (Leere) | 300 | 300 | 105 | Rare |
+| ITM_FOODC_CHEESEPLATE | Bergkäseplatte | 165 | 165 | 57 | Food |
+| ITM_FOODC_CLOUDTART | Wolkentarte | 196 | 200 | 68 | Food |
+| ITM_FOODC_DATEROLL | Dattelrolle | 196 | 200 | 68 | Food |
+| ITM_FOODC_EMBERSOUP | Glutsuppe | 290 | 290 | 101 | Food |
+| ITM_FOODC_FEAST | Chorfestmahl | 690 | 690 | 241 | Food |
+| ITM_FOODC_FISHPIE | Fischpastete | 181 | 185 | 63 | Food |
+| ITM_FOODC_HONEYCAKE | Honigkuchen | 206 | 210 | 72 | Food |
+| ITM_FOODC_ICEJELLY | Eisgelee | 196 | 200 | 68 | Food |
+| ITM_FOODC_KELPWRAP | Tangrolle | 206 | 210 | 72 | Food |
+| ITM_FOODC_MOSSBUN | Moosbrötchen | 165 | 165 | 57 | Food |
+| ITM_FOODC_SPICEBREAD | Würzbrot | 165 | 165 | 57 | Food |
+| ITM_FOODC_STEW | Lindwald-Eintopf | 165 | 165 | 57 | Food |
+| ITM_FOOD_ALPINECHEESE | Bergkäse | 40 | 40 | 14 | Food |
+| ITM_FOOD_BERRYMIX | Waldbeeren | 40 | 40 | 14 | Food |
+| ITM_FOOD_CHARCOAL | Glutkohle | 40 | 40 | 14 | Food |
+| ITM_FOOD_CLOUDFRUIT | Wolkenfrucht | 40 | 40 | 14 | Food |
+| ITM_FOOD_CRYSTALSALT | Kristallsalz | 40 | 40 | 14 | Food |
+| ITM_FOOD_DATES | Datteln | 40 | 40 | 14 | Food |
+| ITM_FOOD_ICEFISH | Eisfisch | 40 | 40 | 14 | Food |
+| ITM_FOOD_KELPSNACK | Tangkeks | 40 | 40 | 14 | Food |
+| ITM_FOOD_LINDHONEY | Lindblüten-Honig | 40 | 40 | 14 | Food |
+| ITM_FOOD_MOORBERRY | Moorbeeren | 40 | 40 | 14 | Food |
+| ITM_FOOD_MOSSCAKE | Moosküchlein | 40 | 40 | 14 | Food |
+| ITM_FOOD_ORECRUMBS | Erzkrümel | 40 | 40 | 14 | Food |
+| ITM_FOOD_SHELLMEAT | Muschelfleisch | 40 | 40 | 14 | Food |
+| ITM_FOOD_SMOKEDFISH | Räucherfisch | 40 | 40 | 14 | Food |
+| ITM_FOOD_SULFURCANDY | Schwefelzucker | 40 | 40 | 14 | Food |
+| ITM_GEAR_BAG_1 | Wärtertasche I | 0 | – | 0 | – |
+| ITM_GEAR_BAG_2 | Wärtertasche II | 715 | 715 | 250 | Gear |
+| ITM_GEAR_BAG_3 | Wärtertasche III | 1.287 | 1.290 | 450 | Gear |
+| ITM_GEAR_BAG_4 | Wärtertasche IV | 4.725 | – | 1.653 | – |
+| ITM_GEAR_BAG_5 | Wärtertasche V | 6.737 | – | 2.357 | – |
+| ITM_GEAR_BOOTS_1 | Wanderstiefel I | 0 | – | 0 | – |
+| ITM_GEAR_BOOTS_2 | Wanderstiefel II | 527 | 530 | 184 | Gear |
+| ITM_GEAR_BOOTS_3 | Wanderstiefel III | 1.850 | 1.850 | 647 | Gear |
+| ITM_GEAR_BOOTS_4 | Wanderstiefel IV | 2.425 | – | 848 | – |
+| ITM_GEAR_BOOTS_5 | Wanderstiefel V | 10.062 | – | 3.521 | – |
+| ITM_GEAR_CLOAK_1 | Wettermantel I | 0 | – | 0 | – |
+| ITM_GEAR_CLOAK_2 | Wettermantel II | 437 | 440 | 152 | Gear |
+| ITM_GEAR_CLOAK_3 | Wettermantel III | 1.287 | 1.290 | 450 | Gear |
+| ITM_GEAR_CLOAK_4 | Wettermantel IV | 4.725 | – | 1.653 | – |
+| ITM_GEAR_CLOAK_5 | Wettermantel V | 6.737 | – | 2.357 | – |
+| ITM_GEAR_GLIDER_1 | Gleiter I | 0 | – | 0 | – |
+| ITM_GEAR_GLIDER_2 | Gleiter II | 437 | 440 | 152 | Gear |
+| ITM_GEAR_GLIDER_3 | Gleiter III | 1.682 | 1.685 | 588 | Gear |
+| ITM_GEAR_GLIDER_4 | Gleiter IV | 3.025 | – | 1.058 | – |
+| ITM_GEAR_GLIDER_5 | Gleiter V | 6.912 | – | 2.419 | – |
+| ITM_GEAR_LANTERN_1 | Laterne I | 0 | – | 0 | – |
+| ITM_GEAR_LANTERN_2 | Laterne II | 647 | 650 | 226 | Gear |
+| ITM_GEAR_LANTERN_3 | Laterne III | 1.012 | 1.015 | 354 | Gear |
+| ITM_GEAR_LANTERN_4 | Laterne IV | 2.925 | – | 1.023 | – |
+| ITM_GEAR_LANTERN_5 | Laterne V | 10.412 | – | 3.644 | – |
+| ITM_GEAR_LENS_1 | Kodex-Linse I | 0 | – | 0 | – |
+| ITM_GEAR_LENS_2 | Kodex-Linse II | 437 | 440 | 152 | Gear |
+| ITM_GEAR_LENS_3 | Kodex-Linse III | 1.012 | 1.015 | 354 | Gear |
+| ITM_GEAR_LENS_4 | Kodex-Linse IV | 3.025 | – | 1.058 | – |
+| ITM_GEAR_LENS_5 | Kodex-Linse V | 7.962 | – | 2.786 | – |
+| ITM_GEAR_MASK_1 | Atemmaske I | 0 | – | 0 | – |
+| ITM_GEAR_MASK_2 | Atemmaske II | 527 | 530 | 184 | Gear |
+| ITM_GEAR_MASK_3 | Atemmaske III | 1.850 | 1.850 | 647 | Gear |
+| ITM_GEAR_MASK_4 | Atemmaske IV | 4.725 | – | 1.653 | – |
+| ITM_GEAR_MASK_5 | Atemmaske V | 7.962 | – | 2.786 | – |
+| ITM_GEAR_RESONATOR_1 | Resonator I | 0 | – | 0 | – |
+| ITM_GEAR_RESONATOR_2 | Resonator II | 647 | 650 | 226 | Gear |
+| ITM_GEAR_RESONATOR_3 | Resonator III | 1.287 | 1.290 | 450 | Gear |
+| ITM_GEAR_RESONATOR_4 | Resonator IV | 3.025 | – | 1.058 | – |
+| ITM_GEAR_RESONATOR_5 | Resonator V | 10.412 | – | 3.644 | – |
+| ITM_GEAR_SADDLE_CLIMB | Klettersattel | 0 | – | 0 | – |
+| ITM_GEAR_SADDLE_DIG | Grabsattel | 0 | – | 0 | – |
+| ITM_GEAR_SADDLE_FLY | Flugsattel | 0 | – | 0 | – |
+| ITM_GEAR_SADDLE_GROUND | Bodensattel | 0 | – | 0 | – |
+| ITM_GEAR_SADDLE_SWIM | Schwimmsattel | 0 | – | 0 | – |
+| ITM_GEAR_TOOL_1 | Wärterwerkzeug I | 0 | – | 0 | – |
+| ITM_GEAR_TOOL_2 | Wärterwerkzeug II | 557 | 560 | 194 | Gear |
+| ITM_GEAR_TOOL_3 | Wärterwerkzeug III | 1.012 | 1.015 | 354 | Gear |
+| ITM_GEAR_TOOL_4 | Wärterwerkzeug IV | 3.525 | – | 1.233 | – |
+| ITM_GEAR_TOOL_5 | Wärterwerkzeug V | 7.962 | – | 2.786 | – |
+| ITM_HELD_BONDRIBBON | Bindungsband | 393 | 395 | 137 | Rare |
+| ITM_HELD_CLEANSEBELL | Reinheitsglocke | 486 | 490 | 170 | Rare |
+| ITM_HELD_EMBERCORE | Glutkern | 431 | 435 | 150 | Rare |
+| ITM_HELD_FOCUSLENS | Fokuslinse | 486 | 490 | 170 | Rare |
+| ITM_HELD_FOGSCARF | Nebelschal | 486 | 490 | 170 | Rare |
+| ITM_HELD_HARMONYCHIME | Harmoniespiel | 431 | 435 | 150 | Rare |
+| ITM_HELD_HEAVYSTONE | Schwerstein | 431 | 435 | 150 | Rare |
+| ITM_HELD_LASTBREATH | Atemband | 486 | 490 | 170 | Rare |
+| ITM_HELD_LEARNCHARM | Lernamulett | 486 | 490 | 170 | Rare |
+| ITM_HELD_MIRRORSCALE | Spiegelschuppe | 486 | 490 | 170 | Rare |
+| ITM_HELD_POLISHSTONE | Schliffstein | 431 | 435 | 150 | Rare |
+| ITM_HELD_ROOTCHARM | Wurzelamulett | 486 | 490 | 170 | Rare |
+| ITM_HELD_SHIELDBROOCH | Schildbrosche | 486 | 490 | 170 | Rare |
+| ITM_HELD_STIMMBAND | Stimmband | 393 | 395 | 137 | Rare |
+| ITM_HELD_SWIFTFEATHER | Sturmfeder | 431 | 435 | 150 | Rare |
+| ITM_HELD_TAKTRING | Taktring | 486 | 490 | 170 | Rare |
+| ITM_HELD_TONE_ARCANE | Stimmstein (Arkan) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_BLOOM | Stimmstein (Blüte) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_CRYSTAL | Stimmstein (Kristall) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_EMBER | Stimmstein (Glut) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_FROST | Stimmstein (Frost) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_GRAVITY | Stimmstein (Schwerkraft) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_LIGHT | Stimmstein (Licht) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_METAL | Stimmstein (Metall) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_SOUND | Stimmstein (Klang) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_SPIRIT | Stimmstein (Geist) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_STONE | Stimmstein (Stein) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_STORM | Stimmstein (Sturm) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_TIDE | Stimmstein (Flut) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_VENOM | Stimmstein (Gift) | 285 | 285 | 99 | Rare |
+| ITM_HELD_TONE_VOID | Stimmstein (Leere) | 285 | 285 | 99 | Rare |
+| ITM_HELD_WESENSBAND | Wesensband | 393 | 395 | 137 | Rare |
+| ITM_KS_001 | Klangschrift: Schwelbrand | 0 | – | 0 | – |
+| ITM_KS_002 | Klangschrift: Hitzeflimmern | 0 | – | 0 | – |
+| ITM_KS_003 | Klangschrift: Sonnenesse | 0 | – | 0 | – |
+| ITM_KS_004 | Klangschrift: Lodernder Ansturm | 0 | – | 0 | – |
+| ITM_KS_005 | Klangschrift: Feueratem | 0 | – | 0 | – |
+| ITM_KS_006 | Klangschrift: Schmelzhieb | 0 | – | 0 | – |
+| ITM_KS_007 | Klangschrift: Regenruf | 0 | – | 0 | – |
+| ITM_KS_008 | Klangschrift: Quellbad | 0 | – | 0 | – |
+| ITM_KS_009 | Klangschrift: Nebelschleier | 0 | – | 0 | – |
+| ITM_KS_010 | Klangschrift: Brandungsschlag | 0 | – | 0 | – |
+| ITM_KS_011 | Klangschrift: Gezeitenwelle | 0 | – | 0 | – |
+| ITM_KS_012 | Klangschrift: Tiefenstrom | 0 | – | 0 | – |
+| ITM_KS_013 | Klangschrift: Felswall | 0 | – | 0 | – |
+| ITM_KS_014 | Klangschrift: Steinhaut | 0 | – | 0 | – |
+| ITM_KS_015 | Klangschrift: Bergrücken | 0 | – | 0 | – |
+| ITM_KS_016 | Klangschrift: Gerölllawine | 0 | – | 0 | – |
+| ITM_KS_017 | Klangschrift: Felsrammen | 0 | – | 0 | – |
+| ITM_KS_018 | Klangschrift: Erdgrollen | 0 | – | 0 | – |
+| ITM_KS_019 | Klangschrift: Gewitterruf | 0 | – | 0 | – |
+| ITM_KS_020 | Klangschrift: Sturmlauf | 0 | – | 0 | – |
+| ITM_KS_021 | Klangschrift: Böenchor | 0 | – | 0 | – |
+| ITM_KS_022 | Klangschrift: Zyklonsprung | 0 | – | 0 | – |
+| ITM_KS_023 | Klangschrift: Blitzbogen | 0 | – | 0 | – |
+| ITM_KS_024 | Klangschrift: Wirbelsturm | 0 | – | 0 | – |
+| ITM_KS_025 | Klangschrift: Heiltau | 0 | – | 0 | – |
+| ITM_KS_026 | Klangschrift: Sonnentrunk | 0 | – | 0 | – |
+| ITM_KS_027 | Klangschrift: Wuchern | 0 | – | 0 | – |
+| ITM_KS_028 | Klangschrift: Blütensturm | 0 | – | 0 | – |
+| ITM_KS_029 | Klangschrift: Saugwurzel | 0 | – | 0 | – |
+| ITM_KS_030 | Klangschrift: Dornenranke | 0 | – | 0 | – |
+| ITM_KS_031 | Klangschrift: Eisspiegel | 0 | – | 0 | – |
+| ITM_KS_032 | Klangschrift: Kältestarre | 0 | – | 0 | – |
+| ITM_KS_033 | Klangschrift: Weißer Atem | 0 | – | 0 | – |
+| ITM_KS_034 | Klangschrift: Frostbiss | 0 | – | 0 | – |
+| ITM_KS_035 | Klangschrift: Gletscherdruck | 0 | – | 0 | – |
+| ITM_KS_036 | Klangschrift: Winterstille | 0 | – | 0 | – |
+| ITM_KS_037 | Klangschrift: Lichtschlucker | 0 | – | 0 | – |
+| ITM_KS_038 | Klangschrift: Leerer Raum | 0 | – | 0 | – |
+| ITM_KS_039 | Klangschrift: Entzugsfluch | 0 | – | 0 | – |
+| ITM_KS_040 | Klangschrift: Schweigeschnitt | 0 | – | 0 | – |
+| ITM_KS_041 | Klangschrift: Stille Klinge | 0 | – | 0 | – |
+| ITM_KS_042 | Klangschrift: Hohlklang | 0 | – | 0 | – |
+| ITM_KS_043 | Klangschrift: Läuterung | 0 | – | 0 | – |
+| ITM_KS_044 | Klangschrift: Heilschein | 0 | – | 0 | – |
+| ITM_KS_045 | Klangschrift: Sonnenwehr | 0 | – | 0 | – |
+| ITM_KS_046 | Klangschrift: Strahlenkranz | 0 | – | 0 | – |
+| ITM_KS_047 | Klangschrift: Morgenrot | 0 | – | 0 | – |
+| ITM_KS_048 | Klangschrift: Prismenstrahl | 0 | – | 0 | – |
+| ITM_KS_049 | Klangschrift: Giftkleid | 0 | – | 0 | – |
+| ITM_KS_050 | Klangschrift: Korrosion | 0 | – | 0 | – |
+| ITM_KS_051 | Klangschrift: Schleichendes Gift | 0 | – | 0 | – |
+| ITM_KS_052 | Klangschrift: Toxinwelle | 0 | – | 0 | – |
+| ITM_KS_053 | Klangschrift: Nesselpeitsche | 0 | – | 0 | – |
+| ITM_KS_054 | Klangschrift: Miasma | 0 | – | 0 | – |
+| ITM_KS_055 | Klangschrift: Rüstwerk | 0 | – | 0 | – |
+| ITM_KS_056 | Klangschrift: Konterhieb | 0 | – | 0 | – |
+| ITM_KS_057 | Klangschrift: Panzerplatten | 0 | – | 0 | – |
+| ITM_KS_058 | Klangschrift: Schrapnell | 0 | – | 0 | – |
+| ITM_KS_059 | Klangschrift: Stahlsturm | 0 | – | 0 | – |
+| ITM_KS_060 | Klangschrift: Magnetpuls | 0 | – | 0 | – |
+| ITM_KS_061 | Klangschrift: Doppelgänger | 0 | – | 0 | – |
+| ITM_KS_062 | Klangschrift: Seelenband | 0 | – | 0 | – |
+| ITM_KS_063 | Klangschrift: Verschwinden | 0 | – | 0 | – |
+| ITM_KS_064 | Klangschrift: Totenklage | 0 | – | 0 | – |
+| ITM_KS_065 | Klangschrift: Phantomklaue | 0 | – | 0 | – |
+| ITM_KS_066 | Klangschrift: Schreckensschrei | 0 | – | 0 | – |
+| ITM_KS_067 | Klangschrift: Aufladen | 0 | – | 0 | – |
+| ITM_KS_068 | Klangschrift: Spiegelwand | 0 | – | 0 | – |
+| ITM_KS_069 | Klangschrift: Drusenfeld | 0 | – | 0 | – |
+| ITM_KS_070 | Klangschrift: Kristallregen | 0 | – | 0 | – |
+| ITM_KS_071 | Klangschrift: Klirrschlag | 0 | – | 0 | – |
+| ITM_KS_072 | Klangschrift: Facettenschnitt | 0 | – | 0 | – |
+| ITM_KS_073 | Klangschrift: Schallwand | 0 | – | 0 | – |
+| ITM_KS_074 | Klangschrift: Resonanzkreis | 0 | – | 0 | – |
+| ITM_KS_075 | Klangschrift: Wiegenlied | 0 | – | 0 | – |
+| ITM_KS_076 | Klangschrift: Taktbruch | 0 | – | 0 | – |
+| ITM_KS_077 | Klangschrift: Fortissimo | 0 | – | 0 | – |
+| ITM_KS_078 | Klangschrift: Dissonanz | 0 | – | 0 | – |
+| ITM_KS_079 | Klangschrift: Umkehrfeld | 0 | – | 0 | – |
+| ITM_KS_080 | Klangschrift: Schwebe | 0 | – | 0 | – |
+| ITM_KS_081 | Klangschrift: Gewichtslast | 0 | – | 0 | – |
+| ITM_KS_082 | Klangschrift: Singularität | 0 | – | 0 | – |
+| ITM_KS_083 | Klangschrift: Implosion | 0 | – | 0 | – |
+| ITM_KS_084 | Klangschrift: Erdanziehung | 0 | – | 0 | – |
+| ITM_KS_085 | Klangschrift: Umkehrrune | 0 | – | 0 | – |
+| ITM_KS_086 | Klangschrift: Fluchwort | 0 | – | 0 | – |
+| ITM_KS_087 | Klangschrift: Glyphenkreis | 0 | – | 0 | – |
+| ITM_KS_088 | Klangschrift: Siegelbruch | 0 | – | 0 | – |
+| ITM_KS_089 | Klangschrift: Bannzeichen | 0 | – | 0 | – |
+| ITM_KS_090 | Klangschrift: Spiegelformel | 0 | – | 0 | – |
+| ITM_LURE_AURORAGLASS | Auroraglas | 180 | 180 | 63 | General |
+| ITM_LURE_BELLCHIME | Glockenspiel | 180 | 180 | 63 | General |
+| ITM_LURE_GLYPHTOKEN | Glyphenmünze | 180 | 180 | 63 | General |
+| ITM_LURE_LANTERN | Irrlicht-Laterne | 180 | 180 | 63 | General |
+| ITM_LURE_MIRROR | Spiegelscherbe | 180 | 180 | 63 | General |
+| ITM_LURE_STARCHIME | Sternenglocke | 180 | 180 | 63 | General |
+| ITM_LURE_TUNINGFORK | Lockstimmgabel | 180 | 180 | 63 | General |
+| ITM_LURE_WHISTLE | Pfeifholz | 180 | 180 | 63 | General |
+| ITM_LURE_WINDCHIME | Windspiel | 180 | 180 | 63 | General |
+| ITM_MAT_ASHWOOD | Ascheholz | 45 | 45 | 15 | Material |
+| ITM_MAT_CAVEMUSHROOM | Höhlenpilz | 80 | 80 | 28 | Material |
+| ITM_MAT_CLOUDWOOD | Wolkenholz | 210 | 210 | 73 | Material |
+| ITM_MAT_COPPERORE | Kupfererz | 12 | 15 | 4 | Material |
+| ITM_MAT_CRYSTALMOSS | Kristallmoos | 210 | 210 | 73 | Material |
+| ITM_MAT_DESERTTHORN | Wüstendornholz | 45 | 45 | 15 | Material |
+| ITM_MAT_DORUNSTONE | Dorunstein | 80 | 80 | 28 | Material |
+| ITM_MAT_DRIFTWOOD | Treibholz | 12 | 15 | 4 | Material |
+| ITM_MAT_ELDERWOOD | Altholz | 120 | 120 | 42 | Material |
+| ITM_MAT_EMBERSAND | Glutsand | 37 | 40 | 12 | Material |
+| ITM_MAT_FERNFIBER | Farnfaser | 12 | 15 | 4 | Material |
+| ITM_MAT_FIRELILY | Feuerlilie | 67 | 70 | 23 | Material |
+| ITM_MAT_FOGPEARL | Nebelperle | 37 | 40 | 12 | Material |
+| ITM_MAT_FROSTPINE | Frostkiefer | 45 | 45 | 15 | Material |
+| ITM_MAT_GLACIERQUARTZ | Gletscherquarz | 120 | 120 | 42 | Material |
+| ITM_MAT_GLYPHCRYSTAL | Glyphenkristall | 120 | 120 | 42 | Material |
+| ITM_MAT_GROLLBASALT | Grollbasalt | 37 | 40 | 12 | Material |
+| ITM_MAT_ICEBLOOM | Eisblume | 200 | 200 | 70 | Material |
+| ITM_MAT_KELP | Seetang | 12 | 15 | 4 | Material |
+| ITM_MAT_KHARSIRON | Kharseisen | 25 | 25 | 8 | Material |
+| ITM_MAT_LINDBLOSSOM | Lindblüte | 12 | 15 | 4 | Material |
+| ITM_MAT_MOORWILLOW | Moorweide | 12 | 15 | 4 | Material |
+| ITM_MAT_MOSSPEARL | Moosperle | 18 | 20 | 6 | Material |
+| ITM_MAT_MOUNTAINPINE | Bergkiefer | 25 | 25 | 8 | Material |
+| ITM_MAT_NACRE | Perlmutt | 37 | 40 | 12 | Material |
+| ITM_MAT_OAKWOOD | Eichenholz | 12 | 15 | 4 | Material |
+| ITM_MAT_OASISMINT | Oasenminze | 25 | 25 | 8 | Material |
+| ITM_MAT_OBSIDIAN | Obsidian | 45 | 45 | 15 | Material |
+| ITM_MAT_PEAKGENTIAN | Gipfelenzian | 37 | 40 | 12 | Material |
+| ITM_MAT_PEATCOAL | Torfkohle | 12 | 15 | 4 | Material |
+| ITM_MAT_POLARLICHEN | Polarflechte | 45 | 45 | 15 | Material |
+| ITM_MAT_PRISMORE | Prismaerz | 210 | 210 | 73 | Material |
+| ITM_MAT_QUARTZSHARD | Quarzsplitter | 12 | 15 | 4 | Material |
+| ITM_MAT_RESONANCECRYSTAL | Resonanzkristall | 350 | 350 | 122 | Material |
+| ITM_MAT_RUINVINE | Ruinenrebe | 45 | 45 | 15 | Material |
+| ITM_MAT_SALTCOPPER | Salzkupfer | 45 | 45 | 15 | Material |
+| ITM_MAT_SALTWORT | Salzkraut | 12 | 15 | 4 | Material |
+| ITM_MAT_SILVERORE | Silbererz | 45 | 45 | 15 | Material |
+| ITM_MAT_SKYGLASS | Himmelsglas | 210 | 210 | 73 | Material |
+| ITM_MAT_SLAGSTEEL | Schlackenstahl | 120 | 120 | 42 | Material |
+| ITM_MAT_SOUNDRESIN | Klangharz | 62 | 65 | 21 | Material |
+| ITM_MAT_STARMETAL | Sternmetall | 350 | 350 | 122 | Material |
+| ITM_MAT_SULFURCRYSTAL | Schwefelkristall | 25 | 25 | 8 | Material |
+| ITM_MAT_SUNGLASS | Sonnenglas | 67 | 70 | 23 | Material |
+| ITM_MAT_SWAMPMYRTLE | Sumpfmyrte | 25 | 25 | 8 | Material |
+| ITM_MAT_TINORE | Zinnerz | 12 | 15 | 4 | Material |
+| ITM_MAT_WINDBLOSSOM | Windblüte | 140 | 140 | 49 | Material |
+| ITM_MAT_WISPMOSS | Irrlichtmoos | 112 | 115 | 39 | Material |
+| ITM_SEAL_BASIC | Klangsiegel | 150 | 150 | 52 | General |
+| ITM_SEAL_HEAVY | Erdsiegel | 655 | 655 | 229 | General |
+| ITM_SEAL_MASTER | Meistersiegel | 1.200 | 1.200 | 420 | General |
+| ITM_SEAL_NIGHT | Mondsiegel | 842 | 845 | 294 | General |
+| ITM_SEAL_STAR | Sternensiegel | 0 | – | 0 | – |
+| ITM_SEAL_TUNED | Gestimmtes Siegel | 450 | 450 | 157 | General |
+| ITM_SEAL_TYPE | Klangfarben-Siegel | 675 | 675 | 236 | General |
+| ITM_SEAL_VOICE | Stimmsiegel | 0 | – | 0 | – |
+| ITM_TRAP_CHIME | Klangfalle | 152 | 155 | 53 | General |
+| ITM_TRAP_HOARD | Schatzkiste | 122 | 125 | 42 | General |
+| ITM_TRAP_NET | Ruhenetz | 130 | 130 | 45 | General |
+| ITM_TRAP_POOL | Quellbecken | 130 | 130 | 45 | General |
+| ITM_TRAP_REST | Ruhenest | 160 | 160 | 56 | General |
+| ITM_TRAP_SCENT | Duftfalle | 122 | 125 | 42 | General |
+| ITM_TRAP_SHADE | Schattenzelt | 130 | 130 | 45 | General |
+| ITM_TRAP_WARM | Wärmestein | 130 | 130 | 45 | General |
+
 ---
 
 ## 11. Code
