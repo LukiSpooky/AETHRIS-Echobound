@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K21
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K22
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -1109,3 +1109,40 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 | 062 | Undling | Flut | L027/1 Three | Undfin [Level>=18] | Tank | – |
 | 063 | Undfin | Flut | L027/2 Three | Undrath [Level>=34 & Weather=Rain] | Tank | Schwimmreiten |
 | 064 | Undrath | Flut/Geist | L027/3 Three | – | Tank | Schwimmreiten |
+
+## §91 Arten #065–#096 (LOCKED, K22 · `Data/Echos/Species.csv`)
+
+| # | Name | Typen | Linie/Stufe | Evolution → | Rolle | Reiten |
+|---|---|---|---|---|---|---|
+| 065 | Irrlit | Geist | L028/1 Three | Irrel [Level>=16 & TimeOfDay=Night] | Caster | – |
+| 066 | Irrel | Geist/Licht | L028/2 Three | Irraune [Level>=32]; Sigilaune [Level>=32 & Zone=R03_Z05 & Moon=NewMoon] | Caster | – |
+| 067 | Irraune | Geist/Licht | L028/3 Three | – | Caster | – |
+| 068 | Sigilaune | Arkan/Geist | L028/3 Branch | – | Control | – |
+| 069 | Blossi | Blüte | L029/1 Three | Blossar [Level>=20] | Striker | – |
+| 070 | Blossar | Blüte/Gift | L029/2 Three | Blossmire [Level>=36] | Striker | – |
+| 071 | Blossmire | Blüte/Gift | L029/3 Three | – | Striker | – |
+| 072 | Virmote | Gift | L030/1 Two | Virwyn [Level>=24] | Speed | – |
+| 073 | Virwyn | Gift/Sturm | L030/2 Two | – | Speed | – |
+| 074 | Blightkin | Gift | L031/1 Two | Blightar [Level>=26] | Control | – |
+| 075 | Blightar | Gift/Flut | L031/2 Two | – | Control | – |
+| 076 | Brinlet | Flut | L032/1 Two | Brinshell [Level>=28] | Tank | – |
+| 077 | Brinshell | Flut/Blüte | L032/2 Two | – | Tank | Bodenreiten |
+| 078 | Umbrling | Leere | L033/1 Two | Umbracoil [Level>=28 & TimeOfDay=Night] | Caster | – |
+| 079 | Umbracoil | Leere/Flut | L033/2 Two | – | Caster | – |
+| 080 | Weidlit | Blüte | L034/1 Two | Weiduna [BondTier>=3 & TimeOfDay=Dusk] | Support | – |
+| 081 | Weiduna | Geist/Blüte | L034/2 Two | – | Support | – |
+| 082 | Morhaw | Sturm/Flut | L035/1 Single | – | Striker | Flugreiten |
+| 083 | Humbog | Klang/Gift | L036/1 Single | – | Support | – |
+| 084 | Torfgor | Stein/Blüte | L037/1 Single | – | Tank | – |
+| 085 | Marlit | Flut | L038/1 Three | Marwyn [Level>=20] | Speed | – |
+| 086 | Marwyn | Flut | L038/2 Three | Maraune [Level>=36 & Weather=Thunderstorm] | Speed | Schwimmreiten |
+| 087 | Maraune | Flut/Sturm | L038/3 Three | – | Speed | Flugreiten |
+| 088 | Tidling | Flut | L039/1 Three | Tidel [Level>=18] | Control | – |
+| 089 | Tidel | Flut | L039/2 Three | Tidrex [Level>=34] | Control | Schwimmreiten |
+| 090 | Tidrex | Flut/Arkan | L039/3 Three | – | Control | Schwimmreiten |
+| 091 | Brikin | Sturm | L040/1 Three | Brisel [Level>=18] | Speed | – |
+| 092 | Brisel | Sturm/Flut | L040/2 Three | Brision [Level>=36] | Speed | – |
+| 093 | Brision | Sturm/Flut | L040/3 Three | – | Speed | Flugreiten |
+| 094 | Aquapip | Flut | L041/1 Three | Aquafin [Level>=16] | Caster | – |
+| 095 | Aquafin | Flut/Licht | L041/2 Three | Aquadral [Level>=32]; Mystdral [Level>=32 & Moon=NewMoon & Zone=R06_Z05] | Caster | – |
+| 096 | Aquadral | Flut/Licht | L041/3 Three | – | Caster | Schwimmreiten |

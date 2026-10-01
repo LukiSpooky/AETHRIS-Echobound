@@ -1,6 +1,6 @@
 # 00 · Kapitelplan – AETHRIS: Echobound
 
-**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K21 abgeschlossen
+**Owner:** Game Director · **Pflege:** Producer / QA Lead · **Stand:** K22 abgeschlossen
 
 Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel baut auf den vorherigen auf und darf nur Entscheidungen verwenden, die in [`CANON.md`](CANON.md) eingetragen sind (oder es trägt neue ein).
 
@@ -49,7 +49,7 @@ Das Projekt ist in **68 Kapitel** in **12 Teilen** gegliedert. Jedes Kapitel bau
 | K19 | Evolutionssystem | RPG Systems Designer | K18, K14, K15 | ✅ |
 | K20 | Kreaturenkatalog 1 (#001–#032) | Creature Team | K19 | ✅ |
 | K21 | Kreaturenkatalog 2 (#033–#064) | Creature Team | K20 | ✅ |
-| K22 | Kreaturenkatalog 3 (#065–#096) | Creature Team | K21 | ⬜ |
+| K22 | Kreaturenkatalog 3 (#065–#096) | Creature Team | K21 | ✅ |
 | K23 | Kreaturenkatalog 4 (#097–#128) | Creature Team | K22 | ⬜ |
 | K24 | Kreaturenkatalog 5 (#129–#160) | Creature Team | K23 | ⬜ |
 | K25 | Kreaturenkatalog 6 (#161–#192) | Creature Team | K24 | ⬜ |
