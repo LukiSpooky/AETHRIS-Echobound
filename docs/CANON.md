@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K42
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K43
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -374,6 +374,9 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-155 | Keine Sol aus Wildkämpfen | K42 |
 | ADR-156 | Kein Spielermarkt, Sol nicht tauschbar | K42 |
 | ADR-157 | Deterministische Tagespreise | K42 |
+| ADR-158 | Kämpfe geben keine Wärter-EP | K43 |
+| ADR-159 | Skilltree ohne rohe Kampfkraft | K43 |
+| ADR-160 | 52 von 88 Skillkosten erreichbar | K43 |
 
 ## §11 Change Requests
 
@@ -381,6 +384,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 |---|---|---|---|---|---|
 | CR-001 | K14 | §17 „Zeit vorspulen … Wetter wird neu gewürfelt“ | Präzisiert: Zeit vorspulen springt im **deterministischen Wetterfahrplan** (§61) in einen späteren Block – neues Wetter, aber reproduzierbar; Laden eines Saves ändert das Wetter nicht | Determinismus, Koop-Synchronität, kein Save-Scumming (ADR-066) | Game Director, Tech Director |
 | CR-002 | K36 | §29/K06 §5 `IBondingService::PreviewBondChancePermille` | Ersetzt durch `PreviewBond` → `FBondPreview` (Resonanz, Schwelle, Fenster, Versuche) | Resonanzbindung ist deterministisch (kein Prozentwurf, DR-03/DR-07) | Game Director, Tech Director |
+| CR-003 | K43 | K02 §5 „Wärterrang-Aufstieg 45–90 min (Story-Phase)“ | Präzisiert: 45–90 min in Prolog/Akt I, ≤ 150 min in Akt II/III | 40 Ränge über ~90 h; Meilenstein-Charakter der Ränge, gefühlter Fortschritt über Echo-Level/Bindung/Kodex | Game Director |
 
 ## §12 Offene Punkte (PROVISIONAL-Tracker)
 
@@ -399,7 +403,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q11 | ~~Bewegungs-/Ausdauer-/Gleiter-Tuning (Startwerte K02 §4.1)~~ ✅ K40 §2: Bewegung/Ausdauer/Gleiter final (TraversalTuning.csv) | K40 |
 | Q12 | ~~Bindungs-Timingfenster (Startwerte K02 §4.2)~~ ✅ K36 §5: Gut 160–400 ms nach Resonanz × Temperament × Siegel, Perfekt 25 % (min. 60 ms) | K36 |
 | Q13 | Arena-Stufentabelle (Startwerte K02 §9.2) | K63 |
-| Q14 | Wärterrang-EP-Kurve (Startwerte K02 §13.2) | K43/K63 |
+| Q14 | ~~Wärterrang-EP-Kurve (Startwerte K02 §13.2)~~ ✅ K43 §3: EP-Kurve max(300(R−1), 154(R−1)^1,94) | K43/K63 |
 
 ---
 
@@ -1704,3 +1708,19 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §163 Händler (LOCKED, K42 §7–§10 · `Data/Economy/Merchants.csv`)
 
 - 54 Händler, Kategorien General/Heal/Material/Food/Gear/Rare/Faction/Tutor/Scripts mit Freischaltungen; Tagespreise ±10 % (Fork(4) + Spieltag), Heimat ×0,9 / fremd ×1,15, Ereignisse (Resonanzsturm +10 %); Fraktionsrabatte 5/10/15 % (höchster gilt); kein Spielermarkt, Sol nicht tauschbar, Geschenke ≤ 50 Ressourcen/Tag.
+
+## §164 Wärterrang & EP-Kurve (LOCKED, K43 §2–§3 – löst Q14 · `Data/Progression/WardenRank.csv`)
+
+- EP(Rang) = max(300 × (R−1), rund100(154 × (R−1)^1,94)); Rang 40 = ca. 190.000 EP. Wärter-EP aus Quests, Kodex, Fragmenten, Entdeckungen, Arenen, Sonstigem – nicht aus Kämpfen. Finale ~Rang 29; Rang 40 nach ~90 h.
+
+## §165 Freischaltungen & Chorgröße (LOCKED, K43 §4 – bestätigt CANON §15)
+
+- Chor 2/3/4/5/6 bei Rang 1/2/5/10/14; Duo 5, Trio 10, Zucht 14, Aufträge III 18, Raid 22, Tutoren II 25, Ranked 28, Tiefenresonanz-Meister 32, Hain V 36, Titel 40.
+
+## §166 Skilltree (LOCKED, K43 §5 · `Data/Progression/Skills.csv`)
+
+- 4 Äste × 12 Fähigkeiten (Bindung, Überleben, Forschung, Kampf), Tiers 0/5/10/15 Punkte im Ast, Kosten 1–3 (Σ 88); keine rohe Kampfkraft; im Ranked nur Informations-/Komfort-Skills aktiv.
+
+## §167 Skillpunkte & Neustimmung (LOCKED, K43 §6)
+
+- 52 Punkte (39 Ränge + 4 Rangboni bei 10/20/30/40 + 4 Kodex-Meilensteine + 5 Akkord-Paare); Neustimmung: erste gratis, danach 500 ◎ × ⌈Rang/10⌉; Teil-Neustimmung 1/5.

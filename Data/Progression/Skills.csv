@@ -1,0 +1,50 @@
+# Skilltree (K43 §4): 4 Äste × 12 Fähigkeiten. Tier = benötigte Punkte im Ast (0/5/10/15). Ranked = wirkt im Ranked (nur Komfort/Information, DR-21).
+Name,Branch,DisplayName,Tier,Cost,Requires,Effect,Ranked
+SK_BND_01,Bindung,Leiser Schritt,0,1,,Entdeckungsradius wilder Echos −10 %,–
+SK_BND_02,Bindung,Köderkunde,0,1,,Lieblingsköder einer Art schon ab Kodex-Stufe 1 sichtbar,–
+SK_BND_03,Bindung,Ruhige Hand,0,2,,Bindungs-Gut-Fenster ×1,05,–
+SK_BND_04,Bindung,Einfühlung,5,1,,Bindungswert und Stimmung als Zahl sichtbar,ja
+SK_BND_05,Bindung,Fallenbau,5,2,SK_BND_01,Fallen wirken 20 statt 10 Spielminuten; 2 Fallen je Bindung erlaubt (nur eine wirkt auf R),–
+SK_BND_06,Bindung,Siegelpflege,5,2,,Jedes 5. Siegel wird beim Anschlag nicht verbraucht (Zähler sichtbar),–
+SK_BND_07,Bindung,Herdenruf,10,2,SK_BND_05,Ruhenetz: Bindung eines Herdenechos auch vor dem letzten möglich (1× je Kampf),–
+SK_BND_08,Bindung,Stimmlage,10,2,SK_BND_03,Perfekt-Fenster +15 ms,–
+SK_BND_09,Bindung,Seelenband,10,2,SK_BND_04,Bindungszuwachs aller Echos +10 %,–
+SK_BND_10,Bindung,Hainpflege,15,2,,Hain-Ertrag +50 %; Stimmung im Hain +10,–
+SK_BND_11,Bindung,Erbkunde,15,3,SK_BND_09,Allele im Kodex sichtbar (ab Kodex 4); Zuchtvorschau zeigt Loci,ja
+SK_BND_12,Bindung,Morphkunde,15,3,SK_BND_11,Morph-Chance ×2 (K38),–
+SK_SUR_01,Überleben,Ausdauer I,0,1,,Wärter-Ausdauer +10,–
+SK_SUR_02,Überleben,Sammler,0,1,,+1 Ertrag je Sammelknoten (Stufe I–III),–
+SK_SUR_03,Überleben,Feldkoch,0,2,,Gerichte wirken 2 Spieltage,–
+SK_SUR_04,Überleben,Wetterkunde I,5,1,,Vorhersage: nächster Block aller besuchten Regionen (CANON §63 Stufe 2),–
+SK_SUR_05,Überleben,Kletterprofi,5,2,SK_SUR_01,Klettern verbraucht 25 % weniger Ausdauer,–
+SK_SUR_06,Überleben,Reitkunst,5,2,,Reit-Ausdauer +20 %,–
+SK_SUR_07,Überleben,Ausdauer II,10,2,SK_SUR_05,Wärter-Ausdauer +10,–
+SK_SUR_08,Überleben,Gleitkunst,10,2,,Gleiter-Sinkrate −0,15 m/s (wirkt wie halbe Stufe),–
+SK_SUR_09,Überleben,Wetterkunde II,10,2,SK_SUR_04,Vorhersage: 2 Blöcke + seltene Bedingungen (CANON §63 Stufe 3),ja
+SK_SUR_10,Überleben,Handwerk,15,2,SK_SUR_02,Rezepte −10 % Zutaten (abgerundet; mindestens 1),–
+SK_SUR_11,Überleben,Wegfinder,15,2,,Schnellreise auch von jedem Klangbrunnen aus,–
+SK_SUR_12,Überleben,Nachtauge,15,2,,Nachtsicht ohne Laterne (Radius 15 m),–
+SK_RES_01,Forschung,Resonanzsinn I,0,1,,Resonanzsinn-Reichweite +30 m,–
+SK_RES_02,Forschung,Beobachter,0,2,,Beobachtung dauert 2 statt 3 s (K39),–
+SK_RES_03,Forschung,Spurenleser,0,1,,Spuren bleiben 20 statt 10 Spielminuten sichtbar,–
+SK_RES_04,Forschung,Typenkunde,5,2,,Effektivitätsvorschau schon ab Kodex-Stufe 1,ja
+SK_RES_05,Forschung,Resonanzsinn II,5,2,SK_RES_01,Reichweite +30 m,–
+SK_RES_06,Forschung,Fotograf,5,1,,Fotobewertung Komposition +5,–
+SK_RES_07,Forschung,Fragmentlauscher,10,2,SK_RES_05,Klangfragmente ab 60 m spürbar,–
+SK_RES_08,Forschung,Evolutionsahnung,10,2,,Evolutionsahnungen schon ab Kodex-Stufe 2,ja
+SK_RES_09,Forschung,Glyphenleser,10,2,,Glyphe-Pfad-Tore ohne Feldfähigkeit lösbar,–
+SK_RES_10,Forschung,Resonanzsinn III,15,2,SK_RES_05,Reichweite +30 m (gesamt 150 m),–
+SK_RES_11,Forschung,Kodexgelehrte,15,2,SK_RES_02,Kodex-Wärter-EP +25 %,–
+SK_RES_12,Forschung,Archivkunde,15,3,SK_RES_07,Klangfragmente oberhalb der Wahrheitsebene zeigen ein unverzerrtes Wort (Hinweis-Modus),–
+SK_CMB_01,Kampf,Taktiker,0,1,,Zeitleiste zeigt 12 statt 8 Züge,ja
+SK_CMB_02,Kampf,Erste Hilfe,0,1,,Items im Kampf Zeitkosten 40 statt 60,–
+SK_CMB_03,Kampf,Lehrmeister,0,2,,Reserve-Echos erhalten 75 % statt 50 % EP,–
+SK_CMB_04,Kampf,Wechselmeister,5,2,,Wechsel kostet 50 statt 60 Zeit,–
+SK_CMB_05,Kampf,Harmonieführung,5,2,,Start-Harmonie +10 (zählt zur Synergie-Grenze 30),–
+SK_CMB_06,Kampf,Konterkenntnis,5,1,SK_CMB_01,Passive der Gegner ab Kodex 2 sichtbar,ja
+SK_CMB_07,Kampf,Kombokunde,10,2,SK_CMB_05,Kombo-Fenster +10 Ticks,–
+SK_CMB_08,Kampf,Feldstratege,10,2,,Eigene Terrains dauern 1 Runde länger,–
+SK_CMB_09,Kampf,Schliffmeister,10,2,SK_CMB_03,Schliff-Training +2 Punkte,–
+SK_CMB_10,Kampf,Ruhiger Puls,15,2,SK_CMB_07,Crescendo-Kosten −5,–
+SK_CMB_11,Kampf,Vorausschau,15,2,SK_CMB_06,Absicht der KI-Gegner vor ihrem Zug sichtbar (nicht PvP),–
+SK_CMB_12,Kampf,Chorleiter,15,3,SK_CMB_05,3 Chor-Akkorde gleichzeitig (Grenze 30 bleibt),–
