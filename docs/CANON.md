@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K30
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K31
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -323,6 +323,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-104 | Harmoniekosten aus dem Machtbudget (60–90) | K30 |
 | ADR-105 | Feldfähigkeiten statt Schlüssel-Items; Pfad-Tore mit ≥ 2 Lösungen | K30 |
 | ADR-106 | Reitarten bleiben Art-Eigenschaft | K30 |
+| ADR-107 | Verzögerung = ⌊Kosten × 300/(GES + 200)⌋, 100 Ticks = Standardzug | K31 |
+| ADR-108 | Fremdverzögerungs-Deckel 100 Ticks (Anti-Lock) | K31 |
+| ADR-109 | Priorität als Vorgriff auf der Zeitleiste | K31 |
+| ADR-110 | Status-Dauern in eigenen Zügen, Feld-Dauern in Runden | K31 |
+| ADR-111 | Flucht ohne Zufall über Rückzugsmarker | K31 |
 
 ## §11 Change Requests
 
@@ -334,7 +339,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 
 | # | Punkt | Ziel-Kapitel |
 |---|---|---|
-| Q1 | Zeitleisten-Formel, Tick-Größe | K31 |
+| Q1 | ~~Zeitleisten-Formel, Tick-Größe~~ ✅ K31 §3: Verzögerung = ⌊Kosten×300/(GES+200)⌋, 100 Ticks = Standardzug | K31 |
 | Q2 | ~~Effektivitätsmultiplikatoren~~ ✅ K17 §2 | K17 |
 | Q3 | Genom: Allelanzahl, Morph-Wahrscheinlichkeiten | K38 |
 | Q4 | Koop: geteilter Story-Fortschritt? | K60 |
@@ -1410,3 +1415,29 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §108 Fähigkeitenbestand (LOCKED, K30 §10)
 
 - 330 Fähigkeiten: 180 aktiv · 90 passiv (inkl. 16 Feldklänge) · 30 Crescendo · 30 Feld; `tools/gen_abilities.py validate --final` und `tools/gen_learnsets.py validate` ohne Verstöße.
+
+## §109 Zeiteinheiten (LOCKED, K31 §2 – löst Q1)
+
+- **Tick** ganzzahlig; 100 Ticks = Standardzug (Kosten 100) bei GES 100. **Zug** = Handlung eines Echos (Status-Dauern in eigenen Zügen). **Runde** = 100 Ticks globaler Zeit (Terrain/Wetter/Arena-Mechaniken).
+- Kampf-Seed aus `Fork(5)` der Weltsaat + Begegnungs-ID; PvP-Seed vom Server; Replays = Seed + Eingaben.
+
+## §110 Verzögerungsformel (LOCKED, K31 §3 · `tools/ref/aethris_combat.py`, `ResonanceTimeline.h`)
+
+- Verzögerung = max(10, ⌊Kosten_eff × 300 / (GES_eff + 200)⌋); Kosten_eff = Kosten × 1,3 (Verlangsamt) × 1,4 (Ungehorsam) + 20 (Verflucht); GES_eff mit Stufenfaktor.
+
+## §111 Zugablauf & Modifikatoren (LOCKED, K31 §4–§6)
+
+- Startzug = Verzögerung(100) × 850–1000 ‰ (Hinterhalt −200 ‰). Zugablauf: TurnBegin → Status-Tick → Passive → Sonderfälle → Wahl → Auflösung → Commit → TurnEnd.
+- Fremdverzögerung (Delay, Erschüttert +50, Starre +100) ≤ **100 Ticks** zwischen zwei eigenen Zügen; Haste frühestens Jetzt + 1; Items Zeitkosten 60 (nicht Ranked).
+
+## §112 Vorgriff, Ankündigung, Gleichstand (LOCKED, K31 §7–§9)
+
+- **Vorgriff:** Prioritätsfähigkeit bis 25 Ticks × Stufe vor dem eigenen Zug, zu Beginn eines fremden Zuges, 1× je Zyklus; Folgezug ab Originalposition.
+- **Ankündigung** (Charge, Crescendo): Marker bei Jetzt + Verzögerung(Kosten); verschiebbar (Deckel), Abbruch durch Starre, Verstummt (Sound), Verklingen; Nachklang 50; Ankündigungen lösen vor normalen Zügen desselben Ticks auf.
+- **Gleichstand:** GES_eff ↓ → Seite, die zuletzt nicht handelte → PCG; PvP/Koop planen gleichzeitig bei gleichem Tick.
+
+## §113 Wechsel, Flucht, Kampfende (LOCKED, K31 §10–§11)
+
+- Wechsel: Zeitkosten 60, Eingang bei Jetzt + Verzögerung(60); Ersatz nach Verklingen bei 500 ‰ der Startverzögerung; Stufen/Status des ausgehenden Echos zurückgesetzt.
+- Flucht per Rückzugsmarker (Verzögerung 100 des schnellsten eigenen Echos), nicht gegen Arena/Boss/PvP; kein Zufall.
+- Formate: Duell 1+5, Duo 2+4, Trio 3+3, Raid (K35); Duell: Flächenschaden ×0,8 (K32).

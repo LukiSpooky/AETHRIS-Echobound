@@ -9,6 +9,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools"))
 import gen_abilities as ga
 import gen_learnsets as gl
+sys.path.insert(0, str(ROOT / "tools/ref"))
+import aethris_combat as ac
 
 
 def table_csv(path, cols=None):
@@ -25,6 +27,11 @@ def repl(m):
         return ga.render(parts[1], parts[2] if len(parts) > 2 else None)
     if parts[0] == "csv":
         return table_csv(parts[1], parts[2] if len(parts) > 2 else None)
+    if parts[0] == "file":
+        return {"combat_report_speed": ac.report_speed, "combat_report_levels": ac.report_levels, "combat_sample_log": ac.sample_log, "combat_matrix": ac.report_matrix}[parts[1]]()
+    if parts[0] == "py":   # py MODUL FUNKTION [ARGS]
+        import importlib
+        return str(getattr(importlib.import_module(parts[1]), parts[2])(*parts[3:]))
     if parts[0] == "overview_k30":
         return gl.overview_k30()
     if parts[0] == "learnset":
