@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K51
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K52
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -412,6 +412,11 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-193 | Ordenskette „Hüter der Pause“ als Pilgerweg, Einstieg Velnox-Questreihe | K51 |
 | ADR-194 | „Letzte Bitten“ als Atemzug vor dem Finale | K51 |
 | ADR-195 | Nachhall-Quests mit gleichem Ablauf je Ende | K51 |
+| ADR-196 | Räuber nehmen Klang (Klangbiss), kein Tod | K52 |
+| ADR-197 | Populationen mit Mindestbestand, keine Ausrottung | K52 |
+| ADR-198 | Deterministische Spawnauswahl über Fork(2) | K52 |
+| ADR-199 | Ökologie-Fragmente generiert, überschreibbar | K52 |
+| ADR-200 | Vier Sim-Stufen (Actor, MassNear, MassFar, Statistisch) | K52 |
 
 ## §11 Change Requests
 
@@ -1873,3 +1878,23 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §195 Orte der Pause (LOCKED, K51 §7)
 
 - FQ_F05_02 „Hüter der Pause“ (Nachhall): Gletscherspalte (SQ_151), Kapelle Archontenviertel (SQ_170), Säulenlücken Thae'Luun (SQ_171), Thronsaal (SQ_172), Resonanzkammer (SQ_190), Kronenwerft (SQ_210) – Rückkehrorte mit getakteter Stille; SQ_210 startet „Die Pause hören“ (Velnox-Bindung, K62). Titel doppelt erreichbar (Kette + Ordensrang 6) → goldene Abzeichen-Variante.
+
+## §196 Ökologische Rollen, Fragment, Nahrungsnetz (LOCKED, K52 §2–§4 · `Data/Ecology/EcologyFragments.csv`, `FoodWeb.csv`, `tools/ref/aethris_ecology.py`)
+
+- Rollen aus Merkmalen: Primärverbraucher (Grazer/Pollinator/Filterer/Lithophage/Sunbather/Thermal), Räuber (Hunter/Ambusher), Klangsammler (Scavenger), Allesverwerter. Ökologie-Fragment (`UEchoEcologyFragment`, GF_Monsters) für 187 Wildarten generiert, überschreibbar (ADR-199). Räuber nehmen per **Klangbiss** Resonanz; Beute erschöpft, erholt nach 1 Spielstunde (ADR-196). Beute: gleiche/Nachbarzone, ≤ 1 Größenklasse größer, ≥ 1 gemeinsame aktive Stunde, andere Linie, bis 3 Arten. Ael'Dorun: Leere-Klangsammler an der Spitze.
+
+## §197 Spawn (LOCKED, K52 §5)
+
+- Zellen 128 m, Takt 10 Spielminuten, 4–9 Gruppen je Zelle, Mindestabstand 60 m außer Sicht. Gewicht = ⌊Seltenheit × max(80, Aktivität) × Wetter × Mond × Bestand⌋ (je Stufe /1000; Bestand = N/K, ≥ 200 ‰). Höhlen-Regel R09: Nachtaktive ganztags ≥ 500 ‰. Auswahl deterministisch: Fork(2) → Zone → (Tag, Stunde, Zelle, Takt) (ADR-198). `Aethris::Ecology::SpawnWeight` (GF_AI).
+
+## §198 Population (LOCKED, K52 §6 · `PopulationTuning.csv`)
+
+- Je (Zone, Art) Bestand N; Tagesrechnung: logistischer Zuwachs (≥ 1 solange N < K), Klangbiss-Verdrängung, Räuberhunger, Bindung −1/Freilassung +1; N ∈ [Floor, 1,2 K]. K = BaseCapacity (24/12/5/2) × Größenfaktor; Floor 25/25/40/50 % (ADR-197). Stillezone: K × 0,3. Nicht geladene Regionen rechnen ≤ 64 Tage nach; Save `World.Population`.
+
+## §199 Gruppen, Zustände, Wahrnehmung (LOCKED, K52 §7–§9 · `GroupBehaviors.csv`, `PerceptionProfiles.csv`)
+
+- Herde 4–10 (Alpha), Rudel 3–6, Schwarm 12–40, Familie 2–4, Einzelgänger, lose Gruppe 1–3; ganzzahlige Steuerung (Separation/Kohäsion/Ausrichtung/Anführer/Heim). Zustände: Ruhen, Nahrung, Wandern, Sozial, Jagen, Fliehen, Neugier, Revier, Schutz suchen, Zug, Verstummt. Spielergeräusch: Schleichen 4 · Gehen 10 · Laufen 20 · Reiten 30 · Ruf 40 · Kampf 60 m. Angriffe nach ≥ 1,5 s Drohgebärde (DR-14).
+
+## §200 Sim-LOD (LOCKED, K52 §10)
+
+- Actor < 150 m/Interaktion (PS5 40 / Switch 2 16) · MassNear 150–500 m, 4 Hz (400/120) · MassFar bis Streaming-Grenze, 1 Hz (1.500/400) · Statistisch je (Zone, Art), Tagestakt. Hysterese 30 m, Actor-Pool 8 je Archetyp. Ökologie-Budget ≤ 1,6 ms (PS5) / 2,2 ms (Switch 2). Prozessoren Spawn, Perception, GroupSteering, Behavior, LOD, Population (ADR-200).

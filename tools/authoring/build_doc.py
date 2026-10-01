@@ -19,6 +19,7 @@ import aethris_genetics as agen
 import aethris_traversal as atr
 import aethris_economy as aeco
 import aethris_progression as aprog
+import aethris_ecology as aeco_l
 sys.path.insert(0, str(ROOT / "tools/authoring"))
 import research_k39 as rk39
 import crafting_k41 as ck41

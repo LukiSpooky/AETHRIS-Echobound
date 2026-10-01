@@ -1,0 +1,8 @@
+# Gruppenverhalten (K52 §5). Abstände in cm, Gewichte in Promille (Steuerkräfte), Ganzzahl. LOD = höchste Sim-Stufe, in der die Gruppe als Einheit simuliert wird.
+Name,DisplayName,SizeMin,SizeMax,Leader,SeparationCm,CohesionPermille,AlignmentPermille,SeparationPermille,WanderRadiusM,FleeMode,Notes
+Herd,Herde,4,10,Alpha,180,600,500,700,120,Gemeinsam fliehen; Alpha deckt,Ein Alpha je Herde (Bindungsschwelle 600); weidet in Formation
+Pack,Rudel,3,6,Leittier,250,500,400,600,250,Rückzug nach Leittier,Jagt koordiniert (Einkreisen); Leittier ist Alpha bei Rang ≥ 5 der Zone
+Swarm,Schwarm,12,40,–,60,800,800,900,60,Schwarm zerstreut sich und sammelt sich nach 8 s,Mass-Schwarm; nur Rand-Individuen als Actor bindbar
+FamilyGroup,Familienverband,2,4,Elterntier,120,700,300,600,60,Jungtiere zuerst,Elterntier verteidigt (Guardian-Verhalten)
+Solitary,Einzelgänger,1,1,–,0,0,0,0,300,Einzelflucht,Paarung nur bei Vollmond (Weltereignis-Option)
+Loose,Lose Gruppe,1,3,–,200,300,200,500,100,Einzelflucht,Standard für Arten ohne Gruppenmerkmal

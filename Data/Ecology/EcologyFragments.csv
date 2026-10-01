@@ -1,0 +1,189 @@
+# Ökologie-Fragment je Wildart (K52 §3, generiert von tools/ref/aethris_ecology.py; CD-09).
+Name,Role,Food,SleepSite,Reproduction,Group,Capacity,Floor
+ECHO_001,Allesverwerter,Pflanzensäfte,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),FamilyGroup,2,1
+ECHO_004,Allesverwerter,Mineralsalze,Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,2,1
+ECHO_007,Allesverwerter,Insekten im Wind,Horst oder Felsvorsprung,Gelege im Nest,Loose,3,1
+ECHO_010,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,31,7
+ECHO_011,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Baumkrone oder Felswand,Resonanzkeim (Wurf von 1–3),Loose,12,3
+ECHO_012,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Baumkrone oder Felswand,Resonanzkeim (Wurf von 1–3),Loose,3,1
+ECHO_014,Primärverbraucher,"Gräser, Moos, Blätter",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Herd,31,7
+ECHO_015,Primärverbraucher,"Gräser, Moos, Blätter",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Herd,7,1
+ECHO_018,Primärverbraucher,"Gräser, Moos, Blätter",Geschützte Stelle im Habitat,Eier in Kammern,Loose,36,9
+ECHO_019,Primärverbraucher,"Nektar, Pollen, Tau",Horst oder Felsvorsprung,Eier in Kammern,Loose,15,3
+ECHO_020,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Klangteilung,Solitary,5,2
+ECHO_021,Allesverwerter,"Algen, Plankton",Unterwasser-Höhle,Laich im Flachwasser,FamilyGroup,36,9
+ECHO_022,Allesverwerter,"Algen, Plankton",Unterwasser-Höhle,Laich im Flachwasser,Loose,12,3
+ECHO_023,Allesverwerter,"Pilze, Moder",Getarnt an Ort und Stelle,Ableger,Loose,36,9
+ECHO_024,Allesverwerter,"Pilze, Moder",Getarnt an Ort und Stelle,Ableger,Loose,6,2
+ECHO_025,Allesverwerter,Insekten im Wind,Horst oder Felsvorsprung,Klangteilung im Schwarm,Swarm,36,9
+ECHO_026,Allesverwerter,Insekten im Wind,Horst oder Felsvorsprung,Klangteilung im Schwarm,Swarm,15,3
+ECHO_027,Räuber,Klangbiss aus dem Hinterhalt,Getarnt an Ort und Stelle,Resonanzkeim (Wurf von 1–3),Solitary,15,3
+ECHO_028,Räuber,Klangbiss aus dem Hinterhalt,Getarnt an Ort und Stelle,Resonanzkeim (Wurf von 1–3),Loose,5,2
+ECHO_029,Allesverwerter,Mineralsalze,Bau im Boden,Gelege im Sand oder Schlamm,Loose,31,7
+ECHO_031,Allesverwerter,Erzstaub,Geschützte Stelle im Habitat,Eier in Kammern,Loose,15,3
+ECHO_032,Primärverbraucher,"Wärme (Lava, Quellen)","Warmer Stein, Quelle",Resonanzkeim (Wurf von 1–3),Loose,6,2
+ECHO_033,Allesverwerter,Mineralsalze,Baumkrone oder Felswand,Eier in Kammern,Loose,36,9
+ECHO_034,Allesverwerter,Mineralsalze,Baumkrone oder Felswand,Eier in Kammern,Loose,7,1
+ECHO_037,Allesverwerter,Gesteinsbrocken,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,15,3
+ECHO_038,Allesverwerter,Gesteinsbrocken,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,5,2
+ECHO_040,Primärverbraucher,"Erz, Kristall, Schlacke",Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,31,7
+ECHO_041,Primärverbraucher,"Erz, Kristall, Schlacke",Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,12,3
+ECHO_043,Allesverwerter,Insekten im Wind,Nest,Gelege im Nest,Loose,36,9
+ECHO_044,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Horst oder Felsvorsprung,Gelege im Nest,Loose,12,3
+ECHO_046,Allesverwerter,Mineralsalze,Bau im Boden,Resonanzkeim (Wurf von 1–3),Herd,31,7
+ECHO_047,Allesverwerter,Mineralsalze,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Herd,12,3
+ECHO_048,Allesverwerter,Mineralsalze,Unterwasser-Höhle,Gelege im Sand oder Schlamm,Loose,15,3
+ECHO_049,Allesverwerter,Mineralsalze,Unterwasser-Höhle,Gelege im Sand oder Schlamm,Loose,3,1
+ECHO_050,Allesverwerter,Eisflechten,Getarnt an Ort und Stelle,Resonanzkeim (Wurf von 1–3),FamilyGroup,31,7
+ECHO_051,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Getarnt an Ort und Stelle,Resonanzkeim (Wurf von 1–3),Solitary,5,2
+ECHO_052,Primärverbraucher,"Erz, Kristall, Schlacke",Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,15,3
+ECHO_053,Allesverwerter,Kristallstaub,Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,5,2
+ECHO_054,Primärverbraucher,"Wärme (Lava, Quellen); Licht und Wärme","Warmer Stein, Quelle",Laich im Flachwasser,Loose,18,4
+ECHO_055,Primärverbraucher,Licht und Wärme,Geschützte Stelle im Habitat,Laich im Flachwasser,Solitary,5,2
+ECHO_056,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Klangteilung,Loose,5,2
+ECHO_057,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Horst oder Felsvorsprung,Gelege im Nest,Swarm,15,3
+ECHO_058,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Solitary,5,2
+ECHO_059,Allesverwerter,"Pilze, Moder",Geschützte Stelle im Habitat,Laich im Flachwasser,FamilyGroup,36,9
+ECHO_060,Räuber,Klangbiss aus dem Hinterhalt,Geschützte Stelle im Habitat,Laich im Flachwasser,Loose,15,3
+ECHO_062,Klangsammler,"Klangreste erschöpfter Echos, Abfälle",Unterwasser-Höhle,Laich,Loose,36,9
+ECHO_063,Allesverwerter,"Algen, Plankton",Unterwasser-Höhle,Laich,Loose,12,3
+ECHO_065,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Klangteilung,Loose,36,9
+ECHO_066,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Klangteilung,Loose,15,3
+ECHO_069,Räuber,Klangbiss aus dem Hinterhalt; Licht und Wärme,Getarnt an Ort und Stelle,Ableger,Loose,36,9
+ECHO_070,Räuber,Klangbiss aus dem Hinterhalt,Getarnt an Ort und Stelle,Ableger,Loose,15,3
+ECHO_072,Allesverwerter,"Pilze, Moder",Horst oder Felsvorsprung,Klangteilung im Schwarm,Swarm,36,9
+ECHO_073,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Horst oder Felsvorsprung,Klangteilung im Schwarm,Swarm,15,3
+ECHO_074,Räuber,Klangbiss aus dem Hinterhalt,Getarnt an Ort und Stelle,Laich in Felsspalten,Loose,15,3
+ECHO_075,Räuber,Klangbiss aus dem Hinterhalt,Geschützte Stelle im Habitat,Laich in Felsspalten,Loose,5,2
+ECHO_076,Primärverbraucher,Licht und Wärme,Unterwasser-Höhle,Gelege im Sand oder Schlamm,Loose,31,7
+ECHO_077,Primärverbraucher,Licht und Wärme,Unterwasser-Höhle,Gelege im Sand oder Schlamm,Loose,7,1
+ECHO_078,Räuber,Klangbiss aus dem Hinterhalt,Unterwasser-Höhle,Resonanzkeim (Wurf von 1–3),Loose,15,3
+ECHO_079,Räuber,Klangbiss aus dem Hinterhalt,Unterwasser-Höhle,Resonanzkeim (Wurf von 1–3),Solitary,5,2
+ECHO_080,Allesverwerter,Pflanzensäfte,Geschützte Stelle im Habitat,Ableger,Loose,18,4
+ECHO_082,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Horst oder Felsvorsprung,Gelege im Nest,Solitary,7,1
+ECHO_083,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Geschützte Stelle im Habitat,Laich im Flachwasser,Loose,12,3
+ECHO_084,Allesverwerter,Mineralsalze,Getarnt an Ort und Stelle,Resonanzkeim aus Material,Loose,3,1
+ECHO_085,Primärverbraucher,Schwebstoffe aus Wasser oder Luft,Unterwasser-Höhle,Resonanzkeim (Wurf von 1–3),Loose,24,6
+ECHO_086,Allesverwerter,"Algen, Plankton",Unterwasser-Höhle,Resonanzkeim (Wurf von 1–3),Loose,12,3
+ECHO_088,Allesverwerter,"Algen, Plankton",Getarnt an Ort und Stelle,Laich in Felsspalten,Loose,31,7
+ECHO_089,Allesverwerter,"Algen, Plankton",Getarnt an Ort und Stelle,Laich in Felsspalten,Loose,12,3
+ECHO_091,Klangsammler,"Klangreste erschöpfter Echos, Abfälle",Horst oder Felsvorsprung,Gelege im Nest,Loose,36,9
+ECHO_092,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Horst oder Felsvorsprung,Gelege im Nest,Loose,15,3
+ECHO_094,Allesverwerter,"Algen, Plankton",Unterwasser-Höhle,Laich,Swarm,36,9
+ECHO_095,Räuber,Klangbiss aus dem Hinterhalt,Unterwasser-Höhle,Laich,Loose,15,3
+ECHO_098,Allesverwerter,Insekten im Wind,Horst oder Felsvorsprung,Klangteilung,Loose,36,9
+ECHO_099,Allesverwerter,Insekten im Wind,Horst oder Felsvorsprung,Klangteilung,Loose,6,2
+ECHO_100,Primärverbraucher,Licht und Wärme,Bau im Boden,Gelege im Sand oder Schlamm,Loose,31,7
+ECHO_101,Primärverbraucher,Licht und Wärme,Geschützte Stelle im Habitat,Gelege im Sand oder Schlamm,Loose,7,1
+ECHO_102,Primärverbraucher,Schwebstoffe aus Wasser oder Luft,Geschützte Stelle im Habitat,Eier in Kammern,Swarm,36,9
+ECHO_103,Primärverbraucher,Schwebstoffe aus Wasser oder Luft,Geschützte Stelle im Habitat,Eier in Kammern,Loose,15,3
+ECHO_104,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Unterwasser-Höhle,Resonanzkeim (Wurf von 1–3),Loose,12,3
+ECHO_106,Allesverwerter,Pflanzensäfte,Getarnt an Ort und Stelle,Ableger,Loose,36,9
+ECHO_107,Räuber,Klangbiss aus dem Hinterhalt,Getarnt an Ort und Stelle,Ableger,Loose,12,3
+ECHO_108,Allesverwerter,Erzstaub,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,15,3
+ECHO_109,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Klangteilung,Solitary,5,2
+ECHO_110,Allesverwerter,Kristallstaub,Geschützte Stelle im Habitat,Gelege im Sand oder Schlamm,Loose,6,2
+ECHO_111,Primärverbraucher,Licht und Wärme,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,36,9
+ECHO_112,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch); Licht und Wärme",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,15,3
+ECHO_114,Primärverbraucher,"Gräser, Moos, Blätter",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Herd,24,6
+ECHO_115,Primärverbraucher,"Gräser, Moos, Blätter",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Herd,7,1
+ECHO_117,Allesverwerter,Gesteinsbrocken,Bau im Boden,Eier in Kammern,Loose,36,9
+ECHO_118,Allesverwerter,Gesteinsbrocken,Bau im Boden,Eier in Kammern,Loose,15,3
+ECHO_120,Räuber,"Klangbiss aus dem Hinterhalt; Wärme (Lava, Quellen)",Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,31,7
+ECHO_121,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch); Wärme (Lava, Quellen)",Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,7,1
+ECHO_123,Räuber,Klangbiss aus dem Hinterhalt,Getarnt an Ort und Stelle,Eier in Kammern,Loose,36,9
+ECHO_124,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch); Klangbiss aus dem Hinterhalt",Geschützte Stelle im Habitat,Eier in Kammern,Loose,5,2
+ECHO_125,Allesverwerter,Insekten im Wind,Geschützte Stelle im Habitat,Klangteilung im Schwarm,Swarm,36,9
+ECHO_126,Allesverwerter,Insekten im Wind,Geschützte Stelle im Habitat,Klangteilung im Schwarm,Swarm,5,2
+ECHO_127,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,15,3
+ECHO_128,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Solitary,2,1
+ECHO_129,Primärverbraucher,"Nektar, Pollen, Tau",Geschützte Stelle im Habitat,Eier in Kammern,Swarm,36,9
+ECHO_130,Primärverbraucher,"Nektar, Pollen, Tau",Geschützte Stelle im Habitat,Eier in Kammern,Loose,6,2
+ECHO_131,Primärverbraucher,"Erz, Kristall, Schlacke; Licht und Wärme",Geschützte Stelle im Habitat,Gelege im Sand oder Schlamm,Loose,15,3
+ECHO_132,Primärverbraucher,"Erz, Kristall, Schlacke; Licht und Wärme",Geschützte Stelle im Habitat,Gelege im Sand oder Schlamm,Loose,3,1
+ECHO_133,Allesverwerter,Erzstaub,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Solitary,5,2
+ECHO_134,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Klangteilung,Solitary,2,1
+ECHO_135,Primärverbraucher,"Wärme (Lava, Quellen)","Warmer Stein, Quelle",Laich im Flachwasser,Loose,36,9
+ECHO_136,Primärverbraucher,"Wärme (Lava, Quellen)",Unterwasser-Höhle,Laich im Flachwasser,Loose,15,3
+ECHO_138,Allesverwerter,Erzstaub,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,31,7
+ECHO_139,Primärverbraucher,"Wärme (Lava, Quellen)","Warmer Stein, Quelle",Resonanzkeim aus Material,Loose,12,3
+ECHO_141,Klangsammler,"Klangreste erschöpfter Echos, Abfälle",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Pack,36,9
+ECHO_142,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Pack,15,3
+ECHO_144,Primärverbraucher,"Erz, Kristall, Schlacke",Getarnt an Ort und Stelle,Gelege im Sand oder Schlamm,Loose,31,7
+ECHO_145,Primärverbraucher,"Erz, Kristall, Schlacke",Getarnt an Ort und Stelle,Gelege im Sand oder Schlamm,Loose,12,3
+ECHO_147,Primärverbraucher,"Wärme (Lava, Quellen)",Horst oder Felsvorsprung,Gelege im Horst,Loose,3,1
+ECHO_149,Allesverwerter,Stille (Pausen im Klang),Getarnt an Ort und Stelle,Klangteilung,Loose,15,3
+ECHO_150,Allesverwerter,Stille (Pausen im Klang),Geschützte Stelle im Habitat,Klangteilung,Solitary,5,2
+ECHO_151,Allesverwerter,Kristallstaub,Baumkrone oder Felswand,Resonanzkeim (Wurf von 1–3),Loose,15,3
+ECHO_152,Allesverwerter,Kristallstaub,Baumkrone oder Felswand,Resonanzkeim (Wurf von 1–3),Loose,5,2
+ECHO_153,Klangsammler,"Klangreste erschöpfter Echos, Abfälle",Horst oder Felsvorsprung,Gelege im Nest,Loose,31,7
+ECHO_154,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch); Klangreste erschöpfter Echos, Abfälle",Horst oder Felsvorsprung,Gelege im Nest,Loose,3,1
+ECHO_155,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,3,1
+ECHO_156,Primärverbraucher,"Wärme (Lava, Quellen)","Warmer Stein, Quelle",Klangteilung,Solitary,2,1
+ECHO_157,Allesverwerter,Eisflechten,Getarnt an Ort und Stelle,Resonanzkeim (Wurf von 1–3),Loose,36,9
+ECHO_158,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Getarnt an Ort und Stelle,Resonanzkeim (Wurf von 1–3),Solitary,15,3
+ECHO_160,Primärverbraucher,"Gräser, Moos, Blätter",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Herd,24,6
+ECHO_161,Primärverbraucher,"Gräser, Moos, Blätter",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Herd,7,1
+ECHO_163,Allesverwerter,Eisflechten,Nest,Gelege im Nest,Loose,36,9
+ECHO_164,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Horst oder Felsvorsprung,Gelege im Nest,Solitary,15,3
+ECHO_167,Allesverwerter,Licht,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,12,3
+ECHO_168,Allesverwerter,Licht,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,3,1
+ECHO_170,Allesverwerter,Mineralsalze,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,31,7
+ECHO_171,Allesverwerter,Mineralsalze,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,7,1
+ECHO_172,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Klangteilung,Loose,15,3
+ECHO_173,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Klangteilung,Loose,5,2
+ECHO_174,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Baumkrone oder Felswand,Resonanzkeim (Wurf von 1–3),Loose,31,7
+ECHO_175,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Baumkrone oder Felswand,Resonanzkeim (Wurf von 1–3),Loose,7,1
+ECHO_176,Allesverwerter,Kristallstaub,Geschützte Stelle im Habitat,Klangteilung im Schwarm,Swarm,36,9
+ECHO_177,Allesverwerter,Insekten im Wind,Geschützte Stelle im Habitat,Klangteilung im Schwarm,Swarm,5,2
+ECHO_178,Räuber,Klangbiss aus dem Hinterhalt,Bau im Boden,Resonanzkeim (Wurf von 1–3),Solitary,1,1
+ECHO_179,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,31,7
+ECHO_180,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Solitary,12,3
+ECHO_182,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,31,7
+ECHO_183,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,12,3
+ECHO_185,Allesverwerter,Erzstaub,Geschützte Stelle im Habitat,Eier in Kammern,Loose,36,9
+ECHO_186,Allesverwerter,Erzstaub,Geschützte Stelle im Habitat,Eier in Kammern,Loose,15,3
+ECHO_188,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,12,3
+ECHO_189,Allesverwerter,Erinnerungsklang an alten Orten,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,3,1
+ECHO_191,Klangsammler,"Klangreste erschöpfter Echos, Abfälle",Getarnt an Ort und Stelle,Laich in Felsspalten,Loose,15,3
+ECHO_192,Klangsammler,"Klangreste erschöpfter Echos, Abfälle",Getarnt an Ort und Stelle,Laich in Felsspalten,Solitary,5,2
+ECHO_193,Primärverbraucher,"Nektar, Pollen, Tau; Licht und Wärme",Geschützte Stelle im Habitat,Ableger,Loose,36,9
+ECHO_194,Primärverbraucher,"Nektar, Pollen, Tau",Geschützte Stelle im Habitat,Ableger,Loose,15,3
+ECHO_195,Allesverwerter,Licht,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,15,3
+ECHO_196,Allesverwerter,Gesteinsbrocken,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Solitary,5,2
+ECHO_197,Allesverwerter,Mineralsalze,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,3,1
+ECHO_198,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Solitary,1,1
+ECHO_199,Allesverwerter,Kristallstaub,Horst oder Felsvorsprung,Gelege im Nest,Swarm,36,9
+ECHO_200,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Horst oder Felsvorsprung,Gelege im Nest,Loose,15,3
+ECHO_203,Primärverbraucher,"Erz, Kristall, Schlacke",Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,31,7
+ECHO_204,Primärverbraucher,"Erz, Kristall, Schlacke",Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,7,1
+ECHO_206,Räuber,Klangbiss aus dem Hinterhalt,Baumkrone oder Felswand,Eier in Kammern,Loose,31,7
+ECHO_207,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Baumkrone oder Felswand,Eier in Kammern,Solitary,12,3
+ECHO_209,Allesverwerter,Kristallstaub,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,36,9
+ECHO_210,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Solitary,15,3
+ECHO_211,Allesverwerter,Erzstaub,Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,31,7
+ECHO_212,Allesverwerter,Erzstaub,Bau im Boden,Resonanzkeim (Wurf von 1–3),Loose,12,3
+ECHO_213,Allesverwerter,Stille (Pausen im Klang),Geschützte Stelle im Habitat,Klangteilung,Loose,15,3
+ECHO_214,Allesverwerter,Stille (Pausen im Klang),Geschützte Stelle im Habitat,Klangteilung,Solitary,5,2
+ECHO_215,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Klangteilung,Loose,18,4
+ECHO_216,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Klangteilung,Solitary,5,2
+ECHO_217,Räuber,Klangbiss aus dem Hinterhalt,Geschützte Stelle im Habitat,Klangteilung,Loose,5,2
+ECHO_218,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,3,1
+ECHO_219,Allesverwerter,Insekten im Wind,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),FamilyGroup,24,6
+ECHO_220,Allesverwerter,Insekten im Wind,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,4,1
+ECHO_222,Allesverwerter,Insekten im Wind,Horst oder Felsvorsprung,Gelege im Nest,Swarm,36,9
+ECHO_223,Räuber,"Klangbiss bei anderen Echos (Resonanz, nie Fleisch)",Horst oder Felsvorsprung,Gelege im Nest,Loose,15,3
+ECHO_225,Primärverbraucher,Licht und Wärme,Geschützte Stelle im Habitat,Klangteilung,Loose,36,9
+ECHO_226,Allesverwerter,Licht,Geschützte Stelle im Habitat,Klangteilung,Herd,15,3
+ECHO_229,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Nest,Gelege im Nest,Loose,36,9
+ECHO_230,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Horst oder Felsvorsprung,Gelege im Nest,Loose,12,3
+ECHO_231,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Geschützte Stelle im Habitat,Klangteilung,Loose,36,9
+ECHO_232,Allesverwerter,Klang anderer Lebewesen (ohne zu schaden),Geschützte Stelle im Habitat,Klangteilung,Solitary,5,2
+ECHO_233,Primärverbraucher,"Gräser, Moos, Blätter; Licht und Wärme",Geschützte Stelle im Habitat,Gelege im Sand oder Schlamm,Loose,12,3
+ECHO_234,Allesverwerter,Gesteinsbrocken,Geschützte Stelle im Habitat,Gelege im Sand oder Schlamm,Loose,1,1
+ECHO_235,Allesverwerter,Gesteinsbrocken,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,31,7
+ECHO_236,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Resonanzkeim aus Material,Loose,12,3
+ECHO_237,Allesverwerter,Eisflechten,Geschützte Stelle im Habitat,Klangteilung im Schwarm,Swarm,36,9
+ECHO_238,Allesverwerter,Kristallstaub,Geschützte Stelle im Habitat,Klangteilung im Schwarm,Swarm,5,2
+ECHO_239,Allesverwerter,Licht,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Loose,1,1
+ECHO_240,Allesverwerter,Glyphenresonanz,Geschützte Stelle im Habitat,Resonanzkeim (Wurf von 1–3),Solitary,1,1

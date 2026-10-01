@@ -1,0 +1,6 @@
+# Populationsparameter je Seltenheit (K52 §6). BaseCapacity = Tragfähigkeit je Zone bei Größe M; Wachstum/Prädation in Promille je Spieltag; Floor = Mindestbestand (keine Ausrottung, DR-05).
+Name,BaseCapacity,GrowthPermille,PredationPermille,FloorPermille,RespawnMinutes
+Common,24,300,120,250,30
+Uncommon,12,220,100,250,60
+Rare,5,150,80,400,180
+VeryRare,2,100,60,500,360
