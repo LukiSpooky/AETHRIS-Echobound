@@ -1,0 +1,8 @@
+# Bindungsstufen (K37 §2, löst Q8). Bindungswert 0–1000 (CANON §5). Stufen sinken nie (DR-04 Ausnahme Niederlage, ADR-014).
+Name,Tier,DisplayName,MinValue,Unlocks
+BOND_1,1,Vorsichtig,0,"Feldfähigkeit (CANON §18); Begleiter folgt"
+BOND_2,2,Vertraut,150,"Crescendo (CANON §18); Begleiter-Initiative: wittert Ressourcen"
+BOND_3,3,Verbunden,350,"Voller Gehorsam (CANON §18); Bindungs-Evolutionen (BondTier>=3); warnt vor Gefahren"
+BOND_4,4,Eng,550,"Bindungs-Duett (K33); Reit-Ausdauer +10 % (K40); trägt kleine Fundstücke"
+BOND_5,5,Seelenklang,750,"Crescendo-Kosten −10 (K30); persönliche Leerlauf-Animationen"
+BOND_6,6,Einklang,900,"Titel „Im Einklang“ in der Herkunft (DR-16); Klangmal-Glanz; Hain-Chorleitung"

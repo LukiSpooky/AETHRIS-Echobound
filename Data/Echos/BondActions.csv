@@ -1,0 +1,16 @@
+# Bindungshandlungen (K37 §3). Gain = Bindungswert-Zuwachs; DailyCap = Höchstwert je Spieltag und Echo; MoodDelta = Stimmungsänderung (0–100).
+Name,DisplayName,Context,Gain,DailyCap,MoodDelta,FavoriteBonus,Notes
+BA_BATTLE_WIN,Gemeinsamer Sieg,Kampf (aktiv beteiligt),2,20,3,0,"Auch Bindung/Flucht zählt; Niederlage 0, kein Abzug (ADR-014)"
+BA_WALK,Gemeinsamer Weg,Begleiter im Chor (je 500 m),1,15,1,0,Nur Begleiter-Slot und aktiver Chor
+BA_FEED,Füttern,Lager-Moment / Begleiter-Rad,4,16,8,8,Lieblingsfutter (BondLure) doppelt; gleiches Futter am selben Tag halbiert
+BA_PET,Streicheln,Begleiter-Rad,3,9,6,3,1× je Spielstunde wirksam
+BA_PLAY,Spielen,Lager-Moment,5,10,10,5,Minispiel 20–40 s
+BA_PRAISE,Loben,nach Kampf / Feldfähigkeit,2,8,5,2,Sofort nach einer Handlung des Echos
+BA_TRAIN,Training,Lager-Moment,4,8,2,4,Schliff-Training (K18) gibt zusätzlich Bindung
+BA_REST,Rast am Klangbrunnen,Siedlung,2,4,15,0,Stellt Stimmung her
+BA_EVOLVE,Evolution,Evolution angenommen,50,50,20,0,ADR-091
+BA_BOND_PERFECT,Einklang bei der Bindung,Bindung,100,100,20,0,Startwert (K36)
+BA_BOND_GOOD,Bindung,Bindung,50,50,10,0,Startwert (K36)
+BA_HATCH,Schlüpfen,Zucht (K38),120,120,30,0,Gezüchtete Echos starten vertraut
+BA_HAIN_VISIT,Besuch im Hain,Resonanzhain,2,6,5,2,Pro besuchtem Garten-Echo
+BA_IGNORE,Vernachlässigung,Chor ohne Interaktion > 3 Spieltage,-2,0,-10,0,Sinkt nie unter die Stufenuntergrenze (DR-04)

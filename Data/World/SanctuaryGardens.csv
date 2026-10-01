@@ -1,0 +1,12 @@
+# Resonanzhain (K37 §6): 10 begehbare Biom-Gärten. Kapazität je Ausbaustufe 1–5. Bevorzugte Klangfarben: Stimmung +10 in diesem Garten.
+Name,DisplayName,Biome,UnlockRegion,PreferredTypes,Cap1,Cap2,Cap3,Cap4,Cap5,Yield
+GARDEN_01,Lindenhain,Verdanthain-Wald,R01,Bloom|Storm|Spirit,20,30,40,50,60,Kräuter|Holz
+GARDEN_02,Felsterrasse,Kharsgrat-Hochland,R02,Stone|Metal|Gravity,20,30,40,50,60,Erz
+GARDEN_03,Nebelmoor,Morvenmoor,R03,Venom|Spirit|Tide,20,30,40,50,60,Kräuter|Moorharz
+GARDEN_04,Dünenoase,Sahrun-Weite,R04,Light|Ember|Stone,20,30,40,50,60,Glas|Datteln
+GARDEN_05,Glutgrotte,Ignareth,R05,Ember|Metal|Crystal,20,30,40,50,60,Erz|Kohle
+GARDEN_06,Gezeitenbucht,Saltrand,R06,Tide|Storm|Sound,20,30,40,50,60,Muscheln|Tang
+GARDEN_07,Firnkessel,Hvitfell,R07,Frost|Light|Spirit,20,30,40,50,60,Eiskristall
+GARDEN_08,Säulengarten,Ael'Dorun,R08,Arcane|Spirit|Sound,20,30,40,50,60,Glyphenstaub
+GARDEN_09,Kristallkammer,Prismtiefen,R09,Crystal|Void|Gravity,20,30,40,50,60,Kristalle
+GARDEN_10,Wolkenterrasse,Nimbara,R10,Storm|Light|Sound,20,30,40,50,60,Wolkenfrucht

@@ -1,6 +1,6 @@
 # CANON – Single Source of Truth
 
-**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K36
+**Projekt:** AETHRIS: Echobound · **Pflege:** Creative Director (Inhalt), QA Lead (Konsistenzprüfung) · **Letztes Update:** K37
 
 Dieses Dokument enthält **alle verbindlichen Designentscheidungen**. Jedes Kapitel liest es vor Beginn und schreibt am Ende neue Einträge hinein.
 
@@ -351,6 +351,10 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | ADR-132 | Teilerfolg Annäherung statt Fehlschlag | K36 |
 | ADR-133 | Kodex-Bonus größer als Siegelbonus | K36 |
 | ADR-134 | Timing gegen Audio-Uhr mit Kalibrierung | K36 |
+| ADR-135 | Bindungsstufen 0/150/350/550/750/900, nie sinkend | K37 |
+| ADR-136 | Tagesdeckel je Bindungshandlung | K37 |
+| ADR-137 | Stimmung wirkt nur auf Bindungstempo | K37 |
+| ADR-138 | Begehbarer Resonanzhain mit Menü-Tausch | K37 |
 
 ## §11 Change Requests
 
@@ -370,7 +374,7 @@ Holz · Erz · Kristalle · Kräuter (+ Echo-Materialien, K41)
 | Q5 | Ranked-Level-Normalisierung | K61 |
 | Q6 | Split-Screen-Koop Machbarkeit | K65 |
 | Q7 | ~~Namen der 10 Ursprungsstimmen~~ ✅ K07: 10 Ursprungsstimmen benannt | K07/K27 |
-| Q8 | Bindungsstufen 0–1000 | K37 |
+| Q8 | ~~Bindungsstufen 0–1000~~ ✅ K37 §2: Stufen 0/150/350/550/750/900 | K37 |
 | Q9 | ~~Tagesphasen-Stundengrenzen~~ ✅ K14 §3 | K15 |
 | Q10 | ~~Hauptquartiere der Fraktionen~~ ✅ K07: Hauptsitze festgelegt | K47 |
 | Q11 | Bewegungs-/Ausdauer-/Gleiter-Tuning (Startwerte K02 §4.1) | K40 |
@@ -1567,3 +1571,20 @@ Lockmittel-Liste `Data/Items/Lures.csv` (24 Einträge, Wirkung K36). Authoring-W
 ## §136 Bindungs-Sonderfälle (LOCKED, K36 §9–§10)
 
 - Bindung im Kampf: Aktion Zeitkosten 100, nur letztes Wildecho (oder Ruhenetz), verklungene Echos nicht bindbar, EP ×1,2. Prolog unscheiterbar; Alpha nur mit Kampf; Stille-Echos nicht bindbar; Stimmen: 3 Pulse; Mythische im Fenster ≤ 15 %; Koop-Beiträge zählen; Eiserner Wärter: nur erster Versuch; Freilassen-Option (Wildwacht-Ruf).
+
+## §137 Bindungsstufen (LOCKED, K37 §2 – löst Q8 · `Data/Echos/BondTiers.csv`)
+
+- Vorsichtig 0 · Vertraut 150 (Crescendo) · Verbunden 350 (voller Gehorsam, Bindungs-Evolutionen) · Eng 550 (Bindungs-Duett, Reit-Ausdauer +10 %) · Seelenklang 750 (Crescendo −10) · Einklang 900 (Herkunftstitel). Stufen sinken nie; Feldfähigkeit ab Stufe 1; Gezüchtete starten mit 120.
+
+## §138 Bindungshandlungen & Stimmung (LOCKED, K37 §3–§5 · `Data/Echos/BondActions.csv`)
+
+- 14 Handlungen mit Tagesdeckeln (Sieg +2/20, Weg +1/15, Füttern +4/16, Streicheln +3/9, Spielen +5/10, Loben +2/8, Training +4/8, Rast +2/4, Evolution +50, Bindung +50/+100, Schlüpfen +120, Hain +2/6); Lieblingshandlung/-futter mit Bonus; Vernachlässigung −2/Spieltag nach 3 Tagen bis Stufenuntergrenze; Niederlage ohne Abzug.
+- Stimmung 0–100: Strahlend ×1,25 · Zufrieden ×1,0 · Gedämpft ×0,75 · Betrübt ×0,5 Bindungstempo; keine Kampfwirkung.
+
+## §139 Begleiter in der Welt (LOCKED, K37 §6–§7)
+
+- Begleiter-Slot aus dem aktiven Chor; Initiative ab Stufe 2 (Ressourcen, Wetter), 3 (Gefahr, Spuren), 4 (Fundstücke 1×/Spielstunde, Klangfragmente), 6 (Hain-Chorleitung); Begleiter-Rad (Steuerkreuz ↓); Folge-KI `ST_Companion`; Lager-Momente optional (Füttern, Kochen, Spielen, Training, Gespräch, Chor ordnen).
+
+## §140 Resonanzhain (LOCKED, K37 §8 · `Data/World/SanctuaryGardens.csv`)
+
+- 10 Biom-Gärten, je 20/30/40/50/60 Plätze nach Ausbaustufe (gesamt 600); Freischaltung mit erstem Resonanzstein der Region; bevorzugte Klangfarben (Stimmung +10); Tagesertrag (max. 1 Bündel je 10 Echos); Chor-Tausch im Hain oder an jedem Klangbrunnen/Resonanzstein; Koop-Besuch ohne Entnahme; Überlauf per Freilassen/Tausch.
